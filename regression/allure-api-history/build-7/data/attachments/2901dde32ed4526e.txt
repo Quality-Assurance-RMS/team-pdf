@@ -1,0 +1,13 @@
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/summary?period=week → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-TXN-006] TC-TXN-006 — total_refunds missing change_direction field
+────────────────────────────────────────────────────────────
+11:53:45.827  ·  Test started: "[BUG-TXN-006] TC-TXN-006 — total_refunds missing change_direction field"
+11:53:46.145  ○  ▶ Step 1 — Fetch summary and check total_refunds fields
+11:53:46.224  ·    GET /api/v1/transaction/summary?period=week
+11:53:46.434  ✔    HTTP 400 received
+11:53:46.520  ✘  Step failed after 375 ms — Test is skipped: 
+11:53:46.526  ·  Test run complete: "[BUG-TXN-006] TC-TXN-006 — total_refunds missing change_direction field"
+────────────────────────────────────────────────────────────
+

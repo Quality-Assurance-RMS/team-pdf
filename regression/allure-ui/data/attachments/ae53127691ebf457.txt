@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Settlements" heading and count are visible
+────────────────────────────────────────────────────────────
+12:03:36.124  ·  Test started: "TC1 — "Settlements" heading and count are visible"
+12:03:38.920  ○  ▶ Step 1 — Navigate to Settlements page
+12:03:38.929  ·    Opening the Settlements page
+12:03:46.326  ✔    Navigation to Settlements page initiated successfully
+12:03:51.248  ✔  Step completed in 12328 ms
+12:03:51.248  ○  ▶ Step 2 — Verify page loads successfully
+12:03:51.322  ·    Waiting for all Settlements page elements to render
+12:03:52.423  ✔    Settlements page is fully loaded with all required elements
+12:03:53.034  ✔  Step completed in 1786 ms
+12:03:53.034  ○  ▶ Step 3 — "Settlements" heading is visible
+12:03:53.040  ·    Asserting visibility: Settlements page heading
+12:03:53.332  ✘  Step failed after 298 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('h1, h2, h3').filter({ hasText: /^Settlements$/i }).or(getByText('Settlements').first())
+Expected: visible
+Error: strict mode violation: locator('h1, h2, h3').filter({ hasText: /^Settlements$/i }).or(getByText('Settlements').first()) resolved to 2 elements:
+    1) <span class="text-md font-medium">Settlements</span> aka getByRole('link', { name: 'Settlements' })
+    2) <h2 class="text-xl sm:text-2xl text-gray-600 font-semibold">Settlements</h2> aka getByRole('heading', { name: 'Settlements' })
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for locator('h1, h2, h3').filter({ hasText: /^Settlements$/i }).or(getByText('Settlements').first())
+
+12:04:02.832  ·  Test run complete: "TC1 — "Settlements" heading and count are visible"
+────────────────────────────────────────────────────────────
+

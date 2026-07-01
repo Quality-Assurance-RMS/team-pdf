@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-OT-009",
+  "expected": "Cache-Control: no-store (RFC 6749 §10.3)",
+  "actual": "Cache-Control: \"NOT PRESENT\"",
+  "impact": "Token response may be cached by proxies/CDNs, leaking the KCB access_token",
+  "fix": "Add Cache-Control: no-store, Pragma: no-cache to token endpoint response headers"
+}

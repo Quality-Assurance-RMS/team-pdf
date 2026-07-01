@@ -1,0 +1,17 @@
+[POST https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 405
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-SF-005] TC-SF-011 — POST /api/v1/fetch/status: Must return 405 Method Not Allowed (returns 500)
+────────────────────────────────────────────────────────────
+11:58:12.443  ·  Test started: "[BUG-SF-005] TC-SF-011 — POST /api/v1/fetch/status: Must return 405 Method Not Allowed (returns 500)"
+11:58:13.133  ○  ▶ Step 1 — Send POST /api/v1/fetch/status
+11:58:13.232  ·    POST /api/v1/fetch/status
+11:58:13.621  ✔    HTTP 405 received
+11:58:13.634  ✔  Step completed in 501 ms
+11:58:13.634  ○  ▶ Step 2 — Assert 405 (BUG: returns 500)
+11:58:13.635  ·    Asserting: HTTP status is 405
+11:58:13.717  ✔    All assertions passed
+11:58:13.717  ✔  Step completed in 84 ms
+11:58:13.720  ·  Test run complete: "[BUG-SF-005] TC-SF-011 — POST /api/v1/fetch/status: Must return 405 Method Not Allowed (returns 500)"
+────────────────────────────────────────────────────────────
+

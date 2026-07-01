@@ -1,0 +1,18 @@
+11:59:01.625  ·  Test started: "TC1 — "Refund Transaction" heading and count are visible"
+11:59:02.823  ○  ▶ Step 1 — Navigate to Refunds page
+11:59:02.829  ·    Opening the Refunds page
+11:59:05.236  ✔    Navigation to Refunds page initiated successfully
+11:59:07.717  ✔  Step completed in 4893 ms
+11:59:07.717  ○  ▶ Step 2 — Verify page loads successfully
+11:59:07.717  ·    Waiting for all Refunds page elements to render
+11:59:22.833  ✘  Step failed after 15116 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/refunds/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/dashboard"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    25 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"[22m
+
+11:59:28.047  ·  Test run complete: "TC1 — "Refund Transaction" heading and count are visible"

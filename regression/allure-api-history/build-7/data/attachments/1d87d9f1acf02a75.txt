@@ -1,0 +1,16 @@
+12:00:21.648  ·  Test started: "TC-TXN-004 — Transaction List: Default today (sorted by trnx_date desc)"
+12:00:22.118  ○  ▶ Step 1 — Build request parameters
+12:00:22.239  ✔  Step completed in 121 ms
+12:00:22.239  ○  ▶ Step 2 — Send GET /transaction?period=today
+12:00:22.240  ·    GET /api/v1/transaction?page=0&size=20&period=today&sort_by=trnx_date&sort_dir=desc
+12:00:22.526  ✔    HTTP 400 received
+12:00:22.533  ✔  Step completed in 294 ms
+12:00:22.533  ○  ▶ Step 3 — Validate HTTP 200 status code
+12:00:22.535  ·    Asserting: HTTP 200, body defined, body is object
+12:00:22.551  ✘  Step failed after 18 ms — TC-TXN-004 — expected HTTP 200, got 400
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+12:00:22.624  ·  Test run complete: "TC-TXN-004 — Transaction List: Default today (sorted by trnx_date desc)"

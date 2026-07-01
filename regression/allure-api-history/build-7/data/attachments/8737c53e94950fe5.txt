@@ -1,0 +1,9 @@
+11:55:14.035  ·  Test started: "TC-OT-008 — Cache eviction + re-fetch: new token issued_at >= original issued_at"
+11:55:14.426  ○  ▶ Step 1 — GET /token → capture Token A
+11:55:14.429  ·    GET /api/v1/token
+11:56:14.625  ✔    HTTP 200 received
+11:56:14.919  ✔    All assertions passed
+11:56:14.919  ✔  Step completed in 60493 ms
+11:56:14.919  ○  ▶ Step 2 — DELETE /token/cache → evict cache
+11:56:14.925  ·    DELETE /api/v1/token/cache
+11:57:14.139  ·    Test run complete: "TC-OT-008 — Cache eviction + re-fetch: new token issued_at >= original issued_at"

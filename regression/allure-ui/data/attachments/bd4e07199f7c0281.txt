@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — View, Edit, and Delete icons are present in the first row
+────────────────────────────────────────────────────────────
+12:06:07.055  ·  Test started: "TC1 — View, Edit, and Delete icons are present in the first row"
+12:06:07.717  ○  ▶ Step 1 — Navigate to User Management page
+12:06:07.720  ·    Opening the User Management page
+12:06:09.937  ✔    Navigation to User Management page initiated successfully
+12:06:12.641  ✔  Step completed in 4924 ms
+12:06:12.641  ○  ▶ Step 2 — Verify page loads successfully
+12:06:12.645  ·    Waiting for all User Management page elements to render
+12:06:27.918  ✘  Step failed after 15277 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/user/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    26 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+12:06:38.325  ·  Test run complete: "TC1 — View, Edit, and Delete icons are present in the first row"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,34 @@
+11:53:46.335  ·  Test started: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"
+11:53:46.723  ○  ▶ Step 1 — Collect Analytics 405 error body
+11:53:46.735  ·    POST /api/v1/analytics/dashboard/summary
+11:53:47.231  ✔    HTTP 405 received
+11:53:47.432  ·    Asserting: Analytics returns 405
+11:53:47.528  ✔    All assertions passed
+11:53:47.532  ✔  Step completed in 809 ms
+11:53:47.532  ○  ▶ Step 2 — Collect Dashboard 401 error body
+11:53:47.533  ·    GET /api/v1/dashboard/summary?period=week
+11:53:47.650  ✔    HTTP 401 received
+11:53:47.725  ·    Asserting: Dashboard returns 401
+11:53:47.727  ✔    All assertions passed
+11:53:47.728  ✔  Step completed in 196 ms
+11:53:47.728  ○  ▶ Step 3 — Collect Transaction 401 error body
+11:53:47.729  ·    GET /api/v1/transaction/summary?period=week
+11:53:48.116  ✔    HTTP 401 received
+11:53:48.118  ·    Asserting: Transaction returns 401
+11:53:48.123  ✔    All assertions passed
+11:53:48.123  ✔  Step completed in 395 ms
+11:53:48.123  ○  ▶ Step 4 — Assert schema is consistent (BUG: it is not)
+11:53:48.124  ·    POST /api/v1/analytics/dashboard/summary
+11:53:48.237  ✔    HTTP 405 received
+11:53:48.237  ·    GET /api/v1/dashboard/summary?period=week
+11:53:48.416  ✔    HTTP 401 received
+11:53:48.416  ·    GET /api/v1/transaction/summary?period=week
+11:53:48.449  ✔    HTTP 401 received
+11:53:48.520  ·    Asserting: Error schema is consistent across all services
+11:53:48.534  ✘  Step failed after 411 ms — [BUG-XS-001] Analytics error body must include "message" field
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+11:53:48.538  ·  Test run complete: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"

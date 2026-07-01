@@ -1,0 +1,22 @@
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 200
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary?date=2026-06-30 → 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)
+────────────────────────────────────────────────────────────
+11:55:32.839  ·  Test started: "[BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)"
+11:55:33.435  ○  ▶ Step 1 — Call analytics and confirm zeros
+11:55:33.526  ·    GET /api/v1/analytics/dashboard/summary
+11:55:33.835  ✔    HTTP 200 received
+11:55:33.836  ·    Asserting: Response is 200
+11:55:34.328  ✔    All assertions passed
+11:55:34.334  ✔  Step completed in 898 ms
+11:55:34.334  ○  ▶ Step 2 — Test with explicit date param to check if date-scoping is the issue
+11:55:34.337  ·    GET /api/v1/analytics/dashboard/summary?date=2026-06-30
+11:55:34.622  ✔    HTTP 200 received
+11:55:34.622  ·    Asserting: Response is 200 with explicit date param
+11:55:34.635  ✔    All assertions passed
+11:55:34.635  ✔  Step completed in 302 ms
+11:55:34.721  ·  Test run complete: "[BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,17 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 406
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-SF-007] TC-SF-013 — GET /api/v1/fetch/status with Accept: application/xml returns 500 (must be 406)
+────────────────────────────────────────────────────────────
+11:59:15.229  ·  Test started: "[BUG-SF-007] TC-SF-013 — GET /api/v1/fetch/status with Accept: application/xml returns 500 (must be 406)"
+11:59:15.441  ○  ▶ Step 1 — Send GET /api/v1/fetch/status with Accept: application/xml
+11:59:15.521  ·    GET /api/v1/fetch/status
+12:00:15.730  ✔    HTTP 406 received
+12:00:15.818  ✔  Step completed in 60377 ms
+12:00:15.818  ○  ▶ Step 2 — Assert 406 (BUG: returns 500)
+12:00:15.829  ·    Asserting: HTTP status is 406
+12:00:15.948  ✔    All assertions passed
+12:00:15.948  ✔  Step completed in 130 ms
+12:00:16.019  ·  Test run complete: "[BUG-SF-007] TC-SF-013 — GET /api/v1/fetch/status with Accept: application/xml returns 500 (must be 406)"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-003 — GET /api/v1/token: token_type is exactly "Bearer"
+────────────────────────────────────────────────────────────
+11:56:15.026  ·  Test started: "TC-OT-003 — GET /api/v1/token: token_type is exactly "Bearer""
+11:56:15.137  ○  ▶ Step 1 — Send GET /api/v1/token
+11:56:15.217  ·    GET /api/v1/token
+11:56:15.323  ✔    HTTP 200 received
+11:56:15.329  ✔  Step completed in 192 ms
+11:56:15.329  ○  ▶ Step 2 — Assert HTTP 200
+11:56:15.331  ·    Asserting: HTTP status is 200
+11:56:15.420  ✔    All assertions passed
+11:56:15.420  ✔  Step completed in 91 ms
+11:56:15.420  ○  ▶ Step 3 — Assert token_type = "Bearer"
+11:56:15.422  ·    Asserting: token_type equals "Bearer"
+11:56:15.537  ✔    All assertions passed
+11:56:15.537  ✔  Step completed in 117 ms
+11:56:15.539  ·  Test run complete: "TC-OT-003 — GET /api/v1/token: token_type is exactly "Bearer""
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,18 @@
+11:58:36.928  ·  Test started: "[BUG-OT-009] TC-OT-006 — GET /api/v1/token: Response must include Cache-Control: no-store"
+11:58:37.643  ○  ▶ Step 1 — Send GET /api/v1/token
+11:58:37.733  ·    GET /api/v1/token
+11:59:38.017  ✔    HTTP 200 received
+11:59:38.036  ✔  Step completed in 60320 ms
+11:59:38.036  ○  ▶ Step 2 — Assert HTTP 200
+11:59:38.037  ·    Asserting: HTTP status is 200
+11:59:38.052  ✔    All assertions passed
+11:59:38.116  ✔  Step completed in 80 ms
+11:59:38.116  ○  ▶ Step 3 — Assert Cache-Control: no-store is present (BUG: header absent)
+11:59:38.117  ·    Asserting: Cache-Control header contains "no-store"
+11:59:38.128  ✘  Step failed after 12 ms — [BUG-OT-009] Cache-Control must contain "no-store"
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+Expected substring: [32m"no-store"[39m
+Received string:    [31m""[39m
+11:59:38.133  ·  Test run complete: "[BUG-OT-009] TC-OT-006 — GET /api/v1/token: Response must include Cache-Control: no-store"
