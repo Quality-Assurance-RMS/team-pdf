@@ -1,0 +1,15 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-01-01%20OR%201%3D1&to_date=2026-06-09 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-005] TC-DB-005 — SQL-like input in from_date causes HTTP 500 (unhandled exception)
+────────────────────────────────────────────────────────────
+10:44:37.360  ·  Test started: "[BUG-DB-005] TC-DB-005 — SQL-like input in from_date causes HTTP 500 (unhandled exception)"
+10:44:38.049  ○  ▶ Step 1 — Send SQL-like string in from_date
+10:44:38.059  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-01-01 OR 1=1&to_date=2026-06-09
+10:44:38.348  ✔    HTTP 400 received
+10:44:38.450  ·    Asserting: SQL-like from_date input returns 400
+10:44:38.547  ✔    All assertions passed
+10:44:38.548  ✔  Step completed in 499 ms
+10:44:38.554  ·  Test run complete: "[BUG-DB-005] TC-DB-005 — SQL-like input in from_date causes HTTP 500 (unhandled exception)"
+────────────────────────────────────────────────────────────
+

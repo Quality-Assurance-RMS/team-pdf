@@ -1,0 +1,25 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-002 — GET /api/v1/token: access_token is a valid RS256 JWT
+────────────────────────────────────────────────────────────
+10:46:02.199  ·  Test started: "TC-OT-002 — GET /api/v1/token: access_token is a valid RS256 JWT"
+10:46:02.217  ○  ▶ Step 1 — Send GET /api/v1/token
+10:46:02.218  ·    GET /api/v1/token
+10:47:02.338  ✔    HTTP 200 received
+10:47:02.345  ✔  Step completed in 60127 ms
+10:47:02.345  ○  ▶ Step 2 — Assert HTTP 200
+10:47:02.348  ·    Asserting: HTTP status is 200
+10:47:02.367  ✔    All assertions passed
+10:47:02.368  ✔  Step completed in 23 ms
+10:47:02.368  ○  ▶ Step 3 — Decode JWT and check 3-part structure
+10:47:02.373  ·    Asserting: JWT has exactly 3 dot-separated parts
+10:47:02.464  ✔    All assertions passed
+10:47:02.465  ✔  Step completed in 97 ms
+10:47:02.465  ○  ▶ Step 4 — Decode header and assert alg=RS256
+10:47:02.468  ·    Asserting: JWT header algorithm is RS256
+10:47:02.543  ✔    All assertions passed
+10:47:02.543  ✔  Step completed in 78 ms
+10:47:02.545  ·  Test run complete: "TC-OT-002 — GET /api/v1/token: access_token is a valid RS256 JWT"
+────────────────────────────────────────────────────────────
+

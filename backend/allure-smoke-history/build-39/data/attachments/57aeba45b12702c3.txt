@@ -1,0 +1,36 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-004 â€" BUG-TPAY-02: Monetary amounts must be numbers, not strings
+────────────────────────────────────────────────────────────
+10:48:34.241  ·  Test started: "TC-DTPAY-004 â€" BUG-TPAY-02: Monetary amounts must be numbers, not strings"
+10:48:34.243  ○  ▶ Step 1 â€" Fetch today-payments response
+10:48:34.256  ·    GET /api/v1/dashboard/today-payments
+10:48:34.540  ✔    HTTP 200 received
+10:48:34.545  ✔  Step completed in 302 ms
+10:48:34.545  ○  ▶ Step 2 â€" Validate HTTP 200
+10:48:34.546  ·    Asserting: HTTP 200
+10:48:34.553  ✔    All assertions passed
+10:48:34.554  ✔  Step completed in 9 ms
+10:48:34.554  ○  ▶ Step 3 â€" All monetary fields in payments must be numbers
+10:48:34.556  ·    Asserting: all monetary fields in payments section are numbers, not strings
+10:48:34.649  ✔    All assertions passed
+10:48:34.650  ✔  Step completed in 96 ms
+10:48:34.650  ○  ▶ Step 4 â€" All monetary fields in refunds must be numbers
+10:48:34.651  ·    Asserting: all monetary fields in refunds section are numbers, not strings
+10:48:34.839  ✔    All assertions passed
+10:48:34.839  ✔  Step completed in 190 ms
+10:48:34.839  ○  ▶ Step 5 â€" All monetary fields in revenue must be numbers
+10:48:34.840  ·    Asserting: all monetary fields in revenue section are numbers, not strings
+10:48:34.854  ✔    All assertions passed
+10:48:34.855  ✔  Step completed in 15 ms
+10:48:34.855  ○  ▶ Step 6 â€" Confirm postiveValue is a string (percentage label â€" acceptable)
+10:48:34.856  ·    Asserting: postiveValue is a string percentage label in all three sections
+10:48:34.858  ✘  Step failed after 4 ms — payments.postiveValue must be a string percentage label
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "string"
+Received: "undefined"
+10:48:34.860  ·  Test run complete: "TC-DTPAY-004 â€" BUG-TPAY-02: Monetary amounts must be numbers, not strings"
+────────────────────────────────────────────────────────────
+

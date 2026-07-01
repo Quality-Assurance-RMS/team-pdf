@@ -1,0 +1,28 @@
+10:47:24.660  ·  Test started: "TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary"
+10:47:24.662  ○  ▶ Step 1 â€” Build request
+10:47:25.040  ✔  Step completed in 377 ms
+10:47:25.040  ○  ▶ Step 2 â€” Send GET /revenue-trend and log response
+10:47:25.041  ·    GET /api/v1/dashboard/revenue-trend
+10:47:25.248  ✔    HTTP 200 received
+10:47:25.339  ✔  Step completed in 299 ms
+10:47:25.339  ○  ▶ Step 3 â€” Validate HTTP 200 and Content-Type
+10:47:25.340  ·    Asserting: Validate HTTP 200 and Content-Type
+10:47:25.356  ✔    All assertions passed
+10:47:25.356  ✔  Step completed in 17 ms
+10:47:25.356  ○  ▶ Step 4 â€” Validate top-level data wrapper
+10:47:25.358  ·    Asserting: Validate top-level data wrapper
+10:47:25.460  ✔    All assertions passed
+10:47:25.462  ✔  Step completed in 105 ms
+10:47:25.462  ○  ▶ Step 5 â€” Validate 4 required array fields exist
+10:47:25.463  ·    Asserting: Validate 4 required array fields exist
+10:47:25.555  ✔    All assertions passed
+10:47:25.556  ✔  Step completed in 95 ms
+10:47:25.556  ○  ▶ Step 6 â€” Validate summary array structure
+10:47:25.557  ·    Asserting: Validate summary array structure
+10:47:26.044  ✘  Step failed after 487 ms — summary must include "Total Attempts"
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+Expected value: [32m"Total Attempts"[39m
+Received array: [31m["Total Transactions", "Successful", "Failed"][39m
+10:47:26.047  ·  Test run complete: "TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary"

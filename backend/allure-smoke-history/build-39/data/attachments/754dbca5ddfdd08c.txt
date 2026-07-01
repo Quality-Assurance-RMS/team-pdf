@@ -1,0 +1,23 @@
+10:48:15.448  ·  Test started: "TC-DSUM-011 â€” BUG-SUM-06: rate_pct must be null (not 0.0%) when transaction count is zero"
+10:48:15.450  ○  ▶ Step 1 â€” Get period=today (count=0 on a day with no transactions)
+10:48:15.460  ·    GET /api/v1/dashboard/summary
+10:48:15.746  ✔    HTTP 200 received
+10:48:15.753  ·    Asserting: response structure and values
+10:48:15.840  ✔    All assertions passed
+10:48:15.840  ✔  Step completed in 390 ms
+10:48:15.840  ○  ▶ Step 2 â€” Check if transaction count is 0
+10:48:15.846  ✔  Step completed in 6 ms
+10:48:15.846  ○  ▶ Step 3 â€” BUG-SUM-06: rate_pct should be null when count=0 (flag if 0.0)
+10:48:15.854  ✔    All assertions passed
+10:48:15.855  ✔  Step completed in 8 ms
+10:48:15.855  ○  ▶ Step 4 â€” Also test with a future date range guaranteed to have 0 transactions
+10:48:15.856  ·    GET /api/v1/dashboard/summary
+10:48:16.038  ✔    HTTP 200 received
+10:48:16.038  ·    Asserting: response structure and values
+10:48:16.045  ✘  Step failed after 190 ms — Future range must have 0 transactions
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m0[39m
+Received: [31mundefined[39m
+10:48:16.048  ·  Test run complete: "TC-DSUM-011 â€” BUG-SUM-06: rate_pct must be null (not 0.0%) when transaction count is zero"

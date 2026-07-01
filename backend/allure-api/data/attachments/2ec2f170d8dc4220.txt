@@ -1,0 +1,14 @@
+10:49:04.659  ·  Test started: "TC-OT-005 — GET /api/v1/token: issued_at < now < expires_at (valid time window)"
+10:49:04.747  ○  ▶ Step 1 — Send GET /api/v1/token
+10:49:04.749  ·    GET /api/v1/token
+10:50:04.774  ✔    HTTP 200 received
+10:50:04.775  ✔  Step completed in 60028 ms
+10:50:04.775  ○  ▶ Step 2 — Assert HTTP 200
+10:50:04.776  ·    Asserting: HTTP status is 200
+10:50:04.782  ✔    All assertions passed
+10:50:04.782  ✔  Step completed in 6 ms
+10:50:04.782  ○  ▶ Step 3 — Validate issued_at < now < expires_at
+10:50:04.782  ·    Asserting: issued_at is in the past and expires_at is in the future
+10:50:04.797  ✔    All assertions passed
+10:50:04.798  ✔  Step completed in 16 ms
+10:50:04.799  ·  Test run complete: "TC-OT-005 — GET /api/v1/token: issued_at < now < expires_at (valid time window)"

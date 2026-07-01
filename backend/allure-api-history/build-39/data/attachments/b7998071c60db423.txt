@@ -1,0 +1,14 @@
+10:47:32.950  ·  Test started: "[BUG-GW-004] TC-GW-005 — Required security response headers must be present on all API routes"
+10:47:33.164  ○  ▶ Step 1 — Send GET /spr-fetcher/api/v1/fetch/status
+10:47:33.238  ·    GET /api/v1/fetch/status
+10:48:33.356  ✔    HTTP 200 received
+10:48:33.438  ✔  Step completed in 60274 ms
+10:48:33.438  ○  ▶ Step 2 — Assert X-Content-Type-Options: nosniff (BUG: missing)
+10:48:33.439  ·    Asserting: X-Content-Type-Options is "nosniff"
+10:48:33.454  ✘  Step failed after 16 ms — [BUG-GW-004] X-Content-Type-Options must be "nosniff"
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"nosniff"[39m
+Received: [31m""[39m
+10:48:33.457  ·  Test run complete: "[BUG-GW-004] TC-GW-005 — Required security response headers must be present on all API routes"

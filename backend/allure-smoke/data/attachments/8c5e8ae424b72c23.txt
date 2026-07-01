@@ -1,0 +1,44 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-014 â€” Math Consistency: successful + failed must equal totalAttempts at every index
+────────────────────────────────────────────────────────────
+10:47:45.060  ·  Test started: "TC-DREVT-014 â€” Math Consistency: successful + failed must equal totalAttempts at every index"
+10:47:45.062  ○  ▶ Step 1 â€” Fetch revenue-trend response
+10:47:45.161  ·    GET /api/v1/dashboard/revenue-trend
+10:47:45.443  ✔    HTTP 200 received
+10:47:45.452  ✔  Step completed in 390 ms
+10:47:45.452  ○  ▶ Step 2 â€” Validate HTTP 200
+10:47:45.453  ·    Asserting: Validate HTTP 200
+10:47:45.537  ✔    All assertions passed
+10:47:45.537  ✔  Step completed in 85 ms
+10:47:45.537  ○  ▶ Step 3 â€” Per-index: successful[i] + failed[i] must equal totalAttempts[i]
+10:47:45.542  ·    Asserting: response structure and values
+10:47:45.549  ·    Asserting: response structure and values
+10:47:45.555  ·    Asserting: response structure and values
+10:47:45.561  ·    Asserting: response structure and values
+10:47:45.653  ·    Asserting: response structure and values
+10:47:45.659  ·    Asserting: response structure and values
+10:47:45.665  ·    Asserting: response structure and values
+10:47:45.740  ·    Asserting: response structure and values
+10:47:45.745  ·    Asserting: response structure and values
+10:47:45.752  ·    Asserting: response structure and values
+10:47:45.758  ·    Asserting: response structure and values
+10:47:45.764  ·    Asserting: response structure and values
+10:47:45.854  ·    Asserting: response structure and values
+10:47:45.859  ✔    All assertions passed
+10:47:45.861  ✔  Step completed in 324 ms
+10:47:45.861  ○  ▶ Step 4 â€” Array sums must match summary.points values
+10:47:45.941  ·    Asserting: response structure and values
+10:47:45.947  ✔    All assertions passed
+10:47:45.947  ✔  Step completed in 87 ms
+10:47:45.947  ○  ▶ Step 5 â€” KES cross-validation: Total âˆ’ Successful must equal Failed KES
+10:47:46.059  ·    Asserting: KES cross-validation: Total âˆ’ Successful must e
+10:47:46.065  ✘  Step failed after 118 ms — Total KES (81211787) âˆ’ Successful KES (81199976) must equal Failed KES (11810)
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 11810
+Received: 11811
+10:47:46.067  ·  Test run complete: "TC-DREVT-014 â€” Math Consistency: successful + failed must equal totalAttempts at every index"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,12 @@
+10:48:03.970  ·  Test started: "TC-DSUM-010 â€” BUG-SUM-05: successful% + failed% must sum to 100%"
+10:48:04.045  ○  ▶ Step â€” period=week: validate rate sum
+10:48:04.046  ·    GET /api/v1/dashboard/summary
+10:48:04.140  ✔    HTTP 400 received
+10:48:04.140  ·    Asserting: Step â€” period=${period}: validate rate sum
+10:48:04.149  ✘  Step failed after 105 ms — period=week  -> 200
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+10:48:04.151  ·  Test run complete: "TC-DSUM-010 â€” BUG-SUM-05: successful% + failed% must sum to 100%"

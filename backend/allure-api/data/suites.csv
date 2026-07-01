@@ -1,0 +1,715 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Verifies the GET /transaction/filter-options endpoint.
+
+**Endpoint:** GET /api/v1/transaction/filter-options
+**Expected:** HTTP 200 with arrays of statuses (SUCCESS, FAILED, PENDING), methods (MPESA, CARD, BANK), txn_types, and categories.","141","TC-TXN-008 — Filter Options: Retrieve available filter values","RMS Transaction API","2026-07-01","failed","2026-07-01","Transaction Endpoints","API Regression","",""
+"**[BUG-DB-004]**
+
+Passing dates in DD-MM-YYYY format (common European format) instead of the required YYYY-MM-DD format causes HTTP 500 instead of 400 with format guidance.
+
+**Expected:** HTTP 400 with `""message"":""from_date must be in YYYY-MM-DD format""`
+
+**Root Cause:** No format validation — the malformed date string is passed directly to the date parser which throws an unhandled exception.
+
+**Impact:** Developers who pass dates in DD-MM-YYYY (which is technically a valid date string like 01-06-2026) get a confusing 500 with no format guidance.","591","[BUG-DB-004] TC-DB-004 — Wrong date format DD-MM-YYYY causes HTTP 500 not 400","RMS Deep Regression","2026-07-01","passed","2026-07-01","Dashboard API — Edge Cases (requires valid DASHBOARD_API_TOKEN)","Dashboard API","",""
+"Verifies the GET /transaction/:id endpoint for a known UUID.
+
+**Endpoint:** GET /api/v1/transaction/00bba274-1617-4568-aaf2-a2ed08b66a18
+**Expected:** HTTP 200 with full transaction detail including payment_trnx_id, transaction_confirmation_id, payment_reference, payment_method, gateway_status, trnx_date, payer_name, payer_phone, payer_email, and financial amounts.
+
+Note: The API accepts a UUID as path param but returns its own reference IDs in the body.","129","TC-TXN-007 — Detail for ID: 00bba274-1617-4568-aaf2-a2ed08b66a18","RMS Transaction API","2026-07-01","failed","2026-07-01","Transaction Endpoints","API Regression","",""
+"Verifies that a webhook whose requestExpiryTimestamp is in the past is rejected with HTTP 400 bad_request. The HMAC signature is valid; only the timestamp check fails. Pre-condition: Do not resend — generate a fresh request with a future expiry instead.","155","TC4 — Expired requestExpiryTimestamp — Validation","rms-api-automation","2026-07-01","failed","2026-07-01","RMS — PG Webhook Transactions (supertest)","","",""
+"**[KNOWN BUG — BUG-GW-001]**
+
+**What this test does:**
+Calls GET /spr-fetcher/api/v1/fetch/status and inspects CORS response headers.
+
+**Expected:** access-control-allow-origin is set to a specific trusted origin
+**Actual:** access-control-allow-origin: * (wildcard)
+
+**Why this is dangerous on spr-fetcher specifically:**
+Combined with BUG-SF-001 (no auth enforcement on the status endpoint), the wildcard CORS means any website can read the SPR Fetcher status — including the accountNumber and apiEndpoint — directly from a user's browser without the user knowing.
+
+This creates a trivial CSRF-style data exfiltration path:
+  1. User visits a malicious website
+  2. Page scripts call GET /spr-fetcher/api/v1/fetch/status (no auth needed)
+  3. CORS allows the response to be read by the malicious page
+  4. accountNumber and apiEndpoint are silently exfiltrated","60138","[BUG-GW-001] TC-GW-002 — CORS allow-origin must not be wildcard ""*"" on spr-fetcher routes","RMS Platform Services","2026-07-01","failed","2026-07-01","Gateway / Security","API Regression","",""
+"**What this test does:**
+Calls GET /oauth-token/api/v1/token with a valid RMS Bearer token and verifies the response is HTTP 200 and the body contains all four expected fields: access_token, token_type, expires_at, issued_at.
+
+**Why it matters:** This is the primary happy-path check. If this fails, no downstream service that depends on the KCB OAuth token can function.","61313","TC-OT-001 — GET /api/v1/token: Returns 200 with complete KCB token object","RMS Platform Services","2026-07-01","passed","2026-07-01","OAuth Token Service","API Regression","",""
+"**[BUG-XS-003]**
+
+When an unauthenticated request hits an unknown path, both dashboard and transaction APIs return 401 instead of 404. This is because the auth middleware runs before routing.
+
+**The problem:** A developer who typos an endpoint path cannot distinguish:
+  - ""This path does not exist"" (404)
+  - ""This path exists but you need auth"" (401)
+
+**Contrast:** The analytics API correctly returns 404 for unknown paths (no auth middleware).
+
+**Expected:** Unknown paths should return 404, even to unauthenticated callers. The standard approach is to route first, then authenticate (known paths exist but require auth → 401; unknown paths → 404 regardless of auth state).
+
+**Impact:** Developer experience is degraded; documentation gaps are hidden behind 401.","146","[BUG-XS-003] TC-XS-003 — Unknown paths return 401 not 404 on dashboard and transaction APIs","RMS Deep Regression","2026-07-01","failed","2026-07-01","Cross-Service Consistency","Cross-Service","",""
+"Verifies the complete end-to-end flow for a successful MPESA transaction. Expects HTTP 200 with status ""received"", a PostgreSQL row with the correct recon_key, commission, and wallet_provider, and a MongoDB document in raw_pg_events.","184","TC1 — Successful Transaction — Happy Path","rms-api-automation","2026-07-01","failed","2026-07-01","RMS — PG Webhook Integration > TC1 + TC2 — Happy Path and Duplicate Dedup","","",""
+"**[KNOWN BUG — BUG-SF-004]**
+
+**What this test does:**
+Reads the mockEnabled field from the status response and asserts it is false.
+
+**Expected:** mockEnabled = false (service uses real KCB API data)
+**Actual:** mockEnabled = true (service returns mock/synthetic data)
+
+**What mockEnabled=true means:**
+The spr-fetcher is NOT calling the real KCB API. Instead it is returning hardcoded or pre-generated mock responses. All financial data processed by the RMS in this environment is fake — it does not reflect actual transaction history.
+
+**Impact:**
+- In UAT: testers are validating the system against fake data, not real bank data
+- In production (if deployed): real financial decisions would be made on synthetic data
+- Dashboards and reports show numbers that have no relation to actual KCB transactions
+
+**Note:** mockEnabled=true may have been intentional during initial development but must be disabled before UAT sign-off or production deployment.","60745","[BUG-SF-004] TC-SF-010 — mockEnabled must be false in a live/UAT environment (currently true)","RMS Platform Services","2026-07-01","failed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"`display_status` in the list uses title-case (""Success"", ""Failed"") while `gateway_status` in the detail endpoint uses ALL-CAPS (""SUCCESS"", ""FAILED"").
+
+This test confirms the inconsistency exists across the list endpoint and validates that all `display_status` values follow a single consistent casing convention.","731","TC-TXN-008 — Transaction list: display_status casing must be consistent across all records","RMS Deep Regression","2026-07-01","skipped","2026-07-01","Transaction API — Edge Cases (requires valid TRANSACTION_API_TOKEN)","Transaction API","",""
+"**[KNOWN BUG — BUG-SF-005]**
+
+**What this test does:**
+Sends a POST request to /api/v1/fetch/status (a GET-only endpoint) and verifies the server returns 405 Method Not Allowed.
+
+**Expected:** HTTP 405 Method Not Allowed
+**Actual:** HTTP 500 Internal Server Error
+
+**Root Cause:** The service lacks a global handler for unsupported HTTP methods. Instead of returning 405, Spring throws an unhandled MethodNotAllowedException which propagates to the default error handler and is returned as a generic 500.
+
+**Impact:** API clients and automated scanners receive a misleading 500 error. The error response body does include a correlationId, which could aid debugging, but the wrong status code means automated monitoring treats this as a server crash rather than a normal invalid-method response.","569","[BUG-SF-005] TC-SF-011 — POST /api/v1/fetch/status: Must return 405 Method Not Allowed (returns 500)","RMS Platform Services","2026-07-01","passed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"**[KNOWN BUG — BUG-OT-003]**
+
+**What this test does:**
+Calls DELETE /api/v1/token/cache without any Authorization header and verifies the server rejects the request with 401.
+
+**Expected:** HTTP 401 Unauthorized
+**Actual:** HTTP 204 No Content — the cache is evicted without any authentication!
+
+**Impact (DoS Risk):** Any unauthenticated attacker can repeatedly call this endpoint to evict the cached KCB token. Each eviction forces the service to re-authenticate with the KCB authorization server, which:
+1. Adds latency to every downstream token request
+2. Can trigger KCB rate-limiting if called rapidly
+3. May cause cascading failures if the KCB auth server is slow or unavailable","60114","[BUG-OT-003] TC-OT-011 — DELETE /token/cache: No auth returns 204 (unauthenticated eviction allowed)","RMS Platform Services","2026-07-01","failed","2026-07-01","OAuth Token Service","API Regression","",""
+"**[KNOWN BUG — BUG-SF-003]**
+
+**What this test does:**
+Reads the tokenInjectionEnabled field from the status response and asserts it is true.
+
+**Expected:** tokenInjectionEnabled = true
+**Actual:** tokenInjectionEnabled = false
+
+**What tokenInjectionEnabled=false means:**
+The spr-fetcher is configured to call the KCB API WITHOUT first obtaining an OAuth token from the oauth-token-service. This means every KCB API call is unauthenticated.
+
+**Why this is the root cause of BUG-SF-002:**
+The KCB API at uat.buni.kcbgroup.com requires a valid Bearer token. Without one, the request is either rejected immediately or left hanging, causing the 504/connection error seen in TC-SF-007.
+
+**Fix:**
+Set tokenInjectionEnabled=true in spr-fetcher's application.yml and configure the oauth-token-service URL so the spr-fetcher can retrieve a KCB token before each fetch.","60105","[BUG-SF-003] TC-SF-009 — tokenInjectionEnabled must be true (currently false — root cause of trigger failure)","RMS Platform Services","2026-07-01","failed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"**[BUG-DB-007]**
+
+The dashboard summary returns two rate fields:
+- `successful_payments.rate_pct` — the success rate
+- `failed_payments.rate_pct` — the failure rate
+
+In a two-state system (success or failure), these two rates must sum to exactly 100%.
+
+**Why they do not sum to 100%:**
+There is a third state — PENDING transactions — that is not counted in either rate. The formula used is:
+  `success_rate = successful / total` and `fail_rate = failed / total`
+
+If there are 135 total and 0 successful and 0 failed (all pending), both rates are 0% and they sum to 0% instead of 100%.
+
+**Expected:** Either include pending in the denominator and show a 3rd metric, or explicitly document that rates are out of (successful + failed), not all transactions.","568","[BUG-DB-007] TC-DB-007 — successful_payments% + failed_payments% must equal 100%","RMS Deep Regression","2026-07-01","skipped","2026-07-01","Dashboard API — Edge Cases (requires valid DASHBOARD_API_TOKEN)","Dashboard API","",""
+"**What this test does:**
+Posts to /spr-fetcher/api/v1/fetch/trigger without any Authorization header and verifies the server responds with 401 or 403.
+
+**Why it matters:** The trigger endpoint initiates a data fetch from the KCB API. If it does not require authentication, any external actor could initiate an unlimited number of fetch operations, consuming KCB API quota and causing excessive load on both the spr-fetcher service and the KCB API.
+
+**Note:** Due to BUG-SF-002, the endpoint may also return a connection-level error for unauthenticated requests. If that occurs, the test reports the connection error and fails, as the auth enforcement cannot be verified.","62928","TC-SF-008 — POST /api/v1/fetch/trigger: No auth must return 401","RMS Platform Services","2026-07-01","failed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"Verifies the GET /transaction/:id endpoint for a known UUID.
+
+**Endpoint:** GET /api/v1/transaction/2e8b4ea3-5413-4428-bc49-25de24680cdb
+**Expected:** HTTP 200 with full transaction detail including payment_trnx_id, transaction_confirmation_id, payment_reference, payment_method, gateway_status, trnx_date, payer_name, payer_phone, payer_email, and financial amounts.
+
+Note: The API accepts a UUID as path param but returns its own reference IDs in the body.","189","TC-TXN-007 — Detail for ID: 2e8b4ea3-5413-4428-bc49-25de24680cdb","RMS Transaction API","2026-07-01","failed","2026-07-01","Transaction Endpoints","API Regression","",""
+"**What this test does:**
+Verifies the token_type field in the response body is the string ""Bearer"" (case-sensitive).
+
+**Why it matters:** OAuth 2.0 clients use token_type to determine how to attach the token to requests. An unexpected value (e.g. ""bearer"", ""JWT"") causes clients to construct malformed Authorization headers.","61402","TC-OT-003 — GET /api/v1/token: token_type is exactly ""Bearer""","RMS Platform Services","2026-07-01","passed","2026-07-01","OAuth Token Service","API Regression","",""
+"**What this test does:**
+Calls DELETE /api/v1/token/cache with a valid Bearer token and verifies the response is 204 No Content with an empty body.
+
+**Why it matters:** Cache eviction is the operational mechanism for forcing a token refresh before the normal expiry (e.g. after a secret rotation or a token compromise). If this endpoint is broken, operators cannot force-refresh the KCB token on demand.","60190","TC-OT-007 — DELETE /api/v1/token/cache: Returns 204 No Content with valid auth","RMS Platform Services","2026-07-01","passed","2026-07-01","OAuth Token Service","API Regression","",""
+"**[BUG-TXN-001]**
+
+Passing `page=-1` to the transaction list endpoint should return 400 Bad Request. A negative page index is not meaningful and indicates a client error.
+
+**Expected:** HTTP 400 with `""message"":""page must be >= 0""`
+
+**Impact:** If the server treats page=-1 as page=0 (common ORM behaviour), results are silently incorrect with no indication to the client. If it errors at the DB layer, it produces a confusing 500.","1491","[BUG-TXN-001] TC-TXN-001 — Transaction list: negative page (-1) must return 400","RMS Deep Regression","2026-07-01","passed","2026-07-01","Transaction API — Edge Cases (requires valid TRANSACTION_API_TOKEN)","Transaction API","",""
+"**What this test does:**
+Checks two key identity fields in the status response:
+- service must equal ""spr-fetcher-service""
+- status must equal ""UP""
+
+**Why it matters:**
+The ""service"" field confirms the correct microservice responded (not a different service behind a misconfigured route). The ""status"" field confirms the service considers itself healthy. If status is not ""UP"", no trigger calls should be made.","60111","TC-SF-003 — GET /api/v1/fetch/status: service=""spr-fetcher-service"" and status=""UP""","RMS Platform Services","2026-07-01","passed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"Verifies the complete end-to-end flow for a successful MPESA transaction. Pre-condition: all three services running (:8080, :8081, :8082), Redis and PostgreSQL up.","87","TC1 — Successful Transaction — Happy Path","rms-api-automation","2026-07-01","failed","2026-07-01","RMS — PG Webhook Transactions (supertest) > TC1 + TC2 — Happy Path and Duplicate Dedup","","",""
+"**What this test does:**
+Decodes the access_token returned by GET /api/v1/token and verifies it is a properly structured JSON Web Token: exactly 3 base64url parts (header.payload.signature) and the header declares alg=RS256.
+
+**Why it matters:** A malformed or non-RS256 token will be rejected by the KCB API, silently breaking all data ingestion without a clear error.","60348","TC-OT-002 — GET /api/v1/token: access_token is a valid RS256 JWT","RMS Platform Services","2026-07-01","passed","2026-07-01","OAuth Token Service","API Regression","",""
+"Verifies that a FAILED transaction from the PG is stored correctly with failure details and recon_status PENDING. RMS stores all transactions regardless of gateway status — the reconciliation engine processes them separately.","162","TC5 — Failed Transaction — INSUFFICIENT_FUNDS","rms-api-automation","2026-07-01","failed","2026-07-01","RMS — PG Webhook Transactions (supertest)","","",""
+"**[BUG-ANA-005]**
+
+Every call to the analytics endpoint returns all zeros:
+```json
+{""today"":{""total_transactions"":0,""recon_matched"":0,""recon_exceptions"":0,
+""failed_transactions"":0,""settlement_total_kes"":0.0,""successful_transactions"":0,
+""total_amount_kes"":0.0,""success_rate_pct"":0.0},""mcda_id"":""ALL""}
+```
+
+**Observation:** The smoke test file (smoke-analytics-dashboard-summary.spec.ts) recorded `total_transactions=135` in a prior session, proving data does exist. The current all-zero response suggests one of:
+1. The aggregation job runs on a schedule and has not run yet today
+2. The analytics data pipeline is broken/not running
+3. The ""today"" aggregation uses UTC midnight but the server is in EAT (UTC+3) — meaning the first 3 hours of EAT day are counted as ""yesterday"" in UTC
+
+**Impact:** The analytics dashboard always shows zeros in early-morning hours (EAT) because the UTC day boundary has not yet caught up with the local day.","307","[BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)","RMS Deep Regression","2026-07-01","passed","2026-07-01","Analytics API — Deep Tests","Analytics API","",""
+"**What this test does:**
+Executes the full cache eviction cycle in three steps:
+1. GET /token → record Token A (issued_at = TA)
+2. DELETE /token/cache → evict the cached token (expect 204)
+3. GET /token → record Token B (issued_at = TB)
+
+Asserts that TB >= TA — Token B is at least as fresh as Token A, meaning the eviction caused the service to re-fetch or serve the same still-valid token.
+
+**Why it matters:** This proves the eviction-then-refresh path works end-to-end.","120128","TC-OT-008 — Cache eviction + re-fetch: new token issued_at >= original issued_at","RMS Platform Services","2026-07-01","broken","2026-07-01","OAuth Token Service","API Regression","",""
+"","1","TC2 — Exact Duplicate — Redis Dedup","rms-api-automation","2026-07-01","skipped","2026-07-01","RMS — PG Webhook Integration > TC1 + TC2 — Happy Path and Duplicate Dedup","","",""
+"Verifies the complete end-to-end flow for a successful MPESA transaction. Pre-condition: all three services running (:8080, :8081, :8082), Redis and PostgreSQL up.","169","TC1 — Successful Transaction — Happy Path","rms-api-automation","2026-07-01","failed","2026-07-01","RMS — PG Webhook Transactions (supertest) > TC1 + TC2 — Happy Path and Duplicate Dedup","","",""
+"Verifies the GET /summary?period=today endpoint.
+
+**Endpoint:** GET /api/v1/transaction/summary
+**Param:** period=today
+**Expected:** HTTP 200 with non-empty summary body.
+
+Validates the daily summary aggregation used on the RMS dashboard.","215","TC-TXN-002 — Summary: Today","RMS Transaction API","2026-07-01","failed","2026-07-01","Transaction Endpoints","API Regression","",""
+"Verifies transaction list filtering by status=SUCCESS and method=MPESA.
+
+**Endpoint:** GET /api/v1/transaction
+**Params:** page=0, size=20, period=month, status=SUCCESS, method=MPESA
+**Expected:** HTTP 200 with records where every entry has display_status=Success and payment_method=MPESA.","188","TC-TXN-005 — Transaction List: Filtered by status=SUCCESS and method=MPESA","RMS Transaction API","2026-07-01","failed","2026-07-01","Transaction Endpoints","API Regression","",""
+"**What this test does:**
+Calls GET /spr-fetcher/api/v1/fetch/status with a valid Bearer token and verifies the response is HTTP 200 with a non-empty JSON object.
+
+**Why it matters:** This is the primary health/status endpoint for the SPR Fetcher. If it returns an error, operators cannot determine whether the service is running, what configuration it is using, or whether it can successfully reach the KCB API.","60915","TC-SF-001 — GET /api/v1/fetch/status: Returns 200 with service status object","RMS Platform Services","2026-07-01","passed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"**[KNOWN BUG — BUG-SF-002] — CORE FUNCTIONALITY BROKEN**
+
+**What this test does:**
+Posts to /spr-fetcher/api/v1/fetch/trigger with a valid Bearer token and verifies the response is 200 OK or 202 Accepted with a trigger acknowledgement.
+
+**Expected:** HTTP 200 or 202
+**Actual:** HTTP 504 Gateway Timeout or a connection-level failure (no HTTP response at all)
+
+**Root Cause (confirmed):** The status endpoint reports tokenInjectionEnabled=false (see BUG-SF-003). Without token injection, the spr-fetcher calls the KCB API without attaching a valid OAuth token. The KCB API either:
+  a. Hangs on the unauthenticated request, causing the gateway to time out (504), or
+  b. Resets the TCP connection immediately, causing a connection-level error (status 0)
+
+**Impact (Critical):** The entire data ingestion pipeline for KCB financial data is completely non-functional. No SPR (Statement Print) data can be fetched, which means the RMS dashboard will show stale or empty financial data.","62931","[BUG-SF-002] TC-SF-007 — POST /api/v1/fetch/trigger: Must return 200/202 (returns 504 or connection error)","RMS Platform Services","2026-07-01","failed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"Verifies that a valid PesaFlow webhook carrying a correct HMAC-SHA256 signature and a fresh ISO-8601 timestamp is accepted (HTTP 202) and that all downstream effects — Kafka message, ledger row, GridFS document, distributed trace, and Prometheus metric — are recorded correctly.","525","TC-INGEST-001 — Valid PesaFlow webhook with correct HMAC and fresh timestamp","rms-api-automation","2026-07-01","failed","2026-07-01","Module 1 — Payment Gateway Integration (Ingress Layer) > 2.1 HMAC and Edge Validation","","",""
+"**[BUG-ANA-004]**
+
+The `mcda_id` query parameter is supposed to filter analytics data by MCDA organisation.
+
+**Test scenarios:**
+- `?mcda_id=PLATFORM` → 200 with `mcda_id: ""ALL""` (filter ignored, no error)
+- `?mcda_id=invalid_xyz` → 200 with `mcda_id: ""ALL""` (invalid value silently ignored)
+- `?mcda_id=` (empty) → 200 with `mcda_id: ""ALL""` (empty silently ignored)
+
+**Expected:**
+- Valid known mcda_id → returns filtered data with `mcda_id` echoed back
+- Unknown mcda_id → 400 Bad Request (not silently fall back to ALL)
+
+**Impact:** Filtering is completely non-functional. API consumers cannot scope analytics to a specific MCDA organisation. Invalid values never trigger validation errors.","604","[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)","RMS Deep Regression","2026-07-01","failed","2026-07-01","Analytics API — Deep Tests","Analytics API","",""
+"**[KNOWN BUG — BUG-SF-007]**
+
+**What this test does:**
+Sends GET /api/v1/fetch/status with ""Accept: application/xml"" to test content negotiation. The service only produces application/json, so it should return 406.
+
+**Expected:** HTTP 406 Not Acceptable
+**Actual:** HTTP 500 Internal Server Error
+
+**Root Cause:** HttpMediaTypeNotAcceptableException is not handled globally, so it surfaces as a generic 500 instead of a proper 406 response.
+
+**Impact:** API clients that specify Accept: application/xml (common in enterprise integrations) receive a misleading 500 error rather than a clear 406 that would tell them to use application/json instead.","60223","[BUG-SF-007] TC-SF-013 — GET /api/v1/fetch/status with Accept: application/xml returns 500 (must be 406)","RMS Platform Services","2026-07-01","passed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"**[BUG-TXN-003]**
+
+Requesting a transaction detail for a UUID that does not exist in the database should return 404 Not Found, not 500 Internal Server Error.
+
+**Test UUID:** `00000000-0000-0000-0000-000000000000` (nil UUID — guaranteed not to exist)
+
+**Expected:** HTTP 404 with `""message"":""Transaction not found""`
+
+**Root Cause if 500:** The service does not check for null return from the repository and calls a method on a null object, causing NullPointerException.
+
+**Impact:** Clients cannot distinguish ""ID does not exist"" from ""server crashed"". Monitoring tools will alert on 500s caused by normal client requests.","601","[BUG-TXN-003] TC-TXN-003 — Non-existent UUID in transaction detail must return 404 (not 500)","RMS Deep Regression","2026-07-01","failed","2026-07-01","Transaction API — Edge Cases (requires valid TRANSACTION_API_TOKEN)","Transaction API","",""
+"**What this test does:**
+Parses the expires_at field and confirms it is:
+1. A valid ISO 8601 date string
+2. Strictly in the future (not already expired)
+
+**Why it matters:** If the cached token is served past its expiry, every call to the KCB API will fail with 401. The service must always return a token that is still valid.","60300","TC-OT-004 — GET /api/v1/token: expires_at is a future ISO 8601 timestamp","RMS Platform Services","2026-07-01","passed","2026-07-01","OAuth Token Service","API Regression","",""
+"**[BUG-XS-002]**
+
+The dashboard API returns different 401 error messages depending on whether an Authorization header was provided, allowing an attacker to enumerate token validity:
+
+- No Authorization header → `""Missing Authorization token""`
+- Invalid/expired token   → `""Invalid or expired token""`
+
+**Expected:** A single generic message for all 401 cases, e.g. `""Authentication required""`.
+
+**Impact:** An attacker learns whether their forged token was accepted at the auth layer or simply absent, helping them refine token-guessing attacks. It also confirms that the service separately handles ""no token"" and ""bad token"" — useful for bypassing auth probes.","503","[BUG-XS-002] TC-XS-002 — Dashboard 401 leaks whether token was present (token-presence enumeration)","RMS Deep Regression","2026-07-01","failed","2026-07-01","Cross-Service Consistency","Cross-Service","",""
+"**[BUG-DB-001]**
+
+Calling GET /dashboard/summary?period= (empty string) returns HTTP 200 instead of 400.
+
+**Expected:** HTTP 400 Bad Request with `""message"":""period must be one of: today, week, month, year, last-3-month, custom""`
+
+**Actual:** HTTP 200 with some undefined default period applied silently.
+
+**Impact:** Clients cannot detect they passed an invalid parameter. The response data is for an unspecified period — consuming it would be a silent correctness bug.","706","[BUG-DB-001] TC-DB-001 — period="""" (empty string) returns 200 with undefined default","RMS Deep Regression","2026-07-01","passed","2026-07-01","Dashboard API — Edge Cases (requires valid DASHBOARD_API_TOKEN)","Dashboard API","",""
+"**[BUG-ANA-001]**
+
+When GET /rms-analytics/api/v1/analytics/dashboard/summary is called with `Accept: text/html`, the server returns 406 Not Acceptable but the body is a Spring Boot Whitelabel Error Page:
+
+```html
+<html><body><h1>Whitelabel Error Page</h1>...
+<div id='created'>Tue Jun 09 15:24:09 EAT 2026</div>...
+```
+
+**Information leaked:**
+1. Spring Boot framework (confirms Java stack)
+2. Server timezone: **EAT** (East Africa Time, UTC+3) — reveals the server's geographic region
+3. Exact server timestamp at time of request
+4. Internal URL path: `/api/v1/analytics/dashboard/summary`
+
+**Expected:** 406 with a JSON error body (`{""status"":406,""error"":""Not Acceptable"",""message"":""...""}`)
+
+**Fix:** Register a global `HttpMediaTypeNotAcceptableException` handler that returns JSON.","156","[BUG-ANA-001] TC-ANA-001 — Spring Boot Whitelabel page leaks EAT server timezone on every 406","RMS Deep Regression","2026-07-01","failed","2026-07-01","Analytics API — Deep Tests","Analytics API","",""
+"**[BUG-ANA-003]**
+
+The analytics API response headers include:
+`Access-Control-Allow-Methods: GET,POST,PUT,DELETE,PATCH,OPTIONS`
+
+But every method except GET and OPTIONS returns 405 Method Not Allowed.
+
+**Expected:** `Access-Control-Allow-Methods: GET, OPTIONS` — only the methods the endpoint actually supports.
+
+**Impact:** CORS-aware browsers see POST/DELETE as ""allowed"" and may not pre-flight; the subsequent request is then rejected by the server with 405. This is confusing and can break CORS-aware HTTP clients that rely on the advertised methods list.","314","[BUG-ANA-003] TC-ANA-003 — CORS Access-Control-Allow-Methods advertises POST/DELETE but all return 405","RMS Deep Regression","2026-07-01","failed","2026-07-01","Analytics API — Deep Tests","Analytics API","",""
+"**[KNOWN BUG — BUG-OT-004]**
+
+**What this test does:**
+Calls GET /oauth-token/actuator/health and verifies it returns 200 with body {""status"":""UP""}.
+
+**Expected:** HTTP 200 with {""status"":""UP""}
+**Actual:** HTTP 504 Gateway Timeout
+
+**Root Cause:** The APISIX gateway has no route configured for /oauth-token/actuator/*. The request never reaches the Spring Boot actuator endpoint.
+
+**Impact:** The following are all broken:
+1. Kubernetes liveness and readiness probes (causing unnecessary pod restarts or    marking the pod as not-ready)
+2. Uptime monitoring dashboards
+3. CI/CD pipeline health checks that gate deployments","60130","[BUG-OT-004] TC-OT-012 — GET /actuator/health: Must return 200 UP (returns 504)","RMS Platform Services","2026-07-01","failed","2026-07-01","OAuth Token Service","API Regression","",""
+"**[BUG-XS-004]**
+
+The Access-Control-Allow-Origin: * header is returned on ALL responses — including 401 Unauthorized error responses. This means the error body is readable cross-origin by any website.
+
+**What this enables:**
+A malicious page can make a cross-origin request with no token, read the 401 body (`""Missing Authorization token""`), and use the distinct error messages (BUG-XS-002) to enumerate token validity from the user's browser — all without any credentials.
+
+**Expected:** CORS headers should only be present on successful responses to allowed origins.
+Error responses should not have CORS headers, or should restrict them to the trusted origin.","387","[BUG-XS-004] TC-XS-004 — CORS wildcard * is present even on 401 error responses","RMS Deep Regression","2026-07-01","failed","2026-07-01","Cross-Service Consistency","Cross-Service","",""
+"**[KNOWN BUG — BUG-GW-002]**
+
+**What this test does:**
+Sends an OPTIONS (CORS preflight) request to /spr-fetcher/api/v1/fetch/status with ""Origin: https://evil.com"" to test whether the gateway accepts arbitrary origins.
+
+**Expected:** The server should NOT reflect ""https://evil.com"" in the access-control-allow-origin header. It should either return the trusted origin or omit the header entirely.
+
+**Actual:** HTTP 200 with access-control-allow-origin: * — meaning ""https://evil.com"" is implicitly allowed (wildcard accepts all origins)
+
+**Why this matters:**
+CORS preflights are the browser's way of asking ""is this origin allowed to make this cross-origin request?"" By answering ""*"", the gateway tells the browser to allow ALL origins, including malicious ones. This negates CORS as a security mechanism entirely.
+
+**Fix:** Replace the wildcard CORS plugin with an explicit origin allowlist in APISIX. The OPTIONS response should only reflect the requesting origin if it is in the allowlist.","116","[BUG-GW-002] TC-GW-003 — OPTIONS preflight must not allow arbitrary origins (e.g. https://evil.com)","RMS Platform Services","2026-07-01","failed","2026-07-01","Gateway / Security","API Regression","",""
+"**[KNOWN BUG — BUG-GW-003]**
+
+**What this test does:**
+Calls GET /spr-fetcher/api/v1/fetch/status and inspects the Server response header.
+
+**Expected:** Server header is absent or contains a generic value (e.g. ""API Gateway"")
+**Actual:** Server: APISIX/3.16.0
+
+**Why this is a security concern:**
+Advertising the specific gateway software and version gives attackers a starting point:
+1. They can look up CVEs specific to APISIX 3.16.0
+2. They can craft exploit attempts targeting known vulnerabilities in that version
+3. They can confirm which gateway is in use, helping map the infrastructure
+
+**This is an OWASP A05:2021 Security Misconfiguration finding.**
+
+**Fix:** In the APISIX configuration, set the ""server_tokens"" option to ""false"" or configure a custom Server header value that does not disclose the product or version.","60094","[BUG-GW-003] TC-GW-004 — Server response header must not disclose APISIX version","RMS Platform Services","2026-07-01","passed","2026-07-01","Gateway / Security","API Regression","",""
+"**[BUG-TXN-002]**
+
+Passing `size=0` to the transaction list returns HTTP 200 with an empty `data` array. A page size of zero is meaningless — it returns no records and provides no useful information.
+
+**Expected:** HTTP 400 with `""message"":""size must be between 1 and 100""`
+
+**Impact:** Clients that compute size dynamically might accidentally send size=0 (e.g. when viewport calculation rounds down) and receive a silently empty response with no error, causing them to show an empty state incorrectly.","527","[BUG-TXN-002] TC-TXN-002 — Transaction list: size=0 returns 200 with empty data (should be 400)","RMS Deep Regression","2026-07-01","passed","2026-07-01","Transaction API — Edge Cases (requires valid TRANSACTION_API_TOKEN)","Transaction API","",""
+"**[BUG-DB-005]**
+
+Passing SQL-like strings in the `from_date` parameter causes HTTP 500 instead of 400.
+
+**Test input:** `from_date=2026-01-01 OR 1=1`
+
+**Expected:** HTTP 400 — the input should be rejected at the validation layer as an invalid date.
+
+**Actual:** HTTP 500 — the server throws an unhandled exception.
+
+**Note:** This is a validation failure test, not an active SQL injection test. The fact that it returns 500 instead of 400 proves the input is not validated before reaching the data layer. Whether actual injection occurs depends on the ORM/query builder being used — parameterised queries would prevent execution but should not prevent 400 validation.","1460","[BUG-DB-005] TC-DB-005 — SQL-like input in from_date causes HTTP 500 (unhandled exception)","RMS Deep Regression","2026-07-01","passed","2026-07-01","Dashboard API — Edge Cases (requires valid DASHBOARD_API_TOKEN)","Dashboard API","",""
+"**[KNOWN BUG — BUG-OT-002] — CRITICAL SECURITY VULNERABILITY**
+
+**What this test does:**
+Sends an intentionally malformed Bearer token (""invalid.token.here"") to GET /api/v1/token and verifies the server rejects it with 401.
+
+**Expected:** HTTP 401 Unauthorized
+**Actual:** HTTP 200 OK — returns a valid KCB API access_token!
+
+**Root Cause:** The oauth-token service does NOT verify the incoming RMS JWT. It accepts any non-empty string as a Bearer token and returns the KCB API token regardless.
+
+**Impact (Critical):** The KCB OAuth token is obtainable by any caller who sends any string in the Authorization header. This bypasses the entire authentication layer and exposes a sensitive third-party token to unauthorized parties.
+
+**Fix:** Validate the incoming RMS Bearer token (signature + expiry + issuer claims) against the RMS auth public key before returning the KCB token.","60111","[BUG-OT-002] TC-OT-010 — GET /api/v1/token: Invalid Bearer token returns 200 (auth NOT enforced)","RMS Platform Services","2026-07-01","failed","2026-07-01","OAuth Token Service","API Regression","",""
+"**[BUG-DB-009]**
+
+The `/dashboard/revenue-trend` `data.labels[]` array contains duplicate month names like `[""Jan"",""Feb"",...,""Dec"",""Jan"",""Feb"",""Mar"",...]` because the 12-month rolling window spans two calendar years but the labels only show month names without the year.
+
+**Example:** If today is June 2026, the trend covers July 2025 – June 2026, giving two ""Jun"" entries (Jun 2025 at the end of the old year, Jun 2026 at the current end).
+
+**Expected:** Labels should include the year: `""Jun 2025""`, `""Jun 2026""`.
+
+**Impact:** Chart libraries that use labels as keys will de-duplicate them, causing data points to overlap. A chart showing 12 months will appear to show fewer data points.","308","[BUG-DB-009] TC-DB-009 — revenue-trend labels[] contains duplicate month names (no year)","RMS Deep Regression","2026-07-01","passed","2026-07-01","Dashboard API — Edge Cases (requires valid DASHBOARD_API_TOKEN)","Dashboard API","",""
+"**What this test does:**
+Executes the full cache eviction cycle in three steps:
+1. GET /token → record Token A (issued_at = TA)
+2. DELETE /token/cache → evict the cached token (expect 204)
+3. GET /token → record Token B (issued_at = TB)
+
+Asserts that TB >= TA — Token B is at least as fresh as Token A, meaning the eviction caused the service to re-fetch or serve the same still-valid token.
+
+**Why it matters:** This proves the eviction-then-refresh path works end-to-end.","120066","TC-OT-008 — Cache eviction + re-fetch: new token issued_at >= original issued_at","RMS Platform Services","2026-07-01","broken","2026-07-01","OAuth Token Service","API Regression","",""
+"**[BUG-TXN-004]**
+
+Calling the transaction summary with `period=custom` but omitting `from_date` and `to_date` should return 400 Bad Request because the custom period is meaningless without a date range.
+
+**Expected:** HTTP 400 with `""message"":""from_date and to_date are required when period=custom""`
+
+**Impact:** The API silently applies an undefined date range, returning data for an unknown period. Clients have no way to know which time window the response covers.","482","[BUG-TXN-004] TC-TXN-004 — period=custom without from_date/to_date returns 200 (should be 400)","RMS Deep Regression","2026-07-01","passed","2026-07-01","Transaction API — Edge Cases (requires valid TRANSACTION_API_TOKEN)","Transaction API","",""
+"**[KNOWN BUG — BUG-SF-001]**
+
+**What this test does:**
+Calls GET /spr-fetcher/api/v1/fetch/status without any Authorization header and verifies the server rejects the request with 401.
+
+**Expected:** HTTP 401 Unauthorized
+**Actual:** HTTP 200 OK — returns the full status object with no auth required
+
+**Sensitive data exposed without authentication:**
+- accountNumber: the KCB bank account number used for all financial queries
+- apiEndpoint: the full URL of the internal KCB upstream API (internal topology)
+- tokenInjectionEnabled: reveals internal service configuration state
+- mockEnabled: reveals whether the system is in mock/test mode
+
+**Impact:** An external attacker with no credentials can enumerate the bank account number, the upstream KCB API URL, and internal service flags. This information can be used to craft targeted attacks against the KCB API or to understand the system architecture for further exploitation.","60165","[BUG-SF-001] TC-SF-006 — GET /api/v1/fetch/status: No auth returns 200 (sensitive data exposed without auth)","RMS Platform Services","2026-07-01","failed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"**[KNOWN BUG — BUG-OT-005]**
+
+**What this test does:**
+Sends a PUT request to /api/v1/token (which is a GET-only endpoint) and verifies the server responds with 405 Method Not Allowed.
+
+**Expected:** HTTP 405 Method Not Allowed with an Allow header listing the valid methods
+**Actual:** HTTP 500 Internal Server Error
+
+**Root Cause:** The service throws an unhandled exception instead of returning a proper 405 response when it receives an unsupported HTTP method.
+
+**Impact:** API clients that probe method availability or send the wrong method receive a confusing 500 error instead of a clear 405 with the Allow header. This also indicates unhandled exception paths that could mask real server errors.","376","[BUG-OT-005] TC-OT-013 — PUT /api/v1/token: Must return 405 Method Not Allowed (returns 500)","RMS Platform Services","2026-07-01","passed","2026-07-01","OAuth Token Service","API Regression","",""
+"Verifies that a webhook carrying a zeroed-out (tampered) HMAC signature is rejected with HTTP 401 Unauthorized and nothing is written to PostgreSQL or MongoDB.","213","TC3 — Invalid HMAC Signature — Security","rms-api-automation","2026-07-01","passed","2026-07-01","RMS — PG Webhook Transactions (supertest)","","",""
+"**[BUG-DB-002]**
+
+The `period` parameter is strictly case-sensitive:
+- `period=week` → 200 OK
+- `period=WEEK` → 400 Bad Request
+- `period=Week` → 400 Bad Request
+
+**Expected:** The API should either accept case-insensitive values and normalise them, OR document explicitly that values are case-sensitive.
+
+**Additionally:** The 400 error message omits `today` and `last-3-month` from the valid values list, leaving developers guessing.
+
+**Impact:** Developers who naturally capitalise query params or use uppercase constants will get unexpected 400 errors with no useful guidance.","694","[BUG-DB-002] TC-DB-002 — period is case-sensitive (period=WEEK → 400, no documentation)","RMS Deep Regression","2026-07-01","failed","2026-07-01","Dashboard API — Edge Cases (requires valid DASHBOARD_API_TOKEN)","Dashboard API","",""
+"Verifies that HEAD requests to the analytics endpoint return 200 with no response body. HEAD support is required by HTTP/1.1 (RFC 7231) for any resource that supports GET.","1115","TC-ANA-007 — Analytics HEAD method returns 200 with no body (correct behaviour)","RMS Deep Regression","2026-07-01","passed","2026-07-01","Analytics API — Deep Tests","Analytics API","",""
+"**[BUG-TXN-006]**
+
+The `total_volume` object has `change_pct` AND `change_direction` fields.
+The `total_refunds` object has `amount` and `currency` but is missing `change_direction`.
+
+**Field comparison:**
+- `total_volume`: `{amount, currency, change_pct, change_direction}` ✓
+- `total_refunds`: `{amount, currency}` — `change_pct` and `change_direction` MISSING
+
+**Expected:** `total_refunds` should also include `change_pct` and `change_direction` to show whether refunds are increasing or decreasing.
+
+**Impact:** The ""Total Refunds"" card on the dashboard cannot show a trend direction. An increase in refunds is a key business signal that would otherwise go undetected.","1158","[BUG-TXN-006] TC-TXN-006 — total_refunds missing change_direction field","RMS Deep Regression","2026-07-01","skipped","2026-07-01","Transaction API — Edge Cases (requires valid TRANSACTION_API_TOKEN)","Transaction API","",""
+"Verifies that a webhook carrying a zeroed-out HMAC signature is rejected with HTTP 401 Unauthorized and nothing is written to PostgreSQL or MongoDB.","186","TC3 — Invalid HMAC Signature — Security","rms-api-automation","2026-07-01","failed","2026-07-01","RMS — PG Webhook Integration","","",""
+"**[BUG-DB-006]**
+
+When `from_date` equals `to_date` (requesting a single day's data), the API returns 400 Bad Request instead of 200 with the single day's data.
+
+**Expected:** HTTP 200 — a single day is a valid date range (inclusive bounds).
+
+**Root Cause:** The validator checks `from_date < to_date` (strict less-than) instead of `from_date <= to_date` (less-than-or-equal).
+
+**Impact:** Users who want to view a single day's dashboard metrics cannot do so via the custom period. They must use `period=today` only for ""today"", with no ability to view historical single days.","899","[BUG-DB-006] TC-DB-006 — Single-day range (from_date=to_date) returns 400 (validator too strict)","RMS Deep Regression","2026-07-01","failed","2026-07-01","Dashboard API — Edge Cases (requires valid DASHBOARD_API_TOKEN)","Dashboard API","",""
+"**[KNOWN BUG — BUG-OT-001]**
+
+**What this test does:**
+Calls GET /api/v1/token without any Authorization header and verifies the server rejects the request with 401 Unauthorized.
+
+**Expected:** HTTP 401 Unauthorized (fail-fast at the gateway)
+**Actual:** HTTP 504 Gateway Timeout
+
+**Root Cause:** The APISIX gateway does not enforce authentication on this route. The unauthenticated request is forwarded to the upstream oauth-token service, which then attempts to contact the KCB authorization server but times out.
+
+**Impact:** Every unauthenticated call ties up an upstream connection and waits for the full gateway timeout period (60+ seconds), wasting resources and potentially masking the real error from the caller.","60118","[BUG-OT-001] TC-OT-009 — GET /api/v1/token: No Authorization header must return 401 (returns 504)","RMS Platform Services","2026-07-01","failed","2026-07-01","OAuth Token Service","API Regression","",""
+"**What this test does:**
+Verifies that the /fetch/status response contains exactly these 7 required fields:
+service, status, mockEnabled, tokenInjectionEnabled, accountNumber, apiEndpoint, checkedAt
+
+**Why it matters:** Each field serves a specific operational purpose. A missing field means the status response is incomplete and cannot be relied upon for monitoring:
+- service: identifies which microservice responded
+- status: UP/DOWN health indicator
+- mockEnabled: whether the service is using live or mock data
+- tokenInjectionEnabled: whether OAuth token is injected into KCB calls
+- accountNumber: the KCB account being queried
+- apiEndpoint: the upstream KCB API URL in use
+- checkedAt: timestamp of the last status check","60120","TC-SF-002 — GET /api/v1/fetch/status: All 7 required fields are present and non-null","RMS Platform Services","2026-07-01","failed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"Verifies that a FAILED transaction from the PG is stored correctly with failure details and recon_status PENDING. RMS stores all transactions regardless of gateway status — the reconciliation engine processes them separately.","163","TC5 — Failed Transaction — INSUFFICIENT_FUNDS","rms-api-automation","2026-07-01","failed","2026-07-01","RMS — PG Webhook Transactions (supertest)","","",""
+"Verifies that a webhook whose requestExpiryTimestamp is in the past is rejected with HTTP 400 bad_request. The HMAC signature is valid; only the timestamp fails.","202","TC4 — Expired requestExpiryTimestamp — Validation","rms-api-automation","2026-07-01","failed","2026-07-01","RMS — PG Webhook Integration","","",""
+"Verifies the GET /summary?period=week endpoint.
+
+**Endpoint:** GET /api/v1/transaction/summary
+**Param:** period=week
+**Expected:** HTTP 200 with total_volume, success_rate, total_refunds fields.
+
+This validates the default weekly aggregation used on the RMS dashboard.","112","TC-TXN-001 — Summary: Default period (week)","RMS Transaction API","2026-07-01","failed","2026-07-01","Transaction Endpoints","API Regression","",""
+"**[BUG-TXN-005]**
+
+The `success_rate.change_pct` field in the transaction summary is always `null` regardless of the period requested. This means the dashboard cannot show whether the success rate is improving or declining compared to the previous period.
+
+**Expected:** `change_pct` is a number (positive = improved, negative = declined)
+
+**Contrast:** `total_volume.change_pct` and `total_volume.change_direction` ARE populated.
+
+**Root Cause:** The success rate change calculation is not implemented — it likely requires comparing the current period's rate against the prior period's rate, which requires two queries.
+
+**Impact:** The ""Success Rate"" card on the RMS dashboard never shows a trend arrow, leaving operators unable to detect declining payment success rates.","223","[BUG-TXN-005] TC-TXN-005 — success_rate.change_pct is always null (no period-over-period tracking)","RMS Deep Regression","2026-07-01","skipped","2026-07-01","Transaction API — Edge Cases (requires valid TRANSACTION_API_TOKEN)","Transaction API","",""
+"**[BUG-XS-001]**
+
+Each service returns a different JSON shape for error responses, making it impossible to write a single error-handling routine on the client.
+
+| Service | Error Fields |
+|---------|-------------|
+| Analytics (405) | `{timestamp, status, error, path}` — no `message` field |
+| Dashboard (401) | `{status, error, message}` — no `timestamp` or `path` |
+| Transaction (401) | `{status, error, message}` — same as Dashboard |
+
+**Expected:** Uniform error schema: `{status, error, message, timestamp, path}` across all services.
+
+**Impact:** Frontend error-handling code must branch per-service. New services will likely add a 4th format. Clients cannot reliably extract a user-facing error message.","1593","[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services","RMS Deep Regression","2026-07-01","failed","2026-07-01","Cross-Service Consistency","Cross-Service","",""
+"**What this test does:**
+Parses the apiEndpoint field and verifies it is a well-formed HTTPS URL.
+
+**Why it matters:** apiEndpoint is the upstream KCB API URL the spr-fetcher will call when the trigger fires. An invalid, HTTP-only, or malformed URL means all trigger calls will fail. HTTPS is required because the request includes a Bearer token — HTTP would expose that token in transit.","60605","TC-SF-004 — GET /api/v1/fetch/status: apiEndpoint is a valid HTTPS URL","RMS Platform Services","2026-07-01","failed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"**[KNOWN BUG — BUG-OT-009]**
+
+**What this test does:**
+Checks that the GET /api/v1/token response includes a Cache-Control: no-store header.
+
+**Why it matters:**
+The response contains a sensitive Bearer token (access_token). Without Cache-Control: no-store, HTTP proxies, CDNs, and browser caches may store this token. Any system that intercepts or caches this response gains access to the KCB API token.
+
+**RFC 6749 §10.3 (OAuth 2.0):** Token responses that contain access tokens MUST include ""Cache-Control: no-store"" and ""Pragma: no-cache"" to prevent token leakage through caches.
+
+**Actual behaviour:** The response contains no Cache-Control header at all.","60203","[BUG-OT-009] TC-OT-006 — GET /api/v1/token: Response must include Cache-Control: no-store","RMS Platform Services","2026-07-01","failed","2026-07-01","OAuth Token Service","API Regression","",""
+"Confirms the API enforces authentication and rejects unauthenticated requests.
+
+**Endpoint:** GET /api/v1/transaction/summary?period=today
+**Headers:** No Authorization header
+**Expected:** HTTP 401 Unauthorized with an error message.
+
+This validates that the API is properly secured and not publicly accessible.","125","TC-TXN-009 — Security: Returns 401 when Authorization header is missing","RMS Transaction API","2026-07-01","passed","2026-07-01","Transaction Endpoints","API Regression","",""
+"**[BUG-DB-003]**
+
+Passing an impossible date like `from_date=2026-02-30` (February 30th does not exist) causes the server to return HTTP 500 Internal Server Error instead of 400 Bad Request.
+
+**Expected:** HTTP 400 with `""message"":""from_date is not a valid date (2026-02-30 does not exist)""`
+
+**Root Cause:** The date is not validated before being passed to the database/ORM layer, which throws an unhandled exception when it tries to parse February 30th.
+
+**Impact:** Exposes unhandled server exceptions to clients; 500 errors are monitored as outages in alerting systems — a single bad client request can trigger false alarms.","925","[BUG-DB-003] TC-DB-003 — Impossible date (Feb-30) causes HTTP 500 instead of 400","RMS Deep Regression","2026-07-01","passed","2026-07-01","Dashboard API — Edge Cases (requires valid DASHBOARD_API_TOKEN)","Dashboard API","",""
+"**What this test does:**
+Validates the token time window is logically consistent:
+- issued_at is in the past (token was issued before now)
+- expires_at is in the future (token has not yet expired)
+- issued_at < expires_at (the window is non-zero and correctly ordered)
+
+**Why it matters:** An inverted or zero-width time window indicates a clock-skew problem or a misconfigured token lifetime, which would immediately invalidate the token.","60143","TC-OT-005 — GET /api/v1/token: issued_at < now < expires_at (valid time window)","RMS Platform Services","2026-07-01","passed","2026-07-01","OAuth Token Service","API Regression","",""
+"**What this test does:**
+Checks that checkedAt is:
+1. A parseable ISO 8601 datetime
+2. Not in the future
+3. No more than 60 seconds old
+
+**Why it matters:** If checkedAt is stale (older than 60 s), the status response is a cached snapshot from a previous check, not a live reading. Operators relying on this endpoint for real-time health decisions would be looking at outdated data.
+
+A freshness window of 60 seconds is reasonable for a service that checks itself on every request or on a short poll interval.","60142","TC-SF-005 — GET /api/v1/fetch/status: checkedAt is a recent ISO 8601 timestamp (< 60 s old)","RMS Platform Services","2026-07-01","failed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"**[KNOWN BUG — BUG-OT-007]**
+
+**What this test does:**
+Sends GET /api/v1/token with ""Accept: text/html"" to test content negotiation. The service only produces application/json, so it should return 406 Not Acceptable.
+
+**Expected:** HTTP 406 Not Acceptable
+**Actual:** HTTP 500 Internal Server Error
+
+**Root Cause:** The service does not handle the HttpMediaTypeNotAcceptableException thrown by Spring when it cannot satisfy the Accept header. The exception propagates to the global error handler and is returned as a generic 500.
+
+**Impact:** API clients that probe content types receive a misleading 500 error. Automated API scanners may flag this as a server crash rather than a normal negotiation failure.","60461","[BUG-OT-007] TC-OT-015 — GET /api/v1/token with Accept: text/html returns 500 (must be 406)","RMS Platform Services","2026-07-01","failed","2026-07-01","OAuth Token Service","API Regression","",""
+"**[KNOWN BUG — BUG-GW-001]**
+
+**What this test does:**
+Calls GET /oauth-token/api/v1/token and inspects the CORS response headers.
+
+**Expected CORS headers:**
+- access-control-allow-origin: https://rms.dev.demo-fsit.com (explicit trusted origin)
+- access-control-allow-headers: Content-Type, Authorization (explicit list)
+
+**Actual CORS headers:**
+- access-control-allow-origin: * (wildcard — any origin)
+- access-control-allow-headers: * (wildcard — any header)
+- access-control-allow-methods: GET,POST,PUT,DELETE,PATCH,OPTIONS
+
+**Why this is dangerous:**
+Wildcard CORS means any website on the internet can make cross-origin requests to the oauth-token service from a user's browser. Combined with BUG-OT-002 (no auth enforcement), a malicious page can silently obtain the KCB API token on behalf of any user who visits it, even if that user has no RMS account.
+
+**Fix:** Replace the APISIX global CORS plugin wildcard with an explicit allow-list containing only the RMS frontend origin.","1277","[BUG-GW-001] TC-GW-001 — CORS allow-origin must not be wildcard ""*"" on oauth-token routes","RMS Platform Services","2026-07-01","failed","2026-07-01","Gateway / Security","API Regression","",""
+"Verifies the paginated transaction list for period=today sorted by trnx_date desc.
+
+**Endpoint:** GET /api/v1/transaction
+**Params:** page=0, size=20, period=today, sort_by=trnx_date, sort_dir=desc
+**Expected:** HTTP 200 with a paginated response containing total_count, page, size, total_pages, and data array.","175","TC-TXN-004 — Transaction List: Default today (sorted by trnx_date desc)","RMS Transaction API","2026-07-01","failed","2026-07-01","Transaction Endpoints","API Regression","",""
+"**[KNOWN BUG — BUG-SF-006]**
+
+**What this test does:**
+Sends a GET request to /api/v1/fetch/trigger (a POST-only endpoint) and verifies the server returns 405 Method Not Allowed.
+
+**Expected:** HTTP 405 Method Not Allowed with Allow: POST header
+**Actual:** HTTP 500 Internal Server Error
+
+**Root Cause:** Same as BUG-SF-005 — unhandled MethodNotAllowedException produces 500.
+
+**Common scenario where this occurs:** A developer calls GET /fetch/trigger expecting to see the trigger status or last-run time. Instead they get a confusing 500 with no indication that they used the wrong HTTP method.","60312","[BUG-SF-006] TC-SF-012 — GET /api/v1/fetch/trigger: Must return 405 Method Not Allowed (returns 500)","RMS Platform Services","2026-07-01","passed","2026-07-01","SPR Fetcher Service","API Regression","",""
+"**[BUG-DB-008]**
+
+The `/dashboard/monthly-revenue` endpoint accepts invalid year values without returning 400:
+
+| Input | Expected | Actual |
+|-------|----------|--------|
+| year=0 | 400 | 200 (defaults to current year) |
+| year= (empty) | 400 | 200 (defaults to current year) |
+| year=9999 | 400 or 200 with empty data | 200 |
+| year=abc | 400 | ? |
+
+**Expected:** Reject years outside a sensible range (e.g. 2000–2099) with 400 Bad Request.","788","[BUG-DB-008] TC-DB-008 — monthly-revenue: invalid year values accepted without 400","RMS Deep Regression","2026-07-01","failed","2026-07-01","Dashboard API — Edge Cases (requires valid DASHBOARD_API_TOKEN)","Dashboard API","",""
+"**[KNOWN BUG — BUG-GW-004]**
+
+**What this test does:**
+Checks that the following security headers are present on the spr-fetcher status response:
+
+| Header | Required Value | Purpose |
+|--------|---------------|---------|
+| X-Content-Type-Options | nosniff | Prevents MIME-type sniffing attacks |
+| X-Frame-Options | DENY or SAMEORIGIN | Prevents clickjacking |
+| Strict-Transport-Security | max-age >= 31536000 | Enforces HTTPS-only connections |
+| X-XSS-Protection | 0 (disabled — modern browsers use CSP) | Legacy XSS protection |
+
+**Actual:** None of these headers are present on any API response.
+
+**Impact:**
+- Without X-Content-Type-Options: browsers may interpret a JSON response as executable script in some edge cases
+- Without Strict-Transport-Security: users on the same network can be downgraded to HTTP via a man-in-the-middle attack, exposing Bearer tokens in transit
+- Without X-Frame-Options: API responses could be embedded in hidden iframes to perform clickjacking on authenticated users
+
+**This is an OWASP A05:2021 Security Misconfiguration finding.**
+
+**Fix:** Add these headers via the APISIX response-rewrite plugin on all routes.","60516","[BUG-GW-004] TC-GW-005 — Required security response headers must be present on all API routes","RMS Platform Services","2026-07-01","failed","2026-07-01","Gateway / Security","API Regression","",""
+"Verifies that a FAILED transaction is stored correctly with failure details and recon_status PENDING. RMS stores all transactions regardless of gateway status; the reconciliation engine processes them separately.","193","TC5 — Failed Transaction — INSUFFICIENT_FUNDS","rms-api-automation","2026-07-01","failed","2026-07-01","RMS — PG Webhook Integration","","",""
+"Deep validation of GET /api/v1/transaction/filter-options — verifies all four arrays are present, non-empty, and contain the expected known values.","712","TC-TXN-007 — Filter options: statuses, methods, txn_types, categories are all non-empty arrays","RMS Deep Regression","2026-07-01","failed","2026-07-01","Transaction API — Edge Cases (requires valid TRANSACTION_API_TOKEN)","Transaction API","",""
+"Verifies that a valid PesaFlow webhook carrying a correct HMAC-SHA256 signature and a fresh ISO-8601 timestamp is accepted (HTTP 202) and that all downstream effects — Kafka message, ledger row, GridFS document, distributed trace, and Prometheus metric — are recorded correctly.","488","TC-INGEST-001 — Valid PesaFlow webhook with correct HMAC and fresh timestamp","rms-api-automation","2026-07-01","failed","2026-07-01","Module 1 — Payment Gateway Integration (Ingress Layer) > 2.1 HMAC and Edge Validation","","",""
+"","0","TC2 — Exact Duplicate — Redis Dedup","rms-api-automation","2026-07-01","skipped","2026-07-01","RMS — PG Webhook Transactions (supertest) > TC1 + TC2 — Happy Path and Duplicate Dedup","","",""
+"**[BUG-ANA-002]**
+
+The analytics API 405 body is:
+```json
+{""timestamp"":""..."",""status"":405,""error"":""Method Not Allowed"",""path"":""...""}
+```
+
+The dashboard and transaction APIs use:
+```json
+{""status"":401,""error"":""Unauthorized"",""message"":""Missing Authorization token""}
+```
+
+The analytics 405 has `timestamp` and `path` but **no `message`** field.
+The dashboard 401 has `message` but **no `timestamp` or `path`**.
+
+**Expected:** All services must return `{status, error, message, timestamp, path}` for all errors.
+
+**Impact:** Clients cannot reliably read `res.body.message` for analytics errors — they would get `undefined`.","878","[BUG-ANA-002] TC-ANA-002 — Analytics 405 body missing ""message"" field (inconsistent with all other APIs)","RMS Deep Regression","2026-07-01","failed","2026-07-01","Analytics API — Deep Tests","Analytics API","",""
+"Verifies keyword search on the transaction list endpoint.
+
+**Endpoint:** GET /api/v1/transaction
+**Params:** page=0, size=20, period=week, q=CONF-MAY26
+**Expected:** HTTP 200 with a paginated list. Each returned record's transaction_confirmation_id should contain the search term ""CONF-MAY26"".","151","TC-TXN-006 — Transaction List: Search by keyword ""CONF-MAY26""","RMS Transaction API","2026-07-01","failed","2026-07-01","Transaction Endpoints","API Regression","",""
+"Verifies the GET /summary endpoint with period=custom and explicit date range.
+
+**Endpoint:** GET /api/v1/transaction/summary
+**Params:** period=custom, from_date=2026-01-01, to_date=2026-05-22
+**Expected:** HTTP 200 with valid summary data for the specified date range.
+
+Validates flexible date-range filtering used for custom reporting periods.","166","TC-TXN-003 — Summary: Custom date range (2026-01-01 → 2026-05-22)","RMS Transaction API","2026-07-01","failed","2026-07-01","Transaction Endpoints","API Regression","",""
+"**[KNOWN BUG — BUG-OT-006]**
+
+**What this test does:**
+Sends a DELETE request to /api/v1/token (a GET-only endpoint — the DELETE endpoint is /api/v1/token/cache) and verifies the server returns 405 Method Not Allowed.
+
+**Expected:** HTTP 405 Method Not Allowed
+**Actual:** HTTP 500 Internal Server Error
+
+**Root Cause:** Same as BUG-OT-005 — unsupported methods trigger an unhandled exception in the service instead of a standard 405 response.
+
+**Additional Risk:** A client who mistypes the path and sends DELETE /api/v1/token instead of DELETE /api/v1/token/cache will receive a confusing 500 instead of a helpful 405 that would guide them to the correct endpoint.","205","[BUG-OT-006] TC-OT-014 — DELETE /api/v1/token: Must return 405 Method Not Allowed (returns 500)","RMS Platform Services","2026-07-01","passed","2026-07-01","OAuth Token Service","API Regression","",""
+"Verifies that every field in the `today` object is a proper JavaScript number, not a string.
+
+Other dashboard endpoints (today-payments) have been found returning monetary values as strings. This test confirms whether analytics has the same issue.","161","TC-ANA-006 — Analytics field types: all numeric fields must be numbers not strings","RMS Deep Regression","2026-07-01","passed","2026-07-01","Analytics API — Deep Tests","Analytics API","",""

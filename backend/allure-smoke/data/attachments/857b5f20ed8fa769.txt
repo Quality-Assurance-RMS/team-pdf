@@ -1,0 +1,26 @@
+[TC-DMREV-004] year=0 â†’ 400  data.year=undefined
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-004 â€” BUG-MREV-01: year=0 must return 400, not silently default to current year
+────────────────────────────────────────────────────────────
+10:46:58.747  ·  Test started: "TC-DMREV-004 â€” BUG-MREV-01: year=0 must return 400, not silently default to current year"
+10:46:58.748  ○  ▶ Step 1 â€” Send GET with year=0
+10:46:58.758  ·    GET /api/v1/dashboard/monthly-revenue
+10:46:59.048  ✔    HTTP 400 received
+10:46:59.063  ✔  Step completed in 315 ms
+10:46:59.063  ○  ▶ Step 2 â€” BUG-MREV-01: year=0 must return 400
+10:46:59.064  ·    Asserting: BUG-MREV-01 — year=0 must return 400
+10:46:59.146  ✔    All assertions passed
+10:46:59.146  ✔  Step completed in 82 ms
+10:46:59.146  ○  ▶ Step 3 â€” Verify year=-1 correctly returns 400 (contrast)
+10:46:59.148  ·    GET /api/v1/dashboard/monthly-revenue
+10:46:59.276  ✔    HTTP 400 received
+10:46:59.276  ·    Asserting: response structure and values
+10:46:59.346  ✘  Step failed after 200 ms — expect(received).toContain(expected) // indexOf
+
+Matcher error: received value must not be null nor undefined
+
+Received has value: undefined
+10:46:59.349  ·  Test run complete: "TC-DMREV-004 â€” BUG-MREV-01: year=0 must return 400, not silently default to current year"
+────────────────────────────────────────────────────────────
+

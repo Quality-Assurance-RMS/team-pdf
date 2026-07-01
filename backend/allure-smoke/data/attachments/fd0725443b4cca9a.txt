@@ -1,0 +1,12 @@
+10:48:40.354  ·  Test started: "TC-DTPAY-009 â€" BUG-TPAY-08: CORS wildcard origin is insecure for financial API"
+10:48:40.358  ○  ▶ Step 1 â€" Fetch response and inspect CORS headers
+10:48:40.462  ·    GET /api/v1/dashboard/today-payments (Origin: https://evil-attacker.example.com)
+10:48:40.740  ✔    HTTP 403 received
+10:48:40.746  ✔  Step completed in 387 ms
+10:48:40.746  ○  ▶ Step 2 â€" Validate HTTP 200
+10:48:40.747  ·    Asserting: HTTP 200
+10:48:40.759  ✘  Step failed after 13 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m403[39m
+10:48:40.762  ·  Test run complete: "TC-DTPAY-009 â€" BUG-TPAY-08: CORS wildcard origin is insecure for financial API"

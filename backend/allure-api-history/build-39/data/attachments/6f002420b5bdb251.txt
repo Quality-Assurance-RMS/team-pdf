@@ -1,0 +1,25 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SF-005 — GET /api/v1/fetch/status: checkedAt is a recent ISO 8601 timestamp (< 60 s old)
+────────────────────────────────────────────────────────────
+10:47:24.351  ·  Test started: "TC-SF-005 — GET /api/v1/fetch/status: checkedAt is a recent ISO 8601 timestamp (< 60 s old)"
+10:47:24.762  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+10:47:24.853  ·    GET /api/v1/fetch/status
+10:48:25.148  ✔    HTTP 200 received
+10:48:25.153  ✔  Step completed in 60391 ms
+10:48:25.153  ○  ▶ Step 2 — Assert HTTP 200
+10:48:25.155  ·    Asserting: HTTP status is 200
+10:48:25.236  ✔    All assertions passed
+10:48:25.236  ✔  Step completed in 82 ms
+10:48:25.236  ○  ▶ Step 3 — Validate checkedAt recency
+10:48:25.237  ·    Asserting: checkedAt is parseable and within the last 60 seconds
+10:48:25.254  ✘  Step failed after 18 ms — checkedAt must not be in the future
+
+expect(received).toBeGreaterThanOrEqual(expected)
+
+Expected: >= 0
+Received:    -10799.822
+10:48:25.260  ·  Test run complete: "TC-SF-005 — GET /api/v1/fetch/status: checkedAt is a recent ISO 8601 timestamp (< 60 s old)"
+────────────────────────────────────────────────────────────
+
