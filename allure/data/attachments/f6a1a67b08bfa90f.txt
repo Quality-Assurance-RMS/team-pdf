@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Refund Transaction" heading and count are visible
+────────────────────────────────────────────────────────────
+06:55:55.357  ·  Test started: "TC1 — "Refund Transaction" heading and count are visible"
+06:55:55.425  ○  ▶ Step 1 — Navigate to Refunds page
+06:55:55.426  ·    Opening the Refunds page
+06:55:57.302  ✔    Navigation to Refunds page initiated successfully
+06:55:57.494  ✔  Step completed in 2069 ms
+06:55:57.494  ○  ▶ Step 2 — Verify page loads successfully
+06:55:57.495  ·    Waiting for all Refunds page elements to render
+06:56:12.573  ✘  Step failed after 15079 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/refunds/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+06:56:18.703  ·  Test run complete: "TC1 — "Refund Transaction" heading and count are visible"
+────────────────────────────────────────────────────────────
+

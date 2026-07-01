@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — User Role filter dropdown is visible
+────────────────────────────────────────────────────────────
+07:03:26.258  ·  Test started: "TC1 — User Role filter dropdown is visible"
+07:03:27.072  ○  ▶ Step 1 — Navigate to User Management page
+07:03:27.074  ·    Opening the User Management page
+07:03:29.767  ✔    Navigation to User Management page initiated successfully
+07:03:31.559  ✔  Step completed in 4488 ms
+07:03:31.559  ○  ▶ Step 2 — Verify page loads successfully
+07:03:31.562  ·    Waiting for all User Management page elements to render
+07:03:46.590  ✘  Step failed after 15031 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/user/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+07:03:48.503  ·  Test run complete: "TC1 — User Role filter dropdown is visible"
+────────────────────────────────────────────────────────────
+

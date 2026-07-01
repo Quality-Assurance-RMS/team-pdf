@@ -1,0 +1,22 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — should allow resending OTP
+────────────────────────────────────────────────────────────
+07:03:20.169  ·  Test started: "should allow resending OTP"
+07:03:20.461  ○  ▶ Step 1 — Navigate to login page and submit credentials
+07:03:20.462  ·    Opening the login page
+07:03:22.276  ·    Submitting login credentials to trigger OTP flow
+07:03:23.352  ✔    Credentials submitted — expecting redirect to OTP verification
+07:03:23.353  ✔  Step completed in 2892 ms
+07:03:23.353  ○  ▶ Step 2 — Verify OTP page is loaded
+07:03:23.353  ·    Waiting for OTP verification page to render
+07:03:23.657  ✔    OTP verification page is loaded
+07:03:23.657  ✔  Step completed in 305 ms
+07:03:23.657  ○  ▶ Step 3 — Click Resend OTP and verify page stays on verification
+07:03:23.658  ·    Clicking the Resend OTP link to dispatch a new code
+07:03:24.178  ·    Verifying the app remains on the verification page after resend
+07:03:24.367  ✔    App stayed on verification page — new OTP dispatched successfully
+07:03:24.367  ✔  Step completed in 710 ms
+07:03:26.078  ·  Test run complete: "should allow resending OTP"
+────────────────────────────────────────────────────────────
+

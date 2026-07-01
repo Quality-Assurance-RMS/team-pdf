@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Settled" status badge is visible in the table
+────────────────────────────────────────────────────────────
+07:00:48.773  ·  Test started: "TC1 — "Settled" status badge is visible in the table"
+07:00:50.380  ○  ▶ Step 1 — Navigate to Settlements page
+07:00:50.448  ·    Opening the Settlements page
+07:00:52.848  ✔    Navigation to Settlements page initiated successfully
+07:00:54.364  ✔  Step completed in 3984 ms
+07:00:54.364  ○  ▶ Step 2 — Verify page loads successfully
+07:00:54.366  ·    Waiting for all Settlements page elements to render
+07:00:54.876  ✔    Settlements page is fully loaded with all required elements
+07:00:55.252  ✔  Step completed in 888 ms
+07:00:55.252  ○  ▶ Step 3 — At least one "Settled" badge is visible
+07:00:55.253  ·    Asserting visibility: Settled status badge in the table
+07:01:10.275  ✘  Step failed after 15023 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('table tbody').getByText(/^Settled$/i).first()
+Expected: visible
+Timeout: 15000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 15000ms
+  - waiting for locator('table tbody').getByText(/^Settled$/i).first()
+
+07:01:17.070  ·  Test run complete: "TC1 — "Settled" status badge is visible in the table"
+────────────────────────────────────────────────────────────
+
