@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All table column headers are visible
+────────────────────────────────────────────────────────────
+08:42:27.438  ·  Test started: "TC1 — All table column headers are visible"
+08:42:27.663  ○  ▶ Step 1 — Navigate to Refunds page
+08:42:27.665  ·    Opening the Refunds page
+08:42:29.536  ✔    Navigation to Refunds page initiated successfully
+08:42:29.810  ✔  Step completed in 2147 ms
+08:42:29.810  ○  ▶ Step 2 — Verify page loads successfully
+08:42:29.811  ·    Waiting for all Refunds page elements to render
+08:42:44.880  ✘  Step failed after 15070 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/refunds/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+08:42:46.930  ·  Test run complete: "TC1 — All table column headers are visible"
+────────────────────────────────────────────────────────────
+
