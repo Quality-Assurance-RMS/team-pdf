@@ -1,0 +1,14 @@
+01:56:44.499  ·  Test started: "TC-OT-004 — GET /api/v1/token: expires_at is a future ISO 8601 timestamp"
+01:56:44.590  ○  ▶ Step 1 — Send GET /api/v1/token
+01:56:44.592  ·    GET /api/v1/token
+01:57:44.773  ✔    HTTP 200 received
+01:57:44.799  ✔  Step completed in 60209 ms
+01:57:44.799  ○  ▶ Step 2 — Assert HTTP 200
+01:57:44.801  ·    Asserting: HTTP status is 200
+01:57:44.975  ✔    All assertions passed
+01:57:44.975  ✔  Step completed in 176 ms
+01:57:44.975  ○  ▶ Step 3 — Parse expires_at and assert it is in the future
+01:57:44.977  ·    Asserting: expires_at is a parseable timestamp in the future
+01:57:45.172  ✔    All assertions passed
+01:57:45.173  ✔  Step completed in 197 ms
+01:57:45.179  ·  Test run complete: "TC-OT-004 — GET /api/v1/token: expires_at is a future ISO 8601 timestamp"

@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-005 — GET /api/v1/token: issued_at < now < expires_at (valid time window)
+────────────────────────────────────────────────────────────
+01:57:45.583  ·  Test started: "TC-OT-005 — GET /api/v1/token: issued_at < now < expires_at (valid time window)"
+01:57:45.688  ○  ▶ Step 1 — Send GET /api/v1/token
+01:57:45.692  ·    GET /api/v1/token
+01:58:46.114  ✔    HTTP 200 received
+01:58:46.116  ✔  Step completed in 60428 ms
+01:58:46.116  ○  ▶ Step 2 — Assert HTTP 200
+01:58:46.117  ·    Asserting: HTTP status is 200
+01:58:46.133  ✔    All assertions passed
+01:58:46.133  ✔  Step completed in 17 ms
+01:58:46.133  ○  ▶ Step 3 — Validate issued_at < now < expires_at
+01:58:46.135  ·    Asserting: issued_at is in the past and expires_at is in the future
+01:58:46.200  ✔    All assertions passed
+01:58:46.200  ✔  Step completed in 67 ms
+01:58:46.202  ·  Test run complete: "TC-OT-005 — GET /api/v1/token: issued_at < now < expires_at (valid time window)"
+────────────────────────────────────────────────────────────
+

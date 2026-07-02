@@ -1,0 +1,18 @@
+01:54:42.681  ·  Test started: "TC-OT-002 — GET /api/v1/token: access_token is a valid RS256 JWT"
+01:54:42.798  ○  ▶ Step 1 — Send GET /api/v1/token
+01:54:42.801  ·    GET /api/v1/token
+01:55:42.970  ✔    HTTP 200 received
+01:55:42.974  ✔  Step completed in 60175 ms
+01:55:42.974  ○  ▶ Step 2 — Assert HTTP 200
+01:55:42.974  ·    Asserting: HTTP status is 200
+01:55:42.989  ✔    All assertions passed
+01:55:42.989  ✔  Step completed in 15 ms
+01:55:42.989  ○  ▶ Step 3 — Decode JWT and check 3-part structure
+01:55:42.991  ·    Asserting: JWT has exactly 3 dot-separated parts
+01:55:43.091  ✔    All assertions passed
+01:55:43.091  ✔  Step completed in 103 ms
+01:55:43.091  ○  ▶ Step 4 — Decode header and assert alg=RS256
+01:55:43.098  ·    Asserting: JWT header algorithm is RS256
+01:55:43.113  ✔    All assertions passed
+01:55:43.114  ✔  Step completed in 23 ms
+01:55:43.172  ·  Test run complete: "TC-OT-002 — GET /api/v1/token: access_token is a valid RS256 JWT"

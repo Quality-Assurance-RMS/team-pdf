@@ -1,0 +1,17 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/actuator/health] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-OT-004] TC-OT-012 — GET /actuator/health: Must return 200 UP (returns 504)
+────────────────────────────────────────────────────────────
+01:57:21.398  ·  Test started: "[BUG-OT-004] TC-OT-012 — GET /actuator/health: Must return 200 UP (returns 504)"
+01:57:21.696  ○  ▶ Step 1 — Send GET /actuator/health
+01:57:21.768  ·    GET /actuator/health
+01:58:21.930  ✔    HTTP 200 received
+01:58:21.978  ✔  Step completed in 60282 ms
+01:58:21.978  ○  ▶ Step 2 — Assert 200 with status=UP (BUG: returns 504)
+01:58:21.980  ·    Asserting: HTTP 200 and body status is "UP"
+01:58:22.003  ✔    All assertions passed
+01:58:22.003  ✔  Step completed in 25 ms
+01:58:22.008  ·  Test run complete: "[BUG-OT-004] TC-OT-012 — GET /actuator/health: Must return 200 UP (returns 504)"
+────────────────────────────────────────────────────────────
+
