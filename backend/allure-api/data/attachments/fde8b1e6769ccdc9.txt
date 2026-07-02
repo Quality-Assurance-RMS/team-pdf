@@ -1,0 +1,8 @@
+01:01:26.273  ·  Test started: "[BUG-TXN-001] TC-TXN-001 — Transaction list: negative page (-1) must return 400"
+01:01:26.947  ○  ▶ Step 1 — GET list with page=-1
+01:01:26.962  ·    GET /api/v1/transaction?period=today&page=-1&size=10
+01:01:27.385  ✔    HTTP 400 received
+01:01:27.468  ·    Asserting: page=-1 returns 400 or 422
+01:01:27.557  ✔    All assertions passed
+01:01:27.561  ✔  Step completed in 614 ms
+01:01:27.571  ·  Test run complete: "[BUG-TXN-001] TC-TXN-001 — Transaction list: negative page (-1) must return 400"

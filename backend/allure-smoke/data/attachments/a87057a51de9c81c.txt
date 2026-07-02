@@ -1,0 +1,106 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-DTPAY-003] (typo check) GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/today-payments
+  â–º HTTP Status : 200
+  â–º Content-Type: application/json
+  â–º payments.successfullPaymentKES    : undefined  (type: undefined)
+  â–º payments.failerfullPaymentKES     : undefined  (type: undefined)
+  â–º payments.successfullPaymentDoller : undefined  (type: undefined)
+  â–º payments.failerfullPaymentDoller  : undefined  (type: undefined)
+  â–º payments.isPositive               : undefined
+  â–º payments.postiveValue             : undefined
+  â–º refunds.isPositive                : undefined
+  â–º refunds.postiveValue              : undefined
+  â–º revenue.isPositive                : undefined
+  â–º revenue.postiveValue              : undefined
+  â–º Full Body:
+{
+    "data": {
+        "payments": {
+            "successfulPaymentKES": "0",
+            "successfulPaymentDollar": "0",
+            "failedPaymentKES": "0",
+            "failedPaymentDollar": "0",
+            "kesChange": "+0.0%",
+            "kesIsPositive": true,
+            "usdChange": "+0.0%",
+            "usdIsPositive": true,
+            "failKesChange": "+0.0%",
+            "failKesIsPositive": true,
+            "failUsdChange": "+0.0%",
+            "failUsdIsPositive": true
+        },
+        "refunds": {
+            "successfulPaymentKES": "0",
+            "successfulPaymentDollar": "0",
+            "failedPaymentKES": "0",
+            "failedPaymentDollar": "0",
+            "kesChange": "+0.0%",
+            "kesIsPositive": true,
+            "usdChange": "+0.0%",
+            "usdIsPositive": true,
+            "failKesChange": "+0.0%",
+            "failKesIsPositive": true,
+            "failUsdChange": "+0.0%",
+            "failUsdIsPositive": true
+        },
+        "revenue": {
+            "successfulPaymentKES": "0",
+            "successfulPaymentDollar": "0",
+            "failedPaymentKES": "0",
+            "failedPaymentDollar": "0",
+            "kesChange": "+0.0%",
+            "kesIsPositive": true,
+            "usdChange": "+0.0%",
+            "usdIsPositive": true,
+            "failKesChange": "+0.0%",
+            "failKesIsPositive": true,
+            "failUsdChange": "+0.0%",
+            "failUsdIsPositive": true
+        }
+    }
+}
+  â–º Headers:
+    Cache-Control      : MISSING
+    X-Content-Type-Opt : MISSING
+    X-Frame-Options    : MISSING
+    Access-Control-Allow-Origin  : *
+    Access-Control-Allow-Methods : GET,POST,PUT,DELETE,PATCH,OPTIONS
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-003 â€" BUG-TPAY-01: Field name typos in API response
+────────────────────────────────────────────────────────────
+01:05:27.774  ·  Test started: "TC-DTPAY-003 â€" BUG-TPAY-01: Field name typos in API response"
+01:05:27.776  ○  ▶ Step 1 â€" Fetch today-payments response
+01:05:27.860  ·    GET /api/v1/dashboard/today-payments
+01:05:28.157  ✔    HTTP 200 received
+01:05:28.251  ✔  Step completed in 475 ms
+01:05:28.251  ○  ▶ Step 2 â€" Validate HTTP 200
+01:05:28.253  ·    Asserting: HTTP 200
+01:05:28.263  ✔    All assertions passed
+01:05:28.263  ✔  Step completed in 12 ms
+01:05:28.263  ○  ▶ Step 3 â€" Check "successfullPaymentKES" typo (double-l)
+01:05:28.271  ·    Asserting: successfulPaymentKES (single-l) is present instead of the typo field
+01:05:28.273  ✔    All assertions passed
+01:05:28.275  ✔  Step completed in 11 ms
+01:05:28.275  ○  ▶ Step 4 â€" Check "successfullPaymentDoller" typos (double-l + Doller)
+01:05:28.350  ·    Asserting: successfulPaymentDollar (correct spelling) is present
+01:05:28.353  ✔    All assertions passed
+01:05:28.353  ✔  Step completed in 79 ms
+01:05:28.353  ○  ▶ Step 5 â€" Check "failerfullPaymentKES" typo ("failer" + "full")
+01:05:28.359  ·    Asserting: failedPaymentKES (correct name) is present
+01:05:28.377  ✔    All assertions passed
+01:05:28.378  ✔  Step completed in 24 ms
+01:05:28.378  ○  ▶ Step 6 â€" Check "failerfullPaymentDoller" typo ("failer" + "Doller")
+01:05:28.447  ·    Asserting: failedPaymentDollar (correct name) is present
+01:05:28.449  ✔    All assertions passed
+01:05:28.450  ✔  Step completed in 72 ms
+01:05:28.450  ○  ▶ Step 7 â€" Check "postiveValue" typo (missing i)
+01:05:28.454  ·    Asserting: positiveValue (correct spelling) is present
+01:05:28.458  ✔    All assertions passed
+01:05:28.458  ✔  Step completed in 8 ms
+01:05:28.460  ·  Test run complete: "TC-DTPAY-003 â€" BUG-TPAY-01: Field name typos in API response"
+────────────────────────────────────────────────────────────
+

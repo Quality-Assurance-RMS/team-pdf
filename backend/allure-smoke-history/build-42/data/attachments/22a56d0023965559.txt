@@ -1,0 +1,18 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-004 â€” Field types: amounts are numbers, rates are numbers
+────────────────────────────────────────────────────────────
+01:04:51.246  ·  Test started: "TC-DSUM-004 â€” Field types: amounts are numbers, rates are numbers"
+01:04:51.271  ○  ▶ Step 1 â€” Validate each period returns numeric fields (not strings)
+01:04:51.273  ·    GET /api/v1/dashboard/summary?period=week
+01:04:51.359  ✔    HTTP 400 received
+01:04:51.359  ·    Asserting: numeric field types for all key fields
+01:04:51.369  ✘  Step failed after 98 ms — period=week  -> 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+01:04:51.371  ·  Test run complete: "TC-DSUM-004 â€” Field types: amounts are numbers, rates are numbers"
+────────────────────────────────────────────────────────────
+

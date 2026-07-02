@@ -1,0 +1,36 @@
+01:01:55.485  ·  Test started: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"
+01:01:55.658  ○  ▶ GET ?(no param) — No mcda_id param
+01:01:55.663  ·    GET /api/v1/analytics/dashboard/summary
+01:01:55.750  ✔    HTTP 200 received
+01:01:55.750  ·    Asserting: Request returns 200 without error
+01:01:55.770  ✔    All assertions passed
+01:01:55.772  ✔  Step completed in 114 ms
+01:01:55.772  ○  ▶ GET ?mcda_id=PLATFORM — Valid org PLATFORM
+01:01:55.773  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=PLATFORM
+01:01:55.876  ✔    HTTP 200 received
+01:01:55.876  ·    Asserting: Request returns 200 without error
+01:01:55.946  ✔    All assertions passed
+01:01:55.947  ✔  Step completed in 174 ms
+01:01:55.947  ○  ▶ GET ?mcda_id=invalid_xyz — Invalid org value
+01:01:55.948  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=invalid_xyz
+01:01:55.977  ✔    HTTP 200 received
+01:01:55.977  ·    Asserting: Request returns 200 without error
+01:01:55.983  ✔    All assertions passed
+01:01:55.983  ✔  Step completed in 36 ms
+01:01:55.983  ○  ▶ GET ?mcda_id= — Empty mcda_id
+01:01:55.984  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=
+01:01:56.076  ✔    HTTP 200 received
+01:01:56.076  ·    Asserting: Request returns 200 without error
+01:01:56.082  ✔    All assertions passed
+01:01:56.082  ✔  Step completed in 100 ms
+01:01:56.083  ○  ▶ Assert PLATFORM mcda_id is echoed back (BUG: returns "ALL")
+01:01:56.083  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=PLATFORM
+01:01:56.168  ✔    HTTP 200 received
+01:01:56.170  ·    Asserting: mcda_id=PLATFORM is echoed back in response
+01:01:56.178  ✘  Step failed after 95 ms — [BUG-ANA-004] ?mcda_id=PLATFORM must return mcda_id="PLATFORM"
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"PLATFORM"[39m
+Received: [31m"ALL"[39m
+01:01:56.180  ·  Test run complete: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"

@@ -1,0 +1,36 @@
+[TC-DMREV-009] POST â†’ 405  body: {"errorCode":405,"errorMessage":"POST not allowed. Supported methods: GET"}
+[TC-DMREV-009] PUT â†’ 405  body: {"errorCode":405,"errorMessage":"PUT not allowed. Supported methods: GET"}
+[TC-DMREV-009] DELETE â†’ 405  body: {"errorCode":405,"errorMessage":"DELETE not allowed. Supported methods: GET"}
+[TC-DMREV-009] PATCH â†’ 405  body: {"errorCode":405,"errorMessage":"PATCH not allowed. Supported methods: GET"}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-009 â€” BUG-MREV-06: Wrong HTTP methods must return 405, not 500
+────────────────────────────────────────────────────────────
+01:04:24.359  ·  Test started: "TC-DMREV-009 â€” BUG-MREV-06: Wrong HTTP methods must return 405, not 500"
+01:04:24.360  ○  ▶ POST must return 405
+01:04:24.371  ·    GET /api/v1/dashboard/monthly-revenue
+01:04:24.650  ✔    HTTP 405 received
+01:04:24.662  ·    Asserting: response structure and values
+01:04:24.747  ✔    All assertions passed
+01:04:24.748  ✔  Step completed in 388 ms
+01:04:24.748  ○  ▶ PUT must return 405
+01:04:24.750  ·    GET /api/v1/dashboard/monthly-revenue
+01:04:24.845  ✔    HTTP 405 received
+01:04:24.850  ·    Asserting: response structure and values
+01:04:24.854  ✔    All assertions passed
+01:04:24.854  ✔  Step completed in 106 ms
+01:04:24.854  ○  ▶ DELETE must return 405
+01:04:24.857  ·    GET /api/v1/dashboard/monthly-revenue
+01:04:25.047  ✔    HTTP 405 received
+01:04:25.060  ·    Asserting: response structure and values
+01:04:25.071  ✔    All assertions passed
+01:04:25.071  ✔  Step completed in 217 ms
+01:04:25.071  ○  ▶ PATCH must return 405
+01:04:25.149  ·    GET /api/v1/dashboard/monthly-revenue
+01:04:25.247  ✔    HTTP 405 received
+01:04:25.255  ·    Asserting: response structure and values
+01:04:25.267  ✔    All assertions passed
+01:04:25.267  ✔  Step completed in 196 ms
+01:04:25.273  ·  Test run complete: "TC-DMREV-009 â€” BUG-MREV-06: Wrong HTTP methods must return 405, not 500"
+────────────────────────────────────────────────────────────
+

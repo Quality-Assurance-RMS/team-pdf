@@ -1,0 +1,35 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-SMK-004] GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction?page=0&size=20&period=today&sort_by=trnx_date&sort_dir=desc
+  â–º Params         : {"page":"0","size":"20","period":"today","sort_by":"trnx_date","sort_dir":"desc"}
+  â–º Status         : 400
+  â–º Content-Type   : application/json
+  â–º total_count    : N/A
+  â–º page           : N/A
+  â–º size           : N/A
+  â–º total_pages    : N/A
+  â–º records in page: 0
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SMK-004 â€" List: period=today sorted by trnx_date desc returns paginated data
+────────────────────────────────────────────────────────────
+01:06:07.052  ·  Test started: "TC-SMK-004 â€" List: period=today sorted by trnx_date desc returns paginated data"
+01:06:07.055  ○  ▶ Step 1 â€" Build request
+01:06:07.395  ✔  Step completed in 339 ms
+01:06:07.395  ○  ▶ Step 2 â€" Send GET /transaction?period=today and log response
+01:06:07.447  ·    GET /api/v1/transaction?period=today&sort_by=trnx_date&sort_dir=desc
+01:06:07.482  ✔    HTTP 400 received
+01:06:07.556  ✔  Step completed in 111 ms
+01:06:07.557  ○  ▶ Step 3 â€" Validate HTTP 200, pagination metadata, and data array
+01:06:07.563  ·    Asserting: HTTP 200, pagination metadata present, and data array non-empty
+01:06:07.651  ✘  Step failed after 94 ms — TC-SMK-004 â€" HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+01:06:07.657  ·  Test run complete: "TC-SMK-004 â€" List: period=today sorted by trnx_date desc returns paginated data"
+────────────────────────────────────────────────────────────
+

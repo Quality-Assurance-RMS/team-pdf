@@ -1,0 +1,57 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=year",
+    "params": {
+      "period": "year"
+    },
+    "headers": {
+      "Authorization": "Bearer ***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "content_type": "application/json",
+    "body": {
+      "data": {
+        "period": "year",
+        "dateFrom": "2026-01-01",
+        "dateTo": "2026-07-02",
+        "totalRevenueKes": {
+          "amount": 76432987,
+          "currency": "KES",
+          "changePct": 100,
+          "changeDirection": "up"
+        },
+        "totalRevenueUsd": {
+          "amount": 19450,
+          "currency": "USD",
+          "changePct": 0,
+          "changeDirection": "flat"
+        },
+        "totalTransactions": {
+          "count": 12702,
+          "countKes": 12701,
+          "countUsd": 1,
+          "changePctKes": 100,
+          "changeDirectionKes": "up",
+          "changePctUsd": 0,
+          "changeDirectionUsd": "flat"
+        },
+        "successfulPayments": {
+          "count": 12700,
+          "ratePct": 100,
+          "changePct": 0,
+          "changeDirection": "flat"
+        },
+        "failedPayments": {
+          "count": 2,
+          "ratePct": 0,
+          "changePct": 0,
+          "changeDirection": "flat"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-02-30&to_date=2026-03-01 → 400
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-04-31&to_date=2026-05-01 → 400
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-13-01&to_date=2026-13-15 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-003] TC-DB-003 — Impossible date (Feb-30) causes HTTP 500 instead of 400
+────────────────────────────────────────────────────────────
+01:01:45.962  ·  Test started: "[BUG-DB-003] TC-DB-003 — Impossible date (Feb-30) causes HTTP 500 instead of 400"
+01:01:46.147  ○  ▶ Impossible date: Feb 30
+01:01:46.150  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-02-30&to_date=2026-03-01
+01:01:46.254  ✔    HTTP 400 received
+01:01:46.263  ·    Asserting: Impossible date "2026-02-30" returns 400
+01:01:46.271  ✔    All assertions passed
+01:01:46.272  ✔  Step completed in 125 ms
+01:01:46.272  ○  ▶ Impossible date: Apr 31
+01:01:46.273  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-04-31&to_date=2026-05-01
+01:01:46.447  ✔    HTTP 400 received
+01:01:46.452  ·    Asserting: Impossible date "2026-04-31" returns 400
+01:01:46.454  ✔    All assertions passed
+01:01:46.454  ✔  Step completed in 182 ms
+01:01:46.454  ○  ▶ Impossible date: Month 13
+01:01:46.455  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-13-01&to_date=2026-13-15
+01:01:46.478  ✔    HTTP 400 received
+01:01:46.547  ·    Asserting: Impossible date "2026-13-01" returns 400
+01:01:46.551  ✔    All assertions passed
+01:01:46.552  ✔  Step completed in 97 ms
+01:01:46.557  ·  Test run complete: "[BUG-DB-003] TC-DB-003 — Impossible date (Feb-30) causes HTTP 500 instead of 400"
+────────────────────────────────────────────────────────────
+

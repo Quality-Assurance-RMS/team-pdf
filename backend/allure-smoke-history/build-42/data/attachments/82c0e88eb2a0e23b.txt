@@ -1,0 +1,20 @@
+01:01:29.962  ·  Test started: "TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields"
+01:01:29.964  ○  ▶ Step 1 – Build request
+01:01:30.773  ✔  Step completed in 809 ms
+01:01:30.773  ○  ▶ Step 2 – Send GET request and log response
+01:01:30.845  ·    GET /api/v1/analytics/dashboard/summary
+01:01:31.065  ✔    HTTP 200 received
+01:01:31.169  ✔  Step completed in 396 ms
+01:01:31.169  ○  ▶ Step 3 – Validate HTTP 200 and Content-Type
+01:01:31.170  ·    Asserting: HTTP 200, body defined, Content-Type application/json
+01:01:31.365  ✔    All assertions passed
+01:01:31.365  ✔  Step completed in 196 ms
+01:01:31.366  ○  ▶ Step 4 – Validate top-level fields: mcda_id and today
+01:01:31.367  ·    Asserting: mcda_id present, today present, types correct
+01:01:31.657  ✔    All assertions passed
+01:01:31.657  ✔  Step completed in 292 ms
+01:01:31.657  ○  ▶ Step 5 – Validate all 8 required fields in today object
+01:01:31.663  ·    Asserting: all 8 required today.* fields present
+01:01:31.963  ✔    All assertions passed
+01:01:31.964  ✔  Step completed in 306 ms
+01:01:31.973  ·  Test run complete: "TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields"

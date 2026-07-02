@@ -1,0 +1,28 @@
+
+[TC-DSUM-002] no-auth  -> 401: {"status":401,"error":"Unauthorized","message":"Missing Authorization token"}
+
+[TC-DSUM-002] invalid-token  -> 401: {"status":401,"error":"Unauthorized","message":"Invalid or expired token"}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-002 â€” Auth guard: no token  -> 401, invalid token  -> 401
+────────────────────────────────────────────────────────────
+01:04:52.762  ·  Test started: "TC-DSUM-002 â€” Auth guard: no token  -> 401, invalid token  -> 401"
+01:04:52.764  ○  ▶ Step 1 â€” Send request with no Authorization header
+01:04:52.845  ·    GET /api/v1/dashboard/summary (no Authorization header)
+01:04:53.049  ✔    HTTP 401 received
+01:04:53.053  ✔  Step completed in 290 ms
+01:04:53.053  ○  ▶ Step 2 â€” Validate no-auth returns 401 with error body
+01:04:53.054  ·    Asserting: no-auth returns 401 with error body
+01:04:53.070  ✔    All assertions passed
+01:04:53.070  ✔  Step completed in 17 ms
+01:04:53.070  ○  ▶ Step 3 â€” Send request with invalid Bearer token
+01:04:53.072  ·    GET /api/v1/dashboard/summary (invalid Bearer token)
+01:04:53.269  ✔    HTTP 401 received
+01:04:53.271  ✔  Step completed in 201 ms
+01:04:53.271  ○  ▶ Step 4 â€” Validate invalid token returns 401
+01:04:53.272  ·    Asserting: invalid token returns 401 with error message
+01:04:53.280  ✔    All assertions passed
+01:04:53.280  ✔  Step completed in 9 ms
+01:04:53.282  ·  Test run complete: "TC-DSUM-002 â€” Auth guard: no token  -> 401, invalid token  -> 401"
+────────────────────────────────────────────────────────────
+
