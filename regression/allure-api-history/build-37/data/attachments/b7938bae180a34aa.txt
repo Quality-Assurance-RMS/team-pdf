@@ -1,0 +1,16 @@
+02:18:05.397  ·  Test started: "TC-OT-001 — GET /api/v1/token: Returns 200 with complete KCB token object"
+02:18:05.418  ○  ▶ Step 1 — Log request parameters
+02:18:05.504  ✔  Step completed in 86 ms
+02:18:05.504  ○  ▶ Step 2 — Send GET /api/v1/token
+02:18:05.505  ·    GET /api/v1/token
+02:19:05.800  ✔    HTTP 200 received
+02:19:05.904  ✔  Step completed in 60400 ms
+02:19:05.904  ○  ▶ Step 3 — Assert HTTP 200
+02:19:05.908  ·    Asserting: HTTP status is 200
+02:19:06.096  ✔    All assertions passed
+02:19:06.096  ✔  Step completed in 192 ms
+02:19:06.096  ○  ▶ Step 4 — Assert all four fields are present
+02:19:06.100  ·    Asserting: access_token, token_type, expires_at, issued_at are present
+02:19:06.319  ✔    All assertions passed
+02:19:06.320  ✔  Step completed in 224 ms
+02:19:06.402  ·  Test run complete: "TC-OT-001 — GET /api/v1/token: Returns 200 with complete KCB token object"

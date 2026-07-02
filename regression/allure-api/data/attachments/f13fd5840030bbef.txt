@@ -1,0 +1,27 @@
+[No-Auth GET /summary] status: 401 | body: {
+  "status": 401,
+  "error": "Unauthorized",
+  "message": "Missing Authorization token"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-009 — Security: Returns 401 when Authorization header is missing
+────────────────────────────────────────────────────────────
+02:26:56.214  ·  Test started: "TC-TXN-009 — Security: Returns 401 when Authorization header is missing"
+02:26:57.295  ○  ▶ Step 1 — Build unauthenticated request
+02:26:57.600  ✔  Step completed in 305 ms
+02:26:57.600  ○  ▶ Step 2 — Send GET /summary without Authorization header
+02:26:57.601  ·    GET /api/v1/transaction/summary?period=today (no auth)
+02:26:57.902  ✔    HTTP 401 received
+02:26:57.916  ✔  Step completed in 316 ms
+02:26:57.916  ○  ▶ Step 3 — Validate HTTP 401 or 403 status code
+02:26:57.917  ·    Asserting: status is 401 or 403
+02:26:58.005  ✔    All assertions passed
+02:26:58.007  ✔  Step completed in 91 ms
+02:26:58.007  ○  ▶ Step 4 — Validate error response body
+02:26:58.009  ·    Asserting: error response body has message or error field
+02:26:58.015  ✔    All assertions passed
+02:26:58.020  ✔  Step completed in 13 ms
+02:26:58.023  ·  Test run complete: "TC-TXN-009 — Security: Returns 401 when Authorization header is missing"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,18 @@
+02:22:40.825  ·  Test started: "TC1 — Search transaction ID input is visible"
+02:22:41.733  ○  ▶ Step 1 — Navigate to Refunds page
+02:22:41.795  ·    Opening the Refunds page
+02:22:44.113  ✔    Navigation to Refunds page initiated successfully
+02:22:47.113  ✔  Step completed in 5380 ms
+02:22:47.113  ○  ▶ Step 2 — Verify page loads successfully
+02:22:47.116  ·    Waiting for all Refunds page elements to render
+02:23:02.307  ✘  Step failed after 15194 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/refunds/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/dashboard"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    29 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"[22m
+
+02:23:08.708  ·  Test run complete: "TC1 — Search transaction ID input is visible"

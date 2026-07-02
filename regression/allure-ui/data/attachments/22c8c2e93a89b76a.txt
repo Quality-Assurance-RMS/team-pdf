@@ -1,0 +1,16 @@
+02:29:50.024  ·  Test started: "should show error when wrong OTP is entered"
+02:29:50.828  ○  ▶ Step 1 — Navigate to login page and submit credentials
+02:29:50.896  ·    Opening the login page
+02:29:54.193  ·    Submitting login credentials to trigger OTP flow
+02:29:56.814  ✔    Credentials submitted — expecting redirect to OTP verification
+02:29:56.814  ✔  Step completed in 5986 ms
+02:29:56.814  ○  ▶ Step 2 — Verify OTP page is loaded
+02:29:56.815  ·    Waiting for OTP verification page to render
+02:29:57.809  ✔    OTP verification page is loaded
+02:29:57.809  ✔  Step completed in 995 ms
+02:29:57.809  ○  ▶ Step 3 — Enter wrong OTP and verify error state
+02:29:57.810  ·    Entering a deliberately wrong OTP value: 0000
+02:30:00.701  ·    Verifying the app remains on the verification page
+02:30:00.904  ✔    App stayed on verification page — wrong OTP was correctly rejected
+02:30:00.905  ✔  Step completed in 3095 ms
+02:30:03.419  ·  Test run complete: "should show error when wrong OTP is entered"
