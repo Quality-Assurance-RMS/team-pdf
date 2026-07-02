@@ -1,0 +1,20 @@
+01:37:43.675  ·  Test started: "TC2 — KPI cards display non-empty numeric values"
+01:37:44.075  ○  ▶ Step 1 — Navigate to Dashboard page
+01:37:44.076  ·    Opening the Dashboard page
+01:37:47.068  ✔    Navigation to Dashboard initiated successfully
+01:37:51.083  ✔  Step completed in 7008 ms
+01:37:51.083  ○  ▶ Step 2 — Verify page loads successfully
+01:37:51.084  ·    Waiting for all Dashboard elements to render
+01:37:51.882  ✔    Dashboard page is fully loaded with all required elements visible
+01:37:52.575  ✔  Step completed in 1492 ms
+01:37:52.575  ○  ▶ Step 3 — Revenue generated — value matches expected format
+01:37:52.578  ·    Reading Revenue generated value from the page
+01:37:52.864  ✔    Revenue generated value captured: Revenue generated
+
+Revenue across all ministries
+01:37:52.884  ✘  Step failed after 308 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+Expected pattern: [32m/KES\s*[\d,]+(\.\d+)?/i[39m
+Received string:  [31m"Revenue generated·[39m
+[31mRevenue across all ministries"[39m
+01:37:55.581  ·  Test run complete: "TC2 — KPI cards display non-empty numeric values"

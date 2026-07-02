@@ -1,0 +1,66 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All table column headers are visible
+────────────────────────────────────────────────────────────
+01:45:41.379  ·  Test started: "TC1 — All table column headers are visible"
+01:45:41.772  ○  ▶ Step 1 — Navigate to Transactions page
+01:45:41.774  ·    Opening the Transactions page
+01:45:42.799  ✔    Navigation to Transactions page initiated successfully
+01:45:44.369  ✔  Step completed in 2596 ms
+01:45:44.369  ○  ▶ Step 2 — Verify page loads successfully
+01:45:44.370  ·    Waiting for all Transactions page elements to render
+01:45:44.791  ✔    Transactions page is fully loaded with all required elements
+01:45:45.687  ✔  Step completed in 1318 ms
+01:45:45.687  ○  ▶ Step 3 — Column "Transaction ID" header is visible
+01:45:45.688  ·    Asserting visibility: Transaction ID column header
+01:45:45.785  ✔    Transaction ID column header is visible
+01:45:46.489  ✔  Step completed in 802 ms
+01:45:46.489  ○  ▶ Step 4 — Column "Invoice No" header is visible
+01:45:46.489  ·    Asserting visibility: Invoice No column header
+01:45:46.589  ✔    Invoice No column header is visible
+01:45:47.278  ✔  Step completed in 790 ms
+01:45:47.280  ○  ▶ Step 5 — Column "Date" header is visible
+01:45:47.284  ·    Asserting visibility: Date column header
+01:45:47.375  ✔    Date column header is visible
+01:45:47.875  ✔  Step completed in 595 ms
+01:45:47.875  ○  ▶ Step 6 — Column "MCDA" header is visible
+01:45:47.876  ·    Asserting visibility: MCDA column header
+01:45:47.966  ✔    MCDA column header is visible
+01:45:48.171  ✔  Step completed in 297 ms
+01:45:48.171  ○  ▶ Step 7 — Column "Department" header is visible
+01:45:48.172  ·    Asserting visibility: Department column header
+01:45:48.196  ✔    Department column header is visible
+01:45:48.577  ✔  Step completed in 406 ms
+01:45:48.577  ○  ▶ Step 8 — Column "Method" header is visible
+01:45:48.578  ·    Asserting visibility: Method column header
+01:45:48.599  ✔    Method column header is visible
+01:45:48.983  ✔  Step completed in 406 ms
+01:45:48.983  ○  ▶ Step 9 — Column "Currency" header is visible
+01:45:48.985  ·    Asserting visibility: Currency column header
+01:45:49.074  ✔    Currency column header is visible
+01:45:49.299  ✔  Step completed in 316 ms
+01:45:49.299  ○  ▶ Step 10 — Column "Amount" header is visible
+01:45:49.301  ·    Asserting visibility: Amount column header
+01:45:49.375  ✔    Amount column header is visible
+01:45:49.673  ✔  Step completed in 373 ms
+01:45:49.673  ○  ▶ Step 11 — Column "Status" header is visible
+01:45:49.673  ·    Asserting visibility: Status column header
+01:45:49.766  ✔    Status column header is visible
+01:45:50.071  ✔  Step completed in 398 ms
+01:45:50.071  ○  ▶ Step 12 — Column "Action" header is visible
+01:45:50.072  ·    Asserting visibility: Action column header
+01:45:50.193  ✘  Step failed after 123 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('columnheader', { name: /Action/i })
+Expected: visible
+Error: strict mode violation: getByRole('columnheader', { name: /Action/i }) resolved to 2 elements:
+    1) <th class="p-3 text-center font-normal">Transaction ID</th> aka getByRole('columnheader', { name: 'Transaction ID' })
+    2) <th class="p-3 text-center font-normal">Action</th> aka getByRole('columnheader', { name: 'Action', exact: true })
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for getByRole('columnheader', { name: /Action/i })
+
+01:45:53.071  ·  Test run complete: "TC1 — All table column headers are visible"
+────────────────────────────────────────────────────────────
+
