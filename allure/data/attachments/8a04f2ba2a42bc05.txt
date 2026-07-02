@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — "All Status" filter dropdown is visible
+────────────────────────────────────────────────────────────
+01:30:22.502  ·  Test started: "TC2 — "All Status" filter dropdown is visible"
+01:30:22.818  ○  ▶ Step 1 — Navigate to User Management page
+01:30:22.821  ·    Opening the User Management page
+01:30:23.625  ✔    Navigation to User Management page initiated successfully
+01:30:24.631  ✔  Step completed in 1812 ms
+01:30:24.631  ○  ▶ Step 2 — Verify page loads successfully
+01:30:24.632  ·    Waiting for all User Management page elements to render
+01:30:39.717  ✘  Step failed after 15086 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/user/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    31 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+01:30:44.004  ·  Test run complete: "TC2 — "All Status" filter dropdown is visible"
+────────────────────────────────────────────────────────────
+

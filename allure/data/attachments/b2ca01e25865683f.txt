@@ -1,0 +1,31 @@
+01:21:50.598  ·  Test started: "TC1 — All three KPI cards are visible on the dashboard"
+01:21:51.107  ○  ▶ Step 1 — Navigate to Dashboard page
+01:21:51.109  ·    Opening the Dashboard page
+01:21:56.118  ✔    Navigation to Dashboard initiated successfully
+01:22:00.713  ✔  Step completed in 9606 ms
+01:22:00.713  ○  ▶ Step 2 — Verify page loads successfully
+01:22:00.714  ·    Waiting for all Dashboard elements to render
+01:22:01.594  ✔    Dashboard page is fully loaded with all required elements visible
+01:22:02.201  ✔  Step completed in 1488 ms
+01:22:02.201  ○  ▶ Step 3 — "Revenue generated" card is visible
+01:22:02.207  ·    Asserting visibility: "Revenue generated" KPI card
+01:22:02.340  ✔    "Revenue generated" card is visible and rendered on the page
+01:22:03.601  ✔  Step completed in 1400 ms
+01:22:03.601  ○  ▶ Step 4 — "No of Transactions" card is visible
+01:22:03.603  ·    Asserting visibility: "No of Transactions" KPI card
+01:22:03.788  ✔    "No of Transactions" card is visible and rendered on the page
+01:22:04.614  ✔  Step completed in 1014 ms
+01:22:04.614  ○  ▶ Step 5 — "Payments" card is visible
+01:22:04.615  ·    Asserting visibility: "Payments" KPI card
+01:22:09.814  ✘  Step failed after 5200 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByText(/^Payments$/i).first()
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 5000ms[22m
+[2m  - waiting for getByText(/^Payments$/i).first()[22m
+
+01:22:15.310  ·  Test run complete: "TC1 — All three KPI cards are visible on the dashboard"

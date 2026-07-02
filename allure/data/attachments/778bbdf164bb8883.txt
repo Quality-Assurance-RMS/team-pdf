@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Success, Initiated, Approved, and Rejected badges are all visible
+────────────────────────────────────────────────────────────
+01:25:21.648  ·  Test started: "TC1 — Success, Initiated, Approved, and Rejected badges are all visible"
+01:25:21.892  ○  ▶ Step 1 — Navigate to Refunds page
+01:25:21.894  ·    Opening the Refunds page
+01:25:22.728  ✔    Navigation to Refunds page initiated successfully
+01:25:23.411  ✔  Step completed in 1519 ms
+01:25:23.411  ○  ▶ Step 2 — Verify page loads successfully
+01:25:23.412  ·    Waiting for all Refunds page elements to render
+01:25:38.440  ✘  Step failed after 15029 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/refunds/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+01:25:40.322  ·  Test run complete: "TC1 — Success, Initiated, Approved, and Rejected badges are all visible"
+────────────────────────────────────────────────────────────
+
