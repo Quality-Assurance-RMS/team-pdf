@@ -1,0 +1,47 @@
+[TC-ASUM-011] Headers:
+{
+  "content-type": "application/json",
+  "transfer-encoding": "chunked",
+  "date": "Thu, 02 Jul 2026 17:22:52 GMT",
+  "server": "RMS-Gateway",
+  "access-control-allow-origin": "*",
+  "access-control-allow-methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+  "access-control-max-age": "3600",
+  "access-control-expose-headers": "*",
+  "access-control-allow-headers": "*",
+  "connection": "close"
+}
+[TC-ASUM-011] Security audit: {
+  "cache-control": "MISSING",
+  "x-content-type-options": "MISSING",
+  "x-frame-options": "MISSING",
+  "strict-transport-security": "MISSING",
+  "content-security-policy": "MISSING",
+  "vary": "MISSING"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-011 – BUG-ASUM-10: Cache-Control and security headers must be present
+────────────────────────────────────────────────────────────
+17:22:52.193  ·  Test started: "TC-ASUM-011 – BUG-ASUM-10: Cache-Control and security headers must be present"
+17:22:52.195  ○  ▶ Step 1 – Fetch response headers
+17:22:52.292  ·    GET /api/v1/analytics/dashboard/summary
+17:22:52.609  ✔    HTTP 200 received
+17:22:52.661  ✔  Step completed in 466 ms
+17:22:52.661  ○  ▶ Step 2 – Cache-Control must prevent caching of real-time analytics
+17:22:52.667  ·    Asserting: Cache-Control header is present
+17:22:52.678  ✔    All assertions passed
+17:22:52.680  ✔  Step completed in 19 ms
+17:22:52.680  ○  ▶ Step 3 – X-Content-Type-Options: nosniff must be present
+17:22:52.693  ·    Asserting: X-Content-Type-Options: nosniff present
+17:22:52.714  ✔    All assertions passed
+17:22:52.715  ✔  Step completed in 34 ms
+17:22:52.715  ○  ▶ Step 4 – X-Frame-Options must be present
+17:22:52.778  ·    Asserting: X-Frame-Options header present
+17:22:52.784  ✔    All assertions passed
+17:22:52.784  ✔  Step completed in 70 ms
+17:22:52.784  ○  ▶ Step 5 – Full security header audit
+17:22:52.790  ✔  Step completed in 5 ms
+17:22:52.800  ·  Test run complete: "TC-ASUM-011 – BUG-ASUM-10: Cache-Control and security headers must be present"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,23 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 200
+[DELETE https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token/cache] 204
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-008 — Cache eviction + re-fetch: new token issued_at >= original issued_at
+────────────────────────────────────────────────────────────
+17:25:56.666  ·  Test started: "TC-OT-008 — Cache eviction + re-fetch: new token issued_at >= original issued_at"
+17:25:56.713  ○  ▶ Step 1 — GET /token → capture Token A
+17:25:56.717  ·    GET /api/v1/token
+17:25:56.759  ✔    HTTP 200 received
+17:25:56.769  ✔    All assertions passed
+17:25:56.770  ✔  Step completed in 57 ms
+17:25:56.770  ○  ▶ Step 2 — DELETE /token/cache → evict cache
+17:25:56.771  ·    DELETE /api/v1/token/cache
+17:26:56.799  ✔    HTTP 204 received
+17:26:56.799  ·    Asserting: cache eviction returns 204
+17:26:56.805  ✔    All assertions passed
+17:26:56.806  ✔  Step completed in 60036 ms
+17:26:56.806  ○  ▶ Step 3 — GET /token → capture Token B
+17:26:56.807  ·    GET /api/v1/token
+17:27:56.722  ·    Test run complete: "TC-OT-008 — Cache eviction + re-fetch: new token issued_at >= original issued_at"
+────────────────────────────────────────────────────────────
+

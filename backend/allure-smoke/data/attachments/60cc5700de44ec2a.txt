@@ -1,0 +1,108 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-DTPAY-001] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/today-payments
+  â–º HTTP Status : 200
+  â–º Content-Type: application/json
+  â–º payments.successfullPaymentKES    : undefined  (type: undefined)
+  â–º payments.failerfullPaymentKES     : undefined  (type: undefined)
+  â–º payments.successfullPaymentDoller : undefined  (type: undefined)
+  â–º payments.failerfullPaymentDoller  : undefined  (type: undefined)
+  â–º payments.isPositive               : undefined
+  â–º payments.postiveValue             : undefined
+  â–º refunds.isPositive                : undefined
+  â–º refunds.postiveValue              : undefined
+  â–º revenue.isPositive                : undefined
+  â–º revenue.postiveValue              : undefined
+  â–º Full Body:
+{
+    "data": {
+        "payments": {
+            "successfulPaymentKES": "0",
+            "successfulPaymentDollar": "0",
+            "failedPaymentKES": "0",
+            "failedPaymentDollar": "0",
+            "kesChange": "+0.0%",
+            "kesIsPositive": true,
+            "usdChange": "+0.0%",
+            "usdIsPositive": true,
+            "failKesChange": "+0.0%",
+            "failKesIsPositive": true,
+            "failUsdChange": "+0.0%",
+            "failUsdIsPositive": true
+        },
+        "refunds": {
+            "successfulPaymentKES": "0",
+            "successfulPaymentDollar": "0",
+            "failedPaymentKES": "0",
+            "failedPaymentDollar": "0",
+            "kesChange": "+0.0%",
+            "kesIsPositive": true,
+            "usdChange": "+0.0%",
+            "usdIsPositive": true,
+            "failKesChange": "+0.0%",
+            "failKesIsPositive": true,
+            "failUsdChange": "+0.0%",
+            "failUsdIsPositive": true
+        },
+        "revenue": {
+            "successfulPaymentKES": "0",
+            "successfulPaymentDollar": "0",
+            "failedPaymentKES": "0",
+            "failedPaymentDollar": "0",
+            "kesChange": "+0.0%",
+            "kesIsPositive": true,
+            "usdChange": "+0.0%",
+            "usdIsPositive": true,
+            "failKesChange": "+0.0%",
+            "failKesIsPositive": true,
+            "failUsdChange": "+0.0%",
+            "failUsdIsPositive": true
+        }
+    }
+}
+  â–º Headers:
+    Cache-Control      : MISSING
+    X-Content-Type-Opt : MISSING
+    X-Frame-Options    : MISSING
+    Access-Control-Allow-Origin  : *
+    Access-Control-Allow-Methods : GET,POST,PUT,DELETE,PATCH,OPTIONS
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present
+────────────────────────────────────────────────────────────
+17:24:16.405  ·  Test started: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"
+17:24:16.500  ○  ▶ Step 1 â€" Build request
+17:24:16.582  ·    Asserting: request parameters are recorded
+17:24:16.582  ✔    All assertions passed
+17:24:16.582  ✔  Step completed in 82 ms
+17:24:16.582  ○  ▶ Step 2 â€" Send GET /today-payments and log response
+17:24:16.586  ·    GET /api/v1/dashboard/today-payments
+17:24:16.759  ✔    HTTP 200 received
+17:24:16.795  ✔  Step completed in 213 ms
+17:24:16.797  ○  ▶ Step 3 â€" Validate HTTP 200
+17:24:16.798  ·    Asserting: HTTP 200 and body is defined
+17:24:16.860  ✔    All assertions passed
+17:24:16.862  ✔  Step completed in 64 ms
+17:24:16.862  ○  ▶ Step 4 â€" Validate top-level data wrapper
+17:24:16.862  ·    Asserting: response has a "data" key that is an object
+17:24:16.867  ✔    All assertions passed
+17:24:16.867  ✔  Step completed in 6 ms
+17:24:16.867  ○  ▶ Step 5 â€" Validate 3 required sections exist
+17:24:16.868  ·    Asserting: payments, refunds, and revenue sections are present
+17:24:16.879  ✔    All assertions passed
+17:24:16.881  ✔  Step completed in 13 ms
+17:24:16.881  ○  ▶ Step 6 â€" Validate all 6 fields in each section
+17:24:16.883  ·    Asserting: all 6 required fields are present in each of the 3 sections
+17:24:16.895  ✘  Step failed after 15 ms — data.payments.successfullPaymentKES must be present
+
+expect(received).toHaveProperty(path)
+
+Expected path: "successfullPaymentKES"
+Received path: []
+
+Received value: {"failKesChange": "+0.0%", "failKesIsPositive": true, "failUsdChange": "+0.0%", "failUsdIsPositive": true, "failedPaymentDollar": "0", "failedPaymentKES": "0", "kesChange": "+0.0%", "kesIsPositive": true, "successfulPaymentDollar": "0", "successfulPaymentKES": "0", "usdChange": "+0.0%", "usdIsPositive": true}
+17:24:16.902  ·  Test run complete: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"
+────────────────────────────────────────────────────────────
+

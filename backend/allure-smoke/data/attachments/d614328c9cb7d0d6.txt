@@ -1,0 +1,98 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-DTPAY-005] (isPositive logic check) GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/today-payments
+  â–º HTTP Status : 200
+  â–º Content-Type: application/json
+  â–º payments.successfullPaymentKES    : undefined  (type: undefined)
+  â–º payments.failerfullPaymentKES     : undefined  (type: undefined)
+  â–º payments.successfullPaymentDoller : undefined  (type: undefined)
+  â–º payments.failerfullPaymentDoller  : undefined  (type: undefined)
+  â–º payments.isPositive               : undefined
+  â–º payments.postiveValue             : undefined
+  â–º refunds.isPositive                : undefined
+  â–º refunds.postiveValue              : undefined
+  â–º revenue.isPositive                : undefined
+  â–º revenue.postiveValue              : undefined
+  â–º Full Body:
+{
+    "data": {
+        "payments": {
+            "successfulPaymentKES": "0",
+            "successfulPaymentDollar": "0",
+            "failedPaymentKES": "0",
+            "failedPaymentDollar": "0",
+            "kesChange": "+0.0%",
+            "kesIsPositive": true,
+            "usdChange": "+0.0%",
+            "usdIsPositive": true,
+            "failKesChange": "+0.0%",
+            "failKesIsPositive": true,
+            "failUsdChange": "+0.0%",
+            "failUsdIsPositive": true
+        },
+        "refunds": {
+            "successfulPaymentKES": "0",
+            "successfulPaymentDollar": "0",
+            "failedPaymentKES": "0",
+            "failedPaymentDollar": "0",
+            "kesChange": "+0.0%",
+            "kesIsPositive": true,
+            "usdChange": "+0.0%",
+            "usdIsPositive": true,
+            "failKesChange": "+0.0%",
+            "failKesIsPositive": true,
+            "failUsdChange": "+0.0%",
+            "failUsdIsPositive": true
+        },
+        "revenue": {
+            "successfulPaymentKES": "0",
+            "successfulPaymentDollar": "0",
+            "failedPaymentKES": "0",
+            "failedPaymentDollar": "0",
+            "kesChange": "+0.0%",
+            "kesIsPositive": true,
+            "usdChange": "+0.0%",
+            "usdIsPositive": true,
+            "failKesChange": "+0.0%",
+            "failKesIsPositive": true,
+            "failUsdChange": "+0.0%",
+            "failUsdIsPositive": true
+        }
+    }
+}
+  â–º Headers:
+    Cache-Control      : MISSING
+    X-Content-Type-Opt : MISSING
+    X-Frame-Options    : MISSING
+    Access-Control-Allow-Origin  : *
+    Access-Control-Allow-Methods : GET,POST,PUT,DELETE,PATCH,OPTIONS
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-005 â€" BUG-TPAY-03/04: isPositive flag must agree with postiveValue percentage
+────────────────────────────────────────────────────────────
+17:24:36.695  ·  Test started: "TC-DTPAY-005 â€" BUG-TPAY-03/04: isPositive flag must agree with postiveValue percentage"
+17:24:36.758  ○  ▶ Step 1 â€" Fetch today-payments response
+17:24:36.759  ·    GET /api/v1/dashboard/today-payments
+17:24:36.856  ✔    HTTP 200 received
+17:24:36.879  ✔  Step completed in 121 ms
+17:24:36.879  ○  ▶ Step 2 â€" Validate HTTP 200
+17:24:36.880  ·    Asserting: HTTP 200
+17:24:36.891  ✔    All assertions passed
+17:24:36.891  ✔  Step completed in 12 ms
+17:24:36.891  ○  ▶ Step 3 â€" BUG-TPAY-03: revenue.isPositive must not be true when postiveValue is negative
+17:24:36.907  ·    Asserting: revenue.isPositive agrees with the sign of postiveValue
+17:24:36.907  ✔    All assertions passed
+17:24:36.907  ✔  Step completed in 16 ms
+17:24:36.907  ○  ▶ Step 4 â€" BUG-TPAY-04: refunds.isPositive must be true or null when postiveValue is "0%"
+17:24:36.962  ·    Asserting: refunds.isPositive is not false when postiveValue is "0%" (zero is neutral)
+17:24:36.962  ✔    All assertions passed
+17:24:36.962  ✔  Step completed in 55 ms
+17:24:36.962  ○  ▶ Step 5 â€" payments.isPositive must agree with postiveValue (sanity check)
+17:24:36.975  ·    Asserting: payments.isPositive is consistent with postiveValue sign (informational)
+17:24:36.975  ✔    All assertions passed
+17:24:36.976  ✔  Step completed in 14 ms
+17:24:36.978  ·  Test run complete: "TC-DTPAY-005 â€" BUG-TPAY-03/04: isPositive flag must agree with postiveValue percentage"
+────────────────────────────────────────────────────────────
+

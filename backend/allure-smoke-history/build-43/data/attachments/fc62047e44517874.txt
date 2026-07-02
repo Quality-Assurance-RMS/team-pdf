@@ -1,0 +1,46 @@
+
+──────────────────────────────────────────────────────────────────────
+[TC-ASUM-001] GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary
+  ► HTTP Status             : 200
+  ► Content-Type            : application/json
+  ► Has "data" wrapper       : false  ← BUG-ASUM-07 if false
+  ► mcda_id                 : ALL
+  ► total_transactions      : 0
+  ► successful_transactions : 0
+  ► failed_transactions     : 0
+  ► success_rate_pct        : 0
+  ► total_amount_kes        : 0
+  ► settlement_total_kes    : 0
+  ► recon_matched           : 0
+  ► recon_exceptions        : 0
+  ► Cache-Control           : MISSING
+  ► ACAO                    : *
+  ► ACAM                    : GET,POST,PUT,DELETE,PATCH,OPTIONS
+──────────────────────────────────────────────────────────────────────
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields
+────────────────────────────────────────────────────────────
+17:20:35.913  ·  Test started: "TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields"
+17:20:35.956  ○  ▶ Step 1 – Build request
+17:20:36.570  ✔  Step completed in 613 ms
+17:20:36.570  ○  ▶ Step 2 – Send GET request and log response
+17:20:36.572  ·    GET /api/v1/analytics/dashboard/summary
+17:20:36.706  ✔    HTTP 200 received
+17:20:36.777  ✔  Step completed in 208 ms
+17:20:36.777  ○  ▶ Step 3 – Validate HTTP 200 and Content-Type
+17:20:36.779  ·    Asserting: HTTP 200, body defined, Content-Type application/json
+17:20:36.862  ✔    All assertions passed
+17:20:36.863  ✔  Step completed in 86 ms
+17:20:36.863  ○  ▶ Step 4 – Validate top-level fields: mcda_id and today
+17:20:36.866  ·    Asserting: mcda_id present, today present, types correct
+17:20:36.977  ✔    All assertions passed
+17:20:36.979  ✔  Step completed in 115 ms
+17:20:36.979  ○  ▶ Step 5 – Validate all 8 required fields in today object
+17:20:36.981  ·    Asserting: all 8 required today.* fields present
+17:20:37.160  ✔    All assertions passed
+17:20:37.161  ✔  Step completed in 182 ms
+17:20:37.169  ·  Test run complete: "TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields"
+────────────────────────────────────────────────────────────
+
