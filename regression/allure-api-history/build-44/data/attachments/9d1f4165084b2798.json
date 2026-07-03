@@ -1,0 +1,60 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/summary",
+    "params": {
+      "period": "today"
+    },
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      "date": "Fri, 03 Jul 2026 02:17:22 GMT",
+      "server": "RMS-Gateway",
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+      "access-control-max-age": "3600",
+      "access-control-expose-headers": "*",
+      "access-control-allow-headers": "*",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "success",
+      "data": {
+        "totalTransactionsAmount": {
+          "amountKes": 0,
+          "amountUsd": 0,
+          "changePctKes": 0,
+          "changePctDirectionKes": "flat",
+          "changePctUsd": 0,
+          "changeDirectionUsd": "flat"
+        },
+        "successRate": {
+          "countKes": 0,
+          "changePctKes": 0,
+          "changeDirectionKes": "flat",
+          "countUsd": 0,
+          "changePctUsd": 0,
+          "changeDirectionUsd": "flat"
+        },
+        "failureRate": {
+          "countKes": 0,
+          "changePctKes": 0,
+          "changeDirectionKes": "flat",
+          "countUsd": 0,
+          "changePctUsd": 0,
+          "changeDirectionUsd": "flat"
+        }
+      }
+    }
+  }
+}

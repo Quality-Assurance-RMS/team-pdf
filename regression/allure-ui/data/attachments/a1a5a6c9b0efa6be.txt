@@ -1,0 +1,18 @@
+02:20:09.561  ·  Test started: "TC1 — Activation toggle is present in the first user row"
+02:20:11.649  ○  ▶ Step 1 — Navigate to User Management page
+02:20:11.669  ·    Opening the User Management page
+02:20:16.348  ✔    Navigation to User Management page initiated successfully
+02:20:24.455  ✔  Step completed in 12806 ms
+02:20:24.455  ○  ▶ Step 2 — Verify page loads successfully
+02:20:24.479  ·    Waiting for all User Management page elements to render
+02:20:39.890  ✘  Step failed after 15435 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/user/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/dashboard"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    25 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"[22m
+
+02:20:51.647  ·  Test run complete: "TC1 — Activation toggle is present in the first user row"

@@ -1,0 +1,16 @@
+02:18:40.862  ·  Test started: "TC3 — Invalid HMAC Signature — Security"
+02:18:41.255  ○  ▶ Step 1 — POST /transactions with zeroed-out X-Response-Signature
+02:18:41.265  ·    POST /pgwebhook/transactions (zeroed-out signature)
+02:18:41.953  ✔    HTTP 401 received
+02:18:41.969  ·    Asserting: HTTP 401 Unauthorized
+02:18:42.045  ✔    All assertions passed
+02:18:42.055  ✔  Step completed in 799 ms
+02:18:42.055  ○  ▶ Step 2 — Verify PostgreSQL: 0 rows for TXN-INVALID001
+02:18:42.256  ·    Asserting: 0 rows stored after 401
+02:18:42.259  ✔    All assertions passed
+02:18:42.259  ✔  Step completed in 205 ms
+02:18:42.259  ○  ▶ Step 3 — Verify MongoDB: 0 documents in raw_pg_events for this idempotency_key
+02:18:42.556  ·    Asserting: 0 documents in MongoDB after rejection
+02:18:42.565  ✔    All assertions passed
+02:18:42.565  ✔  Step completed in 306 ms
+02:18:42.580  ·  Test run complete: "TC3 — Invalid HMAC Signature — Security"

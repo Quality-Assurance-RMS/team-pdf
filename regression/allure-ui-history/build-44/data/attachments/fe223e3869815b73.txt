@@ -1,0 +1,32 @@
+02:22:29.388  ·  Test started: "should complete full login with OTP and reach dashboard"
+02:22:29.938  ○  ▶ Step 1 — Navigate to login page and submit credentials
+02:22:29.941  ·    Opening the login page
+02:22:31.037  ·    Submitting login credentials
+02:22:31.832  ✔    Credentials submitted — expecting redirect to OTP verification
+02:22:31.832  ✔  Step completed in 1894 ms
+02:22:31.832  ○  ▶ Step 2 — Verify OTP page is loaded
+02:22:31.833  ·    Waiting for OTP verification page to render
+02:22:32.720  ✔    OTP verification page is loaded
+02:22:32.721  ·    Checking Resend and Back to Login links are visible
+02:22:32.759  ✔    Resend OTP link is visible
+02:22:32.780  ✔    Back to Login link is visible
+02:22:32.780  ✔  Step completed in 948 ms
+02:22:32.780  ○  ▶ Step 3 — Fetch OTP from email
+02:22:32.781  ·    Polling mailbox for fresh OTP sent after login time
+02:22:33.732  ✔    OTP received from email: 1962
+02:22:33.732  ✔  Step completed in 952 ms
+02:22:33.732  ○  ▶ Step 4 — Enter OTP and verify redirect to dashboard
+02:22:33.732  ·    Entering the 4-digit OTP in the verification form
+02:22:34.513  ✔    OTP entered successfully
+02:22:34.513  ·    Waiting for redirect away from verification page
+02:22:49.525  ✘  Step failed after 15793 ms — [2mexpect([22m[31mpage[39m[2m).not.[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: not [32m/\/auth\/verification/[39m
+Received string: [31m"https://api.rms.dev.demo-fsit.com[7m/auth/verification[27m"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "not toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/verification"[22m
+
+02:22:50.372  ·  Test run complete: "should complete full login with OTP and reach dashboard"

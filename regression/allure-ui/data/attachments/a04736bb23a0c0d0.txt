@@ -1,0 +1,39 @@
+02:11:24.062  ·  Test started: "TC1 — All sidebar navigation items are visible"
+02:11:25.667  ○  ▶ Step 1 — Navigate to Dashboard page
+02:11:25.673  ·    Opening the Dashboard page
+02:11:29.265  ✔    Navigation initiated successfully
+02:11:32.738  ✔  Step completed in 7071 ms
+02:11:32.738  ○  ▶ Step 2 — Verify page loads successfully
+02:11:32.742  ·    Waiting for all page elements to render
+02:11:33.350  ✔    Page is fully loaded with all required elements visible
+02:11:34.147  ✔  Step completed in 1409 ms
+02:11:34.147  ○  ▶ Step 3 — "Dashboard" nav item is visible
+02:11:34.151  ·    Asserting visibility: Dashboard nav item
+02:11:34.347  ✔    Dashboard nav item is visible
+02:11:36.060  ✔  Step completed in 1912 ms
+02:11:36.060  ○  ▶ Step 4 — "Transactions" nav item is visible
+02:11:36.060  ·    Asserting visibility: Transactions nav item
+02:11:36.276  ✔    Transactions nav item is visible
+02:11:37.855  ✔  Step completed in 1796 ms
+02:11:37.855  ○  ▶ Step 5 — "Settlements" nav item is visible
+02:11:37.858  ·    Asserting visibility: Settlements nav item
+02:11:38.041  ✔    Settlements nav item is visible
+02:11:39.167  ✔  Step completed in 1312 ms
+02:11:39.167  ○  ▶ Step 6 — "Reports" nav item is visible
+02:11:39.173  ·    Asserting visibility: Reports nav item
+02:11:39.442  ✔    Reports nav item is visible
+02:11:40.886  ✔  Step completed in 1718 ms
+02:11:40.886  ○  ▶ Step 7 — "User Management" nav item is visible
+02:11:40.940  ·    Asserting visibility: User Management nav item
+02:11:49.177  ✘  Step failed after 8291 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByRole('link', { name: /User Management/i }).or(locator('nav, [class*="sidebar"]').getByText(/User Management/i)).first()
+Expected: visible
+Timeout: 8000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 8000ms[22m
+[2m  - waiting for getByRole('link', { name: /User Management/i }).or(locator('nav, [class*="sidebar"]').getByText(/User Management/i)).first()[22m
+
+02:11:59.562  ·  Test run complete: "TC1 — All sidebar navigation items are visible"
