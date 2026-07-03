@@ -1,0 +1,36 @@
+02:09:06.540  ·  Test started: "TC-ASUM-007 – BUG-ASUM-06: All query params (?date=, ?period=) silently ignored"
+02:09:06.542  ○  ▶ Step 1 – Baseline
+02:09:06.552  ·    GET /api/v1/analytics/dashboard/summary
+02:09:06.741  ✔    HTTP 200 received
+02:09:06.742  ·    Asserting: HTTP 200
+02:09:06.750  ✔    All assertions passed
+02:09:06.751  ✔  Step completed in 209 ms
+02:09:06.751  ○  ▶ ?date=2026-05-31 – Yesterday date filter
+02:09:06.752  ·    GET /api/v1/analytics/dashboard/summary?date=2026-05-31
+02:09:06.792  ✔    HTTP 200 received
+02:09:06.839  ·    Asserting: ?date=2026-05-31 returns filtered data or 400, not identical baseline
+02:09:06.845  ✔    All assertions passed
+02:09:06.847  ✔  Step completed in 96 ms
+02:09:06.847  ○  ▶ ?date=2026-06-01 – Today explicit date
+02:09:06.849  ·    GET /api/v1/analytics/dashboard/summary?date=2026-06-01
+02:09:06.884  ✔    HTTP 200 received
+02:09:06.892  ·    Asserting: ?date=2026-06-01 returns filtered data or 400, not identical baseline
+02:09:06.934  ✔    All assertions passed
+02:09:06.934  ✔  Step completed in 87 ms
+02:09:06.934  ○  ▶ ?period=today – Period=today
+02:09:06.937  ·    GET /api/v1/analytics/dashboard/summary?period=today
+02:09:06.979  ✔    HTTP 200 received
+02:09:06.991  ·    Asserting: ?period=today returns filtered data or 400, not identical baseline
+02:09:07.037  ✔    All assertions passed
+02:09:07.037  ✔  Step completed in 103 ms
+02:09:07.037  ○  ▶ ?period=week – Period=week
+02:09:07.039  ·    GET /api/v1/analytics/dashboard/summary?period=week
+02:09:07.134  ✔    HTTP 200 received
+02:09:07.150  ·    Asserting: ?period=week returns filtered data or 400, not identical baseline
+02:09:07.152  ✔    All assertions passed
+02:09:07.152  ✔  Step completed in 115 ms
+02:09:07.152  ○  ▶ ?foo=bar – Unknown param
+02:09:07.153  ·    GET /api/v1/analytics/dashboard/summary?foo=bar
+02:09:07.194  ✔    HTTP 200 received
+02:09:07.235  ✔  Step completed in 83 ms
+02:09:07.237  ·  Test run complete: "TC-ASUM-007 – BUG-ASUM-06: All query params (?date=, ?period=) silently ignored"

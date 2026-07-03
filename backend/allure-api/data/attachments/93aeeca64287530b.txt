@@ -1,0 +1,25 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SF-003 — GET /api/v1/fetch/status: service="spr-fetcher-service" and status="UP"
+────────────────────────────────────────────────────────────
+02:14:42.783  ·  Test started: "TC-SF-003 — GET /api/v1/fetch/status: service="spr-fetcher-service" and status="UP""
+02:14:42.848  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+02:14:42.851  ·    GET /api/v1/fetch/status
+02:14:42.879  ✔    HTTP 200 received
+02:14:42.882  ✔  Step completed in 34 ms
+02:14:42.882  ○  ▶ Step 2 — Assert HTTP 200
+02:14:42.883  ·    Asserting: HTTP status is 200
+02:14:42.891  ✔    All assertions passed
+02:14:42.891  ✔  Step completed in 9 ms
+02:14:42.891  ○  ▶ Step 3 — Assert service name
+02:14:42.892  ·    Asserting: service field equals "spr-fetcher-service"
+02:14:42.894  ✔    All assertions passed
+02:14:42.895  ✔  Step completed in 4 ms
+02:14:42.895  ○  ▶ Step 4 — Assert status is UP
+02:14:42.895  ·    Asserting: status field equals "UP"
+02:14:42.898  ✔    All assertions passed
+02:14:42.898  ✔  Step completed in 3 ms
+02:14:42.899  ·  Test run complete: "TC-SF-003 — GET /api/v1/fetch/status: service="spr-fetcher-service" and status="UP""
+────────────────────────────────────────────────────────────
+

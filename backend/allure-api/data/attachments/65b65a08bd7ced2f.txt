@@ -1,0 +1,19 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-GW-002] TC-GW-003 — OPTIONS preflight must not allow arbitrary origins (e.g. https://evil.com)
+────────────────────────────────────────────────────────────
+02:08:17.274  ·  Test started: "[BUG-GW-002] TC-GW-003 — OPTIONS preflight must not allow arbitrary origins (e.g. https://evil.com)"
+02:08:17.338  ○  ▶ Step 1 — Send OPTIONS preflight with Origin: https://evil.com
+02:08:17.348  ·    OPTIONS /api/v1/fetch/status
+02:08:17.381  ✔    HTTP 200 received
+02:08:17.389  ✔  Step completed in 51 ms
+02:08:17.389  ○  ▶ Step 2 — Assert evil.com is NOT allowed (BUG: wildcard allows it)
+02:08:17.390  ·    Asserting: access-control-allow-origin is not "*" and not "https://evil.com"
+02:08:17.401  ✘  Step failed after 12 ms — [BUG-GW-002] Preflight must not allow arbitrary origins, got: "*"
+
+expect(received).not.toBe(expected) // Object.is equality
+
+Expected: not "*"
+02:08:17.404  ·  Test run complete: "[BUG-GW-002] TC-GW-003 — OPTIONS preflight must not allow arbitrary origins (e.g. https://evil.com)"
+────────────────────────────────────────────────────────────
+

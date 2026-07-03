@@ -1,0 +1,19 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-007 â€” BUG-REVT-06: isPostive for "Failed" must not be false when change is "+0%"
+────────────────────────────────────────────────────────────
+02:09:54.569  ·  Test started: "TC-DREVT-007 â€” BUG-REVT-06: isPostive for "Failed" must not be false when change is "+0%""
+02:09:54.578  ○  ▶ Step 1 â€” Fetch revenue-trend response
+02:09:54.747  ·    GET /api/v1/dashboard/revenue-trend
+02:09:55.033  ✔    HTTP 200 received
+02:09:55.047  ✔  Step completed in 469 ms
+02:09:55.047  ○  ▶ Step 2 â€” Validate HTTP 200
+02:09:55.052  ·    Asserting: Validate HTTP 200
+02:09:55.081  ✔    All assertions passed
+02:09:55.082  ✔  Step completed in 35 ms
+02:09:55.082  ○  ▶ Step 3 â€” BUG-REVT-06: each summary item: isPostive must agree with change direction
+02:09:55.254  ✔    All assertions passed
+02:09:55.256  ✔  Step completed in 175 ms
+02:09:55.265  ·  Test run complete: "TC-DREVT-007 â€” BUG-REVT-06: isPostive for "Failed" must not be false when change is "+0%""
+────────────────────────────────────────────────────────────
+

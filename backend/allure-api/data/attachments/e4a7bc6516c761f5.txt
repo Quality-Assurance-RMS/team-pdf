@@ -1,0 +1,20 @@
+02:13:02.586  ·  Test started: "TC-TXN-008 — Filter Options: Retrieve available filter values"
+02:13:02.758  ○  ▶ Step 1 — Build request parameters
+02:13:02.773  ✔  Step completed in 16 ms
+02:13:02.773  ○  ▶ Step 2 — Send GET /transaction/filter-options
+02:13:02.774  ·    GET /api/v1/transaction/filter-options
+02:13:02.904  ✔    HTTP 200 received
+02:13:02.907  ✔  Step completed in 134 ms
+02:13:02.907  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:13:02.908  ·    Asserting: HTTP 200, body defined, body is object
+02:13:02.916  ✔    All assertions passed
+02:13:02.917  ✔  Step completed in 10 ms
+02:13:02.917  ○  ▶ Step 4 — Validate statuses array is present and non-empty
+02:13:02.918  ·    Asserting: statuses is a non-empty array
+02:13:02.922  ✘  Step failed after 5 ms — statuses must not be empty
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+
+Expected: > [32m0[39m
+Received:   [31m0[39m
+02:13:02.924  ·  Test run complete: "TC-TXN-008 — Filter Options: Retrieve available filter values"

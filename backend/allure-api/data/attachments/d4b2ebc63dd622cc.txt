@@ -1,0 +1,16 @@
+02:13:11.647  ·  Test started: "TC5 — Failed Transaction — INSUFFICIENT_FUNDS"
+02:13:11.674  ○  ▶ Step 1 — POST /dev/sign to obtain HMAC signature for FAILED transaction payload
+02:13:11.677  ·    POST /pgwebhook/dev/sign (FAILED transaction payload)
+02:13:11.758  ✔    HTTP 200 received
+02:13:11.764  ✔  Step completed in 89 ms
+02:13:11.764  ○  ▶ Step 2 — POST /transactions — expect HTTP 200 (FAILED transactions are accepted and stored)
+02:13:11.764  ·    POST /pgwebhook/transactions (FAILED transaction)
+02:13:11.789  ✔    HTTP 401 received
+02:13:11.792  ·    Asserting: HTTP 200 and body.status is "received"
+02:13:11.797  ✘  Step failed after 33 ms — Expected HTTP 200 — FAILED txns must be stored
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m401[39m
+02:13:11.800  ·  Test run complete: "TC5 — Failed Transaction — INSUFFICIENT_FUNDS"

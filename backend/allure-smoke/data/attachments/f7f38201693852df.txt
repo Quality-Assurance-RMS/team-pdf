@@ -1,0 +1,52 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DREVT-001] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/revenue-trend
+  â–º HTTP Status   : 200
+  â–º Content-Type  : application/json
+  â–º labels        : [Jul 2025, Aug 2025, Sep 2025, Oct 2025, Nov 2025, Dec 2025, Jan 2026, Feb 2026, Mar 2026, Apr 2026, May 2026, Jun 2026, Jul 2026]  (13 entries)
+  â–º totalAttempts : [2, 1046, 0, 0, 0, 0, 0, 0, 0, 0, 128, 12574, 0]
+  â–º successful    : [2, 1046, 0, 0, 0, 0, 0, 0, 0, 0, 126, 12574, 0]
+  â–º failed        : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0]
+  â–º summary[0]    : label="Total Transactions" value="KES 81,196,687" points=13750(number) isPostive=undefined change="+100.0%"
+  â–º summary[1]    : label="Successful" value="KES 81,184,877" points=13748(number) isPostive=undefined change="+100.0%"
+  â–º summary[2]    : label="Failed" value="KES 11,810" points=2(number) isPostive=undefined change="+0%"
+  â–º Cache-Control      : max-age=60, private
+  â–º X-Content-Type-Opt : MISSING
+  â–º X-Frame-Options    : MISSING
+  â–º ACAO               : *
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary
+────────────────────────────────────────────────────────────
+02:09:54.784  ·  Test started: "TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary"
+02:09:54.834  ○  ▶ Step 1 â€” Build request
+02:09:55.168  ✔  Step completed in 334 ms
+02:09:55.168  ○  ▶ Step 2 â€” Send GET /revenue-trend and log response
+02:09:55.171  ·    GET /api/v1/dashboard/revenue-trend
+02:09:55.358  ✔    HTTP 200 received
+02:09:55.452  ✔  Step completed in 283 ms
+02:09:55.452  ○  ▶ Step 3 â€” Validate HTTP 200 and Content-Type
+02:09:55.456  ·    Asserting: Validate HTTP 200 and Content-Type
+02:09:55.555  ✔    All assertions passed
+02:09:55.557  ✔  Step completed in 105 ms
+02:09:55.557  ○  ▶ Step 4 â€” Validate top-level data wrapper
+02:09:55.559  ·    Asserting: Validate top-level data wrapper
+02:09:55.577  ✔    All assertions passed
+02:09:55.577  ✔  Step completed in 20 ms
+02:09:55.577  ○  ▶ Step 5 â€” Validate 4 required array fields exist
+02:09:55.580  ·    Asserting: Validate 4 required array fields exist
+02:09:55.677  ✔    All assertions passed
+02:09:55.677  ✔  Step completed in 100 ms
+02:09:55.677  ○  ▶ Step 6 â€” Validate summary array structure
+02:09:55.678  ·    Asserting: Validate summary array structure
+02:09:55.860  ✘  Step failed after 183 ms — summary must include "Total Attempts"
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: "Total Attempts"
+Received array: ["Total Transactions", "Successful", "Failed"]
+02:09:55.871  ·  Test run complete: "TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary"
+────────────────────────────────────────────────────────────
+

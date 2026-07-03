@@ -1,0 +1,12 @@
+02:06:59.642  ·  Test started: "TC-TXN-007 — Filter options: statuses, methods, txn_types, categories are all non-empty arrays"
+02:06:59.780  ○  ▶ Step 1 — Fetch filter options
+02:06:59.788  ·    GET /api/v1/transaction/filter-options
+02:06:59.955  ✔    HTTP 200 received
+02:06:59.955  ·    Asserting: All filter option sections are present, arrays, and non-empty
+02:07:00.014  ✘  Step failed after 234 ms — statuses must not be empty
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+
+Expected: > [32m0[39m
+Received:   [31m0[39m
+02:07:00.049  ·  Test run complete: "TC-TXN-007 — Filter options: statuses, methods, txn_types, categories are all non-empty arrays"

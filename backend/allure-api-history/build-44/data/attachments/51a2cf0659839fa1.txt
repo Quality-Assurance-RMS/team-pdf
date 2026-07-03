@@ -1,0 +1,18 @@
+02:07:11.157  ·  Test started: "[BUG-TXN-003] TC-TXN-003 — Non-existent UUID in transaction detail must return 404 (not 500)"
+02:07:11.354  ○  ▶ Step 1 — GET detail for nil UUID
+02:07:11.361  ·    GET /api/v1/transaction/00000000-0000-0000-0000-000000000000
+02:07:11.482  ✔    HTTP 404 received
+02:07:11.536  ·    Asserting: Non-existent UUID returns 404
+02:07:11.548  ✔    All assertions passed
+02:07:11.549  ✔  Step completed in 195 ms
+02:07:11.549  ○  ▶ Step 2 — GET detail for malformed UUID must return 400
+02:07:11.550  ·    GET /api/v1/transaction/not-a-valid-uuid
+02:07:11.599  ✔    HTTP 404 received
+02:07:11.641  ·    Asserting: Malformed UUID returns 400 or 422
+02:07:11.653  ✘  Step failed after 105 ms — Malformed UUID path must return 400/422, got 404
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+Expected value: [32m404[39m
+Received array: [31m[400, 422][39m
+02:07:11.657  ·  Test run complete: "[BUG-TXN-003] TC-TXN-003 — Non-existent UUID in transaction detail must return 404 (not 500)"

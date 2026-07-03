@@ -1,0 +1,21 @@
+[TC-DMREV-015] Response time: 413ms  (SLA: 2000ms)
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-015 â€” Response-Time SLA: must respond within 2 000 ms
+────────────────────────────────────────────────────────────
+02:09:43.047  ·  Test started: "TC-DMREV-015 â€” Response-Time SLA: must respond within 2 000 ms"
+02:09:43.048  ○  ▶ Step 1 â€” Measure round-trip time
+02:09:43.058  ·    GET /api/v1/dashboard/monthly-revenue
+02:09:43.471  ✔    HTTP 200 received
+02:09:43.558  ✔  Step completed in 510 ms
+02:09:43.558  ○  ▶ Step 2 â€” HTTP 200
+02:09:43.563  ·    Asserting: response structure and values
+02:09:43.636  ✔    All assertions passed
+02:09:43.636  ✔  Step completed in 78 ms
+02:09:43.636  ○  ▶ Step 3 â€” Response time < 2000ms
+02:09:43.637  ·    Asserting: response structure and values
+02:09:43.656  ✔    All assertions passed
+02:09:43.656  ✔  Step completed in 19 ms
+02:09:43.667  ·  Test run complete: "TC-DMREV-015 â€” Response-Time SLA: must respond within 2 000 ms"
+────────────────────────────────────────────────────────────
+

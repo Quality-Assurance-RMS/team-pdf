@@ -1,0 +1,10 @@
+02:08:28.391  ·  Test started: "[BUG-OT-006] TC-OT-014 — DELETE /api/v1/token: Must return 405 Method Not Allowed (returns 500)"
+02:08:28.417  ○  ▶ Step 1 — Send DELETE /api/v1/token (not /token/cache)
+02:08:28.419  ·    DELETE /api/v1/token
+02:09:28.479  ✔    HTTP 405 received
+02:09:28.491  ✔  Step completed in 60074 ms
+02:09:28.491  ○  ▶ Step 2 — Assert 405 (BUG: returns 500)
+02:09:28.541  ·    Asserting: HTTP status is 405
+02:09:28.563  ✔    All assertions passed
+02:09:28.563  ✔  Step completed in 72 ms
+02:09:28.568  ·  Test run complete: "[BUG-OT-006] TC-OT-014 — DELETE /api/v1/token: Must return 405 Method Not Allowed (returns 500)"

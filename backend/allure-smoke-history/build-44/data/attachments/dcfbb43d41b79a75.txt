@@ -1,0 +1,14 @@
+02:11:02.449  ·  Test started: "TC-DTPAY-012 â€" Response-Time SLA: dashboard endpoint must respond within 2 000 ms"
+02:11:02.450  ○  ▶ Step 1 â€" Measure round-trip response time
+02:11:02.469  ·    GET /api/v1/dashboard/today-payments (measuring response time)
+02:11:02.845  ✔    HTTP 200 received
+02:11:02.878  ✔  Step completed in 428 ms
+02:11:02.878  ○  ▶ Step 2 â€" Validate HTTP 200
+02:11:02.884  ·    Asserting: HTTP 200
+02:11:02.941  ✔    All assertions passed
+02:11:02.941  ✔  Step completed in 63 ms
+02:11:02.942  ○  ▶ Step 3 â€" Response time must be under 2000ms
+02:11:02.943  ·    Asserting: response time 376ms is under the 2000ms SLA
+02:11:02.949  ✔    All assertions passed
+02:11:02.949  ✔  Step completed in 7 ms
+02:11:02.953  ·  Test run complete: "TC-DTPAY-012 â€" Response-Time SLA: dashboard endpoint must respond within 2 000 ms"

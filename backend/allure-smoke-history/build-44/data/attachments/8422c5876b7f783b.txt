@@ -1,0 +1,18 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-006 â€” Date validation: inverted range  -> 400, missing dates  -> 400
+────────────────────────────────────────────────────────────
+02:10:42.057  ·  Test started: "TC-DSUM-006 â€” Date validation: inverted range  -> 400, missing dates  -> 400"
+02:10:42.061  ○  ▶ Step 1 â€” period=custom missing both dates  -> 400
+02:10:42.140  ·    GET /api/v1/dashboard/summary
+02:10:42.378  ✔    HTTP 400 received
+02:10:42.378  ·    Asserting: response structure and values
+02:10:42.434  ✘  Step failed after 373 ms — Error must mention from_date and to_date
+
+expect(received).toMatch(expected)
+
+Expected pattern: /from_date|to_date/i
+Received string:  ""
+02:10:42.441  ·  Test run complete: "TC-DSUM-006 â€” Date validation: inverted range  -> 400, missing dates  -> 400"
+────────────────────────────────────────────────────────────
+
