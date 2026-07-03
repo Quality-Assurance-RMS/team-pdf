@@ -1,0 +1,24 @@
+02:40:00.116  ·  Test started: "TC3 — Date filter dropdown defaults to "Today""
+02:40:00.530  ○  ▶ Step 1 — Navigate to Dashboard page
+02:40:00.530  ·    Opening the Dashboard page
+02:40:04.336  ✔    Navigation to Dashboard initiated successfully
+02:40:08.924  ✔  Step completed in 8394 ms
+02:40:08.924  ○  ▶ Step 2 — Verify page loads successfully
+02:40:08.925  ·    Waiting for all Dashboard elements to render
+02:40:09.750  ✔    Dashboard page is fully loaded with all required elements
+02:40:10.237  ✔  Step completed in 1313 ms
+02:40:10.237  ○  ▶ Step 3 — "Today" label is visible in the date filter
+02:40:10.241  ·    Asserting value/data: date filter default selection
+02:40:10.633  ✘  Step failed after 396 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByText('Today', { exact: true })
+Expected: visible
+Error: strict mode violation: getByText('Today', { exact: true }) resolved to 2 elements:
+    1) <option value="today" class="relative flex select-none items-center ↵                rounded-sm outline-none focus:bg-accent focus:text-accent-foreground ↵                data-disabled:pointer-events-none ↵                data-disabled:opacity-50 px-4 py-3 text-lg cursor-pointer ↵                transition-colors border-b border-[#D6DBD7] last:border-0 ↵                text-[#272E28] hover:bg-[#F8F9FA]">Today</option> aka getByRole('combobox').first()
+    2) <option value="today" class="relative flex select-none items-center ↵                rounded-sm outline-none focus:bg-accent focus:text-accent-foreground ↵                data-disabled:pointer-events-none ↵                data-disabled:opacity-50 px-4 py-3 text-lg cursor-pointer ↵                transition-colors border-b border-[#D6DBD7] last:border-0 ↵                text-[#272E28] hover:bg-[#F8F9FA]">Today</option> aka getByRole('combobox').nth(1)
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for getByText('Today', { exact: true })[22m
+
+02:40:12.336  ·  Test run complete: "TC3 — Date filter dropdown defaults to "Today""

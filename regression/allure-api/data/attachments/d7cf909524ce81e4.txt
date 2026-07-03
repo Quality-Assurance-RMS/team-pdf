@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-004 — GET /api/v1/token: expires_at is a future ISO 8601 timestamp
+────────────────────────────────────────────────────────────
+02:39:38.826  ·  Test started: "TC-OT-004 — GET /api/v1/token: expires_at is a future ISO 8601 timestamp"
+02:39:39.006  ○  ▶ Step 1 — Send GET /api/v1/token
+02:39:39.013  ·    GET /api/v1/token
+02:40:40.315  ✔    HTTP 200 received
+02:40:40.330  ✔  Step completed in 61323 ms
+02:40:40.330  ○  ▶ Step 2 — Assert HTTP 200
+02:40:40.331  ·    Asserting: HTTP status is 200
+02:40:40.443  ✔    All assertions passed
+02:40:40.443  ✔  Step completed in 114 ms
+02:40:40.443  ○  ▶ Step 3 — Parse expires_at and assert it is in the future
+02:40:40.513  ·    Asserting: expires_at is a parseable timestamp in the future
+02:40:40.628  ✔    All assertions passed
+02:40:40.628  ✔  Step completed in 185 ms
+02:40:40.644  ·  Test run complete: "TC-OT-004 — GET /api/v1/token: expires_at is a future ISO 8601 timestamp"
+────────────────────────────────────────────────────────────
+
