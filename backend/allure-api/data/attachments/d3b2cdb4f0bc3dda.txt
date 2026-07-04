@@ -1,0 +1,29 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=09-06-2026&to_date=09-06-2026 → 400
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026%2F06%2F09&to_date=2026%2F06%2F09 → 400
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=June%209%202026&to_date=June%209%202026 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-004] TC-DB-004 — Wrong date format DD-MM-YYYY causes HTTP 500 not 400
+────────────────────────────────────────────────────────────
+01:12:45.657  ·  Test started: "[BUG-DB-004] TC-DB-004 — Wrong date format DD-MM-YYYY causes HTTP 500 not 400"
+01:12:45.689  ○  ▶ Wrong format: DD-MM-YYYY
+01:12:45.690  ·    GET /api/v1/dashboard/summary?period=custom&from_date=09-06-2026&to_date=09-06-2026
+01:12:45.749  ✔    HTTP 400 received
+01:12:45.751  ·    Asserting: Wrong date format "09-06-2026" returns 400
+01:12:45.752  ✔    All assertions passed
+01:12:45.753  ✔  Step completed in 63 ms
+01:12:45.753  ○  ▶ Wrong format: YYYY/MM/DD (slashes)
+01:12:45.754  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026/06/09&to_date=2026/06/09
+01:12:45.788  ✔    HTTP 400 received
+01:12:45.791  ·    Asserting: Wrong date format "2026/06/09" returns 400
+01:12:45.793  ✔    All assertions passed
+01:12:45.793  ✔  Step completed in 41 ms
+01:12:45.793  ○  ▶ Wrong format: Long form
+01:12:45.795  ·    GET /api/v1/dashboard/summary?period=custom&from_date=June 9 2026&to_date=June 9 2026
+01:12:45.845  ✔    HTTP 400 received
+01:12:45.850  ·    Asserting: Wrong date format "June 9 2026" returns 400
+01:12:45.855  ✔    All assertions passed
+01:12:45.855  ✔  Step completed in 61 ms
+01:12:45.856  ·  Test run complete: "[BUG-DB-004] TC-DB-004 — Wrong date format DD-MM-YYYY causes HTTP 500 not 400"
+────────────────────────────────────────────────────────────
+

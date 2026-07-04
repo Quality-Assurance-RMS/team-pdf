@@ -1,0 +1,9 @@
+01:17:16.786  ·  Test started: "TC-DREVT-008 â€” BUG-REVT-07: all query parameters (?period=, ?startDate=, etc.) silently ignored"
+01:17:16.788  ○  ▶ Step 1 â€” Fetch baseline (no params)
+01:17:16.798  ·    GET /api/v1/dashboard/revenue-trend
+01:17:36.995  ✔    HTTP 503 received
+01:17:37.041  ✘  Step failed after 20253 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m503[39m
+01:17:37.043  ·  Test run complete: "TC-DREVT-008 â€” BUG-REVT-07: all query parameters (?period=, ?startDate=, etc.) silently ignored"

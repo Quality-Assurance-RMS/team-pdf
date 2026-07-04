@@ -1,0 +1,42 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-DTPAY-001] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/today-payments
+  â–º HTTP Status : 503
+  â–º Content-Type: application/json
+  â–º Full Body:
+{
+    "errorCode": 503,
+    "errorMessage": "Data source unavailable, please try again later"
+}
+  â–º Headers:
+    Cache-Control      : MISSING
+    X-Content-Type-Opt : MISSING
+    X-Frame-Options    : MISSING
+    Access-Control-Allow-Origin  : *
+    Access-Control-Allow-Methods : GET,POST,PUT,DELETE,PATCH,OPTIONS
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present
+────────────────────────────────────────────────────────────
+01:19:11.388  ·  Test started: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"
+01:19:11.390  ○  ▶ Step 1 â€" Build request
+01:19:11.446  ·    Asserting: request parameters are recorded
+01:19:11.446  ✔    All assertions passed
+01:19:11.481  ✔  Step completed in 92 ms
+01:19:11.481  ○  ▶ Step 2 â€" Send GET /today-payments and log response
+01:19:11.482  ·    GET /api/v1/dashboard/today-payments
+01:19:31.517  ✔    HTTP 503 received
+01:19:31.526  ✔  Step completed in 20045 ms
+01:19:31.526  ○  ▶ Step 3 â€" Validate HTTP 200
+01:19:31.527  ·    Asserting: HTTP 200 and body is defined
+01:19:31.535  ✘  Step failed after 8 ms — HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+01:19:31.537  ·  Test run complete: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"
+────────────────────────────────────────────────────────────
+

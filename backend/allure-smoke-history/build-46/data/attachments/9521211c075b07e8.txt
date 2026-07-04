@@ -1,0 +1,18 @@
+01:18:47.594  ·  Test started: "TC-DSH-004 â€" currencyDistribution: KES + USD entries, percentages sum to ~100 %"
+01:18:47.596  ○  ▶ Step 1 â€" Build request
+01:18:47.696  ·    Asserting: request parameters are recorded
+01:18:47.696  ✔    All assertions passed
+01:18:47.711  ✔  Step completed in 115 ms
+01:18:47.711  ○  ▶ Step 2 â€" Send GET /status-currency
+01:18:47.713  ·    GET /api/v1/dashboard/status-currency
+01:19:07.804  ✔    HTTP 503 received
+01:19:07.812  ✔  Step completed in 20101 ms
+01:19:07.812  ○  ▶ Step 3 â€" Validate HTTP 200 and currencyDistribution is a non-empty array
+01:19:07.814  ·    Asserting: HTTP 200 and currencyDistribution is a non-empty array
+01:19:07.825  ✘  Step failed after 13 ms — HTTP 200 expected
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m503[39m
+01:19:07.831  ·  Test run complete: "TC-DSH-004 â€" currencyDistribution: KES + USD entries, percentages sum to ~100 %"

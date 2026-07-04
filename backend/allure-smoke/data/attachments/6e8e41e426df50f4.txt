@@ -1,0 +1,19 @@
+[TC-DMREV-015] Response time: 20083ms  (SLA: 2000ms)
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-015 â€” Response-Time SLA: must respond within 2 000 ms
+────────────────────────────────────────────────────────────
+01:16:49.779  ·  Test started: "TC-DMREV-015 â€” Response-Time SLA: must respond within 2 000 ms"
+01:16:49.781  ○  ▶ Step 1 â€” Measure round-trip time
+01:16:49.800  ·    GET /api/v1/dashboard/monthly-revenue
+01:17:09.883  ✔    HTTP 503 received
+01:17:09.894  ✔  Step completed in 20113 ms
+01:17:09.894  ○  ▶ Step 2 â€” HTTP 200
+01:17:09.895  ·    Asserting: response structure and values
+01:17:09.919  ✘  Step failed after 25 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+01:17:09.929  ·  Test run complete: "TC-DMREV-015 â€” Response-Time SLA: must respond within 2 000 ms"
+────────────────────────────────────────────────────────────
+

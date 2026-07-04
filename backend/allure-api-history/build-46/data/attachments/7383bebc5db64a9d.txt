@@ -1,0 +1,19 @@
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/00000000-0000-0000-0000-000000000000 → 503
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-TXN-003] TC-TXN-003 — Non-existent UUID in transaction detail must return 404 (not 500)
+────────────────────────────────────────────────────────────
+01:12:28.755  ·  Test started: "[BUG-TXN-003] TC-TXN-003 — Non-existent UUID in transaction detail must return 404 (not 500)"
+01:12:28.858  ○  ▶ Step 1 — GET detail for nil UUID
+01:12:28.864  ·    GET /api/v1/transaction/00000000-0000-0000-0000-000000000000
+01:12:49.084  ✔    HTTP 503 received
+01:12:49.158  ·    Asserting: Non-existent UUID returns 404
+01:12:49.171  ✘  Step failed after 20313 ms — [BUG-TXN-003] Non-existent UUID must return 404, got 503
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 404
+Received: 503
+01:12:49.173  ·  Test run complete: "[BUG-TXN-003] TC-TXN-003 — Non-existent UUID in transaction detail must return 404 (not 500)"
+────────────────────────────────────────────────────────────
+

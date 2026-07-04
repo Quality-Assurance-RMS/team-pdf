@@ -1,0 +1,41 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-DSH-003] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/status-currency
+  â–º HTTP Status                    : 503
+  â–º Content-Type                   : application/json
+  â–º Response has "data" wrapper     : false âš  DASH-ISSUE-5
+  â–º statusDistribution count        : MISSING
+  â–º currencyDistribution count      : MISSING
+  â–º byMethod count                  : MISSING
+  â–º peakMetrics present             : false
+  â–º Full Body:
+{
+    "errorCode": 503,
+    "errorMessage": "Data source unavailable, please try again later"
+}
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSH-003 â€" statusDistribution: structure, fields, and label validation
+────────────────────────────────────────────────────────────
+01:17:39.914  ·  Test started: "TC-DSH-003 â€" statusDistribution: structure, fields, and label validation"
+01:17:39.944  ○  ▶ Step 1 â€" Build request
+01:17:39.953  ·    Asserting: request parameters are recorded
+01:17:39.953  ✔    All assertions passed
+01:17:39.954  ✔  Step completed in 10 ms
+01:17:39.954  ○  ▶ Step 2 â€" Send GET /status-currency and log response
+01:17:39.956  ·    GET /api/v1/dashboard/status-currency
+01:17:59.987  ✔    HTTP 503 received
+01:17:59.991  ✔  Step completed in 20037 ms
+01:17:59.991  ○  ▶ Step 3 â€" Validate HTTP 200 and statusDistribution is a non-empty array
+01:17:59.991  ·    Asserting: HTTP 200 and statusDistribution is a non-empty array
+01:17:59.995  ✘  Step failed after 5 ms — HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+01:17:59.999  ·  Test run complete: "TC-DSH-003 â€" statusDistribution: structure, fields, and label validation"
+────────────────────────────────────────────────────────────
+

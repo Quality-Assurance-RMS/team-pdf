@@ -1,0 +1,12 @@
+01:16:30.432  ·  Test started: "TC-DREVT-007 â€” BUG-REVT-06: isPostive for "Failed" must not be false when change is "+0%""
+01:16:30.433  ○  ▶ Step 1 â€” Fetch revenue-trend response
+01:16:30.454  ·    GET /api/v1/dashboard/revenue-trend
+01:16:50.688  ✔    HTTP 503 received
+01:16:50.691  ✔  Step completed in 20258 ms
+01:16:50.692  ○  ▶ Step 2 â€” Validate HTTP 200
+01:16:50.692  ·    Asserting: Validate HTTP 200
+01:16:50.700  ✘  Step failed after 8 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m503[39m
+01:16:50.703  ·  Test run complete: "TC-DREVT-007 â€” BUG-REVT-06: isPostive for "Failed" must not be false when change is "+0%""

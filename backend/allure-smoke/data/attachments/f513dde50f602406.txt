@@ -1,0 +1,19 @@
+[TC-DTPAY-012] Response time: 20124ms  (SLA: 2000ms)
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-012 â€" Response-Time SLA: dashboard endpoint must respond within 2 000 ms
+────────────────────────────────────────────────────────────
+01:21:45.314  ·  Test started: "TC-DTPAY-012 â€" Response-Time SLA: dashboard endpoint must respond within 2 000 ms"
+01:21:45.316  ○  ▶ Step 1 â€" Measure round-trip response time
+01:21:45.329  ·    GET /api/v1/dashboard/today-payments (measuring response time)
+01:22:05.453  ✔    HTTP 503 received
+01:22:05.478  ✔  Step completed in 20162 ms
+01:22:05.478  ○  ▶ Step 2 â€" Validate HTTP 200
+01:22:05.481  ·    Asserting: HTTP 200
+01:22:05.490  ✘  Step failed after 12 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+01:22:05.494  ·  Test run complete: "TC-DTPAY-012 â€" Response-Time SLA: dashboard endpoint must respond within 2 000 ms"
+────────────────────────────────────────────────────────────
+

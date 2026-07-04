@@ -1,0 +1,14 @@
+01:16:21.792  ·  Test started: "[BUG-SF-002] TC-SF-007 — POST /api/v1/fetch/trigger: Must return 200/202 (returns 504 or connection error)"
+01:16:21.880  ○  ▶ Step 1 — Send POST /api/v1/fetch/trigger with valid auth
+01:16:21.887  ·    POST /api/v1/fetch/trigger
+01:16:21.960  ✔    HTTP 500 received
+01:16:21.974  ✔  Step completed in 94 ms
+01:16:21.974  ○  ▶ Step 2 — Assert 200/202 (BUG: connection error or 504)
+01:16:21.976  ·    Asserting: status is 200 or 202
+01:16:21.991  ✘  Step failed after 17 ms — [BUG-SF-002] Trigger must return 200/202, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+Expected value: [32m500[39m
+Received array: [31m[200, 202][39m
+01:16:21.993  ·  Test run complete: "[BUG-SF-002] TC-SF-007 — POST /api/v1/fetch/trigger: Must return 200/202 (returns 504 or connection error)"

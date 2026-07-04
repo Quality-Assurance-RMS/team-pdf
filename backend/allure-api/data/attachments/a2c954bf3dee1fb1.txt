@@ -1,0 +1,31 @@
+[/dev/sign] status: 200 | body: {
+  "signature": "b84d326f49ec1048ccc0725d6b608e92a18c3ff51132a3bcacbff58a1efdefd3"
+}
+[/transactions] status: 401 | body: {
+  "error_code": "INVALID_SIGNATURE",
+  "message": "signature verification failed"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Successful Transaction — Happy Path
+────────────────────────────────────────────────────────────
+01:18:33.689  ·  Test started: "TC1 — Successful Transaction — Happy Path"
+01:18:33.728  ○  ▶ Step 1 — POST /dev/sign to obtain HMAC signature
+01:18:33.731  ·    POST /pgwebhook/dev/sign
+01:18:33.875  ✔    HTTP 200 received
+01:18:33.877  ·    Asserting: signature is truthy
+01:18:33.881  ✔    All assertions passed
+01:18:33.883  ✔  Step completed in 155 ms
+01:18:33.883  ○  ▶ Step 2 — POST /transactions — expect HTTP 200 with status "received"
+01:18:33.885  ·    POST /pgwebhook/transactions
+01:18:33.910  ✔    HTTP 401 received
+01:18:33.916  ·    Asserting: HTTP 200 and body.status is "received"
+01:18:33.925  ✘  Step failed after 42 ms — Expected HTTP 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 401
+01:18:33.929  ·  Test run complete: "TC1 — Successful Transaction — Happy Path"
+────────────────────────────────────────────────────────────
+

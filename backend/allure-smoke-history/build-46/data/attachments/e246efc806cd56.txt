@@ -1,0 +1,33 @@
+[TC-DTPAY-008] Response headers:
+{
+  "content-type": "application/json",
+  "transfer-encoding": "chunked",
+  "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+  "date": "Sat, 04 Jul 2026 01:21:02 GMT",
+  "server": "RMS-Gateway",
+  "x-apisix-upstream-status": "503",
+  "access-control-allow-origin": "*",
+  "access-control-allow-methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+  "access-control-max-age": "3600",
+  "access-control-expose-headers": "*",
+  "access-control-allow-headers": "*",
+  "connection": "close"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-008 â€" BUG-TPAY-07/10: Cache-Control and security headers must be present
+────────────────────────────────────────────────────────────
+01:20:42.109  ·  Test started: "TC-DTPAY-008 â€" BUG-TPAY-07/10: Cache-Control and security headers must be present"
+01:20:42.138  ○  ▶ Step 1 â€" Fetch response and inspect headers
+01:20:42.139  ·    GET /api/v1/dashboard/today-payments
+01:21:02.177  ✔    HTTP 503 received
+01:21:02.179  ✔  Step completed in 20041 ms
+01:21:02.179  ○  ▶ Step 2 â€" Validate HTTP 200
+01:21:02.180  ·    Asserting: HTTP 200
+01:21:02.184  ✘  Step failed after 5 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+01:21:02.185  ·  Test run complete: "TC-DTPAY-008 â€" BUG-TPAY-07/10: Cache-Control and security headers must be present"
+────────────────────────────────────────────────────────────
+

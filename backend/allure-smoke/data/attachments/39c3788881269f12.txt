@@ -1,0 +1,19 @@
+[TC-DREVT-015] Response time: 20118ms  (SLA: 2000ms)
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-015 â€” Response-Time SLA: must respond within 2 000 ms
+────────────────────────────────────────────────────────────
+01:20:24.176  ·  Test started: "TC-DREVT-015 â€” Response-Time SLA: must respond within 2 000 ms"
+01:20:24.178  ○  ▶ Step 1 â€” Measure round-trip time
+01:20:24.188  ·    GET /api/v1/dashboard/revenue-trend
+01:20:44.306  ✔    HTTP 503 received
+01:20:44.318  ✔  Step completed in 20139 ms
+01:20:44.318  ○  ▶ Step 2 â€” Validate HTTP 200
+01:20:44.319  ·    Asserting: Validate HTTP 200
+01:20:44.333  ✘  Step failed after 15 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+01:20:44.338  ·  Test run complete: "TC-DREVT-015 â€” Response-Time SLA: must respond within 2 000 ms"
+────────────────────────────────────────────────────────────
+

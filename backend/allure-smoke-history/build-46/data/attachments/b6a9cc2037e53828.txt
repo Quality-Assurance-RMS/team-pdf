@@ -1,0 +1,35 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-SMK-002] GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/summary?period=today
+  â–º Params        : {"period":"today"}
+  â–º Status        : 500
+  â–º Content-Type  : application/json
+  â–º Response Body :
+{
+    "errorCode": "Internal Server Error",
+    "errorMessage": "An unexpected error occurred"
+}
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SMK-002 â€" Summary: period=today returns 200 with expected shape
+────────────────────────────────────────────────────────────
+01:21:16.388  ·  Test started: "TC-SMK-002 â€" Summary: period=today returns 200 with expected shape"
+01:21:16.390  ○  ▶ Step 1 â€" Build request
+01:21:16.459  ✔  Step completed in 69 ms
+01:21:16.459  ○  ▶ Step 2 â€" Send GET /summary?period=today and log response
+01:21:16.460  ·    GET /api/v1/transaction/summary?period=today
+01:21:36.503  ✔    HTTP 500 received
+01:21:36.514  ✔  Step completed in 20055 ms
+01:21:36.514  ○  ▶ Step 3 â€" Validate HTTP 200 and top-level fields present
+01:21:36.516  ·    Asserting: HTTP 200 and top-level fields present
+01:21:36.529  ✘  Step failed after 15 ms — HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 500
+01:21:36.536  ·  Test run complete: "TC-SMK-002 â€" Summary: period=today returns 200 with expected shape"
+────────────────────────────────────────────────────────────
+

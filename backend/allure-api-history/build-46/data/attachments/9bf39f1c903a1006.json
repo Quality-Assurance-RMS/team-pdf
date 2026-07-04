@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-OT-004",
+  "expected": "HTTP 200 {\"status\":\"UP\"}",
+  "actual": "HTTP 503",
+  "impact": "K8s probes, monitoring, and CI health gates are all broken",
+  "fix": "Add APISIX route: GET /oauth-token/actuator/health → upstream actuator port"
+}

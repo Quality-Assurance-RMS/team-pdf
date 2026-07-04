@@ -1,0 +1,18 @@
+01:20:45.865  ·  Test started: "TC-SMK-008 â€" Filter Options: returns 200 with all filter arrays validated"
+01:20:45.867  ○  ▶ Step 1 â€" Build request
+01:20:45.925  ·    Asserting: request parameters are recorded
+01:20:45.925  ✔    All assertions passed
+01:20:45.951  ✔  Step completed in 84 ms
+01:20:45.951  ○  ▶ Step 2 â€" Send GET /filter-options and log response
+01:20:45.952  ·    GET /api/v1/transaction/filter-options
+01:21:06.008  ✔    HTTP 500 received
+01:21:06.023  ✔  Step completed in 20073 ms
+01:21:06.024  ○  ▶ Step 3 â€" Validate HTTP 200 and all top-level keys present
+01:21:06.026  ·    Asserting: HTTP 200, body defined, and top-level keys present
+01:21:06.041  ✘  Step failed after 18 ms — HTTP 200 expected
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m500[39m
+01:21:06.047  ·  Test run complete: "TC-SMK-008 â€" Filter Options: returns 200 with all filter arrays validated"

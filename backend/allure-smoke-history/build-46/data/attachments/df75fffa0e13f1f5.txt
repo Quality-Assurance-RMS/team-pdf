@@ -1,0 +1,12 @@
+01:20:07.949  ·  Test started: "TC-DTPAY-004 â€" BUG-TPAY-02: Monetary amounts must be numbers, not strings"
+01:20:07.952  ○  ▶ Step 1 â€" Fetch today-payments response
+01:20:07.968  ·    GET /api/v1/dashboard/today-payments
+01:20:28.068  ✔    HTTP 503 received
+01:20:28.075  ✔  Step completed in 20122 ms
+01:20:28.075  ○  ▶ Step 2 â€" Validate HTTP 200
+01:20:28.076  ·    Asserting: HTTP 200
+01:20:28.088  ✘  Step failed after 13 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m503[39m
+01:20:28.090  ·  Test run complete: "TC-DTPAY-004 â€" BUG-TPAY-02: Monetary amounts must be numbers, not strings"

@@ -1,0 +1,20 @@
+01:19:23.837  ·  Test started: "TC-DSUM-009 â€” BUG-SUM-01: SQL injection in from_date must return 400 not 500 (security)"
+01:19:23.845  ○  ▶ Step â€” SQL OR injection: must return 400 not 500
+01:19:23.846  ·    GET /api/v1/dashboard/summary
+01:19:23.885  ✔    HTTP 400 received
+01:19:23.886  ·    Asserting: response structure and values
+01:19:23.889  ✔    All assertions passed
+01:19:23.889  ✔  Step completed in 44 ms
+01:19:23.889  ○  ▶ Step â€” SQL union injection: must return 400 not 500
+01:19:23.889  ·    GET /api/v1/dashboard/summary
+01:19:23.980  ✔    HTTP 400 received
+01:19:23.981  ·    Asserting: response structure and values
+01:19:23.984  ✔    All assertions passed
+01:19:23.984  ✔  Step completed in 96 ms
+01:19:23.984  ○  ▶ Step â€” Single quote: must return 400 not 500
+01:19:23.985  ·    GET /api/v1/dashboard/summary
+01:19:24.080  ✔    HTTP 400 received
+01:19:24.080  ·    Asserting: response structure and values
+01:19:24.083  ✔    All assertions passed
+01:19:24.084  ✔  Step completed in 99 ms
+01:19:24.085  ·  Test run complete: "TC-DSUM-009 â€” BUG-SUM-01: SQL injection in from_date must return 400 not 500 (security)"

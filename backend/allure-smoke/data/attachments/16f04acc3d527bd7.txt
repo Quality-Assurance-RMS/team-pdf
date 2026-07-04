@@ -1,0 +1,18 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-012 â€” BUG-SUM-07: change_pct must be null when no prior period data exists
+────────────────────────────────────────────────────────────
+01:19:36.586  ·  Test started: "TC-DSUM-012 â€” BUG-SUM-07: change_pct must be null when no prior period data exists"
+01:19:36.588  ○  ▶ Step 1 â€” period=year: change_pct should be null (no 2025 data to compare)
+01:19:36.594  ·    GET /api/v1/dashboard/summary
+01:19:56.691  ✔    HTTP 503 received
+01:19:56.691  ·    Asserting: response structure and values
+01:19:56.710  ✘  Step failed after 20122 ms —  -> 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+01:19:56.721  ·  Test run complete: "TC-DSUM-012 â€” BUG-SUM-07: change_pct must be null when no prior period data exists"
+────────────────────────────────────────────────────────────
+

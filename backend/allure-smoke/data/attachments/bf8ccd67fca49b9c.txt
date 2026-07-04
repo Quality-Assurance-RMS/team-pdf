@@ -1,0 +1,18 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-011 â€" BUG-TPAY-11: Percentage format must be consistent across sections
+────────────────────────────────────────────────────────────
+01:21:01.372  ·  Test started: "TC-DTPAY-011 â€" BUG-TPAY-11: Percentage format must be consistent across sections"
+01:21:01.376  ○  ▶ Step 1 â€" Fetch today-payments response
+01:21:01.388  ·    GET /api/v1/dashboard/today-payments
+01:21:21.496  ✔    HTTP 503 received
+01:21:21.499  ✔  Step completed in 20123 ms
+01:21:21.499  ○  ▶ Step 2 â€" Validate HTTP 200
+01:21:21.500  ·    Asserting: HTTP 200
+01:21:21.510  ✘  Step failed after 11 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+01:21:21.516  ·  Test run complete: "TC-DTPAY-011 â€" BUG-TPAY-11: Percentage format must be consistent across sections"
+────────────────────────────────────────────────────────────
+

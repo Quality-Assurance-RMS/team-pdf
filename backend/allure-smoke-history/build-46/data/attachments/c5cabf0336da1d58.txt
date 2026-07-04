@@ -1,0 +1,15 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-007 â€” BUG-MREV-04: CRITICAL â€” /revenue-trend KES total is inflated by USD amounts (currency mixing)
+────────────────────────────────────────────────────────────
+01:15:04.728  ·  Test started: "TC-DMREV-007 â€” BUG-MREV-04: CRITICAL â€” /revenue-trend KES total is inflated by USD amounts (currency mixing)"
+01:15:04.730  ○  ▶ Step 1 â€” Fetch monthly-revenue for current year
+01:15:04.739  ·    GET /api/v1/dashboard/monthly-revenue
+01:15:24.839  ✔    HTTP 503 received
+01:15:24.847  ✘  Step failed after 20117 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+01:15:24.850  ·  Test run complete: "TC-DMREV-007 â€” BUG-MREV-04: CRITICAL â€” /revenue-trend KES total is inflated by USD amounts (currency mixing)"
+────────────────────────────────────────────────────────────
+

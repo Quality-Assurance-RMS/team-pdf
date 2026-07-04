@@ -1,0 +1,18 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-004 â€" BUG-TPAY-02: Monetary amounts must be numbers, not strings
+────────────────────────────────────────────────────────────
+01:20:07.949  ·  Test started: "TC-DTPAY-004 â€" BUG-TPAY-02: Monetary amounts must be numbers, not strings"
+01:20:07.952  ○  ▶ Step 1 â€" Fetch today-payments response
+01:20:07.968  ·    GET /api/v1/dashboard/today-payments
+01:20:28.068  ✔    HTTP 503 received
+01:20:28.075  ✔  Step completed in 20122 ms
+01:20:28.075  ○  ▶ Step 2 â€" Validate HTTP 200
+01:20:28.076  ·    Asserting: HTTP 200
+01:20:28.088  ✘  Step failed after 13 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+01:20:28.090  ·  Test run complete: "TC-DTPAY-004 â€" BUG-TPAY-02: Monetary amounts must be numbers, not strings"
+────────────────────────────────────────────────────────────
+
