@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Dashboard nav item is marked as active on /dashboard
+────────────────────────────────────────────────────────────
+01:38:04.950  ·  Test started: "TC2 — Dashboard nav item is marked as active on /dashboard"
+01:38:06.660  ○  ▶ Step 1 — Navigate to Dashboard page
+01:38:06.663  ·    Opening the Dashboard page
+01:38:09.761  ✔    Navigation initiated successfully
+01:38:13.061  ✔  Step completed in 6401 ms
+01:38:13.061  ○  ▶ Step 2 — Verify page loads successfully
+01:38:13.062  ·    Waiting for all page elements to render
+01:38:24.167  ✘  Step failed after 11106 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:38:27.870  ·  Test run complete: "TC2 — Dashboard nav item is marked as active on /dashboard"
+────────────────────────────────────────────────────────────
+

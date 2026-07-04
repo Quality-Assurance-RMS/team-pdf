@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — All KES chart legend items are visible
+────────────────────────────────────────────────────────────
+01:39:59.267  ·  Test started: "TC2 — All KES chart legend items are visible"
+01:40:00.351  ○  ▶ Step 1 — Navigate to Dashboard page
+01:40:00.356  ·    Opening the Dashboard page
+01:40:02.367  ✔    Navigation to Dashboard initiated successfully
+01:40:04.356  ✔  Step completed in 4004 ms
+01:40:04.356  ○  ▶ Step 2 — Verify page loads successfully
+01:40:04.357  ·    Waiting for all Dashboard elements to render
+01:40:14.965  ✘  Step failed after 10609 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:40:20.253  ·  Test run complete: "TC2 — All KES chart legend items are visible"
+────────────────────────────────────────────────────────────
+

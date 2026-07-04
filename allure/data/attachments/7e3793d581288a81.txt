@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Date filter dropdown defaults to "Today"
+────────────────────────────────────────────────────────────
+01:39:35.465  ·  Test started: "TC3 — Date filter dropdown defaults to "Today""
+01:39:37.257  ○  ▶ Step 1 — Navigate to Dashboard page
+01:39:37.268  ·    Opening the Dashboard page
+01:39:41.866  ✔    Navigation to Dashboard initiated successfully
+01:39:44.846  ✔  Step completed in 7589 ms
+01:39:44.846  ○  ▶ Step 2 — Verify page loads successfully
+01:39:44.847  ·    Waiting for all Dashboard elements to render
+01:39:55.544  ✘  Step failed after 10698 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:39:59.361  ·  Test run complete: "TC3 — Date filter dropdown defaults to "Today""
+────────────────────────────────────────────────────────────
+

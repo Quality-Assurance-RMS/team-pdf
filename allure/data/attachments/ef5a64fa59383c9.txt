@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Table loads with at least one transaction row
+────────────────────────────────────────────────────────────
+01:47:25.452  ·  Test started: "TC2 — Table loads with at least one transaction row"
+01:47:26.769  ○  ▶ Step 1 — Navigate to Transactions page
+01:47:26.845  ·    Opening the Transactions page
+01:47:30.261  ✔    Navigation to Transactions page initiated successfully
+01:47:32.545  ✔  Step completed in 5775 ms
+01:47:32.545  ○  ▶ Step 2 — Verify page loads successfully
+01:47:32.546  ·    Waiting for all Transactions page elements to render
+01:47:33.348  ✔    Transactions page is fully loaded with all required elements
+01:47:34.265  ✔  Step completed in 1720 ms
+01:47:34.265  ○  ▶ Step 3 — At least one table row is present
+01:47:34.270  ·    Checking table data is loaded
+01:47:49.466  ✘  Step failed after 15201 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('table tbody tr').first()
+Expected: visible
+Timeout: 15000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 15000ms
+  - waiting for locator('table tbody tr').first()
+
+01:47:53.761  ·  Test run complete: "TC2 — Table loads with at least one transaction row"
+────────────────────────────────────────────────────────────
+

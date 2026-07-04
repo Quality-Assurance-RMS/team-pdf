@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC5 — Clicking "Settlements" navigates to the Settlements page
+────────────────────────────────────────────────────────────
+01:39:04.166  ·  Test started: "TC5 — Clicking "Settlements" navigates to the Settlements page"
+01:39:06.456  ○  ▶ Step 1 — Navigate to Dashboard page
+01:39:06.545  ·    Opening the Dashboard page
+01:39:10.271  ✔    Navigation initiated successfully
+01:39:12.949  ✔  Step completed in 6493 ms
+01:39:12.949  ○  ▶ Step 2 — Verify page loads successfully
+01:39:12.952  ·    Waiting for all page elements to render
+01:39:23.659  ✘  Step failed after 10711 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:39:27.945  ·  Test run complete: "TC5 — Clicking "Settlements" navigates to the Settlements page"
+────────────────────────────────────────────────────────────
+

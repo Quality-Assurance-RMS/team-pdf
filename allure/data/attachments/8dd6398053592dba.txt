@@ -1,0 +1,40 @@
+OTP not yet available — retrying in 5s (1/18)...
+OTP found in "inbox" on attempt 2: 4098
+
+────────────────────────────────────────────────────────────
+Execution Log — should complete full login with OTP and reach dashboard
+────────────────────────────────────────────────────────────
+01:50:13.957  ·  Test started: "should complete full login with OTP and reach dashboard"
+01:50:14.866  ○  ▶ Step 1 — Navigate to login page and submit credentials
+01:50:14.869  ·    Opening the login page
+01:50:18.160  ·    Submitting login credentials
+01:50:21.051  ✔    Credentials submitted — expecting redirect to OTP verification
+01:50:21.051  ✔  Step completed in 6186 ms
+01:50:21.051  ○  ▶ Step 2 — Verify OTP page is loaded
+01:50:21.052  ·    Waiting for OTP verification page to render
+01:50:21.661  ✔    OTP verification page is loaded
+01:50:21.661  ·    Checking Resend and Back to Login links are visible
+01:50:22.069  ✔    Resend OTP link is visible
+01:50:22.164  ✔    Back to Login link is visible
+01:50:22.165  ✔  Step completed in 1113 ms
+01:50:22.165  ○  ▶ Step 3 — Fetch OTP from email
+01:50:22.166  ·    Polling mailbox for fresh OTP sent after login time
+01:50:29.847  ✔    OTP received from email: 4098
+01:50:29.848  ✔  Step completed in 7683 ms
+01:50:29.848  ○  ▶ Step 4 — Enter OTP and verify redirect to dashboard
+01:50:29.848  ·    Entering the 4-digit OTP in the verification form
+01:50:31.546  ✔    OTP entered successfully
+01:50:31.546  ·    Waiting for redirect away from verification page
+01:50:46.564  ✘  Step failed after 16717 ms — expect(page).not.toHaveURL(expected) failed
+
+Expected pattern: not /\/auth\/verification/
+Received string: "https://api.rms.dev.demo-fsit.com/auth/verification"
+Timeout: 15000ms
+
+Call log:
+  - Expect "not toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/verification"
+
+01:50:47.547  ·  Test run complete: "should complete full login with OTP and reach dashboard"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Gateway Payments" section heading is visible
+────────────────────────────────────────────────────────────
+01:34:27.360  ·  Test started: "TC1 — "Gateway Payments" section heading is visible"
+01:34:28.369  ○  ▶ Step 1 — Navigate to Dashboard page
+01:34:28.445  ·    Opening the Dashboard page
+01:34:33.246  ✔    Navigation to Dashboard initiated successfully
+01:34:37.956  ✔  Step completed in 9587 ms
+01:34:37.956  ○  ▶ Step 2 — Verify page loads successfully
+01:34:37.963  ·    Waiting for all Dashboard elements to render
+01:34:49.255  ✘  Step failed after 11299 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:34:54.954  ·  Test run complete: "TC1 — "Gateway Payments" section heading is visible"
+────────────────────────────────────────────────────────────
+

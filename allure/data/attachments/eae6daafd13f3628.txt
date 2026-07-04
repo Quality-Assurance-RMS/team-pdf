@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Method filter dropdown is visible
+────────────────────────────────────────────────────────────
+01:45:48.261  ·  Test started: "TC3 — Method filter dropdown is visible"
+01:45:48.961  ○  ▶ Step 1 — Navigate to Transactions page
+01:45:48.962  ·    Opening the Transactions page
+01:45:52.861  ✔    Navigation to Transactions page initiated successfully
+01:45:55.846  ✔  Step completed in 6884 ms
+01:45:55.846  ○  ▶ Step 2 — Verify page loads successfully
+01:45:55.846  ·    Waiting for all Transactions page elements to render
+01:45:56.561  ✔    Transactions page is fully loaded with all required elements
+01:45:57.346  ✔  Step completed in 1500 ms
+01:45:57.346  ○  ▶ Step 3 — Method filter showing "All Methods" is visible
+01:45:57.351  ·    Checking filter dropdown is interactive and visible
+01:46:02.554  ✘  Step failed after 5209 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('select').filter({ hasText: /All Methods/i }).first()
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for locator('select').filter({ hasText: /All Methods/i }).first()
+
+01:46:05.769  ·  Test run complete: "TC3 — Method filter dropdown is visible"
+────────────────────────────────────────────────────────────
+

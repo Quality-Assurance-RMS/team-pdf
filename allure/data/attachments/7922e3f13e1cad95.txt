@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC4 — "Transactions by Payment Method" chart label is visible
+────────────────────────────────────────────────────────────
+01:34:59.973  ·  Test started: "TC4 — "Transactions by Payment Method" chart label is visible"
+01:35:01.459  ○  ▶ Step 1 — Navigate to Dashboard page
+01:35:01.462  ·    Opening the Dashboard page
+01:35:05.367  ✔    Navigation to Dashboard initiated successfully
+01:35:09.055  ✔  Step completed in 7596 ms
+01:35:09.055  ○  ▶ Step 2 — Verify page loads successfully
+01:35:09.057  ·    Waiting for all Dashboard elements to render
+01:35:20.964  ✘  Step failed after 11909 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:35:25.947  ·  Test run complete: "TC4 — "Transactions by Payment Method" chart label is visible"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC6 — Success vs Failure chart legend shows "Success" and "Failure" entries
+────────────────────────────────────────────────────────────
+01:34:58.462  ·  Test started: "TC6 — Success vs Failure chart legend shows "Success" and "Failure" entries"
+01:34:59.264  ○  ▶ Step 1 — Navigate to Dashboard page
+01:34:59.266  ·    Opening the Dashboard page
+01:35:01.551  ✔    Navigation to Dashboard initiated successfully
+01:35:04.346  ✔  Step completed in 5082 ms
+01:35:04.346  ○  ▶ Step 2 — Verify page loads successfully
+01:35:04.352  ·    Waiting for all Dashboard elements to render
+01:35:15.655  ✘  Step failed after 11309 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:35:20.764  ·  Test run complete: "TC6 — Success vs Failure chart legend shows "Success" and "Failure" entries"
+────────────────────────────────────────────────────────────
+

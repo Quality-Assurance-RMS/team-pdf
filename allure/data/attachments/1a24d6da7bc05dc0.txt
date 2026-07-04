@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC6 — "View details" on first KPI card navigates away from dashboard
+────────────────────────────────────────────────────────────
+01:37:59.565  ·  Test started: "TC6 — "View details" on first KPI card navigates away from dashboard"
+01:38:00.266  ○  ▶ Step 1 — Navigate to Dashboard page
+01:38:00.269  ·    Opening the Dashboard page
+01:38:02.054  ✔    Navigation to Dashboard initiated successfully
+01:38:03.567  ✔  Step completed in 3301 ms
+01:38:03.567  ○  ▶ Step 2 — Verify page loads successfully
+01:38:03.568  ·    Waiting for all Dashboard elements to render
+01:38:14.257  ✘  Step failed after 10690 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:38:18.457  ·  Test run complete: "TC6 — "View details" on first KPI card navigates away from dashboard"
+────────────────────────────────────────────────────────────
+

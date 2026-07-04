@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — SUPER_ADMIN badges are visible in the User Role column
+────────────────────────────────────────────────────────────
+01:49:06.752  ·  Test started: "TC1 — SUPER_ADMIN badges are visible in the User Role column"
+01:49:08.369  ○  ▶ Step 1 — Navigate to User Management page
+01:49:08.445  ·    Opening the User Management page
+01:49:11.450  ✔    Navigation to User Management page initiated successfully
+01:49:13.154  ✔  Step completed in 4785 ms
+01:49:13.154  ○  ▶ Step 2 — Verify page loads successfully
+01:49:13.155  ·    Waiting for all User Management page elements to render
+01:49:28.545  ✘  Step failed after 15391 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/user/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    26 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+01:49:33.146  ·  Test run complete: "TC1 — SUPER_ADMIN badges are visible in the User Role column"
+────────────────────────────────────────────────────────────
+
