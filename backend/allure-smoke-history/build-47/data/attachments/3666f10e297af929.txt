@@ -1,0 +1,34 @@
+17:23:31.816  ·  Test started: "TC-DREVT-005 â€” BUG-REVT-04: labels must not contain duplicates without year disambiguation"
+17:23:31.890  ○  ▶ Step 1 â€” Fetch revenue-trend response
+17:23:31.914  ·    GET /api/v1/dashboard/revenue-trend
+17:23:32.194  ✔    HTTP 200 received
+17:23:32.202  ✔  Step completed in 311 ms
+17:23:32.202  ○  ▶ Step 2 â€” Validate HTTP 200
+17:23:32.205  ·    Asserting: Validate HTTP 200
+17:23:32.212  ✔    All assertions passed
+17:23:32.212  ✔  Step completed in 10 ms
+17:23:32.212  ○  ▶ Step 3 â€” BUG-REVT-04: labels array must not have duplicate month names
+17:23:32.218  ·    Asserting: BUG-REVT-04: labels array must not have duplicate
+17:23:32.219  ✔    All assertions passed
+17:23:32.219  ✔  Step completed in 7 ms
+17:23:32.219  ○  ▶ Step 4 â€” Labels must contain only valid month abbreviations
+17:23:32.220  ·    Asserting: response structure and values
+17:23:32.221  ·    Asserting: response structure and values
+17:23:32.290  ·    Asserting: response structure and values
+17:23:32.292  ·    Asserting: response structure and values
+17:23:32.294  ·    Asserting: response structure and values
+17:23:32.313  ·    Asserting: response structure and values
+17:23:32.315  ·    Asserting: response structure and values
+17:23:32.318  ·    Asserting: response structure and values
+17:23:32.389  ·    Asserting: response structure and values
+17:23:32.391  ·    Asserting: response structure and values
+17:23:32.394  ·    Asserting: response structure and values
+17:23:32.396  ·    Asserting: response structure and values
+17:23:32.397  ·    Asserting: response structure and values
+17:23:32.399  ✔    All assertions passed
+17:23:32.399  ✔  Step completed in 180 ms
+17:23:32.399  ○  ▶ Step 5 â€” Validate array length is within reasonable range (12â€“13 months)
+17:23:32.400  ·    Asserting: Validate array length is within reasonable range
+17:23:32.404  ✔    All assertions passed
+17:23:32.405  ✔  Step completed in 5 ms
+17:23:32.407  ·  Test run complete: "TC-DREVT-005 â€” BUG-REVT-04: labels must not contain duplicates without year disambiguation"

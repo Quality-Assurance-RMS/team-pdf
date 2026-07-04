@@ -1,0 +1,14 @@
+17:22:47.989  ·  Test started: "TC-ASUM-003 – BUG-ASUM-02: total_transactions must equal successful + failed + pending"
+17:22:47.992  ○  ▶ Step 1 – Fetch analytics summary
+17:22:48.002  ·    GET /api/v1/analytics/dashboard/summary
+17:22:48.703  ✔    HTTP 200 received
+17:22:48.703  ·    Asserting: HTTP 200
+17:22:48.793  ✔    All assertions passed
+17:22:48.808  ✔  Step completed in 816 ms
+17:22:48.808  ○  ▶ Step 2 – BUG-ASUM-02: successful + failed must equal total_transactions
+17:22:48.907  ·    Asserting: successful + failed equals total_transactions
+17:22:48.915  ✔    All assertions passed
+17:22:48.916  ✔  Step completed in 108 ms
+17:22:48.916  ○  ▶ Step 3 – Verify pending_transactions field is absent (documents the gap)
+17:22:48.997  ✔  Step completed in 81 ms
+17:22:49.003  ·  Test run complete: "TC-ASUM-003 – BUG-ASUM-02: total_transactions must equal successful + failed + pending"

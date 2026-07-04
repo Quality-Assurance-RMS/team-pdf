@@ -1,0 +1,37 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DSUM-007] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-05-15&to_date=2026-05-15
+  â–º HTTP Status    : 400
+  â–º Content-Type   : application/json
+  â–º period         : N/A
+  â–º date_from      : N/A
+  â–º date_to        : N/A
+  â–º Full Body:
+{
+    "errorCode": 400,
+    "errorMessage": "from_date must be before to_date"
+}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-007 â€” BUG-SUM-04: single-day range (from=to) must be accepted (validator too strict)
+────────────────────────────────────────────────────────────
+17:24:12.912  ·  Test started: "TC-DSUM-007 â€” BUG-SUM-04: single-day range (from=to) must be accepted (validator too strict)"
+17:24:12.914  ○  ▶ Step 1 â€” Send single-day range from_date=to_date=2026-05-15
+17:24:12.921  ·    GET /api/v1/dashboard/summary
+17:24:13.034  ✔    HTTP 400 received
+17:24:13.093  ✔  Step completed in 179 ms
+17:24:13.093  ○  ▶ Step 2 â€” Flag BUG-SUM-04 if 400 is returned
+17:24:13.096  ·    Asserting: Flag BUG-SUM-04 if 400 is returned
+17:24:13.104  ✔    All assertions passed
+17:24:13.105  ✔  Step completed in 12 ms
+17:24:13.105  ○  ▶ Step 3 â€” Also test adjacent single-day range (from < to by 1 day) works fine
+17:24:13.105  ·    GET /api/v1/dashboard/summary
+17:24:13.173  ✔    HTTP 200 received
+17:24:13.173  ·    Asserting: response structure and values
+17:24:13.191  ✔    All assertions passed
+17:24:13.191  ✔  Step completed in 87 ms
+17:24:13.193  ·  Test run complete: "TC-DSUM-007 â€” BUG-SUM-04: single-day range (from=to) must be accepted (validator too strict)"
+────────────────────────────────────────────────────────────
+

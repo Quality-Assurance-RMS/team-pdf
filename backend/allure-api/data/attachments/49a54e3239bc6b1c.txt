@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 500
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-OT-007] TC-OT-015 — GET /api/v1/token with Accept: text/html returns 500 (must be 406)
+────────────────────────────────────────────────────────────
+17:23:01.599  ·  Test started: "[BUG-OT-007] TC-OT-015 — GET /api/v1/token with Accept: text/html returns 500 (must be 406)"
+17:23:02.012  ○  ▶ Step 1 — Send GET /api/v1/token with Accept: text/html
+17:23:02.189  ·    GET /api/v1/token
+17:24:02.489  ✔    HTTP 500 received
+17:24:02.498  ✔  Step completed in 60487 ms
+17:24:02.498  ○  ▶ Step 2 — Assert 406 (BUG: returns 500)
+17:24:02.501  ·    Asserting: HTTP status is 406
+17:24:02.593  ✘  Step failed after 94 ms — [BUG-OT-007] Unsupported Accept type must return 406, got 500
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 406
+Received: 500
+17:24:02.597  ·  Test run complete: "[BUG-OT-007] TC-OT-015 — GET /api/v1/token with Accept: text/html returns 500 (must be 406)"
+────────────────────────────────────────────────────────────
+

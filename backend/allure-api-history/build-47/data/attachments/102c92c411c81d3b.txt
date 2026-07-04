@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 500
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-003 — GET /api/v1/token: token_type is exactly "Bearer"
+────────────────────────────────────────────────────────────
+17:28:02.437  ·  Test started: "TC-OT-003 — GET /api/v1/token: token_type is exactly "Bearer""
+17:28:02.490  ○  ▶ Step 1 — Send GET /api/v1/token
+17:28:02.493  ·    GET /api/v1/token
+17:28:02.528  ✔    HTTP 500 received
+17:28:02.531  ✔  Step completed in 40 ms
+17:28:02.531  ○  ▶ Step 2 — Assert HTTP 200
+17:28:02.531  ·    Asserting: HTTP status is 200
+17:28:02.539  ✘  Step failed after 9 ms — TC-OT-003 — expected 200, got 500
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 500
+17:28:02.542  ·  Test run complete: "TC-OT-003 — GET /api/v1/token: token_type is exactly "Bearer""
+────────────────────────────────────────────────────────────
+

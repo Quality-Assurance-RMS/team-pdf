@@ -1,0 +1,17 @@
+17:20:50.006  ·  Test started: "TC-SF-004 — GET /api/v1/fetch/status: apiEndpoint is a valid HTTPS URL"
+17:20:50.021  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+17:20:50.022  ·    GET /api/v1/fetch/status
+17:21:50.046  ✔    HTTP 200 received
+17:21:50.048  ✔  Step completed in 60027 ms
+17:21:50.048  ○  ▶ Step 2 — Assert HTTP 200
+17:21:50.049  ·    Asserting: HTTP status is 200
+17:21:50.061  ✔    All assertions passed
+17:21:50.063  ✔  Step completed in 15 ms
+17:21:50.063  ○  ▶ Step 3 — Parse and validate apiEndpoint as HTTPS URL
+17:21:50.064  ·    Asserting: apiEndpoint is a valid HTTPS URL
+17:21:50.069  ✘  Step failed after 6 ms — apiEndpoint must be non-empty
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+Received: [31mundefined[39m
+17:21:50.071  ·  Test run complete: "TC-SF-004 — GET /api/v1/fetch/status: apiEndpoint is a valid HTTPS URL"
