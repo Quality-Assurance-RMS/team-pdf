@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC7 — Clicking "Logout" redirects to the login page
+────────────────────────────────────────────────────────────
+01:16:14.512  ·  Test started: "TC7 — Clicking "Logout" redirects to the login page"
+01:16:15.805  ○  ▶ Step 1 — Navigate to Dashboard page
+01:16:15.808  ·    Opening the Dashboard page
+01:16:19.324  ✔    Navigation initiated successfully
+01:16:22.102  ✔  Step completed in 6297 ms
+01:16:22.102  ○  ▶ Step 2 — Verify page loads successfully
+01:16:22.103  ·    Waiting for all page elements to render
+01:16:33.003  ✘  Step failed after 10901 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:16:39.608  ·  Test run complete: "TC7 — Clicking "Logout" redirects to the login page"
+────────────────────────────────────────────────────────────
+

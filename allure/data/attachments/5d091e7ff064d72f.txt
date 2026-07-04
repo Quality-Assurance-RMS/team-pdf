@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC6 — Clicking "Reports" navigates to the Reports page
+────────────────────────────────────────────────────────────
+01:17:00.114  ·  Test started: "TC6 — Clicking "Reports" navigates to the Reports page"
+01:17:01.132  ○  ▶ Step 1 — Navigate to Dashboard page
+01:17:01.135  ·    Opening the Dashboard page
+01:17:05.910  ✔    Navigation initiated successfully
+01:17:09.123  ✔  Step completed in 7991 ms
+01:17:09.123  ○  ▶ Step 2 — Verify page loads successfully
+01:17:09.125  ·    Waiting for all page elements to render
+01:17:20.421  ✘  Step failed after 11298 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:17:24.727  ·  Test run complete: "TC6 — Clicking "Reports" navigates to the Reports page"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "User Management" heading and user count are visible
+────────────────────────────────────────────────────────────
+01:26:44.317  ·  Test started: "TC1 — "User Management" heading and user count are visible"
+01:26:45.229  ○  ▶ Step 1 — Navigate to User Management page
+01:26:45.233  ·    Opening the User Management page
+01:26:47.732  ✔    Navigation to User Management page initiated successfully
+01:26:50.416  ✔  Step completed in 5186 ms
+01:26:50.416  ○  ▶ Step 2 — Verify page loads successfully
+01:26:50.417  ·    Waiting for all User Management page elements to render
+01:27:05.624  ✘  Step failed after 15209 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/user/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    27 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+01:27:11.216  ·  Test run complete: "TC1 — "User Management" heading and user count are visible"
+────────────────────────────────────────────────────────────
+

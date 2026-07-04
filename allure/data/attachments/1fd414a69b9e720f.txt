@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC5 — All 12 month labels (Jan–Dec) are present in the chart
+────────────────────────────────────────────────────────────
+01:18:56.009  ·  Test started: "TC5 — All 12 month labels (Jan–Dec) are present in the chart"
+01:18:57.805  ○  ▶ Step 1 — Navigate to Dashboard page
+01:18:57.808  ·    Opening the Dashboard page
+01:19:00.316  ✔    Navigation to Dashboard initiated successfully
+01:19:02.114  ✔  Step completed in 4309 ms
+01:19:02.114  ○  ▶ Step 2 — Verify page loads successfully
+01:19:02.115  ·    Waiting for all Dashboard elements to render
+01:19:13.029  ✘  Step failed after 10915 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:19:18.214  ·  Test run complete: "TC5 — All 12 month labels (Jan–Dec) are present in the chart"
+────────────────────────────────────────────────────────────
+

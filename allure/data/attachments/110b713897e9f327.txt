@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Monthly Revenue for All Services" heading is visible
+────────────────────────────────────────────────────────────
+01:17:55.244  ·  Test started: "TC1 — "Monthly Revenue for All Services" heading is visible"
+01:17:55.921  ○  ▶ Step 1 — Navigate to Dashboard page
+01:17:55.924  ·    Opening the Dashboard page
+01:17:57.613  ✔    Navigation to Dashboard initiated successfully
+01:17:59.107  ✔  Step completed in 3185 ms
+01:17:59.107  ○  ▶ Step 2 — Verify page loads successfully
+01:17:59.110  ·    Waiting for all Dashboard elements to render
+01:18:09.713  ✘  Step failed after 10605 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:18:15.104  ·  Test run complete: "TC1 — "Monthly Revenue for All Services" heading is visible"
+────────────────────────────────────────────────────────────
+

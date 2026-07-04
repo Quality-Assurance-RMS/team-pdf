@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC4 — Each KPI card has a "View details" link
+────────────────────────────────────────────────────────────
+01:14:30.526  ·  Test started: "TC4 — Each KPI card has a "View details" link"
+01:14:32.721  ○  ▶ Step 1 — Navigate to Dashboard page
+01:14:32.724  ·    Opening the Dashboard page
+01:14:38.402  ✔    Navigation to Dashboard initiated successfully
+01:14:41.822  ✔  Step completed in 9101 ms
+01:14:41.822  ○  ▶ Step 2 — Verify page loads successfully
+01:14:41.823  ·    Waiting for all Dashboard elements to render
+01:14:52.833  ✘  Step failed after 11010 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:14:55.030  ·  Test run complete: "TC4 — Each KPI card has a "View details" link"
+────────────────────────────────────────────────────────────
+

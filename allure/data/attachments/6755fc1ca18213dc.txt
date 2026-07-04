@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All table column headers are visible
+────────────────────────────────────────────────────────────
+01:28:25.809  ·  Test started: "TC1 — All table column headers are visible"
+01:28:26.816  ○  ▶ Step 1 — Navigate to User Management page
+01:28:26.819  ·    Opening the User Management page
+01:28:28.720  ✔    Navigation to User Management page initiated successfully
+01:28:30.506  ✔  Step completed in 3690 ms
+01:28:30.506  ○  ▶ Step 2 — Verify page loads successfully
+01:28:30.507  ·    Waiting for all User Management page elements to render
+01:28:45.535  ✘  Step failed after 15029 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/user/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    28 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+01:28:48.424  ·  Test run complete: "TC1 — All table column headers are visible"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Clicking "Transactions" navigates to /transaction
+────────────────────────────────────────────────────────────
+01:17:22.719  ·  Test started: "TC3 — Clicking "Transactions" navigates to /transaction"
+01:17:23.925  ○  ▶ Step 1 — Navigate to Dashboard page
+01:17:23.929  ·    Opening the Dashboard page
+01:17:25.926  ✔    Navigation initiated successfully
+01:17:27.332  ✔  Step completed in 3407 ms
+01:17:27.332  ○  ▶ Step 2 — Verify page loads successfully
+01:17:27.334  ·    Waiting for all page elements to render
+01:17:38.108  ✘  Step failed after 10775 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:17:45.834  ·  Test run complete: "TC3 — Clicking "Transactions" navigates to /transaction"
+────────────────────────────────────────────────────────────
+
