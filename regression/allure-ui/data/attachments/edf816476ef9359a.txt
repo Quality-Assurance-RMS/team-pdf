@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC5 — Successful Payments percentage is between 0 and 100
+────────────────────────────────────────────────────────────
+01:15:41.850  ·  Test started: "TC5 — Successful Payments percentage is between 0 and 100"
+01:15:44.268  ○  ▶ Step 1 — Navigate to Dashboard page
+01:15:44.275  ·    Opening the Dashboard page
+01:15:53.655  ✔    Navigation to Dashboard initiated successfully
+01:16:00.868  ✔  Step completed in 16599 ms
+01:16:00.868  ○  ▶ Step 2 — Verify page loads successfully
+01:16:00.868  ·    Waiting for all Dashboard elements to render
+01:16:12.571  ✘  Step failed after 11704 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:16:28.878  ·  Test run complete: "TC5 — Successful Payments percentage is between 0 and 100"
+────────────────────────────────────────────────────────────
+

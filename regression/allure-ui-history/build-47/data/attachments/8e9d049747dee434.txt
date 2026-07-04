@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC5 — "Success vs Failure by Method" chart label is visible
+────────────────────────────────────────────────────────────
+01:14:30.468  ·  Test started: "TC5 — "Success vs Failure by Method" chart label is visible"
+01:14:33.555  ○  ▶ Step 1 — Navigate to Dashboard page
+01:14:33.562  ·    Opening the Dashboard page
+01:14:41.065  ✔    Navigation to Dashboard initiated successfully
+01:14:47.858  ✔  Step completed in 14303 ms
+01:14:47.858  ○  ▶ Step 2 — Verify page loads successfully
+01:14:47.859  ·    Waiting for all Dashboard elements to render
+01:15:00.364  ✘  Step failed after 12506 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:15:24.553  ·  Test run complete: "TC5 — "Success vs Failure by Method" chart label is visible"
+────────────────────────────────────────────────────────────
+

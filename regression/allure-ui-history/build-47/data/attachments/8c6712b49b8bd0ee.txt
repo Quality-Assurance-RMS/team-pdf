@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All sidebar navigation items are visible
+────────────────────────────────────────────────────────────
+01:17:33.173  ·  Test started: "TC1 — All sidebar navigation items are visible"
+01:17:35.053  ○  ▶ Step 1 — Navigate to Dashboard page
+01:17:35.058  ·    Opening the Dashboard page
+01:17:39.449  ✔    Navigation initiated successfully
+01:17:43.750  ✔  Step completed in 8697 ms
+01:17:43.750  ○  ▶ Step 2 — Verify page loads successfully
+01:17:43.755  ·    Waiting for all page elements to render
+01:17:56.075  ✘  Step failed after 12325 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:18:13.173  ·  Test run complete: "TC1 — All sidebar navigation items are visible"
+────────────────────────────────────────────────────────────
+

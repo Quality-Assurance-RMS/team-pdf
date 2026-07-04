@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Success Rate metric shows a valid percentage (0–100%)
+────────────────────────────────────────────────────────────
+01:14:15.372  ·  Test started: "TC3 — Success Rate metric shows a valid percentage (0–100%)"
+01:14:17.655  ○  ▶ Step 1 — Navigate to Dashboard page
+01:14:17.660  ·    Opening the Dashboard page
+01:14:21.972  ✔    Navigation to Dashboard initiated successfully
+01:14:25.374  ✔  Step completed in 7719 ms
+01:14:25.374  ○  ▶ Step 2 — Verify page loads successfully
+01:14:25.375  ·    Waiting for all Dashboard elements to render
+01:14:36.772  ✘  Step failed after 11398 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:14:59.074  ·  Test run complete: "TC3 — Success Rate metric shows a valid percentage (0–100%)"
+────────────────────────────────────────────────────────────
+

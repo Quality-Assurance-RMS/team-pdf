@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC4 — Clicking "Refunds" navigates to the Refunds page
+────────────────────────────────────────────────────────────
+01:17:36.275  ·  Test started: "TC4 — Clicking "Refunds" navigates to the Refunds page"
+01:17:39.284  ○  ▶ Step 1 — Navigate to Dashboard page
+01:17:39.364  ·    Opening the Dashboard page
+01:17:47.276  ✔    Navigation initiated successfully
+01:17:52.870  ✔  Step completed in 13586 ms
+01:17:52.870  ○  ▶ Step 2 — Verify page loads successfully
+01:17:52.874  ·    Waiting for all page elements to render
+01:18:04.861  ✘  Step failed after 11991 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:18:21.075  ·  Test run complete: "TC4 — Clicking "Refunds" navigates to the Refunds page"
+────────────────────────────────────────────────────────────
+

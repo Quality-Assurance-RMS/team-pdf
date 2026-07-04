@@ -1,0 +1,26 @@
+[GET /api/v1/transaction/2e8b4ea3-5413-4428-bc49-25de24680cdb] status: 503 | body: {
+  "errorCode": "Service Unavailable",
+  "errorMessage": "Data source unavailable, please try again later"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-007 — Detail for ID: 2e8b4ea3-5413-4428-bc49-25de24680cdb
+────────────────────────────────────────────────────────────
+01:24:42.565  ·  Test started: "TC-TXN-007 — Detail for ID: 2e8b4ea3-5413-4428-bc49-25de24680cdb"
+01:24:43.564  ○  ▶ Step 1 — Build request parameters
+01:24:43.870  ✔  Step completed in 305 ms
+01:24:43.870  ○  ▶ Step 2 — Send GET /transaction/2e8b4ea3-5413-4428-bc49-25de24680cdb
+01:24:43.874  ·    GET /api/v1/transaction/2e8b4ea3-5413-4428-bc49-25de24680cdb
+01:25:04.263  ✔    HTTP 503 received
+01:25:04.361  ✔  Step completed in 20491 ms
+01:25:04.361  ○  ▶ Step 3 — Validate HTTP 200 status code
+01:25:04.362  ·    Asserting: HTTP 200, body defined, body is object
+01:25:04.468  ✘  Step failed after 107 ms — TC-TXN-007 [2e8b4ea3-5413-4428-bc49-25de24680cdb] — expected HTTP 200, got 503
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+01:25:04.471  ·  Test run complete: "TC-TXN-007 — Detail for ID: 2e8b4ea3-5413-4428-bc49-25de24680cdb"
+────────────────────────────────────────────────────────────
+

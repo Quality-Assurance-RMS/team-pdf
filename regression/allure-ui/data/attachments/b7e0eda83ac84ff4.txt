@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — KPI cards display non-empty numeric values
+────────────────────────────────────────────────────────────
+01:15:32.666  ·  Test started: "TC2 — KPI cards display non-empty numeric values"
+01:15:35.549  ○  ▶ Step 1 — Navigate to Dashboard page
+01:15:35.565  ·    Opening the Dashboard page
+01:15:40.373  ✔    Navigation to Dashboard initiated successfully
+01:15:47.564  ✔  Step completed in 12015 ms
+01:15:47.564  ○  ▶ Step 2 — Verify page loads successfully
+01:15:47.564  ·    Waiting for all Dashboard elements to render
+01:16:00.166  ✘  Step failed after 12603 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+01:16:19.456  ·  Test run complete: "TC2 — KPI cards display non-empty numeric values"
+────────────────────────────────────────────────────────────
+

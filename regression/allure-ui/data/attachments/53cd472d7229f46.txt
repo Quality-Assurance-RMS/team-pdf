@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Success" status badge is rendered in the table
+────────────────────────────────────────────────────────────
+01:29:24.767  ·  Test started: "TC1 — "Success" status badge is rendered in the table"
+01:29:26.860  ○  ▶ Step 1 — Navigate to Transactions page
+01:29:26.863  ·    Opening the Transactions page
+01:29:30.752  ✔    Navigation to Transactions page initiated successfully
+01:29:34.666  ✔  Step completed in 7805 ms
+01:29:34.666  ○  ▶ Step 2 — Verify page loads successfully
+01:29:34.668  ·    Waiting for all Transactions page elements to render
+01:29:36.054  ✔    Transactions page is fully loaded with all required elements
+01:29:37.270  ✔  Step completed in 2604 ms
+01:29:37.270  ○  ▶ Step 3 — At least one "Success" badge is visible
+01:29:37.271  ·    Asserting visibility: Success status badge
+01:29:52.757  ✘  Step failed after 15486 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('table tbody').getByText(/^Success$/i).first()
+Expected: visible
+Timeout: 15000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 15000ms
+  - waiting for locator('table tbody').getByText(/^Success$/i).first()
+
+01:30:03.654  ·  Test run complete: "TC1 — "Success" status badge is rendered in the table"
+────────────────────────────────────────────────────────────
+

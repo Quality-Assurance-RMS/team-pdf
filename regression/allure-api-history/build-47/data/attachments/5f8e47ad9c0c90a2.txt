@@ -1,0 +1,14 @@
+01:24:06.069  ·  Test started: "TC-OT-005 — GET /api/v1/token: issued_at < now < expires_at (valid time window)"
+01:24:07.758  ○  ▶ Step 1 — Send GET /api/v1/token
+01:24:07.956  ·    GET /api/v1/token
+01:24:08.855  ✔    HTTP 500 received
+01:24:08.955  ✔  Step completed in 1197 ms
+01:24:08.955  ○  ▶ Step 2 — Assert HTTP 200
+01:24:08.967  ·    Asserting: HTTP status is 200
+01:24:09.356  ✘  Step failed after 401 ms — TC-OT-005 — expected 200, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m500[39m
+01:24:09.456  ·  Test run complete: "TC-OT-005 — GET /api/v1/token: issued_at < now < expires_at (valid time window)"
