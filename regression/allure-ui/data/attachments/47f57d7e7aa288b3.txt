@@ -1,0 +1,18 @@
+02:28:09.728  ·  Test started: "TC2 — Table loads with at least one refund row"
+02:28:12.515  ○  ▶ Step 1 — Navigate to Refunds page
+02:28:12.525  ·    Opening the Refunds page
+02:28:18.032  ✔    Navigation to Refunds page initiated successfully
+02:28:22.533  ✔  Step completed in 10017 ms
+02:28:22.533  ○  ▶ Step 2 — Verify page loads successfully
+02:28:22.533  ·    Waiting for all Refunds page elements to render
+02:28:37.835  ✘  Step failed after 15302 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/refunds/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/dashboard"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    23 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"[22m
+
+02:28:55.422  ·  Test run complete: "TC2 — Table loads with at least one refund row"

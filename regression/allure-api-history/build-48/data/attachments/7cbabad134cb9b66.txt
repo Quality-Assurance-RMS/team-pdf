@@ -1,0 +1,16 @@
+02:30:42.224  ·  Test started: "TC-TXN-007 — Detail for ID: 2e8b4ea3-5413-4428-bc49-25de24680cdb"
+02:30:42.832  ○  ▶ Step 1 — Build request parameters
+02:30:43.112  ✔  Step completed in 280 ms
+02:30:43.112  ○  ▶ Step 2 — Send GET /transaction/2e8b4ea3-5413-4428-bc49-25de24680cdb
+02:30:43.116  ·    GET /api/v1/transaction/2e8b4ea3-5413-4428-bc49-25de24680cdb
+02:31:03.433  ✔    HTTP 503 received
+02:31:03.613  ✔  Step completed in 20501 ms
+02:31:03.613  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:31:03.616  ·    Asserting: HTTP 200, body defined, body is object
+02:31:03.821  ✘  Step failed after 208 ms — TC-TXN-007 [2e8b4ea3-5413-4428-bc49-25de24680cdb] — expected HTTP 200, got 503
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m503[39m
+02:31:03.909  ·  Test run complete: "TC-TXN-007 — Detail for ID: 2e8b4ea3-5413-4428-bc49-25de24680cdb"

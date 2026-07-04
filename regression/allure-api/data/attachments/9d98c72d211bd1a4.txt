@@ -1,0 +1,26 @@
+[GET /api/v1/transaction/summary?period=custom&from_date=2026-01-01&to_date=2026-05-22] status: 500 | body: {
+  "errorCode": "Internal Server Error",
+  "errorMessage": "An unexpected error occurred"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-003 — Summary: Custom date range (2026-01-01 → 2026-05-22)
+────────────────────────────────────────────────────────────
+02:28:09.714  ·  Test started: "TC-TXN-003 — Summary: Custom date range (2026-01-01 → 2026-05-22)"
+02:28:10.331  ○  ▶ Step 1 — Build request parameters
+02:28:10.535  ✔  Step completed in 204 ms
+02:28:10.535  ○  ▶ Step 2 — Send GET /summary?period=custom&from_date=...&to_date=...
+02:28:10.612  ·    GET /api/v1/transaction/summary?period=custom&from_date=2026-01-01&to_date=2026-05-22
+02:28:31.021  ✔    HTTP 500 received
+02:28:31.036  ✔  Step completed in 20501 ms
+02:28:31.036  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:28:31.037  ·    Asserting: HTTP 200, body defined, body is object
+02:28:31.230  ✘  Step failed after 194 ms — TC-TXN-003 — expected HTTP 200, got 500
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 500
+02:28:31.316  ·  Test run complete: "TC-TXN-003 — Summary: Custom date range (2026-01-01 → 2026-05-22)"
+────────────────────────────────────────────────────────────
+

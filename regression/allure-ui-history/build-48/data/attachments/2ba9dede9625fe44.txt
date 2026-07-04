@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All three KPI cards are visible on the dashboard
+────────────────────────────────────────────────────────────
+02:19:48.413  ·  Test started: "TC1 — All three KPI cards are visible on the dashboard"
+02:19:49.838  ○  ▶ Step 1 — Navigate to Dashboard page
+02:19:49.912  ·    Opening the Dashboard page
+02:19:52.024  ✔    Navigation to Dashboard initiated successfully
+02:19:54.334  ✔  Step completed in 4495 ms
+02:19:54.334  ○  ▶ Step 2 — Verify page loads successfully
+02:19:54.413  ·    Waiting for all Dashboard elements to render
+02:20:05.223  ✘  Step failed after 10890 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+02:20:25.635  ·  Test run complete: "TC1 — All three KPI cards are visible on the dashboard"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,16 @@
+02:27:31.621  ·  Test started: "TC-TXN-003 — Summary: Custom date range (2026-01-01 → 2026-05-22)"
+02:27:32.434  ○  ▶ Step 1 — Build request parameters
+02:27:32.722  ✔  Step completed in 288 ms
+02:27:32.722  ○  ▶ Step 2 — Send GET /summary?period=custom&from_date=...&to_date=...
+02:27:32.723  ·    GET /api/v1/transaction/summary?period=custom&from_date=2026-01-01&to_date=2026-05-22
+02:27:53.217  ✔    HTTP 500 received
+02:27:53.319  ✔  Step completed in 20597 ms
+02:27:53.319  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:27:53.320  ·    Asserting: HTTP 200, body defined, body is object
+02:27:53.423  ✘  Step failed after 104 ms — TC-TXN-003 — expected HTTP 200, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m500[39m
+02:27:53.430  ·  Test run complete: "TC-TXN-003 — Summary: Custom date range (2026-01-01 → 2026-05-22)"

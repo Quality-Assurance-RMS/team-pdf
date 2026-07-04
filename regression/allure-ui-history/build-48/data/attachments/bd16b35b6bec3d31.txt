@@ -1,0 +1,23 @@
+02:33:05.517  ·  Test started: "TC1 — All table column headers are visible"
+02:33:07.516  ○  ▶ Step 1 — Navigate to Transactions page
+02:33:07.527  ·    Opening the Transactions page
+02:33:11.726  ✔    Navigation to Transactions page initiated successfully
+02:33:17.014  ✔  Step completed in 9498 ms
+02:33:17.014  ○  ▶ Step 2 — Verify page loads successfully
+02:33:17.015  ·    Waiting for all Transactions page elements to render
+02:33:18.224  ✔    Transactions page is fully loaded with all required elements
+02:33:19.515  ✔  Step completed in 2502 ms
+02:33:19.515  ○  ▶ Step 3 — Column "Transaction ID" header is visible
+02:33:19.517  ·    Asserting visibility: Transaction ID column header
+02:33:24.627  ✘  Step failed after 5112 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByRole('columnheader', { name: /Transaction ID/i })
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 5000ms[22m
+[2m  - waiting for getByRole('columnheader', { name: /Transaction ID/i })[22m
+
+02:33:31.028  ·  Test run complete: "TC1 — All table column headers are visible"

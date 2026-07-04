@@ -1,0 +1,26 @@
+[GET /api/v1/transaction/summary?period=today] status: 500 | body: {
+  "errorCode": "Internal Server Error",
+  "errorMessage": "An unexpected error occurred"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-002 — Summary: Today
+────────────────────────────────────────────────────────────
+02:26:09.226  ·  Test started: "TC-TXN-002 — Summary: Today"
+02:26:09.627  ○  ▶ Step 1 — Build request parameters
+02:26:09.821  ✔  Step completed in 194 ms
+02:26:09.821  ○  ▶ Step 2 — Send GET /summary?period=today
+02:26:09.823  ·    GET /api/v1/transaction/summary?period=today
+02:26:30.117  ✔    HTTP 500 received
+02:26:30.233  ✔  Step completed in 20412 ms
+02:26:30.233  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:26:30.317  ·    Asserting: HTTP 200, body defined, body is object
+02:26:30.532  ✘  Step failed after 298 ms — TC-TXN-002 — expected HTTP 200, got 500
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 500
+02:26:30.631  ·  Test run complete: "TC-TXN-002 — Summary: Today"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "+ Add User" button is visible and enabled
+────────────────────────────────────────────────────────────
+02:35:31.914  ·  Test started: "TC1 — "+ Add User" button is visible and enabled"
+02:35:34.335  ○  ▶ Step 1 — Navigate to User Management page
+02:35:34.419  ·    Opening the User Management page
+02:35:38.918  ✔    Navigation to User Management page initiated successfully
+02:35:41.809  ✔  Step completed in 7474 ms
+02:35:41.809  ○  ▶ Step 2 — Verify page loads successfully
+02:35:41.810  ·    Waiting for all User Management page elements to render
+02:35:57.019  ✘  Step failed after 15210 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/user/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    24 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+02:36:05.634  ·  Test run complete: "TC1 — "+ Add User" button is visible and enabled"
+────────────────────────────────────────────────────────────
+

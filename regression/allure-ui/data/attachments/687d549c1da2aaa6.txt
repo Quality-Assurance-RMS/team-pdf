@@ -1,0 +1,31 @@
+02:33:17.718  ·  Test started: "should navigate to transaction detail and verify Transaction ID"
+02:33:20.232  ○  ▶ Navigate to Transactions page
+02:33:20.233  ·    Opening the Transactions page and waiting for it to load
+02:33:29.432  ✔    Transactions page loaded successfully
+02:33:29.432  ✔  Step completed in 9200 ms
+02:33:29.432  ○  ▶ Read first Transaction ID from table
+02:33:29.511  ·    Reading the Transaction ID from the first row of the transactions table
+02:34:10.410  ✔    First Transaction ID retrieved: No Data Found
+02:34:10.410  ✔  Step completed in 40978 ms
+02:34:10.410  ○  ▶ Click first row — Transaction ID: No Data Found
+02:34:10.421  ·    Clicking the first transaction row to open the detail page
+02:34:11.320  ✔    First transaction row clicked — navigating to detail page
+02:34:11.320  ✔  Step completed in 910 ms
+02:34:11.320  ○  ▶ Verify Transaction ID on detail page
+02:34:11.323  ·    Confirming the Transaction ID displayed on the detail page matches the table value
+02:34:11.527  ✔    Transaction ID on detail page matches: No Data Found
+02:34:11.527  ✔  Step completed in 206 ms
+02:34:11.527  ○  ▶ Verify Payment Information section is visible
+02:34:11.528  ·    Checking that the Payment Information section is rendered on the detail page
+02:34:16.719  ✘  Step failed after 5193 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByText('Payment Information')
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 5000ms[22m
+[2m  - waiting for getByText('Payment Information')[22m
+
+02:34:29.327  ·  Test run complete: "should navigate to transaction detail and verify Transaction ID"

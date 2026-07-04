@@ -1,0 +1,26 @@
+[GET /api/v1/transaction?page=0&size=20&period=today&sort_by=trnx_date&sort_dir=desc] status: 400 | body: {
+  "errorCode": "Bad Request",
+  "errorMessage": "Page number must be 1 or greater."
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-004 — Transaction List: Default today (sorted by trnx_date desc)
+────────────────────────────────────────────────────────────
+02:29:08.325  ·  Test started: "TC-TXN-004 — Transaction List: Default today (sorted by trnx_date desc)"
+02:29:08.921  ○  ▶ Step 1 — Build request parameters
+02:29:09.309  ✔  Step completed in 387 ms
+02:29:09.309  ○  ▶ Step 2 — Send GET /transaction?period=today
+02:29:09.312  ·    GET /api/v1/transaction?page=0&size=20&period=today&sort_by=trnx_date&sort_dir=desc
+02:29:09.725  ✔    HTTP 400 received
+02:29:09.821  ✔  Step completed in 513 ms
+02:29:09.821  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:29:09.822  ·    Asserting: HTTP 200, body defined, body is object
+02:29:10.015  ✘  Step failed after 194 ms — TC-TXN-004 — expected HTTP 200, got 400
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+02:29:10.022  ·  Test run complete: "TC-TXN-004 — Transaction List: Default today (sorted by trnx_date desc)"
+────────────────────────────────────────────────────────────
+

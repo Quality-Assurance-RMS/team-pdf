@@ -1,0 +1,24 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SF-004 — GET /api/v1/fetch/status: apiEndpoint is a valid HTTPS URL
+────────────────────────────────────────────────────────────
+02:20:21.919  ·  Test started: "TC-SF-004 — GET /api/v1/fetch/status: apiEndpoint is a valid HTTPS URL"
+02:20:23.129  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+02:20:23.335  ·    GET /api/v1/fetch/status
+02:21:23.932  ✔    HTTP 200 received
+02:21:24.029  ✔  Step completed in 60899 ms
+02:21:24.029  ○  ▶ Step 2 — Assert HTTP 200
+02:21:24.115  ·    Asserting: HTTP status is 200
+02:21:24.226  ✔    All assertions passed
+02:21:24.226  ✔  Step completed in 198 ms
+02:21:24.226  ○  ▶ Step 3 — Parse and validate apiEndpoint as HTTPS URL
+02:21:24.227  ·    Asserting: apiEndpoint is a valid HTTPS URL
+02:21:24.233  ✘  Step failed after 7 ms — apiEndpoint must be non-empty
+
+expect(received).toBeTruthy()
+
+Received: undefined
+02:21:24.236  ·  Test run complete: "TC-SF-004 — GET /api/v1/fetch/status: apiEndpoint is a valid HTTPS URL"
+────────────────────────────────────────────────────────────
+

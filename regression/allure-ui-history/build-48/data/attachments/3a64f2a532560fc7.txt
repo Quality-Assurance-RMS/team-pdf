@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Status filter dropdown is visible
+────────────────────────────────────────────────────────────
+02:33:07.529  ·  Test started: "TC2 — Status filter dropdown is visible"
+02:33:09.411  ○  ▶ Step 1 — Navigate to Transactions page
+02:33:09.417  ·    Opening the Transactions page
+02:33:16.833  ✔    Navigation to Transactions page initiated successfully
+02:33:20.729  ✔  Step completed in 11318 ms
+02:33:20.729  ○  ▶ Step 2 — Verify page loads successfully
+02:33:20.730  ·    Waiting for all Transactions page elements to render
+02:33:22.229  ✔    Transactions page is fully loaded with all required elements
+02:33:23.916  ✔  Step completed in 3187 ms
+02:33:23.916  ○  ▶ Step 3 — Status filter showing "All Status" is visible
+02:33:23.919  ·    Checking filter dropdown is interactive and visible
+02:33:29.324  ✘  Step failed after 5408 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('select').filter({ hasText: /All Status/i }).first()
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for locator('select').filter({ hasText: /All Status/i }).first()
+
+02:33:35.912  ·  Test run complete: "TC2 — Status filter dropdown is visible"
+────────────────────────────────────────────────────────────
+

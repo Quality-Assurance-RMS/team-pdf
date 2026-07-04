@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC7 — Dashboard greeting displays the logged-in user name
+────────────────────────────────────────────────────────────
+02:19:54.727  ·  Test started: "TC7 — Dashboard greeting displays the logged-in user name"
+02:19:56.936  ○  ▶ Step 1 — Navigate to Dashboard page
+02:19:57.025  ·    Opening the Dashboard page
+02:20:01.037  ✔    Navigation to Dashboard initiated successfully
+02:20:06.413  ✔  Step completed in 9477 ms
+02:20:06.413  ○  ▶ Step 2 — Verify page loads successfully
+02:20:06.414  ·    Waiting for all Dashboard elements to render
+02:20:18.225  ✘  Step failed after 11811 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Hi,/)
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Hi,/)
+
+02:20:37.628  ·  Test run complete: "TC7 — Dashboard greeting displays the logged-in user name"
+────────────────────────────────────────────────────────────
+

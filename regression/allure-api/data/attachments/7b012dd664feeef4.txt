@@ -1,0 +1,16 @@
+02:26:50.118  ·  Test started: "TC-TXN-002 — Summary: Today"
+02:26:50.922  ○  ▶ Step 1 — Build request parameters
+02:26:51.035  ✔  Step completed in 114 ms
+02:26:51.036  ○  ▶ Step 2 — Send GET /summary?period=today
+02:26:51.037  ·    GET /api/v1/transaction/summary?period=today
+02:27:11.226  ✔    HTTP 500 received
+02:27:11.310  ✔  Step completed in 20274 ms
+02:27:11.310  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:27:11.312  ·    Asserting: HTTP 200, body defined, body is object
+02:27:11.330  ✘  Step failed after 21 ms — TC-TXN-002 — expected HTTP 200, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m500[39m
+02:27:11.412  ·  Test run complete: "TC-TXN-002 — Summary: Today"
