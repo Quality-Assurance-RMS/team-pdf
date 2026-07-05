@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-GW-004] TC-GW-005 — Required security response headers must be present on all API routes
+────────────────────────────────────────────────────────────
+02:22:33.961  ·  Test started: "[BUG-GW-004] TC-GW-005 — Required security response headers must be present on all API routes"
+02:22:34.160  ○  ▶ Step 1 — Send GET /spr-fetcher/api/v1/fetch/status
+02:22:34.164  ·    GET /api/v1/fetch/status
+02:23:34.272  ✔    HTTP 200 received
+02:23:34.280  ✔  Step completed in 60119 ms
+02:23:34.280  ○  ▶ Step 2 — Assert X-Content-Type-Options: nosniff (BUG: missing)
+02:23:34.281  ·    Asserting: X-Content-Type-Options is "nosniff"
+02:23:34.289  ✘  Step failed after 9 ms — [BUG-GW-004] X-Content-Type-Options must be "nosniff"
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "nosniff"
+Received: ""
+02:23:34.291  ·  Test run complete: "[BUG-GW-004] TC-GW-005 — Required security response headers must be present on all API routes"
+────────────────────────────────────────────────────────────
+

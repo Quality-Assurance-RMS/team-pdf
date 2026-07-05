@@ -1,0 +1,20 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-GW-001] TC-GW-002 — CORS allow-origin must not be wildcard "*" on spr-fetcher routes
+────────────────────────────────────────────────────────────
+02:25:10.871  ·  Test started: "[BUG-GW-001] TC-GW-002 — CORS allow-origin must not be wildcard "*" on spr-fetcher routes"
+02:25:11.071  ○  ▶ Step 1 — Send GET /spr-fetcher/api/v1/fetch/status and capture CORS headers
+02:25:11.080  ·    GET /api/v1/fetch/status
+02:26:11.375  ✔    HTTP 200 received
+02:26:11.663  ✔  Step completed in 60591 ms
+02:26:11.663  ○  ▶ Step 2 — Assert CORS origin is NOT wildcard (BUG: "*")
+02:26:11.674  ·    Asserting: access-control-allow-origin is not "*"
+02:26:11.866  ✘  Step failed after 204 ms — [BUG-GW-001] CORS allow-origin must not be "*", got: "*"
+
+expect(received).not.toBe(expected) // Object.is equality
+
+Expected: not "*"
+02:26:11.878  ·  Test run complete: "[BUG-GW-001] TC-GW-002 — CORS allow-origin must not be wildcard "*" on spr-fetcher routes"
+────────────────────────────────────────────────────────────
+

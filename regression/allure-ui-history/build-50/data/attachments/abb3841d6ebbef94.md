@@ -1,0 +1,329 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UI/Dashboard/kpi-cards-successful-payments-range.spec.ts >> Dashboard — KPI Cards >> TC5 — Successful Payments percentage is between 0 and 100
+- Location: tests/UI/Dashboard/kpi-cards-successful-payments-range.spec.ts:34:7
+
+# Error details
+
+```
+Test timeout of 120000ms exceeded.
+```
+
+```
+Error: locator.innerText: Target page, context or browser has been closed
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - img "eCitizen" [ref=e8] [cursor=pointer]
+      - navigation [ref=e9]:
+        - link "Dashboard" [ref=e10] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e11]
+          - generic [ref=e13]: Dashboard
+        - link "Transactions" [ref=e14] [cursor=pointer]:
+          - /url: /transaction
+          - img [ref=e15]
+          - generic [ref=e17]: Transactions
+        - link "Settlements" [ref=e18] [cursor=pointer]:
+          - /url: /settlements
+          - img [ref=e19]
+          - generic [ref=e21]: Settlements
+        - link "Reports" [ref=e22] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e23]
+          - generic [ref=e25]: Reports
+        - link "Settings" [ref=e26] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e27]
+          - generic [ref=e29]: Settings
+      - button "Logout" [ref=e31] [cursor=pointer]:
+        - img [ref=e32]
+        - generic [ref=e34]: Logout
+      - button "Collapse sidebar" [ref=e35]:
+        - img [ref=e36]
+    - generic [ref=e38]:
+      - banner [ref=e39]:
+        - generic [ref=e40]:
+          - button "Notifications" [ref=e41]:
+            - img [ref=e42]
+            - generic [ref=e45]: "3"
+          - generic [ref=e48]: A
+          - generic [ref=e50]:
+            - generic [ref=e51]: Ashil
+            - generic [ref=e52]:
+              - generic [ref=e53]: ADMIN
+              - generic [ref=e54]: PLATFORM
+      - main [ref=e56]:
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - generic [ref=e59]:
+              - generic [ref=e61]:
+                - heading "Hi, Ashil" [level=2] [ref=e62]
+                - paragraph [ref=e63]: Here's what's happening with eCitizen today.
+              - combobox [ref=e65]:
+                - option "Today" [selected]
+                - option "Last 7 Days"
+                - option "Last 30 Days"
+                - option "Last 90 Days"
+                - option "Custom Range"
+            - generic [ref=e67]:
+              - generic [ref=e68]:
+                - generic [ref=e69]:
+                  - generic [ref=e70]:
+                    - img [ref=e72]
+                    - generic [ref=e74]:
+                      - paragraph [ref=e75]: Revenue generated
+                      - paragraph [ref=e76]: Revenue across all ministries
+                  - button "View Details →" [ref=e77] [cursor=pointer]
+                - generic [ref=e79]:
+                  - paragraph [ref=e80]: Total Revenue (KES) & (USD)
+                  - generic [ref=e81]:
+                    - generic [ref=e82]:
+                      - img [ref=e83]
+                      - generic [ref=e91]: KES 0
+                    - generic [ref=e92]: 0.0 —
+                  - generic [ref=e93]:
+                    - generic [ref=e94]:
+                      - img [ref=e95]
+                      - generic [ref=e105]: USD 0
+                    - generic [ref=e106]: 0.0 —
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - generic [ref=e109]:
+                    - img [ref=e111]
+                    - generic [ref=e114]:
+                      - paragraph [ref=e115]: No of Transactions
+                      - paragraph [ref=e116]: "- transactions"
+                  - button "View Transactions →" [ref=e117] [cursor=pointer]
+                - generic [ref=e119]:
+                  - paragraph [ref=e120]: Total Transactions (KES) & (USD)
+                  - generic [ref=e121]:
+                    - generic [ref=e122]:
+                      - img [ref=e123]
+                      - generic [ref=e131]: "0"
+                    - generic [ref=e132]: 0.0 —
+                  - generic [ref=e133]:
+                    - generic [ref=e134]:
+                      - img [ref=e135]
+                      - generic [ref=e145]: "0"
+                    - generic [ref=e146]: 0.0 —
+              - generic [ref=e147]:
+                - generic [ref=e148]:
+                  - generic [ref=e149]:
+                    - img [ref=e151]
+                    - generic [ref=e155]:
+                      - paragraph [ref=e156]: Total Transactions
+                      - paragraph [ref=e157]: 0 Transactions
+                  - button "View Details →" [ref=e158] [cursor=pointer]
+                - generic [ref=e160]:
+                  - generic [ref=e161]:
+                    - generic [ref=e162]:
+                      - generic [ref=e163]: Successful Transactions
+                      - generic [ref=e164]: 0.0 —
+                    - paragraph [ref=e165]: 0%
+                    - paragraph [ref=e166]: "0"
+                  - generic [ref=e168]:
+                    - generic [ref=e169]:
+                      - generic [ref=e170]: Failed Transactions
+                      - generic [ref=e171]: 0.0 —
+                    - paragraph [ref=e172]: 0%
+                    - paragraph [ref=e173]: "0"
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - generic [ref=e176]:
+                - generic [ref=e177]:
+                  - paragraph [ref=e178]: Monthly Revenue for All Services
+                  - generic [ref=e179]:
+                    - img [ref=e180]
+                    - generic [ref=e183]: Showing last 12 months · auto-updates daily
+                - generic [ref=e184]:
+                  - button "KES" [ref=e185]
+                  - button "USD" [ref=e186]
+              - generic [ref=e187]:
+                - generic [ref=e188]:
+                  - generic [ref=e189]:
+                    - paragraph [ref=e190]: KES 3.7M
+                    - generic [ref=e193]: Gross Amount
+                  - generic [ref=e194]:
+                    - paragraph [ref=e195]: KES 399.8M
+                    - generic [ref=e198]: Net Amount
+                  - generic [ref=e199]:
+                    - paragraph [ref=e200]: KES 3.7M
+                    - generic [ref=e203]: Commission
+                  - generic [ref=e204]:
+                    - paragraph [ref=e205]: 100%
+                    - generic [ref=e208]: Transaction Success Ratio
+                - generic [ref=e209]:
+                  - generic [ref=e210]:
+                    - generic [ref=e213]: Gross KES
+                    - generic [ref=e216]: Net KES
+                    - generic [ref=e219]: Commission KES
+                  - img [ref=e223]:
+                    - generic [ref=e240]:
+                      - generic [ref=e241]: Aug
+                      - generic [ref=e242]: Sep
+                      - generic [ref=e243]: Oct
+                      - generic [ref=e244]: Nov
+                      - generic [ref=e245]: Dec
+                      - generic [ref=e246]: Jan
+                      - generic [ref=e247]: Feb
+                      - generic [ref=e248]: Mar
+                      - generic [ref=e249]: Apr
+                      - generic [ref=e250]: May
+                      - generic [ref=e251]: Jun
+                      - generic [ref=e252]: Jul
+                    - generic [ref=e253]:
+                      - generic [ref=e254]: "0"
+                      - generic "100.0M" [ref=e255]: 100.…
+                      - generic "200.0M" [ref=e256]: 200.…
+                      - generic "300.0M" [ref=e257]: 300.…
+                      - generic "400.0M" [ref=e258]: 400.…
+                      - generic "500.0M" [ref=e259]: 500.…
+            - generic [ref=e261]:
+              - generic [ref=e263]:
+                - heading "Gateway Payments" [level=2] [ref=e264]
+                - combobox [ref=e266]:
+                  - option "Today" [selected]
+                  - option "Last 7 Days"
+                  - option "Last 30 Days"
+                  - option "Last 90 Days"
+                  - option "Custom Range"
+              - generic [ref=e267]:
+                - generic [ref=e268]:
+                  - generic [ref=e269]:
+                    - paragraph [ref=e270]: "0"
+                    - paragraph [ref=e271]: Transactions (today)
+                  - generic [ref=e272]:
+                    - paragraph [ref=e273]: 0%
+                    - paragraph [ref=e274]: Success Rate
+                  - generic [ref=e275]:
+                    - paragraph [ref=e276]: 0%
+                    - paragraph [ref=e277]: Availability
+                  - generic [ref=e278]:
+                    - paragraph [ref=e279]: "0"
+                    - paragraph [ref=e280]: P95 Latency
+                  - generic [ref=e281]:
+                    - paragraph [ref=e282]: 0%
+                    - paragraph [ref=e283]: Timeout Rate
+                - generic [ref=e284]:
+                  - generic [ref=e286]:
+                    - generic [ref=e287]:
+                      - paragraph [ref=e289]: Transactions by Payment Method
+                      - generic [ref=e292]:
+                        - generic [ref=e293]: No Transaction Data Available
+                        - generic [ref=e294]: There is no data to display for this period.
+                    - generic [ref=e295]:
+                      - generic [ref=e296]:
+                        - paragraph [ref=e297]: Success vs Failure by Method
+                        - generic [ref=e299]:
+                          - generic [ref=e300]: Success
+                          - generic [ref=e302]: Failure
+                      - generic [ref=e305]:
+                        - generic [ref=e306]: No Success / Failure Data Available
+                        - generic [ref=e307]: There is no data to display for this period.
+                  - paragraph [ref=e310]: Share of Payment Methods
+  - region "Notifications alt+T"
+```
+
+# Test source
+
+```ts
+  1  | /**
+  2  |  * @file kpi-cards-successful-payments-range.spec.ts
+  3  |  * @testId DASH-KPI-TC5
+  4  |  * @feature Dashboard — KPI Cards
+  5  |  * @priority P1 / Critical
+  6  |  *
+  7  |  * PURPOSE
+  8  |  * -------
+  9  |  * Verifies that the Successful Payments KPI value is a valid percentage
+  10 |  * within the range 0–100%. A value outside this range (e.g. "150%") would
+  11 |  * indicate a calculation error in the analytics backend.
+  12 |  *
+  13 |  * WHY THIS MATTERS
+  14 |  * ----------------
+  15 |  * The Successful Payments card drives SLA reporting. An out-of-range value
+  16 |  * could be misread by automated monitoring as 100% even when the real
+  17 |  * success rate is lower, masking a production incident.
+  18 |  *
+  19 |  * PRE-CONDITIONS
+  20 |  * --------------
+  21 |  *  - Authenticated session (OTP login)
+  22 |  *  - At least one completed transaction exists for the current period
+  23 |  */
+  24 | 
+  25 | import { test, expect } from '../fixtures';
+  26 | import type { TestInfo } from '@playwright/test';
+  27 | import { allure } from 'allure-playwright';
+  28 | import { DashboardPage } from '../../pages/DashboardPage';
+  29 | import { attachScreenshot } from '../../utils/screenshotHelper';
+  30 | 
+  31 | test.describe('Dashboard — KPI Cards', () => {
+  32 |   test.setTimeout(120000);
+  33 | 
+  34 |   test('TC5 — Successful Payments percentage is between 0 and 100', async ({ page, logger }, testInfo: TestInfo) => {
+  35 |     // ── Allure metadata ──────────────────────────────────────────────────────
+  36 |     await allure.description('Verifies that the Successful Payments KPI value is a valid percentage within 0–100%.');
+  37 |     await allure.label('feature',  'Dashboard');
+  38 |     await allure.label('story',    'KPI Cards');
+  39 |     await allure.label('severity', 'critical');
+  40 |     await allure.label('priority', 'P1');
+  41 |     await allure.label('testId',   'DASH-KPI-TC5');
+  42 | 
+  43 |     // ── Setup ────────────────────────────────────────────────────────────────
+  44 |     const dashboard = new DashboardPage(page);
+  45 | 
+  46 |     await logger.step('Step 1 — Navigate to Dashboard page', async () => {
+  47 |       logger.info('Opening the Dashboard page');
+  48 |       await dashboard.goto();
+  49 |       logger.pass('Navigation to Dashboard initiated successfully');
+  50 |       await attachScreenshot(page, testInfo, '01 — Page loading');
+  51 |     });
+  52 | 
+  53 |     await logger.step('Step 2 — Verify page loads successfully', async () => {
+  54 |       logger.info('Waiting for all Dashboard elements to render');
+  55 |       await dashboard.assertPageLoaded();
+  56 |       logger.pass('Dashboard page is fully loaded with all required elements visible');
+  57 |       await attachScreenshot(page, testInfo, '02 — Page loaded and ready');
+  58 |     });
+  59 | 
+  60 |     // ── Assertion ────────────────────────────────────────────────────────────
+  61 |     await logger.step('Step 3 — Read Successful Payments value and validate range', async () => {
+  62 |       logger.info('Reading Successful Payments percentage from the page');
+  63 |       // Walk up from the label to capture the card's full text block including the value
+  64 |       const el   = page.getByText(/Successful Payments/i);
+  65 |       const text = await el.locator('xpath=ancestor::*[3]').innerText()
+  66 |         .catch(() => el.locator('xpath=ancestor::*[2]').innerText())
+  67 |         .catch(() => el.locator('xpath=ancestor::*[1]').innerText())
+> 68 |         .catch(() => el.innerText());
+     |                         ^ Error: locator.innerText: Target page, context or browser has been closed
+  69 | 
+  70 |       const match = text.match(/(\d+(\.\d+)?)%/);
+  71 |       expect(match, 'Card text should contain a % value').not.toBeNull();
+  72 | 
+  73 |       const value = parseFloat(match![1]);
+  74 | 
+  75 |       logger.pass('Successful Payments percentage captured: ' + String(value));
+  76 |       // Log the extracted value for easy debugging in the Allure report
+  77 |       allure.parameter('Successful Payments %', String(value));
+  78 | 
+  79 |       // A percentage must always sit within the mathematical range of 0–100
+  80 |       expect(value).toBeGreaterThanOrEqual(0);
+  81 |       expect(value).toBeLessThanOrEqual(100);
+  82 |       await attachScreenshot(page, testInfo, '03 — Successful Payments range validated');
+  83 |     });
+  84 |   });
+  85 | });
+  86 | 
+```

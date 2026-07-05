@@ -1,0 +1,36 @@
+OTP not yet available — retrying in 5s (1/18)...
+OTP found in "inbox" on attempt 2: 3690
+
+────────────────────────────────────────────────────────────
+Execution Log — should complete full login with OTP and reach dashboard
+────────────────────────────────────────────────────────────
+02:29:19.664  ·  Test started: "should complete full login with OTP and reach dashboard"
+02:29:20.186  ○  ▶ Step 1 — Navigate to login page and submit credentials
+02:29:20.188  ·    Opening the login page
+02:29:22.780  ·    Submitting login credentials
+02:29:24.282  ✔    Credentials submitted — expecting redirect to OTP verification
+02:29:24.282  ✔  Step completed in 4096 ms
+02:29:24.282  ○  ▶ Step 2 — Verify OTP page is loaded
+02:29:24.283  ·    Waiting for OTP verification page to render
+02:29:24.766  ✔    OTP verification page is loaded
+02:29:24.766  ·    Checking Resend and Back to Login links are visible
+02:29:25.061  ✔    Resend OTP link is visible
+02:29:25.161  ✔    Back to Login link is visible
+02:29:25.161  ✔  Step completed in 879 ms
+02:29:25.161  ○  ▶ Step 3 — Fetch OTP from email
+02:29:25.162  ·    Polling mailbox for fresh OTP sent after login time
+02:29:32.363  ✔    OTP received from email: 3690
+02:29:32.363  ✔  Step completed in 7202 ms
+02:29:32.363  ○  ▶ Step 4 — Enter OTP and verify redirect to dashboard
+02:29:32.363  ·    Entering the 4-digit OTP in the verification form
+02:29:34.659  ✔    OTP entered successfully
+02:29:34.659  ·    Waiting for redirect away from verification page
+02:29:35.365  ✔    Successfully navigated away from verification — OTP accepted: https://api.rms.dev.demo-fsit.com/dashboard
+02:29:35.365  ✔  Step completed in 3003 ms
+02:29:35.365  ○  ▶ Step 5 — Hold on dashboard for observation
+02:29:35.366  ·    Waiting 10 seconds to observe the final dashboard state
+02:29:45.657  ✔    Observation period complete — test finished successfully
+02:29:45.658  ✔  Step completed in 10292 ms
+02:29:49.072  ·  Test run complete: "should complete full login with OTP and reach dashboard"
+────────────────────────────────────────────────────────────
+

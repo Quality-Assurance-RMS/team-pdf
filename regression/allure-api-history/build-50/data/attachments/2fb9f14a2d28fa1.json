@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-OT-003",
+  "expected": "401 Unauthorized",
+  "actual": "HTTP 204 — cache evicted without authentication",
+  "impact": "DoS risk: attacker can evict cache repeatedly, triggering KCB rate-limits",
+  "fix": "Add JWT auth enforcement to DELETE /oauth-token/api/v1/token/cache in APISIX"
+}
