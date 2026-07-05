@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All three overview cards are visible
+────────────────────────────────────────────────────────────
+01:39:41.502  ·  Test started: "TC1 — All three overview cards are visible"
+01:39:42.111  ○  ▶ Step 1 — Navigate to Transactions page
+01:39:42.114  ·    Opening the Transactions page
+01:39:43.597  ✔    Navigation to Transactions page initiated successfully
+01:39:45.198  ✔  Step completed in 3086 ms
+01:39:45.198  ○  ▶ Step 2 — Verify page loads successfully
+01:39:45.198  ·    Waiting for all Transactions page elements to render
+01:39:45.480  ✔    Transactions page is fully loaded with all required elements
+01:39:45.795  ✔  Step completed in 597 ms
+01:39:45.795  ○  ▶ Step 3 — "Total Volume of Transactions" card is visible
+01:39:45.796  ·    Asserting visibility: Total Volume of Transactions card
+01:39:50.884  ✘  Step failed after 5090 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Total Volume of Transactions/i)
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for getByText(/Total Volume of Transactions/i)
+
+01:39:53.212  ·  Test run complete: "TC1 — All three overview cards are visible"
+────────────────────────────────────────────────────────────
+

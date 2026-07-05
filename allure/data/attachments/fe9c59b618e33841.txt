@@ -1,0 +1,28 @@
+01:42:00.075  ·  Test started: "should complete full login with OTP and reach dashboard"
+01:42:00.241  ○  ▶ Step 1 — Navigate to login page and submit credentials
+01:42:00.243  ·    Opening the login page
+01:42:00.804  ·    Submitting login credentials
+01:42:01.338  ✔    Credentials submitted — expecting redirect to OTP verification
+01:42:01.338  ✔  Step completed in 1097 ms
+01:42:01.338  ○  ▶ Step 2 — Verify OTP page is loaded
+01:42:01.339  ·    Waiting for OTP verification page to render
+01:42:02.194  ✔    OTP verification page is loaded
+01:42:02.194  ·    Checking Resend and Back to Login links are visible
+01:42:02.205  ✔    Resend OTP link is visible
+01:42:02.217  ✔    Back to Login link is visible
+01:42:02.217  ✔  Step completed in 879 ms
+01:42:02.217  ○  ▶ Step 3 — Fetch OTP from email
+01:42:02.218  ·    Polling mailbox for fresh OTP sent after login time
+01:42:08.576  ✔    OTP received from email: 6411
+01:42:08.576  ✔  Step completed in 6358 ms
+01:42:08.576  ○  ▶ Step 4 — Enter OTP and verify redirect to dashboard
+01:42:08.577  ·    Entering the 4-digit OTP in the verification form
+01:42:09.284  ✔    OTP entered successfully
+01:42:09.284  ·    Waiting for redirect away from verification page
+01:42:09.297  ✔    Successfully navigated away from verification — OTP accepted: https://api.rms.dev.demo-fsit.com/dashboard
+01:42:09.297  ✔  Step completed in 721 ms
+01:42:09.297  ○  ▶ Step 5 — Hold on dashboard for observation
+01:42:09.298  ·    Waiting 10 seconds to observe the final dashboard state
+01:42:19.318  ✔    Observation period complete — test finished successfully
+01:42:19.318  ✔  Step completed in 10021 ms
+01:42:19.916  ·  Test run complete: "should complete full login with OTP and reach dashboard"

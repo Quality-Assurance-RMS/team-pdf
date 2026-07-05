@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC4 — Revenue chart canvas element is rendered
+────────────────────────────────────────────────────────────
+01:33:48.993  ·  Test started: "TC4 — Revenue chart canvas element is rendered"
+01:33:49.045  ○  ▶ Step 1 — Navigate to Dashboard page
+01:33:49.045  ·    Opening the Dashboard page
+01:33:50.691  ✔    Navigation to Dashboard initiated successfully
+01:33:51.184  ✔  Step completed in 2139 ms
+01:33:51.184  ○  ▶ Step 2 — Verify page loads successfully
+01:33:51.185  ·    Waiting for all Dashboard elements to render
+01:33:51.384  ✔    Dashboard page is fully loaded with all required elements
+01:33:51.500  ✔  Step completed in 316 ms
+01:33:51.500  ○  ▶ Step 3 — Canvas element is present and visible
+01:33:51.501  ·    Checking chart/canvas element is rendered
+01:34:01.515  ✘  Step failed after 10015 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('canvas').first()
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('canvas').first()
+
+01:34:04.486  ·  Test run complete: "TC4 — Revenue chart canvas element is rendered"
+────────────────────────────────────────────────────────────
+
