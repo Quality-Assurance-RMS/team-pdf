@@ -1,0 +1,88 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-SMK-008] GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/filter-options
+  â–º Status        : 200
+  â–º Content-Type  : application/json
+  â–º statuses      : []  (0 items)
+  â–º methods       : []   (0 items)
+  â–º txn_types     : []  (0 items)
+  â–º categories    : []      (0 items)
+  â–º Full Body:
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "success",
+    "data": {
+        "statuses": [
+            "Failed",
+            "Pending",
+            "Success"
+        ],
+        "methods": [
+            "MOBILE_MONEY",
+            "CARD",
+            "CARD_PAYMENT"
+        ],
+        "txnTypes": [
+            {
+                "value": 1,
+                "label": "Payment"
+            }
+        ],
+        "categories": [
+            "Land",
+            "Health",
+            "Business",
+            "Communications",
+            "Immigration",
+            "Agriculture",
+            "Energy",
+            "Legal",
+            "Standards & Compliance",
+            "Revenue",
+            "Tax",
+            "Infrastructure",
+            "service",
+            "Environment",
+            "Social Security",
+            "Transport",
+            "expense",
+            "Water & Sanitation",
+            "Utilities",
+            "Government",
+            "Tourism",
+            "Education",
+            "Auctioneers Licensing Board",
+            "Agriculture and Food Authority",
+            "State Department for Roads"
+        ]
+    }
+}
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SMK-008 â€" Filter Options: returns 200 with all filter arrays validated
+────────────────────────────────────────────────────────────
+17:24:15.428  ·  Test started: "TC-SMK-008 â€" Filter Options: returns 200 with all filter arrays validated"
+17:24:15.430  ○  ▶ Step 1 â€" Build request
+17:24:15.523  ·    Asserting: request parameters are recorded
+17:24:15.523  ✔    All assertions passed
+17:24:15.531  ✔  Step completed in 101 ms
+17:24:15.531  ○  ▶ Step 2 â€" Send GET /filter-options and log response
+17:24:15.531  ·    GET /api/v1/transaction/filter-options
+17:24:15.613  ✔    HTTP 200 received
+17:24:15.624  ✔  Step completed in 93 ms
+17:24:15.624  ○  ▶ Step 3 â€" Validate HTTP 200 and all top-level keys present
+17:24:15.625  ·    Asserting: HTTP 200, body defined, and top-level keys present
+17:24:15.710  ✘  Step failed after 86 ms — statuses key must be present
+
+expect(received).toHaveProperty(path)
+
+Expected path: "statuses"
+Received path: []
+
+Received value: {"data": {"categories": ["Land", "Health", "Business", "Communications", "Immigration", "Agriculture", "Energy", "Legal", "Standards & Compliance", "Revenue", …], "methods": ["MOBILE_MONEY", "CARD", "CARD_PAYMENT"], "statuses": ["Failed", "Pending", "Success"], "txnTypes": [{"label": "Payment", "value": 1}]}, "message": "success", "statusCode": 200, "success": true}
+17:24:15.716  ·  Test run complete: "TC-SMK-008 â€" Filter Options: returns 200 with all filter arrays validated"
+────────────────────────────────────────────────────────────
+
