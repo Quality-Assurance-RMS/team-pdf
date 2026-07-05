@@ -1,0 +1,15 @@
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/summary?period=custom → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-TXN-004] TC-TXN-004 — period=custom without from_date/to_date returns 200 (should be 400)
+────────────────────────────────────────────────────────────
+00:34:45.214  ·  Test started: "[BUG-TXN-004] TC-TXN-004 — period=custom without from_date/to_date returns 200 (should be 400)"
+00:34:45.710  ○  ▶ Step 1 — GET summary with period=custom and no dates
+00:34:45.722  ·    GET /api/v1/transaction/summary?period=custom
+00:34:46.015  ✔    HTTP 400 received
+00:34:46.120  ·    Asserting: period=custom without dates returns 400
+00:34:46.217  ✔    All assertions passed
+00:34:46.224  ✔  Step completed in 513 ms
+00:34:46.307  ·  Test run complete: "[BUG-TXN-004] TC-TXN-004 — period=custom without from_date/to_date returns 200 (should be 400)"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,43 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/monthly-revenue?year=0 → 400
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/monthly-revenue?year= → 400
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/monthly-revenue?year=9999 → 200
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/monthly-revenue?year=abc → 400
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/monthly-revenue?year=-1 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-008] TC-DB-008 — monthly-revenue: invalid year values accepted without 400
+────────────────────────────────────────────────────────────
+00:35:12.315  ·  Test started: "[BUG-DB-008] TC-DB-008 — monthly-revenue: invalid year values accepted without 400"
+00:35:12.907  ○  ▶ year=0
+00:35:12.921  ·    GET /api/v1/dashboard/monthly-revenue?year=0
+00:35:13.427  ✔    HTTP 400 received
+00:35:13.520  ·    Asserting: year=0 returns 400
+00:35:13.623  ✔    All assertions passed
+00:35:13.627  ✔  Step completed in 719 ms
+00:35:13.627  ○  ▶ year=empty
+00:35:13.629  ·    GET /api/v1/dashboard/monthly-revenue?year=
+00:35:13.816  ✔    HTTP 400 received
+00:35:13.819  ·    Asserting: year=empty returns 400
+00:35:13.824  ✔    All assertions passed
+00:35:13.825  ✔  Step completed in 198 ms
+00:35:13.825  ○  ▶ year=9999
+00:35:13.825  ·    GET /api/v1/dashboard/monthly-revenue?year=9999
+00:35:14.117  ✔    HTTP 200 received
+00:35:14.219  ·    Asserting: year=9999 returns 400
+00:35:14.320  ✔    All assertions passed
+00:35:14.320  ✔  Step completed in 495 ms
+00:35:14.320  ○  ▶ year=abc
+00:35:14.331  ·    GET /api/v1/dashboard/monthly-revenue?year=abc
+00:35:14.717  ✔    HTTP 400 received
+00:35:14.731  ·    Asserting: year=abc returns 400
+00:35:14.733  ✔    All assertions passed
+00:35:14.733  ✔  Step completed in 413 ms
+00:35:14.733  ○  ▶ year=-1
+00:35:14.819  ·    GET /api/v1/dashboard/monthly-revenue?year=-1
+00:35:15.018  ✔    HTTP 400 received
+00:35:15.031  ·    Asserting: year=-1 returns 400
+00:35:15.111  ✔    All assertions passed
+00:35:15.111  ✔  Step completed in 378 ms
+00:35:15.113  ·  Test run complete: "[BUG-DB-008] TC-DB-008 — monthly-revenue: invalid year values accepted without 400"
+────────────────────────────────────────────────────────────
+

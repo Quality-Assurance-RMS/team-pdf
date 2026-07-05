@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Method filter dropdown is visible
+────────────────────────────────────────────────────────────
+00:38:38.833  ·  Test started: "TC2 — Method filter dropdown is visible"
+00:38:39.156  ○  ▶ Step 1 — Navigate to Refunds page
+00:38:39.156  ·    Opening the Refunds page
+00:38:42.731  ✔    Navigation to Refunds page initiated successfully
+00:38:44.346  ✔  Step completed in 5190 ms
+00:38:44.346  ○  ▶ Step 2 — Verify page loads successfully
+00:38:44.413  ·    Waiting for all Refunds page elements to render
+00:39:01.136  ✘  Step failed after 16790 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/refunds/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    23 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+00:39:11.030  ·  Test run complete: "TC2 — Method filter dropdown is visible"
+────────────────────────────────────────────────────────────
+

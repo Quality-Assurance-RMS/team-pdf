@@ -1,0 +1,17 @@
+[DELETE https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 405
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-OT-006] TC-OT-014 — DELETE /api/v1/token: Must return 405 Method Not Allowed (returns 500)
+────────────────────────────────────────────────────────────
+00:35:29.729  ·  Test started: "[BUG-OT-006] TC-OT-014 — DELETE /api/v1/token: Must return 405 Method Not Allowed (returns 500)"
+00:35:29.823  ○  ▶ Step 1 — Send DELETE /api/v1/token (not /token/cache)
+00:35:29.825  ·    DELETE /api/v1/token
+00:36:30.115  ✔    HTTP 405 received
+00:36:30.207  ✔  Step completed in 60384 ms
+00:36:30.207  ○  ▶ Step 2 — Assert 405 (BUG: returns 500)
+00:36:30.208  ·    Asserting: HTTP status is 405
+00:36:30.309  ✔    All assertions passed
+00:36:30.309  ✔  Step completed in 102 ms
+00:36:30.316  ·  Test run complete: "[BUG-OT-006] TC-OT-014 — DELETE /api/v1/token: Must return 405 Method Not Allowed (returns 500)"
+────────────────────────────────────────────────────────────
+

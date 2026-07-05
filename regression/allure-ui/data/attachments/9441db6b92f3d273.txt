@@ -1,0 +1,37 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Profile card with name, email, and SUPER_ADMIN role is visible
+────────────────────────────────────────────────────────────
+00:42:45.325  ·  Test started: "TC1 — Profile card with name, email, and SUPER_ADMIN role is visible"
+00:42:47.837  ○  ▶ Step 1 — Navigate to Settings page
+00:42:47.915  ·    Opening the Settings page
+00:42:57.614  ✔    Navigation to Settings page initiated successfully
+00:43:02.923  ✔  Step completed in 15086 ms
+00:43:02.923  ○  ▶ Step 2 — Verify page loads successfully
+00:43:02.924  ·    Waiting for all Settings page elements to render
+00:43:03.717  ✔    Settings page is fully loaded with all required elements
+00:43:05.310  ✔  Step completed in 2387 ms
+00:43:05.310  ○  ▶ Step 3 — User name is visible on the profile card
+00:43:05.311  ·    Asserting profile card is visible
+00:43:05.519  ✔    Profile card is visible and rendered
+00:43:07.332  ✔  Step completed in 2022 ms
+00:43:07.332  ○  ▶ Step 4 — User email is visible on the profile card
+00:43:07.332  ·    Asserting profile card is visible
+00:43:07.625  ✔    Profile card is visible and rendered
+00:43:09.414  ✔  Step completed in 2083 ms
+00:43:09.414  ○  ▶ Step 5 — "SUPER_ADMIN" role is visible on the profile card
+00:43:09.416  ·    Asserting profile card is visible
+00:43:14.709  ✘  Step failed after 5295 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/^SUPER_ADMIN$/i).first()
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for getByText(/^SUPER_ADMIN$/i).first()
+
+00:43:20.712  ·  Test run complete: "TC1 — Profile card with name, email, and SUPER_ADMIN role is visible"
+────────────────────────────────────────────────────────────
+

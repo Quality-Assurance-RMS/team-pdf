@@ -1,0 +1,14 @@
+00:36:47.432  ·  Test started: "[BUG-OT-001] TC-OT-009 — GET /api/v1/token: No Authorization header must return 401 (returns 504)"
+00:36:47.933  ○  ▶ Step 1 — Send GET /api/v1/token WITHOUT Authorization header
+00:36:48.034  ·    GET /api/v1/token
+00:37:48.319  ✔    HTTP 500 received
+00:37:48.410  ✔  Step completed in 60477 ms
+00:37:48.410  ○  ▶ Step 2 — Assert 401/403 (BUG: returns 504)
+00:37:48.415  ·    Asserting: status is 401 or 403
+00:37:48.531  ✘  Step failed after 121 ms — [BUG-OT-001] No-auth GET /token must return 401/403, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+Expected value: [32m500[39m
+Received array: [31m[401, 403][39m
+00:37:48.609  ·  Test run complete: "[BUG-OT-001] TC-OT-009 — GET /api/v1/token: No Authorization header must return 401 (returns 504)"

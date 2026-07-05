@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — View (eye) icon is present in the first row Action cell
+────────────────────────────────────────────────────────────
+00:41:16.331  ·  Test started: "TC1 — View (eye) icon is present in the first row Action cell"
+00:41:18.220  ○  ▶ Step 1 — Navigate to Refunds page
+00:41:18.223  ·    Opening the Refunds page
+00:41:23.728  ✔    Navigation to Refunds page initiated successfully
+00:41:29.823  ✔  Step completed in 11603 ms
+00:41:29.823  ○  ▶ Step 2 — Verify page loads successfully
+00:41:29.828  ·    Waiting for all Refunds page elements to render
+00:41:45.562  ✘  Step failed after 15738 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/refunds/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    23 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+00:42:00.714  ·  Test run complete: "TC1 — View (eye) icon is present in the first row Action cell"
+────────────────────────────────────────────────────────────
+

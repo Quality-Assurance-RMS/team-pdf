@@ -1,0 +1,19 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/this-does-not-exist → 401
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-XS-003] TC-XS-003 — Unknown paths return 401 not 404 on dashboard and transaction APIs
+────────────────────────────────────────────────────────────
+00:35:31.309  ·  Test started: "[BUG-XS-003] TC-XS-003 — Unknown paths return 401 not 404 on dashboard and transaction APIs"
+00:35:31.808  ○  ▶ Step 1 — GET unknown path on dashboard (no auth)
+00:35:31.814  ·    GET /api/v1/dashboard/this-does-not-exist
+00:35:32.113  ✔    HTTP 401 received
+00:35:32.130  ·    Asserting: Unknown dashboard path returns 404
+00:35:32.408  ✘  Step failed after 600 ms — [BUG-XS-003] Unknown dashboard path must return 404, not 401
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 404
+Received: 401
+00:35:32.421  ·  Test run complete: "[BUG-XS-003] TC-XS-003 — Unknown paths return 401 not 404 on dashboard and transaction APIs"
+────────────────────────────────────────────────────────────
+

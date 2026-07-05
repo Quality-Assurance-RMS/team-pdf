@@ -1,0 +1,27 @@
+00:43:31.907  ·  Test started: "TC1 — "Selected Bank Details" panel is visible"
+00:43:34.029  ○  ▶ Step 1 — Navigate to Settlements page
+00:43:34.107  ·    Opening the Settlements page
+00:43:39.210  ✔    Navigation to Settlements page initiated successfully
+00:43:46.118  ✔  Step completed in 12089 ms
+00:43:46.118  ○  ▶ Step 2 — Verify page loads successfully
+00:43:46.119  ·    Waiting for all Settlements page elements to render
+00:43:47.617  ✔    Settlements page is fully loaded with all required elements
+00:43:48.822  ✔  Step completed in 2704 ms
+00:43:48.822  ○  ▶ Step 3 — "Selected Bank Details" panel heading is visible
+00:43:48.823  ·    Checking Selected Bank Details panel is rendered
+00:43:49.017  ✔    Selected Bank Details panel is visible and accessible
+00:43:51.024  ✔  Step completed in 2202 ms
+00:43:51.024  ○  ▶ Step 4 — Panel shows "Select a row to see details" placeholder
+00:43:51.024  ·    Asserting visibility: Select a row to see details placeholder text
+00:43:56.618  ✘  Step failed after 5594 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByText(/Select a row to see details/i)
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 5000ms[22m
+[2m  - waiting for getByText(/Select a row to see details/i)[22m
+
+00:44:06.623  ·  Test run complete: "TC1 — "Selected Bank Details" panel is visible"
