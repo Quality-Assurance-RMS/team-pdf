@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-006 – BUG-ASUM-05: ?mcda_id= query param is completely ignored
+────────────────────────────────────────────────────────────
+17:23:58.262  ·  Test started: "TC-ASUM-006 – BUG-ASUM-05: ?mcda_id= query param is completely ignored"
+17:23:58.263  ○  ▶ Step 1 – Baseline (no mcda_id param)
+17:23:58.271  ·    GET /api/v1/analytics/dashboard/summary
+17:23:58.368  ✔    HTTP 200 received
+17:23:58.368  ·    Asserting: HTTP 200
+17:23:58.374  ✔    All assertions passed
+17:23:58.378  ✔  Step completed in 114 ms
+17:23:58.378  ○  ▶ Step 2 – ?mcda_id=PLATFORM
+17:23:58.379  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=PLATFORM
+17:23:58.409  ✔    HTTP 200 received
+17:23:58.413  ✔  Step completed in 35 ms
+17:23:58.413  ○  ▶ Step 3 – ?mcda_id=invalid_value
+17:23:58.413  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=invalid_value
+17:23:58.439  ✔    HTTP 200 received
+17:23:58.442  ✔  Step completed in 29 ms
+17:23:58.442  ○  ▶ Step 4 – BUG-ASUM-05a: mcda_id param must filter data
+17:23:58.444  ·    Asserting: response mcda_id echoes PLATFORM and data differs from baseline
+17:23:58.466  ✔    All assertions passed
+17:23:58.466  ✔  Step completed in 24 ms
+17:23:58.466  ○  ▶ Step 5 – BUG-ASUM-05b: ?mcda_id=invalid must return 400 or empty data, not ALL data
+17:23:58.468  ·    Asserting: ?mcda_id=invalid returns 400
+17:23:58.471  ✔    All assertions passed
+17:23:58.471  ✔  Step completed in 5 ms
+17:23:58.476  ·  Test run complete: "TC-ASUM-006 – BUG-ASUM-05: ?mcda_id= query param is completely ignored"
+────────────────────────────────────────────────────────────
+

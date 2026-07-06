@@ -1,0 +1,20 @@
+17:19:35.269  ·  Test started: "TC-ASUM-013 – Field types: all today.* fields must be non-negative numbers"
+17:19:35.271  ○  ▶ Step 1 – Fetch analytics summary
+17:19:35.389  ·    GET /api/v1/analytics/dashboard/summary
+17:19:35.882  ✔    HTTP 200 received
+17:19:35.882  ·    Asserting: HTTP 200
+17:19:35.983  ✔    All assertions passed
+17:19:36.063  ✔  Step completed in 792 ms
+17:19:36.063  ○  ▶ Step 2 – All numeric fields must be numbers >= 0
+17:19:36.064  ·    Asserting: all numeric today.* fields are numbers >= 0, non-NaN, finite
+17:19:36.666  ✔    All assertions passed
+17:19:36.667  ✔  Step completed in 604 ms
+17:19:36.667  ○  ▶ Step 3 – mcda_id must be a non-empty string
+17:19:36.670  ·    Asserting: mcda_id is a non-empty string
+17:19:36.675  ✔    All assertions passed
+17:19:36.677  ✔  Step completed in 10 ms
+17:19:36.677  ○  ▶ Step 4 – Count fields must be integers
+17:19:36.681  ·    Asserting: count fields are all integers
+17:19:36.690  ✔    All assertions passed
+17:19:36.690  ✔  Step completed in 13 ms
+17:19:36.765  ·  Test run complete: "TC-ASUM-013 – Field types: all today.* fields must be non-negative numbers"

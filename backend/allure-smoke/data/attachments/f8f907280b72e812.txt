@@ -1,0 +1,18 @@
+17:22:39.778  ·  Test started: "TC-DREVT-010 â€” BUG-REVT-09: Accept: text/html must not expose Spring Boot Whitelabel page"
+17:22:39.780  ○  ▶ Step 1 â€” Send GET with Accept: text/html
+17:22:39.865  ·    GET /api/v1/dashboard/revenue-trend
+17:22:40.083  ✔    HTTP 406 received
+17:22:40.169  ✔  Step completed in 388 ms
+17:22:40.169  ○  ▶ Step 2 â€” Send GET with Accept: application/xml
+17:22:40.170  ·    GET /api/v1/dashboard/revenue-trend
+17:22:40.286  ✔    HTTP 406 received
+17:22:40.289  ✔  Step completed in 121 ms
+17:22:40.289  ○  ▶ Step 3 â€” Both must return 406 Not Acceptable
+17:22:40.365  ·    Asserting: response structure and values
+17:22:40.388  ✔    All assertions passed
+17:22:40.388  ✔  Step completed in 99 ms
+17:22:40.388  ○  ▶ Step 4 â€” BUG-REVT-09: 406 error body must NOT expose Whitelabel page
+17:22:40.465  ·    Asserting: BUG-REVT-09: 406 error body must NOT expose White
+17:22:40.474  ✔    All assertions passed
+17:22:40.474  ✔  Step completed in 86 ms
+17:22:40.476  ·  Test run complete: "TC-DREVT-010 â€” BUG-REVT-09: Accept: text/html must not expose Spring Boot Whitelabel page"
