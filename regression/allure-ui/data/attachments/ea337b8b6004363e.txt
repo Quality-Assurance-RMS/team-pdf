@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — SSO login button should be visible but disabled
+────────────────────────────────────────────────────────────
+02:21:11.304  ·  Test started: "SSO login button should be visible but disabled"
+02:21:22.597  ○  ▶ Verify SSO button is visible and disabled
+02:21:22.611  ·    Checking that the SSO login button is present on the page
+02:21:22.901  ✔    SSO login button is visible
+02:21:22.902  ·    Asserting that the SSO login button is in a disabled state
+02:21:28.198  ✘  Step failed after 5600 ms — expect(locator).toBeDisabled() failed
+
+Locator:  getByRole('button', { name: /login with sso/i })
+Expected: disabled
+Received: enabled
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeDisabled" with timeout 5000ms
+  - waiting for getByRole('button', { name: /login with sso/i })
+    13 × locator resolved to <button type="button" class="border border-[#059669] bg-[#E7FAEE] rounded-lg↵                        py-2 text-[#059669] hover:cursor-pointer">Login with SSO →</button>
+       - unexpected value "enabled"
+
+02:21:33.522  ·  Test run complete: "SSO login button should be visible but disabled"
+────────────────────────────────────────────────────────────
+
