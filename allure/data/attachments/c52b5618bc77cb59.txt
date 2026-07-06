@@ -1,0 +1,22 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC4 — Clicking "Refunds" navigates to the Refunds page
+────────────────────────────────────────────────────────────
+01:35:00.965  ·  Test started: "TC4 — Clicking "Refunds" navigates to the Refunds page"
+01:35:01.575  ○  ▶ Step 1 — Navigate to Dashboard page
+01:35:01.578  ·    Opening the Dashboard page
+01:35:03.765  ✔    Navigation initiated successfully
+01:35:05.380  ✔  Step completed in 3805 ms
+01:35:05.380  ○  ▶ Step 2 — Verify page loads successfully
+01:35:05.380  ·    Waiting for all page elements to render
+01:35:05.504  ✔    Page is fully loaded with all required elements visible
+01:35:05.677  ✔  Step completed in 297 ms
+01:35:05.677  ○  ▶ Step 3 — Click Refunds nav item
+01:35:05.678  ·    Clicking: Refunds nav item
+01:37:53.675  ✘  Step failed after 167998 ms — locator.click: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByRole('link', { name: /^Refunds$/i }).or(locator('nav, [class*="sidebar"]').getByText(/^Refunds$/i)).first()
+
+01:37:53.776  ·  Test run complete: "TC4 — Clicking "Refunds" navigates to the Refunds page"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,26 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — KPI cards display non-empty numeric values
+────────────────────────────────────────────────────────────
+01:32:06.883  ·  Test started: "TC2 — KPI cards display non-empty numeric values"
+01:32:07.391  ○  ▶ Step 1 — Navigate to Dashboard page
+01:32:07.392  ·    Opening the Dashboard page
+01:32:09.981  ✔    Navigation to Dashboard initiated successfully
+01:32:12.580  ✔  Step completed in 5189 ms
+01:32:12.580  ○  ▶ Step 2 — Verify page loads successfully
+01:32:12.581  ·    Waiting for all Dashboard elements to render
+01:32:13.272  ✔    Dashboard page is fully loaded with all required elements visible
+01:32:13.973  ✔  Step completed in 1393 ms
+01:32:13.973  ○  ▶ Step 3 — Revenue generated — value matches expected format
+01:32:13.974  ·    Reading Revenue generated value from the page
+01:32:14.085  ✔    Revenue generated value captured: Revenue generated
+
+Revenue across all ministries
+01:32:14.183  ✘  Step failed after 210 ms — expect(received).toMatch(expected)
+
+Expected pattern: /KES\s*[\d,]+(\.\d+)?/i
+Received string:  "Revenue generated·
+Revenue across all ministries"
+01:32:18.090  ·  Test run complete: "TC2 — KPI cards display non-empty numeric values"
+────────────────────────────────────────────────────────────
+

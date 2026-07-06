@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Date filter dropdown defaults to "Today"
+────────────────────────────────────────────────────────────
+01:33:12.340  ·  Test started: "TC3 — Date filter dropdown defaults to "Today""
+01:33:12.523  ○  ▶ Step 1 — Navigate to Dashboard page
+01:33:12.525  ·    Opening the Dashboard page
+01:33:14.364  ✔    Navigation to Dashboard initiated successfully
+01:33:14.617  ✔  Step completed in 2093 ms
+01:33:14.617  ○  ▶ Step 2 — Verify page loads successfully
+01:33:14.617  ·    Waiting for all Dashboard elements to render
+01:33:14.793  ✔    Dashboard page is fully loaded with all required elements
+01:33:14.884  ✔  Step completed in 268 ms
+01:33:14.885  ○  ▶ Step 3 — "Today" label is visible in the date filter
+01:33:14.885  ·    Asserting value/data: date filter default selection
+01:33:14.938  ✘  Step failed after 53 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText('Today', { exact: true })
+Expected: visible
+Error: strict mode violation: getByText('Today', { exact: true }) resolved to 2 elements:
+    1) <option value="today" class="relative flex select-none items-center ↵                rounded-sm outline-none focus:bg-accent focus:text-accent-foreground ↵                data-disabled:pointer-events-none ↵                data-disabled:opacity-50 px-4 py-3 text-lg cursor-pointer ↵                transition-colors border-b border-[#D6DBD7] last:border-0 ↵                text-[#272E28] hover:bg-[#F8F9FA]">Today</option> aka getByRole('combobox').first()
+    2) <option value="today" class="relative flex select-none items-center ↵                rounded-sm outline-none focus:bg-accent focus:text-accent-foreground ↵                data-disabled:pointer-events-none ↵                data-disabled:opacity-50 px-4 py-3 text-lg cursor-pointer ↵                transition-colors border-b border-[#D6DBD7] last:border-0 ↵                text-[#272E28] hover:bg-[#F8F9FA]">Today</option> aka getByRole('combobox').nth(1)
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText('Today', { exact: true })
+
+01:33:15.346  ·  Test run complete: "TC3 — Date filter dropdown defaults to "Today""
+────────────────────────────────────────────────────────────
+
