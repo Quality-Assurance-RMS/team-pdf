@@ -1,0 +1,46 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DMREV-001] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/monthly-revenue
+  â–º HTTP Status           : 200
+  â–º Content-Type         : application/json
+  â–º year                 : undefined
+  â–º months count         : 12
+  â–º months with data     : 0 ()
+  â–º summary.total_gross_kes  : undefined
+  â–º summary.total_gross_usd  : undefined
+  â–º summary.total_net_kes    : undefined
+  â–º summary.total_net_usd    : undefined
+  â–º summary.total_commission_kes : undefined
+  â–º summary.total_payments   : undefined
+  â–º summary.conversion_ratio_pct: undefined
+  â–º Cache-Control        : MISSING
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-001 â€” Happy Path: 200 + year + months[12] + summary
+────────────────────────────────────────────────────────────
+00:55:15.779  ·  Test started: "TC-DMREV-001 â€” Happy Path: 200 + year + months[12] + summary"
+00:55:15.781  ○  ▶ Step 1 â€” Build request
+00:55:15.905  ✔  Step completed in 124 ms
+00:55:15.905  ○  ▶ Step 2 â€” Send GET /monthly-revenue and log response
+00:55:15.905  ·    GET /api/v1/dashboard/monthly-revenue
+00:55:16.021  ✔    HTTP 200 received
+00:55:16.058  ✔  Step completed in 153 ms
+00:55:16.058  ○  ▶ Step 3 â€” Validate HTTP 200 and Content-Type
+00:55:16.059  ·    Asserting: Validate HTTP 200 and Content-Type
+00:55:16.069  ✔    All assertions passed
+00:55:16.070  ✔  Step completed in 12 ms
+00:55:16.070  ○  ▶ Step 4 â€” Validate top-level data wrapper
+00:55:16.070  ·    Asserting: Validate top-level data wrapper
+00:55:16.097  ✘  Step failed after 28 ms — "data.year" must be present
+
+expect(received).toHaveProperty(path)
+
+Expected path: "year"
+Received path: []
+
+Received value: {"months": [{"commissionKes": 0, "commissionUsd": 0, "grossKes": 4747000, "grossUsd": 0, "monthLabel": "Aug", "monthNum": 8, "netKes": 4747000, "netUsd": 0, "year": 2025}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Sep", "monthNum": 9, "netKes": 0, "netUsd": 0, "year": 2025}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Oct", "monthNum": 10, "netKes": 0, "netUsd": 0, "year": 2025}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Nov", "monthNum": 11, "netKes": 0, "netUsd": 0, "year": 2025}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Dec", "monthNum": 12, "netKes": 0, "netUsd": 0, "year": 2025}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Jan", "monthNum": 1, "netKes": 0, "netUsd": 0, "year": 2026}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Feb", "monthNum": 2, "netKes": 0, "netUsd": 0, "year": 2026}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Mar", "monthNum": 3, "netKes": 0, "netUsd": 0, "year": 2026}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Apr", "monthNum": 4, "netKes": 0, "netUsd": 0, "year": 2026}, {"commissionKes": 43252.5, "commissionUsd": 0, "grossKes": 666051.5, "grossUsd": 0, "monthLabel": "May", "monthNum": 5, "netKes": 622799, "netUsd": 0, "year": 2026}, …], "summary": {"conversionRatioKesPct": 100, "conversionRatioUsdPct": 100, "totalCommissionKes": 4137492.5, "totalCommissionUsd": 0, "totalGrossKes": 445335487.5, "totalGrossUsd": 19450, "totalNetKes": 441197995, "totalNetUsd": 19450}}
+00:55:16.099  ·  Test run complete: "TC-DMREV-001 â€” Happy Path: 200 + year + months[12] + summary"
+────────────────────────────────────────────────────────────
+

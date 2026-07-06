@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 500
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-004 — GET /api/v1/token: expires_at is a future ISO 8601 timestamp
+────────────────────────────────────────────────────────────
+01:00:43.111  ·  Test started: "TC-OT-004 — GET /api/v1/token: expires_at is a future ISO 8601 timestamp"
+01:00:43.150  ○  ▶ Step 1 — Send GET /api/v1/token
+01:00:43.155  ·    GET /api/v1/token
+01:00:43.192  ✔    HTTP 500 received
+01:00:43.196  ✔  Step completed in 46 ms
+01:00:43.196  ○  ▶ Step 2 — Assert HTTP 200
+01:00:43.197  ·    Asserting: HTTP status is 200
+01:00:43.205  ✘  Step failed after 9 ms — TC-OT-004 — expected 200, got 500
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 500
+01:00:43.208  ·  Test run complete: "TC-OT-004 — GET /api/v1/token: expires_at is a future ISO 8601 timestamp"
+────────────────────────────────────────────────────────────
+

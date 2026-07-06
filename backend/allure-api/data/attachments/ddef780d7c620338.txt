@@ -1,0 +1,20 @@
+POST https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 405
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-ANA-002] TC-ANA-002 — Analytics 405 body missing "message" field (inconsistent with all other APIs)
+────────────────────────────────────────────────────────────
+00:53:17.515  ·  Test started: "[BUG-ANA-002] TC-ANA-002 — Analytics 405 body missing "message" field (inconsistent with all other APIs)"
+00:53:17.796  ○  ▶ Step 1 — Trigger 405 on analytics endpoint
+00:53:17.801  ·    POST /api/v1/analytics/dashboard/summary
+00:53:17.994  ✔    HTTP 405 received
+00:53:17.994  ·    Asserting: Response is 405
+00:53:18.099  ·    Asserting: 405 body includes message field
+00:53:18.116  ✘  Step failed after 319 ms — [BUG-ANA-002] Analytics 405 body must include a "message" field
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+00:53:18.119  ·  Test run complete: "[BUG-ANA-002] TC-ANA-002 — Analytics 405 body missing "message" field (inconsistent with all other APIs)"
+────────────────────────────────────────────────────────────
+

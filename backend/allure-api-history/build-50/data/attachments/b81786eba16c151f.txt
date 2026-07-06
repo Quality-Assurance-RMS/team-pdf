@@ -1,0 +1,21 @@
+[POST https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/trigger] 500
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-SF-002] TC-SF-007 — POST /api/v1/fetch/trigger: Must return 200/202 (returns 504 or connection error)
+────────────────────────────────────────────────────────────
+01:00:54.132  ·  Test started: "[BUG-SF-002] TC-SF-007 — POST /api/v1/fetch/trigger: Must return 200/202 (returns 504 or connection error)"
+01:00:54.181  ○  ▶ Step 1 — Send POST /api/v1/fetch/trigger with valid auth
+01:00:54.195  ·    POST /api/v1/fetch/trigger
+01:01:54.247  ✔    HTTP 500 received
+01:01:54.252  ✔  Step completed in 60072 ms
+01:01:54.252  ○  ▶ Step 2 — Assert 200/202 (BUG: connection error or 504)
+01:01:54.256  ·    Asserting: status is 200 or 202
+01:01:54.268  ✘  Step failed after 15 ms — [BUG-SF-002] Trigger must return 200/202, got 500
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: 500
+Received array: [200, 202]
+01:01:54.270  ·  Test run complete: "[BUG-SF-002] TC-SF-007 — POST /api/v1/fetch/trigger: Must return 200/202 (returns 504 or connection error)"
+────────────────────────────────────────────────────────────
+

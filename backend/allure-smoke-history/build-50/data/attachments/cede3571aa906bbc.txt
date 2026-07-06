@@ -1,0 +1,27 @@
+[TC-DREVT-010] Accept: text/html â†’ 406
+  Content-Type : application/json
+  Body excerpt : {"errorCode":406,"errorMessage":"This API only produces application/json"}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-010 â€” BUG-REVT-09: Accept: text/html must not expose Spring Boot Whitelabel page
+────────────────────────────────────────────────────────────
+00:56:08.300  ·  Test started: "TC-DREVT-010 â€” BUG-REVT-09: Accept: text/html must not expose Spring Boot Whitelabel page"
+00:56:08.302  ○  ▶ Step 1 â€” Send GET with Accept: text/html
+00:56:08.411  ·    GET /api/v1/dashboard/revenue-trend
+00:56:08.897  ✔    HTTP 406 received
+00:56:08.906  ✔  Step completed in 605 ms
+00:56:08.906  ○  ▶ Step 2 â€” Send GET with Accept: application/xml
+00:56:08.908  ·    GET /api/v1/dashboard/revenue-trend
+00:56:09.228  ✔    HTTP 406 received
+00:56:09.237  ✔  Step completed in 330 ms
+00:56:09.237  ○  ▶ Step 3 â€” Both must return 406 Not Acceptable
+00:56:09.292  ·    Asserting: response structure and values
+00:56:09.304  ✔    All assertions passed
+00:56:09.304  ✔  Step completed in 68 ms
+00:56:09.304  ○  ▶ Step 4 â€” BUG-REVT-09: 406 error body must NOT expose Whitelabel page
+00:56:09.309  ·    Asserting: BUG-REVT-09: 406 error body must NOT expose White
+00:56:09.402  ✔    All assertions passed
+00:56:09.402  ✔  Step completed in 98 ms
+00:56:09.405  ·  Test run complete: "TC-DREVT-010 â€” BUG-REVT-09: Accept: text/html must not expose Spring Boot Whitelabel page"
+────────────────────────────────────────────────────────────
+
