@@ -1,0 +1,60 @@
+[GET /api/v1/transaction/summary?period=custom&from_date=2026-01-01&to_date=2026-05-22] status: 200 | body: {
+  "success": true,
+  "statusCode": 200,
+  "message": "success",
+  "data": {
+    "totalTransactionsAmount": {
+      "amountKes": 513693,
+      "amountUsd": 0,
+      "changePctKes": -88.378,
+      "changePctDirectionKes": "down",
+      "changePctUsd": 0,
+      "changeDirectionUsd": "flat"
+    },
+    "successRate": {
+      "countKes": 111,
+      "changePctKes": -88.9,
+      "changeDirectionKes": "down",
+      "countUsd": 0,
+      "changePctUsd": 0,
+      "changeDirectionUsd": "flat"
+    },
+    "failureRate": {
+      "countKes": 0,
+      "changePctKes": 0,
+      "changeDirectionKes": "flat",
+      "countUsd": 0,
+      "changePctUsd": 0,
+      "changeDirectionUsd": "flat"
+    }
+  }
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-003 — Summary: Custom date range (2026-01-01 → 2026-05-22)
+────────────────────────────────────────────────────────────
+02:43:27.471  ·  Test started: "TC-TXN-003 — Summary: Custom date range (2026-01-01 → 2026-05-22)"
+02:43:27.569  ○  ▶ Step 1 — Build request parameters
+02:43:27.590  ✔  Step completed in 21 ms
+02:43:27.590  ○  ▶ Step 2 — Send GET /summary?period=custom&from_date=...&to_date=...
+02:43:27.591  ·    GET /api/v1/transaction/summary?period=custom&from_date=2026-01-01&to_date=2026-05-22
+02:43:27.667  ✔    HTTP 200 received
+02:43:27.673  ✔  Step completed in 83 ms
+02:43:27.673  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:43:27.673  ·    Asserting: HTTP 200, body defined, body is object
+02:43:27.684  ✔    All assertions passed
+02:43:27.686  ✔  Step completed in 14 ms
+02:43:27.686  ○  ▶ Step 4 — Validate response body has content
+02:43:27.697  ·    Asserting: body has at least one field
+02:43:27.699  ✔    All assertions passed
+02:43:27.701  ✔  Step completed in 14 ms
+02:43:27.701  ○  ▶ Step 5 — Validate total_volume for custom range
+02:43:27.702  ·    Asserting: total_volume present, amount is a number >= 0
+02:43:27.706  ✘  Step failed after 5 ms — total_volume must be present
+
+expect(received).toBeDefined()
+
+Received: undefined
+02:43:27.708  ·  Test run complete: "TC-TXN-003 — Summary: Custom date range (2026-01-01 → 2026-05-22)"
+────────────────────────────────────────────────────────────
+

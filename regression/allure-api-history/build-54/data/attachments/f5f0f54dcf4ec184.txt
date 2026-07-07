@@ -1,0 +1,18 @@
+02:38:11.663  ·  Test started: "[BUG-SF-004] TC-SF-010 — mockEnabled must be false in a live/UAT environment (currently true)"
+02:38:12.566  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+02:38:12.666  ·    GET /api/v1/fetch/status
+02:38:13.084  ✔    HTTP 200 received
+02:38:13.173  ✔  Step completed in 606 ms
+02:38:13.173  ○  ▶ Step 2 — Assert HTTP 200
+02:38:13.175  ·    Asserting: HTTP status is 200
+02:38:13.374  ✔    All assertions passed
+02:38:13.374  ✔  Step completed in 202 ms
+02:38:13.374  ○  ▶ Step 3 — Assert mockEnabled = false (BUG: currently true)
+02:38:13.375  ·    Asserting: mockEnabled is false
+02:38:13.478  ✘  Step failed after 104 ms — [BUG-SF-004] mockEnabled must be false in live/UAT, got: undefined
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mfalse[39m
+Received: [31mundefined[39m
+02:38:13.566  ·  Test run complete: "[BUG-SF-004] TC-SF-010 — mockEnabled must be false in a live/UAT environment (currently true)"
