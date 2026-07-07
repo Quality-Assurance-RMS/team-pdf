@@ -1,0 +1,13 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=week → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-007] TC-DB-007 — successful_payments% + failed_payments% must equal 100%
+────────────────────────────────────────────────────────────
+02:31:09.695  ·  Test started: "[BUG-DB-007] TC-DB-007 — successful_payments% + failed_payments% must equal 100%"
+02:31:09.978  ○  ▶ Step 1 — Fetch summary and check rate sum
+02:31:09.986  ·    GET /api/v1/dashboard/summary?period=week
+02:31:10.096  ✔    HTTP 400 received
+02:31:10.168  ✘  Step failed after 190 ms — Test is skipped: 
+02:31:10.180  ·  Test run complete: "[BUG-DB-007] TC-DB-007 — successful_payments% + failed_payments% must equal 100%"
+────────────────────────────────────────────────────────────
+

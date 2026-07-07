@@ -1,0 +1,31 @@
+02:33:43.204  ·  Test started: "TC-DREVT-008 â€” BUG-REVT-07: all query parameters (?period=, ?startDate=, etc.) silently ignored"
+02:33:43.277  ○  ▶ Step 1 â€” Fetch baseline (no params)
+02:33:43.278  ·    GET /api/v1/dashboard/revenue-trend
+02:33:43.379  ✔    HTTP 200 received
+02:33:43.380  ✔    All assertions passed
+02:33:43.380  ✔  Step completed in 103 ms
+02:33:43.380  ○  ▶ Step 2 â€” Fetch with period=weekly
+02:33:43.381  ·    GET /api/v1/dashboard/revenue-trend
+02:33:43.465  ✔    HTTP 200 received
+02:33:43.468  ✔  Step completed in 87 ms
+02:33:43.468  ○  ▶ Step 3 â€” Fetch with period=invalid_value
+02:33:43.468  ·    GET /api/v1/dashboard/revenue-trend
+02:33:43.773  ✔    HTTP 200 received
+02:33:43.779  ✔  Step completed in 311 ms
+02:33:43.779  ○  ▶ Step 4 â€” Fetch with startDate/endDate
+02:33:43.780  ·    GET /api/v1/dashboard/revenue-trend
+02:33:43.969  ✔    HTTP 200 received
+02:33:43.971  ✔  Step completed in 192 ms
+02:33:43.971  ○  ▶ Step 5 â€” BUG-REVT-07a: ?period=invalid_value must return 400, not 200
+02:33:43.974  ·    Asserting: BUG-REVT-07a: ?period=invalid_value must return 4
+02:33:43.979  ✔    All assertions passed
+02:33:43.979  ✔  Step completed in 8 ms
+02:33:43.979  ○  ▶ Step 6 â€” BUG-REVT-07b: ?period=weekly must return different data than no-period (monthly)
+02:33:43.983  ·    Asserting: BUG-REVT-07b: ?period=weekly must return differen
+02:33:43.985  ✔    All assertions passed
+02:33:43.985  ✔  Step completed in 6 ms
+02:33:43.985  ○  ▶ Step 7 â€” BUG-REVT-07c: ?startDate/endDate must filter data range
+02:33:43.989  ·    Asserting: BUG-REVT-07c: ?startDate/endDate must filter data
+02:33:43.991  ✔    All assertions passed
+02:33:43.991  ✔  Step completed in 6 ms
+02:33:44.069  ·  Test run complete: "TC-DREVT-008 â€” BUG-REVT-07: all query parameters (?period=, ?startDate=, etc.) silently ignored"

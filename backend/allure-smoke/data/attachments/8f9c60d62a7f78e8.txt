@@ -1,0 +1,32 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DSUM-005] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=INVALID_XYZ
+  â–º HTTP Status    : 400
+  â–º Content-Type   : application/json
+  â–º period         : N/A
+  â–º date_from      : N/A
+  â–º date_to        : N/A
+  â–º Full Body:
+{
+    "errorCode": 400,
+    "errorMessage": "Invalid period value. Must be today|last-7-days|last-30-days|last-90-days|custom"
+}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-005 â€” Input validation: invalid period, case sensitivity, error messages
+────────────────────────────────────────────────────────────
+02:34:31.368  ·  Test started: "TC-DSUM-005 â€” Input validation: invalid period, case sensitivity, error messages"
+02:34:31.370  ○  ▶ Step 1 â€” period=INVALID_XYZ must return 400
+02:34:31.380  ·    GET /api/v1/dashboard/summary
+02:34:31.793  ✔    HTTP 400 received
+02:34:31.800  ·    Asserting: response structure and values
+02:34:31.974  ✘  Step failed after 603 ms — Error message must be non-empty
+
+expect(received).toBeTruthy()
+
+Received: undefined
+02:34:31.979  ·  Test run complete: "TC-DSUM-005 â€” Input validation: invalid period, case sensitivity, error messages"
+────────────────────────────────────────────────────────────
+

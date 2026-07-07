@@ -1,0 +1,14 @@
+02:31:00.193  ·  Test started: "TC-ASUM-015 – Response-Time SLA: must respond within 2 000 ms"
+02:31:00.290  ○  ▶ Step 1 – Measure round-trip time
+02:31:00.291  ·    GET /api/v1/analytics/dashboard/summary
+02:31:00.495  ✔    HTTP 200 received
+02:31:00.578  ✔  Step completed in 289 ms
+02:31:00.578  ○  ▶ Step 2 – HTTP 200
+02:31:00.581  ·    Asserting: HTTP 200
+02:31:00.584  ✔    All assertions passed
+02:31:00.585  ✔  Step completed in 6 ms
+02:31:00.585  ○  ▶ Step 3 – Response time < 2000ms
+02:31:00.585  ·    Asserting: response time 204ms < 2000ms SLA
+02:31:00.587  ✔    All assertions passed
+02:31:00.587  ✔  Step completed in 2 ms
+02:31:00.588  ·  Test run complete: "TC-ASUM-015 – Response-Time SLA: must respond within 2 000 ms"

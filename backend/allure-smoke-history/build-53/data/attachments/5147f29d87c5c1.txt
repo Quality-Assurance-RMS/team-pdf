@@ -1,0 +1,20 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-012 â€” BUG-MREV-09: CORS Access-Control-Allow-Origin: * is overly permissive
+────────────────────────────────────────────────────────────
+02:33:38.979  ·  Test started: "TC-DMREV-012 â€” BUG-MREV-09: CORS Access-Control-Allow-Origin: * is overly permissive"
+02:33:38.981  ○  ▶ Step 1 â€” Fetch response and check CORS headers
+02:33:38.990  ·    GET /api/v1/dashboard/monthly-revenue
+02:33:39.299  ✔    HTTP 200 received
+02:33:39.308  ✔  Step completed in 327 ms
+02:33:39.308  ○  ▶ Step 2 â€” ACAO must not be wildcard on a financial endpoint
+02:33:39.310  ·    Asserting: response structure and values
+02:33:39.372  ✔    All assertions passed
+02:33:39.372  ✔  Step completed in 64 ms
+02:33:39.372  ○  ▶ Step 3 â€” Destructive methods must not be CORS-allowed on GET-only endpoint
+02:33:39.375  ·    Asserting: response structure and values
+02:33:39.379  ✔    All assertions passed
+02:33:39.379  ✔  Step completed in 7 ms
+02:33:39.381  ·  Test run complete: "TC-DMREV-012 â€” BUG-MREV-09: CORS Access-Control-Allow-Origin: * is overly permissive"
+────────────────────────────────────────────────────────────
+
