@@ -1,0 +1,17 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-GW-003] TC-GW-004 — Server response header must not disclose APISIX version
+────────────────────────────────────────────────────────────
+02:20:48.118  ·  Test started: "[BUG-GW-003] TC-GW-004 — Server response header must not disclose APISIX version"
+02:20:48.514  ○  ▶ Step 1 — Send GET /spr-fetcher/api/v1/fetch/status and inspect Server header
+02:20:48.614  ·    GET /api/v1/fetch/status
+02:21:48.821  ✔    HTTP 200 received
+02:21:48.926  ✔  Step completed in 60412 ms
+02:21:48.926  ○  ▶ Step 2 — Assert Server header does not disclose version (BUG: APISIX/3.16.0)
+02:21:48.933  ·    Asserting: Server header does not contain a version number
+02:21:49.112  ✔    All assertions passed
+02:21:49.112  ✔  Step completed in 185 ms
+02:21:49.127  ·  Test run complete: "[BUG-GW-003] TC-GW-004 — Server response header must not disclose APISIX version"
+────────────────────────────────────────────────────────────
+
