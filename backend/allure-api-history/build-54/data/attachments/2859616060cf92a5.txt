@@ -1,0 +1,19 @@
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-ANA-003] TC-ANA-003 — CORS Access-Control-Allow-Methods advertises POST/DELETE but all return 405
+────────────────────────────────────────────────────────────
+17:19:49.876  ·  Test started: "[BUG-ANA-003] TC-ANA-003 — CORS Access-Control-Allow-Methods advertises POST/DELETE but all return 405"
+17:19:49.976  ○  ▶ Step 1 — Read CORS methods from GET response
+17:19:49.979  ·    GET /api/v1/analytics/dashboard/summary
+17:19:50.084  ✔    HTTP 200 received
+17:19:50.166  ·    Asserting: CORS does not advertise POST or DELETE
+17:19:50.177  ✘  Step failed after 201 ms — [BUG-ANA-003] CORS must not advertise POST when it returns 405
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: false
+Received: true
+17:19:50.180  ·  Test run complete: "[BUG-ANA-003] TC-ANA-003 — CORS Access-Control-Allow-Methods advertises POST/DELETE but all return 405"
+────────────────────────────────────────────────────────────
+

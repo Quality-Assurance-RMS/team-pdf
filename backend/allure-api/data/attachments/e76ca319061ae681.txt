@@ -1,0 +1,76 @@
+[GET /api/v1/transaction/filter-options] status: 200 | body: {
+  "success": true,
+  "statusCode": 200,
+  "message": "success",
+  "data": {
+    "statuses": [
+      "Failed",
+      "Pending",
+      "Success"
+    ],
+    "methods": [
+      "MOBILE_MONEY",
+      "CARD",
+      "CARD_PAYMENT"
+    ],
+    "txnTypes": [
+      {
+        "value": 1,
+        "label": "Payment"
+      }
+    ],
+    "categories": [
+      "Land",
+      "Health",
+      "Business",
+      "Communications",
+      "Immigration",
+      "Agriculture",
+      "Energy",
+      "Legal",
+      "Standards & Compliance",
+      "Revenue",
+      "Tax",
+      "Infrastructure",
+      "service",
+      "Environment",
+      "Social Security",
+      "Transport",
+      "expense",
+      "Water & Sanitation",
+      "Utilities",
+      "Government",
+      "Tourism",
+      "Education",
+      "Auctioneers Licensing Board",
+      "Agriculture and Food Authority",
+      "State Department for Roads"
+    ]
+  }
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-008 — Filter Options: Retrieve available filter values
+────────────────────────────────────────────────────────────
+17:25:10.410  ·  Test started: "TC-TXN-008 — Filter Options: Retrieve available filter values"
+17:25:10.447  ○  ▶ Step 1 — Build request parameters
+17:25:10.462  ✔  Step completed in 15 ms
+17:25:10.462  ○  ▶ Step 2 — Send GET /transaction/filter-options
+17:25:10.463  ·    GET /api/v1/transaction/filter-options
+17:25:10.570  ✔    HTTP 200 received
+17:25:10.574  ✔  Step completed in 112 ms
+17:25:10.574  ○  ▶ Step 3 — Validate HTTP 200 status code
+17:25:10.575  ·    Asserting: HTTP 200, body defined, body is object
+17:25:10.582  ✔    All assertions passed
+17:25:10.583  ✔  Step completed in 9 ms
+17:25:10.583  ○  ▶ Step 4 — Validate statuses array is present and non-empty
+17:25:10.584  ·    Asserting: statuses is a non-empty array
+17:25:10.594  ✘  Step failed after 11 ms — statuses must not be empty
+
+expect(received).toBeGreaterThan(expected)
+
+Expected: > 0
+Received:   0
+17:25:10.596  ·  Test run complete: "TC-TXN-008 — Filter Options: Retrieve available filter values"
+────────────────────────────────────────────────────────────
+

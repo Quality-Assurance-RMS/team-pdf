@@ -1,0 +1,22 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-013 â€” Math: per-month gross âˆ’ net = commission for every month
+────────────────────────────────────────────────────────────
+17:22:05.979  ·  Test started: "TC-DMREV-013 â€” Math: per-month gross âˆ’ net = commission for every month"
+17:22:05.980  ○  ▶ Step 1 â€” Fetch monthly-revenue
+17:22:06.067  ·    GET /api/v1/dashboard/monthly-revenue
+17:22:06.557  ✔    HTTP 200 received
+17:22:06.656  ✔    All assertions passed
+17:22:06.658  ✔  Step completed in 677 ms
+17:22:06.658  ○  ▶ Step 2 â€” Validate KES: gross_kes âˆ’ net_kes = commission_kes for each month
+17:22:06.659  ✔    All assertions passed
+17:22:06.659  ✔  Step completed in 1 ms
+17:22:06.659  ○  ▶ Step 3 â€” Validate USD: gross_usd âˆ’ net_usd = commission_usd for each month
+17:22:06.660  ✔    All assertions passed
+17:22:06.661  ✔  Step completed in 2 ms
+17:22:06.661  ○  ▶ Step 4 â€” All amounts in future months (Junâ€“Dec) must be exactly 0
+17:22:06.664  ✔    All assertions passed
+17:22:06.664  ✔  Step completed in 3 ms
+17:22:06.666  ·  Test run complete: "TC-DMREV-013 â€” Math: per-month gross âˆ’ net = commission for every month"
+────────────────────────────────────────────────────────────
+

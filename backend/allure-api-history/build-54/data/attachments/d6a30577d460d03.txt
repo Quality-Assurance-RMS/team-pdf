@@ -1,0 +1,8 @@
+17:19:45.670  ·  Test started: "[BUG-TXN-004] TC-TXN-004 — period=custom without from_date/to_date returns 200 (should be 400)"
+17:19:45.863  ○  ▶ Step 1 — GET summary with period=custom and no dates
+17:19:45.867  ·    GET /api/v1/transaction/summary?period=custom
+17:19:45.978  ✔    HTTP 400 received
+17:19:46.059  ·    Asserting: period=custom without dates returns 400
+17:19:46.068  ✔    All assertions passed
+17:19:46.069  ✔  Step completed in 205 ms
+17:19:46.072  ·  Test run complete: "[BUG-TXN-004] TC-TXN-004 — period=custom without from_date/to_date returns 200 (should be 400)"

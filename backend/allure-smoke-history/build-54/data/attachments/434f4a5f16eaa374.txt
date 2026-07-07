@@ -1,0 +1,35 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-SMK-001] GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/summary?period=week
+  â–º Params        : {"period":"week"}
+  â–º Status        : 400
+  â–º Content-Type  : application/json
+  â–º Response Body :
+{
+    "errorCode": "Bad Request",
+    "errorMessage": "Invalid period value. Must be today|last-7-days|last-30-days|last-90-days|custom"
+}
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SMK-001 â€" Summary: period=week returns 200 with expected shape
+────────────────────────────────────────────────────────────
+17:23:32.161  ·  Test started: "TC-SMK-001 â€" Summary: period=week returns 200 with expected shape"
+17:23:32.162  ○  ▶ Step 1 â€" Build request
+17:23:32.358  ✔  Step completed in 197 ms
+17:23:32.359  ○  ▶ Step 2 â€" Send GET /summary?period=week and log response
+17:23:32.359  ·    GET /api/v1/transaction/summary?period=week
+17:23:32.387  ✔    HTTP 400 received
+17:23:32.393  ✔  Step completed in 34 ms
+17:23:32.393  ○  ▶ Step 3 â€" Validate HTTP 200 and top-level fields present
+17:23:32.393  ·    Asserting: HTTP 200 and top-level fields present
+17:23:32.463  ✘  Step failed after 71 ms — HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+17:23:32.466  ·  Test run complete: "TC-SMK-001 â€" Summary: period=week returns 200 with expected shape"
+────────────────────────────────────────────────────────────
+

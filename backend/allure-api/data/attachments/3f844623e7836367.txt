@@ -1,0 +1,21 @@
+[POST https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/trigger] 500
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SF-008 — POST /api/v1/fetch/trigger: No auth must return 401
+────────────────────────────────────────────────────────────
+17:30:18.944  ·  Test started: "TC-SF-008 — POST /api/v1/fetch/trigger: No auth must return 401"
+17:30:18.982  ○  ▶ Step 1 — Send POST /api/v1/fetch/trigger WITHOUT Authorization header
+17:30:18.987  ·    POST /api/v1/fetch/trigger
+17:31:19.034  ✔    HTTP 500 received
+17:31:19.038  ✔  Step completed in 60056 ms
+17:31:19.038  ○  ▶ Step 2 — Assert 401/403
+17:31:19.040  ·    Asserting: status is 401 or 403
+17:31:19.050  ✘  Step failed after 12 ms — No-auth trigger must return 401/403, got 500
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: 500
+Received array: [401, 403]
+17:31:19.052  ·  Test run complete: "TC-SF-008 — POST /api/v1/fetch/trigger: No auth must return 401"
+────────────────────────────────────────────────────────────
+
