@@ -1,0 +1,21 @@
+03:30:49.384  ·  Test started: "TC1 — Settlement & Payout Overview section heading is visible"
+03:30:52.108  ○  ▶ Step 1 — Verifies the Settlement & Payout Overview section renders on the Reports page
+03:30:52.185  ·    Test scope: Verifies the Settlement & Payout Overview section renders on the Reports page
+03:30:52.189  ✔  Step completed in 79 ms
+03:30:52.201  ○  ▶ Step 2 — Navigate to Reports page
+03:30:52.202  ·    Opening the Reports page
+03:30:56.914  ✔    Navigation to Reports page initiated successfully
+03:31:01.697  ✔  Step completed in 9496 ms
+03:31:01.697  ○  ▶ Step 3 — Verify page loads successfully
+03:31:01.699  ·    Waiting for all Reports page elements to render
+03:31:16.902  ✘  Step failed after 15205 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/reports/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/dashboard"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    26 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"[22m
+
+03:31:27.010  ·  Test run complete: "TC1 — Settlement & Payout Overview section heading is visible"

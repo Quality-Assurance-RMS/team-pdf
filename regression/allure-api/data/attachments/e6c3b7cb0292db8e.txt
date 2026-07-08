@@ -1,0 +1,14 @@
+03:30:32.689  ·  Test started: "[BUG-OT-007] TC-OT-015 — GET /api/v1/token with Accept: text/html returns 500 (must be 406)"
+03:30:32.909  ○  ▶ Step 1 — Send GET /api/v1/token with Accept: text/html
+03:30:32.995  ·    GET /api/v1/token
+03:30:33.104  ✔    HTTP 500 received
+03:30:33.109  ✔  Step completed in 200 ms
+03:30:33.109  ○  ▶ Step 2 — Assert 406 (BUG: returns 500)
+03:30:33.110  ·    Asserting: HTTP status is 406
+03:30:33.195  ✘  Step failed after 87 ms — [BUG-OT-007] Unsupported Accept type must return 406, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m406[39m
+Received: [31m500[39m
+03:30:33.199  ·  Test run complete: "[BUG-OT-007] TC-OT-015 — GET /api/v1/token with Accept: text/html returns 500 (must be 406)"

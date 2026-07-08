@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/trigger",
+    "Authorization": "Bearer ***"
+  },
+  "response": {
+    "status": 500,
+    "headers": {
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Wed, 08 Jul 2026 03:37:09 GMT",
+      "server": "RMS-Gateway",
+      "x-apisix-upstream-status": "504, 500",
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+      "access-control-max-age": "3600",
+      "access-control-expose-headers": "*",
+      "access-control-allow-headers": "*",
+      "connection": "close"
+    },
+    "body": {
+      "status": "FAILED",
+      "fetchDate": "2026-07-07",
+      "message": "KCB statement fetch failed. Please check service availability and try again.",
+      "timestamp": "2026-07-08T03:37:09.171074731Z"
+    }
+  }
+}

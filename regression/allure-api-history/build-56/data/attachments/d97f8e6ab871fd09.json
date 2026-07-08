@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "DELETE",
+    "url": "https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token",
+    "Authorization": "Bearer ***"
+  },
+  "response": {
+    "status": 405,
+    "headers": {
+      "content-type": "application/problem+json",
+      "transfer-encoding": "chunked",
+      "x-correlation-id": "a5d3cc03-2c8e-4fab-bc44-3ea0d67c3344",
+      "allow": "GET",
+      "date": "Wed, 08 Jul 2026 03:29:21 GMT",
+      "server": "RMS-Gateway",
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+      "access-control-max-age": "3600",
+      "access-control-expose-headers": "*",
+      "access-control-allow-headers": "*",
+      "connection": "close"
+    },
+    "body": {
+      "type": "urn:rms:error:method-not-allowed",
+      "title": "Method Not Allowed",
+      "status": 405,
+      "detail": "HTTP method 'DELETE' is not supported for this endpoint.",
+      "instance": "/api/v1/token",
+      "timestamp": "2026-07-08T03:29:21.398707591Z",
+      "correlationId": "a5d3cc03-2c8e-4fab-bc44-3ea0d67c3344"
+    }
+  }
+}

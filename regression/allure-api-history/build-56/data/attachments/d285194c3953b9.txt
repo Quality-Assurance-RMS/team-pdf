@@ -1,0 +1,14 @@
+03:32:03.402  ·  Test started: "[BUG-OT-002] TC-OT-010 — GET /api/v1/token: Invalid Bearer token returns 200 (auth NOT enforced)"
+03:32:03.698  ○  ▶ Step 1 — Send GET /api/v1/token with deliberately malformed Bearer token
+03:32:03.785  ·    GET /api/v1/token
+03:32:03.891  ✔    HTTP 500 received
+03:32:03.899  ✔  Step completed in 201 ms
+03:32:03.899  ○  ▶ Step 2 — Assert 401/403 (BUG: returns 200 + valid KCB token)
+03:32:03.900  ·    Asserting: status is 401 or 403 for invalid token
+03:32:03.992  ✘  Step failed after 93 ms — [BUG-OT-002] Invalid token must return 401/403, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+Expected value: [32m500[39m
+Received array: [31m[401, 403][39m
+03:32:04.000  ·  Test run complete: "[BUG-OT-002] TC-OT-010 — GET /api/v1/token: Invalid Bearer token returns 200 (auth NOT enforced)"

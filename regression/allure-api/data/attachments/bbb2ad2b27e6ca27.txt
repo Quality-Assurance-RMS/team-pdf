@@ -1,0 +1,14 @@
+03:30:12.306  ·  Test started: "TC-OT-003 — GET /api/v1/token: token_type is exactly "Bearer""
+03:30:12.708  ○  ▶ Step 1 — Send GET /api/v1/token
+03:30:12.713  ·    GET /api/v1/token
+03:31:13.102  ✔    HTTP 500 received
+03:31:13.109  ✔  Step completed in 60401 ms
+03:31:13.109  ○  ▶ Step 2 — Assert HTTP 200
+03:31:13.109  ·    Asserting: HTTP status is 200
+03:31:13.208  ✘  Step failed after 100 ms — TC-OT-003 — expected 200, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m500[39m
+03:31:13.291  ·  Test run complete: "TC-OT-003 — GET /api/v1/token: token_type is exactly "Bearer""

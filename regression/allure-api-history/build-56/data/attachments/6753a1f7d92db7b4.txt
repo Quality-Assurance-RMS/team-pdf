@@ -1,0 +1,17 @@
+[PUT https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 405
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-OT-005] TC-OT-013 — PUT /api/v1/token: Must return 405 Method Not Allowed (returns 500)
+────────────────────────────────────────────────────────────
+03:27:18.887  ·  Test started: "[BUG-OT-005] TC-OT-013 — PUT /api/v1/token: Must return 405 Method Not Allowed (returns 500)"
+03:27:19.204  ○  ▶ Step 1 — Send PUT /api/v1/token
+03:27:19.306  ·    PUT /api/v1/token
+03:28:19.590  ✔    HTTP 405 received
+03:28:19.606  ✔  Step completed in 60403 ms
+03:28:19.606  ○  ▶ Step 2 — Assert 405 (BUG: returns 500)
+03:28:19.613  ·    Asserting: HTTP status is 405
+03:28:19.709  ✔    All assertions passed
+03:28:19.709  ✔  Step completed in 103 ms
+03:28:19.715  ·  Test run complete: "[BUG-OT-005] TC-OT-013 — PUT /api/v1/token: Must return 405 Method Not Allowed (returns 500)"
+────────────────────────────────────────────────────────────
+

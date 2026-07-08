@@ -1,0 +1,18 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Invalid HMAC Signature — Security
+────────────────────────────────────────────────────────────
+03:31:34.404  ·  Test started: "TC3 — Invalid HMAC Signature — Security"
+03:31:35.199  ○  ▶ Step 1: POST to /transactions with zeroed-out X-Response-Signature
+03:31:35.205  ·    POST /transactions — sending webhook with zeroed-out HMAC signature
+03:31:36.407  ✔    HTTP 405 received
+03:31:36.417  ·    Asserting: HTTP 401 Unauthorized
+03:31:36.590  ✘  Step failed after 1391 ms — Expected HTTP 401 Unauthorized
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 401
+Received: 405
+03:31:37.095  ·  Test run complete: "TC3 — Invalid HMAC Signature — Security"
+────────────────────────────────────────────────────────────
+

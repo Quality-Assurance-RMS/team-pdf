@@ -1,0 +1,14 @@
+03:34:40.690  ·  Test started: "[BUG-OT-009] TC-OT-006 — GET /api/v1/token: Response must include Cache-Control: no-store"
+03:34:41.206  ○  ▶ Step 1 — Send GET /api/v1/token
+03:34:41.292  ·    GET /api/v1/token
+03:35:41.595  ✔    HTTP 500 received
+03:35:41.799  ✔  Step completed in 60593 ms
+03:35:41.799  ○  ▶ Step 2 — Assert HTTP 200
+03:35:41.888  ·    Asserting: HTTP status is 200
+03:35:42.087  ✘  Step failed after 288 ms — TC-OT-006 — expected 200, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m500[39m
+03:35:42.186  ·  Test run complete: "[BUG-OT-009] TC-OT-006 — GET /api/v1/token: Response must include Cache-Control: no-store"

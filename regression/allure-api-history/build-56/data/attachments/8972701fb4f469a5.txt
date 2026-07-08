@@ -1,0 +1,13 @@
+03:31:59.607  ·  Test started: "[BUG-GW-001] TC-GW-001 — CORS allow-origin must not be wildcard "*" on oauth-token routes"
+03:31:59.800  ○  ▶ Step 1 — Send GET /oauth-token/api/v1/token and capture CORS headers
+03:31:59.806  ·    GET /api/v1/token
+03:33:00.007  ✔    HTTP 500 received
+03:33:00.189  ✔  Step completed in 60389 ms
+03:33:00.189  ○  ▶ Step 2 — Assert CORS origin is NOT wildcard (BUG: "*")
+03:33:00.190  ·    Asserting: access-control-allow-origin is not "*"
+03:33:00.288  ✘  Step failed after 99 ms — [BUG-GW-001] CORS allow-origin must not be "*", got: "*"
+
+[2mexpect([22m[31mreceived[39m[2m).[22mnot[2m.[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: not [32m"*"[39m
+03:33:00.295  ·  Test run complete: "[BUG-GW-001] TC-GW-001 — CORS allow-origin must not be wildcard "*" on oauth-token routes"
