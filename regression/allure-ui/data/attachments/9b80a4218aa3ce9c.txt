@@ -1,0 +1,40 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Resend OTP dispatches a new code and stays on verification
+────────────────────────────────────────────────────────────
+02:25:44.409  ·  Test started: "TC3 — Resend OTP dispatches a new code and stays on verification"
+02:25:45.502  ○  ▶ Step 1 — Verifies that clicking Resend OTP dispatches a new code while remaining on the verification page
+02:25:45.503  ·    Test scope: Resend OTP behavior
+02:25:45.503  ✔  Step completed in 1 ms
+02:25:45.503  ○  ▶ Step 2 — Navigate to login page and submit credentials
+02:25:45.508  ·    Opening the login page
+02:25:52.312  ·    Submitting login credentials to trigger OTP flow
+02:25:54.604  ✔    Credentials submitted — expecting redirect to OTP verification
+02:25:54.604  ✔  Step completed in 9101 ms
+02:25:54.604  ○  ▶ Step 3 — Verify OTP page is loaded
+02:25:54.605  ·    Waiting for OTP verification page to render
+02:25:55.212  ✔    OTP verification page is loaded
+02:25:55.213  ✔  Step completed in 609 ms
+02:25:55.213  ○  ▶ Step 4 — Click Resend OTP and verify page stays on verification
+02:25:55.213  ·    Clicking the Resend OTP link to dispatch a new code
+02:27:45.205  ✘  Step failed after 109992 ms — locator.click: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByText('Resend')
+    - locator resolved to <button disabled type="button" class="text-[#059669] hover:underline hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">Resend</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    207 × waiting for element to be visible, enabled and stable
+        - element is not enabled
+      - retrying click action
+        - waiting 500ms
+
+02:27:45.210  ·  Test run complete: "TC3 — Resend OTP dispatches a new code and stays on verification"
+────────────────────────────────────────────────────────────
+

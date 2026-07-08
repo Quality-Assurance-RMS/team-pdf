@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Settlement & Payout Overview heading and chart area are visible
+────────────────────────────────────────────────────────────
+02:20:36.024  ·  Test started: "TC1 — Settlement & Payout Overview heading and chart area are visible"
+02:20:36.618  ○  ▶ Step 1 — Verifies the Settlement & Payout Overview heading and chart area render on the Reports page
+02:20:36.619  ·    Test scope: Verifies the Settlement & Payout Overview heading and chart area render on the Reports page
+02:20:36.619  ✔  Step completed in 1 ms
+02:20:36.620  ○  ▶ Step 2 — Navigate to Reports page
+02:20:36.621  ·    Opening the Reports page
+02:20:39.404  ✔    Navigation to Reports page initiated successfully
+02:20:41.405  ✔  Step completed in 4785 ms
+02:20:41.405  ○  ▶ Step 3 — Verify page loads successfully
+02:20:41.406  ·    Waiting for all Reports page elements to render
+02:20:56.609  ✘  Step failed after 15202 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/reports/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    27 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+02:21:06.510  ·  Test run complete: "TC1 — Settlement & Payout Overview heading and chart area are visible"
+────────────────────────────────────────────────────────────
+
