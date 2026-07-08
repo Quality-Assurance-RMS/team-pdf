@@ -1,0 +1,16 @@
+17:23:54.672  ·  Test started: "TC-SMK-001 â€" Summary: period=week returns 200 with expected shape"
+17:23:54.674  ○  ▶ Step 1 â€" Build request
+17:23:54.876  ✔  Step completed in 202 ms
+17:23:54.877  ○  ▶ Step 2 â€" Send GET /summary?period=week and log response
+17:23:54.877  ·    GET /api/v1/transaction/summary?period=week
+17:23:54.974  ✔    HTTP 400 received
+17:23:54.983  ✔  Step completed in 106 ms
+17:23:54.983  ○  ▶ Step 3 â€" Validate HTTP 200 and top-level fields present
+17:23:54.984  ·    Asserting: HTTP 200 and top-level fields present
+17:23:55.077  ✘  Step failed after 95 ms — HTTP 200 expected
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+17:23:55.083  ·  Test run complete: "TC-SMK-001 â€" Summary: period=week returns 200 with expected shape"

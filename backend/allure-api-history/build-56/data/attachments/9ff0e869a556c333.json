@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-OT-001",
+  "expected": "401 Unauthorized (fail-fast at gateway)",
+  "actual": "HTTP 500 Gateway Timeout",
+  "impact": "Unauthenticated requests consume upstream connections and take 60+ s to fail",
+  "fix": "Add JWT auth plugin to APISIX route: /oauth-token/api/v1/token"
+}

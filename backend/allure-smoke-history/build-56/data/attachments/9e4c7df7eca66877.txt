@@ -1,0 +1,18 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-010 â€” BUG-SUM-05: successful% + failed% must sum to 100%
+────────────────────────────────────────────────────────────
+17:23:11.377  ·  Test started: "TC-DSUM-010 â€” BUG-SUM-05: successful% + failed% must sum to 100%"
+17:23:11.378  ○  ▶ Step â€” period=week: validate rate sum
+17:23:11.387  ·    GET /api/v1/dashboard/summary
+17:23:11.583  ✔    HTTP 400 received
+17:23:11.583  ·    Asserting: Step â€” period=${period}: validate rate sum
+17:23:11.591  ✘  Step failed after 213 ms — period=week  -> 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+17:23:11.594  ·  Test run complete: "TC-DSUM-010 â€” BUG-SUM-05: successful% + failed% must sum to 100%"
+────────────────────────────────────────────────────────────
+

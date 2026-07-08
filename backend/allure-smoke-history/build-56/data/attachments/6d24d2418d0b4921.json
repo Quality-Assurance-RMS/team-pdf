@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction?page=0&size=20&period=week&q=CONF-MAY26",
+    "params": {
+      "page": "0",
+      "size": "20",
+      "period": "week",
+      "q": "CONF-MAY26"
+    },
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 400,
+    "content_type": "application/json",
+    "records_in_page": 0,
+    "first_record": null,
+    "full_body": {
+      "errorCode": "Bad Request",
+      "errorMessage": "Page number must be 1 or greater."
+    }
+  }
+}

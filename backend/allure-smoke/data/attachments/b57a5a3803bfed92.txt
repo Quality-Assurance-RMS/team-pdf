@@ -1,0 +1,15 @@
+[TC-ASUM-010] text/html → 406, body excerpt: <html><body><h1>Whitelabel Error Page</h1><p>This application has no explicit mapping for /error, so you are seeing this as a fallback.</p><div id='created'>Wed Jul 08 20:21:45 EAT 2026</div><div>There was an unexpected error (type=Not Acceptable, status=406).</div></body></html>
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-010 – BUG-ASUM-09: Accept: text/html must not expose Spring Boot Whitelabel page
+────────────────────────────────────────────────────────────
+17:21:45.271  ·  Test started: "TC-ASUM-010 – BUG-ASUM-09: Accept: text/html must not expose Spring Boot Whitelabel page"
+17:21:45.273  ○  ▶ Step 1 – Send GET with Accept: text/html
+17:21:45.281  ·    GET /api/v1/analytics/dashboard/summary (Accept: text/html)
+17:21:45.338  ✔    HTTP 406 received
+17:21:45.370  ·    Asserting: status 406, no Whitelabel page
+17:21:45.384  ✔    All assertions passed
+17:21:45.385  ✔  Step completed in 113 ms
+17:21:45.387  ·  Test run complete: "TC-ASUM-010 – BUG-ASUM-09: Accept: text/html must not expose Spring Boot Whitelabel page"
+────────────────────────────────────────────────────────────
+

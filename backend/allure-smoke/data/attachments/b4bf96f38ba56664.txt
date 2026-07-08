@@ -1,0 +1,18 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-003 â€” year param: valid values return correct year in response
+────────────────────────────────────────────────────────────
+17:21:58.289  ·  Test started: "TC-DMREV-003 â€” year param: valid values return correct year in response"
+17:21:58.291  ○  ▶ Step 1 â€” year=2026 returns 2026 data
+17:21:58.376  ·    GET /api/v1/dashboard/monthly-revenue
+17:21:58.877  ✔    HTTP 200 received
+17:21:58.878  ·    Asserting: response structure and values
+17:21:58.892  ✘  Step failed after 601 ms — data.year must echo back 2026
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 2026
+Received: undefined
+17:21:58.896  ·  Test run complete: "TC-DMREV-003 â€” year param: valid values return correct year in response"
+────────────────────────────────────────────────────────────
+
