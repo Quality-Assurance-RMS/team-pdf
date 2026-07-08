@@ -1,0 +1,28 @@
+[TC-DTPAY-002] No-auth status: 401
+[TC-DTPAY-002] No-auth body: {"status":401,"error":"Unauthorized","message":"Missing Authorization token"}
+[TC-DTPAY-002] Wrong-auth status: 401
+[TC-DTPAY-002] Wrong-auth body: {"status":401,"error":"Unauthorized","message":"Invalid or expired token"}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-002 â€" Auth Guard: missing token  -> 401, wrong token  -> 401
+────────────────────────────────────────────────────────────
+03:30:00.473  ·  Test started: "TC-DTPAY-002 â€" Auth Guard: missing token  -> 401, wrong token  -> 401"
+03:30:00.475  ○  ▶ Step 1 â€" Send request with NO Authorization header
+03:30:00.563  ·    GET /api/v1/dashboard/today-payments (no Authorization header)
+03:30:00.791  ✔    HTTP 401 received
+03:30:00.866  ✔  Step completed in 391 ms
+03:30:00.866  ○  ▶ Step 2 â€" Send request with INVALID token
+03:30:00.869  ·    GET /api/v1/dashboard/today-payments (invalid Bearer token)
+03:30:00.967  ✔    HTTP 401 received
+03:30:00.976  ✔  Step completed in 109 ms
+03:30:00.976  ○  ▶ Step 3 â€" Validate both return 401
+03:30:00.978  ·    Asserting: both no-auth and wrong-auth requests return 401
+03:30:00.994  ✔    All assertions passed
+03:30:00.994  ✔  Step completed in 18 ms
+03:30:00.994  ○  ▶ Step 4 â€" Validate 401 error body structure
+03:30:00.996  ·    Asserting: 401 error bodies have correct status and message fields
+03:30:01.076  ✔    All assertions passed
+03:30:01.077  ✔  Step completed in 82 ms
+03:30:01.083  ·  Test run complete: "TC-DTPAY-002 â€" Auth Guard: missing token  -> 401, wrong token  -> 401"
+────────────────────────────────────────────────────────────
+

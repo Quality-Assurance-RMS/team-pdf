@@ -1,0 +1,18 @@
+03:30:24.071  ·  Test started: "TC-DTPAY-011 â€" BUG-TPAY-11: Percentage format must be consistent across sections"
+03:30:24.072  ○  ▶ Step 1 â€" Fetch today-payments response
+03:30:24.084  ·    GET /api/v1/dashboard/today-payments
+03:30:24.470  ✔    HTTP 200 received
+03:30:24.476  ✔  Step completed in 404 ms
+03:30:24.476  ○  ▶ Step 2 â€" Validate HTTP 200
+03:30:24.477  ·    Asserting: HTTP 200
+03:30:24.492  ✔    All assertions passed
+03:30:24.494  ✔  Step completed in 18 ms
+03:30:24.494  ○  ▶ Step 3 â€" BUG-TPAY-11: All postiveValue fields must use consistent decimal formatting
+03:30:24.581  ·    Asserting: all postiveValue fields use consistent decimal formatting and match percentage pattern
+03:30:24.662  ✘  Step failed after 167 ms — payments.postiveValue "" must match N% or N.N% format
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+03:30:24.664  ·  Test run complete: "TC-DTPAY-011 â€" BUG-TPAY-11: Percentage format must be consistent across sections"

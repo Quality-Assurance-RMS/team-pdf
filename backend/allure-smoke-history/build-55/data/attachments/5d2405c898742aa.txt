@@ -1,0 +1,15 @@
+03:30:33.574  ·  Test started: "TC-SMK-002 â€" Summary: period=today returns 200 with expected shape"
+03:30:33.575  ○  ▶ Step 1 â€" Build request
+03:30:33.873  ✔  Step completed in 298 ms
+03:30:33.873  ○  ▶ Step 2 â€" Send GET /summary?period=today and log response
+03:30:33.874  ·    GET /api/v1/transaction/summary?period=today
+03:30:34.066  ✔    HTTP 200 received
+03:30:34.076  ✔  Step completed in 203 ms
+03:30:34.076  ○  ▶ Step 3 â€" Validate HTTP 200 and top-level fields present
+03:30:34.076  ·    Asserting: HTTP 200 and top-level fields present
+03:30:34.175  ✘  Step failed after 100 ms — total_volume must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBeDefined[2m()[22m
+
+Received: [31mundefined[39m
+03:30:34.179  ·  Test run complete: "TC-SMK-002 â€" Summary: period=today returns 200 with expected shape"

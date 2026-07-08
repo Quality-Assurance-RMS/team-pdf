@@ -1,0 +1,40 @@
+[TC-DMREV-011] Response headers:
+{
+  "content-type": "application/json",
+  "transfer-encoding": "chunked",
+  "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+  "date": "Wed, 08 Jul 2026 03:28:43 GMT",
+  "server": "RMS-Gateway",
+  "access-control-allow-origin": "*",
+  "access-control-allow-methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+  "access-control-max-age": "3600",
+  "access-control-expose-headers": "*",
+  "access-control-allow-headers": "*",
+  "connection": "close"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-011 â€” BUG-MREV-08: Cache-Control and security headers must be present
+────────────────────────────────────────────────────────────
+03:28:43.312  ·  Test started: "TC-DMREV-011 â€” BUG-MREV-08: Cache-Control and security headers must be present"
+03:28:43.315  ○  ▶ Step 1 â€” Fetch response and inspect headers
+03:28:43.376  ·    GET /api/v1/dashboard/monthly-revenue
+03:28:43.974  ✔    HTTP 200 received
+03:28:43.984  ✔  Step completed in 669 ms
+03:28:43.984  ○  ▶ Step 2 â€” BUG-MREV-08: Cache-Control must prohibit caching of financial data
+03:28:44.070  ·    Asserting: BUG-MREV-08: Cache-Control must prohibit caching
+03:28:44.082  ✔    All assertions passed
+03:28:44.082  ✔  Step completed in 99 ms
+03:28:44.082  ○  ▶ Step 3 â€” X-Content-Type-Options must be nosniff
+03:28:44.169  ·    Asserting: response structure and values
+03:28:44.179  ✔    All assertions passed
+03:28:44.179  ✔  Step completed in 97 ms
+03:28:44.179  ○  ▶ Step 4 â€” X-Frame-Options must be present
+03:28:44.186  ·    Asserting: response structure and values
+03:28:44.189  ✔    All assertions passed
+03:28:44.190  ✔  Step completed in 10 ms
+03:28:44.190  ○  ▶ Step 5 â€” Full security header audit
+03:28:44.262  ✔  Step completed in 73 ms
+03:28:44.265  ·  Test run complete: "TC-DMREV-011 â€” BUG-MREV-08: Cache-Control and security headers must be present"
+────────────────────────────────────────────────────────────
+

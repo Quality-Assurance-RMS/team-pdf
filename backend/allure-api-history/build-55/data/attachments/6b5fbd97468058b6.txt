@@ -1,0 +1,21 @@
+[DELETE https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token/cache] 204
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-007 — DELETE /api/v1/token/cache: Returns 204 No Content with valid auth
+────────────────────────────────────────────────────────────
+03:26:24.178  ·  Test started: "TC-OT-007 — DELETE /api/v1/token/cache: Returns 204 No Content with valid auth"
+03:26:24.195  ○  ▶ Step 1 — Send DELETE /api/v1/token/cache with auth
+03:26:24.199  ·    DELETE /api/v1/token/cache
+03:27:24.282  ✔    HTTP 204 received
+03:27:24.286  ✔  Step completed in 60091 ms
+03:27:24.290  ○  ▶ Step 2 — Assert HTTP 204
+03:27:24.292  ·    Asserting: HTTP status is 204
+03:27:24.296  ✔    All assertions passed
+03:27:24.296  ✔  Step completed in 7 ms
+03:27:24.296  ○  ▶ Step 3 — Assert response body is empty
+03:27:24.297  ·    Asserting: response body is empty for 204
+03:27:24.302  ✔    All assertions passed
+03:27:24.302  ✔  Step completed in 6 ms
+03:27:24.304  ·  Test run complete: "TC-OT-007 — DELETE /api/v1/token/cache: Returns 204 No Content with valid auth"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 500
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-OT-002] TC-OT-010 — GET /api/v1/token: Invalid Bearer token returns 200 (auth NOT enforced)
+────────────────────────────────────────────────────────────
+03:31:39.039  ·  Test started: "[BUG-OT-002] TC-OT-010 — GET /api/v1/token: Invalid Bearer token returns 200 (auth NOT enforced)"
+03:31:39.079  ○  ▶ Step 1 — Send GET /api/v1/token with deliberately malformed Bearer token
+03:31:39.087  ·    GET /api/v1/token
+03:31:39.126  ✔    HTTP 500 received
+03:31:39.131  ✔  Step completed in 53 ms
+03:31:39.131  ○  ▶ Step 2 — Assert 401/403 (BUG: returns 200 + valid KCB token)
+03:31:39.132  ·    Asserting: status is 401 or 403 for invalid token
+03:31:39.141  ✘  Step failed after 9 ms — [BUG-OT-002] Invalid token must return 401/403, got 500
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: 500
+Received array: [401, 403]
+03:31:39.143  ·  Test run complete: "[BUG-OT-002] TC-OT-010 — GET /api/v1/token: Invalid Bearer token returns 200 (auth NOT enforced)"
+────────────────────────────────────────────────────────────
+
