@@ -1,0 +1,11 @@
+01:58:06.264  ·  Test started: "[BUG-XS-004] TC-XS-004 — CORS wildcard * is present even on 401 error responses"
+01:58:06.305  ○  ▶ Check CORS on Dashboard 401
+01:58:06.352  ·    GET /api/v1/dashboard/summary?period=week
+01:58:06.385  ✔    HTTP 401 received
+01:58:06.401  ·    Asserting: CORS Access-Control-Allow-Origin is not wildcard on error response
+01:58:06.452  ✘  Step failed after 147 ms — [BUG-XS-004] Dashboard 401 — ACAO must not be wildcard "*" on error response
+
+[2mexpect([22m[31mreceived[39m[2m).[22mnot[2m.[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: not [32m"*"[39m
+01:58:06.458  ·  Test run complete: "[BUG-XS-004] TC-XS-004 — CORS wildcard * is present even on 401 error responses"

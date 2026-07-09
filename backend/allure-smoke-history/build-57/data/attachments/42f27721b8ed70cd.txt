@@ -1,0 +1,40 @@
+[TC-DTPAY-006] POST  -> 405
+  Body: {"errorCode":405,"errorMessage":"POST not allowed. Supported methods: GET"}
+[TC-DTPAY-006] PUT  -> 405
+  Body: {"errorCode":405,"errorMessage":"PUT not allowed. Supported methods: GET"}
+[TC-DTPAY-006] DELETE  -> 405
+  Body: {"errorCode":405,"errorMessage":"DELETE not allowed. Supported methods: GET"}
+[TC-DTPAY-006] PATCH  -> 405
+  Body: {"errorCode":405,"errorMessage":"PATCH not allowed. Supported methods: GET"}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-006 â€" BUG-TPAY-05: Wrong HTTP methods must return 405, not 500
+────────────────────────────────────────────────────────────
+02:03:31.687  ·  Test started: "TC-DTPAY-006 â€" BUG-TPAY-05: Wrong HTTP methods must return 405, not 500"
+02:03:31.756  ○  ▶ Step â€" POST must return 405, not 500
+02:03:31.757  ·    POST /api/v1/dashboard/today-payments
+02:03:31.849  ✔    HTTP 405 received
+02:03:31.859  ·    Asserting: POST returns 405 Method Not Allowed
+02:03:31.877  ✔    All assertions passed
+02:03:31.879  ✔  Step completed in 123 ms
+02:03:31.879  ○  ▶ Step â€" PUT must return 405, not 500
+02:03:31.880  ·    PUT /api/v1/dashboard/today-payments
+02:03:31.961  ✔    HTTP 405 received
+02:03:31.969  ·    Asserting: PUT returns 405 Method Not Allowed
+02:03:31.973  ✔    All assertions passed
+02:03:31.977  ✔  Step completed in 97 ms
+02:03:31.977  ○  ▶ Step â€" DELETE must return 405, not 500
+02:03:31.977  ·    DELETE /api/v1/dashboard/today-payments
+02:03:32.047  ✔    HTTP 405 received
+02:03:32.055  ·    Asserting: DELETE returns 405 Method Not Allowed
+02:03:32.061  ✔    All assertions passed
+02:03:32.063  ✔  Step completed in 86 ms
+02:03:32.063  ○  ▶ Step â€" PATCH must return 405, not 500
+02:03:32.064  ·    PATCH /api/v1/dashboard/today-payments
+02:03:32.148  ✔    HTTP 405 received
+02:03:32.161  ·    Asserting: PATCH returns 405 Method Not Allowed
+02:03:32.172  ✔    All assertions passed
+02:03:32.176  ✔  Step completed in 113 ms
+02:03:32.182  ·  Test run complete: "TC-DTPAY-006 â€" BUG-TPAY-05: Wrong HTTP methods must return 405, not 500"
+────────────────────────────────────────────────────────────
+

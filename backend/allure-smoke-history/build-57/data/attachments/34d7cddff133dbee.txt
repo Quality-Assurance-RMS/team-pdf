@@ -1,0 +1,24 @@
+02:00:41.172  ·  Test started: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"
+02:00:41.371  ○  ▶ Step 1 â€" Build request
+02:00:41.461  ·    Asserting: request parameters are recorded
+02:00:41.461  ✔    All assertions passed
+02:00:41.461  ✔  Step completed in 90 ms
+02:00:41.462  ○  ▶ Step 2 â€" Send GET /status-currency and log response
+02:00:41.465  ·    GET /api/v1/dashboard/status-currency
+02:00:41.750  ✔    HTTP 200 received
+02:00:41.864  ✔  Step completed in 403 ms
+02:00:41.864  ○  ▶ Step 3 â€" Validate HTTP 200 and Content-Type
+02:00:41.865  ·    Asserting: HTTP 200, body defined, Content-Type is application/json
+02:00:41.876  ✔    All assertions passed
+02:00:41.879  ✔  Step completed in 15 ms
+02:00:41.879  ○  ▶ Step 4 â€" Validate top-level `data` wrapper and all four sections
+02:00:41.970  ·    Asserting: all four sections (statusDistribution, currencyDistribution, byMethod, peakMetrics) are present
+02:00:42.073  ✘  Step failed after 194 ms — byMethod section must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"byMethod"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"currencyDistribution": [{"amount": 68023500, "count": 13470, "label": "KES", "percentage": 100}], "peakMetrics": {"avgTPM": 6735, "avgTpmChange": -53.3, "avgTpmDirection": "down", "maxTPM": 7034, "maxTpmChange": -74.7, "maxTpmDirection": "down", "peakHourWindow": "06:00 AM – 06:59 AM", "peakHourWindowChange": -76.2, "peakHourWindowDirection": "down", "peakTransactionDate": "2026-07-06", "peakTransactionsPerDay": 13470, "peakTxnDayChange": -81.3, "peakTxnDayDirection": "down"}, "statusDistribution": [{"amountKes": 68023500, "count": 13470, "label": "Successful", "percentage": 100}, {"amountKes": 0, "count": 0, "label": "Failed", "percentage": 0}, {"amountKes": 0, "count": 0, "label": "Pending", "percentage": 0}]}[39m
+02:00:42.074  ·  Test run complete: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"

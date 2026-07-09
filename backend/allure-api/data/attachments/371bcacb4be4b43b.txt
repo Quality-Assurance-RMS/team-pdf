@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-SF-001] TC-SF-006 — GET /api/v1/fetch/status: No auth returns 200 (sensitive data exposed without auth)
+────────────────────────────────────────────────────────────
+02:06:26.553  ·  Test started: "[BUG-SF-001] TC-SF-006 — GET /api/v1/fetch/status: No auth returns 200 (sensitive data exposed without auth)"
+02:06:26.600  ○  ▶ Step 1 — Send GET /api/v1/fetch/status WITHOUT Authorization header
+02:06:26.605  ·    GET /api/v1/fetch/status
+02:07:26.684  ✔    HTTP 200 received
+02:07:26.696  ✔  Step completed in 60096 ms
+02:07:26.696  ○  ▶ Step 2 — Assert 401/403 (BUG: returns 200 with sensitive data)
+02:07:26.697  ·    Asserting: status is 401 or 403
+02:07:26.710  ✘  Step failed after 14 ms — [BUG-SF-001] No-auth status must return 401/403, got 200
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: 200
+Received array: [401, 403]
+02:07:26.711  ·  Test run complete: "[BUG-SF-001] TC-SF-006 — GET /api/v1/fetch/status: No auth returns 200 (sensitive data exposed without auth)"
+────────────────────────────────────────────────────────────
+
