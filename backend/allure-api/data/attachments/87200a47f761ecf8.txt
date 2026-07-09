@@ -1,0 +1,19 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-07-09&to_date=2026-07-09 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-006] TC-DB-006 — Single-day range (from_date=to_date) returns 400 (validator too strict)
+────────────────────────────────────────────────────────────
+17:19:26.713  ·  Test started: "[BUG-DB-006] TC-DB-006 — Single-day range (from_date=to_date) returns 400 (validator too strict)"
+17:19:27.105  ○  ▶ Step 1 — GET /summary with from_date=to_date (same day)
+17:19:27.106  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-07-09&to_date=2026-07-09
+17:19:27.408  ✔    HTTP 400 received
+17:19:27.510  ·    Asserting: Single-day range (from_date=to_date) returns 200
+17:19:27.607  ✘  Step failed after 502 ms — [BUG-DB-006] from_date=to_date must return 200 (single day is valid)
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+17:19:27.617  ·  Test run complete: "[BUG-DB-006] TC-DB-006 — Single-day range (from_date=to_date) returns 400 (validator too strict)"
+────────────────────────────────────────────────────────────
+

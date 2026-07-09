@@ -1,0 +1,26 @@
+[GET /api/v1/transaction/summary?period=week] status: 400 | body: {
+  "errorCode": "Bad Request",
+  "errorMessage": "Invalid period value. Must be today|last-7-days|last-30-days|last-90-days|custom"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-001 — Summary: Default period (week)
+────────────────────────────────────────────────────────────
+17:23:03.707  ·  Test started: "TC-TXN-001 — Summary: Default period (week)"
+17:23:03.916  ○  ▶ Step 1 — Build request parameters
+17:23:04.006  ✔  Step completed in 90 ms
+17:23:04.007  ○  ▶ Step 2 — Send GET /summary?period=week
+17:23:04.008  ·    GET /api/v1/transaction/summary?period=week
+17:23:04.107  ✔    HTTP 400 received
+17:23:04.115  ✔  Step completed in 109 ms
+17:23:04.115  ○  ▶ Step 3 — Validate HTTP 200 status code
+17:23:04.117  ·    Asserting: HTTP 200, body defined, body is object
+17:23:04.128  ✘  Step failed after 13 ms — TC-TXN-001 — expected HTTP 200, got 400
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+17:23:04.202  ·  Test run complete: "TC-TXN-001 — Summary: Default period (week)"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,19 @@
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/filter-options → 200
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-007 — Filter options: statuses, methods, txn_types, categories are all non-empty arrays
+────────────────────────────────────────────────────────────
+17:19:38.703  ·  Test started: "TC-TXN-007 — Filter options: statuses, methods, txn_types, categories are all non-empty arrays"
+17:19:38.828  ○  ▶ Step 1 — Fetch filter options
+17:19:38.902  ·    GET /api/v1/transaction/filter-options
+17:19:39.011  ✔    HTTP 200 received
+17:19:39.012  ·    Asserting: All filter option sections are present, arrays, and non-empty
+17:19:39.030  ✘  Step failed after 202 ms — statuses must not be empty
+
+expect(received).toBeGreaterThan(expected)
+
+Expected: > 0
+Received:   0
+17:19:39.103  ·  Test run complete: "TC-TXN-007 — Filter options: statuses, methods, txn_types, categories are all non-empty arrays"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,18 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-013 â€” Array Integrity: all arrays same length, no null/undefined entries
+────────────────────────────────────────────────────────────
+17:22:30.807  ·  Test started: "TC-DREVT-013 â€” Array Integrity: all arrays same length, no null/undefined entries"
+17:22:30.809  ○  ▶ Step 1 â€” Fetch revenue-trend response
+17:22:30.821  ·    GET /api/v1/dashboard/revenue-trend
+17:22:31.108  ✔    HTTP 200 received
+17:22:31.116  ✔  Step completed in 307 ms
+17:22:31.117  ○  ▶ Step 2 â€” Validate HTTP 200
+17:22:31.118  ·    Asserting: Validate HTTP 200
+17:22:31.202  ✔    All assertions passed
+17:22:31.202  ✔  Step completed in 86 ms
+17:22:31.202  ○  ▶ Step 3 â€” All 4 arrays must have identical length
+17:22:31.209  ✘  Step failed after 7 ms — Cannot read properties of undefined (reading 'length')
+17:22:31.214  ·  Test run complete: "TC-DREVT-013 â€” Array Integrity: all arrays same length, no null/undefined entries"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,9 @@
+17:21:47.604  ·  Test started: "TC-DMREV-007 â€” BUG-MREV-04: CRITICAL â€” /revenue-trend KES total is inflated by USD amounts (currency mixing)"
+17:21:47.705  ○  ▶ Step 1 â€” Fetch monthly-revenue for current year
+17:21:47.718  ·    GET /api/v1/dashboard/monthly-revenue
+17:21:48.110  ✔    HTTP 200 received
+17:21:48.124  ✔    All assertions passed
+17:21:48.202  ✔  Step completed in 496 ms
+17:21:48.202  ○  ▶ Step 2 â€” BUG-MREV-04: Confirm cross-endpoint data inconsistency
+17:21:48.204  ✘  Step failed after 3 ms — Cannot read properties of undefined (reading 'toLocaleString')
+17:21:48.213  ·  Test run complete: "TC-DMREV-007 â€” BUG-MREV-04: CRITICAL â€” /revenue-trend KES total is inflated by USD amounts (currency mixing)"
