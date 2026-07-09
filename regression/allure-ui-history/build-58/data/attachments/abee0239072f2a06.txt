@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC6 — Clicking "Reports" navigates to the Reports page
+────────────────────────────────────────────────────────────
+02:21:22.063  ·  Test started: "TC6 — Clicking "Reports" navigates to the Reports page"
+02:21:22.293  ○  ▶ Step 1 — Verifies the Reports sidebar link navigates to the Reports page
+02:21:22.295  ·    Test scope: Verifies the Reports sidebar link navigates to the Reports page
+02:21:22.295  ✔  Step completed in 2 ms
+02:21:22.297  ○  ▶ Step 2 — Navigate to Dashboard page
+02:21:22.297  ·    Opening the Dashboard page
+02:21:24.021  ✔    Navigation initiated successfully
+02:21:24.280  ✔  Step completed in 1983 ms
+02:21:24.280  ○  ▶ Step 3 — Verify page loads successfully
+02:21:24.280  ·    Waiting for all page elements to render
+02:21:24.419  ✔    Page is fully loaded with all required elements visible
+02:21:24.542  ✔  Step completed in 263 ms
+02:21:24.542  ○  ▶ Step 4 — Click Reports nav item
+02:21:24.543  ·    Clicking: Reports nav item
+02:24:58.568  ✘  Step failed after 214025 ms — locator.click: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByRole('link', { name: /^Reports$/i }).or(locator('nav, [class*="sidebar"]').getByText(/^Reports$/i)).first()
+
+02:24:58.671  ·  Test run complete: "TC6 — Clicking "Reports" navigates to the Reports page"
+────────────────────────────────────────────────────────────
+

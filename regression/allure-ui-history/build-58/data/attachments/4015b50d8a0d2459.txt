@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All five report cards are visible with subtitles
+────────────────────────────────────────────────────────────
+02:20:58.587  ·  Test started: "TC1 — All five report cards are visible with subtitles"
+02:21:00.488  ○  ▶ Step 1 — Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed report cards are all present with their count subtitles
+02:21:00.490  ·    Test scope: Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed report cards are all present with their count subtitles
+02:21:00.490  ✔  Step completed in 2 ms
+02:21:00.568  ○  ▶ Step 2 — Navigate to Reports page
+02:21:00.569  ·    Opening the Reports page
+02:21:04.084  ✔    Navigation to Reports page initiated successfully
+02:21:10.065  ✔  Step completed in 9497 ms
+02:21:10.065  ○  ▶ Step 3 — Verify page loads successfully
+02:21:10.066  ·    Waiting for all Reports page elements to render
+02:21:25.287  ✘  Step failed after 15222 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/reports/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    26 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+02:21:28.778  ·  Test run complete: "TC1 — All five report cards are visible with subtitles"
+────────────────────────────────────────────────────────────
+

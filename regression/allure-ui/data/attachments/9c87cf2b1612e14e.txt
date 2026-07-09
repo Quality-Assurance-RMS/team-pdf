@@ -1,0 +1,32 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All four summary cards are visible
+────────────────────────────────────────────────────────────
+02:22:52.087  ·  Test started: "TC1 — All four summary cards are visible"
+02:22:53.673  ○  ▶ Step 1 — Verifies Gross Collected, Total Fees, Net Settlement, and Last Settlement cards render on the Settlements page
+02:22:53.684  ·    Test scope: Verifies Gross Collected, Total Fees, Net Settlement, and Last Settlement cards render on the Settlements page
+02:22:53.685  ✔  Step completed in 12 ms
+02:22:53.687  ○  ▶ Step 2 — Navigate to Settlements page
+02:22:53.688  ·    Opening the Settlements page
+02:22:57.171  ✔    Navigation to Settlements page initiated successfully
+02:22:59.966  ✔  Step completed in 6278 ms
+02:22:59.966  ○  ▶ Step 3 — Verify page loads successfully
+02:22:59.967  ·    Waiting for all Settlements page elements to render
+02:23:00.777  ✔    Settlements page is fully loaded with all required elements
+02:23:01.771  ✔  Step completed in 1806 ms
+02:23:01.772  ○  ▶ Step 4 — "Gross Collected" card is visible
+02:23:01.772  ·    Asserting visibility: Gross Collected summary card
+02:23:06.985  ✘  Step failed after 5214 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Gross Collected/i).first()
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for getByText(/Gross Collected/i).first()
+
+02:23:16.378  ·  Test run complete: "TC1 — All four summary cards are visible"
+────────────────────────────────────────────────────────────
+
