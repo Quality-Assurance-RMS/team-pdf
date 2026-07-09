@@ -1,0 +1,26 @@
+[GET /api/v1/transaction?page=0&size=20&period=week&q=CONF-MAY26] status: 400 | body: {
+  "errorCode": "Bad Request",
+  "errorMessage": "Page number must be 1 or greater."
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-006 — Transaction List: Search by keyword "CONF-MAY26"
+────────────────────────────────────────────────────────────
+02:07:31.752  ·  Test started: "TC-TXN-006 — Transaction List: Search by keyword "CONF-MAY26""
+02:07:31.948  ○  ▶ Step 1 — Build request parameters
+02:07:32.046  ✔  Step completed in 98 ms
+02:07:32.047  ○  ▶ Step 2 — Send GET /transaction?q=CONF-MAY26
+02:07:32.047  ·    GET /api/v1/transaction?page=0&size=20&period=week&q=CONF-MAY26
+02:07:32.233  ✔    HTTP 400 received
+02:07:32.240  ✔  Step completed in 194 ms
+02:07:32.240  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:07:32.241  ·    Asserting: HTTP 200, body defined, body is object
+02:07:32.252  ✘  Step failed after 12 ms — TC-TXN-006 — expected HTTP 200, got 400
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+02:07:32.255  ·  Test run complete: "TC-TXN-006 — Transaction List: Search by keyword "CONF-MAY26""
+────────────────────────────────────────────────────────────
+

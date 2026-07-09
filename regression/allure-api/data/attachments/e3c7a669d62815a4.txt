@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 500
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-OT-001] TC-OT-009 — GET /api/v1/token: No Authorization header must return 401 (returns 504)
+────────────────────────────────────────────────────────────
+01:59:09.753  ·  Test started: "[BUG-OT-001] TC-OT-009 — GET /api/v1/token: No Authorization header must return 401 (returns 504)"
+01:59:10.247  ○  ▶ Step 1 — Send GET /api/v1/token WITHOUT Authorization header
+01:59:10.453  ·    GET /api/v1/token
+02:00:10.842  ✔    HTTP 500 received
+02:00:10.869  ✔  Step completed in 60622 ms
+02:00:10.870  ○  ▶ Step 2 — Assert 401/403 (BUG: returns 504)
+02:00:10.932  ·    Asserting: status is 401 or 403
+02:00:11.062  ✘  Step failed after 192 ms — [BUG-OT-001] No-auth GET /token must return 401/403, got 500
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: 500
+Received array: [401, 403]
+02:00:11.143  ·  Test run complete: "[BUG-OT-001] TC-OT-009 — GET /api/v1/token: No Authorization header must return 401 (returns 504)"
+────────────────────────────────────────────────────────────
+

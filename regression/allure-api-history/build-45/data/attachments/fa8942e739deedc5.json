@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-OT-002",
-  "expected": "401 Unauthorized",
-  "actual": "HTTP 200 — returns valid access_token for any Bearer string",
-  "impact": "CRITICAL: KCB API token exposed without credential validation",
-  "fix": "Validate RMS JWT (signature, expiry, issuer) before returning KCB token"
-}
