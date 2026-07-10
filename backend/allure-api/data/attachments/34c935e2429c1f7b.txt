@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 500
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-002 — GET /api/v1/token: access_token is a valid RS256 JWT
+────────────────────────────────────────────────────────────
+17:22:13.758  ·  Test started: "TC-OT-002 — GET /api/v1/token: access_token is a valid RS256 JWT"
+17:22:14.065  ○  ▶ Step 1 — Send GET /api/v1/token
+17:22:14.069  ·    GET /api/v1/token
+17:23:14.181  ✔    HTTP 500 received
+17:23:14.185  ✔  Step completed in 60119 ms
+17:23:14.185  ○  ▶ Step 2 — Assert HTTP 200
+17:23:14.186  ·    Asserting: HTTP status is 200
+17:23:14.263  ✘  Step failed after 78 ms — TC-OT-002 — expected 200, got 500
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 500
+17:23:14.266  ·  Test run complete: "TC-OT-002 — GET /api/v1/token: access_token is a valid RS256 JWT"
+────────────────────────────────────────────────────────────
+

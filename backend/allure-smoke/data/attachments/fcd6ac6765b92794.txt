@@ -1,0 +1,26 @@
+[TC-DREVT-002] No-auth: 401 â€” {"status":401,"error":"Unauthorized","message":"Missing Authorization token"}
+[TC-DREVT-002] Wrong-auth: 401 â€” {"status":401,"error":"Unauthorized","message":"Invalid or expired token"}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-002 â€” Auth Guard: missing token â†’ 401, wrong token â†’ 401
+────────────────────────────────────────────────────────────
+17:22:25.872  ·  Test started: "TC-DREVT-002 â€” Auth Guard: missing token â†’ 401, wrong token â†’ 401"
+17:22:25.873  ○  ▶ Step 1 â€” No Authorization header
+17:22:25.882  ·    GET /api/v1/dashboard/revenue-trend
+17:22:26.172  ✔    HTTP 401 received
+17:22:26.180  ✔  Step completed in 306 ms
+17:22:26.180  ○  ▶ Step 2 â€” Invalid Bearer token
+17:22:26.181  ·    GET /api/v1/dashboard/revenue-trend
+17:22:26.275  ✔    HTTP 401 received
+17:22:26.280  ✔  Step completed in 100 ms
+17:22:26.280  ○  ▶ Step 3 â€” Both must return 401
+17:22:26.280  ·    Asserting: response structure and values
+17:22:26.364  ✔    All assertions passed
+17:22:26.364  ✔  Step completed in 85 ms
+17:22:26.365  ○  ▶ Step 4 â€” 401 error body must include status and message
+17:22:26.365  ·    Asserting: response structure and values
+17:22:26.373  ✔    All assertions passed
+17:22:26.373  ✔  Step completed in 8 ms
+17:22:26.375  ·  Test run complete: "TC-DREVT-002 â€” Auth Guard: missing token â†’ 401, wrong token â†’ 401"
+────────────────────────────────────────────────────────────
+

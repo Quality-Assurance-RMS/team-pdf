@@ -1,0 +1,16 @@
+17:23:47.676  ·  Test started: "TC-SMK-005 â€" List: period=month filtered by status=SUCCESS and method=MPESA"
+17:23:47.678  ○  ▶ Step 1 â€" Build request
+17:23:47.972  ✔  Step completed in 293 ms
+17:23:47.972  ○  ▶ Step 2 â€" Send GET /transaction with filters and log response
+17:23:47.973  ·    GET /api/v1/transaction?period=month&status=SUCCESS&method=MPESA
+17:23:48.159  ✔    HTTP 400 received
+17:23:48.167  ✔  Step completed in 195 ms
+17:23:48.167  ○  ▶ Step 3 â€" Validate HTTP 200, pagination metadata, and data array
+17:23:48.168  ·    Asserting: HTTP 200 and pagination metadata
+17:23:48.179  ✘  Step failed after 12 ms — TC-SMK-005 â€" HTTP 200 expected
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+17:23:48.181  ·  Test run complete: "TC-SMK-005 â€" List: period=month filtered by status=SUCCESS and method=MPESA"

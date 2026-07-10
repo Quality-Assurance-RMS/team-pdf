@@ -1,0 +1,16 @@
+17:25:40.459  ·  Test started: "TC-TXN-006 — Transaction List: Search by keyword "CONF-MAY26""
+17:25:40.495  ○  ▶ Step 1 — Build request parameters
+17:25:40.509  ✔  Step completed in 13 ms
+17:25:40.509  ○  ▶ Step 2 — Send GET /transaction?q=CONF-MAY26
+17:25:40.509  ·    GET /api/v1/transaction?page=0&size=20&period=week&q=CONF-MAY26
+17:25:40.571  ✔    HTTP 400 received
+17:25:40.577  ✔  Step completed in 68 ms
+17:25:40.577  ○  ▶ Step 3 — Validate HTTP 200 status code
+17:25:40.578  ·    Asserting: HTTP 200, body defined, body is object
+17:25:40.589  ✘  Step failed after 12 ms — TC-TXN-006 — expected HTTP 200, got 400
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+17:25:40.592  ·  Test run complete: "TC-TXN-006 — Transaction List: Search by keyword "CONF-MAY26""

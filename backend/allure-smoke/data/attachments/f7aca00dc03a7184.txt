@@ -1,0 +1,32 @@
+17:23:13.274  ·  Test started: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"
+17:23:13.276  ○  ▶ Step 1 â€" Build request
+17:23:13.483  ·    Asserting: request parameters are recorded
+17:23:13.483  ✔    All assertions passed
+17:23:13.570  ✔  Step completed in 293 ms
+17:23:13.570  ○  ▶ Step 2 â€" Send GET /today-payments and log response
+17:23:13.570  ·    GET /api/v1/dashboard/today-payments
+17:23:13.660  ✔    HTTP 200 received
+17:23:13.672  ✔  Step completed in 102 ms
+17:23:13.672  ○  ▶ Step 3 â€" Validate HTTP 200
+17:23:13.673  ·    Asserting: HTTP 200 and body is defined
+17:23:13.681  ✔    All assertions passed
+17:23:13.681  ✔  Step completed in 9 ms
+17:23:13.681  ○  ▶ Step 4 â€" Validate top-level data wrapper
+17:23:13.682  ·    Asserting: response has a "data" key that is an object
+17:23:13.759  ✔    All assertions passed
+17:23:13.759  ✔  Step completed in 78 ms
+17:23:13.759  ○  ▶ Step 5 â€" Validate 3 required sections exist
+17:23:13.760  ·    Asserting: payments, refunds, and revenue sections are present
+17:23:13.859  ✔    All assertions passed
+17:23:13.859  ✔  Step completed in 99 ms
+17:23:13.859  ○  ▶ Step 6 â€" Validate all 6 fields in each section
+17:23:13.859  ·    Asserting: all 6 required fields are present in each of the 3 sections
+17:23:13.865  ✘  Step failed after 6 ms — data.payments.successfullPaymentKES must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"successfullPaymentKES"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"failKesChange": 0, "failKesChangeDirection": "flat", "failUsdChange": 0, "failUsdChangeDirection": "flat", "failedPaymentDollar": 0, "failedPaymentKES": 0, "successKesChange": 0, "successKesChangeDirection": "flat", "successUsdChange": 0, "successUsdChangeDirection": "flat", "successfulPaymentDollar": 0, "successfulPaymentKES": 0}[39m
+17:23:13.868  ·  Test run complete: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"

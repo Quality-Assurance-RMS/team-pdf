@@ -1,0 +1,20 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-005 – BUG-ASUM-04: recon_matched + recon_exceptions must cover some transactions
+────────────────────────────────────────────────────────────
+17:19:36.758  ·  Test started: "TC-ASUM-005 – BUG-ASUM-04: recon_matched + recon_exceptions must cover some transactions"
+17:19:36.860  ○  ▶ Step 1 – Fetch analytics summary
+17:19:36.861  ·    GET /api/v1/analytics/dashboard/summary
+17:19:37.057  ✔    HTTP 200 received
+17:19:37.057  ·    Asserting: HTTP 200
+17:19:37.078  ✔    All assertions passed
+17:19:37.080  ✔  Step completed in 220 ms
+17:19:37.080  ○  ▶ Step 2 – BUG-ASUM-04: recon coverage must not be 0 when transactions exist
+17:19:37.279  ✔  Step completed in 200 ms
+17:19:37.279  ○  ▶ Step 3 – success_rate_pct must be calculable from reported counts
+17:19:37.366  ·    Asserting: success_rate_pct is a number between 0 and 100
+17:19:37.383  ✔    All assertions passed
+17:19:37.383  ✔  Step completed in 104 ms
+17:19:37.456  ·  Test run complete: "TC-ASUM-005 – BUG-ASUM-04: recon_matched + recon_exceptions must cover some transactions"
+────────────────────────────────────────────────────────────
+

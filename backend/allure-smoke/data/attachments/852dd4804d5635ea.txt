@@ -1,0 +1,35 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DSUM-003] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=week
+  â–º HTTP Status    : 400
+  â–º Content-Type   : application/json
+  â–º period         : N/A
+  â–º date_from      : N/A
+  â–º date_to        : N/A
+  â–º Full Body:
+{
+    "errorCode": 400,
+    "errorMessage": "Invalid period value. Must be today|last-7-days|last-30-days|last-90-days|custom"
+}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-003 â€” Response structure: all five sections present with correct types
+────────────────────────────────────────────────────────────
+17:22:57.477  ·  Test started: "TC-DSUM-003 â€” Response structure: all five sections present with correct types"
+17:22:57.563  ○  ▶ Step 1 â€” Send GET with period=week
+17:22:57.564  ·    GET /api/v1/dashboard/summary?period=week
+17:22:57.658  ✔    HTTP 400 received
+17:22:57.661  ✔  Step completed in 98 ms
+17:22:57.661  ○  ▶ Step 2 â€” Validate HTTP 200 and all five top-level sections
+17:22:57.662  ·    Asserting: HTTP 200 and all five top-level sections present
+17:22:57.667  ✘  Step failed after 5 ms — HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+17:22:57.668  ·  Test run complete: "TC-DSUM-003 â€” Response structure: all five sections present with correct types"
+────────────────────────────────────────────────────────────
+
