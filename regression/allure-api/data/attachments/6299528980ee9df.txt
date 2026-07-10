@@ -1,0 +1,16 @@
+02:24:25.914  ·  Test started: "TC-TXN-001 — Summary: Default period (week)"
+02:24:26.500  ○  ▶ Step 1 — Build request parameters
+02:24:26.623  ✔  Step completed in 122 ms
+02:24:26.623  ○  ▶ Step 2 — Send GET /summary?period=week
+02:24:26.701  ·    GET /api/v1/transaction/summary?period=week
+02:24:26.913  ✔    HTTP 400 received
+02:24:26.926  ✔  Step completed in 303 ms
+02:24:26.926  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:24:27.004  ·    Asserting: HTTP 200, body defined, body is object
+02:24:27.110  ✘  Step failed after 184 ms — TC-TXN-001 — expected HTTP 200, got 400
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+02:24:27.122  ·  Test run complete: "TC-TXN-001 — Summary: Default period (week)"

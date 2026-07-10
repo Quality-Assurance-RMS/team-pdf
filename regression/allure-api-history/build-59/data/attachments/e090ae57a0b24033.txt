@@ -1,0 +1,19 @@
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 406
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-ANA-001] TC-ANA-001 — Spring Boot Whitelabel page leaks EAT server timezone on every 406
+────────────────────────────────────────────────────────────
+02:19:15.609  ·  Test started: "[BUG-ANA-001] TC-ANA-001 — Spring Boot Whitelabel page leaks EAT server timezone on every 406"
+02:19:16.314  ○  ▶ Step 1 — Send GET with Accept: text/html
+02:19:16.318  ·    GET /api/v1/analytics/dashboard/summary
+02:19:16.622  ✔    HTTP 406 received
+02:19:16.828  ·    Asserting: 406 returned without Spring Boot Whitelabel page or EAT timezone leak
+02:19:16.924  ✘  Step failed after 610 ms — [BUG-ANA-001] 406 must NOT expose Spring Boot Whitelabel page
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: false
+Received: true
+02:19:17.003  ·  Test run complete: "[BUG-ANA-001] TC-ANA-001 — Spring Boot Whitelabel page leaks EAT server timezone on every 406"
+────────────────────────────────────────────────────────────
+
