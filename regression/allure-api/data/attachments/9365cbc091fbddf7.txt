@@ -1,0 +1,18 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=week → 401
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-XS-004] TC-XS-004 — CORS wildcard * is present even on 401 error responses
+────────────────────────────────────────────────────────────
+01:07:28.884  ·  Test started: "[BUG-XS-004] TC-XS-004 — CORS wildcard * is present even on 401 error responses"
+01:07:29.084  ○  ▶ Check CORS on Dashboard 401
+01:07:29.086  ·    GET /api/v1/dashboard/summary?period=week
+01:07:29.182  ✔    HTTP 401 received
+01:07:29.192  ·    Asserting: CORS Access-Control-Allow-Origin is not wildcard on error response
+01:07:29.200  ✘  Step failed after 117 ms — [BUG-XS-004] Dashboard 401 — ACAO must not be wildcard "*" on error response
+
+expect(received).not.toBe(expected) // Object.is equality
+
+Expected: not "*"
+01:07:29.203  ·  Test run complete: "[BUG-XS-004] TC-XS-004 — CORS wildcard * is present even on 401 error responses"
+────────────────────────────────────────────────────────────
+
