@@ -1,0 +1,14 @@
+01:10:26.724  ·  Test started: "TC-DSUM-003 â€” Response structure: all five sections present with correct types"
+01:10:26.725  ○  ▶ Step 1 â€” Send GET with period=week
+01:10:26.832  ·    GET /api/v1/dashboard/summary?period=week
+01:10:27.118  ✔    HTTP 400 received
+01:10:27.124  ✔  Step completed in 398 ms
+01:10:27.124  ○  ▶ Step 2 â€” Validate HTTP 200 and all five top-level sections
+01:10:27.129  ·    Asserting: HTTP 200 and all five top-level sections present
+01:10:27.216  ✘  Step failed after 93 ms — HTTP 200 expected
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+01:10:27.230  ·  Test run complete: "TC-DSUM-003 â€” Response structure: all five sections present with correct types"

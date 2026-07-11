@@ -1,0 +1,13 @@
+01:14:28.935  ·  Test started: "[BUG-GW-001] TC-GW-002 — CORS allow-origin must not be wildcard "*" on spr-fetcher routes"
+01:14:28.973  ○  ▶ Step 1 — Send GET /spr-fetcher/api/v1/fetch/status and capture CORS headers
+01:14:28.975  ·    GET /api/v1/fetch/status
+01:14:29.020  ✔    HTTP 200 received
+01:14:29.026  ✔  Step completed in 53 ms
+01:14:29.026  ○  ▶ Step 2 — Assert CORS origin is NOT wildcard (BUG: "*")
+01:14:29.027  ·    Asserting: access-control-allow-origin is not "*"
+01:14:29.034  ✘  Step failed after 8 ms — [BUG-GW-001] CORS allow-origin must not be "*", got: "*"
+
+[2mexpect([22m[31mreceived[39m[2m).[22mnot[2m.[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: not [32m"*"[39m
+01:14:29.036  ·  Test run complete: "[BUG-GW-001] TC-GW-002 — CORS allow-origin must not be wildcard "*" on spr-fetcher routes"

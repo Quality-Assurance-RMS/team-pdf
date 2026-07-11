@@ -1,0 +1,22 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-009 – BUG-ASUM-08: CORS Allow-Methods advertises POST/DELETE but server returns 405
+────────────────────────────────────────────────────────────
+01:09:13.715  ·  Test started: "TC-ASUM-009 – BUG-ASUM-08: CORS Allow-Methods advertises POST/DELETE but server returns 405"
+01:09:13.717  ○  ▶ Step 1 – Fetch response headers
+01:09:13.813  ·    GET /api/v1/analytics/dashboard/summary
+01:09:14.501  ✔    HTTP 200 received
+01:09:14.507  ✔  Step completed in 790 ms
+01:09:14.507  ○  ▶ Step 2 – BUG-ASUM-08: CORS ACAM must match actual supported methods
+01:09:14.600  ·    Asserting: CORS ACAM must not advertise POST/DELETE/PUT/PATCH
+01:09:14.623  ✔    All assertions passed
+01:09:14.623  ✔  Step completed in 116 ms
+01:09:14.623  ○  ▶ Step 3 – Confirm POST returns 405 (method routing is correct)
+01:09:14.625  ·    POST /api/v1/analytics/dashboard/summary
+01:09:14.800  ✔    HTTP 405 received
+01:09:14.800  ·    Asserting: POST returns 405 and Allow header contains GET
+01:09:14.812  ✔    All assertions passed
+01:09:14.818  ✔  Step completed in 194 ms
+01:09:14.821  ·  Test run complete: "TC-ASUM-009 – BUG-ASUM-08: CORS Allow-Methods advertises POST/DELETE but server returns 405"
+────────────────────────────────────────────────────────────
+

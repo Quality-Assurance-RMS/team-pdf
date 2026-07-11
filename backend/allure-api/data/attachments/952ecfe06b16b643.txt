@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 500
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-005 — GET /api/v1/token: issued_at < now < expires_at (valid time window)
+────────────────────────────────────────────────────────────
+01:17:18.891  ·  Test started: "TC-OT-005 — GET /api/v1/token: issued_at < now < expires_at (valid time window)"
+01:17:18.923  ○  ▶ Step 1 — Send GET /api/v1/token
+01:17:18.925  ·    GET /api/v1/token
+01:18:18.955  ✔    HTTP 500 received
+01:18:18.960  ✔  Step completed in 60037 ms
+01:18:18.960  ○  ▶ Step 2 — Assert HTTP 200
+01:18:18.961  ·    Asserting: HTTP status is 200
+01:18:18.970  ✘  Step failed after 9 ms — TC-OT-005 — expected 200, got 500
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 500
+01:18:18.973  ·  Test run complete: "TC-OT-005 — GET /api/v1/token: issued_at < now < expires_at (valid time window)"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,68 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DSUM-012] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=year
+  â–º HTTP Status    : 200
+  â–º Content-Type   : application/json
+  â–º period         : N/A
+  â–º date_from      : N/A
+  â–º date_to        : N/A
+  â–º Full Body:
+{
+    "data": {
+        "totalRevenueKes": {
+            "amount": 508611987,
+            "currency": "KES",
+            "changePct": 100,
+            "changeDirection": "up"
+        },
+        "totalRevenueUsd": {
+            "amount": 19450,
+            "currency": "USD",
+            "changePct": 0,
+            "changeDirection": "flat"
+        },
+        "totalTransactions": {
+            "totalTransactionCount": 98282,
+            "countKes": 98281,
+            "countUsd": 1,
+            "changePctKes": 100,
+            "changeDirectionKes": "up",
+            "changePctUsd": 0,
+            "changeDirectionUsd": "flat"
+        },
+        "successfulPayments": {
+            "count": 98280,
+            "ratePct": 100,
+            "changePct": 0,
+            "changeDirection": "flat"
+        },
+        "failedPayments": {
+            "count": 2,
+            "ratePct": 0,
+            "changePct": 0,
+            "changeDirection": "flat"
+        }
+    }
+}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-012 â€” BUG-SUM-07: change_pct must be null when no prior period data exists
+────────────────────────────────────────────────────────────
+01:10:48.910  ·  Test started: "TC-DSUM-012 â€” BUG-SUM-07: change_pct must be null when no prior period data exists"
+01:10:48.912  ○  ▶ Step 1 â€” period=year: change_pct should be null (no 2025 data to compare)
+01:10:49.000  ·    GET /api/v1/dashboard/summary
+01:10:49.312  ✔    HTTP 200 received
+01:10:49.312  ·    Asserting: response structure and values
+01:10:49.505  ✔    All assertions passed
+01:10:49.506  ✔  Step completed in 594 ms
+01:10:49.506  ○  ▶ Step 2 â€” custom future range: change_pct must be null (no data in range)
+01:10:49.507  ·    GET /api/v1/dashboard/summary
+01:10:49.634  ✔    HTTP 200 received
+01:10:49.634  ·    Asserting: response structure and values
+01:10:49.727  ✔    All assertions passed
+01:10:49.800  ✔  Step completed in 294 ms
+01:10:49.802  ·  Test run complete: "TC-DSUM-012 â€” BUG-SUM-07: change_pct must be null when no prior period data exists"
+────────────────────────────────────────────────────────────
+

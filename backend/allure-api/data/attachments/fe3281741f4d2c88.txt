@@ -1,0 +1,20 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 500
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-GW-001] TC-GW-001 — CORS allow-origin must not be wildcard "*" on oauth-token routes
+────────────────────────────────────────────────────────────
+01:13:27.709  ·  Test started: "[BUG-GW-001] TC-GW-001 — CORS allow-origin must not be wildcard "*" on oauth-token routes"
+01:13:27.747  ○  ▶ Step 1 — Send GET /oauth-token/api/v1/token and capture CORS headers
+01:13:27.749  ·    GET /api/v1/token
+01:14:27.785  ✔    HTTP 500 received
+01:14:27.799  ✔  Step completed in 60052 ms
+01:14:27.799  ○  ▶ Step 2 — Assert CORS origin is NOT wildcard (BUG: "*")
+01:14:27.800  ·    Asserting: access-control-allow-origin is not "*"
+01:14:27.812  ✘  Step failed after 13 ms — [BUG-GW-001] CORS allow-origin must not be "*", got: "*"
+
+expect(received).not.toBe(expected) // Object.is equality
+
+Expected: not "*"
+01:14:27.814  ·  Test run complete: "[BUG-GW-001] TC-GW-001 — CORS allow-origin must not be wildcard "*" on oauth-token routes"
+────────────────────────────────────────────────────────────
+

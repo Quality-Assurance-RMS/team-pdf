@@ -1,0 +1,37 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DSUM-001] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=week
+  â–º HTTP Status    : 400
+  â–º Content-Type   : application/json
+  â–º period         : N/A
+  â–º date_from      : N/A
+  â–º date_to        : N/A
+  â–º Full Body:
+{
+    "errorCode": 400,
+    "errorMessage": "Invalid period value. Must be today|last-7-days|last-30-days|last-90-days|custom"
+}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-001 â€” Happy path: all valid periods return HTTP 200
+────────────────────────────────────────────────────────────
+01:10:05.225  ·  Test started: "TC-DSUM-001 â€” Happy path: all valid periods return HTTP 200"
+01:10:05.227  ○  ▶ Step 1 â€” Build requests for all valid period values
+01:10:05.430  ·    Asserting: all valid period values are listed
+01:10:05.430  ✔    All assertions passed
+01:10:05.504  ✔  Step completed in 276 ms
+01:10:05.504  ○  ▶ Step â€” period=week: HTTP 200 and body defined
+01:10:05.505  ·    GET /api/v1/dashboard/summary?period=week
+01:10:05.627  ✔    HTTP 400 received
+01:10:05.634  ·    Asserting: HTTP 200 and body defined
+01:10:05.713  ✘  Step failed after 210 ms — period=week must return HTTP 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+01:10:05.723  ·  Test run complete: "TC-DSUM-001 â€” Happy path: all valid periods return HTTP 200"
+────────────────────────────────────────────────────────────
+

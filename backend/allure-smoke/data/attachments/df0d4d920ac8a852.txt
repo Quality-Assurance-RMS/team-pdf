@@ -1,0 +1,35 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-SMK-005] GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction?page=0&size=20&period=month&status=SUCCESS&method=MPESA&sort_by=trnx_date&sort_dir=desc
+  â–º Params         : {"page":"0","size":"20","period":"month","status":"SUCCESS","method":"MPESA","sort_by":"trnx_date","sort_dir":"desc"}
+  â–º Status         : 400
+  â–º Content-Type   : application/json
+  â–º total_count    : N/A
+  â–º page           : N/A
+  â–º size           : N/A
+  â–º total_pages    : N/A
+  â–º records in page: 0
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SMK-005 â€" List: period=month filtered by status=SUCCESS and method=MPESA
+────────────────────────────────────────────────────────────
+01:11:03.413  ·  Test started: "TC-SMK-005 â€" List: period=month filtered by status=SUCCESS and method=MPESA"
+01:11:03.415  ○  ▶ Step 1 â€" Build request
+01:11:03.801  ✔  Step completed in 386 ms
+01:11:03.802  ○  ▶ Step 2 â€" Send GET /transaction with filters and log response
+01:11:03.802  ·    GET /api/v1/transaction?period=month&status=SUCCESS&method=MPESA
+01:11:03.920  ✔    HTTP 400 received
+01:11:03.926  ✔  Step completed in 124 ms
+01:11:03.926  ○  ▶ Step 3 â€" Validate HTTP 200, pagination metadata, and data array
+01:11:03.926  ·    Asserting: HTTP 200 and pagination metadata
+01:11:04.010  ✘  Step failed after 84 ms — TC-SMK-005 â€" HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+01:11:04.013  ·  Test run complete: "TC-SMK-005 â€" List: period=month filtered by status=SUCCESS and method=MPESA"
+────────────────────────────────────────────────────────────
+

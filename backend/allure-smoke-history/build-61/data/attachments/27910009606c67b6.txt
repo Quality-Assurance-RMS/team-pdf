@@ -1,0 +1,32 @@
+
+[TC-DSH-002] No-auth response: status=401, body={"status":401,"error":"Unauthorized","message":"Missing Authorization token"}
+
+[TC-DSH-002] Invalid-auth response: status=401, body={"status":401,"error":"Unauthorized","message":"Invalid or expired token"}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSH-002 â€" Auth guard: no token and invalid token both return 401
+────────────────────────────────────────────────────────────
+01:09:59.115  ·  Test started: "TC-DSH-002 â€" Auth guard: no token and invalid token both return 401"
+01:09:59.120  ○  ▶ Step 1 â€" Build requests
+01:09:59.417  ·    Asserting: request parameters are recorded
+01:09:59.417  ✔    All assertions passed
+01:09:59.515  ✔  Step completed in 395 ms
+01:09:59.515  ○  ▶ Step 2 â€" Send GET with no Authorization header
+01:09:59.517  ·    GET /api/v1/dashboard/status-currency (no Authorization header)
+01:09:59.700  ✔    HTTP 401 received
+01:09:59.703  ✔  Step completed in 187 ms
+01:09:59.703  ○  ▶ Step 3 â€" Validate no-auth returns 401 with error body
+01:09:59.706  ·    Asserting: no-auth returns 401 with a non-empty error message
+01:09:59.727  ✔    All assertions passed
+01:09:59.728  ✔  Step completed in 25 ms
+01:09:59.728  ○  ▶ Step 4 â€" Send GET with invalid Bearer token
+01:09:59.800  ·    GET /api/v1/dashboard/status-currency (invalid Bearer token)
+01:09:59.899  ✔    HTTP 401 received
+01:09:59.901  ✔  Step completed in 173 ms
+01:09:59.901  ○  ▶ Step 5 â€" Validate invalid-token returns 401 with error body
+01:09:59.902  ·    Asserting: invalid-token returns 401 with a non-empty error message
+01:09:59.917  ✔    All assertions passed
+01:09:59.917  ✔  Step completed in 16 ms
+01:09:59.920  ·  Test run complete: "TC-DSH-002 â€" Auth guard: no token and invalid token both return 401"
+────────────────────────────────────────────────────────────
+
