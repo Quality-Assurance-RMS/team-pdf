@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token",
+    "Authorization": "Bearer ***"
+  },
+  "response": {
+    "status": 500,
+    "headers": {
+      "content-type": "application/problem+json",
+      "transfer-encoding": "chunked",
+      "x-correlation-id": "1746fd46-facd-4b9d-a5ba-bb09dafc9376",
+      "date": "Sat, 11 Jul 2026 17:29:11 GMT",
+      "server": "RMS-Gateway",
+      "x-apisix-upstream-status": "504, 500",
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+      "access-control-max-age": "3600",
+      "access-control-expose-headers": "*",
+      "access-control-allow-headers": "*",
+      "connection": "close"
+    },
+    "body": {
+      "type": "urn:rms:error:internal-server-error",
+      "title": "Internal Server Error",
+      "status": 500,
+      "detail": "An unexpected error occurred. Please contact the operations team.",
+      "instance": "/api/v1/token",
+      "timestamp": "2026-07-11T17:29:11.690095576Z",
+      "correlationId": "1746fd46-facd-4b9d-a5ba-bb09dafc9376"
+    }
+  }
+}

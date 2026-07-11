@@ -1,0 +1,32 @@
+17:23:26.938  ·  Test started: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"
+17:23:26.940  ○  ▶ Step 1 â€" Build request
+17:23:27.146  ·    Asserting: request parameters are recorded
+17:23:27.146  ✔    All assertions passed
+17:23:27.241  ✔  Step completed in 301 ms
+17:23:27.241  ○  ▶ Step 2 â€" Send GET /today-payments and log response
+17:23:27.243  ·    GET /api/v1/dashboard/today-payments
+17:23:27.341  ✔    HTTP 200 received
+17:23:27.349  ✔  Step completed in 108 ms
+17:23:27.349  ○  ▶ Step 3 â€" Validate HTTP 200
+17:23:27.350  ·    Asserting: HTTP 200 and body is defined
+17:23:27.357  ✔    All assertions passed
+17:23:27.358  ✔  Step completed in 8 ms
+17:23:27.358  ○  ▶ Step 4 â€" Validate top-level data wrapper
+17:23:27.358  ·    Asserting: response has a "data" key that is an object
+17:23:27.361  ✔    All assertions passed
+17:23:27.361  ✔  Step completed in 4 ms
+17:23:27.362  ○  ▶ Step 5 â€" Validate 3 required sections exist
+17:23:27.362  ·    Asserting: payments, refunds, and revenue sections are present
+17:23:27.453  ✔    All assertions passed
+17:23:27.454  ✔  Step completed in 92 ms
+17:23:27.454  ○  ▶ Step 6 â€" Validate all 6 fields in each section
+17:23:27.455  ·    Asserting: all 6 required fields are present in each of the 3 sections
+17:23:27.460  ✘  Step failed after 6 ms — data.payments.successfullPaymentKES must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"successfullPaymentKES"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"failKesChange": 0, "failKesChangeDirection": "flat", "failUsdChange": 0, "failUsdChangeDirection": "flat", "failedPaymentDollar": 0, "failedPaymentKES": 0, "successKesChange": 0, "successKesChangeDirection": "flat", "successUsdChange": 0, "successUsdChangeDirection": "flat", "successfulPaymentDollar": 0, "successfulPaymentKES": 0}[39m
+17:23:27.462  ·  Test run complete: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"

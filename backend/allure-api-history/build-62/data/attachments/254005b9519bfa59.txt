@@ -1,0 +1,36 @@
+17:20:05.348  ·  Test started: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"
+17:20:05.452  ○  ▶ GET ?(no param) — No mcda_id param
+17:20:05.456  ·    GET /api/v1/analytics/dashboard/summary
+17:20:05.561  ✔    HTTP 200 received
+17:20:05.561  ·    Asserting: Request returns 200 without error
+17:20:05.647  ✔    All assertions passed
+17:20:05.647  ✔  Step completed in 195 ms
+17:20:05.647  ○  ▶ GET ?mcda_id=PLATFORM — Valid org PLATFORM
+17:20:05.648  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=PLATFORM
+17:20:05.753  ✔    HTTP 200 received
+17:20:05.753  ·    Asserting: Request returns 200 without error
+17:20:05.759  ✔    All assertions passed
+17:20:05.759  ✔  Step completed in 112 ms
+17:20:05.759  ○  ▶ GET ?mcda_id=invalid_xyz — Invalid org value
+17:20:05.760  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=invalid_xyz
+17:20:05.855  ✔    HTTP 200 received
+17:20:05.855  ·    Asserting: Request returns 200 without error
+17:20:05.859  ✔    All assertions passed
+17:20:05.859  ✔  Step completed in 100 ms
+17:20:05.859  ○  ▶ GET ?mcda_id= — Empty mcda_id
+17:20:05.860  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=
+17:20:05.965  ✔    HTTP 200 received
+17:20:05.965  ·    Asserting: Request returns 200 without error
+17:20:05.970  ✔    All assertions passed
+17:20:05.970  ✔  Step completed in 111 ms
+17:20:05.970  ○  ▶ Assert PLATFORM mcda_id is echoed back (BUG: returns "ALL")
+17:20:05.971  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=PLATFORM
+17:20:06.062  ✔    HTTP 200 received
+17:20:06.064  ·    Asserting: mcda_id=PLATFORM is echoed back in response
+17:20:06.072  ✘  Step failed after 102 ms — [BUG-ANA-004] ?mcda_id=PLATFORM must return mcda_id="PLATFORM"
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"PLATFORM"[39m
+Received: [31m"ALL"[39m
+17:20:06.139  ·  Test run complete: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"
