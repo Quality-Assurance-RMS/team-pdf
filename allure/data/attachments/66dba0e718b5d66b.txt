@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Settlement and Payout overview values are visible
+────────────────────────────────────────────────────────────
+01:34:13.141  ·  Test started: "TC1 — Settlement and Payout overview values are visible"
+01:34:13.321  ○  ▶ Step 1 — Verifies Settlement KES/USD and Payout KES/USD sections render in the Settlement & Payout Overview
+01:34:13.323  ·    Test scope: Verifies Settlement KES/USD and Payout KES/USD sections render in the Settlement & Payout Overview
+01:34:13.323  ✔  Step completed in 2 ms
+01:34:13.324  ○  ▶ Step 2 — Navigate to Reports page
+01:34:13.325  ·    Opening the Reports page
+01:34:15.155  ✔    Navigation to Reports page initiated successfully
+01:34:15.678  ✔  Step completed in 2354 ms
+01:34:15.678  ○  ▶ Step 3 — Verify page loads successfully
+01:34:15.679  ·    Waiting for all Reports page elements to render
+01:34:30.695  ✘  Step failed after 15017 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/reports/
+Received string:  "https://api.rms.dev.demo-fsit.com/dashboard"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/dashboard"
+
+01:34:32.410  ·  Test run complete: "TC1 — Settlement and Payout overview values are visible"
+────────────────────────────────────────────────────────────
+
