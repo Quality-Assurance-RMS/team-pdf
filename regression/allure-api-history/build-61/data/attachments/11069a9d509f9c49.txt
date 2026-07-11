@@ -1,0 +1,16 @@
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 200
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ANA-006 — Analytics field types: all numeric fields must be numbers not strings
+────────────────────────────────────────────────────────────
+02:18:32.500  ·  Test started: "TC-ANA-006 — Analytics field types: all numeric fields must be numbers not strings"
+02:18:32.894  ○  ▶ Step 1 — Fetch and validate all field types
+02:18:32.988  ·    GET /api/v1/analytics/dashboard/summary
+02:18:33.380  ✔    HTTP 200 received
+02:18:33.380  ·    Asserting: Response is 200
+02:18:33.475  ·    Asserting: All numeric fields are of type number and finite
+02:18:35.689  ✔    All assertions passed
+02:18:35.781  ✔  Step completed in 2887 ms
+02:18:35.783  ·  Test run complete: "TC-ANA-006 — Analytics field types: all numeric fields must be numbers not strings"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-ANA-005",
+  "expected": "Non-zero counts reflecting actual transaction data",
+  "actual": "All fields = 0 despite historical data existing (smoke tests recorded 135 transactions)",
+  "impact": "Dashboard always shows zeros; analytics data is unreliable or stale",
+  "fix": "Verify aggregation job schedule; check if UTC vs EAT timezone is causing the \"today\" boundary issue"
+}

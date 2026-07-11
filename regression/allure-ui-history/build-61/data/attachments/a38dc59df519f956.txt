@@ -1,0 +1,39 @@
+OTP not yet available — retrying in 5s (1/18)...
+OTP found in "inbox" on attempt 2: 3108
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Full login with a correct OTP reaches the dashboard
+────────────────────────────────────────────────────────────
+02:26:54.644  ·  Test started: "TC1 — Full login with a correct OTP reaches the dashboard"
+02:26:54.703  ○  ▶ Step 1 — Verifies that logging in, receiving an OTP by email, and entering it correctly redirects the user to the dashboard
+02:26:54.703  ·    Test scope: full OTP login flow reaching the dashboard
+02:26:54.703  ✔  Step completed in 1 ms
+02:26:54.703  ○  ▶ Step 2 — Navigate to login page and submit credentials
+02:26:54.704  ·    Opening the login page
+02:26:55.288  ·    Submitting login credentials
+02:26:55.784  ✔    Credentials submitted — expecting redirect to OTP verification
+02:26:55.784  ✔  Step completed in 1080 ms
+02:26:55.784  ○  ▶ Step 3 — Verify OTP page is loaded
+02:26:55.784  ·    Waiting for OTP verification page to render
+02:26:56.648  ✔    OTP verification page is loaded
+02:26:56.648  ·    Checking Resend and Back to Login links are visible
+02:26:56.657  ✔    Resend OTP link is visible
+02:26:56.665  ✔    Back to Login link is visible
+02:26:56.665  ✔  Step completed in 881 ms
+02:26:56.665  ○  ▶ Step 4 — Fetch OTP from email
+02:26:56.665  ·    Polling mailbox for fresh OTP sent after login time
+02:27:03.434  ✔    OTP received from email: 3108
+02:27:03.434  ✔  Step completed in 6769 ms
+02:27:03.434  ○  ▶ Step 5 — Enter OTP and verify redirect to dashboard
+02:27:03.434  ·    Entering the 4-digit OTP in the verification form
+02:27:04.276  ✔    OTP entered successfully
+02:27:04.276  ·    Waiting for redirect away from verification page
+02:27:04.299  ✔    Successfully navigated away from verification — OTP accepted: https://api.rms.dev.demo-fsit.com/dashboard
+02:27:04.299  ✔  Step completed in 865 ms
+02:27:04.299  ○  ▶ Step 6 — Hold on dashboard for observation
+02:27:04.300  ·    Waiting 10 seconds to observe the final dashboard state
+02:27:14.386  ✔    Observation period complete — test finished successfully
+02:27:14.386  ✔  Step completed in 10087 ms
+02:27:15.121  ·  Test run complete: "TC1 — Full login with a correct OTP reaches the dashboard"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,32 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Selected Bank Details" panel is visible
+────────────────────────────────────────────────────────────
+02:24:51.380  ·  Test started: "TC1 — "Selected Bank Details" panel is visible"
+02:24:52.794  ○  ▶ Step 1 — Verifies the Selected Bank Details side panel renders on the Settlements page
+02:24:52.875  ·    Test scope: Verifies the Selected Bank Details side panel renders on the Settlements page
+02:24:52.877  ✔  Step completed in 83 ms
+02:24:52.885  ○  ▶ Step 2 — Navigate to Settlements page
+02:24:52.887  ·    Opening the Settlements page
+02:24:57.785  ✔    Navigation to Settlements page initiated successfully
+02:25:03.778  ✔  Step completed in 10893 ms
+02:25:03.778  ○  ▶ Step 3 — Verify page loads successfully
+02:25:03.781  ·    Waiting for all Settlements page elements to render
+02:25:04.875  ✔    Settlements page is fully loaded with all required elements
+02:25:06.179  ✔  Step completed in 2401 ms
+02:25:06.179  ○  ▶ Step 4 — "Selected Bank Details" panel heading is visible
+02:25:06.179  ·    Checking Selected Bank Details panel is rendered
+02:25:11.381  ✘  Step failed after 5203 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/Selected Bank Details/i)
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for getByText(/Selected Bank Details/i)
+
+02:25:17.393  ·  Test run complete: "TC1 — "Selected Bank Details" panel is visible"
+────────────────────────────────────────────────────────────
+
