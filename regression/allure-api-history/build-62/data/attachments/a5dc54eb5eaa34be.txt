@@ -1,0 +1,18 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 500
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-008 — Cache eviction + re-fetch: new token issued_at >= original issued_at
+────────────────────────────────────────────────────────────
+02:18:09.843  ·  Test started: "TC-OT-008 — Cache eviction + re-fetch: new token issued_at >= original issued_at"
+02:18:10.253  ○  ▶ Step 1 — GET /token → capture Token A
+02:18:10.259  ·    GET /api/v1/token
+02:19:10.447  ✔    HTTP 500 received
+02:19:10.559  ✘  Step failed after 60306 ms — TC-OT-008 Token A — expected 200, got 500
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 500
+02:19:10.561  ·  Test run complete: "TC-OT-008 — Cache eviction + re-fetch: new token issued_at >= original issued_at"
+────────────────────────────────────────────────────────────
+

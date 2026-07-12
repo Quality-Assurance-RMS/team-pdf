@@ -1,0 +1,43 @@
+OTP not yet available — retrying in 5s (1/18)...
+OTP found in "inbox" on attempt 2: 3071
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Full login with a correct OTP reaches the dashboard
+────────────────────────────────────────────────────────────
+02:25:51.538  ·  Test started: "TC1 — Full login with a correct OTP reaches the dashboard"
+02:25:52.353  ○  ▶ Step 1 — Verifies that logging in, receiving an OTP by email, and entering it correctly redirects the user to the dashboard
+02:25:52.354  ·    Test scope: full OTP login flow reaching the dashboard
+02:25:52.358  ✔  Step completed in 5 ms
+02:25:52.358  ○  ▶ Step 2 — Navigate to login page and submit credentials
+02:25:52.359  ·    Opening the login page
+02:25:58.253  ·    Submitting login credentials
+02:26:01.247  ✔    Credentials submitted — expecting redirect to OTP verification
+02:26:01.247  ✔  Step completed in 8889 ms
+02:26:01.247  ○  ▶ Step 3 — Verify OTP page is loaded
+02:26:01.250  ·    Waiting for OTP verification page to render
+02:26:01.838  ✔    OTP verification page is loaded
+02:26:01.838  ·    Checking Resend and Back to Login links are visible
+02:26:02.242  ✔    Resend OTP link is visible
+02:26:02.356  ✔    Back to Login link is visible
+02:26:02.357  ✔  Step completed in 1109 ms
+02:26:02.357  ○  ▶ Step 4 — Fetch OTP from email
+02:26:02.357  ·    Polling mailbox for fresh OTP sent after login time
+02:26:21.839  ✔    OTP received from email: 3071
+02:26:21.839  ✔  Step completed in 19482 ms
+02:26:21.839  ○  ▶ Step 5 — Enter OTP and verify redirect to dashboard
+02:26:21.840  ·    Entering the 4-digit OTP in the verification form
+02:26:23.141  ✔    OTP entered successfully
+02:26:23.141  ·    Waiting for redirect away from verification page
+02:26:53.157  ✘  Step failed after 31318 ms — expect(page).not.toHaveURL(expected) failed
+
+Expected pattern: not /\/auth\/verification/
+Received string: "https://api.rms.dev.demo-fsit.com/auth/verification"
+Timeout: 30000ms
+
+Call log:
+  - Expect "not toHaveURL" with timeout 30000ms
+    63 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/verification"
+
+02:26:53.971  ·  Test run complete: "TC1 — Full login with a correct OTP reaches the dashboard"
+────────────────────────────────────────────────────────────
+
