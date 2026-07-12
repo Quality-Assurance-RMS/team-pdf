@@ -1,0 +1,42 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-007 – BUG-ASUM-06: All query params (?date=, ?period=) silently ignored
+────────────────────────────────────────────────────────────
+17:19:32.081  ·  Test started: "TC-ASUM-007 – BUG-ASUM-06: All query params (?date=, ?period=) silently ignored"
+17:19:32.082  ○  ▶ Step 1 – Baseline
+17:19:32.269  ·    GET /api/v1/analytics/dashboard/summary
+17:19:32.670  ✔    HTTP 200 received
+17:19:32.670  ·    Asserting: HTTP 200
+17:19:32.767  ✔    All assertions passed
+17:19:32.767  ✔  Step completed in 684 ms
+17:19:32.767  ○  ▶ ?date=2026-05-31 – Yesterday date filter
+17:19:32.768  ·    GET /api/v1/analytics/dashboard/summary?date=2026-05-31
+17:19:32.969  ✔    HTTP 200 received
+17:19:33.066  ·    Asserting: ?date=2026-05-31 returns filtered data or 400, not identical baseline
+17:19:33.078  ✔    All assertions passed
+17:19:33.081  ✔  Step completed in 315 ms
+17:19:33.082  ○  ▶ ?date=2026-06-01 – Today explicit date
+17:19:33.082  ·    GET /api/v1/analytics/dashboard/summary?date=2026-06-01
+17:19:33.263  ✔    HTTP 200 received
+17:19:33.285  ·    Asserting: ?date=2026-06-01 returns filtered data or 400, not identical baseline
+17:19:33.364  ✔    All assertions passed
+17:19:33.365  ✔  Step completed in 283 ms
+17:19:33.365  ○  ▶ ?period=today – Period=today
+17:19:33.365  ·    GET /api/v1/analytics/dashboard/summary?period=today
+17:19:33.564  ✔    HTTP 200 received
+17:19:33.581  ·    Asserting: ?period=today returns filtered data or 400, not identical baseline
+17:19:33.664  ✔    All assertions passed
+17:19:33.665  ✔  Step completed in 300 ms
+17:19:33.665  ○  ▶ ?period=week – Period=week
+17:19:33.667  ·    GET /api/v1/analytics/dashboard/summary?period=week
+17:19:33.865  ✔    HTTP 200 received
+17:19:33.875  ·    Asserting: ?period=week returns filtered data or 400, not identical baseline
+17:19:33.961  ✔    All assertions passed
+17:19:33.962  ✔  Step completed in 297 ms
+17:19:33.962  ○  ▶ ?foo=bar – Unknown param
+17:19:33.965  ·    GET /api/v1/analytics/dashboard/summary?foo=bar
+17:19:34.166  ✔    HTTP 200 received
+17:19:34.261  ✔  Step completed in 299 ms
+17:19:34.272  ·  Test run complete: "TC-ASUM-007 – BUG-ASUM-06: All query params (?date=, ?period=) silently ignored"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,14 @@
+17:28:08.704  ·  Test started: "[BUG-OT-003] TC-OT-011 — DELETE /token/cache: No auth returns 204 (unauthenticated eviction allowed)"
+17:28:08.734  ○  ▶ Step 1 — Send DELETE /api/v1/token/cache WITHOUT Authorization header
+17:28:08.740  ·    DELETE /api/v1/token/cache
+17:29:08.784  ✔    HTTP 204 received
+17:29:08.788  ✔  Step completed in 60053 ms
+17:29:08.788  ○  ▶ Step 2 — Assert 401/403 (BUG: returns 204)
+17:29:08.790  ·    Asserting: status is 401 or 403
+17:29:08.803  ✘  Step failed after 16 ms — [BUG-OT-003] No-auth DELETE /cache must return 401/403, got 204
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+Expected value: [32m204[39m
+Received array: [31m[401, 403][39m
+17:29:08.806  ·  Test run complete: "[BUG-OT-003] TC-OT-011 — DELETE /token/cache: No auth returns 204 (unauthenticated eviction allowed)"

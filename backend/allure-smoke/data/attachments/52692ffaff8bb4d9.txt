@@ -1,0 +1,37 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-008 â€” BUG-REVT-07: all query parameters (?period=, ?startDate=, etc.) silently ignored
+────────────────────────────────────────────────────────────
+17:22:15.485  ·  Test started: "TC-DREVT-008 â€” BUG-REVT-07: all query parameters (?period=, ?startDate=, etc.) silently ignored"
+17:22:15.563  ○  ▶ Step 1 â€” Fetch baseline (no params)
+17:22:15.564  ·    GET /api/v1/dashboard/revenue-trend
+17:22:15.663  ✔    HTTP 200 received
+17:22:15.665  ✔    All assertions passed
+17:22:15.665  ✔  Step completed in 102 ms
+17:22:15.665  ○  ▶ Step 2 â€” Fetch with period=weekly
+17:22:15.666  ·    GET /api/v1/dashboard/revenue-trend
+17:22:15.761  ✔    HTTP 200 received
+17:22:15.763  ✔  Step completed in 98 ms
+17:22:15.763  ○  ▶ Step 3 â€” Fetch with period=invalid_value
+17:22:15.764  ·    GET /api/v1/dashboard/revenue-trend
+17:22:15.862  ✔    HTTP 200 received
+17:22:15.864  ✔  Step completed in 101 ms
+17:22:15.864  ○  ▶ Step 4 â€” Fetch with startDate/endDate
+17:22:15.864  ·    GET /api/v1/dashboard/revenue-trend
+17:22:15.962  ✔    HTTP 200 received
+17:22:15.964  ✔  Step completed in 100 ms
+17:22:15.964  ○  ▶ Step 5 â€” BUG-REVT-07a: ?period=invalid_value must return 400, not 200
+17:22:15.967  ·    Asserting: BUG-REVT-07a: ?period=invalid_value must return 4
+17:22:15.972  ✔    All assertions passed
+17:22:15.972  ✔  Step completed in 8 ms
+17:22:15.973  ○  ▶ Step 6 â€” BUG-REVT-07b: ?period=weekly must return different data than no-period (monthly)
+17:22:15.977  ·    Asserting: BUG-REVT-07b: ?period=weekly must return differen
+17:22:15.979  ✔    All assertions passed
+17:22:15.979  ✔  Step completed in 7 ms
+17:22:15.979  ○  ▶ Step 7 â€” BUG-REVT-07c: ?startDate/endDate must filter data range
+17:22:16.064  ·    Asserting: BUG-REVT-07c: ?startDate/endDate must filter data
+17:22:16.066  ✔    All assertions passed
+17:22:16.066  ✔  Step completed in 87 ms
+17:22:16.077  ·  Test run complete: "TC-DREVT-008 â€” BUG-REVT-07: all query parameters (?period=, ?startDate=, etc.) silently ignored"
+────────────────────────────────────────────────────────────
+
