@@ -1,0 +1,38 @@
+01:33:03.888  ·  Test started: "TC1 — All sidebar navigation items are visible"
+01:33:04.355  ○  ▶ Step 1 — Verifies that all expected sidebar menu items render after login
+01:33:04.357  ·    Test scope: Verifies that all expected sidebar menu items render after login
+01:33:04.358  ✔  Step completed in 3 ms
+01:33:04.360  ○  ▶ Step 2 — Navigate to Dashboard page
+01:33:04.361  ·    Opening the Dashboard page
+01:33:05.683  ✔    Navigation initiated successfully
+01:33:07.351  ✔  Step completed in 2992 ms
+01:33:07.351  ○  ▶ Step 3 — Verify page loads successfully
+01:33:07.352  ·    Waiting for all page elements to render
+01:33:07.669  ✔    Page is fully loaded with all required elements visible
+01:33:08.264  ✔  Step completed in 913 ms
+01:33:08.264  ○  ▶ Step 4 — "Dashboard" nav item is visible
+01:33:08.265  ·    Asserting visibility: Dashboard nav item
+01:33:08.363  ✔    Dashboard nav item is visible
+01:33:08.864  ✔  Step completed in 600 ms
+01:33:08.864  ○  ▶ Step 5 — "Transactions" nav item is visible
+01:33:08.865  ·    Asserting visibility: Transactions nav item
+01:33:08.953  ✔    Transactions nav item is visible
+01:33:09.255  ✔  Step completed in 391 ms
+01:33:09.255  ○  ▶ Step 6 — "Settlements" nav item is visible
+01:33:09.256  ·    Asserting visibility: Settlements nav item
+01:33:09.274  ✔    Settlements nav item is visible
+01:33:09.654  ✔  Step completed in 398 ms
+01:33:09.654  ○  ▶ Step 7 — "Reports" nav item is visible
+01:33:09.654  ·    Asserting visibility: Reports nav item
+01:33:17.669  ✘  Step failed after 8016 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByRole('link', { name: /^Reports$/i }).or(locator('nav, [class*="sidebar"]').getByText(/^Reports$/i)).first()
+Expected: visible
+Timeout: 8000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 8000ms[22m
+[2m  - waiting for getByRole('link', { name: /^Reports$/i }).or(locator('nav, [class*="sidebar"]').getByText(/^Reports$/i)).first()[22m
+
+01:33:20.372  ·  Test run complete: "TC1 — All sidebar navigation items are visible"
