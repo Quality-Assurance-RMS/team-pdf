@@ -1,0 +1,40 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-005 â€” BUG-REVT-04: labels must not contain duplicates without year disambiguation
+────────────────────────────────────────────────────────────
+17:22:37.764  ·  Test started: "TC-DREVT-005 â€” BUG-REVT-04: labels must not contain duplicates without year disambiguation"
+17:22:37.766  ○  ▶ Step 1 â€” Fetch revenue-trend response
+17:22:37.778  ·    GET /api/v1/dashboard/revenue-trend
+17:22:38.164  ✔    HTTP 200 received
+17:22:38.175  ✔  Step completed in 409 ms
+17:22:38.175  ○  ▶ Step 2 â€” Validate HTTP 200
+17:22:38.176  ·    Asserting: Validate HTTP 200
+17:22:38.185  ✔    All assertions passed
+17:22:38.185  ✔  Step completed in 10 ms
+17:22:38.185  ○  ▶ Step 3 â€” BUG-REVT-04: labels array must not have duplicate month names
+17:22:38.271  ·    Asserting: BUG-REVT-04: labels array must not have duplicate
+17:22:38.276  ✔    All assertions passed
+17:22:38.276  ✔  Step completed in 91 ms
+17:22:38.276  ○  ▶ Step 4 â€” Labels must contain only valid month abbreviations
+17:22:38.278  ·    Asserting: response structure and values
+17:22:38.280  ·    Asserting: response structure and values
+17:22:38.282  ·    Asserting: response structure and values
+17:22:38.285  ·    Asserting: response structure and values
+17:22:38.289  ·    Asserting: response structure and values
+17:22:38.374  ·    Asserting: response structure and values
+17:22:38.376  ·    Asserting: response structure and values
+17:22:38.378  ·    Asserting: response structure and values
+17:22:38.380  ·    Asserting: response structure and values
+17:22:38.381  ·    Asserting: response structure and values
+17:22:38.383  ·    Asserting: response structure and values
+17:22:38.385  ·    Asserting: response structure and values
+17:22:38.387  ·    Asserting: response structure and values
+17:22:38.389  ✔    All assertions passed
+17:22:38.389  ✔  Step completed in 113 ms
+17:22:38.389  ○  ▶ Step 5 â€” Validate array length is within reasonable range (12â€“13 months)
+17:22:38.390  ·    Asserting: Validate array length is within reasonable range
+17:22:38.463  ✔    All assertions passed
+17:22:38.463  ✔  Step completed in 74 ms
+17:22:38.466  ·  Test run complete: "TC-DREVT-005 â€” BUG-REVT-04: labels must not contain duplicates without year disambiguation"
+────────────────────────────────────────────────────────────
+

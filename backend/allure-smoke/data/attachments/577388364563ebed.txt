@@ -1,0 +1,21 @@
+[TC-DREVT-015] Response time: 397ms  (SLA: 2000ms)
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-015 â€” Response-Time SLA: must respond within 2 000 ms
+────────────────────────────────────────────────────────────
+17:22:57.266  ·  Test started: "TC-DREVT-015 â€” Response-Time SLA: must respond within 2 000 ms"
+17:22:57.268  ○  ▶ Step 1 â€” Measure round-trip time
+17:22:57.277  ·    GET /api/v1/dashboard/revenue-trend
+17:22:57.674  ✔    HTTP 200 received
+17:22:57.683  ✔  Step completed in 416 ms
+17:22:57.683  ○  ▶ Step 2 â€” Validate HTTP 200
+17:22:57.685  ·    Asserting: Validate HTTP 200
+17:22:57.760  ✔    All assertions passed
+17:22:57.761  ✔  Step completed in 77 ms
+17:22:57.761  ○  ▶ Step 3 â€” Response time must be under 2000ms
+17:22:57.762  ·    Asserting: response structure and values
+17:22:57.764  ✔    All assertions passed
+17:22:57.764  ✔  Step completed in 3 ms
+17:22:57.766  ·  Test run complete: "TC-DREVT-015 â€” Response-Time SLA: must respond within 2 000 ms"
+────────────────────────────────────────────────────────────
+

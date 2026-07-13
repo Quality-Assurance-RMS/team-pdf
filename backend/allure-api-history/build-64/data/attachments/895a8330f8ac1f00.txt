@@ -1,0 +1,8 @@
+17:19:35.984  ·  Test started: "[BUG-DB-005] TC-DB-005 — SQL-like input in from_date causes HTTP 500 (unhandled exception)"
+17:19:36.662  ○  ▶ Step 1 — Send SQL-like string in from_date
+17:19:36.673  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-01-01 OR 1=1&to_date=2026-06-09
+17:19:37.187  ✔    HTTP 400 received
+17:19:37.279  ·    Asserting: SQL-like from_date input returns 400
+17:19:37.287  ✔    All assertions passed
+17:19:37.360  ✔  Step completed in 698 ms
+17:19:37.362  ·  Test run complete: "[BUG-DB-005] TC-DB-005 — SQL-like input in from_date causes HTTP 500 (unhandled exception)"

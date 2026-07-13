@@ -1,0 +1,55 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/status-currency",
+    "params": {},
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "content_type": "application/json",
+    "body": {
+      "data": {
+        "statusDistribution": [
+          {
+            "label": "Successful",
+            "percentage": 0,
+            "amountKes": 0,
+            "count": 0
+          },
+          {
+            "label": "Failed",
+            "percentage": 0,
+            "amountKes": 0,
+            "count": 0
+          },
+          {
+            "label": "Pending",
+            "percentage": 0,
+            "amountKes": 0,
+            "count": 0
+          }
+        ],
+        "currencyDistribution": [],
+        "peakMetrics": {
+          "peakTransactionsPerDay": 0,
+          "peakTransactionDate": "N/A",
+          "peakHourWindow": "N/A",
+          "avgTPM": 0,
+          "maxTPM": 0,
+          "peakTxnDayChange": -100,
+          "peakTxnDayDirection": "down",
+          "avgTpmChange": -100,
+          "avgTpmDirection": "down",
+          "maxTpmChange": -100,
+          "maxTpmDirection": "down",
+          "peakHourWindowChange": -100,
+          "peakHourWindowDirection": "down"
+        }
+      }
+    }
+  }
+}
