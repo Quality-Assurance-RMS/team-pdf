@@ -1,0 +1,16 @@
+02:17:02.338  ·  Test started: "TC-OT-001 — GET /api/v1/token: Returns 200 with complete KCB token object"
+02:17:02.439  ○  ▶ Step 1 — Log request parameters
+02:17:02.522  ✔  Step completed in 83 ms
+02:17:02.522  ○  ▶ Step 2 — Send GET /api/v1/token
+02:17:02.523  ·    GET /api/v1/token
+02:18:02.722  ✔    HTTP 500 received
+02:18:02.742  ✔  Step completed in 60219 ms
+02:18:02.742  ○  ▶ Step 3 — Assert HTTP 200
+02:18:02.822  ·    Asserting: HTTP status is 200
+02:18:02.926  ✘  Step failed after 185 ms — TC-OT-001 — expected 200, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m500[39m
+02:18:02.930  ·  Test run complete: "TC-OT-001 — GET /api/v1/token: Returns 200 with complete KCB token object"
