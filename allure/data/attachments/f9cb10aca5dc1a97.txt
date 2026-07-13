@@ -1,0 +1,26 @@
+01:37:26.401  ·  Test started: "TC2 — Settlement by Bank table loads with at least one row"
+01:37:28.001  ○  ▶ Step 1 — Verifies the Settlement by Bank table is populated with data rows after page load
+01:37:28.010  ·    Test scope: Verifies the Settlement by Bank table is populated with data rows after page load
+01:37:28.013  ✔  Step completed in 13 ms
+01:37:28.019  ○  ▶ Step 2 — Navigate to Settlements page
+01:37:28.023  ·    Opening the Settlements page
+01:37:30.913  ✔    Navigation to Settlements page initiated successfully
+01:37:34.214  ✔  Step completed in 6195 ms
+01:37:34.214  ○  ▶ Step 3 — Verify page loads successfully
+01:37:34.216  ·    Waiting for all Settlements page elements to render
+01:37:34.907  ✔    Settlements page is fully loaded with all required elements
+01:37:35.816  ✔  Step completed in 1601 ms
+01:37:35.816  ○  ▶ Step 4 — At least one table row is visible
+01:37:35.817  ·    Verifying table structure and data are visible
+01:37:50.914  ✘  Step failed after 15098 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: locator('table tbody tr').first()
+Expected: visible
+Timeout: 15000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 15000ms[22m
+[2m  - waiting for locator('table tbody tr').first()[22m
+
+01:37:55.506  ·  Test run complete: "TC2 — Settlement by Bank table loads with at least one row"

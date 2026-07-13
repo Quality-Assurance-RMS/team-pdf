@@ -1,0 +1,34 @@
+01:38:03.001  ·  Test started: "TC3 — Resend OTP dispatches a new code and stays on verification"
+01:38:03.516  ○  ▶ Step 1 — Verifies that clicking Resend OTP dispatches a new code while remaining on the verification page
+01:38:03.518  ·    Test scope: Resend OTP behavior
+01:38:03.518  ✔  Step completed in 2 ms
+01:38:03.519  ○  ▶ Step 2 — Navigate to login page and submit credentials
+01:38:03.519  ·    Opening the login page
+01:38:05.503  ·    Submitting login credentials to trigger OTP flow
+01:38:06.328  ✔    Credentials submitted — expecting redirect to OTP verification
+01:38:06.328  ✔  Step completed in 2810 ms
+01:38:06.328  ○  ▶ Step 3 — Verify OTP page is loaded
+01:38:06.329  ·    Waiting for OTP verification page to render
+01:38:07.210  ✔    OTP verification page is loaded
+01:38:07.210  ✔  Step completed in 882 ms
+01:38:07.210  ○  ▶ Step 4 — Click Resend OTP and verify page stays on verification
+01:38:07.211  ·    Clicking the Resend OTP link to dispatch a new code
+01:40:04.089  ✘  Step failed after 116878 ms — locator.click: Test timeout of 120000ms exceeded.
+Call log:
+[2m  - waiting for getByText('Resend')[22m
+[2m    - locator resolved to <button disabled type="button" class="text-[#059669] hover:underline hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">Resend</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    226 × waiting for element to be visible, enabled and stable[22m
+[2m        - element is not enabled[22m
+[2m      - retrying click action[22m
+[2m        - waiting 500ms[22m
+
+01:40:04.094  ·  Test run complete: "TC3 — Resend OTP dispatches a new code and stays on verification"
