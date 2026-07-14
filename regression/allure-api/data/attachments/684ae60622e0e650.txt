@@ -1,0 +1,25 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-SF-004] TC-SF-010 — mockEnabled must be false in a live/UAT environment (currently true)
+────────────────────────────────────────────────────────────
+02:20:08.490  ·  Test started: "[BUG-SF-004] TC-SF-010 — mockEnabled must be false in a live/UAT environment (currently true)"
+02:20:09.077  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+02:20:09.086  ·    GET /api/v1/fetch/status
+02:21:09.391  ✔    HTTP 200 received
+02:21:09.486  ✔  Step completed in 60409 ms
+02:21:09.487  ○  ▶ Step 2 — Assert HTTP 200
+02:21:09.487  ·    Asserting: HTTP status is 200
+02:21:09.773  ✔    All assertions passed
+02:21:09.774  ✔  Step completed in 287 ms
+02:21:09.774  ○  ▶ Step 3 — Assert mockEnabled = false (BUG: currently true)
+02:21:09.778  ·    Asserting: mockEnabled is false
+02:21:09.887  ✘  Step failed after 113 ms — [BUG-SF-004] mockEnabled must be false in live/UAT, got: undefined
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: false
+Received: undefined
+02:21:09.972  ·  Test run complete: "[BUG-SF-004] TC-SF-010 — mockEnabled must be false in a live/UAT environment (currently true)"
+────────────────────────────────────────────────────────────
+

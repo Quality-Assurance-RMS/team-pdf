@@ -1,0 +1,14 @@
+02:21:33.772  ·  Test started: "TC-OT-002 — GET /api/v1/token: access_token is a valid RS256 JWT"
+02:21:34.890  ○  ▶ Step 1 — Send GET /api/v1/token
+02:21:34.987  ·    GET /api/v1/token
+02:22:35.492  ✔    HTTP 500 received
+02:22:35.670  ✔  Step completed in 60780 ms
+02:22:35.670  ○  ▶ Step 2 — Assert HTTP 200
+02:22:35.671  ·    Asserting: HTTP status is 200
+02:22:35.780  ✘  Step failed after 109 ms — TC-OT-002 — expected 200, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m500[39m
+02:22:35.790  ·  Test run complete: "TC-OT-002 — GET /api/v1/token: access_token is a valid RS256 JWT"
