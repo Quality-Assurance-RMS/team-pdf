@@ -1,0 +1,24 @@
+17:22:28.159  ·  Test started: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"
+17:22:28.242  ○  ▶ Step 1 â€" Build request
+17:22:28.339  ·    Asserting: request parameters are recorded
+17:22:28.339  ✔    All assertions passed
+17:22:28.340  ✔  Step completed in 98 ms
+17:22:28.340  ○  ▶ Step 2 â€" Send GET /status-currency and log response
+17:22:28.342  ·    GET /api/v1/dashboard/status-currency
+17:22:28.842  ✔    HTTP 200 received
+17:22:28.848  ✔  Step completed in 508 ms
+17:22:28.848  ○  ▶ Step 3 â€" Validate HTTP 200 and Content-Type
+17:22:28.849  ·    Asserting: HTTP 200, body defined, Content-Type is application/json
+17:22:28.853  ✔    All assertions passed
+17:22:28.853  ✔  Step completed in 5 ms
+17:22:28.854  ○  ▶ Step 4 â€" Validate top-level `data` wrapper and all four sections
+17:22:28.856  ·    Asserting: all four sections (statusDistribution, currencyDistribution, byMethod, peakMetrics) are present
+17:22:28.940  ✘  Step failed after 87 ms — byMethod section must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"byMethod"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"currencyDistribution": [], "peakMetrics": {"avgTPM": 0, "avgTpmChange": -100, "avgTpmDirection": "down", "maxTPM": 0, "maxTpmChange": -100, "maxTpmDirection": "down", "peakHourWindow": "N/A", "peakHourWindowChange": -100, "peakHourWindowDirection": "down", "peakTransactionDate": "N/A", "peakTransactionsPerDay": 0, "peakTxnDayChange": -100, "peakTxnDayDirection": "down"}, "statusDistribution": [{"amountKes": 0, "count": 0, "label": "Successful", "percentage": 0}, {"amountKes": 0, "count": 0, "label": "Failed", "percentage": 0}, {"amountKes": 0, "count": 0, "label": "Pending", "percentage": 0}]}[39m
+17:22:28.941  ·  Test run complete: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"

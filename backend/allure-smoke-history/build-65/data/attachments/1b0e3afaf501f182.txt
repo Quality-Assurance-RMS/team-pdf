@@ -1,0 +1,17 @@
+17:22:09.038  ·  Test started: "TC-DMREV-008 â€” BUG-MREV-05: conversion_ratio_pct must be null when no data, not 0.0"
+17:22:09.040  ○  ▶ Step 1 â€” Fetch year=2025 (known zero-data year)
+17:22:09.050  ·    GET /api/v1/dashboard/monthly-revenue
+17:22:09.337  ✔    HTTP 200 received
+17:22:09.447  ✔    All assertions passed
+17:22:09.448  ✔  Step completed in 408 ms
+17:22:09.448  ○  ▶ Step 2 â€” Verify current year has a valid conversion ratio > 0
+17:22:09.451  ·    GET /api/v1/dashboard/monthly-revenue
+17:22:09.734  ✔    HTTP 200 received
+17:22:09.734  ·    Asserting: response structure and values
+17:22:09.753  ✘  Step failed after 305 ms — conversion_ratio_pct must be a number
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"number"[39m
+Received: [31m"undefined"[39m
+17:22:09.755  ·  Test run complete: "TC-DMREV-008 â€” BUG-MREV-05: conversion_ratio_pct must be null when no data, not 0.0"

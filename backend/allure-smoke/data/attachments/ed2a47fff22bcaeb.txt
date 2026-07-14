@@ -1,0 +1,61 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-SMK-002] GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/summary?period=today
+  â–º Params        : {"period":"today"}
+  â–º Status        : 200
+  â–º Content-Type  : application/json
+  â–º Response Body :
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "success",
+    "data": {
+        "totalTransactionsAmount": {
+            "amountKes": 0,
+            "amountUsd": 0,
+            "changePctKes": 0,
+            "changePctDirectionKes": "flat",
+            "changePctUsd": 0,
+            "changeDirectionUsd": "flat"
+        },
+        "successRate": {
+            "countKes": 0,
+            "changePctKes": 0,
+            "changeDirectionKes": "flat",
+            "countUsd": 0,
+            "changePctUsd": 0,
+            "changeDirectionUsd": "flat"
+        },
+        "failureRate": {
+            "countKes": 0,
+            "changePctKes": 0,
+            "changeDirectionKes": "flat",
+            "countUsd": 0,
+            "changePctUsd": 0,
+            "changeDirectionUsd": "flat"
+        }
+    }
+}
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SMK-002 â€" Summary: period=today returns 200 with expected shape
+────────────────────────────────────────────────────────────
+17:23:54.637  ·  Test started: "TC-SMK-002 â€" Summary: period=today returns 200 with expected shape"
+17:23:54.638  ○  ▶ Step 1 â€" Build request
+17:23:54.842  ✔  Step completed in 204 ms
+17:23:54.842  ○  ▶ Step 2 â€" Send GET /summary?period=today and log response
+17:23:54.844  ·    GET /api/v1/transaction/summary?period=today
+17:23:55.037  ✔    HTTP 200 received
+17:23:55.051  ✔  Step completed in 208 ms
+17:23:55.051  ○  ▶ Step 3 â€" Validate HTTP 200 and top-level fields present
+17:23:55.052  ·    Asserting: HTTP 200 and top-level fields present
+17:23:55.140  ✘  Step failed after 90 ms — total_volume must be present
+
+expect(received).toBeDefined()
+
+Received: undefined
+17:23:55.145  ·  Test run complete: "TC-SMK-002 â€" Summary: period=today returns 200 with expected shape"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,13 @@
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction?period=month&page=0&size=50 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-008 — Transaction list: display_status casing must be consistent across all records
+────────────────────────────────────────────────────────────
+17:19:46.247  ·  Test started: "TC-TXN-008 — Transaction list: display_status casing must be consistent across all records"
+17:19:46.536  ○  ▶ Step 1 — Fetch list and check display_status casing
+17:19:46.540  ·    GET /api/v1/transaction?period=month&page=0&size=50
+17:19:46.657  ✔    HTTP 400 received
+17:19:46.730  ✘  Step failed after 194 ms — Test is skipped: 
+17:19:46.739  ·  Test run complete: "TC-TXN-008 — Transaction list: display_status casing must be consistent across all records"
+────────────────────────────────────────────────────────────
+
