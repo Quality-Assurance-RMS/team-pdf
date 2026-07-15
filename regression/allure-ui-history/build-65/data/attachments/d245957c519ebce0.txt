@@ -1,0 +1,23 @@
+02:22:06.769  ·  Test started: "TC1 — "Settled" status badge is visible in the table"
+02:22:09.570  ○  ▶ Step 1 — Verifies at least one Settled badge appears in the Settlement by Bank table
+02:22:09.577  ·    Test scope: Verifies at least one Settled badge appears in the Settlement by Bank table
+02:22:09.577  ✔  Step completed in 7 ms
+02:22:09.581  ○  ▶ Step 2 — Navigate to Settlements page
+02:22:09.582  ·    Opening the Settlements page
+02:22:14.983  ✔    Navigation to Settlements page initiated successfully
+02:22:21.280  ✔  Step completed in 11699 ms
+02:22:21.280  ○  ▶ Step 3 — Verify page loads successfully
+02:22:21.281  ·    Waiting for all Settlements page elements to render
+02:22:22.374  ✔    Settlements page is fully loaded with all required elements
+02:22:23.288  ✔  Step completed in 2008 ms
+02:22:23.288  ○  ▶ Step 4 — Widen date filter to "Last 90 Days" to ensure data exists
+02:22:23.289  ·    Selecting "Last 90 Days" date range
+02:22:23.495  ✘  Step failed after 206 ms — locator.selectOption: Error: strict mode violation: getByRole('combobox').or(locator('[class*="dropdown"], select').filter({ hasText: /Last 7 Days/i }).first()) resolved to 3 elements:
+    1) <select class="flex w-full sm:w-38 items-center gap-2 px-5 py-2↵                rounded-lg border transition-all hover:bg-gray-50↵                focus:outline-none focus:ring-0.8 focus:ring-[#E2E8F0]↵                border-[#E2E8F0] bg-[#F8FAFC] hover:cursor-pointer">…</select> aka getByRole('combobox').first()
+    2) <select class="flex w-full sm:w-38 items-center gap-2 px-5 py-2↵                rounded-lg border transition-all hover:bg-gray-50↵                focus:outline-none focus:ring-0.8 focus:ring-[#E2E8F0]↵                border-[#E2E8F0] bg-[#F8FAFC] hover:cursor-pointer">…</select> aka getByRole('combobox').nth(1)
+    3) <select class="flex w-full sm:w-38 items-center gap-2 px-5 py-2↵                rounded-lg border transition-all hover:bg-gray-50↵                focus:outline-none focus:ring-0.8 focus:ring-[#E2E8F0]↵                border-[#E2E8F0] bg-[#F8FAFC] hover:cursor-pointer">…</select> aka getByRole('combobox').nth(2)
+
+Call log:
+[2m  - waiting for getByRole('combobox').or(locator('[class*="dropdown"], select').filter({ hasText: /Last 7 Days/i }).first())[22m
+
+02:22:28.291  ·  Test run complete: "TC1 — "Settled" status badge is visible in the table"

@@ -1,0 +1,41 @@
+02:23:22.092  ·  Test started: "TC1 — Opening a transaction row shows matching detail sections"
+02:23:22.891  ○  ▶ Step 1 — Login with OTP, open the first transaction row, and verify Transaction ID and detail sections on the detail page
+02:23:22.892  ·    Test scope: transaction detail navigation and content verification
+02:23:22.892  ✔  Step completed in 0 ms
+02:23:22.892  ○  ▶ Step 2 — Navigate to Transactions page
+02:23:22.892  ·    Opening the Transactions page and waiting for it to load
+02:23:34.877  ✔    Transactions page loaded successfully
+02:23:34.877  ✔  Step completed in 11986 ms
+02:23:34.877  ○  ▶ Step 3 — Widen date filter to "Last 90 Days" to ensure data exists
+02:23:34.879  ·    Selecting "Last 90 Days" date range
+02:23:36.668  ✔    Date range widened to Last 90 Days
+02:23:36.668  ✔  Step completed in 1791 ms
+02:23:36.668  ○  ▶ Step 4 — Read first Transaction ID from table
+02:23:36.675  ·    Reading the Transaction ID from the first row of the transactions table
+02:23:38.889  ✔    First Transaction ID retrieved: PG-CONF-VOL150K-QUICK-TEST-V03039I000002
+02:23:38.890  ✔  Step completed in 2221 ms
+02:23:38.890  ○  ▶ Step 5 — Click first row action icon to open detail page
+02:23:38.891  ·    Clicking the first transaction row action icon to open the detail page
+02:23:39.974  ✔    First transaction row clicked — navigating to detail page
+02:23:39.976  ✔  Step completed in 1086 ms
+02:23:39.976  ○  ▶ Step 6 — Verify Transaction ID on detail page
+02:23:39.982  ·    Confirming the Transaction ID displayed on the detail page matches the table value
+02:23:40.887  ✔    Transaction ID on detail page matches: PG-CONF-VOL150K-QUICK-TEST-V03039I000002
+02:23:40.887  ✔  Step completed in 911 ms
+02:23:40.887  ○  ▶ Step 7 — Verify Payment Information section is visible
+02:23:40.888  ·    Checking that the Payment Information section is rendered on the detail page
+02:23:41.087  ✔    Payment Information section is visible
+02:23:41.087  ✔  Step completed in 200 ms
+02:23:41.087  ○  ▶ Step 8 — Verify Customer Information section is visible
+02:23:41.088  ·    Checking that the Customer Information section is rendered on the detail page
+02:23:41.270  ✔    Customer Information section is visible
+02:23:41.270  ✔  Step completed in 183 ms
+02:23:41.271  ○  ▶ Step 9 — Verify Transactions Timeline section is visible
+02:23:41.271  ·    Checking that the Transactions Timeline section is rendered on the detail page
+02:23:41.378  ✔    Transactions Timeline section is visible
+02:23:41.378  ✔  Step completed in 108 ms
+02:23:41.378  ○  ▶ Step 10 — Hold on detail page for observation
+02:23:41.379  ·    Waiting 5 seconds to observe the final detail page state
+02:23:46.474  ✔    Observation period complete — test finished successfully
+02:23:46.474  ✔  Step completed in 5096 ms
+02:23:56.286  ·  Test run complete: "TC1 — Opening a transaction row shows matching detail sections"
