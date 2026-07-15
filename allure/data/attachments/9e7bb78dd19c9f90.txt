@@ -1,0 +1,32 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All Settlement by Bank table columns are visible
+────────────────────────────────────────────────────────────
+01:35:19.271  ·  Test started: "TC1 — All Settlement by Bank table columns are visible"
+01:35:19.990  ○  ▶ Step 1 — Verifies all 6 column headers are present in the Settlement by Bank table
+01:35:19.993  ·    Test scope: Verifies all 6 column headers are present in the Settlement by Bank table
+01:35:19.993  ✔  Step completed in 3 ms
+01:35:19.994  ○  ▶ Step 2 — Navigate to Settlements page
+01:35:20.067  ·    Opening the Settlements page
+01:35:22.276  ✔    Navigation to Settlements page initiated successfully
+01:35:25.488  ✔  Step completed in 5494 ms
+01:35:25.488  ○  ▶ Step 3 — Verify page loads successfully
+01:35:25.490  ·    Waiting for all Settlements page elements to render
+01:35:26.170  ✔    Settlements page is fully loaded with all required elements
+01:35:26.877  ✔  Step completed in 1388 ms
+01:35:26.877  ○  ▶ Step 4 — "Service Name" column is visible
+01:35:26.878  ·    Verifying table structure and data are visible
+01:35:31.987  ✘  Step failed after 5110 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('columnheader', { name: /Service Name/i })
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for getByRole('columnheader', { name: /Service Name/i })
+
+01:35:35.783  ·  Test run complete: "TC1 — All Settlement by Bank table columns are visible"
+────────────────────────────────────────────────────────────
+
