@@ -1,0 +1,18 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-008 – BUG-ASUM-07: Response must have top-level "data" wrapper (consistent with all other endpoints)
+────────────────────────────────────────────────────────────
+17:21:53.070  ·  Test started: "TC-ASUM-008 – BUG-ASUM-07: Response must have top-level "data" wrapper (consistent with all other endpoints)"
+17:21:53.071  ○  ▶ Step 1 – Fetch analytics summary
+17:21:53.086  ·    GET /api/v1/analytics/dashboard/summary
+17:21:53.468  ✔    HTTP 200 received
+17:21:53.468  ·    Asserting: HTTP 200
+17:21:53.480  ✔    All assertions passed
+17:21:53.485  ✔  Step completed in 413 ms
+17:21:53.485  ○  ▶ Step 2 – BUG-ASUM-07: response must be wrapped in a "data" envelope
+17:21:53.566  ·    Asserting: response has top-level "data" wrapper
+17:21:53.571  ✔    All assertions passed
+17:21:53.572  ✔  Step completed in 87 ms
+17:21:53.574  ·  Test run complete: "TC-ASUM-008 – BUG-ASUM-07: Response must have top-level "data" wrapper (consistent with all other endpoints)"
+────────────────────────────────────────────────────────────
+

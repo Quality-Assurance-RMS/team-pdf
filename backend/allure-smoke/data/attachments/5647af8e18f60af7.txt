@@ -1,0 +1,18 @@
+17:22:50.379  ·  Test started: "TC-DSH-007 â€" Period filtering: query params must affect returned data (DASH-ISSUE-1)"
+17:22:50.391  ○  ▶ Step 1 â€" Build requests for all period variants
+17:22:50.471  ·    Asserting: request parameters are recorded for all period variants
+17:22:50.471  ✔    All assertions passed
+17:22:50.472  ✔  Step completed in 81 ms
+17:22:50.472  ○  ▶ Step 2 â€" Send all five requests
+17:22:50.473  ·    GET /api/v1/dashboard/status-currency (5 variants: no-params, period=week, period=today, period=custom, period=invalid_xyz)
+17:22:51.185  ✔    HTTP 200 received (no-params)
+17:22:51.193  ✔  Step completed in 721 ms
+17:22:51.193  ○  ▶ Step 3 â€" All valid period values must return HTTP 200
+17:22:51.194  ·    Asserting: no-params, period=week, period=today, and period=custom all return 200
+17:22:51.265  ✘  Step failed after 72 ms — period=week  -> 200
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+17:22:51.267  ·  Test run complete: "TC-DSH-007 â€" Period filtering: query params must affect returned data (DASH-ISSUE-1)"

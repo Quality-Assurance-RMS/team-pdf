@@ -1,0 +1,36 @@
+[TC-ASUM-014] POST → 405 Allow: GET
+[TC-ASUM-014] PUT → 405 Allow: GET
+[TC-ASUM-014] DELETE → 405 Allow: GET
+[TC-ASUM-014] PATCH → 405 Allow: GET
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-014 – HTTP method guard: POST/PUT/DELETE/PATCH → 405 + Allow: GET header
+────────────────────────────────────────────────────────────
+17:19:42.174  ·  Test started: "TC-ASUM-014 – HTTP method guard: POST/PUT/DELETE/PATCH → 405 + Allow: GET header"
+17:19:42.276  ○  ▶ POST must return 405 with Allow header
+17:19:42.277  ·    POST /api/v1/analytics/dashboard/summary
+17:19:42.467  ✔    HTTP 405 received
+17:19:42.475  ·    Asserting: POST returns 405 with Allow header and correct body
+17:19:42.486  ✔    All assertions passed
+17:19:42.487  ✔  Step completed in 210 ms
+17:19:42.487  ○  ▶ PUT must return 405 with Allow header
+17:19:42.492  ·    PUT /api/v1/analytics/dashboard/summary
+17:19:42.665  ✔    HTTP 405 received
+17:19:42.683  ·    Asserting: PUT returns 405 with Allow header and correct body
+17:19:42.781  ✔    All assertions passed
+17:19:42.782  ✔  Step completed in 295 ms
+17:19:42.782  ○  ▶ DELETE must return 405 with Allow header
+17:19:42.783  ·    DELETE /api/v1/analytics/dashboard/summary
+17:19:42.991  ✔    HTTP 405 received
+17:19:43.082  ·    Asserting: DELETE returns 405 with Allow header and correct body
+17:19:43.178  ✔    All assertions passed
+17:19:43.178  ✔  Step completed in 396 ms
+17:19:43.178  ○  ▶ PATCH must return 405 with Allow header
+17:19:43.179  ·    PATCH /api/v1/analytics/dashboard/summary
+17:19:43.291  ✔    HTTP 405 received
+17:19:43.374  ·    Asserting: PATCH returns 405 with Allow header and correct body
+17:19:43.470  ✔    All assertions passed
+17:19:43.470  ✔  Step completed in 292 ms
+17:19:43.471  ·  Test run complete: "TC-ASUM-014 – HTTP method guard: POST/PUT/DELETE/PATCH → 405 + Allow: GET header"
+────────────────────────────────────────────────────────────
+

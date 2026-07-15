@@ -1,0 +1,35 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/filter-options",
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "content_type": "application/json",
+    "statuses": [],
+    "methods": [],
+    "txn_types": [],
+    "categories": [],
+    "full_body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "success",
+      "data": {
+        "statuses": [
+          "Failed",
+          "Pending",
+          "Success"
+        ],
+        "methods": [
+          "MOBILE_MONEY",
+          "CARD",
+          "CARD_PAYMENT"
+        ]
+      }
+    }
+  }
+}

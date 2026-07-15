@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-ANA-001",
+  "expected": "406 JSON: {\"status\":406,\"error\":\"Not Acceptable\",\"message\":\"Only application/json is supported\"}",
+  "actual": "Spring Boot Whitelabel HTML with EAT timezone and server timestamp",
+  "impact": "Exposes Java/Spring Boot stack, server timezone (EAT), and exact server time to any caller",
+  "fix": "Add @ControllerAdvice for HttpMediaTypeNotAcceptableException returning JSON 406 response"
+}

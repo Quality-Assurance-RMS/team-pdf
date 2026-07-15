@@ -1,0 +1,18 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-015 â€” BUG-SUM-12/13/14: latency SLA, cache headers, CORS configuration
+────────────────────────────────────────────────────────────
+17:23:37.478  ·  Test started: "TC-DSUM-015 â€” BUG-SUM-12/13/14: latency SLA, cache headers, CORS configuration"
+17:23:37.479  ○  ▶ Step 1 â€” BUG-SUM-12: measure response time (P95 SLA < 2000ms)
+17:23:37.564  ·    GET /api/v1/dashboard/summary
+17:23:37.881  ✔    HTTP 400 received
+17:23:37.881  ·    Asserting: BUG-SUM-12: measure response time (P95 SLA < 2000
+17:23:37.988  ✘  Step failed after 509 ms — Run 1 must return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+17:23:38.069  ·  Test run complete: "TC-DSUM-015 â€” BUG-SUM-12/13/14: latency SLA, cache headers, CORS configuration"
+────────────────────────────────────────────────────────────
+
