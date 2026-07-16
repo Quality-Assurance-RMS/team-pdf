@@ -1,0 +1,35 @@
+02:23:38.137  ·  Test started: "TC1 — Full login with a correct OTP reaches the dashboard"
+02:23:39.334  ○  ▶ Step 1 — Verifies that logging in, receiving an OTP by email, and entering it correctly redirects the user to the dashboard
+02:23:39.414  ·    Test scope: full OTP login flow reaching the dashboard
+02:23:39.414  ✔  Step completed in 80 ms
+02:23:39.414  ○  ▶ Step 2 — Navigate to login page and submit credentials
+02:23:39.416  ·    Opening the login page
+02:23:43.130  ·    Submitting login credentials
+02:23:47.113  ✔    Credentials submitted — expecting redirect to OTP verification
+02:23:47.113  ✔  Step completed in 7698 ms
+02:23:47.113  ○  ▶ Step 3 — Verify OTP page is loaded
+02:23:47.114  ·    Waiting for OTP verification page to render
+02:23:47.926  ✔    OTP verification page is loaded
+02:23:47.926  ·    Checking Resend and Back to Login links are visible
+02:23:48.321  ✔    Resend OTP link is visible
+02:23:48.619  ✔    Back to Login link is visible
+02:23:48.619  ✔  Step completed in 1506 ms
+02:23:48.619  ○  ▶ Step 4 — Fetch OTP from email
+02:23:48.620  ·    Polling mailbox for fresh OTP sent after login time
+02:23:58.421  ✔    OTP received from email: 7085
+02:23:58.421  ✔  Step completed in 9802 ms
+02:23:58.421  ○  ▶ Step 5 — Enter OTP and verify redirect to dashboard
+02:23:58.422  ·    Entering the 4-digit OTP in the verification form
+02:24:00.912  ✔    OTP entered successfully
+02:24:00.912  ·    Waiting for redirect away from verification page
+02:24:30.933  ✘  Step failed after 32512 ms — [2mexpect([22m[31mpage[39m[2m).not.[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: not [32m/\/auth\/verification/[39m
+Received string: [31m"https://api.rms.dev.demo-fsit.com[7m/auth/verification[27m"[39m
+Timeout: 30000ms
+
+Call log:
+[2m  - Expect "not toHaveURL" with timeout 30000ms[22m
+[2m    60 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/verification"[22m
+
+02:24:32.819  ·  Test run complete: "TC1 — Full login with a correct OTP reaches the dashboard"

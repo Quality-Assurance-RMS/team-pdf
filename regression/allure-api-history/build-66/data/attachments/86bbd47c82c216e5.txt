@@ -1,0 +1,21 @@
+[DELETE https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token/cache] 204
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-OT-003] TC-OT-011 — DELETE /token/cache: No auth returns 204 (unauthenticated eviction allowed)
+────────────────────────────────────────────────────────────
+02:24:45.525  ·  Test started: "[BUG-OT-003] TC-OT-011 — DELETE /token/cache: No auth returns 204 (unauthenticated eviction allowed)"
+02:24:45.809  ○  ▶ Step 1 — Send DELETE /api/v1/token/cache WITHOUT Authorization header
+02:24:45.820  ·    DELETE /api/v1/token/cache
+02:25:45.917  ✔    HTTP 204 received
+02:25:45.920  ✔  Step completed in 60111 ms
+02:25:45.920  ○  ▶ Step 2 — Assert 401/403 (BUG: returns 204)
+02:25:45.922  ·    Asserting: status is 401 or 403
+02:25:45.932  ✘  Step failed after 12 ms — [BUG-OT-003] No-auth DELETE /cache must return 401/403, got 204
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: 204
+Received array: [401, 403]
+02:25:45.934  ·  Test run complete: "[BUG-OT-003] TC-OT-011 — DELETE /token/cache: No auth returns 204 (unauthenticated eviction allowed)"
+────────────────────────────────────────────────────────────
+
