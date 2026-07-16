@@ -1,0 +1,36 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Settlements" heading and count are visible
+────────────────────────────────────────────────────────────
+01:35:00.434  ·  Test started: "TC1 — "Settlements" heading and count are visible"
+01:35:00.606  ○  ▶ Step 1 — Verifies the Settlements heading and "X settlements have been initiated" text render on page load
+01:35:00.608  ·    Test scope: Verifies the Settlements heading and "X settlements have been initiated" text render on page load
+01:35:00.608  ✔  Step completed in 2 ms
+01:35:00.609  ○  ▶ Step 2 — Navigate to Settlements page
+01:35:00.610  ·    Opening the Settlements page
+01:35:02.667  ✔    Navigation to Settlements page initiated successfully
+01:35:02.880  ✔  Step completed in 2271 ms
+01:35:02.880  ○  ▶ Step 3 — Verify page loads successfully
+01:35:02.881  ·    Waiting for all Settlements page elements to render
+01:35:03.079  ✔    Settlements page is fully loaded with all required elements
+01:35:03.290  ✔  Step completed in 411 ms
+01:35:03.290  ○  ▶ Step 4 — "Settlements" heading is visible
+01:35:03.291  ·    Asserting visibility: Settlements page heading
+01:35:03.384  ✔    Settlements page heading is visible on the page
+01:35:03.986  ✔  Step completed in 695 ms
+01:35:03.986  ○  ▶ Step 5 — Settlement initiated count is visible
+01:35:03.987  ·    Asserting visibility: Settlement initiated count sub-heading
+01:35:09.085  ✘  Step failed after 5099 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText(/settlements have been initiated/i)
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for getByText(/settlements have been initiated/i)
+
+01:35:12.472  ·  Test run complete: "TC1 — "Settlements" heading and count are visible"
+────────────────────────────────────────────────────────────
+

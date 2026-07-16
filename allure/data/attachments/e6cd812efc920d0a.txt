@@ -1,0 +1,28 @@
+01:32:49.577  ·  Test started: "TC3 — Date filter dropdown defaults to "Last 90 Days""
+01:32:49.865  ○  ▶ Step 1 — Verifies the chart date filter shows "Today" as the default selected value
+01:32:49.866  ·    Test scope: Verifies the chart date filter shows "Today" as the default selected value
+01:32:49.866  ✔  Step completed in 1 ms
+01:32:49.866  ○  ▶ Step 2 — Navigate to Dashboard page
+01:32:49.867  ·    Opening the Dashboard page
+01:32:52.373  ✔    Navigation to Dashboard initiated successfully
+01:32:56.165  ✔  Step completed in 6299 ms
+01:32:56.165  ○  ▶ Step 3 — Verify page loads successfully
+01:32:56.168  ·    Waiting for all Dashboard elements to render
+01:32:56.876  ✔    Dashboard page is fully loaded with all required elements
+01:32:57.784  ✔  Step completed in 1619 ms
+01:32:57.784  ○  ▶ Step 4 — "Last 90 Days" label is visible in the date filter
+01:32:57.786  ·    Asserting value/data: date filter default selection
+01:33:07.980  ✘  Step failed after 10196 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator:  getByText(/Last 90 Days/i).first()
+Expected: visible
+Received: hidden
+Timeout:  10000ms
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for getByText(/Last 90 Days/i).first()[22m
+[2m    19 × locator resolved to <option value="last-90-days" class="relative flex select-none items-center ↵                rounded-sm outline-none focus:bg-accent focus:text-accent-foreground ↵                data-disabled:pointer-events-none ↵                data-disabled:opacity-50 px-4 py-3 text-lg cursor-pointer ↵                transition-colors border-b border-[#D6DBD7] last:border-0 ↵                text-[#272E28] hover:bg-[#F8F9FA]">Last 90 Days</option>[22m
+[2m       - unexpected value "hidden"[22m
+
+01:33:15.383  ·  Test run complete: "TC3 — Date filter dropdown defaults to "Last 90 Days""
