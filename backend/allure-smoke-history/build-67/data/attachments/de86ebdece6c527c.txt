@@ -1,0 +1,15 @@
+[TC-DMREV-010] Accept: text/html â†’ 406
+  Excerpt: {"errorCode":406,"errorMessage":"This API only produces application/json"}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-010 â€” BUG-MREV-07: Accept: text/html must not expose Spring Boot Whitelabel page
+────────────────────────────────────────────────────────────
+17:21:52.954  ·  Test started: "TC-DMREV-010 â€” BUG-MREV-07: Accept: text/html must not expose Spring Boot Whitelabel page"
+17:21:52.956  ○  ▶ Step 1 â€” Send GET with Accept: text/html
+17:21:52.969  ·    GET /api/v1/dashboard/monthly-revenue
+17:21:53.457  ✔    HTTP 406 received
+17:21:53.662  ✔    All assertions passed
+17:21:53.665  ✔  Step completed in 708 ms
+17:21:53.667  ·  Test run complete: "TC-DMREV-010 â€” BUG-MREV-07: Accept: text/html must not expose Spring Boot Whitelabel page"
+────────────────────────────────────────────────────────────
+

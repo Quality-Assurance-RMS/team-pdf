@@ -1,0 +1,22 @@
+17:19:34.063  ·  Test started: "TC-DMREV-001 â€” Happy Path: 200 + year + months[12] + summary"
+17:19:34.068  ○  ▶ Step 1 â€” Build request
+17:19:34.662  ✔  Step completed in 594 ms
+17:19:34.662  ○  ▶ Step 2 â€” Send GET /monthly-revenue and log response
+17:19:34.665  ·    GET /api/v1/dashboard/monthly-revenue
+17:19:34.873  ✔    HTTP 200 received
+17:19:34.976  ✔  Step completed in 313 ms
+17:19:34.976  ○  ▶ Step 3 â€” Validate HTTP 200 and Content-Type
+17:19:34.977  ·    Asserting: Validate HTTP 200 and Content-Type
+17:19:35.079  ✔    All assertions passed
+17:19:35.079  ✔  Step completed in 103 ms
+17:19:35.079  ○  ▶ Step 4 â€” Validate top-level data wrapper
+17:19:35.151  ·    Asserting: Validate top-level data wrapper
+17:19:35.352  ✘  Step failed after 273 ms — "data.year" must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"year"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"months": [{"commissionKes": 0, "commissionUsd": 0, "grossKes": 4747000, "grossUsd": 0, "monthLabel": "Aug", "monthNum": 8, "netKes": 4747000, "netUsd": 0, "year": 2025}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Sep", "monthNum": 9, "netKes": 0, "netUsd": 0, "year": 2025}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Oct", "monthNum": 10, "netKes": 0, "netUsd": 0, "year": 2025}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Nov", "monthNum": 11, "netKes": 0, "netUsd": 0, "year": 2025}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Dec", "monthNum": 12, "netKes": 0, "netUsd": 0, "year": 2025}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Jan", "monthNum": 1, "netKes": 0, "netUsd": 0, "year": 2026}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Feb", "monthNum": 2, "netKes": 0, "netUsd": 0, "year": 2026}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Mar", "monthNum": 3, "netKes": 0, "netUsd": 0, "year": 2026}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Apr", "monthNum": 4, "netKes": 0, "netUsd": 0, "year": 2026}, {"commissionKes": 43252.5, "commissionUsd": 0, "grossKes": 666051.5, "grossUsd": 0, "monthLabel": "May", "monthNum": 5, "netKes": 622799, "netUsd": 0, "year": 2026}, …], "summary": {"conversionRatioKesPct": 100, "conversionRatioUsdPct": 100, "totalCommissionKes": 4810992.5, "totalCommissionUsd": 0, "totalGrossKes": 513358987.5, "totalGrossUsd": 19450, "totalNetKes": 508547995, "totalNetUsd": 19450}}[39m
+17:19:35.354  ·  Test run complete: "TC-DMREV-001 â€” Happy Path: 200 + year + months[12] + summary"

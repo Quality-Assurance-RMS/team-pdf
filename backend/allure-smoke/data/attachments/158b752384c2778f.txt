@@ -1,0 +1,48 @@
+
+[TC-DSUM-013] POST  -> 405
+
+[TC-DSUM-013] PUT  -> 405
+
+[TC-DSUM-013] DELETE  -> 405
+
+[TC-DSUM-013] PATCH  -> 405
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-013 â€” BUG-SUM-08: wrong HTTP methods return 500 instead of 405
+────────────────────────────────────────────────────────────
+17:23:10.755  ·  Test started: "TC-DSUM-013 â€” BUG-SUM-08: wrong HTTP methods return 500 instead of 405"
+17:23:10.770  ○  ▶ Step â€” POST must return 405 Method Not Allowed
+17:23:10.771  ·    GET /api/v1/dashboard/summary
+17:23:10.789  ✔    HTTP 405 received
+17:23:10.790  ·    Asserting: response structure and values
+17:23:10.792  ✔    All assertions passed
+17:23:10.792  ✔  Step completed in 22 ms
+17:23:10.792  ○  ▶ Step â€” PUT must return 405 Method Not Allowed
+17:23:10.793  ·    GET /api/v1/dashboard/summary
+17:23:10.865  ✔    HTTP 405 received
+17:23:10.865  ·    Asserting: response structure and values
+17:23:10.869  ✔    All assertions passed
+17:23:10.869  ✔  Step completed in 76 ms
+17:23:10.869  ○  ▶ Step â€” DELETE must return 405 Method Not Allowed
+17:23:10.869  ·    GET /api/v1/dashboard/summary
+17:23:10.887  ✔    HTTP 405 received
+17:23:10.887  ·    Asserting: response structure and values
+17:23:10.890  ✔    All assertions passed
+17:23:10.890  ✔  Step completed in 21 ms
+17:23:10.890  ○  ▶ Step â€” PATCH must return 405 Method Not Allowed
+17:23:10.891  ·    GET /api/v1/dashboard/summary
+17:23:10.954  ✔    HTTP 405 received
+17:23:10.954  ·    Asserting: response structure and values
+17:23:10.956  ✔    All assertions passed
+17:23:10.957  ✔  Step completed in 67 ms
+17:23:10.957  ○  ▶ Step â€” HEAD and OPTIONS must return 200 (valid methods)
+17:23:10.957  ·    GET /api/v1/dashboard/summary
+17:23:11.017  ✔    HTTP 200 received
+17:23:11.017  ·    GET /api/v1/dashboard/summary
+17:23:11.069  ✔    HTTP 200 received
+17:23:11.069  ·    Asserting: response structure and values
+17:23:11.074  ✔    All assertions passed
+17:23:11.074  ✔  Step completed in 117 ms
+17:23:11.075  ·  Test run complete: "TC-DSUM-013 â€” BUG-SUM-08: wrong HTTP methods return 500 instead of 405"
+────────────────────────────────────────────────────────────
+

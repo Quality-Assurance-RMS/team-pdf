@@ -1,0 +1,18 @@
+17:22:44.864  ·  Test started: "TC-DSH-005 â€" byMethod: MPESA + CARD entries with all four amount/count fields"
+17:22:44.865  ○  ▶ Step 1 â€" Build request
+17:22:44.975  ·    Asserting: request parameters are recorded
+17:22:44.975  ✔    All assertions passed
+17:22:45.054  ✔  Step completed in 188 ms
+17:22:45.054  ○  ▶ Step 2 â€" Send GET /status-currency
+17:22:45.055  ·    GET /api/v1/dashboard/status-currency
+17:22:45.256  ✔    HTTP 200 received
+17:22:45.262  ✔  Step completed in 208 ms
+17:22:45.262  ○  ▶ Step 3 â€" Validate HTTP 200 and byMethod is a non-empty array
+17:22:45.262  ·    Asserting: HTTP 200 and byMethod is a non-empty array
+17:22:45.272  ✘  Step failed after 10 ms — byMethod must be an array
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+17:22:45.273  ·  Test run complete: "TC-DSH-005 â€" byMethod: MPESA + CARD entries with all four amount/count fields"

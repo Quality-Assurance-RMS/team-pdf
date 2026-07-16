@@ -1,0 +1,14 @@
+17:23:24.956  ·  Test started: "TC-DSUM-012 â€” BUG-SUM-07: change_pct must be null when no prior period data exists"
+17:23:24.958  ○  ▶ Step 1 â€” period=year: change_pct should be null (no 2025 data to compare)
+17:23:24.968  ·    GET /api/v1/dashboard/summary
+17:23:25.267  ✔    HTTP 200 received
+17:23:25.267  ·    Asserting: response structure and values
+17:23:25.286  ✔    All assertions passed
+17:23:25.286  ✔  Step completed in 328 ms
+17:23:25.286  ○  ▶ Step 2 â€” custom future range: change_pct must be null (no data in range)
+17:23:25.287  ·    GET /api/v1/dashboard/summary
+17:23:25.452  ✔    HTTP 200 received
+17:23:25.452  ·    Asserting: response structure and values
+17:23:25.467  ✔    All assertions passed
+17:23:25.477  ✔  Step completed in 191 ms
+17:23:25.480  ·  Test run complete: "TC-DSUM-012 â€” BUG-SUM-07: change_pct must be null when no prior period data exists"

@@ -1,0 +1,46 @@
+POST https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 405
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=week → 401
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/summary?period=week → 401
+POST https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 405
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=week → 401
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/summary?period=week → 401
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services
+────────────────────────────────────────────────────────────
+17:19:42.562  ·  Test started: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"
+17:19:42.674  ○  ▶ Step 1 — Collect Analytics 405 error body
+17:19:42.754  ·    POST /api/v1/analytics/dashboard/summary
+17:19:42.961  ✔    HTTP 405 received
+17:19:43.054  ·    Asserting: Analytics returns 405
+17:19:43.061  ✔    All assertions passed
+17:19:43.062  ✔  Step completed in 388 ms
+17:19:43.062  ○  ▶ Step 2 — Collect Dashboard 401 error body
+17:19:43.063  ·    GET /api/v1/dashboard/summary?period=week
+17:19:43.154  ✔    HTTP 401 received
+17:19:43.164  ·    Asserting: Dashboard returns 401
+17:19:43.166  ✔    All assertions passed
+17:19:43.166  ✔  Step completed in 104 ms
+17:19:43.166  ○  ▶ Step 3 — Collect Transaction 401 error body
+17:19:43.167  ·    GET /api/v1/transaction/summary?period=week
+17:19:43.353  ✔    HTTP 401 received
+17:19:43.358  ·    Asserting: Transaction returns 401
+17:19:43.362  ✔    All assertions passed
+17:19:43.363  ✔  Step completed in 197 ms
+17:19:43.363  ○  ▶ Step 4 — Assert schema is consistent (BUG: it is not)
+17:19:43.365  ·    POST /api/v1/analytics/dashboard/summary
+17:19:43.453  ✔    HTTP 405 received
+17:19:43.453  ·    GET /api/v1/dashboard/summary?period=week
+17:19:43.552  ✔    HTTP 401 received
+17:19:43.552  ·    GET /api/v1/transaction/summary?period=week
+17:19:43.652  ✔    HTTP 401 received
+17:19:43.654  ·    Asserting: Error schema is consistent across all services
+17:19:43.659  ✘  Step failed after 297 ms — [BUG-XS-001] Analytics error body must include "message" field
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+17:19:43.662  ·  Test run complete: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"
+────────────────────────────────────────────────────────────
+
