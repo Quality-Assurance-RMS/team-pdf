@@ -1,0 +1,18 @@
+02:24:26.444  ·  Test started: "TC-SF-002 — GET /api/v1/fetch/status: All 7 required fields are present and non-null"
+02:24:26.471  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+02:24:26.473  ·    GET /api/v1/fetch/status
+02:25:26.553  ✔    HTTP 200 received
+02:25:26.557  ✔  Step completed in 60086 ms
+02:25:26.557  ○  ▶ Step 2 — Assert HTTP 200
+02:25:26.558  ·    Asserting: HTTP status is 200
+02:25:26.569  ✔    All assertions passed
+02:25:26.569  ✔  Step completed in 12 ms
+02:25:26.569  ○  ▶ Step 3 — Check each required field
+02:25:26.570  ·    Asserting: all 7 required fields are present and non-null
+02:25:26.578  ✘  Step failed after 9 ms — "mockEnabled" must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+02:25:26.581  ·  Test run complete: "TC-SF-002 — GET /api/v1/fetch/status: All 7 required fields are present and non-null"
