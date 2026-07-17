@@ -1,0 +1,20 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-004 – BUG-ASUM-03: total_amount_kes=0.0 while total_transactions=135 is suspicious
+────────────────────────────────────────────────────────────
+17:21:55.677  ·  Test started: "TC-ASUM-004 – BUG-ASUM-03: total_amount_kes=0.0 while total_transactions=135 is suspicious"
+17:21:55.750  ○  ▶ Step 1 – Fetch analytics summary
+17:21:55.856  ·    GET /api/v1/analytics/dashboard/summary
+17:21:56.153  ✔    HTTP 200 received
+17:21:56.153  ·    Asserting: HTTP 200
+17:21:56.159  ✔    All assertions passed
+17:21:56.163  ✔  Step completed in 413 ms
+17:21:56.163  ○  ▶ Step 2 – BUG-ASUM-03: total_amount_kes must not be 0.0 when transactions exist
+17:21:56.178  ·    Asserting: total_amount_kes must not be 0.0 when transactions exist
+17:21:56.261  ✔    All assertions passed
+17:21:56.265  ✔  Step completed in 101 ms
+17:21:56.265  ○  ▶ Step 3 – settlement_total_kes must be <= total_amount_kes
+17:21:56.268  ✔  Step completed in 3 ms
+17:21:56.273  ·  Test run complete: "TC-ASUM-004 – BUG-ASUM-03: total_amount_kes=0.0 while total_transactions=135 is suspicious"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,18 @@
+17:30:32.423  ·  Test started: "[BUG-SF-003] TC-SF-009 — tokenInjectionEnabled must be true (currently false — root cause of trigger failure)"
+17:30:32.461  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+17:30:32.463  ·    GET /api/v1/fetch/status
+17:31:32.492  ✔    HTTP 200 received
+17:31:32.496  ✔  Step completed in 60035 ms
+17:31:32.496  ○  ▶ Step 2 — Assert HTTP 200
+17:31:32.497  ·    Asserting: HTTP status is 200
+17:31:32.510  ✔    All assertions passed
+17:31:32.510  ✔  Step completed in 14 ms
+17:31:32.510  ○  ▶ Step 3 — Assert tokenInjectionEnabled = true (BUG: false)
+17:31:32.511  ·    Asserting: tokenInjectionEnabled is true
+17:31:32.523  ✘  Step failed after 13 ms — [BUG-SF-003] tokenInjectionEnabled must be true, got: undefined
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mundefined[39m
+17:31:32.525  ·  Test run complete: "[BUG-SF-003] TC-SF-009 — tokenInjectionEnabled must be true (currently false — root cause of trigger failure)"

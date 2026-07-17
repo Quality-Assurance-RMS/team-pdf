@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-ANA-004",
+  "expected": "mcda_id=PLATFORM → response mcda_id=\"PLATFORM\" with filtered data",
+  "actual": "mcda_id=PLATFORM → response mcda_id=\"ALL\" (param ignored)",
+  "impact": "Analytics data cannot be scoped by MCDA; filtering feature is completely non-functional",
+  "fix": "Implement mcda_id filtering in analytics query; return 400 for unknown mcda_id values"
+}

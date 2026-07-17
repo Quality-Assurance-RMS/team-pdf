@@ -1,0 +1,12 @@
+17:20:12.266  ·  Test started: "[BUG-XS-003] TC-XS-003 — Unknown paths return 401 not 404 on dashboard and transaction APIs"
+17:20:12.457  ○  ▶ Step 1 — GET unknown path on dashboard (no auth)
+17:20:12.461  ·    GET /api/v1/dashboard/this-does-not-exist
+17:20:12.563  ✔    HTTP 401 received
+17:20:12.571  ·    Asserting: Unknown dashboard path returns 404
+17:20:12.659  ✘  Step failed after 202 ms — [BUG-XS-003] Unknown dashboard path must return 404, not 401
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m404[39m
+Received: [31m401[39m
+17:20:12.662  ·  Test run complete: "[BUG-XS-003] TC-XS-003 — Unknown paths return 401 not 404 on dashboard and transaction APIs"

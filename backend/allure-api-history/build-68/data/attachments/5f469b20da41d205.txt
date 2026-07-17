@@ -1,0 +1,14 @@
+17:31:22.922  ·  Test started: "[BUG-OT-004] TC-OT-012 — GET /actuator/health: Must return 200 UP (returns 504)"
+17:31:22.958  ○  ▶ Step 1 — Send GET /actuator/health
+17:31:22.960  ·    GET /actuator/health
+17:32:22.989  ✔    HTTP 503 received
+17:32:22.995  ✔  Step completed in 60037 ms
+17:32:22.995  ○  ▶ Step 2 — Assert 200 with status=UP (BUG: returns 504)
+17:32:22.996  ·    Asserting: HTTP 200 and body status is "UP"
+17:32:23.005  ✘  Step failed after 10 ms — [BUG-OT-004] Health endpoint returned 503, expected 200
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m503[39m
+17:32:23.008  ·  Test run complete: "[BUG-OT-004] TC-OT-012 — GET /actuator/health: Must return 200 UP (returns 504)"

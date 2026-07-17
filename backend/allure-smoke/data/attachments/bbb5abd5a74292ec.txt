@@ -1,0 +1,12 @@
+17:23:03.556  ·  Test started: "TC-DREVT-014 â€” Math Consistency: successful + failed must equal totalAttempts at every index"
+17:23:03.557  ○  ▶ Step 1 â€” Fetch revenue-trend response
+17:23:03.654  ·    GET /api/v1/dashboard/revenue-trend
+17:23:03.970  ✔    HTTP 200 received
+17:23:04.049  ✔  Step completed in 492 ms
+17:23:04.049  ○  ▶ Step 2 â€” Validate HTTP 200
+17:23:04.050  ·    Asserting: Validate HTTP 200
+17:23:04.058  ✔    All assertions passed
+17:23:04.059  ✔  Step completed in 10 ms
+17:23:04.059  ○  ▶ Step 3 â€” Per-index: successful[i] + failed[i] must equal totalAttempts[i]
+17:23:04.062  ✘  Step failed after 3 ms — Cannot read properties of undefined (reading '0')
+17:23:04.065  ·  Test run complete: "TC-DREVT-014 â€” Math Consistency: successful + failed must equal totalAttempts at every index"

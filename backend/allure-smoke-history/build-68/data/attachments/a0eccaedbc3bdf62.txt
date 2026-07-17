@@ -1,0 +1,24 @@
+17:23:05.866  ·  Test started: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"
+17:23:05.867  ○  ▶ Step 1 â€" Build request
+17:23:06.054  ·    Asserting: request parameters are recorded
+17:23:06.054  ✔    All assertions passed
+17:23:06.067  ✔  Step completed in 200 ms
+17:23:06.067  ○  ▶ Step 2 â€" Send GET /status-currency and log response
+17:23:06.068  ·    GET /api/v1/dashboard/status-currency
+17:23:06.365  ✔    HTTP 200 received
+17:23:06.371  ✔  Step completed in 304 ms
+17:23:06.371  ○  ▶ Step 3 â€" Validate HTTP 200 and Content-Type
+17:23:06.372  ·    Asserting: HTTP 200, body defined, Content-Type is application/json
+17:23:06.453  ✔    All assertions passed
+17:23:06.453  ✔  Step completed in 81 ms
+17:23:06.453  ○  ▶ Step 4 â€" Validate top-level `data` wrapper and all four sections
+17:23:06.456  ·    Asserting: all four sections (statusDistribution, currencyDistribution, byMethod, peakMetrics) are present
+17:23:06.472  ✘  Step failed after 19 ms — byMethod section must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"byMethod"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"currencyDistribution": [{"amount": 45740, "count": 73, "label": "KES", "percentage": 100}], "peakMetrics": {"avgTPM": 1.1, "avgTpmChange": -100, "avgTpmDirection": "down", "maxTPM": 2, "maxTpmChange": -100, "maxTpmDirection": "down", "peakHourWindow": "04:00 PM – 04:59 PM", "peakHourWindowChange": -99.9, "peakHourWindowDirection": "down", "peakTransactionDate": "2026-07-15", "peakTransactionsPerDay": 24, "peakTxnDayChange": -99.8, "peakTxnDayDirection": "down"}, "statusDistribution": [{"amountKes": 32262, "count": 30, "label": "Successful", "percentage": 41.0959}, {"amountKes": 13478, "count": 43, "label": "Failed", "percentage": 58.9041}, {"amountKes": 0, "count": 0, "label": "Pending", "percentage": 0}]}[39m
+17:23:06.475  ·  Test run complete: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"
