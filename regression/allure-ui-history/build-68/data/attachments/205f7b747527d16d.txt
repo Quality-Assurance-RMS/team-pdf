@@ -1,0 +1,34 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Date filter dropdown defaults to "Last 90 Days"
+────────────────────────────────────────────────────────────
+02:19:57.474  ·  Test started: "TC3 — Date filter dropdown defaults to "Last 90 Days""
+02:19:59.260  ○  ▶ Step 1 — Verifies the chart date filter shows "Today" as the default selected value
+02:19:59.263  ·    Test scope: Verifies the chart date filter shows "Today" as the default selected value
+02:19:59.265  ✔  Step completed in 4 ms
+02:19:59.266  ○  ▶ Step 2 — Navigate to Dashboard page
+02:19:59.267  ·    Opening the Dashboard page
+02:20:06.369  ✔    Navigation to Dashboard initiated successfully
+02:20:13.456  ✔  Step completed in 14190 ms
+02:20:13.456  ○  ▶ Step 3 — Verify page loads successfully
+02:20:13.457  ·    Waiting for all Dashboard elements to render
+02:20:15.063  ✔    Dashboard page is fully loaded with all required elements
+02:20:16.651  ✔  Step completed in 3194 ms
+02:20:16.651  ○  ▶ Step 4 — "Last 90 Days" label is visible in the date filter
+02:20:16.652  ·    Asserting value/data: date filter default selection
+02:20:26.860  ✘  Step failed after 10209 ms — expect(locator).toBeVisible() failed
+
+Locator:  getByText(/Last 90 Days/i).first()
+Expected: visible
+Received: hidden
+Timeout:  10000ms
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText(/Last 90 Days/i).first()
+    14 × locator resolved to <option value="last-90-days" class="relative flex select-none items-center ↵                rounded-sm outline-none focus:bg-accent focus:text-accent-foreground ↵                data-disabled:pointer-events-none ↵                data-disabled:opacity-50 px-4 py-3 text-lg cursor-pointer ↵                transition-colors border-b border-[#D6DBD7] last:border-0 ↵                text-[#272E28] hover:bg-[#F8F9FA]">Last 90 Days</option>
+       - unexpected value "hidden"
+
+02:20:43.166  ·  Test run complete: "TC3 — Date filter dropdown defaults to "Last 90 Days""
+────────────────────────────────────────────────────────────
+

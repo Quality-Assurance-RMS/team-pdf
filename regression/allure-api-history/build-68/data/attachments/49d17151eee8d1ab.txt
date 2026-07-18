@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/actuator/health] 503
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-OT-004] TC-OT-012 — GET /actuator/health: Must return 200 UP (returns 504)
+────────────────────────────────────────────────────────────
+02:28:25.851  ·  Test started: "[BUG-OT-004] TC-OT-012 — GET /actuator/health: Must return 200 UP (returns 504)"
+02:28:25.886  ○  ▶ Step 1 — Send GET /actuator/health
+02:28:25.888  ·    GET /actuator/health
+02:29:25.913  ✔    HTTP 503 received
+02:29:25.920  ✔  Step completed in 60034 ms
+02:29:25.920  ○  ▶ Step 2 — Assert 200 with status=UP (BUG: returns 504)
+02:29:25.920  ·    Asserting: HTTP 200 and body status is "UP"
+02:29:25.930  ✘  Step failed after 10 ms — [BUG-OT-004] Health endpoint returned 503, expected 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+02:29:25.933  ·  Test run complete: "[BUG-OT-004] TC-OT-012 — GET /actuator/health: Must return 200 UP (returns 504)"
+────────────────────────────────────────────────────────────
+

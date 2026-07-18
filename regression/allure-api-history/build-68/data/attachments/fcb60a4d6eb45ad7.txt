@@ -1,0 +1,22 @@
+02:16:58.354  ·  Test started: "[BUG-XS-002] TC-XS-002 — Dashboard 401 leaks whether token was present (token-presence enumeration)"
+02:16:58.658  ○  ▶ Step 1 — GET dashboard summary with NO auth
+02:16:58.661  ·    GET /api/v1/dashboard/summary?period=week
+02:16:58.866  ✔    HTTP 401 received
+02:16:58.866  ·    Asserting: Response is 401 without auth
+02:16:58.958  ✔    All assertions passed
+02:16:58.960  ✔  Step completed in 302 ms
+02:16:58.960  ○  ▶ Step 2 — GET dashboard summary with INVALID token
+02:16:58.961  ·    GET /api/v1/dashboard/summary?period=week
+02:16:59.053  ✔    HTTP 401 received
+02:16:59.053  ·    Asserting: Response is 401 with invalid token
+02:16:59.058  ✔    All assertions passed
+02:16:59.058  ✔  Step completed in 98 ms
+02:16:59.058  ○  ▶ Step 3 — Assert both return the same generic message (BUG: they differ)
+02:16:59.067  ·    Asserting: Both 401 messages are identical
+02:16:59.161  ✘  Step failed after 103 ms — [BUG-XS-002] 401 message must be identical whether token is absent or invalid
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"[7mInvalid or expired[27m token"[39m
+Received: [31m"[7mMissing Authorization[27m token"[39m
+02:16:59.164  ·  Test run complete: "[BUG-XS-002] TC-XS-002 — Dashboard 401 leaks whether token was present (token-presence enumeration)"

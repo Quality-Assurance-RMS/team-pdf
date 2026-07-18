@@ -1,0 +1,47 @@
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 200
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary?mcda_id=PLATFORM → 200
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary?mcda_id=invalid_xyz → 200
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary?mcda_id= → 200
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary?mcda_id=PLATFORM → 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)
+────────────────────────────────────────────────────────────
+02:17:48.455  ·  Test started: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"
+02:17:49.566  ○  ▶ GET ?(no param) — No mcda_id param
+02:17:49.660  ·    GET /api/v1/analytics/dashboard/summary
+02:17:50.268  ✔    HTTP 200 received
+02:17:50.268  ·    Asserting: Request returns 200 without error
+02:17:50.766  ✔    All assertions passed
+02:17:50.767  ✔  Step completed in 1201 ms
+02:17:50.767  ○  ▶ GET ?mcda_id=PLATFORM — Valid org PLATFORM
+02:17:50.768  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=PLATFORM
+02:17:51.158  ✔    HTTP 200 received
+02:17:51.158  ·    Asserting: Request returns 200 without error
+02:17:51.270  ✔    All assertions passed
+02:17:51.273  ✔  Step completed in 506 ms
+02:17:51.273  ○  ▶ GET ?mcda_id=invalid_xyz — Invalid org value
+02:17:51.274  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=invalid_xyz
+02:17:51.552  ✔    HTTP 200 received
+02:17:51.552  ·    Asserting: Request returns 200 without error
+02:17:51.655  ✔    All assertions passed
+02:17:51.667  ✔  Step completed in 394 ms
+02:17:51.667  ○  ▶ GET ?mcda_id= — Empty mcda_id
+02:17:51.678  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=
+02:17:52.054  ✔    HTTP 200 received
+02:17:52.054  ·    Asserting: Request returns 200 without error
+02:17:52.075  ✔    All assertions passed
+02:17:52.075  ✔  Step completed in 408 ms
+02:17:52.075  ○  ▶ Assert PLATFORM mcda_id is echoed back (BUG: returns "ALL")
+02:17:52.149  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=PLATFORM
+02:17:52.451  ✔    HTTP 200 received
+02:17:52.460  ·    Asserting: mcda_id=PLATFORM is echoed back in response
+02:17:52.650  ✘  Step failed after 575 ms — [BUG-ANA-004] ?mcda_id=PLATFORM must return mcda_id="PLATFORM"
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "PLATFORM"
+Received: "ALL"
+02:17:52.653  ·  Test run complete: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"
+────────────────────────────────────────────────────────────
+
