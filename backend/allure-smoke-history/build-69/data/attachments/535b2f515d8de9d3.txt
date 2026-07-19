@@ -1,0 +1,20 @@
+17:22:39.856  ·  Test started: "TC-DMREV-011 â€” BUG-MREV-08: Cache-Control and security headers must be present"
+17:22:39.860  ○  ▶ Step 1 â€” Fetch response and inspect headers
+17:22:39.950  ·    GET /api/v1/dashboard/monthly-revenue
+17:22:40.548  ✔    HTTP 200 received
+17:22:40.555  ✔  Step completed in 695 ms
+17:22:40.555  ○  ▶ Step 2 â€” BUG-MREV-08: Cache-Control must prohibit caching of financial data
+17:22:40.653  ·    Asserting: BUG-MREV-08: Cache-Control must prohibit caching
+17:22:40.755  ✔    All assertions passed
+17:22:40.756  ✔  Step completed in 201 ms
+17:22:40.756  ○  ▶ Step 3 â€” X-Content-Type-Options must be nosniff
+17:22:40.767  ·    Asserting: response structure and values
+17:22:40.847  ✔    All assertions passed
+17:22:40.847  ✔  Step completed in 91 ms
+17:22:40.848  ○  ▶ Step 4 â€” X-Frame-Options must be present
+17:22:40.852  ·    Asserting: response structure and values
+17:22:40.854  ✔    All assertions passed
+17:22:40.854  ✔  Step completed in 7 ms
+17:22:40.854  ○  ▶ Step 5 â€” Full security header audit
+17:22:40.857  ✔  Step completed in 2 ms
+17:22:40.859  ·  Test run complete: "TC-DMREV-011 â€” BUG-MREV-08: Cache-Control and security headers must be present"

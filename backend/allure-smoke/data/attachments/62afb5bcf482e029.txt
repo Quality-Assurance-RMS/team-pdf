@@ -1,0 +1,35 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-SMK-006] GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction?page=0&size=20&period=week&q=CONF-MAY26
+  â–º Params         : {"page":"0","size":"20","period":"week","q":"CONF-MAY26"}
+  â–º Status         : 400
+  â–º Content-Type   : application/json
+  â–º total_count    : N/A
+  â–º page           : N/A
+  â–º size           : N/A
+  â–º total_pages    : N/A
+  â–º records in page: 0
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SMK-006 â€" List: period=week keyword search q=CONF-MAY26 returns data array
+────────────────────────────────────────────────────────────
+17:25:01.666  ·  Test started: "TC-SMK-006 â€" List: period=week keyword search q=CONF-MAY26 returns data array"
+17:25:01.670  ○  ▶ Step 1 â€" Build request
+17:25:01.883  ✔  Step completed in 212 ms
+17:25:01.883  ○  ▶ Step 2 â€" Send GET /transaction?q=CONF-MAY26 and log response
+17:25:01.883  ·    GET /api/v1/transaction?period=week&q=CONF-MAY26
+17:25:01.971  ✔    HTTP 400 received
+17:25:01.979  ✔  Step completed in 96 ms
+17:25:01.979  ○  ▶ Step 3 â€" Validate HTTP 200, pagination metadata, and data array
+17:25:01.979  ·    Asserting: HTTP 200, pagination metadata, and total_count > 0
+17:25:01.991  ✘  Step failed after 13 ms — TC-SMK-006 â€" HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+17:25:01.994  ·  Test run complete: "TC-SMK-006 â€" List: period=week keyword search q=CONF-MAY26 returns data array"
+────────────────────────────────────────────────────────────
+

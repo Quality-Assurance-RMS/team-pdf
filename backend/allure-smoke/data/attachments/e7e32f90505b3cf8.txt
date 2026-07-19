@@ -1,0 +1,24 @@
+17:23:14.448  ·  Test started: "TC-DREVT-011 â€” BUG-REVT-10/12: Cache-Control and security headers must be present"
+17:23:14.449  ○  ▶ Step 1 â€” Fetch response and inspect all security headers
+17:23:14.543  ·    GET /api/v1/dashboard/revenue-trend
+17:23:14.952  ✔    HTTP 200 received
+17:23:14.961  ✔  Step completed in 512 ms
+17:23:14.961  ○  ▶ Step 2 â€” Validate HTTP 200
+17:23:14.962  ·    Asserting: Validate HTTP 200
+17:23:15.044  ✔    All assertions passed
+17:23:15.044  ✔  Step completed in 83 ms
+17:23:15.044  ○  ▶ Step 3 â€” BUG-REVT-10: Cache-Control must be present and prohibit caching
+17:23:15.049  ·    Asserting: BUG-REVT-10: Cache-Control must be present and pr
+17:23:15.054  ✔    All assertions passed
+17:23:15.054  ✔  Step completed in 10 ms
+17:23:15.054  ○  ▶ Step 4 â€” BUG-REVT-12a: X-Content-Type-Options must be nosniff
+17:23:15.060  ·    Asserting: BUG-REVT-12a: X-Content-Type-Options must be nosn
+17:23:15.066  ✔    All assertions passed
+17:23:15.069  ✔  Step completed in 15 ms
+17:23:15.069  ○  ▶ Step 5 â€” BUG-REVT-12b: X-Frame-Options must be present
+17:23:15.148  ·    Asserting: BUG-REVT-12b: X-Frame-Options must be present
+17:23:15.151  ✔    All assertions passed
+17:23:15.153  ✔  Step completed in 84 ms
+17:23:15.153  ○  ▶ Step 6 â€” Full security header audit
+17:23:15.159  ✔  Step completed in 5 ms
+17:23:15.164  ·  Test run complete: "TC-DREVT-011 â€” BUG-REVT-10/12: Cache-Control and security headers must be present"

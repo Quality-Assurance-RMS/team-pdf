@@ -1,0 +1,14 @@
+17:20:50.182  ·  Test started: "[BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)"
+17:20:50.267  ○  ▶ Step 1 — Call analytics and confirm zeros
+17:20:50.270  ·    GET /api/v1/analytics/dashboard/summary
+17:20:50.347  ✔    HTTP 200 received
+17:20:50.347  ·    Asserting: Response is 200
+17:20:50.367  ✔    All assertions passed
+17:20:50.368  ✔  Step completed in 101 ms
+17:20:50.368  ○  ▶ Step 2 — Test with explicit date param to check if date-scoping is the issue
+17:20:50.368  ·    GET /api/v1/analytics/dashboard/summary?date=2026-07-18
+17:20:50.393  ✔    HTTP 200 received
+17:20:50.393  ·    Asserting: Response is 200 with explicit date param
+17:20:50.396  ✔    All assertions passed
+17:20:50.397  ✔  Step completed in 29 ms
+17:20:50.398  ·  Test run complete: "[BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)"

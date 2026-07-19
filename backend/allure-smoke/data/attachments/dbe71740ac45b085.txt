@@ -1,0 +1,98 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-DSH-005] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/status-currency
+  â–º HTTP Status                    : 200
+  â–º Content-Type                   : application/json
+  â–º Response has "data" wrapper     : true âš  DASH-ISSUE-5
+  â–º statusDistribution count        : 3
+  â–º currencyDistribution count      : 1
+  â–º byMethod count                  : MISSING
+  â–º peakMetrics present             : true
+    statusDistribution: label=Successful, percentage=40.5405, amount="undefined" (string âš  DASH-ISSUE-2), count="30" (string âš  DASH-ISSUE-2), color="undefined" âš  DASH-ISSUE-6
+    statusDistribution: label=Failed, percentage=59.4595, amount="undefined" (string âš  DASH-ISSUE-2), count="44" (string âš  DASH-ISSUE-2), color="undefined" âš  DASH-ISSUE-6
+    statusDistribution: label=Pending, percentage=0, amount="undefined" (string âš  DASH-ISSUE-2), count="0" (string âš  DASH-ISSUE-2), color="undefined" âš  DASH-ISSUE-6
+    currencyDistribution: label=KES, percentage=100%, amount="45790" (string âš  DASH-ISSUE-2), count="74" (string âš  DASH-ISSUE-2)
+    peakMetrics.peakTransactionsPerDay : "24" (string âš  DASH-ISSUE-2)
+    peakMetrics.peakHourWindow         : "04:00 PM – 04:59 PM"
+    peakMetrics.avgTPM                 : "1.1" (unit embedded âš  DASH-ISSUE-3)
+    peakMetrics.maxTPM                 : "2" (unit embedded âš  DASH-ISSUE-3)
+    peakMetrics.peakTxnDayChange       : "-99.8" (string % âš  DASH-ISSUE-4)
+    peakMetrics.peakTxnDayUp           : undefined
+    peakMetrics.avgTpmChange           : "-100" (string % âš  DASH-ISSUE-4)
+    peakMetrics.avgTpmUp               : undefined
+    peakMetrics.maxTpmChange           : "-100" (string % âš  DASH-ISSUE-4)
+    peakMetrics.maxTpmUp               : undefined
+  â–º Full Body:
+{
+    "data": {
+        "statusDistribution": [
+            {
+                "label": "Successful",
+                "percentage": 40.5405,
+                "amountKes": 32262,
+                "count": 30
+            },
+            {
+                "label": "Failed",
+                "percentage": 59.4595,
+                "amountKes": 13528,
+                "count": 44
+            },
+            {
+                "label": "Pending",
+                "percentage": 0,
+                "amountKes": 0,
+                "count": 0
+            }
+        ],
+        "currencyDistribution": [
+            {
+                "label": "KES",
+                "percentage": 100,
+                "amount": 45790,
+                "count": 74
+            }
+        ],
+        "peakMetrics": {
+            "peakTransactionsPerDay": 24,
+            "peakTransactionDate": "2026-07-15",
+            "peakHourWindow": "04:00 PM – 04:59 PM",
+            "avgTPM": 1.1,
+            "maxTPM": 2,
+            "peakTxnDayChange": -99.8,
+            "peakTxnDayDirection": "down",
+            "avgTpmChange": -100,
+            "avgTpmDirection": "down",
+            "maxTpmChange": -100,
+            "maxTpmDirection": "down",
+            "peakHourWindowChange": -99.9,
+            "peakHourWindowDirection": "down"
+        }
+    }
+}
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSH-005 â€" byMethod: MPESA + CARD entries with all four amount/count fields
+────────────────────────────────────────────────────────────
+17:23:34.977  ·  Test started: "TC-DSH-005 â€" byMethod: MPESA + CARD entries with all four amount/count fields"
+17:23:34.978  ○  ▶ Step 1 â€" Build request
+17:23:35.160  ·    Asserting: request parameters are recorded
+17:23:35.160  ✔    All assertions passed
+17:23:35.247  ✔  Step completed in 269 ms
+17:23:35.247  ○  ▶ Step 2 â€" Send GET /status-currency
+17:23:35.248  ·    GET /api/v1/dashboard/status-currency
+17:23:35.949  ✔    HTTP 200 received
+17:23:35.955  ✔  Step completed in 708 ms
+17:23:35.956  ○  ▶ Step 3 â€" Validate HTTP 200 and byMethod is a non-empty array
+17:23:35.956  ·    Asserting: HTTP 200 and byMethod is a non-empty array
+17:23:35.968  ✘  Step failed after 13 ms — byMethod must be an array
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+17:23:35.971  ·  Test run complete: "TC-DSH-005 â€" byMethod: MPESA + CARD entries with all four amount/count fields"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,36 @@
+17:20:44.147  ·  Test started: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"
+17:20:44.261  ○  ▶ GET ?(no param) — No mcda_id param
+17:20:44.265  ·    GET /api/v1/analytics/dashboard/summary
+17:20:44.376  ✔    HTTP 200 received
+17:20:44.376  ·    Asserting: Request returns 200 without error
+17:20:44.459  ✔    All assertions passed
+17:20:44.460  ✔  Step completed in 199 ms
+17:20:44.460  ○  ▶ GET ?mcda_id=PLATFORM — Valid org PLATFORM
+17:20:44.461  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=PLATFORM
+17:20:44.489  ✔    HTTP 200 received
+17:20:44.489  ·    Asserting: Request returns 200 without error
+17:20:44.494  ✔    All assertions passed
+17:20:44.494  ✔  Step completed in 34 ms
+17:20:44.494  ○  ▶ GET ?mcda_id=invalid_xyz — Invalid org value
+17:20:44.495  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=invalid_xyz
+17:20:44.577  ✔    HTTP 200 received
+17:20:44.577  ·    Asserting: Request returns 200 without error
+17:20:44.582  ✔    All assertions passed
+17:20:44.582  ✔  Step completed in 88 ms
+17:20:44.582  ○  ▶ GET ?mcda_id= — Empty mcda_id
+17:20:44.583  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=
+17:20:44.675  ✔    HTTP 200 received
+17:20:44.675  ·    Asserting: Request returns 200 without error
+17:20:44.679  ✔    All assertions passed
+17:20:44.679  ✔  Step completed in 97 ms
+17:20:44.679  ○  ▶ Assert PLATFORM mcda_id is echoed back (BUG: returns "ALL")
+17:20:44.680  ·    GET /api/v1/analytics/dashboard/summary?mcda_id=PLATFORM
+17:20:44.774  ✔    HTTP 200 received
+17:20:44.776  ·    Asserting: mcda_id=PLATFORM is echoed back in response
+17:20:44.781  ✘  Step failed after 102 ms — [BUG-ANA-004] ?mcda_id=PLATFORM must return mcda_id="PLATFORM"
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"PLATFORM"[39m
+Received: [31m"ALL"[39m
+17:20:44.783  ·  Test run complete: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"

@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-SF-002",
+  "expected": "HTTP 200 or 202 — trigger acknowledged",
+  "actual": "HTTP 500",
+  "impact": "Core KCB data ingestion pipeline is completely non-functional",
+  "fix": "Enable tokenInjectionEnabled=true in spr-fetcher config (fixes BUG-SF-003) and re-test"
+}
