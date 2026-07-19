@@ -1,0 +1,16 @@
+02:23:52.258  ·  Test started: "TC-TXN-008 — Filter Options: Retrieve available filter values"
+02:23:52.296  ○  ▶ Step 1 — Build request parameters
+02:23:52.305  ✔  Step completed in 9 ms
+02:23:52.305  ○  ▶ Step 2 — Send GET /transaction/filter-options
+02:23:52.306  ·    GET /api/v1/transaction/filter-options
+02:23:52.328  ✔    HTTP 502 received
+02:23:52.332  ✔  Step completed in 26 ms
+02:23:52.332  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:23:52.332  ·    Asserting: HTTP 200, body defined, body is object
+02:23:52.340  ✘  Step failed after 8 ms — TC-TXN-008 — expected HTTP 200, got 502
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m502[39m
+02:23:52.342  ·  Test run complete: "TC-TXN-008 — Filter Options: Retrieve available filter values"

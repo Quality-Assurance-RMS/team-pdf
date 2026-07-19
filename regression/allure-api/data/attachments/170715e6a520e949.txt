@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 504
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SF-003 — GET /api/v1/fetch/status: service="spr-fetcher-service" and status="UP"
+────────────────────────────────────────────────────────────
+02:28:09.808  ·  Test started: "TC-SF-003 — GET /api/v1/fetch/status: service="spr-fetcher-service" and status="UP""
+02:28:09.845  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+02:28:09.847  ·    GET /api/v1/fetch/status
+02:29:09.870  ✔    HTTP 504 received
+02:29:09.875  ✔  Step completed in 60030 ms
+02:29:09.875  ○  ▶ Step 2 — Assert HTTP 200
+02:29:09.875  ·    Asserting: HTTP status is 200
+02:29:09.886  ✘  Step failed after 12 ms — TC-SF-003 — expected 200, got 504
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 504
+02:29:09.890  ·  Test run complete: "TC-SF-003 — GET /api/v1/fetch/status: service="spr-fetcher-service" and status="UP""
+────────────────────────────────────────────────────────────
+

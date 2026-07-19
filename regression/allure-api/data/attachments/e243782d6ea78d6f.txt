@@ -1,0 +1,14 @@
+02:23:09.612  ·  Test started: "TC-SF-005 — GET /api/v1/fetch/status: checkedAt is a recent ISO 8601 timestamp (< 60 s old)"
+02:23:09.644  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+02:23:09.685  ·    GET /api/v1/fetch/status
+02:24:09.712  ✔    HTTP 502 received
+02:24:09.717  ✔  Step completed in 60073 ms
+02:24:09.717  ○  ▶ Step 2 — Assert HTTP 200
+02:24:09.718  ·    Asserting: HTTP status is 200
+02:24:09.727  ✘  Step failed after 10 ms — TC-SF-005 — expected 200, got 502
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m502[39m
+02:24:09.730  ·  Test run complete: "TC-SF-005 — GET /api/v1/fetch/status: checkedAt is a recent ISO 8601 timestamp (< 60 s old)"

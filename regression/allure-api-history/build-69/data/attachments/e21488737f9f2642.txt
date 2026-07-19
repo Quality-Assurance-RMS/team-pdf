@@ -1,0 +1,12 @@
+02:20:03.917  ·  Test started: "[BUG-TXN-004] TC-TXN-004 — period=custom without from_date/to_date returns 200 (should be 400)"
+02:20:04.187  ○  ▶ Step 1 — GET summary with period=custom and no dates
+02:20:04.198  ·    GET /api/v1/transaction/summary?period=custom
+02:20:04.332  ✔    HTTP 502 received
+02:20:04.396  ·    Asserting: period=custom without dates returns 400
+02:20:04.408  ✘  Step failed after 221 ms — [BUG-TXN-004] period=custom without dates must return 400, got 502
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m400[39m
+Received: [31m502[39m
+02:20:04.418  ·  Test run complete: "[BUG-TXN-004] TC-TXN-004 — period=custom without from_date/to_date returns 200 (should be 400)"

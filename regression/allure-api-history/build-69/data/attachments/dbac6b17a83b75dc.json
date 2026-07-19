@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "PUT",
+    "url": "https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token",
+    "Authorization": "Bearer ***"
+  },
+  "response": {
+    "status": 405,
+    "headers": {
+      "content-type": "application/problem+json",
+      "transfer-encoding": "chunked",
+      "x-correlation-id": "de2f9bd4-5583-4f5d-9566-bd0b62a0af94",
+      "allow": "GET",
+      "date": "Sun, 19 Jul 2026 02:20:59 GMT",
+      "server": "RMS-Gateway",
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+      "access-control-max-age": "3600",
+      "access-control-expose-headers": "*",
+      "access-control-allow-headers": "*",
+      "connection": "close"
+    },
+    "body": {
+      "type": "urn:rms:error:method-not-allowed",
+      "title": "Method Not Allowed",
+      "status": 405,
+      "detail": "HTTP method 'PUT' is not supported for this endpoint.",
+      "instance": "/api/v1/token",
+      "timestamp": "2026-07-19T02:20:59.918445066Z",
+      "correlationId": "de2f9bd4-5583-4f5d-9566-bd0b62a0af94"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+02:23:17.485  ·  Test started: "[BUG-SF-005] TC-SF-011 — POST /api/v1/fetch/status: Must return 405 Method Not Allowed (returns 500)"
+02:23:17.512  ○  ▶ Step 1 — Send POST /api/v1/fetch/status
+02:23:17.518  ·    POST /api/v1/fetch/status
+02:24:17.599  ✔    HTTP 504 received
+02:24:17.606  ✔  Step completed in 60094 ms
+02:24:17.606  ○  ▶ Step 2 — Assert 405 (BUG: returns 500)
+02:24:17.607  ·    Asserting: HTTP status is 405
+02:24:17.617  ✘  Step failed after 11 ms — [BUG-SF-005] POST /status must return 405, got 504
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m405[39m
+Received: [31m504[39m
+02:24:17.620  ·  Test run complete: "[BUG-SF-005] TC-SF-011 — POST /api/v1/fetch/status: Must return 405 Method Not Allowed (returns 500)"

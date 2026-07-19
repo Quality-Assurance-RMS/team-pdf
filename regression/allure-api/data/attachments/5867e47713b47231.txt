@@ -1,0 +1,14 @@
+02:21:06.724  ·  Test started: "TC-SF-004 — GET /api/v1/fetch/status: apiEndpoint is a valid HTTPS URL"
+02:21:06.785  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+02:21:06.789  ·    GET /api/v1/fetch/status
+02:22:06.817  ✔    HTTP 502 received
+02:22:06.823  ✔  Step completed in 60038 ms
+02:22:06.823  ○  ▶ Step 2 — Assert HTTP 200
+02:22:06.824  ·    Asserting: HTTP status is 200
+02:22:06.834  ✘  Step failed after 11 ms — TC-SF-004 — expected 200, got 502
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m502[39m
+02:22:06.837  ·  Test run complete: "TC-SF-004 — GET /api/v1/fetch/status: apiEndpoint is a valid HTTPS URL"

@@ -1,0 +1,12 @@
+02:19:16.693  ·  Test started: "[BUG-TXN-001] TC-TXN-001 — Transaction list: negative page (-1) must return 400"
+02:19:17.286  ○  ▶ Step 1 — GET list with page=-1
+02:19:17.300  ·    GET /api/v1/transaction?period=today&page=-1&size=10
+02:19:17.499  ✔    HTTP 502 received
+02:19:17.589  ·    Asserting: page=-1 returns 400 or 422
+02:19:17.605  ✘  Step failed after 319 ms — [BUG-TXN-001] page=-1 must return 400, got 502
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+Expected value: [32m502[39m
+Received array: [31m[400, 422][39m
+02:19:17.607  ·  Test run complete: "[BUG-TXN-001] TC-TXN-001 — Transaction list: negative page (-1) must return 400"

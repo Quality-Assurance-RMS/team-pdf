@@ -1,0 +1,14 @@
+02:25:05.975  ·  Test started: "TC-SF-002 — GET /api/v1/fetch/status: All 7 required fields are present and non-null"
+02:25:06.015  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+02:25:06.018  ·    GET /api/v1/fetch/status
+02:26:06.045  ✔    HTTP 504 received
+02:26:06.050  ✔  Step completed in 60035 ms
+02:26:06.050  ○  ▶ Step 2 — Assert HTTP 200
+02:26:06.052  ·    Asserting: HTTP status is 200
+02:26:06.064  ✘  Step failed after 14 ms — TC-SF-002 — expected 200, got 504
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m504[39m
+02:26:06.067  ·  Test run complete: "TC-SF-002 — GET /api/v1/fetch/status: All 7 required fields are present and non-null"

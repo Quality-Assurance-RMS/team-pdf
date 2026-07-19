@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/trigger] 504
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-SF-006] TC-SF-012 — GET /api/v1/fetch/trigger: Must return 405 Method Not Allowed (returns 500)
+────────────────────────────────────────────────────────────
+02:24:18.934  ·  Test started: "[BUG-SF-006] TC-SF-012 — GET /api/v1/fetch/trigger: Must return 405 Method Not Allowed (returns 500)"
+02:24:18.989  ○  ▶ Step 1 — Send GET /api/v1/fetch/trigger
+02:24:18.996  ·    GET /api/v1/fetch/trigger
+02:25:19.020  ✔    HTTP 504 received
+02:25:19.024  ✔  Step completed in 60035 ms
+02:25:19.024  ○  ▶ Step 2 — Assert 405 (BUG: returns 500)
+02:25:19.027  ·    Asserting: HTTP status is 405
+02:25:19.039  ✘  Step failed after 14 ms — [BUG-SF-006] GET /trigger must return 405, got 504
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 405
+Received: 504
+02:25:19.041  ·  Test run complete: "[BUG-SF-006] TC-SF-012 — GET /api/v1/fetch/trigger: Must return 405 Method Not Allowed (returns 500)"
+────────────────────────────────────────────────────────────
+

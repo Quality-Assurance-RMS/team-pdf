@@ -1,0 +1,14 @@
+02:27:08.590  ·  Test started: "TC-SF-003 — GET /api/v1/fetch/status: service="spr-fetcher-service" and status="UP""
+02:27:08.629  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+02:27:08.632  ·    GET /api/v1/fetch/status
+02:28:08.657  ✔    HTTP 502 received
+02:28:08.662  ✔  Step completed in 60033 ms
+02:28:08.662  ○  ▶ Step 2 — Assert HTTP 200
+02:28:08.663  ·    Asserting: HTTP status is 200
+02:28:08.672  ✘  Step failed after 11 ms — TC-SF-003 — expected 200, got 502
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m502[39m
+02:28:08.677  ·  Test run complete: "TC-SF-003 — GET /api/v1/fetch/status: service="spr-fetcher-service" and status="UP""

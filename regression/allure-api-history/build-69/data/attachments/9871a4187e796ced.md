@@ -1,0 +1,228 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: API/oauth-token-spr-fetcher-api.spec.ts >> SPR Fetcher Service >> [BUG-SF-003] TC-SF-009 — tokenInjectionEnabled must be true (currently false — root cause of trigger failure)
+- Location: tests/API/oauth-token-spr-fetcher-api.spec.ts:1131:7
+
+# Error details
+
+```
+Error: TC-SF-009 — expected 200, got 504
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 504
+```
+
+# Test source
+
+```ts
+  18  |  *  BUG-OT-009  GET /token response has no Cache-Control header        [Medium]
+  19  |  *
+  20  |  *  BUG-SF-001  No auth on GET /status → 200 (sensitive data exposed)  [Critical]
+  21  |  *  BUG-SF-002  POST /trigger → 504/error (core fetch broken)           [Critical]
+  22  |  *  BUG-SF-003  tokenInjectionEnabled=false (root cause of BUG-SF-002)  [High]
+  23  |  *  BUG-SF-004  mockEnabled=true on live/UAT environment                [High]
+  24  |  *  BUG-SF-005  POST /status → 500 instead of 405                       [Medium]
+  25  |  *  BUG-SF-006  GET /trigger → 500 instead of 405                       [Medium]
+  26  |  *  BUG-SF-007  Accept: application/xml on GET /status → 500 not 406    [Low]
+  27  |  *
+  28  |  *  BUG-GW-001  CORS allow-origin: * on all routes (wildcard CORS)       [High]
+  29  |  *  BUG-GW-002  OPTIONS preflight accepts any origin (e.g. evil.com)     [High]
+  30  |  *  BUG-GW-003  Server header discloses APISIX/3.16.0 version            [Medium]
+  31  |  *  BUG-GW-004  Missing security headers (HSTS, X-Content-Type-Options…) [High]
+  32  |  *  BUG-GW-005  Unknown paths return 504 instead of 404                  [Medium]
+  33  |  *
+  34  |  * ── Test Count: 33 test cases ─────────────────────────────────────────────────
+  35  |  *   OAuth Token (TC-OT-001 → TC-OT-015)  — 15 tests
+  36  |  *   SPR Fetcher  (TC-SF-001 → TC-SF-013) — 13 tests
+  37  |  *   Gateway/Sec  (TC-GW-001 → TC-GW-005) —  5 tests
+  38  |  *
+  39  |  * Auth: Bearer token from RMS_BEARER_TOKEN env variable.
+  40  |  *       Falls back to TRANSACTION_API_TOKEN if absent.
+  41  |  *       Update RMS_BEARER_TOKEN in .env when a 401 is returned.
+  42  |  */
+  43  | 
+  44  | import { test, expect } from './fixtures';
+  45  | import { allure }        from 'allure-playwright';
+  46  | import supertest          from 'supertest';
+  47  | import { getToken }       from '../utils/tokenHelper';
+  48  | 
+  49  | // ── Constants ─────────────────────────────────────────────────────────────────
+  50  | 
+  51  | const OAUTH_BASE = process.env.OAUTH_TOKEN_BASE_URL
+  52  |   ?? 'https://api.rms.dev.demo-fsit.com/oauth-token';
+  53  | 
+  54  | const SPR_BASE = process.env.SPR_FETCHER_BASE_URL
+  55  |   ?? 'https://api.rms.dev.demo-fsit.com/spr-fetcher';
+  56  | 
+  57  | let BEARER = '';
+  58  | 
+  59  | test.beforeAll(async () => { BEARER = await getToken(); });
+  60  | 
+  61  | const GW_HOST = 'https://api.rms.dev.demo-fsit.com';
+  62  | 
+  63  | // ── HTTP helpers ──────────────────────────────────────────────────────────────
+  64  | 
+  65  | async function GET(base: string, path: string, token?: string, extraHeaders: Record<string, string> = {}): Promise<supertest.Response> {
+  66  |   const req = supertest(base).get(path).set('Accept', 'application/json');
+  67  |   if (token !== undefined) req.set('Authorization', `Bearer ${token}`);
+  68  |   for (const [k, v] of Object.entries(extraHeaders)) req.set(k, v);
+  69  |   const res = await req;
+  70  |   console.log(`[GET ${base}${path}] ${res.status}`);
+  71  |   return res;
+  72  | }
+  73  | 
+  74  | async function DELETE(base: string, path: string, token?: string): Promise<supertest.Response> {
+  75  |   const req = supertest(base).delete(path).set('Accept', 'application/json');
+  76  |   if (token !== undefined) req.set('Authorization', `Bearer ${token}`);
+  77  |   const res = await req;
+  78  |   console.log(`[DELETE ${base}${path}] ${res.status}`);
+  79  |   return res;
+  80  | }
+  81  | 
+  82  | async function POST(base: string, path: string, token?: string, body?: object): Promise<supertest.Response> {
+  83  |   const req = supertest(base).post(path)
+  84  |     .set('Accept', 'application/json')
+  85  |     .set('Content-Type', 'application/json');
+  86  |   if (token !== undefined) req.set('Authorization', `Bearer ${token}`);
+  87  |   if (body !== undefined)  req.send(body);
+  88  |   const res = await req;
+  89  |   console.log(`[POST ${base}${path}] ${res.status}`);
+  90  |   return res;
+  91  | }
+  92  | 
+  93  | async function PUT(base: string, path: string, token?: string, body?: object): Promise<supertest.Response> {
+  94  |   const req = supertest(base).put(path)
+  95  |     .set('Accept', 'application/json')
+  96  |     .set('Content-Type', 'application/json');
+  97  |   if (token !== undefined) req.set('Authorization', `Bearer ${token}`);
+  98  |   if (body !== undefined)  req.send(body);
+  99  |   const res = await req;
+  100 |   console.log(`[PUT ${base}${path}] ${res.status}`);
+  101 |   return res;
+  102 | }
+  103 | 
+  104 | // ── Allure helpers ────────────────────────────────────────────────────────────
+  105 | 
+  106 | function attach(label: string, method: string, base: string, path: string, res: supertest.Response, hasAuth = true) {
+  107 |   allure.attachment(label, JSON.stringify({
+  108 |     request:  { method, url: `${base}${path}`, Authorization: hasAuth ? 'Bearer ***' : 'NONE' },
+  109 |     response: { status: res.status, headers: res.headers, body: res.body },
+  110 |   }, null, 2), 'application/json');
+  111 | }
+  112 | 
+  113 | function bugEvidence(id: string, expected: string, actual: string, impact: string, fix: string) {
+  114 |   allure.attachment('Bug Evidence', JSON.stringify({ bug_id: id, expected, actual, impact, fix }, null, 2), 'application/json');
+  115 | }
+  116 | 
+  117 | function assertOk(res: supertest.Response, label: string) {
+> 118 |   expect(res.status,      `${label} — expected 200, got ${res.status}`).toBe(200);
+      |                                                                         ^ Error: TC-SF-009 — expected 200, got 504
+  119 |   expect(res.body,        `${label} — body must exist`).toBeDefined();
+  120 |   expect(typeof res.body, `${label} — body must be an object`).toBe('object');
+  121 | }
+  122 | 
+  123 | function labelsOT(id: string, story: string, sev = 'normal') {
+  124 |   allure.parentSuite('RMS Platform Services'); allure.suite('API Regression');
+  125 |   allure.subSuite('OAuth Token Service');      allure.epic('Platform Operations');
+  126 |   allure.label('feature', 'OAuth Token Service'); allure.label('story', story);
+  127 |   allure.label('severity', sev); allure.label('testId', id); allure.owner('Ashil Shaji');
+  128 |   allure.tags('API', 'Regression', 'OAuth', 'Security');
+  129 | }
+  130 | 
+  131 | function labelsSF(id: string, story: string, sev = 'normal') {
+  132 |   allure.parentSuite('RMS Platform Services'); allure.suite('API Regression');
+  133 |   allure.subSuite('SPR Fetcher Service');      allure.epic('Platform Operations');
+  134 |   allure.label('feature', 'SPR Fetcher Service'); allure.label('story', story);
+  135 |   allure.label('severity', sev); allure.label('testId', id); allure.owner('Ashil Shaji');
+  136 |   allure.tags('API', 'Regression', 'SPR', 'KCB');
+  137 | }
+  138 | 
+  139 | function labelsGW(id: string, story: string, sev = 'normal') {
+  140 |   allure.parentSuite('RMS Platform Services'); allure.suite('API Regression');
+  141 |   allure.subSuite('Gateway / Security');       allure.epic('Platform Operations');
+  142 |   allure.label('feature', 'API Gateway'); allure.label('story', story);
+  143 |   allure.label('severity', sev); allure.label('testId', id); allure.owner('Ashil Shaji');
+  144 |   allure.tags('API', 'Regression', 'Security', 'Gateway', 'CORS');
+  145 | }
+  146 | 
+  147 | // ═════════════════════════════════════════════════════════════════════════════
+  148 | //  OAUTH TOKEN SERVICE
+  149 | // ═════════════════════════════════════════════════════════════════════════════
+  150 | 
+  151 | test.describe('OAuth Token Service', () => {
+  152 | 
+  153 |   // ──────────────────────────────────────────────────────────────────────────
+  154 |   // TC-OT-001 — Happy path: 200 with valid token object
+  155 |   // ──────────────────────────────────────────────────────────────────────────
+  156 |   test('TC-OT-001 — GET /api/v1/token: Returns 200 with complete KCB token object', async ({ logger }) => {
+  157 |     labelsOT('TC-OT-001', 'Get Active Token', 'critical');
+  158 |     await allure.description(
+  159 |       '**What this test does:**\n' +
+  160 |       'Calls GET /oauth-token/api/v1/token with a valid RMS Bearer token and verifies the response ' +
+  161 |       'is HTTP 200 and the body contains all four expected fields: access_token, token_type, ' +
+  162 |       'expires_at, issued_at.\n\n' +
+  163 |       '**Why it matters:** This is the primary happy-path check. If this fails, no downstream ' +
+  164 |       'service that depends on the KCB OAuth token can function.',
+  165 |     );
+  166 |     let res: supertest.Response;
+  167 |     await logger.step('Step 1 — Log request parameters', async () => {
+  168 |       allure.parameter('Endpoint', 'GET /oauth-token/api/v1/token');
+  169 |       allure.parameter('Auth',     'Valid Bearer token');
+  170 |     });
+  171 |     await logger.step('Step 2 — Send GET /api/v1/token', async () => {
+  172 |       logger.info('GET /api/v1/token');
+  173 |       res = await GET(OAUTH_BASE, '/api/v1/token', BEARER);
+  174 |       logger.pass('HTTP ' + res.status + ' received');
+  175 |       attach('Request & Response', 'GET', OAUTH_BASE, '/api/v1/token', res);
+  176 |       allure.parameter('HTTP Status',   String(res.status));
+  177 |       allure.parameter('Content-Type',  String(res.headers['content-type'] ?? 'N/A'));
+  178 |     });
+  179 |     await logger.step('Step 3 — Assert HTTP 200', async () => {
+  180 |       logger.info('Asserting: HTTP status is 200');
+  181 |       assertOk(res!, 'TC-OT-001');
+  182 |       logger.pass('All assertions passed');
+  183 |     });
+  184 |     await logger.step('Step 4 — Assert all four fields are present', async () => {
+  185 |       logger.info('Asserting: access_token, token_type, expires_at, issued_at are present');
+  186 |       const b = res!.body;
+  187 |       expect(b.access_token, 'access_token must be present').toBeTruthy();
+  188 |       expect(b.token_type,   'token_type must be present').toBeTruthy();
+  189 |       expect(b.expires_at,   'expires_at must be present').toBeTruthy();
+  190 |       expect(b.issued_at,    'issued_at must be present').toBeTruthy();
+  191 |       allure.parameter('token_type', b.token_type);
+  192 |       allure.parameter('expires_at', b.expires_at);
+  193 |       allure.parameter('issued_at',  b.issued_at);
+  194 |       logger.pass('All assertions passed');
+  195 |     });
+  196 |   });
+  197 | 
+  198 |   // ──────────────────────────────────────────────────────────────────────────
+  199 |   // TC-OT-002 — access_token must be a valid RS256 JWT
+  200 |   // ──────────────────────────────────────────────────────────────────────────
+  201 |   test('TC-OT-002 — GET /api/v1/token: access_token is a valid RS256 JWT', async ({ logger }) => {
+  202 |     labelsOT('TC-OT-002', 'Token Format Validation', 'critical');
+  203 |     await allure.description(
+  204 |       '**What this test does:**\n' +
+  205 |       'Decodes the access_token returned by GET /api/v1/token and verifies it is a properly ' +
+  206 |       'structured JSON Web Token: exactly 3 base64url parts (header.payload.signature) and the ' +
+  207 |       'header declares alg=RS256.\n\n' +
+  208 |       '**Why it matters:** A malformed or non-RS256 token will be rejected by the KCB API, ' +
+  209 |       'silently breaking all data ingestion without a clear error.',
+  210 |     );
+  211 |     let res: supertest.Response;
+  212 |     await logger.step('Step 1 — Send GET /api/v1/token', async () => {
+  213 |       logger.info('GET /api/v1/token');
+  214 |       res = await GET(OAUTH_BASE, '/api/v1/token', BEARER);
+  215 |       logger.pass('HTTP ' + res.status + ' received');
+  216 |       attach('Request & Response', 'GET', OAUTH_BASE, '/api/v1/token', res);
+  217 |     });
+  218 |     await logger.step('Step 2 — Assert HTTP 200', async () => {
+```

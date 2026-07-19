@@ -1,0 +1,22 @@
+02:19:26.995  ·  Test started: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"
+02:19:27.111  ○  ▶ Step 1 — Collect Analytics 405 error body
+02:19:27.115  ·    POST /api/v1/analytics/dashboard/summary
+02:19:27.334  ✔    HTTP 405 received
+02:19:27.428  ·    Asserting: Analytics returns 405
+02:19:27.498  ✔    All assertions passed
+02:19:27.499  ✔  Step completed in 388 ms
+02:19:27.499  ○  ▶ Step 2 — Collect Dashboard 401 error body
+02:19:27.500  ·    GET /api/v1/dashboard/summary?period=week
+02:19:27.530  ✔    HTTP 401 received
+02:19:27.606  ·    Asserting: Dashboard returns 401
+02:19:27.607  ✔    All assertions passed
+02:19:27.608  ✔  Step completed in 109 ms
+02:19:27.608  ○  ▶ Step 3 — Collect Transaction 401 error body
+02:19:27.608  ·    GET /api/v1/transaction/summary?period=week
+02:19:27.686  ✔    HTTP 502 received
+02:19:27.690  ·    Asserting: Transaction returns 401
+02:19:27.701  ✘  Step failed after 93 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m401[39m
+Received: [31m502[39m
+02:19:27.706  ·  Test run complete: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"

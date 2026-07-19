@@ -1,0 +1,23 @@
+[No-Auth GET /summary] status: 502 | body: {}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-009 — Security: Returns 401 when Authorization header is missing
+────────────────────────────────────────────────────────────
+02:23:56.133  ·  Test started: "TC-TXN-009 — Security: Returns 401 when Authorization header is missing"
+02:23:56.169  ○  ▶ Step 1 — Build unauthenticated request
+02:23:56.186  ✔  Step completed in 18 ms
+02:23:56.186  ○  ▶ Step 2 — Send GET /summary without Authorization header
+02:23:56.187  ·    GET /api/v1/transaction/summary?period=today (no auth)
+02:23:56.210  ✔    HTTP 502 received
+02:23:56.214  ✔  Step completed in 28 ms
+02:23:56.215  ○  ▶ Step 3 — Validate HTTP 401 or 403 status code
+02:23:56.216  ·    Asserting: status is 401 or 403
+02:23:56.224  ✘  Step failed after 9 ms — Unauthenticated request must return 401 or 403, got 502
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: 502
+Received array: [401, 403]
+02:23:56.226  ·  Test run complete: "TC-TXN-009 — Security: Returns 401 when Authorization header is missing"
+────────────────────────────────────────────────────────────
+

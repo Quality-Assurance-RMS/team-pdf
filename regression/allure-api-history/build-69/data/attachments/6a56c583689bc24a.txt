@@ -1,0 +1,12 @@
+02:19:50.419  ·  Test started: "[BUG-TXN-003] TC-TXN-003 — Non-existent UUID in transaction detail must return 404 (not 500)"
+02:19:50.801  ○  ▶ Step 1 — GET detail for nil UUID
+02:19:50.804  ·    GET /api/v1/transaction/00000000-0000-0000-0000-000000000000
+02:19:51.006  ✔    HTTP 502 received
+02:19:51.096  ·    Asserting: Non-existent UUID returns 404
+02:19:51.287  ✘  Step failed after 486 ms — [BUG-TXN-003] Non-existent UUID must return 404, got 502
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m404[39m
+Received: [31m502[39m
+02:19:51.305  ·  Test run complete: "[BUG-TXN-003] TC-TXN-003 — Non-existent UUID in transaction detail must return 404 (not 500)"

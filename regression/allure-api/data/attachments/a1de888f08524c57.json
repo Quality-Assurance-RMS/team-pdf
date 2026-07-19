@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-TXN-003",
+  "expected": "404 Not Found — transaction does not exist",
+  "actual": "HTTP 502 for non-existent UUID",
+  "impact": "Cannot distinguish \"not found\" from server crash; 500s trigger false outage alerts",
+  "fix": "Add null-check after repository findById; throw ResourceNotFoundException (maps to 404)"
+}

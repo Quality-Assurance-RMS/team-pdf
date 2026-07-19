@@ -1,0 +1,14 @@
+02:25:20.318  ·  Test started: "[BUG-SF-006] TC-SF-012 — GET /api/v1/fetch/trigger: Must return 405 Method Not Allowed (returns 500)"
+02:25:20.362  ○  ▶ Step 1 — Send GET /api/v1/fetch/trigger
+02:25:20.386  ·    GET /api/v1/fetch/trigger
+02:26:20.411  ✔    HTTP 502 received
+02:26:20.415  ✔  Step completed in 60053 ms
+02:26:20.415  ○  ▶ Step 2 — Assert 405 (BUG: returns 500)
+02:26:20.417  ·    Asserting: HTTP status is 405
+02:26:20.428  ✘  Step failed after 13 ms — [BUG-SF-006] GET /trigger must return 405, got 502
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m405[39m
+Received: [31m502[39m
+02:26:20.430  ·  Test run complete: "[BUG-SF-006] TC-SF-012 — GET /api/v1/fetch/trigger: Must return 405 Method Not Allowed (returns 500)"

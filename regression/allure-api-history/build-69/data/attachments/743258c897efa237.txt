@@ -1,0 +1,31 @@
+POST https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 405
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=week → 401
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/summary?period=week → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services
+────────────────────────────────────────────────────────────
+02:19:26.995  ·  Test started: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"
+02:19:27.111  ○  ▶ Step 1 — Collect Analytics 405 error body
+02:19:27.115  ·    POST /api/v1/analytics/dashboard/summary
+02:19:27.334  ✔    HTTP 405 received
+02:19:27.428  ·    Asserting: Analytics returns 405
+02:19:27.498  ✔    All assertions passed
+02:19:27.499  ✔  Step completed in 388 ms
+02:19:27.499  ○  ▶ Step 2 — Collect Dashboard 401 error body
+02:19:27.500  ·    GET /api/v1/dashboard/summary?period=week
+02:19:27.530  ✔    HTTP 401 received
+02:19:27.606  ·    Asserting: Dashboard returns 401
+02:19:27.607  ✔    All assertions passed
+02:19:27.608  ✔  Step completed in 109 ms
+02:19:27.608  ○  ▶ Step 3 — Collect Transaction 401 error body
+02:19:27.608  ·    GET /api/v1/transaction/summary?period=week
+02:19:27.686  ✔    HTTP 502 received
+02:19:27.690  ·    Asserting: Transaction returns 401
+02:19:27.701  ✘  Step failed after 93 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 401
+Received: 502
+02:19:27.706  ·  Test run complete: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"
+────────────────────────────────────────────────────────────
+
