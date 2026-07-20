@@ -1,0 +1,40 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Opening a transaction row shows matching detail sections
+────────────────────────────────────────────────────────────
+01:36:21.575  ·  Test started: "TC1 — Opening a transaction row shows matching detail sections"
+01:36:21.635  ○  ▶ Step 1 — Login with OTP, open the first transaction row, and verify Transaction ID and detail sections on the detail page
+01:36:21.636  ·    Test scope: transaction detail navigation and content verification
+01:36:21.636  ✔  Step completed in 1 ms
+01:36:21.636  ○  ▶ Step 2 — Navigate to Transactions page
+01:36:21.636  ·    Opening the Transactions page and waiting for it to load
+01:36:23.787  ✔    Transactions page loaded successfully
+01:36:23.787  ✔  Step completed in 2151 ms
+01:36:23.787  ○  ▶ Step 3 — Widen date filter to "Last 90 Days" to ensure data exists
+01:36:23.787  ·    Selecting "Last 90 Days" date range
+01:36:23.826  ✔    Date range widened to Last 90 Days
+01:36:23.826  ✔  Step completed in 39 ms
+01:36:23.826  ○  ▶ Step 4 — Read first Transaction ID from table
+01:36:23.826  ·    Reading the Transaction ID from the first row of the transactions table
+01:36:24.664  ✔    First Transaction ID retrieved: UGI030DNDJ
+01:36:24.664  ✔  Step completed in 839 ms
+01:36:24.664  ○  ▶ Step 5 — Click first row action icon to open detail page
+01:36:24.665  ·    Clicking the first transaction row action icon to open the detail page
+01:36:24.727  ✔    First transaction row clicked — navigating to detail page
+01:36:24.727  ✔  Step completed in 63 ms
+01:36:24.727  ○  ▶ Step 6 — Verify Transaction ID on detail page
+01:36:24.728  ·    Confirming the Transaction ID displayed on the detail page matches the table value
+01:36:34.746  ✘  Step failed after 10018 ms — expect(locator).toBeVisible() failed
+
+Locator: getByText('UGI030DNDJ').first()
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText('UGI030DNDJ').first()
+
+01:36:35.971  ·  Test run complete: "TC1 — Opening a transaction row shows matching detail sections"
+────────────────────────────────────────────────────────────
+

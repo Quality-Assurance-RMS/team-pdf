@@ -1,0 +1,26 @@
+01:34:36.337  ·  Test started: "TC1 — "Settlement by Bank" heading is visible"
+01:34:36.829  ○  ▶ Step 1 — Verifies the Settlement by Bank section heading renders on the Settlements page
+01:34:36.830  ·    Test scope: Verifies the Settlement by Bank section heading renders on the Settlements page
+01:34:36.830  ✔  Step completed in 1 ms
+01:34:36.831  ○  ▶ Step 2 — Navigate to Settlements page
+01:34:36.831  ·    Opening the Settlements page
+01:34:39.624  ✔    Navigation to Settlements page initiated successfully
+01:34:42.933  ✔  Step completed in 6102 ms
+01:34:42.933  ○  ▶ Step 3 — Verify page loads successfully
+01:34:42.934  ·    Waiting for all Settlements page elements to render
+01:34:43.523  ✔    Settlements page is fully loaded with all required elements
+01:34:44.313  ✔  Step completed in 1380 ms
+01:34:44.313  ○  ▶ Step 4 — "Settlement by Bank" heading is visible
+01:34:44.315  ·    Checking Settlement by Bank section panel is rendered
+01:34:49.347  ✘  Step failed after 5034 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByText(/Settlement by Bank/i)
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 5000ms[22m
+[2m  - waiting for getByText(/Settlement by Bank/i)[22m
+
+01:34:53.223  ·  Test run complete: "TC1 — "Settlement by Bank" heading is visible"
