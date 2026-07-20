@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-TXN-002",
-  "expected": "400 Bad Request — size must be >= 1",
-  "actual": "HTTP 502 with empty data array",
-  "impact": "Zero-size response is useless; client cannot distinguish \"no data\" from \"bad request\"",
-  "fix": "Add @Min(1) validation on size parameter; return 400 for size=0"
-}

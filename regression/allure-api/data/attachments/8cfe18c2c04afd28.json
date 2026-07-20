@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-TXN-004",
-  "expected": "400 Bad Request — from_date and to_date required for period=custom",
-  "actual": "HTTP 502 for period=custom without dates",
-  "impact": "Response covers unknown date range; client cannot know what period the data represents",
-  "fix": "Validate that from_date and to_date are present when period=custom; return 400 otherwise"
-}

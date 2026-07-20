@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Conversion Ratio is visible in the Settlement & Payout Overview
+────────────────────────────────────────────────────────────
+02:20:05.997  ·  Test started: "TC1 — Conversion Ratio is visible in the Settlement & Payout Overview"
+02:20:07.010  ○  ▶ Step 1 — Verifies the Conversion Ratio metric renders in the Settlement & Payout Overview section
+02:20:07.017  ·    Test scope: Verifies the Conversion Ratio metric renders in the Settlement & Payout Overview section
+02:20:07.017  ✔  Step completed in 7 ms
+02:20:07.018  ○  ▶ Step 2 — Navigate to Reports page
+02:20:07.019  ·    Opening the Reports page
+02:20:16.512  ✔    Navigation to Reports page initiated successfully
+02:20:22.197  ✔  Step completed in 15179 ms
+02:20:22.197  ○  ▶ Step 3 — Verify page loads successfully
+02:20:22.199  ·    Waiting for all Reports page elements to render
+02:20:24.616  ✔    Reports page is fully loaded with all required elements
+02:20:26.103  ✔  Step completed in 3906 ms
+02:20:26.103  ○  ▶ Step 4 — "Conversion Ratio" metric is visible
+02:20:26.104  ·    Checking status badges are visible in the report list
+02:20:26.309  ✔    Status badges are visible
+02:20:27.597  ✔  Step completed in 1494 ms
+02:20:27.597  ○  ▶ Step 5 — Conversion Ratio shows a valid percentage value
+02:20:27.713  ✘  Step failed after 116 ms — Conversion Ratio should contain a % value
+
+expect(received).not.toBeNull()
+
+Received: null
+02:20:39.715  ·  Test run complete: "TC1 — Conversion Ratio is visible in the Settlement & Payout Overview"
+────────────────────────────────────────────────────────────
+

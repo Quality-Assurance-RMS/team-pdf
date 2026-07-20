@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-SF-007",
-  "expected": "406 Not Acceptable",
-  "actual": "HTTP 504 Internal Server Error",
-  "impact": "Misleading status code for unsupported content type",
-  "fix": "Add global HttpMediaTypeNotAcceptableException handler returning 406"
-}
