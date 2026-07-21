@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-INGEST-001 — Valid PesaFlow webhook with correct HMAC and fresh timestamp
+────────────────────────────────────────────────────────────
+17:23:19.499  ·  Test started: "TC-INGEST-001 — Valid PesaFlow webhook with correct HMAC and fresh timestamp"
+17:23:19.897  ○  ▶ Step 1: Generate payload from PesaFlow happy-path template
+17:23:19.901  ·    Generating PesaFlow payload with randomized psp_transaction_id
+17:23:19.910  ✔    Payload generated successfully
+17:23:19.912  ✔  Step completed in 15 ms
+17:23:19.912  ○  ▶ Step 2: Compute X-PSP-Signature = HMAC-SHA256(body || timestamp, PSK) and hex-encode
+17:23:19.913  ·    Computing HMAC-SHA256 signature from body and current timestamp
+17:23:19.919  ✔    HMAC-SHA256 signature computed successfully
+17:23:19.919  ✔  Step completed in 8 ms
+17:23:19.919  ○  ▶ Step 3: Set X-Correlation-ID = fresh UUIDv4
+17:23:19.922  ·    Generating fresh UUIDv4 for X-Correlation-ID header
+17:23:19.924  ✔    Correlation ID generated successfully
+17:23:19.925  ✔  Step completed in 6 ms
+17:23:19.925  ○  ▶ Step 4 (pre): Read baseline rms_ingestion_requests_total counter
+17:23:19.926  ·    GET /metrics — reading baseline Prometheus counter before request
+17:23:20.029  ✘  Step failed after 104 ms — apiRequestContext.get: getaddrinfo ENOTFOUND rms-sit-edge
+Call log:
+  - → GET https://rms-sit-edge/metrics
+    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+
+17:23:20.203  ·  Test run complete: "TC-INGEST-001 — Valid PesaFlow webhook with correct HMAC and fresh timestamp"
+────────────────────────────────────────────────────────────
+
