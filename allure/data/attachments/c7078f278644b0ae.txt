@@ -1,0 +1,21 @@
+06:29:01.513  ·  Test started: "TC1 — All Settlement by Bank table columns are visible"
+06:29:01.952  ○  ▶ Step 1 — Verifies all 6 column headers are present in the Settlement by Bank table
+06:29:01.954  ·    Test scope: Verifies all 6 column headers are present in the Settlement by Bank table
+06:29:01.956  ✔  Step completed in 4 ms
+06:29:01.957  ○  ▶ Step 2 — Navigate to Settlements page
+06:29:01.963  ·    Opening the Settlements page
+06:29:04.369  ✔    Navigation to Settlements page initiated successfully
+06:29:05.864  ✔  Step completed in 3907 ms
+06:29:05.864  ○  ▶ Step 3 — Verify page loads successfully
+06:29:05.865  ·    Waiting for all Settlements page elements to render
+06:29:21.354  ✘  Step failed after 15490 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/settlements/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+06:29:24.206  ·  Test run complete: "TC1 — All Settlement by Bank table columns are visible"

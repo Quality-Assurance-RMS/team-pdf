@@ -1,0 +1,21 @@
+06:30:00.103  ·  Test started: "TC1 — Search bar is visible"
+06:30:00.946  ○  ▶ Step 1 — Verifies the search input field renders on the Transactions page
+06:30:00.949  ·    Test scope: Verifies the search input field renders on the Transactions page
+06:30:00.949  ✔  Step completed in 3 ms
+06:30:00.950  ○  ▶ Step 2 — Navigate to Transactions page
+06:30:00.951  ·    Opening the Transactions page
+06:30:03.459  ✔    Navigation to Transactions page initiated successfully
+06:30:05.162  ✔  Step completed in 4212 ms
+06:30:05.162  ○  ▶ Step 3 — Verify page loads successfully
+06:30:05.163  ·    Waiting for all Transactions page elements to render
+06:30:10.269  ✘  Step failed after 5107 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    13 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+06:30:14.145  ·  Test run complete: "TC1 — Search bar is visible"

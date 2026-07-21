@@ -1,0 +1,114 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UI/Transactions/txn-ovw-tc1-overview-cards-visible.spec.ts >> Transactions — Overview Cards >> TC1 — All three overview cards are visible
+- Location: tests/UI/Transactions/txn-ovw-tc1-overview-cards-visible.spec.ts:20:7
+
+# Error details
+
+```
+Error: expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/transaction/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 5000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 5000ms
+    12 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+```
+
+```yaml
+- img "Unified Control"
+- paragraph: Government services, now at your fingertips
+- img
+- paragraph: RMS
+- paragraph: National Treasury
+- heading "Login" [level=1]
+- paragraph: Access Revenue Management System (RMS)
+- text: Email address
+- textbox "Enter Your email"
+- paragraph
+- text: Password
+- textbox "Enter Password"
+- button
+- paragraph
+- checkbox "Remember for 30 days"
+- text: Remember for 30 days
+- link "Forgot Password?":
+  - /url: /auth/forgot-password
+- button "Log In →"
+- text: Or
+- button "Login with SSO →"
+- region "Notifications alt+T"
+```
+
+# Test source
+
+```ts
+  1  | import { Page, Locator, expect } from '@playwright/test';
+  2  | 
+  3  | export class TransactionPage {
+  4  |   readonly page: Page;
+  5  |   readonly tableRows: Locator;
+  6  |   readonly firstTransactionId: Locator;
+  7  |   readonly firstActionButton: Locator;
+  8  |   readonly dateFilterDropdown: Locator;
+  9  | 
+  10 |   constructor(page: Page) {
+  11 |     this.page = page;
+  12 |     this.tableRows = page.locator('table tbody tr, [class*="table"] [class*="row"]').first();
+  13 |     this.firstTransactionId = page.locator('table tbody tr:first-child td:first-child, [class*="row"]:first-child [class*="col"]:first-child').first();
+  14 |     // The action cell's clickable element is an icon/button in the LAST cell of the
+  15 |     // row (labelled "View Details" via a hover tooltip) — clicking the row itself
+  16 |     // does not navigate anywhere.
+  17 |     this.firstActionButton = page.locator('table tbody tr:first-child td:last-child button, table tbody tr:first-child td:last-child svg, table tbody tr:first-child td:last-child [role="button"]').first();
+  18 |     this.dateFilterDropdown = page.getByRole('combobox').first();
+  19 |   }
+  20 | 
+  21 |   async goto() {
+  22 |     await this.page.goto('/transaction');
+  23 |     await this.page.waitForLoadState('networkidle');
+  24 |   }
+  25 | 
+  26 |   async assertPageLoaded() {
+> 27 |     await expect(this.page).toHaveURL(/\/transaction/);
+     |                             ^ Error: expect(page).toHaveURL(expected) failed
+  28 |     await expect(this.page.getByRole('heading', { name: 'Transactions' })).toBeVisible({ timeout: 10000 });
+  29 |   }
+  30 | 
+  31 |   // The default date filter is "Today", which on this demo/dev environment
+  32 |   // frequently has zero transactions (seed data is dated in the past). Tests
+  33 |   // that need real row data should call this first to widen the window.
+  34 |   async selectDateRange(label: string) {
+  35 |     await this.dateFilterDropdown.selectOption({ label });
+  36 |     await this.page.waitForLoadState('networkidle');
+  37 |   }
+  38 | 
+  39 |   async getFirstTransactionId(): Promise<string> {
+  40 |     // Get the transaction ID text from the first row first cell
+  41 |     const firstRow = this.page.locator('table tbody tr').first();
+  42 |     const idCell = firstRow.locator('td').first();
+  43 |     const text = await idCell.innerText();
+  44 |     return text.trim();
+  45 |   }
+  46 | 
+  47 |   async clickFirstRow() {
+  48 |     // Clicking the bare <tr> does not navigate on this page — the action
+  49 |     // icon/button in the last cell is the actual navigation trigger.
+  50 |     await this.firstActionButton.click();
+  51 |   }
+  52 | 
+  53 |   async verifyTransactionDetailId(expectedId: string) {
+  54 |     // The detail page heading shows the transaction ID
+  55 |     await expect(this.page.getByText(expectedId).first()).toBeVisible({ timeout: 10000 });
+  56 |   }
+  57 | }
+  58 | 
+```

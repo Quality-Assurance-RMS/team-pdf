@@ -1,0 +1,18 @@
+06:30:23.858  ·  Test started: "TC1 — Opening a transaction row shows matching detail sections"
+06:30:24.475  ○  ▶ Step 1 — Login with OTP, open the first transaction row, and verify Transaction ID and detail sections on the detail page
+06:30:24.478  ·    Test scope: transaction detail navigation and content verification
+06:30:24.479  ✔  Step completed in 3 ms
+06:30:24.479  ○  ▶ Step 2 — Navigate to Transactions page
+06:30:24.480  ·    Opening the Transactions page and waiting for it to load
+06:30:36.162  ✘  Step failed after 11682 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByRole('heading', { name: 'Transactions' })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for getByRole('heading', { name: 'Transactions' })[22m
+
+06:30:39.292  ·  Test run complete: "TC1 — Opening a transaction row shows matching detail sections"

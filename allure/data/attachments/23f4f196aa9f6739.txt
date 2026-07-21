@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC6 — Revenue summary panel shows Gross Amount, Net Amount, Commission and Transaction Success Ratio
+────────────────────────────────────────────────────────────
+06:24:40.154  ·  Test started: "TC6 — Revenue summary panel shows Gross Amount, Net Amount, Commission and Transaction Success Ratio"
+06:24:41.063  ○  ▶ Step 1 — Verifies that the chart summary panel shows all four summary labels
+06:24:41.066  ·    Test scope: Verifies that the chart summary panel shows all four summary labels
+06:24:41.067  ✔  Step completed in 4 ms
+06:24:41.070  ○  ▶ Step 2 — Navigate to Dashboard page
+06:24:41.073  ·    Opening the Dashboard page
+06:24:43.146  ✔    Navigation to Dashboard initiated successfully
+06:24:45.154  ✔  Step completed in 4084 ms
+06:24:45.154  ○  ▶ Step 3 — Verify page loads successfully
+06:24:45.155  ·    Waiting for all Dashboard elements to render
+06:25:00.260  ✘  Step failed after 15106 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    31 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+06:25:03.512  ·  Test run complete: "TC6 — Revenue summary panel shows Gross Amount, Net Amount, Commission and Transaction Success Ratio"
+────────────────────────────────────────────────────────────
+

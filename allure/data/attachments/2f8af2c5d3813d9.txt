@@ -1,0 +1,19 @@
+06:30:40.468  ·  Test started: "TC2 — An incorrect OTP shows an error and stays on verification"
+06:30:40.981  ○  ▶ Step 1 — Verifies that entering a deliberately wrong OTP keeps the user on the verification page
+06:30:40.983  ·    Test scope: wrong OTP rejection
+06:30:40.984  ✔  Step completed in 2 ms
+06:30:40.984  ○  ▶ Step 2 — Navigate to login page and submit credentials
+06:30:40.984  ·    Opening the login page
+06:30:42.947  ·    Submitting login credentials to trigger OTP flow
+06:30:44.167  ✔    Credentials submitted — expecting redirect to OTP verification
+06:30:44.167  ✔  Step completed in 3184 ms
+06:30:44.167  ○  ▶ Step 3 — Verify OTP page is loaded
+06:30:44.169  ·    Waiting for OTP verification page to render
+06:30:44.653  ✔    OTP verification page is loaded
+06:30:44.653  ✔  Step completed in 486 ms
+06:30:44.653  ○  ▶ Step 4 — Enter wrong OTP and verify error state
+06:30:44.656  ·    Entering a deliberately wrong OTP value: 0000
+06:30:46.855  ·    Verifying the app remains on the verification page
+06:30:47.067  ✔    App stayed on verification page — wrong OTP was correctly rejected
+06:30:47.067  ✔  Step completed in 2415 ms
+06:30:49.942  ·  Test run complete: "TC2 — An incorrect OTP shows an error and stays on verification"
