@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-GW-001",
-  "expected": "access-control-allow-origin: https://rms.dev.demo-fsit.com",
-  "actual": "access-control-allow-origin: *",
-  "impact": "Any website can silently read accountNumber and apiEndpoint via CORS + no-auth status endpoint",
-  "fix": "Restrict APISIX CORS plugin to the specific RMS frontend origin"
-}

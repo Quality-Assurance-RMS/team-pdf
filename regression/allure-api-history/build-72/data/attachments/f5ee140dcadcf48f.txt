@@ -1,0 +1,16 @@
+02:22:20.753  ·  Test started: "TC4 — Expired requestExpiryTimestamp — Validation"
+02:22:20.791  ○  ▶ Step 1 — POST /dev/sign to obtain HMAC signature for expired-timestamp payload
+02:22:20.793  ·    POST /pgwebhook/dev/sign (expired timestamp payload)
+02:22:21.092  ✔    HTTP 200 received
+02:22:21.099  ✔  Step completed in 308 ms
+02:22:21.099  ○  ▶ Step 2 — POST /transactions — expect HTTP 400 with requestExpiryTimestamp error
+02:22:21.100  ·    POST /pgwebhook/transactions (expired timestamp)
+02:22:21.158  ✔    HTTP 401 received
+02:22:21.162  ·    Asserting: HTTP 400 and error identifies requestExpiryTimestamp with "expired"
+02:22:21.166  ✘  Step failed after 67 ms — Expected HTTP 400 Bad Request
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m400[39m
+Received: [31m401[39m
+02:22:21.169  ·  Test run complete: "TC4 — Expired requestExpiryTimestamp — Validation"
