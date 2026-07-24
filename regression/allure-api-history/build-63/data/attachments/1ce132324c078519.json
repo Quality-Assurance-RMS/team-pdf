@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-XS-004",
-  "expected": "No CORS headers on error responses (or restrict to trusted origin)",
-  "actual": "HTTP 401 with ACAO: *",
-  "impact": "Cross-origin error body is readable by malicious pages; enables enumeration via CORS",
-  "fix": "Remove CORS headers from error responses or restrict ACAO to specific RMS frontend origin"
-}

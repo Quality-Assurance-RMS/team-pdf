@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-XS-003",
-  "expected": "404 Not Found for unknown path",
-  "actual": "HTTP 401 — returns 401 for unknown paths",
-  "impact": "Cannot distinguish wrong path from missing auth; developer experience degraded",
-  "fix": "Route before authenticating; return 404 for genuinely unknown routes"
-}
