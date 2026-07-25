@@ -1,0 +1,16 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC5 — Failed Transaction — INSUFFICIENT_FUNDS
+────────────────────────────────────────────────────────────
+17:23:45.329  ·  Test started: "TC5 — Failed Transaction — INSUFFICIENT_FUNDS"
+17:23:45.540  ○  ▶ Step 1: POST to /dev/sign — get HMAC signature for FAILED transaction payload
+17:23:45.542  ·    POST /dev/sign — obtaining HMAC signature for FAILED transaction payload
+17:23:46.033  ✘  Step failed after 493 ms — /dev/sign should return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 405
+17:23:46.148  ·  Test run complete: "TC5 — Failed Transaction — INSUFFICIENT_FUNDS"
+────────────────────────────────────────────────────────────
+
