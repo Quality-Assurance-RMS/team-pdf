@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-ANA-002",
-  "expected": "405 body includes \"message\" field consistent with all other services",
-  "actual": "405 body fields: {timestamp, status, error, path} — \"message\" absent",
-  "impact": "Clients get undefined when reading res.body.message on analytics errors",
-  "fix": "Add a \"message\" field to the global error handler in rms-analytics service"
-}
