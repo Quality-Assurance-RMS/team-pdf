@@ -1,0 +1,21 @@
+12:52:37.876  ·  Test started: "TC2 — "Transactions Today" shows a numeric count"
+12:52:39.273  ○  ▶ Step 1 — Verifies the Transactions Today metric is visible and displays a numeric value
+12:52:39.277  ·    Test scope: Verifies the Transactions Today metric is visible and displays a numeric value
+12:52:39.282  ✔  Step completed in 9 ms
+12:52:39.291  ○  ▶ Step 2 — Navigate to Dashboard page
+12:52:39.294  ·    Opening the Dashboard page
+12:52:42.291  ✔    Navigation to Dashboard initiated successfully
+12:52:43.268  ✔  Step completed in 3977 ms
+12:52:43.268  ○  ▶ Step 3 — Verify page loads successfully
+12:52:43.269  ·    Waiting for all Dashboard elements to render
+12:52:58.294  ✘  Step failed after 15027 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+12:53:05.766  ·  Test run complete: "TC2 — "Transactions Today" shows a numeric count"

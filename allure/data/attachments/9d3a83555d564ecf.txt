@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All four summary cards are visible
+────────────────────────────────────────────────────────────
+13:00:16.878  ·  Test started: "TC1 — All four summary cards are visible"
+13:00:17.075  ○  ▶ Step 1 — Verifies Gross Collected, Total Fees, Net Settlement, and Last Settlement cards render on the Settlements page
+13:00:17.076  ·    Test scope: Verifies Gross Collected, Total Fees, Net Settlement, and Last Settlement cards render on the Settlements page
+13:00:17.077  ✔  Step completed in 2 ms
+13:00:17.078  ○  ▶ Step 2 — Navigate to Settlements page
+13:00:17.078  ·    Opening the Settlements page
+13:00:18.630  ✔    Navigation to Settlements page initiated successfully
+13:00:18.924  ✔  Step completed in 1846 ms
+13:00:18.924  ○  ▶ Step 3 — Verify page loads successfully
+13:00:18.966  ·    Waiting for all Settlements page elements to render
+13:00:34.075  ✘  Step failed after 15151 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settlements/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+13:00:36.050  ·  Test run complete: "TC1 — All four summary cards are visible"
+────────────────────────────────────────────────────────────
+

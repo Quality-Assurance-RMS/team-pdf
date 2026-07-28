@@ -1,0 +1,21 @@
+12:52:04.094  ·  Test started: "TC4 — "Transactions by Payment Method" chart label is visible"
+12:52:05.083  ○  ▶ Step 1 — Verifies the Transactions by Payment Method chart label is visible in the Gateway Payments section
+12:52:05.085  ·    Test scope: Verifies the Transactions by Payment Method chart label is visible in the Gateway Payments section
+12:52:05.085  ✔  Step completed in 3 ms
+12:52:05.087  ○  ▶ Step 2 — Navigate to Dashboard page
+12:52:05.087  ·    Opening the Dashboard page
+12:52:08.379  ✔    Navigation to Dashboard initiated successfully
+12:52:10.172  ✔  Step completed in 5086 ms
+12:52:10.172  ○  ▶ Step 3 — Verify page loads successfully
+12:52:10.174  ·    Waiting for all Dashboard elements to render
+12:52:25.275  ✘  Step failed after 15102 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+12:52:32.593  ·  Test run complete: "TC4 — "Transactions by Payment Method" chart label is visible"

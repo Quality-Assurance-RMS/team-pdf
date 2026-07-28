@@ -1,0 +1,21 @@
+12:55:14.117  ·  Test started: "TC3 — Clicking "Transactions" navigates to /transaction"
+12:55:14.380  ○  ▶ Step 1 — Verifies the Transactions sidebar link navigates to the Transactions page
+12:55:14.382  ·    Test scope: Verifies the Transactions sidebar link navigates to the Transactions page
+12:55:14.382  ✔  Step completed in 2 ms
+12:55:14.383  ○  ▶ Step 2 — Navigate to Dashboard page
+12:55:14.384  ·    Opening the Dashboard page
+12:55:16.083  ✔    Navigation initiated successfully
+12:55:16.582  ✔  Step completed in 2198 ms
+12:55:16.582  ○  ▶ Step 3 — Verify page loads successfully
+12:55:16.583  ·    Waiting for all page elements to render
+12:55:31.673  ✘  Step failed after 15091 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+12:55:33.448  ·  Test run complete: "TC3 — Clicking "Transactions" navigates to /transaction"

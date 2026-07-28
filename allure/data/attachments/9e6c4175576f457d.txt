@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Gateway Payments" section heading is visible
+────────────────────────────────────────────────────────────
+12:52:37.573  ·  Test started: "TC1 — "Gateway Payments" section heading is visible"
+12:52:38.982  ○  ▶ Step 1 — Verifies the Gateway Payments section heading is rendered on the dashboard
+12:52:38.991  ·    Test scope: Verifies the Gateway Payments section heading is rendered on the dashboard
+12:52:38.992  ✔  Step completed in 10 ms
+12:52:39.069  ○  ▶ Step 2 — Navigate to Dashboard page
+12:52:39.070  ·    Opening the Dashboard page
+12:52:42.193  ✔    Navigation to Dashboard initiated successfully
+12:52:43.579  ✔  Step completed in 4510 ms
+12:52:43.579  ○  ▶ Step 3 — Verify page loads successfully
+12:52:43.580  ·    Waiting for all Dashboard elements to render
+12:52:58.614  ✘  Step failed after 15035 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+12:53:06.591  ·  Test run complete: "TC1 — "Gateway Payments" section heading is visible"
+────────────────────────────────────────────────────────────
+

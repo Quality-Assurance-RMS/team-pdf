@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All three KPI cards are visible on the dashboard
+────────────────────────────────────────────────────────────
+12:53:36.776  ·  Test started: "TC1 — All three KPI cards are visible on the dashboard"
+12:53:37.580  ○  ▶ Step 1 — Verifies that all three KPI metric cards render on the dashboard after login
+12:53:37.582  ·    Test scope: Verifies that all three KPI metric cards render on the dashboard after login
+12:53:37.583  ✔  Step completed in 3 ms
+12:53:37.585  ○  ▶ Step 2 — Navigate to Dashboard page
+12:53:37.586  ·    Opening the Dashboard page
+12:53:38.976  ✔    Navigation to Dashboard initiated successfully
+12:53:40.192  ✔  Step completed in 2607 ms
+12:53:40.192  ○  ▶ Step 3 — Verify page loads successfully
+12:53:40.193  ·    Waiting for all Dashboard elements to render
+12:53:55.279  ✘  Step failed after 15087 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+12:54:00.174  ·  Test run complete: "TC1 — All three KPI cards are visible on the dashboard"
+────────────────────────────────────────────────────────────
+

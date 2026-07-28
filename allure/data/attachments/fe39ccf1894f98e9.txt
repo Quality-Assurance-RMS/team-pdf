@@ -1,0 +1,21 @@
+12:53:43.921  ·  Test started: "TC3 — KPI cards show a percentage change badge"
+12:53:44.144  ○  ▶ Step 1 — Verifies that each KPI card renders a % change indicator (positive or negative)
+12:53:44.146  ·    Test scope: Verifies that each KPI card renders a % change indicator (positive or negative)
+12:53:44.146  ✔  Step completed in 2 ms
+12:53:44.148  ○  ▶ Step 2 — Navigate to Dashboard page
+12:53:44.149  ·    Opening the Dashboard page
+12:53:45.467  ✔    Navigation to Dashboard initiated successfully
+12:53:45.753  ✔  Step completed in 1606 ms
+12:53:45.754  ○  ▶ Step 3 — Verify page loads successfully
+12:53:45.755  ·    Waiting for all Dashboard elements to render
+12:54:00.783  ✘  Step failed after 15029 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+12:54:05.903  ·  Test run complete: "TC3 — KPI cards show a percentage change badge"

@@ -1,0 +1,21 @@
+12:55:26.887  ·  Test started: "TC7 — Clicking "Logout" redirects to the login page"
+12:55:27.077  ○  ▶ Step 1 — Verifies that clicking the Logout button ends the session and redirects to /auth/login
+12:55:27.079  ·    Test scope: Verifies that clicking the Logout button ends the session and redirects to /auth/login
+12:55:27.079  ✔  Step completed in 2 ms
+12:55:27.080  ○  ▶ Step 2 — Navigate to Dashboard page
+12:55:27.081  ·    Opening the Dashboard page
+12:55:28.258  ✔    Navigation initiated successfully
+12:55:28.572  ✔  Step completed in 1492 ms
+12:55:28.572  ○  ▶ Step 3 — Verify page loads successfully
+12:55:28.573  ·    Waiting for all page elements to render
+12:55:43.603  ✘  Step failed after 15030 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+12:55:46.632  ·  Test run complete: "TC7 — Clicking "Logout" redirects to the login page"
