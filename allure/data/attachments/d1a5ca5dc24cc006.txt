@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC4 — "Transactions by Payment Method" chart label is visible
+────────────────────────────────────────────────────────────
+13:25:41.070  ·  Test started: "TC4 — "Transactions by Payment Method" chart label is visible"
+13:25:42.164  ○  ▶ Step 1 — Verifies the Transactions by Payment Method chart label is visible in the Gateway Payments section
+13:25:42.167  ·    Test scope: Verifies the Transactions by Payment Method chart label is visible in the Gateway Payments section
+13:25:42.167  ✔  Step completed in 3 ms
+13:25:42.169  ○  ▶ Step 2 — Navigate to Dashboard page
+13:25:42.171  ·    Opening the Dashboard page
+13:25:44.875  ✔    Navigation to Dashboard initiated successfully
+13:25:46.984  ✔  Step completed in 4814 ms
+13:25:46.984  ○  ▶ Step 3 — Verify page loads successfully
+13:25:46.985  ·    Waiting for all Dashboard elements to render
+13:26:02.086  ✘  Step failed after 15103 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+13:26:08.576  ·  Test run complete: "TC4 — "Transactions by Payment Method" chart label is visible"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,20 @@
+13:37:37.375  ·  Test started: "TC1 — Full login with a correct OTP reaches the dashboard"
+13:37:37.495  ○  ▶ Step 1 — Verifies that logging in, receiving an OTP by email, and entering it correctly redirects the user to the dashboard
+13:37:37.496  ·    Test scope: full OTP login flow reaching the dashboard
+13:37:37.496  ✔  Step completed in 1 ms
+13:37:37.496  ○  ▶ Step 2 — Navigate to login page and submit credentials
+13:37:37.497  ·    Opening the login page
+13:37:38.176  ·    Submitting login credentials
+13:37:38.831  ✔    Credentials submitted — expecting redirect to OTP verification
+13:37:38.832  ✔  Step completed in 1336 ms
+13:37:38.832  ○  ▶ Step 3 — Verify OTP page is loaded
+13:37:38.833  ·    Waiting for OTP verification page to render
+13:37:39.178  ✔    OTP verification page is loaded
+13:37:39.178  ·    Checking Resend and Back to Login links are visible
+13:37:39.192  ✔    Resend OTP link is visible
+13:37:39.210  ✔    Back to Login link is visible
+13:37:39.210  ✔  Step completed in 379 ms
+13:37:39.210  ○  ▶ Step 4 — Fetch OTP from email
+13:37:39.211  ·    Polling mailbox for fresh OTP sent after login time
+13:39:33.097  ✘  Step failed after 113887 ms — OTP from "developer.rms@fortunesoftit.com" not received within 90s
+13:39:34.087  ·  Test run complete: "TC1 — Full login with a correct OTP reaches the dashboard"

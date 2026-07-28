@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Date filter dropdown defaults to "Last 90 Days"
+────────────────────────────────────────────────────────────
+13:29:43.773  ·  Test started: "TC3 — Date filter dropdown defaults to "Last 90 Days""
+13:29:44.199  ○  ▶ Step 1 — Verifies the chart date filter shows "Today" as the default selected value
+13:29:44.261  ·    Test scope: Verifies the chart date filter shows "Today" as the default selected value
+13:29:44.262  ✔  Step completed in 63 ms
+13:29:44.264  ○  ▶ Step 2 — Navigate to Dashboard page
+13:29:44.265  ·    Opening the Dashboard page
+13:29:45.378  ✔    Navigation to Dashboard initiated successfully
+13:29:46.267  ✔  Step completed in 2003 ms
+13:29:46.267  ○  ▶ Step 3 — Verify page loads successfully
+13:29:46.268  ·    Waiting for all Dashboard elements to render
+13:30:01.292  ✘  Step failed after 15025 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+13:30:03.323  ·  Test run complete: "TC3 — Date filter dropdown defaults to "Last 90 Days""
+────────────────────────────────────────────────────────────
+

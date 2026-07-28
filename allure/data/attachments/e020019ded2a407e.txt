@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC5 — "Success vs Failure by Method" chart label is visible
+────────────────────────────────────────────────────────────
+13:26:06.364  ·  Test started: "TC5 — "Success vs Failure by Method" chart label is visible"
+13:26:07.277  ○  ▶ Step 1 — Verifies the Success vs Failure by Method chart label is visible in the Gateway Payments section
+13:26:07.281  ·    Test scope: Verifies the Success vs Failure by Method chart label is visible in the Gateway Payments section
+13:26:07.281  ✔  Step completed in 5 ms
+13:26:07.284  ○  ▶ Step 2 — Navigate to Dashboard page
+13:26:07.285  ·    Opening the Dashboard page
+13:26:09.671  ✔    Navigation to Dashboard initiated successfully
+13:26:10.985  ✔  Step completed in 3702 ms
+13:26:10.985  ○  ▶ Step 3 — Verify page loads successfully
+13:26:10.986  ·    Waiting for all Dashboard elements to render
+13:26:26.075  ✘  Step failed after 15090 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+13:26:27.815  ·  Test run complete: "TC5 — "Success vs Failure by Method" chart label is visible"
+────────────────────────────────────────────────────────────
+

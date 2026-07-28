@@ -1,0 +1,21 @@
+13:28:25.699  ·  Test started: "TC2 — Dashboard nav item is marked as active on /dashboard"
+13:28:26.286  ○  ▶ Step 1 — Verifies that the Dashboard sidebar item is highlighted/selected while on /dashboard
+13:28:26.288  ·    Test scope: Verifies that the Dashboard sidebar item is highlighted/selected while on /dashboard
+13:28:26.289  ✔  Step completed in 3 ms
+13:28:26.293  ○  ▶ Step 2 — Navigate to Dashboard page
+13:28:26.295  ·    Opening the Dashboard page
+13:28:28.083  ✔    Navigation initiated successfully
+13:28:29.495  ✔  Step completed in 3203 ms
+13:28:29.495  ○  ▶ Step 3 — Verify page loads successfully
+13:28:29.497  ·    Waiting for all page elements to render
+13:28:44.579  ✘  Step failed after 15084 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+13:28:46.474  ·  Test run complete: "TC2 — Dashboard nav item is marked as active on /dashboard"

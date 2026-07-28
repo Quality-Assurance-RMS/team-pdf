@@ -1,0 +1,21 @@
+13:28:58.070  ·  Test started: "TC5 — Clicking "Settlements" navigates to the Settlements page"
+13:28:58.375  ○  ▶ Step 1 — Verifies the Settlements sidebar link navigates to the Settlements page
+13:28:58.377  ·    Test scope: Verifies the Settlements sidebar link navigates to the Settlements page
+13:28:58.377  ✔  Step completed in 2 ms
+13:28:58.378  ○  ▶ Step 2 — Navigate to Dashboard page
+13:28:58.379  ·    Opening the Dashboard page
+13:28:59.479  ✔    Navigation initiated successfully
+13:28:59.887  ✔  Step completed in 1509 ms
+13:28:59.887  ○  ▶ Step 3 — Verify page loads successfully
+13:28:59.888  ·    Waiting for all page elements to render
+13:29:14.967  ✘  Step failed after 15080 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+13:29:16.727  ·  Test run complete: "TC5 — Clicking "Settlements" navigates to the Settlements page"

@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC6 — "View details" on first KPI card navigates away from dashboard
+────────────────────────────────────────────────────────────
+13:27:36.286  ·  Test started: "TC6 — "View details" on first KPI card navigates away from dashboard"
+13:27:37.066  ○  ▶ Step 1 — Clicks the first "View Details" link and verifies navigation away from /dashboard
+13:27:37.068  ·    Test scope: Clicks the first "View Details" link and verifies navigation away from /dashboard
+13:27:37.069  ✔  Step completed in 3 ms
+13:27:37.071  ○  ▶ Step 2 — Navigate to Dashboard page
+13:27:37.072  ·    Opening the Dashboard page
+13:27:38.463  ✔    Navigation to Dashboard initiated successfully
+13:27:39.295  ✔  Step completed in 2224 ms
+13:27:39.295  ○  ▶ Step 3 — Verify page loads successfully
+13:27:39.296  ·    Waiting for all Dashboard elements to render
+13:27:54.386  ✘  Step failed after 15091 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+13:27:58.278  ·  Test run complete: "TC6 — "View details" on first KPI card navigates away from dashboard"
+────────────────────────────────────────────────────────────
+

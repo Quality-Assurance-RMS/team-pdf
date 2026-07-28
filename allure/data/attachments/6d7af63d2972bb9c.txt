@@ -1,0 +1,21 @@
+13:35:01.490  ·  Test started: "TC1 — Transaction count sub-heading is visible"
+13:35:02.261  ○  ▶ Step 1 — Verifies the transaction count label (e.g. "190 transactions") is shown below the Transactions heading
+13:35:02.265  ·    Test scope: Verifies the transaction count label (e.g. "190 transactions") is shown below the Transactions heading
+13:35:02.265  ✔  Step completed in 4 ms
+13:35:02.266  ○  ▶ Step 2 — Navigate to Transactions page
+13:35:02.267  ·    Opening the Transactions page
+13:35:04.280  ✔    Navigation to Transactions page initiated successfully
+13:35:06.083  ✔  Step completed in 3817 ms
+13:35:06.083  ○  ▶ Step 3 — Verify page loads successfully
+13:35:06.083  ·    Waiting for all Transactions page elements to render
+13:35:11.175  ✘  Step failed after 5093 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    13 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+13:35:13.376  ·  Test run complete: "TC1 — Transaction count sub-heading is visible"

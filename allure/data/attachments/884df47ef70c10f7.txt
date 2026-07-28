@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC5 — Successful Transactions percentage is between 0 and 100
+────────────────────────────────────────────────────────────
+13:27:35.684  ·  Test started: "TC5 — Successful Transactions percentage is between 0 and 100"
+13:27:36.274  ○  ▶ Step 1 — Verifies that the Successful Transactions KPI value is a valid percentage within 0–100%
+13:27:36.277  ·    Test scope: Verifies that the Successful Transactions KPI value is a valid percentage within 0–100%
+13:27:36.277  ✔  Step completed in 3 ms
+13:27:36.279  ○  ▶ Step 2 — Navigate to Dashboard page
+13:27:36.280  ·    Opening the Dashboard page
+13:27:37.684  ✔    Navigation to Dashboard initiated successfully
+13:27:38.877  ✔  Step completed in 2598 ms
+13:27:38.877  ○  ▶ Step 3 — Verify page loads successfully
+13:27:38.878  ·    Waiting for all Dashboard elements to render
+13:27:53.973  ✘  Step failed after 15096 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+13:27:57.166  ·  Test run complete: "TC5 — Successful Transactions percentage is between 0 and 100"
+────────────────────────────────────────────────────────────
+
