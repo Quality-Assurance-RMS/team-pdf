@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-DB-005",
-  "expected": "400 Bad Request — from_date must match YYYY-MM-DD",
-  "actual": "HTTP 400 for input \"2026-01-01 OR 1=1\"",
-  "impact": "Input not validated before reaching data layer; 500 confirms no pre-processing validation",
-  "fix": "Strictly validate from_date matches /^\\d{4}-\\d{2}-\\d{2}$/ before any further processing"
-}

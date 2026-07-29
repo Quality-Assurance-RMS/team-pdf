@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-ANA-003",
-  "expected": "Access-Control-Allow-Methods: GET, OPTIONS",
-  "actual": "Access-Control-Allow-Methods: GET,POST,PUT,DELETE,PATCH,OPTIONS",
-  "impact": "Browser clients may skip preflight for POST/DELETE and then get 405; confusing behavior",
-  "fix": "Set CORS allow-methods to only GET, HEAD, OPTIONS in APISIX plugin for analytics routes"
-}

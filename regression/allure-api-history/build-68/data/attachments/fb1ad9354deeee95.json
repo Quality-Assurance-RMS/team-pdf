@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-XS-001",
-  "expected": "All services return {status, error, message, timestamp, path}",
-  "actual": "Analytics: {timestamp,status,error,path}, Dashboard: {status,error,message}",
-  "impact": "Client error handling must branch per-service; 4th format risk as more services are added",
-  "fix": "Define a shared error response DTO in a common library and use it across all services"
-}

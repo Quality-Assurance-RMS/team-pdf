@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-SF-003",
-  "expected": "tokenInjectionEnabled: true",
-  "actual": "tokenInjectionEnabled: undefined",
-  "impact": "Root cause of BUG-SF-002: spr-fetcher calls KCB without OAuth token, causing auth failure/timeout",
-  "fix": "Set tokenInjectionEnabled=true in spr-fetcher application.yml; configure oauth-token-service URL"
-}
