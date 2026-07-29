@@ -1,0 +1,21 @@
+01:42:20.435  ·  Test started: "TC1 — All table column headers are visible"
+01:42:21.055  ○  ▶ Step 1 — Verifies that Transaction ID, Invoice No, Date, MCDA, Department, Method, Currency, Amount, Status, and Action columns are present
+01:42:21.059  ·    Test scope: Verifies that Transaction ID, Invoice No, Date, MCDA, Department, Method, Currency, Amount, Status, and Action columns are present
+01:42:21.061  ✔  Step completed in 5 ms
+01:42:21.061  ○  ▶ Step 2 — Navigate to Transactions page
+01:42:21.134  ·    Opening the Transactions page
+01:42:23.150  ✔    Navigation to Transactions page initiated successfully
+01:42:24.343  ✔  Step completed in 3282 ms
+01:42:24.343  ○  ▶ Step 3 — Verify page loads successfully
+01:42:24.346  ·    Waiting for all Transactions page elements to render
+01:42:29.451  ✘  Step failed after 5107 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    13 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:42:31.879  ·  Test run complete: "TC1 — All table column headers are visible"

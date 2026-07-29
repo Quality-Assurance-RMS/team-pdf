@@ -1,0 +1,21 @@
+01:37:55.010  ·  Test started: "TC1 — Settlement and Payout overview values are visible"
+01:37:55.458  ○  ▶ Step 1 — Verifies Settlement KES/USD and Payout KES/USD sections render in the Settlement & Payout Overview
+01:37:55.460  ·    Test scope: Verifies Settlement KES/USD and Payout KES/USD sections render in the Settlement & Payout Overview
+01:37:55.461  ✔  Step completed in 2 ms
+01:37:55.462  ○  ▶ Step 2 — Navigate to Reports page
+01:37:55.463  ·    Opening the Reports page
+01:37:57.232  ✔    Navigation to Reports page initiated successfully
+01:37:58.049  ✔  Step completed in 2586 ms
+01:37:58.049  ○  ▶ Step 3 — Verify page loads successfully
+01:37:58.050  ·    Waiting for all Reports page elements to render
+01:38:13.136  ✘  Step failed after 15088 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/reports/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:38:14.934  ·  Test run complete: "TC1 — Settlement and Payout overview values are visible"

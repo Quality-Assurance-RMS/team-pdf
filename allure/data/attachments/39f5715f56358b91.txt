@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC4 — Each KPI card has a "View details" link
+────────────────────────────────────────────────────────────
+01:34:07.438  ·  Test started: "TC4 — Each KPI card has a "View details" link"
+01:34:07.650  ○  ▶ Step 1 — Verifies that all five KPI cards expose a "View details" navigation link
+01:34:07.653  ·    Test scope: Verifies that all five KPI cards expose a "View details" navigation link
+01:34:07.653  ✔  Step completed in 3 ms
+01:34:07.657  ○  ▶ Step 2 — Navigate to Dashboard page
+01:34:07.658  ·    Opening the Dashboard page
+01:34:08.990  ✔    Navigation to Dashboard initiated successfully
+01:34:09.946  ✔  Step completed in 2290 ms
+01:34:09.946  ○  ▶ Step 3 — Verify page loads successfully
+01:34:09.947  ·    Waiting for all Dashboard elements to render
+01:34:24.969  ✘  Step failed after 15023 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:34:26.914  ·  Test run complete: "TC4 — Each KPI card has a "View details" link"
+────────────────────────────────────────────────────────────
+

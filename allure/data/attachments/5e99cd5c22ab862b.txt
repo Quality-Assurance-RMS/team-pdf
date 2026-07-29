@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Dashboard nav item is marked as active on /dashboard
+────────────────────────────────────────────────────────────
+01:34:39.531  ·  Test started: "TC2 — Dashboard nav item is marked as active on /dashboard"
+01:34:40.149  ○  ▶ Step 1 — Verifies that the Dashboard sidebar item is highlighted/selected while on /dashboard
+01:34:40.152  ·    Test scope: Verifies that the Dashboard sidebar item is highlighted/selected while on /dashboard
+01:34:40.153  ✔  Step completed in 4 ms
+01:34:40.155  ○  ▶ Step 2 — Navigate to Dashboard page
+01:34:40.156  ·    Opening the Dashboard page
+01:34:41.840  ✔    Navigation initiated successfully
+01:34:42.730  ✔  Step completed in 2576 ms
+01:34:42.731  ○  ▶ Step 3 — Verify page loads successfully
+01:34:42.731  ·    Waiting for all page elements to render
+01:34:57.752  ✘  Step failed after 15022 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:34:59.703  ·  Test run complete: "TC2 — Dashboard nav item is marked as active on /dashboard"
+────────────────────────────────────────────────────────────
+

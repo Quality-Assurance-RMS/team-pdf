@@ -1,0 +1,21 @@
+01:35:36.259  ·  Test started: "TC6 — Clicking "Reports" navigates to the Reports page"
+01:35:36.469  ○  ▶ Step 1 — Verifies the Reports sidebar link navigates to the Reports page
+01:35:36.471  ·    Test scope: Verifies the Reports sidebar link navigates to the Reports page
+01:35:36.471  ✔  Step completed in 2 ms
+01:35:36.473  ○  ▶ Step 2 — Navigate to Dashboard page
+01:35:36.474  ·    Opening the Dashboard page
+01:35:37.692  ✔    Navigation initiated successfully
+01:35:37.955  ✔  Step completed in 1483 ms
+01:35:37.956  ○  ▶ Step 3 — Verify page loads successfully
+01:35:37.957  ·    Waiting for all page elements to render
+01:35:53.039  ✘  Step failed after 15083 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:35:56.307  ·  Test run complete: "TC6 — Clicking "Reports" navigates to the Reports page"

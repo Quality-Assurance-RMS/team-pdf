@@ -1,0 +1,21 @@
+01:32:23.554  ·  Test started: "TC3 — Success Rate metric shows a valid percentage (0–100%)"
+01:32:24.753  ○  ▶ Step 1 — Verifies the Success Rate in the Gateway Payments section is a valid percentage
+01:32:24.756  ·    Test scope: Verifies the Success Rate in the Gateway Payments section is a valid percentage
+01:32:24.758  ✔  Step completed in 5 ms
+01:32:24.762  ○  ▶ Step 2 — Navigate to Dashboard page
+01:32:24.831  ·    Opening the Dashboard page
+01:32:27.262  ✔    Navigation to Dashboard initiated successfully
+01:32:28.134  ✔  Step completed in 3372 ms
+01:32:28.136  ○  ▶ Step 3 — Verify page loads successfully
+01:32:28.137  ·    Waiting for all Dashboard elements to render
+01:32:43.235  ✘  Step failed after 15099 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:32:50.839  ·  Test run complete: "TC3 — Success Rate metric shows a valid percentage (0–100%)"

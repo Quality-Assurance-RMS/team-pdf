@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC6 — Success vs Failure chart legend shows "Success" and "Failure" entries
+────────────────────────────────────────────────────────────
+01:32:51.739  ·  Test started: "TC6 — Success vs Failure chart legend shows "Success" and "Failure" entries"
+01:32:52.554  ○  ▶ Step 1 — Verifies that the Success vs Failure chart legend renders both "Success" and "Failure" labels
+01:32:52.557  ·    Test scope: Verifies that the Success vs Failure chart legend renders both "Success" and "Failure" labels
+01:32:52.557  ✔  Step completed in 3 ms
+01:32:52.561  ○  ▶ Step 2 — Navigate to Dashboard page
+01:32:52.562  ·    Opening the Dashboard page
+01:32:54.846  ✔    Navigation to Dashboard initiated successfully
+01:32:55.572  ✔  Step completed in 3011 ms
+01:32:55.572  ○  ▶ Step 3 — Verify page loads successfully
+01:32:55.574  ·    Waiting for all Dashboard elements to render
+01:33:10.646  ✘  Step failed after 15074 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:33:15.357  ·  Test run complete: "TC6 — Success vs Failure chart legend shows "Success" and "Failure" entries"
+────────────────────────────────────────────────────────────
+
