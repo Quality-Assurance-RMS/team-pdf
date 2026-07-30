@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-SF-001",
-  "expected": "401 Unauthorized",
-  "actual": "HTTP 504 — accountNumber and apiEndpoint visible without auth",
-  "impact": "External actors can enumerate bank account number and KCB API endpoint without credentials",
-  "fix": "Add JWT auth enforcement to GET /spr-fetcher/api/v1/fetch/status in APISIX"
-}
