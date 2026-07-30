@@ -1,0 +1,26 @@
+[/transactions] status: 401 | body: {
+  "error_code": "INVALID_SIGNATURE",
+  "message": "signature verification failed"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Invalid HMAC Signature — Security
+────────────────────────────────────────────────────────────
+17:23:42.168  ·  Test started: "TC3 — Invalid HMAC Signature — Security"
+17:23:42.346  ○  ▶ Step 1 — POST /transactions with zeroed-out X-Response-Signature
+17:23:42.348  ·    POST /pgwebhook/transactions (zeroed-out signature)
+17:23:42.738  ✔    HTTP 401 received
+17:23:42.744  ·    Asserting: HTTP 401 Unauthorized
+17:23:42.751  ✔    All assertions passed
+17:23:42.752  ✔  Step completed in 406 ms
+17:23:42.752  ○  ▶ Step 2 — Verify PostgreSQL: 0 rows for TXN-INVALID001
+17:23:42.847  ·    Asserting: 0 rows stored after 401
+17:23:42.849  ✔    All assertions passed
+17:23:42.849  ✔  Step completed in 97 ms
+17:23:42.849  ○  ▶ Step 3 — Verify MongoDB: 0 documents in raw_pg_events for this idempotency_key
+17:23:42.874  ·    Asserting: 0 documents in MongoDB after rejection
+17:23:42.876  ✔    All assertions passed
+17:23:42.937  ✔  Step completed in 88 ms
+17:23:42.939  ·  Test run complete: "TC3 — Invalid HMAC Signature — Security"
+────────────────────────────────────────────────────────────
+
