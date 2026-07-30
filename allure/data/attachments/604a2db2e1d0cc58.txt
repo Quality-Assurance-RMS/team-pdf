@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC7 — Dashboard greeting displays the logged-in user name
+────────────────────────────────────────────────────────────
+01:34:26.750  ·  Test started: "TC7 — Dashboard greeting displays the logged-in user name"
+01:34:27.243  ○  ▶ Step 1 — Verifies the personalised greeting ("Hi, <Name>") is visible after login
+01:34:27.244  ·    Test scope: Verifies the personalised greeting ("Hi, <Name>") is visible after login
+01:34:27.244  ✔  Step completed in 2 ms
+01:34:27.246  ○  ▶ Step 2 — Navigate to Dashboard page
+01:34:27.247  ·    Opening the Dashboard page
+01:34:28.133  ✔    Navigation to Dashboard initiated successfully
+01:34:28.375  ✔  Step completed in 1130 ms
+01:34:28.375  ○  ▶ Step 3 — Verify page loads successfully
+01:34:28.376  ·    Waiting for all Dashboard elements to render
+01:34:43.432  ✘  Step failed after 15057 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:34:50.922  ·  Test run complete: "TC7 — Dashboard greeting displays the logged-in user name"
+────────────────────────────────────────────────────────────
+

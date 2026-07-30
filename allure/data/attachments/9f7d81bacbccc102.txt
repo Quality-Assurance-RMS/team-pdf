@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC7 — Clicking "Logout" redirects to the login page
+────────────────────────────────────────────────────────────
+01:36:04.636  ·  Test started: "TC7 — Clicking "Logout" redirects to the login page"
+01:36:04.839  ○  ▶ Step 1 — Verifies that clicking the Logout button ends the session and redirects to /auth/login
+01:36:04.841  ·    Test scope: Verifies that clicking the Logout button ends the session and redirects to /auth/login
+01:36:04.841  ✔  Step completed in 2 ms
+01:36:04.843  ○  ▶ Step 2 — Navigate to Dashboard page
+01:36:04.843  ·    Opening the Dashboard page
+01:36:06.056  ✔    Navigation initiated successfully
+01:36:06.318  ✔  Step completed in 1475 ms
+01:36:06.318  ○  ▶ Step 3 — Verify page loads successfully
+01:36:06.319  ·    Waiting for all page elements to render
+01:36:21.335  ✘  Step failed after 15016 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:36:23.190  ·  Test run complete: "TC7 — Clicking "Logout" redirects to the login page"
+────────────────────────────────────────────────────────────
+
