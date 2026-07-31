@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Clicking Security tab changes the active panel
+────────────────────────────────────────────────────────────
+08:56:34.413  ·  Test started: "TC3 — Clicking Security tab changes the active panel"
+08:56:34.627  ○  ▶ Step 1 — Verifies clicking the Security tab navigates away from the Profile Settings panel
+08:56:34.630  ·    Test scope: Verifies clicking the Security tab navigates away from the Profile Settings panel
+08:56:34.631  ✔  Step completed in 4 ms
+08:56:34.632  ○  ▶ Step 2 — Navigate to Settings page
+08:56:34.633  ·    Opening the Settings page
+08:56:35.669  ✔    Navigation to Settings page initiated successfully
+08:56:36.277  ✔  Step completed in 1645 ms
+08:56:36.277  ○  ▶ Step 3 — Verify page loads successfully
+08:56:36.278  ·    Waiting for all Settings page elements to render
+08:56:51.300  ✘  Step failed after 15022 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settings/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+08:56:54.873  ·  Test run complete: "TC3 — Clicking Security tab changes the active panel"
+────────────────────────────────────────────────────────────
+

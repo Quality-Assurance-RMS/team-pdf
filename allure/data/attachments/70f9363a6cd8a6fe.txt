@@ -1,0 +1,21 @@
+08:55:57.001  ·  Test started: "TC1 — "Settings" heading is visible"
+08:55:57.462  ○  ▶ Step 1 — Verifies the Settings heading renders on the Settings page after navigation
+08:55:57.465  ·    Test scope: Verifies the Settings heading renders on the Settings page after navigation
+08:55:57.466  ✔  Step completed in 4 ms
+08:55:57.469  ○  ▶ Step 2 — Navigate to Settings page
+08:55:57.473  ·    Opening the Settings page
+08:55:59.591  ✔    Navigation to Settings page initiated successfully
+08:56:00.070  ✔  Step completed in 2600 ms
+08:56:00.070  ○  ▶ Step 3 — Verify page loads successfully
+08:56:00.071  ·    Waiting for all Settings page elements to render
+08:56:15.094  ✘  Step failed after 15024 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/settings/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+08:56:16.821  ·  Test run complete: "TC1 — "Settings" heading is visible"
