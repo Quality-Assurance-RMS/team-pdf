@@ -1,0 +1,16 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC4 — Expired requestExpiryTimestamp — Validation
+────────────────────────────────────────────────────────────
+17:26:23.478  ·  Test started: "TC4 — Expired requestExpiryTimestamp — Validation"
+17:26:23.524  ○  ▶ Step 1: POST to /dev/sign — get HMAC signature for expired-timestamp payload
+17:26:23.525  ·    POST /dev/sign — obtaining HMAC signature for expired-timestamp payload
+17:26:23.650  ✘  Step failed after 126 ms — /dev/sign should return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 405
+17:26:23.686  ·  Test run complete: "TC4 — Expired requestExpiryTimestamp — Validation"
+────────────────────────────────────────────────────────────
+

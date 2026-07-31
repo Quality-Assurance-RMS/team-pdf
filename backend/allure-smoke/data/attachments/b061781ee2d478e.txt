@@ -1,0 +1,33 @@
+17:20:24.685  ·  Test started: "TC-DREVT-005 â€” BUG-REVT-04: labels must not contain duplicates without year disambiguation"
+17:20:24.688  ○  ▶ Step 1 â€” Fetch revenue-trend response
+17:20:24.795  ·    GET /api/v1/dashboard/revenue-trend
+17:20:25.590  ✔    HTTP 200 received
+17:20:25.595  ✔  Step completed in 907 ms
+17:20:25.596  ○  ▶ Step 2 â€” Validate HTTP 200
+17:20:25.598  ·    Asserting: Validate HTTP 200
+17:20:25.609  ✔    All assertions passed
+17:20:25.609  ✔  Step completed in 14 ms
+17:20:25.609  ○  ▶ Step 3 â€” BUG-REVT-04: labels array must not have duplicate month names
+17:20:25.617  ·    Asserting: BUG-REVT-04: labels array must not have duplicate
+17:20:25.622  ✔    All assertions passed
+17:20:25.623  ✔  Step completed in 14 ms
+17:20:25.623  ○  ▶ Step 4 â€” Labels must contain only valid month abbreviations
+17:20:25.624  ·    Asserting: response structure and values
+17:20:25.625  ·    Asserting: response structure and values
+17:20:25.627  ·    Asserting: response structure and values
+17:20:25.628  ·    Asserting: response structure and values
+17:20:25.687  ·    Asserting: response structure and values
+17:20:25.689  ·    Asserting: response structure and values
+17:20:25.691  ·    Asserting: response structure and values
+17:20:25.693  ·    Asserting: response structure and values
+17:20:25.695  ·    Asserting: response structure and values
+17:20:25.713  ·    Asserting: response structure and values
+17:20:25.716  ·    Asserting: response structure and values
+17:20:25.787  ·    Asserting: response structure and values
+17:20:25.788  ✔    All assertions passed
+17:20:25.788  ✔  Step completed in 165 ms
+17:20:25.788  ○  ▶ Step 5 â€” Validate array length is within reasonable range (12â€“13 months)
+17:20:25.789  ·    Asserting: Validate array length is within reasonable range
+17:20:25.792  ✔    All assertions passed
+17:20:25.792  ✔  Step completed in 4 ms
+17:20:25.793  ·  Test run complete: "TC-DREVT-005 â€” BUG-REVT-04: labels must not contain duplicates without year disambiguation"

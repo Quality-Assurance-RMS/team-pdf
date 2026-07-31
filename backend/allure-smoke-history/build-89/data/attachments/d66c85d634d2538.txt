@@ -1,0 +1,24 @@
+17:20:44.693  ·  Test started: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"
+17:20:44.699  ○  ▶ Step 1 â€" Build request
+17:20:45.097  ·    Asserting: request parameters are recorded
+17:20:45.097  ✔    All assertions passed
+17:20:45.196  ✔  Step completed in 497 ms
+17:20:45.196  ○  ▶ Step 2 â€" Send GET /status-currency and log response
+17:20:45.197  ·    GET /api/v1/dashboard/status-currency
+17:20:45.798  ✔    HTTP 200 received
+17:20:45.812  ✔  Step completed in 617 ms
+17:20:45.812  ○  ▶ Step 3 â€" Validate HTTP 200 and Content-Type
+17:20:45.814  ·    Asserting: HTTP 200, body defined, Content-Type is application/json
+17:20:45.894  ✔    All assertions passed
+17:20:45.894  ✔  Step completed in 82 ms
+17:20:45.894  ○  ▶ Step 4 â€" Validate top-level `data` wrapper and all four sections
+17:20:45.898  ·    Asserting: all four sections (statusDistribution, currencyDistribution, byMethod, peakMetrics) are present
+17:20:45.993  ✘  Step failed after 99 ms — byMethod section must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"byMethod"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"currencyDistribution": [{"amount": 11159, "count": 12, "label": "KES", "percentage": 100}], "peakMetrics": {"avgTPM": 1.1, "avgTpmChange": -8.3, "avgTpmDirection": "down", "maxTPM": 2, "maxTpmChange": -77.8, "maxTpmDirection": "down", "peakHourWindow": "10:00 AM – 10:59 AM", "peakHourWindowChange": -84.6, "peakHourWindowDirection": "down", "peakTransactionDate": "2026-07-28", "peakTransactionsPerDay": 5, "peakTxnDayChange": -86.8, "peakTxnDayDirection": "down"}, "statusDistribution": [{"amountKes": 11159, "count": 12, "label": "Successful", "percentage": 100}, {"amountKes": 0, "count": 0, "label": "Failed", "percentage": 0}, {"amountKes": 0, "count": 0, "label": "Pending", "percentage": 0}]}[39m
+17:20:46.091  ·  Test run complete: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"

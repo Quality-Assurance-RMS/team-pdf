@@ -1,0 +1,17 @@
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ANA-006 — Analytics field types: all numeric fields must be numbers not strings
+────────────────────────────────────────────────────────────
+17:24:11.125  ·  Test started: "TC-ANA-006 — Analytics field types: all numeric fields must be numbers not strings"
+17:24:11.233  ○  ▶ Step 1 — Fetch and validate all field types
+17:24:11.289  ·    GET /api/v1/analytics/dashboard/summary
+17:24:11.388  ✔    HTTP 502 received
+17:24:11.389  ·    Asserting: Response is 200
+17:24:11.396  ✘  Step failed after 111 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+17:24:11.398  ·  Test run complete: "TC-ANA-006 — Analytics field types: all numeric fields must be numbers not strings"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,19 @@
+[TC-ASUM-015] Response time: 504ms  (SLA: 2000ms)
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-015 – Response-Time SLA: must respond within 2 000 ms
+────────────────────────────────────────────────────────────
+17:20:03.211  ·  Test started: "TC-ASUM-015 – Response-Time SLA: must respond within 2 000 ms"
+17:20:03.213  ○  ▶ Step 1 – Measure round-trip time
+17:20:03.295  ·    GET /api/v1/analytics/dashboard/summary
+17:20:03.800  ✔    HTTP 502 received
+17:20:03.821  ✔  Step completed in 609 ms
+17:20:03.821  ○  ▶ Step 2 – HTTP 200
+17:20:03.889  ·    Asserting: HTTP 200
+17:20:03.986  ✘  Step failed after 164 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+17:20:03.992  ·  Test run complete: "TC-ASUM-015 – Response-Time SLA: must respond within 2 000 ms"
+────────────────────────────────────────────────────────────
+
