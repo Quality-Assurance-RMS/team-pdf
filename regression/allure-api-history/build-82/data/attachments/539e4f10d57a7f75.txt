@@ -1,0 +1,14 @@
+12:28:26.194  ·  Test started: "TC-OT-004 — GET /api/v1/token: expires_at is a future ISO 8601 timestamp"
+12:28:26.249  ○  ▶ Step 1 — Send GET /api/v1/token
+12:28:26.253  ·    GET /api/v1/token
+12:29:26.363  ✔    HTTP 500 received
+12:29:26.367  ✔  Step completed in 60118 ms
+12:29:26.367  ○  ▶ Step 2 — Assert HTTP 200
+12:29:26.368  ·    Asserting: HTTP status is 200
+12:29:26.377  ✘  Step failed after 10 ms — TC-OT-004 — expected 200, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m500[39m
+12:29:26.382  ·  Test run complete: "TC-OT-004 — GET /api/v1/token: expires_at is a future ISO 8601 timestamp"

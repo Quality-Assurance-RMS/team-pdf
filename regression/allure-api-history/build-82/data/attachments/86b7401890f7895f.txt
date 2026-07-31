@@ -1,0 +1,19 @@
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)
+────────────────────────────────────────────────────────────
+12:24:17.174  ·  Test started: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"
+12:24:17.286  ○  ▶ GET ?(no param) — No mcda_id param
+12:24:17.290  ·    GET /api/v1/analytics/dashboard/summary
+12:24:17.390  ✔    HTTP 502 received
+12:24:17.390  ·    Asserting: Request returns 200 without error
+12:24:17.402  ✘  Step failed after 116 ms — No mcda_id param — request must not error
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+12:24:17.474  ·  Test run complete: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"
+────────────────────────────────────────────────────────────
+
