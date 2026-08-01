@@ -1,0 +1,22 @@
+17:21:19.197  ·  Test started: "TC-DTPAY-005 â€" BUG-TPAY-03/04: isPositive flag must agree with postiveValue percentage"
+17:21:19.198  ○  ▶ Step 1 â€" Fetch today-payments response
+17:21:19.207  ·    GET /api/v1/dashboard/today-payments
+17:21:19.588  ✔    HTTP 200 received
+17:21:19.686  ✔  Step completed in 488 ms
+17:21:19.686  ○  ▶ Step 2 â€" Validate HTTP 200
+17:21:19.688  ·    Asserting: HTTP 200
+17:21:19.702  ✔    All assertions passed
+17:21:19.703  ✔  Step completed in 16 ms
+17:21:19.703  ○  ▶ Step 3 â€" BUG-TPAY-03: revenue.isPositive must not be true when postiveValue is negative
+17:21:19.709  ·    Asserting: revenue.isPositive agrees with the sign of postiveValue
+17:21:19.709  ✔    All assertions passed
+17:21:19.710  ✔  Step completed in 7 ms
+17:21:19.710  ○  ▶ Step 4 â€" BUG-TPAY-04: refunds.isPositive must be true or null when postiveValue is "0%"
+17:21:19.782  ·    Asserting: refunds.isPositive is not false when postiveValue is "0%" (zero is neutral)
+17:21:19.782  ✔    All assertions passed
+17:21:19.782  ✔  Step completed in 72 ms
+17:21:19.782  ○  ▶ Step 5 â€" payments.isPositive must agree with postiveValue (sanity check)
+17:21:19.788  ·    Asserting: payments.isPositive is consistent with postiveValue sign (informational)
+17:21:19.788  ✔    All assertions passed
+17:21:19.789  ✔  Step completed in 7 ms
+17:21:19.791  ·  Test run complete: "TC-DTPAY-005 â€" BUG-TPAY-03/04: isPositive flag must agree with postiveValue percentage"

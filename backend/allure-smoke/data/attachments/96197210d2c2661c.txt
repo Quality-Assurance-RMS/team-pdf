@@ -1,0 +1,104 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-DSH-003] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/status-currency
+  â–º HTTP Status                    : 200
+  â–º Content-Type                   : application/json
+  â–º Response has "data" wrapper     : true âš  DASH-ISSUE-5
+  â–º statusDistribution count        : 3
+  â–º currencyDistribution count      : 1
+  â–º byMethod count                  : MISSING
+  â–º peakMetrics present             : true
+    statusDistribution: label=Successful, percentage=100, amount="undefined" (string âš  DASH-ISSUE-2), count="12" (string âš  DASH-ISSUE-2), color="undefined" âš  DASH-ISSUE-6
+    statusDistribution: label=Failed, percentage=0, amount="undefined" (string âš  DASH-ISSUE-2), count="0" (string âš  DASH-ISSUE-2), color="undefined" âš  DASH-ISSUE-6
+    statusDistribution: label=Pending, percentage=0, amount="undefined" (string âš  DASH-ISSUE-2), count="0" (string âš  DASH-ISSUE-2), color="undefined" âš  DASH-ISSUE-6
+    currencyDistribution: label=KES, percentage=100%, amount="11159" (string âš  DASH-ISSUE-2), count="12" (string âš  DASH-ISSUE-2)
+    peakMetrics.peakTransactionsPerDay : "5" (string âš  DASH-ISSUE-2)
+    peakMetrics.peakHourWindow         : "10:00 AM – 10:59 AM"
+    peakMetrics.avgTPM                 : "1.1" (unit embedded âš  DASH-ISSUE-3)
+    peakMetrics.maxTPM                 : "2" (unit embedded âš  DASH-ISSUE-3)
+    peakMetrics.peakTxnDayChange       : "-86.8" (string % âš  DASH-ISSUE-4)
+    peakMetrics.peakTxnDayUp           : undefined
+    peakMetrics.avgTpmChange           : "-8.3" (string % âš  DASH-ISSUE-4)
+    peakMetrics.avgTpmUp               : undefined
+    peakMetrics.maxTpmChange           : "-77.8" (string % âš  DASH-ISSUE-4)
+    peakMetrics.maxTpmUp               : undefined
+  â–º Full Body:
+{
+    "data": {
+        "statusDistribution": [
+            {
+                "label": "Successful",
+                "percentage": 100,
+                "amountKes": 11159,
+                "count": 12
+            },
+            {
+                "label": "Failed",
+                "percentage": 0,
+                "amountKes": 0,
+                "count": 0
+            },
+            {
+                "label": "Pending",
+                "percentage": 0,
+                "amountKes": 0,
+                "count": 0
+            }
+        ],
+        "currencyDistribution": [
+            {
+                "label": "KES",
+                "percentage": 100,
+                "amount": 11159,
+                "count": 12
+            }
+        ],
+        "peakMetrics": {
+            "peakTransactionsPerDay": 5,
+            "peakTransactionDate": "2026-07-28",
+            "peakHourWindow": "10:00 AM – 10:59 AM",
+            "avgTPM": 1.1,
+            "maxTPM": 2,
+            "peakTxnDayChange": -86.8,
+            "peakTxnDayDirection": "down",
+            "avgTpmChange": -8.3,
+            "avgTpmDirection": "down",
+            "maxTpmChange": -77.8,
+            "maxTpmDirection": "down",
+            "peakHourWindowChange": -84.6,
+            "peakHourWindowDirection": "down"
+        }
+    }
+}
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSH-003 â€" statusDistribution: structure, fields, and label validation
+────────────────────────────────────────────────────────────
+17:20:36.195  ·  Test started: "TC-DSH-003 â€" statusDistribution: structure, fields, and label validation"
+17:20:36.197  ○  ▶ Step 1 â€" Build request
+17:20:36.387  ·    Asserting: request parameters are recorded
+17:20:36.387  ✔    All assertions passed
+17:20:36.401  ✔  Step completed in 204 ms
+17:20:36.401  ○  ▶ Step 2 â€" Send GET /status-currency and log response
+17:20:36.402  ·    GET /api/v1/dashboard/status-currency
+17:20:36.885  ✔    HTTP 200 received
+17:20:36.899  ✔  Step completed in 498 ms
+17:20:36.899  ○  ▶ Step 3 â€" Validate HTTP 200 and statusDistribution is a non-empty array
+17:20:36.900  ·    Asserting: HTTP 200 and statusDistribution is a non-empty array
+17:20:36.992  ✔    All assertions passed
+17:20:36.992  ✔  Step completed in 93 ms
+17:20:36.992  ○  ▶ Step 4 â€" Validate each statusDistribution item has required fields
+17:20:36.994  ·    Asserting: each statusDistribution item has label, percentage, amount, count, and color fields with correct types
+17:20:37.002  ✘  Step failed after 9 ms — item[0] must have "amount" field
+
+expect(received).toHaveProperty(path)
+
+Expected path: "amount"
+Received path: []
+
+Received value: {"amountKes": 11159, "count": 12, "label": "Successful", "percentage": 100}
+17:20:37.006  ·  Test run complete: "TC-DSH-003 â€" statusDistribution: structure, fields, and label validation"
+────────────────────────────────────────────────────────────
+

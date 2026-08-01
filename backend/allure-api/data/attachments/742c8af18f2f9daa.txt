@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SF-001 — GET /api/v1/fetch/status: Returns 200 with service status object
+────────────────────────────────────────────────────────────
+17:27:57.191  ·  Test started: "TC-SF-001 — GET /api/v1/fetch/status: Returns 200 with service status object"
+17:27:57.217  ○  ▶ Step 1 — Send GET /api/v1/fetch/status with auth
+17:27:57.224  ·    GET /api/v1/fetch/status
+17:28:57.256  ✔    HTTP 200 received
+17:28:57.262  ✔  Step completed in 60045 ms
+17:28:57.262  ○  ▶ Step 2 — Assert HTTP 200
+17:28:57.263  ·    Asserting: HTTP status is 200
+17:28:57.276  ✔    All assertions passed
+17:28:57.276  ✔  Step completed in 14 ms
+17:28:57.276  ○  ▶ Step 3 — Assert body has at least one field
+17:28:57.277  ·    Asserting: response body is non-empty
+17:28:57.281  ✔    All assertions passed
+17:28:57.281  ✔  Step completed in 5 ms
+17:28:57.284  ·  Test run complete: "TC-SF-001 — GET /api/v1/fetch/status: Returns 200 with service status object"
+────────────────────────────────────────────────────────────
+

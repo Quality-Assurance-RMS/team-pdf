@@ -1,0 +1,30 @@
+17:21:07.087  ·  Test started: "TC-DTPAY-003 â€" BUG-TPAY-01: Field name typos in API response"
+17:21:07.101  ○  ▶ Step 1 â€" Fetch today-payments response
+17:21:07.102  ·    GET /api/v1/dashboard/today-payments
+17:21:07.280  ✔    HTTP 200 received
+17:21:07.283  ✔  Step completed in 181 ms
+17:21:07.283  ○  ▶ Step 2 â€" Validate HTTP 200
+17:21:07.283  ·    Asserting: HTTP 200
+17:21:07.285  ✔    All assertions passed
+17:21:07.285  ✔  Step completed in 3 ms
+17:21:07.285  ○  ▶ Step 3 â€" Check "successfullPaymentKES" typo (double-l)
+17:21:07.288  ·    Asserting: successfulPaymentKES (single-l) is present instead of the typo field
+17:21:07.289  ✔    All assertions passed
+17:21:07.290  ✔  Step completed in 4 ms
+17:21:07.290  ○  ▶ Step 4 â€" Check "successfullPaymentDoller" typos (double-l + Doller)
+17:21:07.293  ·    Asserting: successfulPaymentDollar (correct spelling) is present
+17:21:07.295  ✔    All assertions passed
+17:21:07.295  ✔  Step completed in 5 ms
+17:21:07.295  ○  ▶ Step 5 â€" Check "failerfullPaymentKES" typo ("failer" + "full")
+17:21:07.298  ·    Asserting: failedPaymentKES (correct name) is present
+17:21:07.300  ✔    All assertions passed
+17:21:07.300  ✔  Step completed in 5 ms
+17:21:07.300  ○  ▶ Step 6 â€" Check "failerfullPaymentDoller" typo ("failer" + "Doller")
+17:21:07.303  ·    Asserting: failedPaymentDollar (correct name) is present
+17:21:07.305  ✔    All assertions passed
+17:21:07.305  ✔  Step completed in 5 ms
+17:21:07.305  ○  ▶ Step 7 â€" Check "postiveValue" typo (missing i)
+17:21:07.308  ·    Asserting: positiveValue (correct spelling) is present
+17:21:07.387  ✔    All assertions passed
+17:21:07.388  ✔  Step completed in 83 ms
+17:21:07.389  ·  Test run complete: "TC-DTPAY-003 â€" BUG-TPAY-01: Field name typos in API response"
