@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All profile form fields are visible
+────────────────────────────────────────────────────────────
+01:35:52.574  ·  Test started: "TC1 — All profile form fields are visible"
+01:35:52.758  ○  ▶ Step 1 — Verifies Full Name, Email Address, Phone Number, and Role fields render in the Profile Settings form
+01:35:52.782  ·    Test scope: Verifies Full Name, Email Address, Phone Number, and Role fields render in the Profile Settings form
+01:35:52.782  ✔  Step completed in 24 ms
+01:35:52.783  ○  ▶ Step 2 — Navigate to Settings page
+01:35:52.784  ·    Opening the Settings page
+01:35:54.187  ✔    Navigation to Settings page initiated successfully
+01:35:55.114  ✔  Step completed in 2331 ms
+01:35:55.114  ○  ▶ Step 3 — Verify page loads successfully
+01:35:55.115  ·    Waiting for all Settings page elements to render
+01:36:10.319  ✘  Step failed after 15204 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settings/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:36:12.244  ·  Test run complete: "TC1 — All profile form fields are visible"
+────────────────────────────────────────────────────────────
+
