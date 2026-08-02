@@ -1,0 +1,17 @@
+POST https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services
+────────────────────────────────────────────────────────────
+02:18:11.604  ·  Test started: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"
+02:18:11.814  ○  ▶ Step 1 — Collect Analytics 405 error body
+02:18:11.818  ·    POST /api/v1/analytics/dashboard/summary
+02:18:12.014  ✔    HTTP 502 received
+02:18:12.029  ·    Asserting: Analytics returns 405
+02:18:12.118  ✘  Step failed after 300 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 405
+Received: 502
+02:18:12.120  ·  Test run complete: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"
+────────────────────────────────────────────────────────────
+
