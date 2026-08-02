@@ -1,0 +1,21 @@
+01:38:31.141  ·  Test started: "TC1 — "Success" status badge is rendered in the table"
+01:38:31.843  ○  ▶ Step 1 — Verifies that at least one Success badge is visible in the transactions table
+01:38:31.846  ·    Test scope: Verifies that at least one Success badge is visible in the transactions table
+01:38:31.847  ✔  Step completed in 4 ms
+01:38:31.848  ○  ▶ Step 2 — Navigate to Transactions page
+01:38:31.858  ·    Opening the Transactions page
+01:38:33.248  ✔    Navigation to Transactions page initiated successfully
+01:38:34.059  ✔  Step completed in 2212 ms
+01:38:34.059  ○  ▶ Step 3 — Verify page loads successfully
+01:38:34.060  ·    Waiting for all Transactions page elements to render
+01:38:39.142  ✘  Step failed after 5082 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    13 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:38:39.851  ·  Test run complete: "TC1 — "Success" status badge is rendered in the table"

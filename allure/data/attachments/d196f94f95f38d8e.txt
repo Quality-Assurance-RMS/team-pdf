@@ -1,0 +1,21 @@
+01:35:11.869  ·  Test started: "TC1 — "Reports" heading is visible"
+01:35:12.092  ○  ▶ Step 1 — Verifies the Reports heading renders on the Reports page after navigation
+01:35:12.094  ·    Test scope: Verifies the Reports heading renders on the Reports page after navigation
+01:35:12.095  ✔  Step completed in 3 ms
+01:35:12.097  ○  ▶ Step 2 — Navigate to Reports page
+01:35:12.097  ·    Opening the Reports page
+01:35:14.167  ✔    Navigation to Reports page initiated successfully
+01:35:14.839  ✔  Step completed in 2742 ms
+01:35:14.839  ○  ▶ Step 3 — Verify page loads successfully
+01:35:14.840  ·    Waiting for all Reports page elements to render
+01:35:29.861  ✘  Step failed after 15022 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/reports/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:35:31.456  ·  Test run complete: "TC1 — "Reports" heading is visible"

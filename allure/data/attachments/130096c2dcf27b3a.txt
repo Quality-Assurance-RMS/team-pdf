@@ -1,0 +1,21 @@
+01:39:12.257  ·  Test started: "TC2 — Status filter dropdown is visible"
+01:39:12.595  ○  ▶ Step 1 — Verifies the "All Status" filter dropdown is rendered on the Transactions page
+01:39:12.597  ·    Test scope: Verifies the "All Status" filter dropdown is rendered on the Transactions page
+01:39:12.597  ✔  Step completed in 2 ms
+01:39:12.598  ○  ▶ Step 2 — Navigate to Transactions page
+01:39:12.599  ·    Opening the Transactions page
+01:39:14.233  ✔    Navigation to Transactions page initiated successfully
+01:39:15.563  ✔  Step completed in 2965 ms
+01:39:15.563  ○  ▶ Step 3 — Verify page loads successfully
+01:39:15.631  ·    Waiting for all Transactions page elements to render
+01:39:20.845  ✘  Step failed after 5282 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    12 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:39:23.941  ·  Test run complete: "TC2 — Status filter dropdown is visible"

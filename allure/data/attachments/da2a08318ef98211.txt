@@ -1,0 +1,21 @@
+01:38:47.763  ·  Test started: "TC1 — Date filter defaults to "Today""
+01:38:48.334  ○  ▶ Step 1 — Verifies the date filter dropdown is visible and defaults to "Today"
+01:38:48.338  ·    Test scope: Verifies the date filter dropdown is visible and defaults to "Today"
+01:38:48.339  ✔  Step completed in 5 ms
+01:38:48.340  ○  ▶ Step 2 — Navigate to Transactions page
+01:38:48.342  ·    Opening the Transactions page
+01:38:50.249  ✔    Navigation to Transactions page initiated successfully
+01:38:51.266  ✔  Step completed in 2927 ms
+01:38:51.266  ○  ▶ Step 3 — Verify page loads successfully
+01:38:51.267  ·    Waiting for all Transactions page elements to render
+01:38:56.360  ✘  Step failed after 5094 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    12 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:38:58.644  ·  Test run complete: "TC1 — Date filter defaults to "Today""
