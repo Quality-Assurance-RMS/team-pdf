@@ -1,0 +1,53 @@
+[TC-DREVT-011] All response headers:
+{
+  "content-type": "application/json",
+  "transfer-encoding": "chunked",
+  "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+  "cache-control": "max-age=60, private",
+  "date": "Sun, 02 Aug 2026 17:20:31 GMT",
+  "server": "RMS-Gateway",
+  "access-control-allow-origin": "*",
+  "access-control-allow-methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+  "access-control-max-age": "3600",
+  "access-control-expose-headers": "*",
+  "access-control-allow-headers": "*",
+  "connection": "close"
+}
+[TC-DREVT-011] Security audit: {
+  "cache-control": "max-age=60, private",
+  "x-content-type-options": "MISSING",
+  "x-frame-options": "MISSING",
+  "strict-transport-security": "MISSING",
+  "content-security-policy": "MISSING",
+  "referrer-policy": "MISSING"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-011 â€” BUG-REVT-10/12: Cache-Control and security headers must be present
+────────────────────────────────────────────────────────────
+17:20:30.617  ·  Test started: "TC-DREVT-011 â€” BUG-REVT-10/12: Cache-Control and security headers must be present"
+17:20:30.627  ○  ▶ Step 1 â€” Fetch response and inspect all security headers
+17:20:30.627  ·    GET /api/v1/dashboard/revenue-trend
+17:20:31.102  ✔    HTTP 200 received
+17:20:31.104  ✔  Step completed in 477 ms
+17:20:31.104  ○  ▶ Step 2 â€” Validate HTTP 200
+17:20:31.104  ·    Asserting: Validate HTTP 200
+17:20:31.106  ✔    All assertions passed
+17:20:31.106  ✔  Step completed in 3 ms
+17:20:31.106  ○  ▶ Step 3 â€” BUG-REVT-10: Cache-Control must be present and prohibit caching
+17:20:31.109  ·    Asserting: BUG-REVT-10: Cache-Control must be present and pr
+17:20:31.112  ✔    All assertions passed
+17:20:31.113  ✔  Step completed in 6 ms
+17:20:31.113  ○  ▶ Step 4 â€” BUG-REVT-12a: X-Content-Type-Options must be nosniff
+17:20:31.118  ·    Asserting: BUG-REVT-12a: X-Content-Type-Options must be nosn
+17:20:31.125  ✔    All assertions passed
+17:20:31.126  ✔  Step completed in 13 ms
+17:20:31.126  ○  ▶ Step 5 â€” BUG-REVT-12b: X-Frame-Options must be present
+17:20:31.203  ·    Asserting: BUG-REVT-12b: X-Frame-Options must be present
+17:20:31.210  ✔    All assertions passed
+17:20:31.210  ✔  Step completed in 84 ms
+17:20:31.210  ○  ▶ Step 6 â€” Full security header audit
+17:20:31.217  ✔  Step completed in 7 ms
+17:20:31.219  ·  Test run complete: "TC-DREVT-011 â€” BUG-REVT-10/12: Cache-Control and security headers must be present"
+────────────────────────────────────────────────────────────
+
