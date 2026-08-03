@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Conversion Ratio is visible in the Settlement & Payout Overview
+────────────────────────────────────────────────────────────
+01:34:47.147  ·  Test started: "TC1 — Conversion Ratio is visible in the Settlement & Payout Overview"
+01:34:47.459  ○  ▶ Step 1 — Verifies the Conversion Ratio metric renders in the Settlement & Payout Overview section
+01:34:47.460  ·    Test scope: Verifies the Conversion Ratio metric renders in the Settlement & Payout Overview section
+01:34:47.460  ✔  Step completed in 1 ms
+01:34:47.461  ○  ▶ Step 2 — Navigate to Reports page
+01:34:47.462  ·    Opening the Reports page
+01:34:49.158  ✔    Navigation to Reports page initiated successfully
+01:34:50.457  ✔  Step completed in 2996 ms
+01:34:50.457  ○  ▶ Step 3 — Verify page loads successfully
+01:34:50.459  ·    Waiting for all Reports page elements to render
+01:35:05.553  ✘  Step failed after 15096 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/reports/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:35:10.680  ·  Test run complete: "TC1 — Conversion Ratio is visible in the Settlement & Payout Overview"
+────────────────────────────────────────────────────────────
+
