@@ -1,0 +1,228 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: API/deep-regression-api.spec.ts >> Dashboard API — Edge Cases (requires valid DASHBOARD_API_TOKEN) >> [BUG-DB-008] TC-DB-008 — monthly-revenue: invalid year values accepted without 400
+- Location: tests/API/deep-regression-api.spec.ts:981:7
+
+# Error details
+
+```
+Error: [BUG-DB-008] year=9999 must return 400
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 200
+```
+
+# Test source
+
+```ts
+  919  |       allure.parameter('HTTP Status', String(res.status));
+  920  |       allure.parameter('Error message', String(res.body?.message ?? 'N/A'));
+  921  |       bugAttach('BUG-DB-006',
+  922  |         '200 OK — single day is a valid range',
+  923  |         `HTTP ${res.status} — from_date=to_date rejected`,
+  924  |         'Users cannot query a single historical day via the custom period filter',
+  925  |         'Change date range validator from strict < to <= (from_date <= to_date)',
+  926  |       );
+  927  |       logger.info('Asserting: Single-day range (from_date=to_date) returns 200');
+  928  |       expect(res.status, '[BUG-DB-006] from_date=to_date must return 200 (single day is valid)').toBe(200);
+  929  |       logger.pass('All assertions passed');
+  930  |     });
+  931  |   });
+  932  | 
+  933  |   // ── TC-DB-007 ─────────────────────────────────────────────────────────────
+  934  |   test('[BUG-DB-007] TC-DB-007 — successful_payments% + failed_payments% must equal 100%', async ({ logger }) => {
+  935  |     labels('Dashboard API', 'TC-DB-007', 'Payment Rate Percentages Do Not Sum to 100%', 'high');
+  936  |     await allure.description(
+  937  |       '**[BUG-DB-007]**\n\n' +
+  938  |       'The dashboard summary returns two rate fields:\n' +
+  939  |       '- `successful_payments.rate_pct` — the success rate\n' +
+  940  |       '- `failed_payments.rate_pct` — the failure rate\n\n' +
+  941  |       'In a two-state system (success or failure), these two rates must sum to exactly 100%.\n\n' +
+  942  |       '**Why they do not sum to 100%:**\n' +
+  943  |       'There is a third state — PENDING transactions — that is not counted in either rate. ' +
+  944  |       'The formula used is:\n' +
+  945  |       '  `success_rate = successful / total` and `fail_rate = failed / total`\n\n' +
+  946  |       'If there are 135 total and 0 successful and 0 failed (all pending), both rates are 0% ' +
+  947  |       'and they sum to 0% instead of 100%.\n\n' +
+  948  |       '**Expected:** Either include pending in the denominator and show a 3rd metric, ' +
+  949  |       'or explicitly document that rates are out of (successful + failed), not all transactions.',
+  950  |     );
+  951  | 
+  952  |     await logger.step('Step 1 — Fetch summary and check rate sum', async () => {
+  953  |       logger.info('GET /api/v1/dashboard/summary?period=week');
+  954  |       const res = await GET(DB_BASE, `${SUMMARY}?period=week`, DB_TOKEN);
+  955  |       logger.pass('HTTP ' + res.status + ' received');
+  956  |       if (res.status !== 200) { test.skip(); return; }
+  957  | 
+  958  |       const body = res.body as Record<string, {rate_pct?: number}>;
+  959  |       const successRate = body.successful_payments?.rate_pct ?? 0;
+  960  |       const failRate    = body.failed_payments?.rate_pct ?? 0;
+  961  |       const sum         = successRate + failRate;
+  962  | 
+  963  |       allure.parameter('successful_payments.rate_pct', String(successRate));
+  964  |       allure.parameter('failed_payments.rate_pct',     String(failRate));
+  965  |       allure.parameter('Sum',                          String(sum));
+  966  |       allure.parameter('Expected sum',                 '100');
+  967  | 
+  968  |       bugAttach('BUG-DB-007',
+  969  |         'successful_payments.rate_pct + failed_payments.rate_pct = 100',
+  970  |         `${successRate} + ${failRate} = ${sum} (not 100)`,
+  971  |         'Dashboard metrics appear inconsistent; pending transactions create an unexplained gap',
+  972  |         'Add pending_payments.rate_pct field, or compute rates as successful/(successful+failed)',
+  973  |       );
+  974  |       logger.info('Asserting: successful_payments.rate_pct + failed_payments.rate_pct equals 100%');
+  975  |       expect(sum, `[BUG-DB-007] success(${successRate}%) + fail(${failRate}%) must equal 100%, got ${sum}%`).toBeCloseTo(100, 1);
+  976  |       logger.pass('All assertions passed');
+  977  |     });
+  978  |   });
+  979  | 
+  980  |   // ── TC-DB-008 ─────────────────────────────────────────────────────────────
+  981  |   test('[BUG-DB-008] TC-DB-008 — monthly-revenue: invalid year values accepted without 400', async ({ logger }) => {
+  982  |     labels('Dashboard API', 'TC-DB-008', 'Year Parameter Lacks Bounds Validation', 'medium');
+  983  |     await allure.description(
+  984  |       '**[BUG-DB-008]**\n\n' +
+  985  |       'The `/dashboard/monthly-revenue` endpoint accepts invalid year values without returning 400:\n\n' +
+  986  |       '| Input | Expected | Actual |\n' +
+  987  |       '|-------|----------|--------|\n' +
+  988  |       '| year=0 | 400 | 200 (defaults to current year) |\n' +
+  989  |       '| year= (empty) | 400 | 200 (defaults to current year) |\n' +
+  990  |       '| year=9999 | 400 or 200 with empty data | 200 |\n' +
+  991  |       '| year=abc | 400 | ? |\n\n' +
+  992  |       '**Expected:** Reject years outside a sensible range (e.g. 2000–2099) with 400 Bad Request.',
+  993  |     );
+  994  | 
+  995  |     const invalidYears = [
+  996  |       { y: '0',    label: 'year=0',     expectStatus: 400 },
+  997  |       { y: '',     label: 'year=empty', expectStatus: 400 },
+  998  |       { y: '9999', label: 'year=9999',  expectStatus: 400 },
+  999  |       { y: 'abc',  label: 'year=abc',   expectStatus: 400 },
+  1000 |       { y: '-1',   label: 'year=-1',    expectStatus: 400 },
+  1001 |     ];
+  1002 | 
+  1003 |     for (const scenario of invalidYears) {
+  1004 |       await logger.step(`${scenario.label}`, async () => {
+  1005 |         const url = scenario.y !== '' ? `${MONTHLY}?year=${scenario.y}` : `${MONTHLY}?year=`;
+  1006 |         logger.info('GET ' + url);
+  1007 |         const res = await GET(DB_BASE, url, DB_TOKEN);
+  1008 |         logger.pass('HTTP ' + res.status + ' received');
+  1009 |         allure.parameter(`${scenario.label} → HTTP`, String(res.status));
+  1010 |         if (res.status !== 400) {
+  1011 |           bugAttach('BUG-DB-008',
+  1012 |             '400 Bad Request — year must be between 2000 and 2099',
+  1013 |             `HTTP ${res.status} for ${scenario.label}`,
+  1014 |             'Invalid year inputs return data or silently default — no validation at the input layer',
+  1015 |             'Validate year is a 4-digit integer in a sensible range (e.g. 2000–2099)',
+  1016 |           );
+  1017 |         }
+  1018 |         logger.info(`Asserting: ${scenario.label} returns 400`);
+> 1019 |         expect.soft(res.status, `[BUG-DB-008] ${scenario.label} must return 400`).toBe(400);
+       |                                                                                   ^ Error: [BUG-DB-008] year=9999 must return 400
+  1020 |         logger.pass('All assertions passed');
+  1021 |       });
+  1022 |     }
+  1023 |   });
+  1024 | 
+  1025 |   // ── TC-DB-009 ─────────────────────────────────────────────────────────────
+  1026 |   test('[BUG-DB-009] TC-DB-009 — revenue-trend labels[] contains duplicate month names (no year)', async ({ logger }) => {
+  1027 |     labels('Dashboard API', 'TC-DB-009', 'Duplicate Labels in Revenue Trend Array', 'medium');
+  1028 |     await allure.description(
+  1029 |       '**[BUG-DB-009]**\n\n' +
+  1030 |       'The `/dashboard/revenue-trend` `data.labels[]` array contains duplicate month names ' +
+  1031 |       'like `["Jan","Feb",...,"Dec","Jan","Feb","Mar",...]` because the 12-month rolling window ' +
+  1032 |       'spans two calendar years but the labels only show month names without the year.\n\n' +
+  1033 |       '**Example:** If today is June 2026, the trend covers July 2025 – June 2026, giving two ' +
+  1034 |       '"Jun" entries (Jun 2025 at the end of the old year, Jun 2026 at the current end).\n\n' +
+  1035 |       '**Expected:** Labels should include the year: `"Jun 2025"`, `"Jun 2026"`.\n\n' +
+  1036 |       '**Impact:** Chart libraries that use labels as keys will de-duplicate them, causing ' +
+  1037 |       'data points to overlap. A chart showing 12 months will appear to show fewer data points.',
+  1038 |     );
+  1039 | 
+  1040 |     await logger.step('Step 1 — Fetch revenue-trend and check for duplicate labels', async () => {
+  1041 |       logger.info('GET /api/v1/dashboard/revenue-trend');
+  1042 |       const res = await GET(DB_BASE, TREND, DB_TOKEN);
+  1043 |       logger.pass('HTTP ' + res.status + ' received');
+  1044 |       if (res.status !== 200) { test.skip(); return; }
+  1045 | 
+  1046 |       const labels_arr: string[] = res.body?.data?.labels ?? [];
+  1047 |       const unique    = new Set(labels_arr);
+  1048 |       const hasDupes  = unique.size < labels_arr.length;
+  1049 |       const dupes     = labels_arr.filter((l, i) => labels_arr.indexOf(l) !== i);
+  1050 | 
+  1051 |       allure.parameter('Total labels', String(labels_arr.length));
+  1052 |       allure.parameter('Unique labels', String(unique.size));
+  1053 |       allure.parameter('Duplicate labels', dupes.join(', ') || 'none');
+  1054 |       allure.attachment('Labels array', JSON.stringify(labels_arr), 'application/json');
+  1055 | 
+  1056 |       if (hasDupes) {
+  1057 |         bugAttach('BUG-DB-009',
+  1058 |           'All labels are unique (include year: "Jun 2025", "Jun 2026")',
+  1059 |           `Duplicate labels found: [${dupes.join(', ')}]`,
+  1060 |           'Chart libraries de-duplicate labels causing data points to overlap or disappear',
+  1061 |           'Append year to each label: "Jun 2025" instead of "Jun"',
+  1062 |         );
+  1063 |       }
+  1064 |       logger.info('Asserting: revenue-trend labels array contains no duplicates');
+  1065 |       expect(hasDupes, `[BUG-DB-009] labels[] must not contain duplicates, found: [${dupes.join(', ')}]`).toBe(false);
+  1066 |       logger.pass('All assertions passed');
+  1067 |     });
+  1068 |   });
+  1069 | 
+  1070 | });
+  1071 | 
+  1072 | // ═════════════════════════════════════════════════════════════════════════════
+  1073 | //  4. TRANSACTION API — EDGE CASES
+  1074 | //  Note: These tests require a valid TRANSACTION_API_TOKEN in .env
+  1075 | // ═════════════════════════════════════════════════════════════════════════════
+  1076 | 
+  1077 | test.describe('Transaction API — Edge Cases (requires valid TRANSACTION_API_TOKEN)', () => {
+  1078 | 
+  1079 |   const SUMMARY    = '/api/v1/transaction/summary';
+  1080 |   const LIST       = '/api/v1/transaction';
+  1081 |   const FILTER_OPT = '/api/v1/transaction/filter-options';
+  1082 |   const KNOWN_UUID = '00bba274-1617-4568-aaf2-a2ed08b66a18';
+  1083 | 
+  1084 |   // ── TC-TXN-001 ────────────────────────────────────────────────────────────
+  1085 |   test('[BUG-TXN-001] TC-TXN-001 — Transaction list: negative page (-1) must return 400', async ({ logger }) => {
+  1086 |     labels('Transaction API', 'TC-TXN-001', 'Negative Page Number Not Rejected', 'medium');
+  1087 |     await allure.description(
+  1088 |       '**[BUG-TXN-001]**\n\n' +
+  1089 |       'Passing `page=-1` to the transaction list endpoint should return 400 Bad Request. ' +
+  1090 |       'A negative page index is not meaningful and indicates a client error.\n\n' +
+  1091 |       '**Expected:** HTTP 400 with `"message":"page must be >= 0"`\n\n' +
+  1092 |       '**Impact:** If the server treats page=-1 as page=0 (common ORM behaviour), results are ' +
+  1093 |       'silently incorrect with no indication to the client. If it errors at the DB layer, ' +
+  1094 |       'it produces a confusing 500.',
+  1095 |     );
+  1096 | 
+  1097 |     await logger.step('Step 1 — GET list with page=-1', async () => {
+  1098 |       logger.info('GET /api/v1/transaction?period=today&page=-1&size=10');
+  1099 |       const res = await GET(TXN_BASE, `${LIST}?period=today&page=-1&size=10`, TXN_TOKEN);
+  1100 |       logger.pass('HTTP ' + res.status + ' received');
+  1101 |       allure.parameter('HTTP Status', String(res.status));
+  1102 |       allure.parameter('Response body', JSON.stringify(res.body).slice(0, 200));
+  1103 |       bugAttach('BUG-TXN-001',
+  1104 |         '400 Bad Request — page must be >= 0',
+  1105 |         `HTTP ${res.status} for page=-1`,
+  1106 |         'Negative page silently returns page 0 or causes 500; client cannot detect invalid input',
+  1107 |         'Add @Min(0) or equivalent validation on page parameter; return 400 for negative values',
+  1108 |       );
+  1109 |       logger.info('Asserting: page=-1 returns 400 or 422');
+  1110 |       expect([400, 422], `[BUG-TXN-001] page=-1 must return 400, got ${res.status}`).toContain(res.status);
+  1111 |       logger.pass('All assertions passed');
+  1112 |     });
+  1113 |   });
+  1114 | 
+  1115 |   // ── TC-TXN-002 ────────────────────────────────────────────────────────────
+  1116 |   test('[BUG-TXN-002] TC-TXN-002 — Transaction list: size=0 returns 200 with empty data (should be 400)', async ({ logger }) => {
+  1117 |     labels('Transaction API', 'TC-TXN-002', 'Zero Page Size Accepted', 'medium');
+  1118 |     await allure.description(
+  1119 |       '**[BUG-TXN-002]**\n\n' +
+```
