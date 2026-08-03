@@ -1,0 +1,36 @@
+17:19:47.717  ·  Test started: "TC-ASUM-002 – BUG-ASUM-01 (BLOCKER): Complete auth bypass – endpoint is publicly accessible"
+17:19:47.718  ○  ▶ Auth bypass: "No Authorization header"
+17:19:47.813  ·    GET /api/v1/analytics/dashboard/summary (No Authorization header)
+17:19:48.109  ✔    HTTP 502 received
+17:19:48.125  ·    Asserting: status must be 401
+17:19:48.223  ✔  Step completed in 504 ms
+17:19:48.223  ○  ▶ Auth bypass: "Invalid Bearer token"
+17:19:48.301  ·    GET /api/v1/analytics/dashboard/summary (Invalid Bearer token)
+17:19:48.408  ✔    HTTP 502 received
+17:19:48.415  ·    Asserting: status must be 401
+17:19:48.422  ✔  Step completed in 199 ms
+17:19:48.422  ○  ▶ Auth bypass: "Bearer empty string"
+17:19:48.502  ·    GET /api/v1/analytics/dashboard/summary (Bearer empty string)
+17:19:48.622  ✔    HTTP 502 received
+17:19:48.623  ·    Asserting: status must be 401
+17:19:48.702  ✔  Step completed in 281 ms
+17:19:48.702  ○  ▶ Auth bypass: "Bearer null literal"
+17:19:48.703  ·    GET /api/v1/analytics/dashboard/summary (Bearer null literal)
+17:19:48.816  ✔    HTTP 502 received
+17:19:48.821  ·    Asserting: status must be 401
+17:19:48.825  ✔  Step completed in 123 ms
+17:19:48.825  ○  ▶ Auth bypass: "Wrong scheme (Basic)"
+17:19:48.900  ·    GET /api/v1/analytics/dashboard/summary (Wrong scheme (Basic))
+17:19:49.101  ✔    HTTP 502 received
+17:19:49.105  ·    Asserting: status must be 401
+17:19:49.112  ✔  Step completed in 287 ms
+17:19:49.112  ○  ▶ Auth bypass: "Clearly expired token"
+17:19:49.113  ·    GET /api/v1/analytics/dashboard/summary (Clearly expired token)
+17:19:49.300  ✔    HTTP 502 received
+17:19:49.306  ·    Asserting: status must be 401
+17:19:49.308  ✔  Step completed in 196 ms
+17:19:49.308  ○  ▶ Confirm total bypass count
+17:19:49.314  ·    Asserting: bypass count must be 0
+17:19:49.315  ✔    All assertions passed
+17:19:49.316  ✔  Step completed in 8 ms
+17:19:49.318  ·  Test run complete: "TC-ASUM-002 – BUG-ASUM-01 (BLOCKER): Complete auth bypass – endpoint is publicly accessible"

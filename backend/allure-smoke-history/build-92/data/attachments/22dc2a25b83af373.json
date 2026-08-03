@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-05-15&to_date=2026-05-15",
+    "params": {
+      "period": "custom",
+      "from_date": "2026-05-15",
+      "to_date": "2026-05-15"
+    },
+    "headers": {
+      "Authorization": "Bearer ***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 400,
+    "content_type": "application/json",
+    "body": {
+      "errorCode": 400,
+      "errorMessage": "from_date must be before to_date"
+    }
+  }
+}

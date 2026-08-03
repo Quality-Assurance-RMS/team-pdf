@@ -1,0 +1,48 @@
+[TC-ASUM-011] Headers:
+{
+  "date": "Mon, 03 Aug 2026 17:19:55 GMT",
+  "content-type": "text/html; charset=utf-8",
+  "content-length": "229",
+  "server": "RMS-Gateway",
+  "x-apisix-upstream-status": "502",
+  "access-control-allow-origin": "*",
+  "access-control-allow-methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+  "access-control-max-age": "3600",
+  "access-control-expose-headers": "*",
+  "access-control-allow-headers": "*",
+  "connection": "close"
+}
+[TC-ASUM-011] Security audit: {
+  "cache-control": "MISSING",
+  "x-content-type-options": "MISSING",
+  "x-frame-options": "MISSING",
+  "strict-transport-security": "MISSING",
+  "content-security-policy": "MISSING",
+  "vary": "MISSING"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-011 – BUG-ASUM-10: Cache-Control and security headers must be present
+────────────────────────────────────────────────────────────
+17:19:55.302  ·  Test started: "TC-ASUM-011 – BUG-ASUM-10: Cache-Control and security headers must be present"
+17:19:55.303  ○  ▶ Step 1 – Fetch response headers
+17:19:55.314  ·    GET /api/v1/analytics/dashboard/summary
+17:19:55.813  ✔    HTTP 502 received
+17:19:55.907  ✔  Step completed in 603 ms
+17:19:55.907  ○  ▶ Step 2 – Cache-Control must prevent caching of real-time analytics
+17:19:55.919  ·    Asserting: Cache-Control header is present
+17:19:56.025  ✔    All assertions passed
+17:19:56.028  ✔  Step completed in 121 ms
+17:19:56.028  ○  ▶ Step 3 – X-Content-Type-Options: nosniff must be present
+17:19:56.105  ·    Asserting: X-Content-Type-Options: nosniff present
+17:19:56.110  ✔    All assertions passed
+17:19:56.110  ✔  Step completed in 82 ms
+17:19:56.110  ○  ▶ Step 4 – X-Frame-Options must be present
+17:19:56.122  ·    Asserting: X-Frame-Options header present
+17:19:56.126  ✔    All assertions passed
+17:19:56.126  ✔  Step completed in 16 ms
+17:19:56.126  ○  ▶ Step 5 – Full security header audit
+17:19:56.203  ✔  Step completed in 77 ms
+17:19:56.207  ·  Test run complete: "TC-ASUM-011 – BUG-ASUM-10: Cache-Control and security headers must be present"
+────────────────────────────────────────────────────────────
+

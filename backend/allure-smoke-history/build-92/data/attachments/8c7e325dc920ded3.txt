@@ -1,0 +1,16 @@
+17:22:43.632  ·  Test started: "TC-SMK-006 â€" List: period=week keyword search q=CONF-MAY26 returns data array"
+17:22:43.634  ○  ▶ Step 1 â€" Build request
+17:22:43.924  ✔  Step completed in 290 ms
+17:22:43.924  ○  ▶ Step 2 â€" Send GET /transaction?q=CONF-MAY26 and log response
+17:22:43.925  ·    GET /api/v1/transaction?period=week&q=CONF-MAY26
+17:22:44.206  ✔    HTTP 400 received
+17:22:44.215  ✔  Step completed in 291 ms
+17:22:44.215  ○  ▶ Step 3 â€" Validate HTTP 200, pagination metadata, and data array
+17:22:44.216  ·    Asserting: HTTP 200, pagination metadata, and total_count > 0
+17:22:44.227  ✘  Step failed after 12 ms — TC-SMK-006 â€" HTTP 200 expected
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+17:22:44.301  ·  Test run complete: "TC-SMK-006 â€" List: period=week keyword search q=CONF-MAY26 returns data array"
