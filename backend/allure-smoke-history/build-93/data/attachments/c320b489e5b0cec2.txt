@@ -1,0 +1,20 @@
+17:45:11.376  ·  Test started: "TC-SMK-008 â€" Filter Options: returns 200 with all filter arrays validated"
+17:45:11.382  ○  ▶ Step 1 â€" Build request
+17:45:11.875  ·    Asserting: request parameters are recorded
+17:45:11.875  ✔    All assertions passed
+17:45:11.984  ✔  Step completed in 602 ms
+17:45:11.984  ○  ▶ Step 2 â€" Send GET /filter-options and log response
+17:45:11.985  ·    GET /api/v1/transaction/filter-options
+17:45:12.372  ✔    HTTP 200 received
+17:45:12.489  ✔  Step completed in 505 ms
+17:45:12.489  ○  ▶ Step 3 â€" Validate HTTP 200 and all top-level keys present
+17:45:12.493  ·    Asserting: HTTP 200, body defined, and top-level keys present
+17:45:12.675  ✘  Step failed after 186 ms — statuses key must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"statuses"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"data": {"methods": ["MOBILE_MONEY", "CARD", "CARD_PAYMENT", "MPESA", "BANK"], "statuses": ["Failed", "Pending", "Success"]}, "message": "success", "statusCode": 200, "success": true}[39m
+17:45:12.688  ·  Test run complete: "TC-SMK-008 â€" Filter Options: returns 200 with all filter arrays validated"

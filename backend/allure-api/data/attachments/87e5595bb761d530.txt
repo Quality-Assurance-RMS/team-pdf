@@ -1,0 +1,25 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SF-002 — GET /api/v1/fetch/status: All 7 required fields are present and non-null
+────────────────────────────────────────────────────────────
+17:50:12.624  ·  Test started: "TC-SF-002 — GET /api/v1/fetch/status: All 7 required fields are present and non-null"
+17:50:12.641  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+17:50:12.643  ·    GET /api/v1/fetch/status
+17:51:12.694  ✔    HTTP 200 received
+17:51:12.696  ✔  Step completed in 60054 ms
+17:51:12.696  ○  ▶ Step 2 — Assert HTTP 200
+17:51:12.696  ·    Asserting: HTTP status is 200
+17:51:12.709  ✔    All assertions passed
+17:51:12.709  ✔  Step completed in 13 ms
+17:51:12.709  ○  ▶ Step 3 — Check each required field
+17:51:12.710  ·    Asserting: all 7 required fields are present and non-null
+17:51:12.720  ✘  Step failed after 11 ms — "mockEnabled" must be present
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+17:51:12.721  ·  Test run complete: "TC-SF-002 — GET /api/v1/fetch/status: All 7 required fields are present and non-null"
+────────────────────────────────────────────────────────────
+
