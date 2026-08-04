@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-GW-004",
+  "expected": "X-Content-Type-Options: nosniff",
+  "actual": "X-Content-Type-Options: NOT PRESENT",
+  "impact": "OWASP A05: Missing security headers enable MIME sniffing and clickjacking attacks",
+  "fix": "Add X-Content-Type-Options, X-Frame-Options, and HSTS via APISIX response-rewrite plugin"
+}
