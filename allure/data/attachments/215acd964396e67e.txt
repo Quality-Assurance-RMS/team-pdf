@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Save Changes" button is visible and enabled
+────────────────────────────────────────────────────────────
+01:35:53.405  ·  Test started: "TC1 — "Save Changes" button is visible and enabled"
+01:35:53.624  ○  ▶ Step 1 — Verifies the Save Changes button is rendered and enabled on the Profile Settings tab
+01:35:53.657  ·    Test scope: Verifies the Save Changes button is rendered and enabled on the Profile Settings tab
+01:35:53.658  ✔  Step completed in 33 ms
+01:35:53.659  ○  ▶ Step 2 — Navigate to Settings page
+01:35:53.661  ·    Opening the Settings page
+01:35:54.799  ✔    Navigation to Settings page initiated successfully
+01:35:55.193  ✔  Step completed in 1534 ms
+01:35:55.193  ○  ▶ Step 3 — Verify page loads successfully
+01:35:55.194  ·    Waiting for all Settings page elements to render
+01:36:10.272  ✘  Step failed after 15079 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settings/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:36:12.995  ·  Test run complete: "TC1 — "Save Changes" button is visible and enabled"
+────────────────────────────────────────────────────────────
+
