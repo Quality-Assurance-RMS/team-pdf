@@ -1,0 +1,24 @@
+17:21:40.500  ·  Test started: "TC-DSH-004 â€" currencyDistribution: KES + USD entries, percentages sum to ~100 %"
+17:21:40.502  ○  ▶ Step 1 â€" Build request
+17:21:40.697  ·    Asserting: request parameters are recorded
+17:21:40.697  ✔    All assertions passed
+17:21:40.795  ✔  Step completed in 293 ms
+17:21:40.795  ○  ▶ Step 2 â€" Send GET /status-currency
+17:21:40.796  ·    GET /api/v1/dashboard/status-currency
+17:21:41.099  ✔    HTTP 200 received
+17:21:41.108  ✔  Step completed in 312 ms
+17:21:41.108  ○  ▶ Step 3 â€" Validate HTTP 200 and currencyDistribution is a non-empty array
+17:21:41.109  ·    Asserting: HTTP 200 and currencyDistribution is a non-empty array
+17:21:41.194  ✔    All assertions passed
+17:21:41.195  ✔  Step completed in 87 ms
+17:21:41.195  ○  ▶ Step 4 â€" Validate each currencyDistribution item has required fields
+17:21:41.196  ·    Asserting: each currencyDistribution item has label, percentage, amount, count, and color fields with correct types
+17:21:41.293  ✘  Step failed after 98 ms — item[0] must have "color" field
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"color"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"amount": 8607, "count": 278, "label": "KES", "percentage": 100}[39m
+17:21:41.297  ·  Test run complete: "TC-DSH-004 â€" currencyDistribution: KES + USD entries, percentages sum to ~100 %"

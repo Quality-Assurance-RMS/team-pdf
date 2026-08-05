@@ -1,0 +1,28 @@
+[TC-DTPAY-007] Accept: text/html  -> 406
+  Content-Type: application/json
+  Body excerpt: {"errorCode":406,"errorMessage":"This API only produces application/json"}
+[TC-DTPAY-007] Accept: application/xml  -> 406
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-007 â€" BUG-TPAY-06: Accept: text/html must not expose Spring Boot Whitelabel page
+────────────────────────────────────────────────────────────
+17:22:13.409  ·  Test started: "TC-DTPAY-007 â€" BUG-TPAY-06: Accept: text/html must not expose Spring Boot Whitelabel page"
+17:22:13.430  ○  ▶ Step 1 â€" Send GET with Accept: text/html
+17:22:13.433  ·    GET /api/v1/dashboard/today-payments (Accept: text/html)
+17:22:13.595  ✔    HTTP 406 received
+17:22:13.603  ✔  Step completed in 173 ms
+17:22:13.603  ○  ▶ Step 2 â€" Send GET with Accept: application/xml
+17:22:13.604  ·    GET /api/v1/dashboard/today-payments (Accept: application/xml)
+17:22:13.693  ✔    HTTP 406 received
+17:22:13.696  ✔  Step completed in 93 ms
+17:22:13.696  ○  ▶ Step 3 â€" 406 must be returned for unsupported Accept types
+17:22:13.697  ·    Asserting: unsupported Accept headers return 406
+17:22:13.701  ✔    All assertions passed
+17:22:13.701  ✔  Step completed in 5 ms
+17:22:13.701  ○  ▶ Step 4 â€" BUG-TPAY-06: 406 error body must not expose Whitelabel Error Page
+17:22:13.705  ·    Asserting: 406 error body does not expose Spring Boot Whitelabel page or framework details
+17:22:13.711  ✔    All assertions passed
+17:22:13.712  ✔  Step completed in 11 ms
+17:22:13.717  ·  Test run complete: "TC-DTPAY-007 â€" BUG-TPAY-06: Accept: text/html must not expose Spring Boot Whitelabel page"
+────────────────────────────────────────────────────────────
+

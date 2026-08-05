@@ -1,0 +1,23 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 500
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-001 — GET /api/v1/token: Returns 200 with complete KCB token object
+────────────────────────────────────────────────────────────
+17:24:44.600  ·  Test started: "TC-OT-001 — GET /api/v1/token: Returns 200 with complete KCB token object"
+17:24:44.693  ○  ▶ Step 1 — Log request parameters
+17:24:44.698  ✔  Step completed in 5 ms
+17:24:44.698  ○  ▶ Step 2 — Send GET /api/v1/token
+17:24:44.699  ·    GET /api/v1/token
+17:25:44.731  ✔    HTTP 500 received
+17:25:44.735  ✔  Step completed in 60036 ms
+17:25:44.735  ○  ▶ Step 3 — Assert HTTP 200
+17:25:44.735  ·    Asserting: HTTP status is 200
+17:25:44.743  ✘  Step failed after 9 ms — TC-OT-001 — expected 200, got 500
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 500
+17:25:44.745  ·  Test run complete: "TC-OT-001 — GET /api/v1/token: Returns 200 with complete KCB token object"
+────────────────────────────────────────────────────────────
+

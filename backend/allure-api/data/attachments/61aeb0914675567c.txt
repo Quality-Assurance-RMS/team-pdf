@@ -1,0 +1,10 @@
+17:24:52.897  ·  Test started: "[BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)"
+17:24:52.929  ○  ▶ Step 1 — Call analytics and confirm zeros
+17:24:52.931  ·    GET /api/v1/analytics/dashboard/summary
+17:24:53.000  ✔    HTTP 502 received
+17:24:53.000  ·    Asserting: Response is 200
+17:24:53.011  ✘  Step failed after 82 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m502[39m
+17:24:53.013  ·  Test run complete: "[BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)"
