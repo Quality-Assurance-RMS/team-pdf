@@ -1,0 +1,30 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=week → 401
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=week → 401
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-XS-002] TC-XS-002 — Dashboard 401 leaks whether token was present (token-presence enumeration)
+────────────────────────────────────────────────────────────
+17:25:04.594  ·  Test started: "[BUG-XS-002] TC-XS-002 — Dashboard 401 leaks whether token was present (token-presence enumeration)"
+17:25:04.706  ○  ▶ Step 1 — GET dashboard summary with NO auth
+17:25:04.709  ·    GET /api/v1/dashboard/summary?period=week
+17:25:04.999  ✔    HTTP 401 received
+17:25:04.999  ·    Asserting: Response is 401 without auth
+17:25:05.109  ✔    All assertions passed
+17:25:05.110  ✔  Step completed in 404 ms
+17:25:05.110  ○  ▶ Step 2 — GET dashboard summary with INVALID token
+17:25:05.111  ·    GET /api/v1/dashboard/summary?period=week
+17:25:05.286  ✔    HTTP 401 received
+17:25:05.286  ·    Asserting: Response is 401 with invalid token
+17:25:05.294  ✔    All assertions passed
+17:25:05.295  ✔  Step completed in 185 ms
+17:25:05.295  ○  ▶ Step 3 — Assert both return the same generic message (BUG: they differ)
+17:25:05.297  ·    Asserting: Both 401 messages are identical
+17:25:05.391  ✘  Step failed after 96 ms — [BUG-XS-002] 401 message must be identical whether token is absent or invalid
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "Invalid or expired token"
+Received: "Missing Authorization token"
+17:25:05.397  ·  Test run complete: "[BUG-XS-002] TC-XS-002 — Dashboard 401 leaks whether token was present (token-presence enumeration)"
+────────────────────────────────────────────────────────────
+

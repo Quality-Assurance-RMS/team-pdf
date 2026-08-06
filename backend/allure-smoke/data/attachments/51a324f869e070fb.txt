@@ -1,0 +1,50 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DREVT-001] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/revenue-trend
+  â–º HTTP Status   : 200
+  â–º Content-Type  : application/json
+  â–º labels        : [Aug 2026, Sep 2026, Oct 2026, Nov 2026, Dec 2026, Jan 2027, Feb 2027, Mar 2027, Apr 2027, May 2027, Jun 2027, Jul 2027]  (12 entries)
+  â–º totalAttempts : [undefined]
+  â–º successful    : [144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  â–º failed        : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  â–º summary[0]    : label="Total Transactions" value="undefined" points=undefined(undefined) isPostive=undefined change="undefined"
+  â–º summary[1]    : label="Successful" value="undefined" points=undefined(undefined) isPostive=undefined change="undefined"
+  â–º summary[2]    : label="Failed" value="undefined" points=undefined(undefined) isPostive=undefined change="undefined"
+  â–º Cache-Control      : max-age=60, private
+  â–º X-Content-Type-Opt : MISSING
+  â–º X-Frame-Options    : MISSING
+  â–º ACAO               : *
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary
+────────────────────────────────────────────────────────────
+17:21:30.496  ·  Test started: "TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary"
+17:21:30.498  ○  ▶ Step 1 â€” Build request
+17:21:30.708  ✔  Step completed in 210 ms
+17:21:30.708  ○  ▶ Step 2 â€” Send GET /revenue-trend and log response
+17:21:30.711  ·    GET /api/v1/dashboard/revenue-trend
+17:21:30.911  ✔    HTTP 200 received
+17:21:30.921  ✔  Step completed in 213 ms
+17:21:30.921  ○  ▶ Step 3 â€” Validate HTTP 200 and Content-Type
+17:21:30.922  ·    Asserting: Validate HTTP 200 and Content-Type
+17:21:30.991  ✔    All assertions passed
+17:21:30.992  ✔  Step completed in 70 ms
+17:21:30.992  ○  ▶ Step 4 â€” Validate top-level data wrapper
+17:21:30.993  ·    Asserting: Validate top-level data wrapper
+17:21:31.022  ✔    All assertions passed
+17:21:31.022  ✔  Step completed in 31 ms
+17:21:31.022  ○  ▶ Step 5 â€” Validate 4 required array fields exist
+17:21:31.023  ·    Asserting: Validate 4 required array fields exist
+17:21:31.095  ✘  Step failed after 73 ms — "totalAttempts" array must be present
+
+expect(received).toHaveProperty(path)
+
+Expected path: "totalAttempts"
+Received path: []
+
+Received value: {"failed": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …], "labels": ["Aug 2026", "Sep 2026", "Oct 2026", "Nov 2026", "Dec 2026", "Jan 2027", "Feb 2027", "Mar 2027", "Apr 2027", "May 2027", …], "successful": [144, 0, 0, 0, 0, 0, 0, 0, 0, 0, …], "summary": [{"kesChangeDirection": "down", "kesChangePercentage": -100, "kesValue": 1279, "label": "Total Transactions", "transactionCountKes": 144, "transactionCountUsd": 0, "usdChangeDirection": "down", "usdChangePercentage": -100, "usdValue": 0}, {"kesChangeDirection": "down", "kesChangePercentage": -100, "kesValue": 1279, "label": "Successful", "transactionCountKes": 144, "transactionCountUsd": 0, "usdChangeDirection": "down", "usdChangePercentage": -100, "usdValue": 0}, {"kesChangeDirection": "down", "kesChangePercentage": -100, "kesValue": 0, "label": "Failed", "transactionCountKes": 0, "transactionCountUsd": 0, "usdChangeDirection": "down", "usdChangePercentage": -100, "usdValue": 0}], "totalTransactions": [144, 0, 0, 0, 0, 0, 0, 0, 0, 0, …]}
+17:21:31.101  ·  Test run complete: "TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary"
+────────────────────────────────────────────────────────────
+

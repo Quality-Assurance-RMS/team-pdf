@@ -1,0 +1,24 @@
+17:21:52.404  ·  Test started: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"
+17:21:52.406  ○  ▶ Step 1 â€" Build request
+17:21:52.597  ·    Asserting: request parameters are recorded
+17:21:52.597  ✔    All assertions passed
+17:21:52.694  ✔  Step completed in 289 ms
+17:21:52.694  ○  ▶ Step 2 â€" Send GET /status-currency and log response
+17:21:52.695  ·    GET /api/v1/dashboard/status-currency
+17:21:53.690  ✔    HTTP 200 received
+17:21:53.701  ✔  Step completed in 1006 ms
+17:21:53.701  ○  ▶ Step 3 â€" Validate HTTP 200 and Content-Type
+17:21:53.702  ·    Asserting: HTTP 200, body defined, Content-Type is application/json
+17:21:53.710  ✔    All assertions passed
+17:21:53.711  ✔  Step completed in 10 ms
+17:21:53.711  ○  ▶ Step 4 â€" Validate top-level `data` wrapper and all four sections
+17:21:53.713  ·    Asserting: all four sections (statusDistribution, currencyDistribution, byMethod, peakMetrics) are present
+17:21:53.809  ✘  Step failed after 98 ms — byMethod section must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"byMethod"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"currencyDistribution": [{"amount": 8610, "count": 281, "label": "KES", "percentage": 100}], "peakMetrics": {"avgTPM": 9.4, "avgTpmChange": 100, "avgTpmDirection": "up", "maxTPM": 46, "maxTpmChange": 100, "maxTpmDirection": "up", "peakHourWindow": "12:00 PM – 12:59 PM", "peakHourWindowChange": 100, "peakHourWindowDirection": "up", "peakTransactionDate": "2026-08-03", "peakTransactionsPerDay": 250, "peakTxnDayChange": 100, "peakTxnDayDirection": "up"}, "statusDistribution": [{"amountKes": 8610, "count": 281, "label": "Successful", "percentage": 100}, {"amountKes": 0, "count": 0, "label": "Failed", "percentage": 0}, {"amountKes": 0, "count": 0, "label": "Pending", "percentage": 0}]}[39m
+17:21:53.814  ·  Test run complete: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"
