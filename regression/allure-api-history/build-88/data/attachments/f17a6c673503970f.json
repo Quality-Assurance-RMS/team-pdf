@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-XS-002",
+  "expected": "Same generic 401 message regardless of token presence",
+  "actual": "No-auth: \"Missing Authorization token\" vs Invalid: \"Invalid or expired token\"",
+  "impact": "Attackers can enumerate token presence via distinct 401 messages",
+  "fix": "Return a single generic message \"Authentication required\" for all 401 scenarios"
+}

@@ -1,0 +1,23 @@
+02:21:15.101  ·  Test started: "TC-TXN-002 — Summary: Today"
+02:21:15.142  ○  ▶ Step 1 — Build request parameters
+02:21:15.155  ✔  Step completed in 13 ms
+02:21:15.155  ○  ▶ Step 2 — Send GET /summary?period=today
+02:21:15.155  ·    GET /api/v1/transaction/summary?period=today
+02:21:15.232  ✔    HTTP 200 received
+02:21:15.236  ✔  Step completed in 81 ms
+02:21:15.236  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:21:15.236  ·    Asserting: HTTP 200, body defined, body is object
+02:21:15.244  ✔    All assertions passed
+02:21:15.246  ✔  Step completed in 10 ms
+02:21:15.246  ○  ▶ Step 4 — Validate response body is not empty
+02:21:15.246  ·    Asserting: body has at least one field
+02:21:15.248  ✔    All assertions passed
+02:21:15.262  ✔  Step completed in 16 ms
+02:21:15.262  ○  ▶ Step 5 — Validate total_volume fields
+02:21:15.263  ·    Asserting: total_volume present with number amount and truthy currency
+02:21:15.267  ✘  Step failed after 5 ms — total_volume must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBeDefined[2m()[22m
+
+Received: [31mundefined[39m
+02:21:15.269  ·  Test run complete: "TC-TXN-002 — Summary: Today"

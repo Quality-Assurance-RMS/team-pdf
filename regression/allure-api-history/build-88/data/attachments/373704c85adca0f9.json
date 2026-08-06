@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-DB-006",
+  "expected": "200 OK — single day is a valid range",
+  "actual": "HTTP 400 — from_date=to_date rejected",
+  "impact": "Users cannot query a single historical day via the custom period filter",
+  "fix": "Change date range validator from strict < to <= (from_date <= to_date)"
+}
