@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Date filter defaults to "Today"
+────────────────────────────────────────────────────────────
+01:35:36.926  ·  Test started: "TC1 — Date filter defaults to "Today""
+01:35:37.336  ○  ▶ Step 1 — Verifies the date filter dropdown is visible and shows "Today" as the default on the Reports page
+01:35:37.339  ·    Test scope: Verifies the date filter dropdown is visible and shows "Today" as the default on the Reports page
+01:35:37.339  ✔  Step completed in 3 ms
+01:35:37.340  ○  ▶ Step 2 — Navigate to Reports page
+01:35:37.341  ·    Opening the Reports page
+01:35:38.828  ✔    Navigation to Reports page initiated successfully
+01:35:39.624  ✔  Step completed in 2284 ms
+01:35:39.624  ○  ▶ Step 3 — Verify page loads successfully
+01:35:39.625  ·    Waiting for all Reports page elements to render
+01:35:54.642  ✘  Step failed after 15018 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/reports/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:35:56.157  ·  Test run complete: "TC1 — Date filter defaults to "Today""
+────────────────────────────────────────────────────────────
+
