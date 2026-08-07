@@ -1,0 +1,28 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — An incorrect OTP shows an error and stays on verification
+────────────────────────────────────────────────────────────
+01:42:18.289  ·  Test started: "TC2 — An incorrect OTP shows an error and stays on verification"
+01:42:18.475  ○  ▶ Step 1 — Verifies that entering a deliberately wrong OTP keeps the user on the verification page
+01:42:18.477  ·    Test scope: wrong OTP rejection
+01:42:18.477  ✔  Step completed in 2 ms
+01:42:18.477  ○  ▶ Step 2 — Navigate to login page and submit credentials
+01:42:18.478  ·    Opening the login page
+01:42:19.090  ·    Submitting login credentials to trigger OTP flow
+01:42:19.737  ✔    Credentials submitted — expecting redirect to OTP verification
+01:42:19.737  ✔  Step completed in 1260 ms
+01:42:19.738  ○  ▶ Step 3 — Verify OTP page is loaded
+01:42:19.738  ·    Waiting for OTP verification page to render
+01:42:34.757  ✘  Step failed after 15020 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/auth\/verification/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:42:36.151  ·  Test run complete: "TC2 — An incorrect OTP shows an error and stays on verification"
+────────────────────────────────────────────────────────────
+

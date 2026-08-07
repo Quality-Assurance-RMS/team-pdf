@@ -1,0 +1,28 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Full login with a correct OTP reaches the dashboard
+────────────────────────────────────────────────────────────
+01:42:13.917  ·  Test started: "TC1 — Full login with a correct OTP reaches the dashboard"
+01:42:14.397  ○  ▶ Step 1 — Verifies that logging in, receiving an OTP by email, and entering it correctly redirects the user to the dashboard
+01:42:14.400  ·    Test scope: full OTP login flow reaching the dashboard
+01:42:14.400  ✔  Step completed in 3 ms
+01:42:14.400  ○  ▶ Step 2 — Navigate to login page and submit credentials
+01:42:14.401  ·    Opening the login page
+01:42:15.997  ·    Submitting login credentials
+01:42:16.993  ✔    Credentials submitted — expecting redirect to OTP verification
+01:42:16.993  ✔  Step completed in 2593 ms
+01:42:16.993  ○  ▶ Step 3 — Verify OTP page is loaded
+01:42:16.994  ·    Waiting for OTP verification page to render
+01:42:32.018  ✘  Step failed after 15024 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/auth\/verification/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:42:33.355  ·  Test run complete: "TC1 — Full login with a correct OTP reaches the dashboard"
+────────────────────────────────────────────────────────────
+

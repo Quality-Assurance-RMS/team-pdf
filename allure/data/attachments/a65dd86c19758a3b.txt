@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Reports" heading is visible
+────────────────────────────────────────────────────────────
+01:37:38.593  ·  Test started: "TC1 — "Reports" heading is visible"
+01:37:38.991  ○  ▶ Step 1 — Verifies the Reports heading renders on the Reports page after navigation
+01:37:38.993  ·    Test scope: Verifies the Reports heading renders on the Reports page after navigation
+01:37:38.994  ✔  Step completed in 3 ms
+01:37:38.995  ○  ▶ Step 2 — Navigate to Reports page
+01:37:38.997  ·    Opening the Reports page
+01:37:40.306  ✔    Navigation to Reports page initiated successfully
+01:37:41.284  ✔  Step completed in 2288 ms
+01:37:41.284  ○  ▶ Step 3 — Verify page loads successfully
+01:37:41.285  ·    Waiting for all Reports page elements to render
+01:37:56.685  ✘  Step failed after 15401 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/reports/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:37:59.149  ·  Test run complete: "TC1 — "Reports" heading is visible"
+────────────────────────────────────────────────────────────
+

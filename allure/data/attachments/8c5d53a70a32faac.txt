@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Valid credentials redirect away from the login page
+────────────────────────────────────────────────────────────
+01:35:14.406  ·  Test started: "TC1 — Valid credentials redirect away from the login page"
+01:35:15.595  ○  ▶ Step 1 — Verifies that submitting valid credentials logs the user in and redirects away from the login page
+01:35:15.597  ·    Test scope: successful login with valid credentials
+01:35:15.597  ✔  Step completed in 2 ms
+01:35:15.597  ○  ▶ Step 2 — Submit valid credentials and verify redirect away from login
+01:35:15.598  ·    Submitting valid email and password credentials
+01:35:15.831  ·    Verifying that the URL is no longer the login page
+01:35:30.888  ✘  Step failed after 15291 ms — expect(page).not.toHaveURL(expected) failed
+
+Expected pattern: not /\/auth\/login/
+Received string: "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "not toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:35:37.485  ·  Test run complete: "TC1 — Valid credentials redirect away from the login page"
+────────────────────────────────────────────────────────────
+
