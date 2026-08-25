@@ -1,0 +1,18 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ANA-007 — Analytics HEAD method returns 200 with no body (correct behaviour)
+────────────────────────────────────────────────────────────
+09:47:38.767  ·  Test started: "TC-ANA-007 — Analytics HEAD method returns 200 with no body (correct behaviour)"
+09:47:38.958  ○  ▶ Step 1 — Send HEAD request
+09:47:38.963  ·    HEAD /api/v1/analytics/dashboard/summary
+09:47:39.156  ✔    HTTP 502 received
+09:47:39.156  ·    Asserting: HEAD returns 200 with empty body
+09:47:39.248  ✘  Step failed after 289 ms — HEAD must return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+09:47:39.254  ·  Test run complete: "TC-ANA-007 — Analytics HEAD method returns 200 with no body (correct behaviour)"
+────────────────────────────────────────────────────────────
+

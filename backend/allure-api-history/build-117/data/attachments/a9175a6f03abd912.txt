@@ -1,0 +1,26 @@
+[GET /api/v1/transaction?page=0&size=20&period=month&status=SUCCESS&method=MPESA&sort_by=trnx_date&sort_dir=desc] status: 400 | body: {
+  "errorCode": "Bad Request",
+  "errorMessage": "Page number must be 1 or greater."
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-005 — Transaction List: Filtered by status=SUCCESS and method=MPESA
+────────────────────────────────────────────────────────────
+09:55:42.967  ·  Test started: "TC-TXN-005 — Transaction List: Filtered by status=SUCCESS and method=MPESA"
+09:55:43.017  ○  ▶ Step 1 — Build request parameters
+09:55:43.056  ✔  Step completed in 39 ms
+09:55:43.056  ○  ▶ Step 2 — Send GET /transaction with filters
+09:55:43.057  ·    GET /api/v1/transaction?page=0&size=20&period=month&status=SUCCESS&method=MPESA
+09:55:43.095  ✔    HTTP 400 received
+09:55:43.101  ✔  Step completed in 45 ms
+09:55:43.101  ○  ▶ Step 3 — Validate HTTP 200 status code
+09:55:43.102  ·    Asserting: HTTP 200, body defined, body is object
+09:55:43.112  ✘  Step failed after 11 ms — TC-TXN-005 — expected HTTP 200, got 400
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+09:55:43.115  ·  Test run complete: "TC-TXN-005 — Transaction List: Filtered by status=SUCCESS and method=MPESA"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,14 @@
+09:54:36.895  ·  Test started: "[BUG-SF-001] TC-SF-006 — GET /api/v1/fetch/status: No auth returns 200 (sensitive data exposed without auth)"
+09:54:36.925  ○  ▶ Step 1 — Send GET /api/v1/fetch/status WITHOUT Authorization header
+09:54:36.931  ·    GET /api/v1/fetch/status
+09:54:36.960  ✔    HTTP 200 received
+09:54:36.966  ✔  Step completed in 41 ms
+09:54:36.966  ○  ▶ Step 2 — Assert 401/403 (BUG: returns 200 with sensitive data)
+09:54:36.967  ·    Asserting: status is 401 or 403
+09:54:36.975  ✘  Step failed after 9 ms — [BUG-SF-001] No-auth status must return 401/403, got 200
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+Expected value: [32m200[39m
+Received array: [31m[401, 403][39m
+09:54:36.980  ·  Test run complete: "[BUG-SF-001] TC-SF-006 — GET /api/v1/fetch/status: No auth returns 200 (sensitive data exposed without auth)"

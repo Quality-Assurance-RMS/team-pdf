@@ -1,0 +1,32 @@
+09:51:21.558  ·  Test started: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"
+09:51:21.561  ○  ▶ Step 1 â€" Build request
+09:51:21.752  ·    Asserting: request parameters are recorded
+09:51:21.752  ✔    All assertions passed
+09:51:21.772  ✔  Step completed in 210 ms
+09:51:21.772  ○  ▶ Step 2 â€" Send GET /today-payments and log response
+09:51:21.773  ·    GET /api/v1/dashboard/today-payments
+09:51:21.947  ✔    HTTP 200 received
+09:51:21.963  ✔  Step completed in 191 ms
+09:51:21.964  ○  ▶ Step 3 â€" Validate HTTP 200
+09:51:21.965  ·    Asserting: HTTP 200 and body is defined
+09:51:22.040  ✔    All assertions passed
+09:51:22.040  ✔  Step completed in 76 ms
+09:51:22.040  ○  ▶ Step 4 â€" Validate top-level data wrapper
+09:51:22.041  ·    Asserting: response has a "data" key that is an object
+09:51:22.047  ✔    All assertions passed
+09:51:22.047  ✔  Step completed in 8 ms
+09:51:22.047  ○  ▶ Step 5 â€" Validate 3 required sections exist
+09:51:22.060  ·    Asserting: payments, refunds, and revenue sections are present
+09:51:22.067  ✔    All assertions passed
+09:51:22.067  ✔  Step completed in 20 ms
+09:51:22.067  ○  ▶ Step 6 â€" Validate all 6 fields in each section
+09:51:22.069  ·    Asserting: all 6 required fields are present in each of the 3 sections
+09:51:22.143  ✘  Step failed after 75 ms — data.payments.successfullPaymentKES must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"successfullPaymentKES"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"failKesChange": 0, "failKesChangeDirection": "flat", "failUsdChange": 0, "failUsdChangeDirection": "flat", "failedPaymentDollar": 0, "failedPaymentKES": 0, "successKesChange": 100, "successKesChangeDirection": "up", "successUsdChange": 0, "successUsdChangeDirection": "flat", "successfulPaymentDollar": 0, "successfulPaymentKES": 22397.34}[39m
+09:51:22.146  ·  Test run complete: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"

@@ -1,0 +1,16 @@
+09:55:55.206  ·  Test started: "TC-TXN-009 — Security: Returns 401 when Authorization header is missing"
+09:55:55.251  ○  ▶ Step 1 — Build unauthenticated request
+09:55:55.261  ✔  Step completed in 10 ms
+09:55:55.261  ○  ▶ Step 2 — Send GET /summary without Authorization header
+09:55:55.261  ·    GET /api/v1/transaction/summary?period=today (no auth)
+09:55:55.287  ✔    HTTP 401 received
+09:55:55.292  ✔  Step completed in 32 ms
+09:55:55.292  ○  ▶ Step 3 — Validate HTTP 401 or 403 status code
+09:55:55.293  ·    Asserting: status is 401 or 403
+09:55:55.299  ✔    All assertions passed
+09:55:55.301  ✔  Step completed in 9 ms
+09:55:55.301  ○  ▶ Step 4 — Validate error response body
+09:55:55.302  ·    Asserting: error response body has message or error field
+09:55:55.305  ✔    All assertions passed
+09:55:55.308  ✔  Step completed in 7 ms
+09:55:55.310  ·  Test run complete: "TC-TXN-009 — Security: Returns 401 when Authorization header is missing"
