@@ -1,0 +1,46 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DREVT-006] (change field check) GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/revenue-trend
+  â–º HTTP Status   : 200
+  â–º Content-Type  : application/json
+  â–º labels        : [Apr 2026, May 2026, Jun 2026, Jul 2026, Aug 2026, Sep 2026, Oct 2026, Nov 2026, Dec 2026, Jan 2027, Feb 2027, Mar 2027]  (12 entries)
+  â–º totalAttempts : [undefined]
+  â–º successful    : [1049, 125, 13555, 139, 223771, 0, 0, 0, 0, 0, 0, 0]
+  â–º failed        : [0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  â–º summary[0]    : label="Total Transactions" value="undefined" points=undefined(undefined) isPostive=undefined change="undefined"
+  â–º summary[1]    : label="Successful" value="undefined" points=undefined(undefined) isPostive=undefined change="undefined"
+  â–º summary[2]    : label="Failed" value="undefined" points=undefined(undefined) isPostive=undefined change="undefined"
+  â–º Cache-Control      : max-age=60, private
+  â–º X-Content-Type-Opt : MISSING
+  â–º X-Frame-Options    : MISSING
+  â–º ACAO               : *
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-006 â€” BUG-REVT-05: change field must reflect real period-over-period delta, not always "+0%"
+────────────────────────────────────────────────────────────
+08:41:23.026  ·  Test started: "TC-DREVT-006 â€” BUG-REVT-05: change field must reflect real period-over-period delta, not always "+0%""
+08:41:23.049  ○  ▶ Step 1 â€” Fetch revenue-trend response
+08:41:23.050  ·    GET /api/v1/dashboard/revenue-trend
+08:41:23.626  ✔    HTTP 200 received
+08:41:23.630  ✔  Step completed in 581 ms
+08:41:23.630  ○  ▶ Step 2 â€” Validate HTTP 200
+08:41:23.631  ·    Asserting: Validate HTTP 200
+08:41:23.632  ✔    All assertions passed
+08:41:23.632  ✔  Step completed in 2 ms
+08:41:23.632  ○  ▶ Step 3 â€” BUG-REVT-05: change must not be "+0%" for every single metric
+08:41:23.637  ·    Asserting: BUG-REVT-05: change must not be
+08:41:23.638  ✔    All assertions passed
+08:41:23.638  ✔  Step completed in 6 ms
+08:41:23.638  ○  ▶ Step 4 â€” change format must match expected pattern N% or +N% or -N%
+08:41:23.644  ·    Asserting: response structure and values
+08:41:23.655  ✘  Step failed after 16 ms — summary "Total Transactions" change="" must match Â±N% pattern
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+08:41:23.656  ·  Test run complete: "TC-DREVT-006 â€” BUG-REVT-05: change field must reflect real period-over-period delta, not always "+0%""
+────────────────────────────────────────────────────────────
+

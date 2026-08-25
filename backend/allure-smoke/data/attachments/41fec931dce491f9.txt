@@ -1,0 +1,34 @@
+
+──────────────────────────────────────────────────────────────────────
+[TC-ASUM-001] GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary
+  ► HTTP Status             : 502
+  ► Content-Type            : text/html; charset=utf-8
+  ► Has "data" wrapper       : false  ← BUG-ASUM-07 if false
+  ► mcda_id                 : undefined
+  ► Cache-Control           : MISSING
+  ► ACAO                    : *
+  ► ACAM                    : GET,POST,PUT,DELETE,PATCH,OPTIONS
+──────────────────────────────────────────────────────────────────────
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields
+────────────────────────────────────────────────────────────
+08:40:30.348  ·  Test started: "TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields"
+08:40:30.351  ○  ▶ Step 1 – Build request
+08:40:30.751  ✔  Step completed in 401 ms
+08:40:30.751  ○  ▶ Step 2 – Send GET request and log response
+08:40:30.754  ·    GET /api/v1/analytics/dashboard/summary
+08:40:30.928  ✔    HTTP 502 received
+08:40:30.941  ✔  Step completed in 190 ms
+08:40:30.941  ○  ▶ Step 3 – Validate HTTP 200 and Content-Type
+08:40:30.945  ·    Asserting: HTTP 200, body defined, Content-Type application/json
+08:40:31.029  ✘  Step failed after 88 ms — HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+08:40:31.031  ·  Test run complete: "TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields"
+────────────────────────────────────────────────────────────
+

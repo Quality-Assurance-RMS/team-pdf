@@ -1,0 +1,16 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-007 – BUG-ASUM-06: All query params (?date=, ?period=) silently ignored
+────────────────────────────────────────────────────────────
+08:40:29.742  ·  Test started: "TC-ASUM-007 – BUG-ASUM-06: All query params (?date=, ?period=) silently ignored"
+08:40:29.744  ○  ▶ Step 1 – Baseline
+08:40:29.755  ·    GET /api/v1/analytics/dashboard/summary
+08:40:30.129  ✔    HTTP 502 received
+08:40:30.129  ·    Asserting: HTTP 200
+08:40:30.141  ✘  Step failed after 397 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+08:40:30.144  ·  Test run complete: "TC-ASUM-007 – BUG-ASUM-06: All query params (?date=, ?period=) silently ignored"
+────────────────────────────────────────────────────────────
+

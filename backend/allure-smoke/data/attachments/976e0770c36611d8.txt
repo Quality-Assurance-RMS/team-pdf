@@ -1,0 +1,22 @@
+08:41:23.026  ·  Test started: "TC-DREVT-006 â€” BUG-REVT-05: change field must reflect real period-over-period delta, not always "+0%""
+08:41:23.049  ○  ▶ Step 1 â€” Fetch revenue-trend response
+08:41:23.050  ·    GET /api/v1/dashboard/revenue-trend
+08:41:23.626  ✔    HTTP 200 received
+08:41:23.630  ✔  Step completed in 581 ms
+08:41:23.630  ○  ▶ Step 2 â€” Validate HTTP 200
+08:41:23.631  ·    Asserting: Validate HTTP 200
+08:41:23.632  ✔    All assertions passed
+08:41:23.632  ✔  Step completed in 2 ms
+08:41:23.632  ○  ▶ Step 3 â€” BUG-REVT-05: change must not be "+0%" for every single metric
+08:41:23.637  ·    Asserting: BUG-REVT-05: change must not be
+08:41:23.638  ✔    All assertions passed
+08:41:23.638  ✔  Step completed in 6 ms
+08:41:23.638  ○  ▶ Step 4 â€” change format must match expected pattern N% or +N% or -N%
+08:41:23.644  ·    Asserting: response structure and values
+08:41:23.655  ✘  Step failed after 16 ms — summary "Total Transactions" change="" must match Â±N% pattern
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+08:41:23.656  ·  Test run complete: "TC-DREVT-006 â€” BUG-REVT-05: change field must reflect real period-over-period delta, not always "+0%""

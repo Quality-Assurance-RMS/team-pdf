@@ -1,0 +1,26 @@
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/00000000-0000-0000-0000-000000000000 → 404
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/not-a-valid-uuid → 404
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-TXN-003] TC-TXN-003 — Non-existent UUID in transaction detail must return 404 (not 500)
+────────────────────────────────────────────────────────────
+08:44:28.326  ·  Test started: "[BUG-TXN-003] TC-TXN-003 — Non-existent UUID in transaction detail must return 404 (not 500)"
+08:44:28.347  ○  ▶ Step 1 — GET detail for nil UUID
+08:44:28.349  ·    GET /api/v1/transaction/00000000-0000-0000-0000-000000000000
+08:44:28.526  ✔    HTTP 404 received
+08:44:28.535  ·    Asserting: Non-existent UUID returns 404
+08:44:28.537  ✔    All assertions passed
+08:44:28.538  ✔  Step completed in 191 ms
+08:44:28.538  ○  ▶ Step 2 — GET detail for malformed UUID must return 400
+08:44:28.539  ·    GET /api/v1/transaction/not-a-valid-uuid
+08:44:28.643  ✔    HTTP 404 received
+08:44:28.648  ·    Asserting: Malformed UUID returns 400 or 422
+08:44:28.659  ✘  Step failed after 121 ms — Malformed UUID path must return 400/422, got 404
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: 404
+Received array: [400, 422]
+08:44:28.732  ·  Test run complete: "[BUG-TXN-003] TC-TXN-003 — Non-existent UUID in transaction detail must return 404 (not 500)"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-004 â€” BUG-REVT-02/03: points must be a number; value must expose raw numeric amount
+────────────────────────────────────────────────────────────
+08:41:13.936  ·  Test started: "TC-DREVT-004 â€” BUG-REVT-02/03: points must be a number; value must expose raw numeric amount"
+08:41:13.938  ○  ▶ Step 1 â€” Fetch revenue-trend response
+08:41:14.032  ·    GET /api/v1/dashboard/revenue-trend
+08:41:14.731  ✔    HTTP 200 received
+08:41:14.739  ✔  Step completed in 802 ms
+08:41:14.739  ○  ▶ Step 2 â€” Validate HTTP 200
+08:41:14.743  ·    Asserting: Validate HTTP 200
+08:41:14.759  ✔    All assertions passed
+08:41:14.760  ✔  Step completed in 20 ms
+08:41:14.760  ○  ▶ Step 3 â€” BUG-REVT-02: summary[*].points must be a number, not a string
+08:41:14.834  ·    Asserting: BUG-REVT-02: summary[*].points must be a number,
+08:41:14.848  ·    Asserting: BUG-REVT-02: summary[*].points must be a number,
+08:41:14.857  ·    Asserting: BUG-REVT-02: summary[*].points must be a number,
+08:41:14.929  ✔    All assertions passed
+08:41:14.930  ✔  Step completed in 170 ms
+08:41:14.930  ○  ▶ Step 4 â€” BUG-REVT-03: summary[*].value must include a raw numeric amount
+08:41:15.027  ·    Asserting: BUG-REVT-03: summary[*].value must include a raw
+08:41:15.037  ·    Asserting: BUG-REVT-03: summary[*].value must include a raw
+08:41:15.044  ·    Asserting: BUG-REVT-03: summary[*].value must include a raw
+08:41:15.047  ✔    All assertions passed
+08:41:15.048  ✔  Step completed in 118 ms
+08:41:15.048  ○  ▶ Step 5 â€” Validate array data types (numbers, not strings)
+08:41:15.050  ✘  Step failed after 2 ms — Cannot read properties of undefined (reading 'forEach')
+08:41:15.054  ·  Test run complete: "TC-DREVT-004 â€” BUG-REVT-02/03: points must be a number; value must expose raw numeric amount"
+────────────────────────────────────────────────────────────
+

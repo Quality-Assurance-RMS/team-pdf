@@ -1,0 +1,29 @@
+[/dev/sign] status: 200 | body: {
+  "signature": "097515e3bce636eff1c02b432846d0f92f945c363d468d534a1e9d34d44147a3"
+}
+[/transactions] status: 401 | body: {
+  "error_code": "INVALID_SIGNATURE",
+  "message": "signature verification failed"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC4 — Expired requestExpiryTimestamp — Validation
+────────────────────────────────────────────────────────────
+08:48:47.134  ·  Test started: "TC4 — Expired requestExpiryTimestamp — Validation"
+08:48:47.177  ○  ▶ Step 1 — POST /dev/sign to obtain HMAC signature for expired-timestamp payload
+08:48:47.181  ·    POST /pgwebhook/dev/sign (expired timestamp payload)
+08:48:47.299  ✔    HTTP 200 received
+08:48:47.304  ✔  Step completed in 127 ms
+08:48:47.304  ○  ▶ Step 2 — POST /transactions — expect HTTP 400 with requestExpiryTimestamp error
+08:48:47.305  ·    POST /pgwebhook/transactions (expired timestamp)
+08:48:47.329  ✔    HTTP 401 received
+08:48:47.334  ·    Asserting: HTTP 400 and error identifies requestExpiryTimestamp with "expired"
+08:48:47.341  ✘  Step failed after 36 ms — Expected HTTP 400 Bad Request
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 401
+08:48:47.343  ·  Test run complete: "TC4 — Expired requestExpiryTimestamp — Validation"
+────────────────────────────────────────────────────────────
+

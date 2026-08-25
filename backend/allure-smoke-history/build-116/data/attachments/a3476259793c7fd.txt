@@ -1,0 +1,10 @@
+08:40:38.125  ·  Test started: "TC-ASUM-005 – BUG-ASUM-04: recon_matched + recon_exceptions must cover some transactions"
+08:40:38.127  ○  ▶ Step 1 – Fetch analytics summary
+08:40:38.138  ·    GET /api/v1/analytics/dashboard/summary
+08:40:38.451  ✔    HTTP 502 received
+08:40:38.451  ·    Asserting: HTTP 200
+08:40:38.535  ✘  Step failed after 408 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m502[39m
+08:40:38.540  ·  Test run complete: "TC-ASUM-005 – BUG-ASUM-04: recon_matched + recon_exceptions must cover some transactions"

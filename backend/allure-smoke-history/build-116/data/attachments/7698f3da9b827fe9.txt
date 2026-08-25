@@ -1,0 +1,16 @@
+08:40:17.941  ·  Test started: "TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields"
+08:40:17.947  ○  ▶ Step 1 – Build request
+08:40:18.540  ✔  Step completed in 592 ms
+08:40:18.542  ○  ▶ Step 2 – Send GET request and log response
+08:40:18.543  ·    GET /api/v1/analytics/dashboard/summary
+08:40:18.735  ✔    HTTP 502 received
+08:40:18.750  ✔  Step completed in 208 ms
+08:40:18.750  ○  ▶ Step 3 – Validate HTTP 200 and Content-Type
+08:40:18.752  ·    Asserting: HTTP 200, body defined, Content-Type application/json
+08:40:18.857  ✘  Step failed after 107 ms — HTTP 200 expected
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m502[39m
+08:40:18.929  ·  Test run complete: "TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields"

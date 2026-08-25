@@ -1,0 +1,14 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-012 – BUG-ASUM-11: CORS wildcard origin on analytics financial endpoint
+────────────────────────────────────────────────────────────
+08:40:52.342  ·  Test started: "TC-ASUM-012 – BUG-ASUM-11: CORS wildcard origin on analytics financial endpoint"
+08:40:52.344  ○  ▶ Step 1 – Fetch response CORS headers
+08:40:52.354  ·    GET /api/v1/analytics/dashboard/summary
+08:40:52.634  ✔    HTTP 502 received
+08:40:52.729  ·    Asserting: ACAO must not be wildcard *
+08:40:52.752  ✔    All assertions passed
+08:40:52.753  ✔  Step completed in 409 ms
+08:40:52.830  ·  Test run complete: "TC-ASUM-012 – BUG-ASUM-11: CORS wildcard origin on analytics financial endpoint"
+────────────────────────────────────────────────────────────
+

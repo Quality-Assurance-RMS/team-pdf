@@ -1,0 +1,16 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-013 – Field types: all today.* fields must be non-negative numbers
+────────────────────────────────────────────────────────────
+08:40:28.732  ·  Test started: "TC-ASUM-013 – Field types: all today.* fields must be non-negative numbers"
+08:40:28.734  ○  ▶ Step 1 – Fetch analytics summary
+08:40:28.835  ·    GET /api/v1/analytics/dashboard/summary
+08:40:29.030  ✔    HTTP 502 received
+08:40:29.030  ·    Asserting: HTTP 200
+08:40:29.043  ✘  Step failed after 310 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+08:40:29.049  ·  Test run complete: "TC-ASUM-013 – Field types: all today.* fields must be non-negative numbers"
+────────────────────────────────────────────────────────────
+

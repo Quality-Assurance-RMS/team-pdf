@@ -1,0 +1,32 @@
+08:42:06.453  ·  Test started: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"
+08:42:06.526  ○  ▶ Step 1 â€" Build request
+08:42:06.649  ·    Asserting: request parameters are recorded
+08:42:06.649  ✔    All assertions passed
+08:42:06.741  ✔  Step completed in 215 ms
+08:42:06.741  ○  ▶ Step 2 â€" Send GET /today-payments and log response
+08:42:06.742  ·    GET /api/v1/dashboard/today-payments
+08:42:07.036  ✔    HTTP 200 received
+08:42:07.048  ✔  Step completed in 307 ms
+08:42:07.048  ○  ▶ Step 3 â€" Validate HTTP 200
+08:42:07.049  ·    Asserting: HTTP 200 and body is defined
+08:42:07.131  ✔    All assertions passed
+08:42:07.131  ✔  Step completed in 83 ms
+08:42:07.131  ○  ▶ Step 4 â€" Validate top-level data wrapper
+08:42:07.132  ·    Asserting: response has a "data" key that is an object
+08:42:07.137  ✔    All assertions passed
+08:42:07.137  ✔  Step completed in 6 ms
+08:42:07.137  ○  ▶ Step 5 â€" Validate 3 required sections exist
+08:42:07.140  ·    Asserting: payments, refunds, and revenue sections are present
+08:42:07.154  ✔    All assertions passed
+08:42:07.155  ✔  Step completed in 18 ms
+08:42:07.155  ○  ▶ Step 6 â€" Validate all 6 fields in each section
+08:42:07.244  ·    Asserting: all 6 required fields are present in each of the 3 sections
+08:42:07.327  ✘  Step failed after 172 ms — data.payments.successfullPaymentKES must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"successfullPaymentKES"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"failKesChange": 0, "failKesChangeDirection": "flat", "failUsdChange": 0, "failUsdChangeDirection": "flat", "failedPaymentDollar": 0, "failedPaymentKES": 0, "successKesChange": 100, "successKesChangeDirection": "up", "successUsdChange": 0, "successUsdChangeDirection": "flat", "successfulPaymentDollar": 0, "successfulPaymentKES": 22018}[39m
+08:42:07.333  ·  Test run complete: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"

@@ -1,0 +1,19 @@
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-ANA-001] TC-ANA-001 — Spring Boot Whitelabel page leaks EAT server timezone on every 406
+────────────────────────────────────────────────────────────
+08:44:58.348  ·  Test started: "[BUG-ANA-001] TC-ANA-001 — Spring Boot Whitelabel page leaks EAT server timezone on every 406"
+08:44:58.431  ○  ▶ Step 1 — Send GET with Accept: text/html
+08:44:58.434  ·    GET /api/v1/analytics/dashboard/summary
+08:44:58.463  ✔    HTTP 502 received
+08:44:58.477  ·    Asserting: 406 returned without Spring Boot Whitelabel page or EAT timezone leak
+08:44:58.488  ✘  Step failed after 57 ms — Accept: text/html must return 406
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 406
+Received: 502
+08:44:58.529  ·  Test run complete: "[BUG-ANA-001] TC-ANA-001 — Spring Boot Whitelabel page leaks EAT server timezone on every 406"
+────────────────────────────────────────────────────────────
+

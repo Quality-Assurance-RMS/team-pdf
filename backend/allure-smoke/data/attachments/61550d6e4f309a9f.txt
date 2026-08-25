@@ -1,0 +1,22 @@
+08:41:42.325  ·  Test started: "TC-DSH-002 â€" Auth guard: no token and invalid token both return 401"
+08:41:42.327  ○  ▶ Step 1 â€" Build requests
+08:41:42.532  ·    Asserting: request parameters are recorded
+08:41:42.533  ✔    All assertions passed
+08:41:42.554  ✔  Step completed in 227 ms
+08:41:42.554  ○  ▶ Step 2 â€" Send GET with no Authorization header
+08:41:42.556  ·    GET /api/v1/dashboard/status-currency (no Authorization header)
+08:41:42.729  ✔    HTTP 401 received
+08:41:42.732  ✔  Step completed in 178 ms
+08:41:42.732  ○  ▶ Step 3 â€" Validate no-auth returns 401 with error body
+08:41:42.733  ·    Asserting: no-auth returns 401 with a non-empty error message
+08:41:42.749  ✔    All assertions passed
+08:41:42.751  ✔  Step completed in 18 ms
+08:41:42.751  ○  ▶ Step 4 â€" Send GET with invalid Bearer token
+08:41:42.751  ·    GET /api/v1/dashboard/status-currency (invalid Bearer token)
+08:41:42.930  ✔    HTTP 401 received
+08:41:42.932  ✔  Step completed in 182 ms
+08:41:42.932  ○  ▶ Step 5 â€" Validate invalid-token returns 401 with error body
+08:41:42.934  ·    Asserting: invalid-token returns 401 with a non-empty error message
+08:41:42.947  ✔    All assertions passed
+08:41:42.948  ✔  Step completed in 16 ms
+08:41:42.951  ·  Test run complete: "TC-DSH-002 â€" Auth guard: no token and invalid token both return 401"

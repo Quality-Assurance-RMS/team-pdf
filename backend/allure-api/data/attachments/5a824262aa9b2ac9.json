@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-DB-008",
-  "expected": "400 Bad Request — year must be between 2000 and 2099",
-  "actual": "HTTP 200 for year=9999",
-  "impact": "Invalid year inputs return data or silently default — no validation at the input layer",
-  "fix": "Validate year is a 4-digit integer in a sensible range (e.g. 2000–2099)"
-}
