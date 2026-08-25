@@ -1,0 +1,32 @@
+
+[TC-DSUM-009] "SQL OR injection"  -> 400: {"errorCode":400,"errorMessage":"Invalid from_date ''; DROP TABLE--'. Expected format: YYYY-MM-DD (e.g. 2024-01-15)."}
+
+[TC-DSUM-009] "SQL union injection"  -> 400: {"errorCode":400,"errorMessage":"Invalid from_date '2026-01-01' UNION SELECT--'. Expected format: YYYY-MM-DD (e.g. 2024-01-15)."}
+
+[TC-DSUM-009] "Single quote"  -> 400: {"errorCode":400,"errorMessage":"Invalid from_date '2026-01-01''. Expected format: YYYY-MM-DD (e.g. 2024-01-15)."}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-009 â€” BUG-SUM-01: SQL injection in from_date must return 400 not 500 (security)
+────────────────────────────────────────────────────────────
+17:24:36.034  ·  Test started: "TC-DSUM-009 â€” BUG-SUM-01: SQL injection in from_date must return 400 not 500 (security)"
+17:24:36.130  ○  ▶ Step â€” SQL OR injection: must return 400 not 500
+17:24:36.132  ·    GET /api/v1/dashboard/summary
+17:24:36.318  ✔    HTTP 400 received
+17:24:36.318  ·    Asserting: response structure and values
+17:24:36.324  ✔    All assertions passed
+17:24:36.328  ✔  Step completed in 198 ms
+17:24:36.328  ○  ▶ Step â€” SQL union injection: must return 400 not 500
+17:24:36.332  ·    GET /api/v1/dashboard/summary
+17:24:36.426  ✔    HTTP 400 received
+17:24:36.426  ·    Asserting: response structure and values
+17:24:36.432  ✔    All assertions passed
+17:24:36.432  ✔  Step completed in 105 ms
+17:24:36.432  ○  ▶ Step â€” Single quote: must return 400 not 500
+17:24:36.434  ·    GET /api/v1/dashboard/summary
+17:24:36.538  ✔    HTTP 400 received
+17:24:36.538  ·    Asserting: response structure and values
+17:24:36.542  ✔    All assertions passed
+17:24:36.543  ✔  Step completed in 111 ms
+17:24:36.546  ·  Test run complete: "TC-DSUM-009 â€” BUG-SUM-01: SQL injection in from_date must return 400 not 500 (security)"
+────────────────────────────────────────────────────────────
+

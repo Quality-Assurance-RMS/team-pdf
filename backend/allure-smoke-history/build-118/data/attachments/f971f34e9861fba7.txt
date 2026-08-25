@@ -1,0 +1,16 @@
+17:25:22.623  ·  Test started: "TC-SMK-007 â€" Detail: 2e8b4ea3-5413-4428-bc49-25de24680cdb returns 200 with core fields"
+17:25:22.626  ○  ▶ Step 1 â€" Build request
+17:25:23.040  ✔  Step completed in 415 ms
+17:25:23.040  ○  ▶ Step 2 â€" Send GET /transaction/2e8b4ea3-5413-4428-bc49-25de24680cdb and log response
+17:25:23.042  ·    GET /api/v1/transaction/2e8b4ea3-5413-4428-bc49-25de24680cdb
+17:25:23.230  ✔    HTTP 404 received
+17:25:23.239  ✔  Step completed in 199 ms
+17:25:23.239  ○  ▶ Step 3 â€" Validate HTTP 200 and core identifier fields
+17:25:23.241  ·    Asserting: HTTP 200 and core identifier fields present
+17:25:23.324  ✘  Step failed after 84 ms — HTTP 200 expected
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m404[39m
+17:25:23.330  ·  Test run complete: "TC-SMK-007 â€" Detail: 2e8b4ea3-5413-4428-bc49-25de24680cdb returns 200 with core fields"

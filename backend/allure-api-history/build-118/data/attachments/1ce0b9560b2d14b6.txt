@@ -1,0 +1,13 @@
+17:21:13.734  ·  Test started: "TC2 — Multiple line items on one invoice"
+17:21:13.924  ○  ▶ Step 1 — Build a 3-line-item invoice payload
+17:21:13.939  ✔  Step completed in 15 ms
+17:21:13.939  ○  ▶ Step 2 — Sign the payload
+17:21:13.941  ✔  Step completed in 1 ms
+17:21:13.941  ○  ▶ Step 3 — POST invoice KRCV3FCUA6BMBDHI (3 line items) and validate the response
+17:21:14.343  ✘  Step failed after 403 ms — invoice POST should return 200
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m401[39m
+17:21:14.346  ·  Test run complete: "TC2 — Multiple line items on one invoice"

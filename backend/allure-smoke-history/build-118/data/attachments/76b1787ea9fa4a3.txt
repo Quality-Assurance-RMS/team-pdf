@@ -1,0 +1,12 @@
+17:22:53.636  ·  Test started: "TC-ASUM-010 – BUG-ASUM-09: Accept: text/html must not expose Spring Boot Whitelabel page"
+17:22:53.637  ○  ▶ Step 1 – Send GET with Accept: text/html
+17:22:53.647  ·    GET /api/v1/analytics/dashboard/summary (Accept: text/html)
+17:22:53.849  ✔    HTTP 502 received
+17:22:53.923  ·    Asserting: status 406, no Whitelabel page
+17:22:53.937  ✘  Step failed after 300 ms — Accept: text/html must return 406
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m406[39m
+Received: [31m502[39m
+17:22:53.941  ·  Test run complete: "TC-ASUM-010 – BUG-ASUM-09: Accept: text/html must not expose Spring Boot Whitelabel page"

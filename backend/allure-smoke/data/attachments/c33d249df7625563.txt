@@ -1,0 +1,26 @@
+17:24:54.840  ·  Test started: "TC-DTPAY-008 â€" BUG-TPAY-07/10: Cache-Control and security headers must be present"
+17:24:54.919  ○  ▶ Step 1 â€" Fetch response and inspect headers
+17:24:54.929  ·    GET /api/v1/dashboard/today-payments
+17:24:55.337  ✔    HTTP 200 received
+17:24:55.348  ✔  Step completed in 429 ms
+17:24:55.348  ○  ▶ Step 2 â€" Validate HTTP 200
+17:24:55.350  ·    Asserting: HTTP 200
+17:24:55.436  ✔    All assertions passed
+17:24:55.437  ✔  Step completed in 89 ms
+17:24:55.437  ○  ▶ Step 3 â€" BUG-TPAY-07: Cache-Control must prohibit caching of real-time financial data
+17:24:55.442  ·    Asserting: Cache-Control header is present and prevents caching of real-time financial data
+17:24:55.448  ✔    All assertions passed
+17:24:55.448  ✔  Step completed in 12 ms
+17:24:55.448  ○  ▶ Step 4 â€" BUG-TPAY-10: X-Content-Type-Options must be set to nosniff
+17:24:55.528  ·    Asserting: X-Content-Type-Options is set to "nosniff"
+17:24:55.538  ✔    All assertions passed
+17:24:55.540  ✔  Step completed in 91 ms
+17:24:55.540  ○  ▶ Step 5 â€" BUG-TPAY-10: X-Frame-Options must be set
+17:24:55.550  ·    Asserting: X-Frame-Options header is present
+17:24:55.622  ✔    All assertions passed
+17:24:55.624  ✔  Step completed in 84 ms
+17:24:55.624  ○  ▶ Step 6 â€" Log all security-relevant headers for audit
+17:24:55.642  ·    Asserting: all security-relevant headers are logged for audit
+17:24:55.642  ✔    All assertions passed
+17:24:55.642  ✔  Step completed in 18 ms
+17:24:55.717  ·  Test run complete: "TC-DTPAY-008 â€" BUG-TPAY-07/10: Cache-Control and security headers must be present"
