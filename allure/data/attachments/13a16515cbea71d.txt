@@ -1,0 +1,33 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Valid credentials redirect away from the login page
+────────────────────────────────────────────────────────────
+10:13:42.649  ·  Test started: "TC1 — Valid credentials redirect away from the login page"
+10:13:50.162  ○  ▶ Step 1 — Verifies that submitting valid credentials logs the user in and redirects away from the login page
+10:13:50.222  ·    Test scope: successful login with valid credentials
+10:13:50.222  ✔  Step completed in 60 ms
+10:13:50.222  ○  ▶ Step 2 — Submit valid credentials and verify redirect away from login
+10:13:50.224  ·    Submitting valid email and password credentials
+10:16:11.410  ✘  Step failed after 141188 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByPlaceholder('Enter Your email')
+    - locator resolved to <input disabled type="email" name="email" autocomplete="on" placeholder="Enter Your email" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0 ↵                                file:bg-transparent file:text-sm ↵                                file:font-medium file:text-foreground focus-visible:outline-none ↵                                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ↵             …/>
+    - fill("ashil.shaji@fortunesoftit.com")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+      - waiting 100ms
+    274 × waiting for element to be visible, enabled and editable
+        - element is not enabled
+      - retrying fill action
+        - waiting 500ms
+    - waiting for element to be visible, enabled and editable
+
+10:16:11.681  ·  Test run complete: "TC1 — Valid credentials redirect away from the login page"
+────────────────────────────────────────────────────────────
+

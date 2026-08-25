@@ -1,0 +1,25 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Opening a transaction row shows matching detail sections
+────────────────────────────────────────────────────────────
+10:29:08.831  ·  Test started: "TC1 — Opening a transaction row shows matching detail sections"
+10:29:09.933  ○  ▶ Step 1 — Login with OTP, open the first transaction row, and verify Transaction ID and detail sections on the detail page
+10:29:09.937  ·    Test scope: transaction detail navigation and content verification
+10:29:09.938  ✔  Step completed in 5 ms
+10:29:09.943  ○  ▶ Step 2 — Navigate to Transactions page
+10:29:09.946  ·    Opening the Transactions page and waiting for it to load
+10:29:18.350  ✘  Step failed after 8407 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/transaction/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 5000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 5000ms
+    - waiting for" https://api.rms.dev.demo-fsit.com/auth/login" navigation to finish...
+    - navigated to "https://api.rms.dev.demo-fsit.com/auth/login"
+    11 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+10:29:20.233  ·  Test run complete: "TC1 — Opening a transaction row shows matching detail sections"
+────────────────────────────────────────────────────────────
+

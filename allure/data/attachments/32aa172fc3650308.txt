@@ -1,0 +1,48 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All sidebar navigation items are visible
+────────────────────────────────────────────────────────────
+10:09:25.627  ·  Test started: "TC1 — All sidebar navigation items are visible"
+10:09:26.029  ○  ▶ Step 1 — Verifies that all expected sidebar menu items render after login
+10:09:26.030  ·    Test scope: Verifies that all expected sidebar menu items render after login
+10:09:26.030  ✔  Step completed in 1 ms
+10:09:26.031  ○  ▶ Step 2 — Navigate to Dashboard page
+10:09:26.032  ·    Opening the Dashboard page
+10:09:28.850  ✔    Navigation initiated successfully
+10:09:36.529  ✔  Step completed in 10498 ms
+10:09:36.529  ○  ▶ Step 3 — Verify page loads successfully
+10:09:36.529  ·    Waiting for all page elements to render
+10:09:37.325  ✔    Page is fully loaded with all required elements visible
+10:09:37.834  ✔  Step completed in 1306 ms
+10:09:37.834  ○  ▶ Step 4 — "Dashboard" nav item is visible
+10:09:37.835  ·    Asserting visibility: Dashboard nav item
+10:09:38.038  ✔    Dashboard nav item is visible
+10:09:39.724  ✔  Step completed in 1889 ms
+10:09:39.724  ○  ▶ Step 5 — "Transactions" nav item is visible
+10:09:39.724  ·    Asserting visibility: Transactions nav item
+10:09:40.034  ✔    Transactions nav item is visible
+10:09:41.422  ✔  Step completed in 1698 ms
+10:09:41.422  ○  ▶ Step 6 — "Settlements" nav item is visible
+10:09:41.423  ·    Asserting visibility: Settlements nav item
+10:09:41.744  ✔    Settlements nav item is visible
+10:09:43.325  ✔  Step completed in 1903 ms
+10:09:43.325  ○  ▶ Step 7 — "Reports" nav item is visible
+10:09:43.326  ·    Asserting visibility: Reports nav item
+10:09:43.639  ✔    Reports nav item is visible
+10:09:45.053  ✔  Step completed in 1728 ms
+10:09:45.053  ○  ▶ Step 8 — "Settings" nav item is visible
+10:09:45.053  ·    Asserting visibility: Settings nav item
+10:09:53.249  ✘  Step failed after 8197 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('link', { name: /^Settings$/i }).or(locator('nav, [class*="sidebar"]').getByText(/^Settings$/i)).first()
+Expected: visible
+Timeout: 8000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 8000ms
+  - waiting for getByRole('link', { name: /^Settings$/i }).or(locator('nav, [class*="sidebar"]').getByText(/^Settings$/i)).first()
+
+10:10:00.831  ·  Test run complete: "TC1 — All sidebar navigation items are visible"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,33 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Resend OTP dispatches a new code and stays on verification
+────────────────────────────────────────────────────────────
+10:29:34.850  ·  Test started: "TC3 — Resend OTP dispatches a new code and stays on verification"
+10:29:35.223  ○  ▶ Step 1 — Verifies that clicking Resend OTP dispatches a new code while remaining on the verification page
+10:29:35.226  ·    Test scope: Resend OTP behavior
+10:29:35.226  ✔  Step completed in 3 ms
+10:29:35.226  ○  ▶ Step 2 — Navigate to login page and submit credentials
+10:29:35.227  ·    Opening the login page
+10:29:36.444  ·    Submitting login credentials to trigger OTP flow
+10:32:14.442  ✘  Step failed after 159216 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByPlaceholder('Enter Your email')
+    - locator resolved to <input disabled type="email" name="email" autocomplete="on" placeholder="Enter Your email" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0 ↵                                file:bg-transparent file:text-sm ↵                                file:font-medium file:text-foreground focus-visible:outline-none ↵                                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ↵             …/>
+    - fill("ashil.shaji@fortunesoftit.com")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+      - waiting 100ms
+    307 × waiting for element to be visible, enabled and editable
+        - element is not enabled
+      - retrying fill action
+        - waiting 500ms
+
+10:32:15.151  ·  Test run complete: "TC3 — Resend OTP dispatches a new code and stays on verification"
+────────────────────────────────────────────────────────────
+

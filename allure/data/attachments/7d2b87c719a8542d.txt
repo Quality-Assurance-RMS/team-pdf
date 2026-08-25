@@ -1,0 +1,33 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Remember Me checkbox can be checked and unchecked
+────────────────────────────────────────────────────────────
+10:16:16.191  ·  Test started: "TC1 — Remember Me checkbox can be checked and unchecked"
+10:16:21.220  ○  ▶ Step 1 — Verifies the Remember Me checkbox starts unchecked and toggles correctly
+10:16:21.227  ·    Test scope: Remember Me checkbox toggle behavior
+10:16:21.228  ✔  Step completed in 7 ms
+10:16:21.228  ○  ▶ Step 2 — Verify Remember Me checkbox toggle behaviour
+10:16:21.229  ·    Asserting the Remember Me checkbox is unchecked by default
+10:16:21.264  ✔    Remember Me checkbox is unchecked initially
+10:16:21.264  ·    Checking the Remember Me checkbox
+10:18:41.651  ✘  Step failed after 140424 ms — locator.check: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByLabel('Remember for 30 days')
+    - locator resolved to <input disabled type="checkbox" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 w-4 h-4 disabled:cursor-not-allowed disabled:opacity-50"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    267 × waiting for element to be visible, enabled and stable
+        - element is not enabled
+      - retrying click action
+        - waiting 500ms
+
+10:18:44.687  ·  Test run complete: "TC1 — Remember Me checkbox can be checked and unchecked"
+────────────────────────────────────────────────────────────
+

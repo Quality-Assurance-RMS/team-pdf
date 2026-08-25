@@ -1,0 +1,26 @@
+10:11:09.549  ·  Test started: "TC2 — Invalid credentials show an error and stay on login"
+10:11:14.626  ○  ▶ Step 1 — Verifies that submitting credentials that do not exist keeps the user on the login page with a visible error
+10:11:14.630  ·    Test scope: invalid credentials are rejected with an on-page error
+10:11:14.630  ✔  Step completed in 4 ms
+10:11:14.630  ○  ▶ Step 2 — Submit invalid credentials and verify error is displayed
+10:11:14.631  ·    Entering credentials that do not exist in the system
+10:13:34.094  ✘  Step failed after 139464 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+[2m  - waiting for getByPlaceholder('Enter Your email')[22m
+[2m    - locator resolved to <input disabled type="email" name="email" autocomplete="on" placeholder="Enter Your email" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0 ↵                                file:bg-transparent file:text-sm ↵                                file:font-medium file:text-foreground focus-visible:outline-none ↵                                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ↵             …/>[22m
+[2m    - fill("invalid@example.com")[22m
+[2m  - attempting fill action[22m
+[2m    2 × waiting for element to be visible, enabled and editable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying fill action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and editable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying fill action[22m
+[2m      - waiting 100ms[22m
+[2m    273 × waiting for element to be visible, enabled and editable[22m
+[2m        - element is not enabled[22m
+[2m      - retrying fill action[22m
+[2m        - waiting 500ms[22m
+
+10:13:34.184  ·  Test run complete: "TC2 — Invalid credentials show an error and stay on login"
