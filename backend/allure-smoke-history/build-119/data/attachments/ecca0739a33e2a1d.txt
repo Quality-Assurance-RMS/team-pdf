@@ -1,0 +1,16 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-004 – BUG-ASUM-03: total_amount_kes=0.0 while total_transactions=135 is suspicious
+────────────────────────────────────────────────────────────
+17:19:46.908  ·  Test started: "TC-ASUM-004 – BUG-ASUM-03: total_amount_kes=0.0 while total_transactions=135 is suspicious"
+17:19:46.915  ○  ▶ Step 1 – Fetch analytics summary
+17:19:46.993  ·    GET /api/v1/analytics/dashboard/summary
+17:19:47.776  ✔    HTTP 502 received
+17:19:47.776  ·    Asserting: HTTP 200
+17:19:47.886  ✘  Step failed after 971 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+17:19:47.902  ·  Test run complete: "TC-ASUM-004 – BUG-ASUM-03: total_amount_kes=0.0 while total_transactions=135 is suspicious"
+────────────────────────────────────────────────────────────
+

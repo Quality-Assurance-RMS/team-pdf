@@ -1,0 +1,11 @@
+17:21:02.116  ·  Test started: "[Security] TC4 — Invalid signature returns 401 SIGNATURE_MISMATCH"
+17:21:02.224  ○  ▶ Step 1 — Build a valid invoice payload
+17:21:02.250  ✔  Step completed in 26 ms
+17:21:02.250  ○  ▶ Step 2 — Sign the payload correctly
+17:21:02.287  ✔  Step completed in 37 ms
+17:21:02.287  ○  ▶ Step 3 — Tamper with the signature (corrupt the last 4 hex characters)
+17:21:02.314  ✔  Step completed in 26 ms
+17:21:02.314  ○  ▶ Step 4 — POST with the tampered signature and confirm 401 SIGNATURE_MISMATCH
+17:21:02.800  ✔    Tampered signature correctly rejected with SIGNATURE_MISMATCH
+17:21:02.800  ✔  Step completed in 486 ms
+17:21:02.807  ·  Test run complete: "[Security] TC4 — Invalid signature returns 401 SIGNATURE_MISMATCH"

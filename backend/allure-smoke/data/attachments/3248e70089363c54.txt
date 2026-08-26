@@ -1,0 +1,16 @@
+17:21:48.884  ·  Test started: "TC-DSUM-001 â€” Happy path: all valid periods return HTTP 200"
+17:21:48.887  ○  ▶ Step 1 â€” Build requests for all valid period values
+17:21:49.127  ·    Asserting: all valid period values are listed
+17:21:49.127  ✔    All assertions passed
+17:21:49.211  ✔  Step completed in 324 ms
+17:21:49.211  ○  ▶ Step â€” period=week: HTTP 200 and body defined
+17:21:49.213  ·    GET /api/v1/dashboard/summary?period=week
+17:21:49.381  ✔    HTTP 400 received
+17:21:49.387  ·    Asserting: HTTP 200 and body defined
+17:21:49.409  ✘  Step failed after 198 ms — period=week must return HTTP 200
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+17:21:49.413  ·  Test run complete: "TC-DSUM-001 â€” Happy path: all valid periods return HTTP 200"

@@ -1,0 +1,11 @@
+17:24:34.278  ·  Test started: "TC-OT-008 — Cache eviction + re-fetch: new token issued_at >= original issued_at"
+17:24:34.324  ○  ▶ Step 1 — GET /token → capture Token A
+17:24:34.327  ·    GET /api/v1/token
+17:25:34.365  ✔    HTTP 502 received
+17:25:34.377  ✘  Step failed after 60053 ms — TC-OT-008 Token A — expected 200, got 502
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m502[39m
+17:25:34.380  ·  Test run complete: "TC-OT-008 — Cache eviction + re-fetch: new token issued_at >= original issued_at"
