@@ -1,0 +1,21 @@
+01:49:36.009  ·  Test started: "TC1 — "Settlement by Bank" heading is visible"
+01:49:36.235  ○  ▶ Step 1 — Verifies the Settlement by Bank section heading renders on the Settlements page
+01:49:36.238  ·    Test scope: Verifies the Settlement by Bank section heading renders on the Settlements page
+01:49:36.238  ✔  Step completed in 3 ms
+01:49:36.240  ○  ▶ Step 2 — Navigate to Settlements page
+01:49:36.241  ·    Opening the Settlements page
+01:49:37.035  ✔    Navigation to Settlements page initiated successfully
+01:49:37.488  ✔  Step completed in 1248 ms
+01:49:37.488  ○  ▶ Step 3 — Verify page loads successfully
+01:49:37.489  ·    Waiting for all Settlements page elements to render
+01:49:52.553  ✘  Step failed after 15065 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/settlements/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:49:56.235  ·  Test run complete: "TC1 — "Settlement by Bank" heading is visible"
