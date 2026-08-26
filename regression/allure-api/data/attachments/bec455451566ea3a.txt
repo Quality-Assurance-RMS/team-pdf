@@ -1,0 +1,21 @@
+[DELETE https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token/cache] 502
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-OT-007 — DELETE /api/v1/token/cache: Returns 204 No Content with valid auth
+────────────────────────────────────────────────────────────
+02:17:37.509  ·  Test started: "TC-OT-007 — DELETE /api/v1/token/cache: Returns 204 No Content with valid auth"
+02:17:37.703  ○  ▶ Step 1 — Send DELETE /api/v1/token/cache with auth
+02:17:37.720  ·    DELETE /api/v1/token/cache
+02:18:37.753  ✔    HTTP 502 received
+02:18:37.756  ✔  Step completed in 60052 ms
+02:18:37.756  ○  ▶ Step 2 — Assert HTTP 204
+02:18:37.756  ·    Asserting: HTTP status is 204
+02:18:37.764  ✘  Step failed after 8 ms — DELETE /token/cache must return 204, got 502
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 204
+Received: 502
+02:18:37.766  ·  Test run complete: "TC-OT-007 — DELETE /api/v1/token/cache: Returns 204 No Content with valid auth"
+────────────────────────────────────────────────────────────
+

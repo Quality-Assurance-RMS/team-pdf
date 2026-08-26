@@ -1,0 +1,16 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Successful Transaction — Happy Path
+────────────────────────────────────────────────────────────
+02:19:56.399  ·  Test started: "TC1 — Successful Transaction — Happy Path"
+02:19:56.449  ○  ▶ Step 1: POST to /dev/sign — get HMAC signature
+02:19:56.451  ·    POST /dev/sign — obtaining HMAC signature for base payload
+02:19:56.546  ✘  Step failed after 96 ms — /dev/sign should return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 405
+02:19:56.578  ·  Test run complete: "TC1 — Successful Transaction — Happy Path"
+────────────────────────────────────────────────────────────
+
