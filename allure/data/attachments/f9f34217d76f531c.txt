@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Selected Bank Details" panel is visible
+────────────────────────────────────────────────────────────
+01:49:36.854  ·  Test started: "TC1 — "Selected Bank Details" panel is visible"
+01:49:37.191  ○  ▶ Step 1 — Verifies the Selected Bank Details side panel renders on the Settlements page
+01:49:37.193  ·    Test scope: Verifies the Selected Bank Details side panel renders on the Settlements page
+01:49:37.196  ✔  Step completed in 5 ms
+01:49:37.198  ○  ▶ Step 2 — Navigate to Settlements page
+01:49:37.202  ·    Opening the Settlements page
+01:49:38.670  ✔    Navigation to Settlements page initiated successfully
+01:49:39.383  ✔  Step completed in 2185 ms
+01:49:39.383  ○  ▶ Step 3 — Verify page loads successfully
+01:49:39.390  ·    Waiting for all Settlements page elements to render
+01:49:54.458  ✘  Step failed after 15075 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settlements/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:49:56.072  ·  Test run complete: "TC1 — "Selected Bank Details" panel is visible"
+────────────────────────────────────────────────────────────
+

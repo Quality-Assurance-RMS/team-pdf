@@ -1,0 +1,21 @@
+01:33:30.576  ·  Test started: "TC1 — All sidebar navigation items are visible"
+01:33:31.390  ○  ▶ Step 1 — Verifies that all expected sidebar menu items render after login
+01:33:31.449  ·    Test scope: Verifies that all expected sidebar menu items render after login
+01:33:31.453  ✔  Step completed in 63 ms
+01:33:31.457  ○  ▶ Step 2 — Navigate to Dashboard page
+01:33:31.461  ·    Opening the Dashboard page
+01:33:34.464  ✔    Navigation initiated successfully
+01:33:36.143  ✔  Step completed in 4685 ms
+01:33:36.143  ○  ▶ Step 3 — Verify page loads successfully
+01:33:36.147  ·    Waiting for all page elements to render
+01:33:51.255  ✘  Step failed after 15112 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:33:56.957  ·  Test run complete: "TC1 — All sidebar navigation items are visible"

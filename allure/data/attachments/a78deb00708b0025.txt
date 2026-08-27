@@ -1,0 +1,33 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Full login with a correct OTP reaches the dashboard
+────────────────────────────────────────────────────────────
+01:51:53.862  ·  Test started: "TC1 — Full login with a correct OTP reaches the dashboard"
+01:51:54.402  ○  ▶ Step 1 — Verifies that logging in, receiving an OTP by email, and entering it correctly redirects the user to the dashboard
+01:51:54.440  ·    Test scope: full OTP login flow reaching the dashboard
+01:51:54.440  ✔  Step completed in 38 ms
+01:51:54.440  ○  ▶ Step 2 — Navigate to login page and submit credentials
+01:51:54.441  ·    Opening the login page
+01:51:56.091  ·    Submitting login credentials
+01:54:17.042  ✘  Step failed after 142601 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByPlaceholder('Enter Your email')
+    - locator resolved to <input disabled type="email" name="email" autocomplete="on" placeholder="Enter Your email" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0 ↵                                file:bg-transparent file:text-sm ↵                                file:font-medium file:text-foreground focus-visible:outline-none ↵                                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ↵             …/>
+    - fill("ashil.shaji@fortunesoftit.com")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+      - waiting 100ms
+    275 × waiting for element to be visible, enabled and editable
+        - element is not enabled
+      - retrying fill action
+        - waiting 500ms
+
+01:54:17.063  ·  Test run complete: "TC1 — Full login with a correct OTP reaches the dashboard"
+────────────────────────────────────────────────────────────
+
