@@ -1,0 +1,22 @@
+[TC-DMREV-002] No-auth: 401 â€” Missing Authorization token
+[TC-DMREV-002] Wrong-auth: 401 â€” Invalid or expired token
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-002 â€” Auth Guard: missing token â†’ 401, wrong token â†’ 401
+────────────────────────────────────────────────────────────
+17:20:05.435  ·  Test started: "TC-DMREV-002 â€” Auth Guard: missing token â†’ 401, wrong token â†’ 401"
+17:20:05.438  ○  ▶ Step 1 â€” No Authorization header
+17:20:05.513  ·    GET /api/v1/dashboard/monthly-revenue
+17:20:05.739  ✔    HTTP 401 received
+17:20:05.817  ✔  Step completed in 380 ms
+17:20:05.817  ○  ▶ Step 2 â€” Invalid Bearer token
+17:20:05.820  ·    GET /api/v1/dashboard/monthly-revenue
+17:20:05.916  ✔    HTTP 401 received
+17:20:05.925  ✔  Step completed in 107 ms
+17:20:05.925  ○  ▶ Step 3 â€” Both must return 401 with correct messages
+17:20:05.928  ·    Asserting: response structure and values
+17:20:06.028  ✔    All assertions passed
+17:20:06.028  ✔  Step completed in 103 ms
+17:20:06.032  ·  Test run complete: "TC-DMREV-002 â€” Auth Guard: missing token â†’ 401, wrong token â†’ 401"
+────────────────────────────────────────────────────────────
+

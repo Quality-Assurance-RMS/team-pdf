@@ -1,0 +1,15 @@
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction?period=today&page=-1&size=10 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-TXN-001] TC-TXN-001 — Transaction list: negative page (-1) must return 400
+────────────────────────────────────────────────────────────
+17:19:48.032  ·  Test started: "[BUG-TXN-001] TC-TXN-001 — Transaction list: negative page (-1) must return 400"
+17:19:48.816  ○  ▶ Step 1 — GET list with page=-1
+17:19:48.824  ·    GET /api/v1/transaction?period=today&page=-1&size=10
+17:19:49.143  ✔    HTTP 400 received
+17:19:49.319  ·    Asserting: page=-1 returns 400 or 422
+17:19:49.336  ✔    All assertions passed
+17:19:49.337  ✔  Step completed in 521 ms
+17:19:49.339  ·  Test run complete: "[BUG-TXN-001] TC-TXN-001 — Transaction list: negative page (-1) must return 400"
+────────────────────────────────────────────────────────────
+

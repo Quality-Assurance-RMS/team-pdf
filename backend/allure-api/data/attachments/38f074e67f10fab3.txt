@@ -1,0 +1,15 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period= → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-001] TC-DB-001 — period="" (empty string) returns 200 with undefined default
+────────────────────────────────────────────────────────────
+17:20:03.330  ·  Test started: "[BUG-DB-001] TC-DB-001 — period="" (empty string) returns 200 with undefined default"
+17:20:03.622  ○  ▶ Step 1 — GET /summary?period= (empty)
+17:20:03.632  ·    GET /api/v1/dashboard/summary?period=
+17:20:03.817  ✔    HTTP 400 received
+17:20:03.831  ·    Asserting: Empty period returns 400
+17:20:03.838  ✔    All assertions passed
+17:20:03.913  ✔  Step completed in 291 ms
+17:20:03.917  ·  Test run complete: "[BUG-DB-001] TC-DB-001 — period="" (empty string) returns 200 with undefined default"
+────────────────────────────────────────────────────────────
+

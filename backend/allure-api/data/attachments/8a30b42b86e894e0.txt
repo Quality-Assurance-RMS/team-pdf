@@ -1,0 +1,23 @@
+17:25:37.328  ·  Test started: "TC-TXN-003 — Summary: Custom date range (2026-01-01 → 2026-05-22)"
+17:25:37.360  ○  ▶ Step 1 — Build request parameters
+17:25:37.374  ✔  Step completed in 14 ms
+17:25:37.374  ○  ▶ Step 2 — Send GET /summary?period=custom&from_date=...&to_date=...
+17:25:37.375  ·    GET /api/v1/transaction/summary?period=custom&from_date=2026-01-01&to_date=2026-05-22
+17:25:37.606  ✔    HTTP 200 received
+17:25:37.612  ✔  Step completed in 238 ms
+17:25:37.612  ○  ▶ Step 3 — Validate HTTP 200 status code
+17:25:37.613  ·    Asserting: HTTP 200, body defined, body is object
+17:25:37.624  ✔    All assertions passed
+17:25:37.626  ✔  Step completed in 14 ms
+17:25:37.626  ○  ▶ Step 4 — Validate response body has content
+17:25:37.627  ·    Asserting: body has at least one field
+17:25:37.629  ✔    All assertions passed
+17:25:37.630  ✔  Step completed in 4 ms
+17:25:37.630  ○  ▶ Step 5 — Validate total_volume for custom range
+17:25:37.631  ·    Asserting: total_volume present, amount is a number >= 0
+17:25:37.634  ✘  Step failed after 4 ms — total_volume must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBeDefined[2m()[22m
+
+Received: [31mundefined[39m
+17:25:37.636  ·  Test run complete: "TC-TXN-003 — Summary: Custom date range (2026-01-01 → 2026-05-22)"

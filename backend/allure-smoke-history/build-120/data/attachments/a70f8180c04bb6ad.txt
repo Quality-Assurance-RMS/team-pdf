@@ -1,0 +1,111 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-DSH-001] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/status-currency
+  â–º HTTP Status                    : 200
+  â–º Content-Type                   : application/json
+  â–º Response has "data" wrapper     : true âš  DASH-ISSUE-5
+  â–º statusDistribution count        : 3
+  â–º currencyDistribution count      : 2
+  â–º byMethod count                  : MISSING
+  â–º peakMetrics present             : true
+    statusDistribution: label=Successful, percentage=100, amount="undefined" (string âš  DASH-ISSUE-2), count="197" (string âš  DASH-ISSUE-2), color="undefined" âš  DASH-ISSUE-6
+    statusDistribution: label=Failed, percentage=0, amount="undefined" (string âš  DASH-ISSUE-2), count="0" (string âš  DASH-ISSUE-2), color="undefined" âš  DASH-ISSUE-6
+    statusDistribution: label=Pending, percentage=0, amount="undefined" (string âš  DASH-ISSUE-2), count="0" (string âš  DASH-ISSUE-2), color="undefined" âš  DASH-ISSUE-6
+    currencyDistribution: label=USD, percentage=5.0761%, amount="3070.56" (string âš  DASH-ISSUE-2), count="10" (string âš  DASH-ISSUE-2)
+    currencyDistribution: label=KES, percentage=94.9239%, amount="45912.26" (string âš  DASH-ISSUE-2), count="187" (string âš  DASH-ISSUE-2)
+    peakMetrics.peakTransactionsPerDay : "64" (string âš  DASH-ISSUE-2)
+    peakMetrics.peakHourWindow         : "10:00 PM – 10:59 PM"
+    peakMetrics.avgTPM                 : "9.9" (unit embedded âš  DASH-ISSUE-3)
+    peakMetrics.maxTPM                 : "40" (unit embedded âš  DASH-ISSUE-3)
+    peakMetrics.peakTxnDayChange       : "-98.5" (string % âš  DASH-ISSUE-4)
+    peakMetrics.peakTxnDayUp           : undefined
+    peakMetrics.avgTpmChange           : "-45.6" (string % âš  DASH-ISSUE-4)
+    peakMetrics.avgTpmUp               : undefined
+    peakMetrics.maxTpmChange           : "-60.4" (string % âš  DASH-ISSUE-4)
+    peakMetrics.maxTpmUp               : undefined
+  â–º Full Body:
+{
+    "data": {
+        "statusDistribution": [
+            {
+                "label": "Successful",
+                "percentage": 100,
+                "amountKes": 45912.26,
+                "count": 197
+            },
+            {
+                "label": "Failed",
+                "percentage": 0,
+                "amountKes": 0,
+                "count": 0
+            },
+            {
+                "label": "Pending",
+                "percentage": 0,
+                "amountKes": 0,
+                "count": 0
+            }
+        ],
+        "currencyDistribution": [
+            {
+                "label": "USD",
+                "percentage": 5.0761,
+                "amount": 3070.56,
+                "count": 10
+            },
+            {
+                "label": "KES",
+                "percentage": 94.9239,
+                "amount": 45912.26,
+                "count": 187
+            }
+        ],
+        "peakMetrics": {
+            "peakTransactionsPerDay": 64,
+            "peakTransactionDate": "2026-08-27",
+            "peakHourWindow": "10:00 PM – 10:59 PM",
+            "avgTPM": 9.9,
+            "maxTPM": 40,
+            "peakTxnDayChange": -98.5,
+            "peakTxnDayDirection": "down",
+            "avgTpmChange": -45.6,
+            "avgTpmDirection": "down",
+            "maxTpmChange": -60.4,
+            "maxTpmDirection": "down",
+            "peakHourWindowChange": -97.4,
+            "peakHourWindowDirection": "down"
+        }
+    }
+}
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present
+────────────────────────────────────────────────────────────
+17:20:54.747  ·  Test started: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"
+17:20:54.748  ○  ▶ Step 1 â€" Build request
+17:20:54.837  ·    Asserting: request parameters are recorded
+17:20:54.837  ✔    All assertions passed
+17:20:54.850  ✔  Step completed in 102 ms
+17:20:54.850  ○  ▶ Step 2 â€" Send GET /status-currency and log response
+17:20:54.851  ·    GET /api/v1/dashboard/status-currency
+17:20:56.036  ✔    HTTP 200 received
+17:20:56.044  ✔  Step completed in 1193 ms
+17:20:56.044  ○  ▶ Step 3 â€" Validate HTTP 200 and Content-Type
+17:20:56.044  ·    Asserting: HTTP 200, body defined, Content-Type is application/json
+17:20:56.054  ✔    All assertions passed
+17:20:56.054  ✔  Step completed in 10 ms
+17:20:56.054  ○  ▶ Step 4 â€" Validate top-level `data` wrapper and all four sections
+17:20:56.056  ·    Asserting: all four sections (statusDistribution, currencyDistribution, byMethod, peakMetrics) are present
+17:20:56.136  ✘  Step failed after 83 ms — byMethod section must be present
+
+expect(received).toHaveProperty(path)
+
+Expected path: "byMethod"
+Received path: []
+
+Received value: {"currencyDistribution": [{"amount": 3070.56, "count": 10, "label": "USD", "percentage": 5.0761}, {"amount": 45912.26, "count": 187, "label": "KES", "percentage": 94.9239}], "peakMetrics": {"avgTPM": 9.9, "avgTpmChange": -45.6, "avgTpmDirection": "down", "maxTPM": 40, "maxTpmChange": -60.4, "maxTpmDirection": "down", "peakHourWindow": "10:00 PM – 10:59 PM", "peakHourWindowChange": -97.4, "peakHourWindowDirection": "down", "peakTransactionDate": "2026-08-27", "peakTransactionsPerDay": 64, "peakTxnDayChange": -98.5, "peakTxnDayDirection": "down"}, "statusDistribution": [{"amountKes": 45912.26, "count": 197, "label": "Successful", "percentage": 100}, {"amountKes": 0, "count": 0, "label": "Failed", "percentage": 0}, {"amountKes": 0, "count": 0, "label": "Pending", "percentage": 0}]}
+17:20:56.140  ·  Test run complete: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"
+────────────────────────────────────────────────────────────
+

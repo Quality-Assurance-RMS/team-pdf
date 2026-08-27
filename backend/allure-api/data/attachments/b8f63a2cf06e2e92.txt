@@ -1,0 +1,25 @@
+[GET https://api.rms.dev.demo-fsit.com/spr-fetcher/api/v1/fetch/status] 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-SF-003] TC-SF-009 — tokenInjectionEnabled must be true (currently false — root cause of trigger failure)
+────────────────────────────────────────────────────────────
+17:32:47.383  ·  Test started: "[BUG-SF-003] TC-SF-009 — tokenInjectionEnabled must be true (currently false — root cause of trigger failure)"
+17:32:47.419  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+17:32:47.421  ·    GET /api/v1/fetch/status
+17:33:47.450  ✔    HTTP 200 received
+17:33:47.456  ✔  Step completed in 60037 ms
+17:33:47.456  ○  ▶ Step 2 — Assert HTTP 200
+17:33:47.456  ·    Asserting: HTTP status is 200
+17:33:47.471  ✔    All assertions passed
+17:33:47.471  ✔  Step completed in 15 ms
+17:33:47.471  ○  ▶ Step 3 — Assert tokenInjectionEnabled = true (BUG: false)
+17:33:47.471  ·    Asserting: tokenInjectionEnabled is true
+17:33:47.482  ✘  Step failed after 12 ms — [BUG-SF-003] tokenInjectionEnabled must be true, got: undefined
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: undefined
+17:33:47.484  ·  Test run complete: "[BUG-SF-003] TC-SF-009 — tokenInjectionEnabled must be true (currently false — root cause of trigger failure)"
+────────────────────────────────────────────────────────────
+

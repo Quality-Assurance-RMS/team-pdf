@@ -1,0 +1,30 @@
+17:21:48.011  ·  Test started: "TC-DTPAY-004 â€" BUG-TPAY-02: Monetary amounts must be numbers, not strings"
+17:21:48.013  ○  ▶ Step 1 â€" Fetch today-payments response
+17:21:48.024  ·    GET /api/v1/dashboard/today-payments
+17:21:48.417  ✔    HTTP 200 received
+17:21:48.447  ✔  Step completed in 434 ms
+17:21:48.447  ○  ▶ Step 2 â€" Validate HTTP 200
+17:21:48.448  ·    Asserting: HTTP 200
+17:21:48.456  ✔    All assertions passed
+17:21:48.457  ✔  Step completed in 10 ms
+17:21:48.457  ○  ▶ Step 3 â€" All monetary fields in payments must be numbers
+17:21:48.458  ·    Asserting: all monetary fields in payments section are numbers, not strings
+17:21:48.533  ✔    All assertions passed
+17:21:48.534  ✔  Step completed in 77 ms
+17:21:48.534  ○  ▶ Step 4 â€" All monetary fields in refunds must be numbers
+17:21:48.535  ·    Asserting: all monetary fields in refunds section are numbers, not strings
+17:21:48.725  ✔    All assertions passed
+17:21:48.726  ✔  Step completed in 191 ms
+17:21:48.726  ○  ▶ Step 5 â€" All monetary fields in revenue must be numbers
+17:21:48.726  ·    Asserting: all monetary fields in revenue section are numbers, not strings
+17:21:48.751  ✔    All assertions passed
+17:21:48.751  ✔  Step completed in 26 ms
+17:21:48.751  ○  ▶ Step 6 â€" Confirm postiveValue is a string (percentage label â€" acceptable)
+17:21:48.811  ·    Asserting: postiveValue is a string percentage label in all three sections
+17:21:48.815  ✘  Step failed after 64 ms — payments.postiveValue must be a string percentage label
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"string"[39m
+Received: [31m"undefined"[39m
+17:21:48.818  ·  Test run complete: "TC-DTPAY-004 â€" BUG-TPAY-02: Monetary amounts must be numbers, not strings"
