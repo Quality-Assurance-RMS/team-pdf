@@ -1,0 +1,21 @@
+01:52:29.403  ·  Test started: "TC2 — Table loads with at least one transaction row"
+01:52:29.846  ○  ▶ Step 1 — Verifies the transactions table is populated with data rows after page load
+01:52:29.849  ·    Test scope: Verifies the transactions table is populated with data rows after page load
+01:52:29.850  ✔  Step completed in 3 ms
+01:52:29.851  ○  ▶ Step 2 — Navigate to Transactions page
+01:52:29.852  ·    Opening the Transactions page
+01:52:31.827  ✔    Navigation to Transactions page initiated successfully
+01:52:34.121  ✔  Step completed in 4270 ms
+01:52:34.121  ○  ▶ Step 3 — Verify page loads successfully
+01:52:34.123  ·    Waiting for all Transactions page elements to render
+01:52:39.234  ✘  Step failed after 5113 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    13 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:52:40.746  ·  Test run complete: "TC2 — Table loads with at least one transaction row"

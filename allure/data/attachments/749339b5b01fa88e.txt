@@ -1,0 +1,21 @@
+01:48:33.354  ·  Test started: "TC2 — Profile Settings tab is active by default"
+01:48:33.613  ○  ▶ Step 1 — Verifies Profile Settings is the default active tab by checking the Profile Information form is shown on page load
+01:48:33.614  ·    Test scope: Verifies Profile Settings is the default active tab by checking the Profile Information form is shown on page load
+01:48:33.615  ✔  Step completed in 2 ms
+01:48:33.616  ○  ▶ Step 2 — Navigate to Settings page
+01:48:33.617  ·    Opening the Settings page
+01:48:34.548  ✔    Navigation to Settings page initiated successfully
+01:48:35.136  ✔  Step completed in 1520 ms
+01:48:35.136  ○  ▶ Step 3 — Verify page loads successfully
+01:48:35.137  ·    Waiting for all Settings page elements to render
+01:48:50.218  ✘  Step failed after 15082 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/settings/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:48:52.391  ·  Test run complete: "TC2 — Profile Settings tab is active by default"
