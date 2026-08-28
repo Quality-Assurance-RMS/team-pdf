@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-OT-007",
-  "expected": "406 Not Acceptable",
-  "actual": "HTTP 500 Internal Server Error",
-  "impact": "Misleading error; clients cannot detect content-type mismatch vs real server errors",
-  "fix": "Handle HttpMediaTypeNotAcceptableException globally and return 406"
-}

@@ -1,0 +1,9 @@
+02:17:43.009  ·  Test started: "[Security] TC6 — Timestamp 10 minutes in the FUTURE returns 401 REPLAY_WINDOW_EXCEEDED"
+02:17:43.099  ○  ▶ Step 1 — Build a valid invoice payload
+02:17:43.105  ✔  Step completed in 5 ms
+02:17:43.105  ○  ▶ Step 2 — Sign the payload using a timestamp 10 minutes in the future
+02:17:43.120  ✔  Step completed in 15 ms
+02:17:43.120  ○  ▶ Step 3 — POST with the future timestamp and confirm 401 REPLAY_WINDOW_EXCEEDED
+02:17:43.307  ✔    Future (>5min ahead) timestamp correctly rejected with REPLAY_WINDOW_EXCEEDED
+02:17:43.307  ✔  Step completed in 187 ms
+02:17:43.309  ·  Test run complete: "[Security] TC6 — Timestamp 10 minutes in the FUTURE returns 401 REPLAY_WINDOW_EXCEEDED"

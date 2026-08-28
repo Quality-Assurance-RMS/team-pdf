@@ -1,0 +1,19 @@
+02:21:23.526  ·  Test started: "TC-TXN-001 — Summary: Default period (last-7-days)"
+02:21:23.563  ○  ▶ Step 1 — Build request parameters
+02:21:23.577  ✔  Step completed in 14 ms
+02:21:23.577  ○  ▶ Step 2 — Send GET /summary?period=last-7-days
+02:21:23.578  ·    GET /api/v1/transaction/summary?period=last-7-days
+02:21:23.861  ✔    HTTP 200 received
+02:21:23.866  ✔  Step completed in 288 ms
+02:21:23.866  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:21:23.866  ·    Asserting: HTTP 200, body defined, body is object
+02:21:23.874  ✔    All assertions passed
+02:21:23.875  ✔  Step completed in 9 ms
+02:21:23.875  ○  ▶ Step 4 — Validate response body structure
+02:21:23.876  ·    Asserting: total_volume, success_rate, total_refunds fields present
+02:21:23.887  ✘  Step failed after 12 ms — total_volume field must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBeDefined[2m()[22m
+
+Received: [31mundefined[39m
+02:21:23.889  ·  Test run complete: "TC-TXN-001 — Summary: Default period (last-7-days)"

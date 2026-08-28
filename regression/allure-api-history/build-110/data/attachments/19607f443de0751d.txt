@@ -1,0 +1,18 @@
+02:21:53.423  ·  Test started: "TC1 — Successful Transaction — Happy Path"
+02:21:53.453  ○  ▶ Step 1 — POST /dev/sign to obtain HMAC signature
+02:21:53.456  ·    POST /pgwebhook/dev/sign
+02:21:53.639  ✔    HTTP 200 received
+02:21:53.640  ·    Asserting: signature is truthy
+02:21:53.642  ✔    All assertions passed
+02:21:53.643  ✔  Step completed in 190 ms
+02:21:53.643  ○  ▶ Step 2 — POST /transactions — expect HTTP 200 with status "received"
+02:21:53.644  ·    POST /pgwebhook/transactions
+02:21:53.677  ✔    HTTP 401 received
+02:21:53.681  ·    Asserting: HTTP 200 and body.status is "received"
+02:21:53.688  ✘  Step failed after 45 ms — Expected HTTP 200
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m401[39m
+02:21:53.691  ·  Test run complete: "TC1 — Successful Transaction — Happy Path"
