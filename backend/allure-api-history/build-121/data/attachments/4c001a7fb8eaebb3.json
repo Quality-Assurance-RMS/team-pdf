@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-GW-001",
+  "expected": "access-control-allow-origin: https://rms.dev.demo-fsit.com",
+  "actual": "access-control-allow-origin: *",
+  "impact": "Any website can retrieve the KCB API token from a user's browser via CORS",
+  "fix": "Configure APISIX CORS plugin with explicit allow-origin matching only the RMS frontend domain"
+}

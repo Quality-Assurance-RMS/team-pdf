@@ -1,0 +1,12 @@
+17:20:18.556  ·  Test started: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"
+17:20:18.681  ○  ▶ GET ?(no param) — No mcda_id param
+17:20:18.754  ·    GET /api/v1/analytics/dashboard/summary
+17:20:18.860  ✔    HTTP 502 received
+17:20:18.860  ·    Asserting: Request returns 200 without error
+17:20:18.871  ✘  Step failed after 191 ms — No mcda_id param — request must not error
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m502[39m
+17:20:18.874  ·  Test run complete: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"
