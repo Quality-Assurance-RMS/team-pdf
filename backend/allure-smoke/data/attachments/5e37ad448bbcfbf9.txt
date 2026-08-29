@@ -1,0 +1,70 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DSUM-007] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-05-15&to_date=2026-05-15
+  â–º HTTP Status    : 200
+  â–º Content-Type   : application/json
+  â–º period         : N/A
+  â–º date_from      : N/A
+  â–º date_to        : N/A
+  â–º Full Body:
+{
+    "data": {
+        "totalRevenueKes": {
+            "amount": 104035.5,
+            "currency": "KES",
+            "changePct": 0,
+            "changeDirection": "flat"
+        },
+        "totalRevenueUsd": {
+            "amount": 0,
+            "currency": "USD",
+            "changePct": 0,
+            "changeDirection": "flat"
+        },
+        "totalTransactions": {
+            "totalTransactionCount": 16,
+            "countKes": 16,
+            "countUsd": 0,
+            "changePctKes": 0,
+            "changeDirectionKes": "flat",
+            "changePctUsd": 0,
+            "changeDirectionUsd": "flat"
+        },
+        "successfulPayments": {
+            "count": 16,
+            "ratePct": 100,
+            "changePct": 0,
+            "changeDirection": "flat"
+        },
+        "failedPayments": {
+            "count": 0,
+            "ratePct": 0,
+            "changePct": 0,
+            "changeDirection": "flat"
+        }
+    }
+}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-007 â€” BUG-SUM-04: single-day range (from=to) must be accepted (validator too strict)
+────────────────────────────────────────────────────────────
+17:23:33.207  ·  Test started: "TC-DSUM-007 â€” BUG-SUM-04: single-day range (from=to) must be accepted (validator too strict)"
+17:23:33.208  ○  ▶ Step 1 â€” Send single-day range from_date=to_date=2026-05-15
+17:23:33.217  ·    GET /api/v1/dashboard/summary
+17:23:33.711  ✔    HTTP 200 received
+17:23:33.723  ✔  Step completed in 515 ms
+17:23:33.723  ○  ▶ Step 2 â€” Flag BUG-SUM-04 if 400 is returned
+17:23:33.727  ·    Asserting: Flag BUG-SUM-04 if 400 is returned
+17:23:33.819  ✔    All assertions passed
+17:23:33.819  ✔  Step completed in 96 ms
+17:23:33.819  ○  ▶ Step 3 â€” Also test adjacent single-day range (from < to by 1 day) works fine
+17:23:33.820  ·    GET /api/v1/dashboard/summary
+17:23:34.123  ✔    HTTP 200 received
+17:23:34.123  ·    Asserting: response structure and values
+17:23:34.131  ✔    All assertions passed
+17:23:34.132  ✔  Step completed in 312 ms
+17:23:34.137  ·  Test run complete: "TC-DSUM-007 â€” BUG-SUM-04: single-day range (from=to) must be accepted (validator too strict)"
+────────────────────────────────────────────────────────────
+

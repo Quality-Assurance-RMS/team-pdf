@@ -1,0 +1,16 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-008 – BUG-ASUM-07: Response must have top-level "data" wrapper (consistent with all other endpoints)
+────────────────────────────────────────────────────────────
+17:22:04.623  ·  Test started: "TC-ASUM-008 – BUG-ASUM-07: Response must have top-level "data" wrapper (consistent with all other endpoints)"
+17:22:04.630  ○  ▶ Step 1 – Fetch analytics summary
+17:22:04.820  ·    GET /api/v1/analytics/dashboard/summary
+17:22:05.113  ✔    HTTP 502 received
+17:22:05.113  ·    Asserting: HTTP 200
+17:22:05.123  ✘  Step failed after 493 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+17:22:05.126  ·  Test run complete: "TC-ASUM-008 – BUG-ASUM-07: Response must have top-level "data" wrapper (consistent with all other endpoints)"
+────────────────────────────────────────────────────────────
+

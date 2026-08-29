@@ -1,0 +1,12 @@
+17:22:55.412  ·  Test started: "TC-DREVT-004 â€” BUG-REVT-02/03: points must be a number; value must expose raw numeric amount"
+17:22:55.414  ○  ▶ Step 1 â€” Fetch revenue-trend response
+17:22:55.424  ·    GET /api/v1/dashboard/revenue-trend
+17:22:56.011  ✔    HTTP 503 received
+17:22:56.015  ✔  Step completed in 601 ms
+17:22:56.015  ○  ▶ Step 2 â€” Validate HTTP 200
+17:22:56.017  ·    Asserting: Validate HTTP 200
+17:22:56.027  ✘  Step failed after 11 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m503[39m
+17:22:56.029  ·  Test run complete: "TC-DREVT-004 â€” BUG-REVT-02/03: points must be a number; value must expose raw numeric amount"

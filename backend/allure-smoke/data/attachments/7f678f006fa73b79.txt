@@ -1,0 +1,12 @@
+17:23:09.441  ·  Test started: "TC-DREVT-006 â€” BUG-REVT-05: change field must reflect real period-over-period delta, not always "+0%""
+17:23:09.443  ○  ▶ Step 1 â€” Fetch revenue-trend response
+17:23:09.517  ·    GET /api/v1/dashboard/revenue-trend
+17:23:10.209  ✔    HTTP 503 received
+17:23:10.226  ✔  Step completed in 782 ms
+17:23:10.226  ○  ▶ Step 2 â€” Validate HTTP 200
+17:23:10.227  ·    Asserting: Validate HTTP 200
+17:23:10.324  ✘  Step failed after 98 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m503[39m
+17:23:10.327  ·  Test run complete: "TC-DREVT-006 â€” BUG-REVT-05: change field must reflect real period-over-period delta, not always "+0%""

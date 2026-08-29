@@ -1,0 +1,10 @@
+17:22:27.129  ·  Test started: "[BUG-GW-003] TC-GW-004 — Server response header must not disclose APISIX version"
+17:22:27.513  ○  ▶ Step 1 — Send GET /spr-fetcher/api/v1/fetch/status and inspect Server header
+17:22:27.517  ·    GET /api/v1/fetch/status
+17:23:27.707  ✔    HTTP 200 received
+17:23:27.716  ✔  Step completed in 60202 ms
+17:23:27.716  ○  ▶ Step 2 — Assert Server header does not disclose version (BUG: APISIX/3.16.0)
+17:23:27.718  ·    Asserting: Server header does not contain a version number
+17:23:27.727  ✔    All assertions passed
+17:23:27.727  ✔  Step completed in 11 ms
+17:23:27.729  ·  Test run complete: "[BUG-GW-003] TC-GW-004 — Server response header must not disclose APISIX version"
