@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All five transaction status cards are visible
+────────────────────────────────────────────────────────────
+01:48:50.937  ·  Test started: "TC1 — All five transaction status cards are visible"
+01:48:51.400  ○  ▶ Step 1 — Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed cards render on the Reports page
+01:48:51.403  ·    Test scope: Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed cards render on the Reports page
+01:48:51.403  ✔  Step completed in 3 ms
+01:48:51.404  ○  ▶ Step 2 — Navigate to Reports page
+01:48:51.405  ·    Opening the Reports page
+01:48:53.536  ✔    Navigation to Reports page initiated successfully
+01:48:53.802  ✔  Step completed in 2398 ms
+01:48:53.802  ○  ▶ Step 3 — Verify page loads successfully
+01:48:53.803  ·    Waiting for all Reports page elements to render
+01:49:08.827  ✘  Step failed after 15025 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/reports/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:49:11.160  ·  Test run complete: "TC1 — All five transaction status cards are visible"
+────────────────────────────────────────────────────────────
+

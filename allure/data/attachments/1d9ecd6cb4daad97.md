@@ -1,0 +1,282 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UI/Dashboard/dash-gp-tc2-gateway-payments-transactions-today.spec.ts >> Dashboard — Gateway Payments >> TC2 — "Transactions Today" shows a numeric count
+- Location: tests/UI/Dashboard/dash-gp-tc2-gateway-payments-transactions-today.spec.ts:35:7
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByText(/Transactions \(today\)/i)
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for getByText(/Transactions \(today\)/i)
+
+```
+
+```yaml
+- complementary:
+  - img "eCitizen"
+  - navigation:
+    - link "Dashboard":
+      - /url: /dashboard
+      - img
+      - text: Dashboard
+    - link "Transactions":
+      - /url: /transaction
+      - img
+      - text: Transactions
+    - link "Invoice":
+      - /url: /invoice
+      - img
+      - text: Invoice
+    - link "Reconciliation":
+      - /url: /reconciliation
+      - img
+      - text: Reconciliation
+    - button "Expand Reconciliation":
+      - img
+    - link "Settlements":
+      - /url: /settlements
+      - img
+      - text: Settlements
+    - link "Payouts":
+      - /url: /payouts
+      - img
+      - text: Payouts
+    - link "SLA":
+      - /url: /service-level-agreement/list
+      - img
+      - text: SLA
+    - link "Reports":
+      - /url: /reports
+      - img
+      - text: Reports
+    - link "Administration":
+      - /url: /psp-files
+      - img
+      - text: Administration
+    - button "Expand Administration":
+      - img
+  - text: Awaiting Settlement
+  - paragraph: Awaiting Settlement
+  - button:
+    - img
+  - button:
+    - img
+  - text: Refresh status
+  - button "Logout":
+    - img
+    - text: Logout
+  - button "Collapse sidebar":
+    - img
+- banner: A Ashil ADMIN PLATFORM
+- main:
+  - heading "Hi, Ashil" [level=2]
+  - paragraph: Here's what's happening with eCitizen Last 7 Days.
+  - combobox:
+    - option "Today"
+    - option "Last 7 Days" [selected]
+    - option "Last 30 Days"
+    - option "Last 90 Days"
+    - option "Custom Range"
+  - img
+  - paragraph: Revenue generated
+  - paragraph: Revenue across all MCDA'S
+  - button "View Details →"
+  - paragraph: Total Revenue (KES) & (USD)
+  - img
+  - text: KES 35.5K KES 35,456.41 -99.2%
+  - img
+  - img
+  - text: USD 1,535.28 USD 1,535.28 -99.5%
+  - img
+  - img
+  - paragraph: No. of Transactions
+  - paragraph: 270 transactions
+  - button "View Transactions →"
+  - paragraph: Total Transactions (KES) & (USD)
+  - img
+  - text: 265 -84.4%
+  - img
+  - img
+  - text: 5 -99.6%
+  - img
+  - img
+  - paragraph: Total Transactions
+  - paragraph: 270 Transactions
+  - button "View Details →"
+  - text: Successful Transactions 0.0 —
+  - paragraph: 100%
+  - paragraph: "270"
+  - text: Failed Transactions 0.0 —
+  - paragraph: 0%
+  - paragraph: "0"
+  - heading "Gateway Payments" [level=2]
+  - paragraph: "270"
+  - paragraph: Transactions (last 7 Days)
+  - paragraph: 100%
+  - paragraph: Success Rate
+  - paragraph: 100%
+  - paragraph: Availability
+  - paragraph: 0 /sec
+  - paragraph: P95 Latency
+  - paragraph: 0%
+  - paragraph: Timeout Rate
+  - paragraph: Transactions by Payment Method
+  - img: Mobile money Net banking
+  - paragraph: Success vs Failure by Method
+  - text: Success Failure
+  - img: Mobile money Net banking
+  - paragraph: Share of Payment Methods
+  - paragraph: Mobile money
+  - paragraph: 95.22%
+  - paragraph: Net banking
+  - paragraph: 4.78%
+  - paragraph: Monthly Revenue for All Services
+  - img
+  - text: Showing last 12 months · auto-updates daily
+  - button "KES"
+  - button "USD"
+  - text: KES 440.4M KES 440,397,002.57 Gross Amount KES 432.8M KES 432,814,284.95 Net Amount KES 7.6M KES 7,582,717.62 Access Fee
+  - paragraph: 100%
+  - text: Transaction Success Ratio Gross KES Net KES Access Fee
+  - img: Dec Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov 0 100.… 200.… 300.… 400.… 500.…
+  - img
+  - text: "Access Fee: 7,045,500.95"
+  - img
+  - text: "Gross KES: 4,777,300.00"
+  - img
+  - text: "Net KES: 4,777,200.00"
+  - img
+  - text: "Access Fee: 100.00"
+  - img
+  - text: "Gross KES: 660,496.50"
+  - img
+  - text: "Net KES: 617,299.00"
+  - img
+  - text: "Access Fee: 43,197.50"
+  - img
+  - text: "Access Fee: 490,500.70"
+  - img
+  - text: "Gross KES: 122,715.27"
+  - img
+  - text: "Net KES: 122,170.27"
+  - img
+  - text: "Access Fee: 545.00"
+  - img
+  - text: "Gross KES: 6,806,778.40"
+  - img
+  - text: "Net KES: 6,803,904.93"
+  - img
+  - text: "Access Fee: 2,873.47"
+- region "Notifications alt+T"
+```
+
+# Test source
+
+```ts
+  1  | /**
+  2  |  * @file gateway-payments-transactions-today.spec.ts
+  3  |  * @testId DASH-GP-TC2
+  4  |  * @feature Dashboard — Gateway Payments
+  5  |  * @priority P0 / Critical
+  6  |  *
+  7  |  * PURPOSE
+  8  |  * -------
+  9  |  * Verifies that the "Transactions Today" metric in the Gateway Payments
+  10 |  * section is visible and displays a numeric count. This count shows how many
+  11 |  * payment transactions have been processed through the gateway today.
+  12 |  *
+  13 |  * WHY THIS MATTERS
+  14 |  * ----------------
+  15 |  * Operations teams monitor this count in real time to detect sudden drops
+  16 |  * (potential gateway outage) or unexpected spikes (potential fraud). A
+  17 |  * blank or missing value disrupts this monitoring workflow.
+  18 |  *
+  19 |  * PRE-CONDITIONS
+  20 |  * --------------
+  21 |  *  - Authenticated session (OTP login)
+  22 |  *  - Gateway Payments section mounted (TC1 must pass)
+  23 |  *  - At least one gateway transaction exists for the current day
+  24 |  */
+  25 | 
+  26 | import { test, expect } from '../fixtures';
+  27 | import type { TestInfo } from '@playwright/test';
+  28 | import { allure } from 'allure-playwright';
+  29 | import { DashboardPage } from '../../pages/DashboardPage';
+  30 | import { attachScreenshot } from '../../utils/screenshotHelper';
+  31 | 
+  32 | test.describe('Dashboard — Gateway Payments', () => {
+  33 |   test.setTimeout(120000);
+  34 | 
+  35 |   test('TC2 — "Transactions Today" shows a numeric count', async ({ page, logger }, testInfo: TestInfo) => {
+  36 |     // ── Allure metadata ──────────────────────────────────────────────────────
+  37 |     await allure.description('Verifies the Transactions Today metric is visible and displays a numeric value.');
+  38 |     await allure.label('feature',  'Dashboard');
+  39 |     await allure.label('story',    'Gateway Payments');
+  40 |     await allure.label('severity', 'critical');
+  41 |     await allure.label('priority', 'P0');
+  42 |     await allure.label('testId',   'DASH-GP-TC2');
+  43 | 
+  44 |     await logger.step('Step 1 — Verifies the Transactions Today metric is visible and displays a numeric value', async () => {
+  45 |       logger.info('Test scope: Verifies the Transactions Today metric is visible and displays a numeric value');
+  46 |     });
+  47 | 
+  48 |     // ── Setup ────────────────────────────────────────────────────────────────
+  49 |     const dashboard = new DashboardPage(page);
+  50 | 
+  51 |     await logger.step('Step 2 — Navigate to Dashboard page', async () => {
+  52 |       logger.info('Opening the Dashboard page');
+  53 |       await dashboard.goto();
+  54 |       logger.pass('Navigation to Dashboard initiated successfully');
+  55 |       await attachScreenshot(page, testInfo, '01 — Page loading');
+  56 |     });
+  57 | 
+  58 |     await logger.step('Step 3 — Verify page loads successfully', async () => {
+  59 |       logger.info('Waiting for all Dashboard elements to render');
+  60 |       await dashboard.assertPageLoaded();
+  61 |       logger.pass('Dashboard page is fully loaded with all required elements');
+  62 |       await attachScreenshot(page, testInfo, '02 — Page loaded and ready');
+  63 |     });
+  64 | 
+  65 |     // ── Assertions ───────────────────────────────────────────────────────────
+  66 |     await logger.step('Step 4 — "Transactions (today)" label is visible', async () => {
+  67 |       // Label changed from "Transactions Today" to "Transactions (today)" in new UI
+  68 |       logger.info('Asserting visibility: Transactions (today) metric label');
+> 69 |       await expect(dashboard.transactionsTodayMetric).toBeVisible();
+     |                                                       ^ Error: expect(locator).toBeVisible() failed
+  70 |       logger.pass('Transactions (today) metric label is visible');
+  71 |       await attachScreenshot(page, testInfo, '03 — Transactions today label visible', dashboard.transactionsTodayMetric);
+  72 |     });
+  73 | 
+  74 |     await logger.step('Step 5 — Adjacent count value is numeric', async () => {
+  75 |       logger.info('Reading Transactions Today count value from the page');
+  76 |       const el   = page.getByText(/Transactions \(today\)/i);
+  77 |       const text = await el.locator('xpath=ancestor::*[2]').innerText()
+  78 |         .catch(() => el.locator('xpath=ancestor::*[1]').innerText())
+  79 |         .catch(() => el.innerText());
+  80 | 
+  81 |       // Attach the raw widget text to Allure for debugging
+  82 |       allure.parameter('Transactions Today text', text.trim());
+  83 | 
+  84 |       // Any integer (including 0) is a valid count — we only reject non-numeric
+  85 |       expect(text).toMatch(/\d+/);
+  86 |       logger.pass('Value assertion passed');
+  87 |       await attachScreenshot(page, testInfo, '04 — Transactions Today numeric value validated');
+  88 |     });
+  89 |   });
+  90 | });
+  91 | 
+```
