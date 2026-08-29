@@ -1,0 +1,29 @@
+[/dev/sign] status: 200 | body: {
+  "signature": "2202c60789f99223a68d1e3521a8d4e74b962a40dbf5b31d6074664c2f98c073"
+}
+[/transactions] status: 401 | body: {
+  "error_code": "INVALID_SIGNATURE",
+  "message": "signature verification failed"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC5 — Failed Transaction — INSUFFICIENT_FUNDS
+────────────────────────────────────────────────────────────
+02:20:49.601  ·  Test started: "TC5 — Failed Transaction — INSUFFICIENT_FUNDS"
+02:20:49.641  ○  ▶ Step 1 — POST /dev/sign to obtain HMAC signature for FAILED transaction payload
+02:20:49.645  ·    POST /pgwebhook/dev/sign (FAILED transaction payload)
+02:20:49.758  ✔    HTTP 200 received
+02:20:49.765  ✔  Step completed in 124 ms
+02:20:49.765  ○  ▶ Step 2 — POST /transactions — expect HTTP 200 (FAILED transactions are accepted and stored)
+02:20:49.766  ·    POST /pgwebhook/transactions (FAILED transaction)
+02:20:49.796  ✔    HTTP 401 received
+02:20:49.799  ·    Asserting: HTTP 200 and body.status is "received"
+02:20:49.804  ✘  Step failed after 39 ms — Expected HTTP 200 — FAILED txns must be stored
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 401
+02:20:49.831  ·  Test run complete: "TC5 — Failed Transaction — INSUFFICIENT_FUNDS"
+────────────────────────────────────────────────────────────
+
