@@ -1,0 +1,20 @@
+[invoice-webhook] status=401 body={"error":{"code":"SIGNATURE_MISMATCH","message":"HMAC signature verification failed"}}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Single line item, fully paid invoice — happy path
+────────────────────────────────────────────────────────────
+02:17:17.082  ·  Test started: "TC1 — Single line item, fully paid invoice — happy path"
+02:17:17.185  ○  ▶ Step 1 — Build a single-item, fully-paid invoice payload
+02:17:17.271  ✔  Step completed in 86 ms
+02:17:17.271  ○  ▶ Step 2 — Sign the payload (HMAC-SHA256 over "<timestamp>.<raw_body>")
+02:17:17.291  ✔  Step completed in 21 ms
+02:17:17.291  ○  ▶ Step 3 — POST invoice KRCV3PRSB3MCBCOR and validate the response
+02:17:17.472  ✘  Step failed after 180 ms — invoice POST should return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 401
+02:17:17.474  ·  Test run complete: "TC1 — Single line item, fully paid invoice — happy path"
+────────────────────────────────────────────────────────────
+

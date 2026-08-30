@@ -1,0 +1,18 @@
+02:18:46.377  ·  Test started: "TC-SF-005 — GET /api/v1/fetch/status: checkedAt is a recent ISO 8601 timestamp (< 60 s old)"
+02:18:46.415  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+02:18:46.419  ·    GET /api/v1/fetch/status
+02:19:46.449  ✔    HTTP 200 received
+02:19:46.455  ✔  Step completed in 60040 ms
+02:19:46.456  ○  ▶ Step 2 — Assert HTTP 200
+02:19:46.457  ·    Asserting: HTTP status is 200
+02:19:46.476  ✔    All assertions passed
+02:19:46.476  ✔  Step completed in 20 ms
+02:19:46.476  ○  ▶ Step 3 — Validate checkedAt recency
+02:19:46.477  ·    Asserting: checkedAt is parseable and within the last 60 seconds
+02:19:46.489  ✘  Step failed after 13 ms — checkedAt must not be in the future
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+Expected: >= [32m0[39m
+Received:    [31m-10799.955[39m
+02:19:46.493  ·  Test run complete: "TC-SF-005 — GET /api/v1/fetch/status: checkedAt is a recent ISO 8601 timestamp (< 60 s old)"
