@@ -1,0 +1,318 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UI/Dashboard/dash-kpi-tc2-kpi-cards-numeric-values.spec.ts >> Dashboard — KPI Cards >> TC2 — KPI cards display non-empty numeric values
+- Location: tests/UI/Dashboard/dash-kpi-tc2-kpi-cards-numeric-values.spec.ts:36:7
+
+# Error details
+
+```
+Test timeout of 120000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - img "eCitizen" [ref=e8] [cursor=pointer]
+      - navigation [ref=e9]:
+        - link "Dashboard" [ref=e11] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e12]
+          - generic [ref=e14]: Dashboard
+        - link "Transactions" [ref=e16] [cursor=pointer]:
+          - /url: /transaction
+          - img [ref=e17]
+          - generic [ref=e19]: Transactions
+        - link "Invoice" [ref=e21] [cursor=pointer]:
+          - /url: /invoice
+          - img [ref=e22]
+          - generic [ref=e24]: Invoice
+        - generic [ref=e26]:
+          - link "Reconciliation" [ref=e29] [cursor=pointer]:
+            - /url: /reconciliation
+            - img [ref=e30]
+            - generic [ref=e32]: Reconciliation
+          - button "Expand Reconciliation" [ref=e33]:
+            - img [ref=e34]
+        - link "Settlements" [ref=e37] [cursor=pointer]:
+          - /url: /settlements
+          - img [ref=e38]
+          - generic [ref=e40]: Settlements
+        - link "Payouts" [ref=e42] [cursor=pointer]:
+          - /url: /payouts
+          - img [ref=e43]
+          - generic [ref=e45]: Payouts
+        - link "SLA" [ref=e47] [cursor=pointer]:
+          - /url: /service-level-agreement/list
+          - img [ref=e48]
+          - generic [ref=e50]: SLA
+        - link "Reports" [ref=e52] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e53]
+          - generic [ref=e55]: Reports
+        - generic [ref=e57]:
+          - link "Administration" [ref=e60] [cursor=pointer]:
+            - /url: /psp-files
+            - img [ref=e61]
+            - generic [ref=e63]: Administration
+          - button "Expand Administration" [ref=e64]:
+            - img [ref=e65]
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic: Awaiting Settlement
+        - paragraph [ref=e71]: Awaiting Settlement
+        - generic [ref=e72]:
+          - button [ref=e73]:
+            - img [ref=e74]
+          - generic [ref=e76]:
+            - button [ref=e77]:
+              - img [ref=e78]
+            - generic: Refresh status
+      - button "Logout" [ref=e81] [cursor=pointer]:
+        - img [ref=e82]
+        - generic [ref=e84]: Logout
+      - button "Collapse sidebar" [ref=e85]:
+        - img [ref=e86]
+    - generic [ref=e88]:
+      - banner [ref=e89]:
+        - generic [ref=e90]:
+          - generic [ref=e93]: A
+          - generic [ref=e95]:
+            - generic [ref=e96]: Ashil
+            - generic [ref=e97]:
+              - generic [ref=e98]: ADMIN
+              - generic [ref=e99]: PLATFORM
+      - main [ref=e101]:
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - generic [ref=e104]:
+              - generic [ref=e106]:
+                - heading "Hi, Ashil" [level=2] [ref=e107]
+                - paragraph [ref=e108]: Here's what's happening with eCitizen Last 7 Days.
+              - combobox [ref=e110]:
+                - option "Today"
+                - option "Last 7 Days" [selected]
+                - option "Last 30 Days"
+                - option "Last 90 Days"
+                - option "Custom Range"
+            - generic [ref=e113]:
+              - generic [ref=e114]:
+                - generic [ref=e115]:
+                  - generic [ref=e116]:
+                    - img [ref=e118]
+                    - generic [ref=e120]:
+                      - paragraph [ref=e121]: Revenue generated
+                      - paragraph [ref=e122]: Revenue across all MCDA'S
+                  - button "View Details →" [ref=e123] [cursor=pointer]
+                - generic [ref=e125]:
+                  - paragraph [ref=e126]: Total Revenue (KES) & (USD)
+                  - generic [ref=e127]:
+                    - generic [ref=e128]:
+                      - generic [ref=e129]:
+                        - img [ref=e130]
+                        - generic [ref=e138]: KES 25.1K
+                      - generic: KES 25,063.10
+                    - generic [ref=e139]:
+                      - generic [ref=e140]: "-99.4%"
+                      - img [ref=e141]
+                  - generic [ref=e143]:
+                    - generic [ref=e144]:
+                      - generic [ref=e145]:
+                        - img [ref=e146]
+                        - generic [ref=e156]: USD 0
+                      - generic: USD 0.00
+                    - generic [ref=e157]:
+                      - generic [ref=e158]: "-100%"
+                      - img [ref=e159]
+              - generic [ref=e161]:
+                - generic [ref=e162]:
+                  - generic [ref=e163]:
+                    - img [ref=e165]
+                    - generic [ref=e168]:
+                      - paragraph [ref=e169]: No. of Transactions
+                      - paragraph [ref=e170]: 340 transactions
+                  - button "View Transactions →" [ref=e171] [cursor=pointer]
+                - generic [ref=e173]:
+                  - paragraph [ref=e174]: Total Transactions (KES) & (USD)
+                  - generic [ref=e175]:
+                    - generic [ref=e176]:
+                      - img [ref=e177]
+                      - generic [ref=e185]: "340"
+                    - generic [ref=e186]:
+                      - generic [ref=e187]: "-78.9%"
+                      - img [ref=e188]
+                  - generic [ref=e190]:
+                    - generic [ref=e191]:
+                      - img [ref=e192]
+                      - generic [ref=e202]: "0"
+                    - generic [ref=e203]:
+                      - generic [ref=e204]: "-100%"
+                      - img [ref=e205]
+              - generic [ref=e207]:
+                - generic [ref=e208]:
+                  - generic [ref=e209]:
+                    - img [ref=e211]
+                    - generic [ref=e215]:
+                      - paragraph [ref=e216]: Total Transactions
+                      - paragraph [ref=e217]: 340 Transactions
+                  - button "View Details →" [ref=e218] [cursor=pointer]
+                - generic [ref=e220]:
+                  - generic [ref=e221]:
+                    - generic [ref=e222]:
+                      - generic [ref=e223]: Successful Transactions
+                      - generic [ref=e224]: 0.0 —
+                    - paragraph [ref=e225]: 100%
+                    - paragraph [ref=e226]: "340"
+                  - generic [ref=e228]:
+                    - generic [ref=e229]:
+                      - generic [ref=e230]: Failed Transactions
+                      - generic [ref=e231]: 0.0 —
+                    - paragraph [ref=e232]: 0%
+                    - paragraph [ref=e233]: "0"
+            - generic [ref=e235]:
+              - heading "Gateway Payments" [level=2] [ref=e238]
+              - generic [ref=e239]:
+                - generic [ref=e240]:
+                  - generic [ref=e241]:
+                    - paragraph [ref=e242]: "340"
+                    - paragraph [ref=e243]: Transactions (last 7 Days)
+                  - generic [ref=e244]:
+                    - paragraph [ref=e245]: 100%
+                    - paragraph [ref=e246]: Success Rate
+                  - generic [ref=e247]:
+                    - paragraph [ref=e248]: 100%
+                    - paragraph [ref=e249]: Availability
+                  - generic [ref=e250]:
+                    - paragraph [ref=e251]: 0 /sec
+                    - paragraph [ref=e252]: P95 Latency
+                  - generic [ref=e253]:
+                    - paragraph [ref=e254]: 0%
+                    - paragraph [ref=e255]: Timeout Rate
+                - generic [ref=e256]:
+                  - generic [ref=e258]:
+                    - generic [ref=e259]:
+                      - paragraph [ref=e261]: Transactions by Payment Method
+                      - img [ref=e266]:
+                        - generic [ref=e276]: Mobile money
+                    - generic [ref=e277]:
+                      - generic [ref=e278]:
+                        - paragraph [ref=e279]: Success vs Failure by Method
+                        - generic [ref=e281]:
+                          - generic [ref=e282]: Success
+                          - generic [ref=e284]: Failure
+                      - img [ref=e289]:
+                        - generic [ref=e299]: Mobile money
+                  - generic [ref=e301]:
+                    - paragraph [ref=e302]: Share of Payment Methods
+                    - generic [ref=e305]:
+                      - paragraph [ref=e306]: Mobile money
+                      - paragraph [ref=e307]: 100.00%
+          - generic [ref=e309]:
+            - generic [ref=e310]:
+              - generic [ref=e311]:
+                - paragraph [ref=e312]: Monthly Revenue for All Services
+                - generic [ref=e313]:
+                  - img [ref=e315]
+                  - generic: Showing last 12 months · auto-updates daily
+              - generic [ref=e318]:
+                - button "KES" [ref=e319]
+                - button "USD" [ref=e320]
+            - generic [ref=e321]:
+              - generic [ref=e322]:
+                - generic [ref=e323]:
+                  - generic [ref=e325]:
+                    - generic [ref=e326]: KES 440.4M
+                    - generic: KES 440,397,841.26
+                  - generic [ref=e329]: Gross Amount
+                - generic [ref=e330]:
+                  - generic [ref=e332]:
+                    - generic [ref=e333]: KES 432.8M
+                    - generic: KES 432,815,115.20
+                  - generic [ref=e336]: Net Amount
+                - generic [ref=e337]:
+                  - generic [ref=e339]:
+                    - generic [ref=e340]: KES 7.6M
+                    - generic: KES 7,582,726.06
+                  - generic [ref=e343]: Access Fee
+                - generic [ref=e344]:
+                  - paragraph [ref=e345]: 100%
+                  - generic [ref=e348]: Transaction Success Ratio
+              - generic [ref=e349]:
+                - generic [ref=e350]:
+                  - generic [ref=e353]: Gross KES
+                  - generic [ref=e356]: Net KES
+                  - generic [ref=e359]: Access Fee
+                - generic [ref=e360]:
+                  - img [ref=e363]:
+                    - generic [ref=e382]:
+                      - generic [ref=e383]: Dec
+                      - generic [ref=e384]: Jan
+                      - generic [ref=e385]: Feb
+                      - generic [ref=e386]: Mar
+                      - generic [ref=e387]: Apr
+                      - generic [ref=e388]: May
+                      - generic [ref=e389]: Jun
+                      - generic [ref=e390]: Jul
+                      - generic [ref=e391]: Aug
+                      - generic [ref=e392]: Sep
+                      - generic [ref=e393]: Oct
+                      - generic [ref=e394]: Nov
+                    - generic [ref=e395]:
+                      - generic [ref=e396]: "0"
+                      - generic "100.0M" [ref=e397]: 100.…
+                      - generic "200.0M" [ref=e398]: 200.…
+                      - generic "300.0M" [ref=e399]: 300.…
+                      - generic "400.0M" [ref=e400]: 400.…
+                      - generic "500.0M" [ref=e401]: 500.…
+                  - generic [ref=e403]:
+                    - img [ref=e405]
+                    - generic: "Access Fee: 7,045,500.95"
+                  - generic [ref=e409]:
+                    - img [ref=e411]
+                    - generic: "Gross KES: 4,777,300.00"
+                  - generic [ref=e415]:
+                    - img [ref=e417]
+                    - generic: "Net KES: 4,777,200.00"
+                  - generic [ref=e421]:
+                    - img [ref=e423]
+                    - generic: "Access Fee: 100.00"
+                  - generic [ref=e427]:
+                    - img [ref=e429]
+                    - generic: "Gross KES: 660,496.50"
+                  - generic [ref=e433]:
+                    - img [ref=e435]
+                    - generic: "Net KES: 617,299.00"
+                  - generic [ref=e439]:
+                    - img [ref=e441]
+                    - generic: "Access Fee: 43,197.50"
+                  - generic [ref=e445]:
+                    - img [ref=e447]
+                    - generic: "Access Fee: 490,500.70"
+                  - generic [ref=e451]:
+                    - img [ref=e453]
+                    - generic: "Gross KES: 122,715.27"
+                  - generic [ref=e457]:
+                    - img [ref=e459]
+                    - generic: "Net KES: 122,170.27"
+                  - generic [ref=e463]:
+                    - img [ref=e465]
+                    - generic: "Access Fee: 545.00"
+                  - generic [ref=e469]:
+                    - img [ref=e471]
+                    - generic: "Gross KES: 6,807,617.09"
+                  - generic [ref=e475]:
+                    - img [ref=e477]
+                    - generic: "Net KES: 6,804,735.18"
+                  - generic [ref=e481]:
+                    - img [ref=e483]
+                    - generic: "Access Fee: 2,881.91"
+  - region "Notifications alt+T"
+```
