@@ -1,0 +1,16 @@
+[invoice-webhook] status=401 body={"error":{"code":"INVALID_TIMESTAMP_HEADER","message":"invalid X-Webhook-Timestamp header"}}
+
+────────────────────────────────────────────────────────────
+Execution Log — [Security] TC9 — Non-integer timestamp header returns 401 INVALID_TIMESTAMP_HEADER
+────────────────────────────────────────────────────────────
+17:20:13.272  ·  Test started: "[Security] TC9 — Non-integer timestamp header returns 401 INVALID_TIMESTAMP_HEADER"
+17:20:13.352  ○  ▶ Step 1 — Build a valid invoice payload
+17:20:13.353  ✔  Step completed in 1 ms
+17:20:13.353  ○  ▶ Step 2 — Sign the payload normally (timestamp header sent separately, will be corrupted)
+17:20:13.354  ✔  Step completed in 1 ms
+17:20:13.354  ○  ▶ Step 3 — POST with a non-integer timestamp header and confirm 401 INVALID_TIMESTAMP_HEADER
+17:20:13.449  ✔    Non-integer timestamp header correctly rejected with INVALID_TIMESTAMP_HEADER
+17:20:13.449  ✔  Step completed in 95 ms
+17:20:13.450  ·  Test run complete: "[Security] TC9 — Non-integer timestamp header returns 401 INVALID_TIMESTAMP_HEADER"
+────────────────────────────────────────────────────────────
+

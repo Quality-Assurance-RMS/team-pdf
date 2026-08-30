@@ -1,0 +1,20 @@
+[invoice-webhook] status=401 body={"error":{"code":"SIGNATURE_MISMATCH","message":"HMAC signature verification failed"}}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Multiple line items on one invoice
+────────────────────────────────────────────────────────────
+17:20:08.985  ·  Test started: "TC2 — Multiple line items on one invoice"
+17:20:09.261  ○  ▶ Step 1 — Build a 3-line-item invoice payload
+17:20:09.270  ✔  Step completed in 10 ms
+17:20:09.271  ○  ▶ Step 2 — Sign the payload
+17:20:09.272  ✔  Step completed in 1 ms
+17:20:09.272  ○  ▶ Step 3 — POST invoice KRCV38FOWP6S5764 (3 line items) and validate the response
+17:20:09.960  ✘  Step failed after 688 ms — invoice POST should return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 401
+17:20:09.966  ·  Test run complete: "TC2 — Multiple line items on one invoice"
+────────────────────────────────────────────────────────────
+

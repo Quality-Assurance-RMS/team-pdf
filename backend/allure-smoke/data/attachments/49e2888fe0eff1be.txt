@@ -1,0 +1,14 @@
+17:22:00.649  ·  Test started: "TC-DMREV-002 â€” Auth Guard: missing token â†’ 401, wrong token â†’ 401"
+17:22:00.654  ○  ▶ Step 1 â€” No Authorization header
+17:22:00.669  ·    GET /api/v1/dashboard/monthly-revenue
+17:22:01.045  ✔    HTTP 401 received
+17:22:01.067  ✔  Step completed in 413 ms
+17:22:01.067  ○  ▶ Step 2 â€” Invalid Bearer token
+17:22:01.071  ·    GET /api/v1/dashboard/monthly-revenue
+17:22:01.248  ✔    HTTP 401 received
+17:22:01.263  ✔  Step completed in 196 ms
+17:22:01.263  ○  ▶ Step 3 â€” Both must return 401 with correct messages
+17:22:01.267  ·    Asserting: response structure and values
+17:22:01.447  ✔    All assertions passed
+17:22:01.449  ✔  Step completed in 185 ms
+17:22:01.451  ·  Test run complete: "TC-DMREV-002 â€” Auth Guard: missing token â†’ 401, wrong token â†’ 401"

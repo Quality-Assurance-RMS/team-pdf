@@ -1,0 +1,41 @@
+[TC-DMREV-011] Response headers:
+{
+  "content-type": "application/json",
+  "transfer-encoding": "chunked",
+  "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+  "date": "Sun, 30 Aug 2026 17:20:41 GMT",
+  "server": "RMS-Gateway",
+  "x-apisix-upstream-status": "503",
+  "access-control-allow-origin": "*",
+  "access-control-allow-methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+  "access-control-max-age": "3600",
+  "access-control-expose-headers": "*",
+  "access-control-allow-headers": "*",
+  "connection": "close"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-011 â€” BUG-MREV-08: Cache-Control and security headers must be present
+────────────────────────────────────────────────────────────
+17:20:40.670  ·  Test started: "TC-DMREV-011 â€” BUG-MREV-08: Cache-Control and security headers must be present"
+17:20:40.678  ○  ▶ Step 1 â€” Fetch response and inspect headers
+17:20:40.679  ·    GET /api/v1/dashboard/monthly-revenue
+17:20:41.094  ✔    HTTP 503 received
+17:20:41.096  ✔  Step completed in 418 ms
+17:20:41.096  ○  ▶ Step 2 â€” BUG-MREV-08: Cache-Control must prohibit caching of financial data
+17:20:41.099  ·    Asserting: BUG-MREV-08: Cache-Control must prohibit caching
+17:20:41.102  ✔    All assertions passed
+17:20:41.102  ✔  Step completed in 6 ms
+17:20:41.102  ○  ▶ Step 3 â€” X-Content-Type-Options must be nosniff
+17:20:41.105  ·    Asserting: response structure and values
+17:20:41.112  ✔    All assertions passed
+17:20:41.112  ✔  Step completed in 10 ms
+17:20:41.112  ○  ▶ Step 4 â€” X-Frame-Options must be present
+17:20:41.115  ·    Asserting: response structure and values
+17:20:41.117  ✔    All assertions passed
+17:20:41.117  ✔  Step completed in 5 ms
+17:20:41.117  ○  ▶ Step 5 â€” Full security header audit
+17:20:41.119  ✔  Step completed in 2 ms
+17:20:41.120  ·  Test run complete: "TC-DMREV-011 â€” BUG-MREV-08: Cache-Control and security headers must be present"
+────────────────────────────────────────────────────────────
+

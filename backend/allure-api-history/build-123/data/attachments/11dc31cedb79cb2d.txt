@@ -1,0 +1,19 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=week → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-002] TC-DB-002 — period is case-sensitive (period=WEEK → 400, no documentation)
+────────────────────────────────────────────────────────────
+17:19:56.160  ·  Test started: "[BUG-DB-002] TC-DB-002 — period is case-sensitive (period=WEEK → 400, no documentation)"
+17:19:56.264  ○  ▶ Step 1 — period=week (lowercase) must return 200
+17:19:56.266  ·    GET /api/v1/dashboard/summary?period=week
+17:19:56.546  ✔    HTTP 400 received
+17:19:56.546  ·    Asserting: period=week returns 200
+17:19:56.556  ✘  Step failed after 292 ms — period=week must return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+17:19:56.560  ·  Test run complete: "[BUG-DB-002] TC-DB-002 — period is case-sensitive (period=WEEK → 400, no documentation)"
+────────────────────────────────────────────────────────────
+

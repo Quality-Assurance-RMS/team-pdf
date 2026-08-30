@@ -1,0 +1,18 @@
+17:31:36.434  ·  Test started: "TC-SF-003 — GET /api/v1/fetch/status: service="spr-fetcher-service" and status="UP""
+17:31:36.464  ○  ▶ Step 1 — Send GET /api/v1/fetch/status
+17:31:36.466  ·    GET /api/v1/fetch/status
+17:32:36.495  ✔    HTTP 200 received
+17:32:36.499  ✔  Step completed in 60035 ms
+17:32:36.499  ○  ▶ Step 2 — Assert HTTP 200
+17:32:36.500  ·    Asserting: HTTP status is 200
+17:32:36.511  ✔    All assertions passed
+17:32:36.511  ✔  Step completed in 12 ms
+17:32:36.511  ○  ▶ Step 3 — Assert service name
+17:32:36.512  ·    Asserting: service field equals "spr-fetcher-service"
+17:32:36.516  ✔    All assertions passed
+17:32:36.516  ✔  Step completed in 4 ms
+17:32:36.516  ○  ▶ Step 4 — Assert status is UP
+17:32:36.517  ·    Asserting: status field equals "UP"
+17:32:36.521  ✔    All assertions passed
+17:32:36.521  ✔  Step completed in 5 ms
+17:32:36.522  ·  Test run complete: "TC-SF-003 — GET /api/v1/fetch/status: service="spr-fetcher-service" and status="UP""
