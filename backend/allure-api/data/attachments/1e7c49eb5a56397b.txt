@@ -1,0 +1,14 @@
+17:21:22.733  ·  Test started: "[BUG-OT-005] TC-OT-013 — PUT /api/v1/token: Must return 405 Method Not Allowed (returns 500)"
+17:21:22.762  ○  ▶ Step 1 — Send PUT /api/v1/token
+17:21:22.769  ·    PUT /api/v1/token
+17:22:22.931  ✔    HTTP 502 received
+17:22:22.945  ✔  Step completed in 60182 ms
+17:22:22.945  ○  ▶ Step 2 — Assert 405 (BUG: returns 500)
+17:22:23.037  ·    Asserting: HTTP status is 405
+17:22:23.157  ✘  Step failed after 212 ms — [BUG-OT-005] PUT /token must return 405, got 502
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m405[39m
+Received: [31m502[39m
+17:22:23.165  ·  Test run complete: "[BUG-OT-005] TC-OT-013 — PUT /api/v1/token: Must return 405 Method Not Allowed (returns 500)"

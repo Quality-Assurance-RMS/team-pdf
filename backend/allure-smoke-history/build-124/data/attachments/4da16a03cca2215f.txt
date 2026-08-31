@@ -1,0 +1,22 @@
+[TC-DTPAY-010] ?date=2026-06-01  -> 400
+[TC-DTPAY-010] ?foo=bar  -> 400
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DTPAY-010 â€" BUG-TPAY-09: Unknown query parameters must not be silently ignored
+────────────────────────────────────────────────────────────
+17:24:16.453  ·  Test started: "TC-DTPAY-010 â€" BUG-TPAY-09: Unknown query parameters must not be silently ignored"
+17:24:16.455  ○  ▶ Step 1 â€" Send GET with unknown date parameter
+17:24:16.537  ·    GET /api/v1/dashboard/today-payments?date=2026-06-01
+17:24:16.850  ✔    HTTP 400 received
+17:24:16.936  ✔  Step completed in 481 ms
+17:24:16.936  ○  ▶ Step 2 â€" Send GET with completely unknown parameter
+17:24:16.938  ·    GET /api/v1/dashboard/today-payments?foo=bar&baz=qux
+17:24:17.027  ✔    HTTP 400 received
+17:24:17.031  ✔  Step completed in 95 ms
+17:24:17.031  ○  ▶ Step 3 â€" BUG-TPAY-09: Unknown params should not silently return 200
+17:24:17.033  ·    Asserting: unknown query parameters are rejected with 400, not silently ignored
+17:24:17.044  ✔    All assertions passed
+17:24:17.049  ✔  Step completed in 18 ms
+17:24:17.053  ·  Test run complete: "TC-DTPAY-010 â€" BUG-TPAY-09: Unknown query parameters must not be silently ignored"
+────────────────────────────────────────────────────────────
+

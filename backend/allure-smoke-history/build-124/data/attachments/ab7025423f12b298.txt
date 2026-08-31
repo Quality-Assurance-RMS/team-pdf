@@ -1,0 +1,46 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DMREV-001] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/monthly-revenue
+  â–º HTTP Status           : 200
+  â–º Content-Type         : application/json
+  â–º year                 : undefined
+  â–º months count         : 12
+  â–º months with data     : 0 ()
+  â–º summary.total_gross_kes  : undefined
+  â–º summary.total_gross_usd  : undefined
+  â–º summary.total_net_kes    : undefined
+  â–º summary.total_net_usd    : undefined
+  â–º summary.total_commission_kes : undefined
+  â–º summary.total_payments   : undefined
+  â–º summary.conversion_ratio_pct: undefined
+  â–º Cache-Control        : MISSING
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-001 â€” Happy Path: 200 + year + months[12] + summary
+────────────────────────────────────────────────────────────
+17:21:49.547  ·  Test started: "TC-DMREV-001 â€” Happy Path: 200 + year + months[12] + summary"
+17:21:49.548  ○  ▶ Step 1 â€” Build request
+17:21:49.754  ✔  Step completed in 205 ms
+17:21:49.754  ○  ▶ Step 2 â€” Send GET /monthly-revenue and log response
+17:21:49.754  ·    GET /api/v1/dashboard/monthly-revenue
+17:21:50.532  ✔    HTTP 200 received
+17:21:50.546  ✔  Step completed in 793 ms
+17:21:50.546  ○  ▶ Step 3 â€” Validate HTTP 200 and Content-Type
+17:21:50.547  ·    Asserting: Validate HTTP 200 and Content-Type
+17:21:50.556  ✔    All assertions passed
+17:21:50.557  ✔  Step completed in 10 ms
+17:21:50.557  ○  ▶ Step 4 â€” Validate top-level data wrapper
+17:21:50.557  ·    Asserting: Validate top-level data wrapper
+17:21:50.631  ✘  Step failed after 74 ms — "data.year" must be present
+
+expect(received).toHaveProperty(path)
+
+Expected path: "year"
+Received path: []
+
+Received value: {"months": [{"commissionKes": 12055500.95, "commissionUsd": 7012574.24, "grossKes": 853274970.5, "grossUsd": 350628618.6, "monthLabel": "Dec", "monthNum": 12, "netKes": 841219469.55, "netUsd": 343616044.36, "year": 2025}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Jan", "monthNum": 1, "netKes": 0, "netUsd": 0, "year": 2026}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Feb", "monthNum": 2, "netKes": 0, "netUsd": 0, "year": 2026}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Mar", "monthNum": 3, "netKes": 0, "netUsd": 0, "year": 2026}, {"commissionKes": 100, "commissionUsd": 0, "grossKes": 4777300, "grossUsd": 0, "monthLabel": "Apr", "monthNum": 4, "netKes": 4777200, "netUsd": 0, "year": 2026}, {"commissionKes": 43197.5, "commissionUsd": 4.13, "grossKes": 660496.5, "grossUsd": 154.13, "monthLabel": "May", "monthNum": 5, "netKes": 617299, "netUsd": 150, "year": 2026}, {"commissionKes": 490550.7, "commissionUsd": 0, "grossKes": 75759791.9, "grossUsd": 0, "monthLabel": "Jun", "monthNum": 6, "netKes": 75269241.2, "netUsd": 0, "year": 2026}, {"commissionKes": 545, "commissionUsd": 0, "grossKes": 122715.27, "grossUsd": 67.88, "monthLabel": "Jul", "monthNum": 7, "netKes": 122170.27, "netUsd": 67.88, "year": 2026}, {"commissionKes": 5740.95, "commissionUsd": 0, "grossKes": 7096385.05, "grossUsd": 2046490.2, "monthLabel": "Aug", "monthNum": 8, "netKes": 7090627.1, "netUsd": 2046490.2, "year": 2026}, {"commissionKes": 0, "commissionUsd": 0, "grossKes": 0, "grossUsd": 0, "monthLabel": "Sep", "monthNum": 9, "netKes": 0, "netUsd": 0, "year": 2026}, …], "summary": {"conversionRatioKesPct": 100, "conversionRatioUsdPct": 100, "totalCommissionKes": 12595635.1, "totalCommissionUsd": 7012578.37, "totalGrossKes": 941691659.22, "totalGrossUsd": 352675330.81, "totalNetKes": 929096007.12, "totalNetUsd": 345662752.44}}
+17:21:50.633  ·  Test run complete: "TC-DMREV-001 â€” Happy Path: 200 + year + months[12] + summary"
+────────────────────────────────────────────────────────────
+

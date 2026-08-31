@@ -1,0 +1,10 @@
+17:22:31.951  ·  Test started: "TC-DMREV-005 â€” BUG-MREV-02: year= (empty string) silently defaults to current year"
+17:22:31.953  ○  ▶ Step 1 â€” Send GET with year= (empty string)
+17:22:32.046  ·    GET /api/v1/dashboard/monthly-revenue
+17:22:32.442  ✔    HTTP 400 received
+17:22:32.531  ✔  Step completed in 578 ms
+17:22:32.531  ○  ▶ Step 2 â€” BUG-MREV-02: empty year= must return 400
+17:22:32.533  ·    Asserting: BUG-MREV-02 — empty year= must return 400
+17:22:32.557  ✔    All assertions passed
+17:22:32.557  ✔  Step completed in 26 ms
+17:22:32.629  ·  Test run complete: "TC-DMREV-005 â€” BUG-MREV-02: year= (empty string) silently defaults to current year"

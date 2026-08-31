@@ -1,0 +1,20 @@
+17:20:11.728  ·  Test started: "[BUG-DB-003] TC-DB-003 — Impossible date (Feb-30) causes HTTP 500 instead of 400"
+17:20:11.929  ○  ▶ Impossible date: Feb 30
+17:20:11.933  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-02-30&to_date=2026-03-01
+17:20:12.145  ✔    HTTP 400 received
+17:20:12.227  ·    Asserting: Impossible date "2026-02-30" returns 400
+17:20:12.235  ✔    All assertions passed
+17:20:12.236  ✔  Step completed in 307 ms
+17:20:12.236  ○  ▶ Impossible date: Apr 31
+17:20:12.238  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-04-31&to_date=2026-05-01
+17:20:12.329  ✔    HTTP 400 received
+17:20:12.332  ·    Asserting: Impossible date "2026-04-31" returns 400
+17:20:12.336  ✔    All assertions passed
+17:20:12.337  ✔  Step completed in 101 ms
+17:20:12.337  ○  ▶ Impossible date: Month 13
+17:20:12.338  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-13-01&to_date=2026-13-15
+17:20:12.459  ✔    HTTP 400 received
+17:20:12.529  ·    Asserting: Impossible date "2026-13-01" returns 400
+17:20:12.531  ✔    All assertions passed
+17:20:12.535  ✔  Step completed in 194 ms
+17:20:12.538  ·  Test run complete: "[BUG-DB-003] TC-DB-003 — Impossible date (Feb-30) causes HTTP 500 instead of 400"

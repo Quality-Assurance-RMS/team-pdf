@@ -1,0 +1,277 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: API/smoke/smoke-dashboard-revenue-trend.spec.ts >> Smoke â€” Dashboard Revenue Trend >> TC-DREVT-004 â€” BUG-REVT-02/03: points must be a number; value must expose raw numeric amount
+- Location: tests/API/smoke/smoke-dashboard-revenue-trend.spec.ts:333:7
+
+# Error details
+
+```
+Error: [BUG-REVT-02] summary[0] "Total Transactions" .points must be type "number", got "undefined" ("undefined")
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "number"
+Received: "undefined"
+```
+
+```
+Error: [BUG-REVT-02] summary[1] "Successful" .points must be type "number", got "undefined" ("undefined")
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "number"
+Received: "undefined"
+```
+
+```
+Error: [BUG-REVT-02] summary[2] "Failed" .points must be type "number", got "undefined" ("undefined")
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "number"
+Received: "undefined"
+```
+
+```
+Error: [BUG-REVT-03] summary[0] "Total Transactions" .value must be a number (or contain one) â€” got formatted string "undefined"
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+```
+
+```
+Error: [BUG-REVT-03] summary[1] "Successful" .value must be a number (or contain one) â€” got formatted string "undefined"
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+```
+
+```
+Error: [BUG-REVT-03] summary[2] "Failed" .value must be a number (or contain one) â€” got formatted string "undefined"
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+```
+
+```
+TypeError: Cannot read properties of undefined (reading 'forEach')
+```
+
+# Test source
+
+```ts
+  319 |         logger.info('Asserting: response structure and values');
+  320 |         expect.soft(hasCorrect,
+  321 |           `[BUG-REVT-01] summary[${i}] "${item.label}" must use "isPositive" (correct) not "isPostive" (typo)`,
+  322 |         ).toBe(true);
+  323 | 
+  324 |         expect.soft(hasTypo,
+  325 |           `[BUG-REVT-01] summary[${i}] "${item.label}" must not have misspelled field "isPostive"`,
+  326 |         ).toBe(false);
+  327 |       });
+  328 |       logger.pass('All assertions passed');
+  329 |     });
+  330 |   });
+  331 | 
+  332 |   // â”€â”€ TC-DREVT-004 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  333 |   test('TC-DREVT-004 â€” BUG-REVT-02/03: points must be a number; value must expose raw numeric amount', async ({ logger }) => {
+  334 |     smokeLabels('TC-DREVT-004', 'BUG-REVT-02/03 â€” Data Types (points & value as Strings)', 'critical');
+  335 | 
+  336 |     let res: supertest.Response;
+  337 | 
+  338 |     await logger.step('Step 1 â€” Fetch revenue-trend response', async () => {
+  339 |       logger.info(`GET ${ENDPOINT}`);
+  340 |       res = await get();
+  341 |       logger.pass('HTTP ' + res.status + ' received');
+  342 |       attachResponse('TC-DREVT-004', res, { bug: 'BUG-REVT-02/BUG-REVT-03' });
+  343 |     });
+  344 | 
+  345 |     await logger.step('Step 2 â€” Validate HTTP 200', async () => {
+  346 |       logger.info('Asserting: Validate HTTP 200');
+  347 |       expect(res!.status).toBe(200);
+  348 |       logger.pass('All assertions passed');
+  349 |     });
+  350 | 
+  351 |     await logger.step('Step 3 â€” BUG-REVT-02: summary[*].points must be a number, not a string', async () => {
+  352 |       const summary = (res!.body.data as RevenueTrendData).summary;
+  353 | 
+  354 |       summary.forEach((item, i) => {
+  355 |         const pts = item.points;
+  356 |         allure.parameter(`summary[${i}] "${item.label}" points type`, typeof pts);
+  357 |         allure.parameter(`summary[${i}] "${item.label}" points value`, String(pts));
+  358 | 
+  359 |         if (typeof pts === 'string') {
+  360 |           flagIssue('TC-DREVT-004', 'BUG-REVT-02',
+  361 |             `summary[${i}] "${item.label}" .points="${pts}" is a string â€” transaction counts must be numbers for client-side arithmetic`,
+  362 |             { index: i, label: item.label, actual_type: 'string', actual_value: pts, expected_type: 'number' },
+  363 |           );
+  364 |         }
+  365 | 
+  366 |         logger.info('Asserting: BUG-REVT-02: summary[*].points must be a number,');
+  367 |         expect.soft(typeof pts,
+  368 |           `[BUG-REVT-02] summary[${i}] "${item.label}" .points must be type "number", got "${typeof pts}" ("${pts}")`,
+  369 |         ).toBe('number');
+  370 | 
+  371 |         // When fixed: points must be non-negative integer
+  372 |         if (typeof pts === 'number') {
+  373 |           expect(pts, `summary[${i}].points must be >= 0`).toBeGreaterThanOrEqual(0);
+  374 |           expect(Number.isInteger(pts), `summary[${i}].points must be an integer`).toBe(true);
+  375 |         }
+  376 |       });
+  377 |       logger.pass('All assertions passed');
+  378 |     });
+  379 | 
+  380 |     await logger.step('Step 4 â€” BUG-REVT-03: summary[*].value must include a raw numeric amount', async () => {
+  381 |       const summary = (res!.body.data as RevenueTrendData).summary;
+  382 | 
+  383 |       summary.forEach((item, i) => {
+  384 |         const val = item.value;
+  385 |         allure.parameter(`summary[${i}] "${item.label}" value type`, typeof val);
+  386 |         allure.parameter(`summary[${i}] "${item.label}" value`,      String(val));
+  387 | 
+  388 |         // Actual: "KES 18,633,694" â€” a pre-formatted display string
+  389 |         // Expected: either a number (18633694) or an object {amount: 18633694, currency: "KES", formatted: "KES 18,633,694"}
+  390 |         const isFormattedString = typeof val === 'string' && (val as string).startsWith('KES ');
+  391 | 
+  392 |         if (isFormattedString) {
+  393 |           flagIssue('TC-DREVT-004', 'BUG-REVT-03',
+  394 |             `summary[${i}] "${item.label}" .value="${val}" is a pre-formatted display string â€” ` +
+  395 |             'APIs must return raw numbers; display formatting belongs in the UI layer. ' +
+  396 |             'Client cannot perform math on "KES 18,633,694" without stripping "KES " and commas.',
+  397 |             { index: i, label: item.label, actual: val, expected: 'number or {amount, currency, formatted}' },
+  398 |           );
+  399 |         }
+  400 | 
+  401 |         // The value field should be a number OR an object with at least an `amount` field
+  402 |         const isAcceptable = typeof val === 'number' || (typeof val === 'object' && val !== null && 'amount' in (val as object));
+  403 |         logger.info('Asserting: BUG-REVT-03: summary[*].value must include a raw');
+  404 |         expect.soft(isAcceptable,
+  405 |           `[BUG-REVT-03] summary[${i}] "${item.label}" .value must be a number (or contain one) â€” got formatted string "${val}"`,
+  406 |         ).toBe(true);
+  407 |       });
+  408 |       logger.pass('All assertions passed');
+  409 |     });
+  410 | 
+  411 |     await logger.step('Step 5 â€” Validate array data types (numbers, not strings)', async () => {
+  412 |       const d = res!.body.data as RevenueTrendData;
+  413 |       const arrays: [keyof RevenueTrendData, unknown[]][] = [
+  414 |         ['totalAttempts', d.totalAttempts],
+  415 |         ['successful',    d.successful],
+  416 |         ['failed',        d.failed],
+  417 |       ];
+  418 |       for (const [name, arr] of arrays) {
+> 419 |         arr.forEach((val, i) => {
+      |             ^ TypeError: Cannot read properties of undefined (reading 'forEach')
+  420 |           logger.info('Asserting: Validate array data types (numbers, not strings)');
+  421 |           expect(typeof val, `data.${name}[${i}] must be a number`).toBe('number');
+  422 |           expect(val as number, `data.${name}[${i}] must be >= 0`).toBeGreaterThanOrEqual(0);
+  423 |         });
+  424 |         allure.parameter(`${String(name)} types OK`, 'true');
+  425 |       }
+  426 |       logger.pass('All assertions passed');
+  427 |     });
+  428 |   });
+  429 | 
+  430 |   // â”€â”€ TC-DREVT-005 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  431 |   test('TC-DREVT-005 â€” BUG-REVT-04: labels must not contain duplicates without year disambiguation', async ({ logger }) => {
+  432 |     smokeLabels('TC-DREVT-005', 'BUG-REVT-04 â€” Duplicate Month Labels', 'critical');
+  433 | 
+  434 |     let res: supertest.Response;
+  435 | 
+  436 |     await logger.step('Step 1 â€” Fetch revenue-trend response', async () => {
+  437 |       logger.info(`GET ${ENDPOINT}`);
+  438 |       res = await get();
+  439 |       logger.pass('HTTP ' + res.status + ' received');
+  440 |       attachResponse('TC-DREVT-005', res, { bug: 'BUG-REVT-04' });
+  441 |     });
+  442 | 
+  443 |     await logger.step('Step 2 â€” Validate HTTP 200', async () => {
+  444 |       logger.info('Asserting: Validate HTTP 200');
+  445 |       expect(res!.status).toBe(200);
+  446 |       logger.pass('All assertions passed');
+  447 |     });
+  448 | 
+  449 |     await logger.step('Step 3 â€” BUG-REVT-04: labels array must not have duplicate month names', async () => {
+  450 |       const labels = (res!.body.data as RevenueTrendData).labels;
+  451 | 
+  452 |       allure.parameter('labels', labels.join(', '));
+  453 |       allure.parameter('labels count', String(labels.length));
+  454 | 
+  455 |       const duplicates = labels.filter((l, i) => labels.indexOf(l) !== i);
+  456 |       allure.parameter('Duplicate labels', duplicates.length > 0 ? duplicates.join(', ') : 'none');
+  457 | 
+  458 |       if (duplicates.length > 0) {
+  459 |         const dupeDetails = duplicates.map(d => ({
+  460 |           label: d,
+  461 |           first_index:  labels.indexOf(d),
+  462 |           second_index: labels.lastIndexOf(d),
+  463 |           interpretation: `index ${labels.indexOf(d)} = earlier year, index ${labels.lastIndexOf(d)} = later year â€” both show "${d}" with no year`,
+  464 |         }));
+  465 | 
+  466 |         flagIssue('TC-DREVT-005', 'BUG-REVT-04',
+  467 |           `labels array contains ${duplicates.length} duplicate(s): [${duplicates.join(', ')}]. ` +
+  468 |           'For a 13-month trend window spanning two calendar years, each month abbreviation must include the year ' +
+  469 |           '(e.g. "Jun 2025" vs "Jun 2026") so charts and screen readers can distinguish them.',
+  470 |           { labels, duplicates: dupeDetails, expected_format: '"Jun 2025", "Jul 2025", ..., "May 2026", "Jun 2026"' },
+  471 |         );
+  472 |       }
+  473 | 
+  474 |       logger.info('Asserting: BUG-REVT-04: labels array must not have duplicate');
+  475 |       expect.soft(duplicates.length,
+  476 |         `[BUG-REVT-04] labels must not contain duplicate month names without year. Duplicates found: [${duplicates.join(', ')}]`,
+  477 |       ).toBe(0);
+  478 |       logger.pass('All assertions passed');
+  479 |     });
+  480 | 
+  481 |     await logger.step('Step 4 â€” Labels must contain only valid month abbreviations', async () => {
+  482 |       const labels = (res!.body.data as RevenueTrendData).labels;
+  483 |       const VALID_MONTHS = new Set(['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']);
+  484 | 
+  485 |       for (const label of labels) {
+  486 |         // Accept "Mon" or "Mon YYYY" format
+  487 |         const monthPart = label.split(' ')[0];
+  488 |         logger.info('Asserting: response structure and values');
+  489 |         expect(VALID_MONTHS.has(monthPart),
+  490 |           `Label "${label}" must be a valid month abbreviation (Janâ€“Dec)`,
+  491 |         ).toBe(true);
+  492 |       }
+  493 |       logger.pass('All assertions passed');
+  494 |     });
+  495 | 
+  496 |     await logger.step('Step 5 â€” Validate array length is within reasonable range (12â€“13 months)', async () => {
+  497 |       const labels = (res!.body.data as RevenueTrendData).labels;
+  498 |       logger.info('Asserting: Validate array length is within reasonable range');
+  499 |       expect(labels.length, 'labels must have 12 or 13 entries for a monthly trend').toBeGreaterThanOrEqual(12);
+  500 |       expect(labels.length, 'labels must not exceed 13 entries for a monthly trend').toBeLessThanOrEqual(13);
+  501 |       logger.pass('All assertions passed');
+  502 |     });
+  503 |   });
+  504 | 
+  505 |   // â”€â”€ TC-DREVT-006 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  506 |   test('TC-DREVT-006 â€” BUG-REVT-05: change field must reflect real period-over-period delta, not always "+0%"', async ({ logger }) => {
+  507 |     smokeLabels('TC-DREVT-006', 'BUG-REVT-05 â€” change Always "+0%"', 'critical');
+  508 | 
+  509 |     let res: supertest.Response;
+  510 | 
+  511 |     await logger.step('Step 1 â€” Fetch revenue-trend response', async () => {
+  512 |       logger.info(`GET ${ENDPOINT}`);
+  513 |       res = await get();
+  514 |       logger.pass('HTTP ' + res.status + ' received');
+  515 |       logResponse('TC-DREVT-006', res, '(change field check)');
+  516 |       attachResponse('TC-DREVT-006', res, { bug: 'BUG-REVT-05' });
+  517 |     });
+  518 | 
+  519 |     await logger.step('Step 2 â€” Validate HTTP 200', async () => {
+```

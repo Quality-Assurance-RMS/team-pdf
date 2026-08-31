@@ -1,0 +1,32 @@
+
+[TC-DSUM-008] impossible Feb 30  -> 400: {"errorCode":400,"errorMessage":"from_date is not a valid calendar date: 2026-02-30"}
+
+[TC-DSUM-008] impossible Apr 31  -> 400: {"errorCode":400,"errorMessage":"from_date is not a valid calendar date: 2026-04-31"}
+
+[TC-DSUM-008] DD-MM-YYYY format  -> 400: {"errorCode":400,"errorMessage":"Invalid from_date '01-01-2026'. Expected format: YYYY-MM-DD (e.g. 2024-01-15)."}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-008 â€” BUG-SUM-02/03: impossible dates and wrong date format crash with 500
+────────────────────────────────────────────────────────────
+17:23:27.253  ·  Test started: "TC-DSUM-008 â€” BUG-SUM-02/03: impossible dates and wrong date format crash with 500"
+17:23:27.335  ○  ▶ Step â€” impossible Feb 30: must return 400 not 500
+17:23:27.337  ·    GET /api/v1/dashboard/summary
+17:23:27.443  ✔    HTTP 400 received
+17:23:27.444  ·    Asserting: response structure and values
+17:23:27.449  ✔    All assertions passed
+17:23:27.449  ✔  Step completed in 114 ms
+17:23:27.449  ○  ▶ Step â€” impossible Apr 31: must return 400 not 500
+17:23:27.450  ·    GET /api/v1/dashboard/summary
+17:23:27.629  ✔    HTTP 400 received
+17:23:27.630  ·    Asserting: response structure and values
+17:23:27.633  ✔    All assertions passed
+17:23:27.634  ✔  Step completed in 185 ms
+17:23:27.634  ○  ▶ Step â€” DD-MM-YYYY format: must return 400 not 500
+17:23:27.634  ·    GET /api/v1/dashboard/summary
+17:23:27.828  ✔    HTTP 400 received
+17:23:27.828  ·    Asserting: response structure and values
+17:23:27.833  ✔    All assertions passed
+17:23:27.833  ✔  Step completed in 199 ms
+17:23:27.835  ·  Test run complete: "TC-DSUM-008 â€” BUG-SUM-02/03: impossible dates and wrong date format crash with 500"
+────────────────────────────────────────────────────────────
+
