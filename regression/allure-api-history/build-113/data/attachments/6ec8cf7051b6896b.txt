@@ -1,0 +1,14 @@
+02:25:45.910  ·  Test started: "TC-SF-008 — POST /api/v1/fetch/trigger: No auth must return 401"
+02:25:45.937  ○  ▶ Step 1 — Send POST /api/v1/fetch/trigger WITHOUT Authorization header
+02:25:45.942  ·    POST /api/v1/fetch/trigger
+02:25:45.970  ✔    HTTP 500 received
+02:25:45.973  ✔  Step completed in 36 ms
+02:25:45.973  ○  ▶ Step 2 — Assert 401/403
+02:25:45.974  ·    Asserting: status is 401 or 403
+02:25:45.983  ✘  Step failed after 10 ms — No-auth trigger must return 401/403, got 500
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+Expected value: [32m500[39m
+Received array: [31m[401, 403][39m
+02:25:45.984  ·  Test run complete: "TC-SF-008 — POST /api/v1/fetch/trigger: No auth must return 401"

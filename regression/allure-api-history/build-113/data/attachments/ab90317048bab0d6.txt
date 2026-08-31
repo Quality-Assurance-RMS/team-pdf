@@ -1,0 +1,16 @@
+[invoice-webhook] status=401 body={"error":{"code":"REPLAY_WINDOW_EXCEEDED","message":"timestamp outside replay window"}}
+
+────────────────────────────────────────────────────────────
+Execution Log — [Security] TC5 — Timestamp outside the 5-minute replay window returns 401 REPLAY_WINDOW_EXCEEDED
+────────────────────────────────────────────────────────────
+02:18:20.949  ·  Test started: "[Security] TC5 — Timestamp outside the 5-minute replay window returns 401 REPLAY_WINDOW_EXCEEDED"
+02:18:21.149  ○  ▶ Step 1 — Build a valid invoice payload
+02:18:21.237  ✔  Step completed in 86 ms
+02:18:21.237  ○  ▶ Step 2 — Sign the payload using a timestamp 10 minutes in the past
+02:18:21.254  ✔  Step completed in 17 ms
+02:18:21.254  ○  ▶ Step 3 — POST with the stale timestamp and confirm 401 REPLAY_WINDOW_EXCEEDED
+02:18:21.869  ✔    Stale (>5min) timestamp correctly rejected with REPLAY_WINDOW_EXCEEDED
+02:18:21.870  ✔  Step completed in 615 ms
+02:18:21.871  ·  Test run complete: "[Security] TC5 — Timestamp outside the 5-minute replay window returns 401 REPLAY_WINDOW_EXCEEDED"
+────────────────────────────────────────────────────────────
+

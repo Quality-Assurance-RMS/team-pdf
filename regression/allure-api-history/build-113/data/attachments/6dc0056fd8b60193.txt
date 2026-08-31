@@ -1,0 +1,10 @@
+02:17:50.251  ·  Test started: "[BUG-ANA-002] TC-ANA-002 — Analytics 405 body missing "message" field (inconsistent with all other APIs)"
+02:17:50.558  ○  ▶ Step 1 — Trigger 405 on analytics endpoint
+02:17:50.640  ·    POST /api/v1/analytics/dashboard/summary
+02:17:50.844  ✔    HTTP 502 received
+02:17:50.844  ·    Asserting: Response is 405
+02:17:50.940  ✘  Step failed after 382 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m405[39m
+Received: [31m502[39m
+02:17:50.945  ·  Test run complete: "[BUG-ANA-002] TC-ANA-002 — Analytics 405 body missing "message" field (inconsistent with all other APIs)"
