@@ -1,0 +1,33 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Resend OTP dispatches a new code and stays on verification
+────────────────────────────────────────────────────────────
+01:55:50.558  ·  Test started: "TC3 — Resend OTP dispatches a new code and stays on verification"
+01:55:50.887  ○  ▶ Step 1 — Verifies that clicking Resend OTP dispatches a new code while remaining on the verification page
+01:55:50.934  ·    Test scope: Resend OTP behavior
+01:55:50.934  ✔  Step completed in 47 ms
+01:55:50.934  ○  ▶ Step 2 — Navigate to login page and submit credentials
+01:55:50.935  ·    Opening the login page
+01:55:52.236  ·    Submitting login credentials to trigger OTP flow
+01:58:19.781  ✘  Step failed after 148847 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByPlaceholder('Enter Your email')
+    - locator resolved to <input disabled type="email" name="email" autocomplete="on" placeholder="Enter Your email" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0 ↵                                file:bg-transparent file:text-sm ↵                                file:font-medium file:text-foreground focus-visible:outline-none ↵                                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ↵             …/>
+    - fill("ashil.shaji@fortunesoftit.com")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+      - waiting 100ms
+    289 × waiting for element to be visible, enabled and editable
+        - element is not enabled
+      - retrying fill action
+        - waiting 500ms
+
+01:58:19.795  ·  Test run complete: "TC3 — Resend OTP dispatches a new code and stays on verification"
+────────────────────────────────────────────────────────────
+

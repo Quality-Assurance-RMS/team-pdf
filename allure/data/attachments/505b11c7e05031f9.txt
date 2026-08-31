@@ -1,0 +1,26 @@
+01:39:22.654  ·  Test started: "TC3 — Wrong password with a valid email is rejected"
+01:39:25.246  ○  ▶ Step 1 — Verifies that a valid email paired with the wrong password is rejected and the login page is retained
+01:39:25.247  ·    Test scope: wrong password rejection with a valid email
+01:39:25.248  ✔  Step completed in 2 ms
+01:39:25.248  ○  ▶ Step 2 — Submit valid email with wrong password and verify rejection
+01:39:25.248  ·    Entering the correct email but an incorrect password
+01:41:34.045  ✘  Step failed after 128797 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+[2m  - waiting for getByPlaceholder('Enter Your email')[22m
+[2m    - locator resolved to <input disabled type="email" name="email" autocomplete="on" placeholder="Enter Your email" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0 ↵                                file:bg-transparent file:text-sm ↵                                file:font-medium file:text-foreground focus-visible:outline-none ↵                                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ↵             …/>[22m
+[2m    - fill("ashil.shaji@fortunesoftit.com")[22m
+[2m  - attempting fill action[22m
+[2m    2 × waiting for element to be visible, enabled and editable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying fill action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and editable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying fill action[22m
+[2m      - waiting 100ms[22m
+[2m    254 × waiting for element to be visible, enabled and editable[22m
+[2m        - element is not enabled[22m
+[2m      - retrying fill action[22m
+[2m        - waiting 500ms[22m
+
+01:41:34.055  ·  Test run complete: "TC3 — Wrong password with a valid email is rejected"

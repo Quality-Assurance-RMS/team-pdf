@@ -1,0 +1,21 @@
+01:48:05.252  ·  Test started: "TC1 — "Save Changes" button is visible and enabled"
+01:48:05.636  ○  ▶ Step 1 — Verifies the Save Changes button is rendered and enabled on the Profile Settings tab
+01:48:05.638  ·    Test scope: Verifies the Save Changes button is rendered and enabled on the Profile Settings tab
+01:48:05.638  ✔  Step completed in 2 ms
+01:48:05.640  ○  ▶ Step 2 — Navigate to Settings page
+01:48:05.641  ·    Opening the Settings page
+01:48:07.355  ✔    Navigation to Settings page initiated successfully
+01:48:08.458  ✔  Step completed in 2818 ms
+01:48:08.458  ○  ▶ Step 3 — Verify page loads successfully
+01:48:08.459  ·    Waiting for all Settings page elements to render
+01:48:23.548  ✘  Step failed after 15091 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/settings/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:48:25.512  ·  Test run complete: "TC1 — "Save Changes" button is visible and enabled"
