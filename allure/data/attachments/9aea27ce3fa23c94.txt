@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Settlements" heading and count are visible
+────────────────────────────────────────────────────────────
+01:50:43.514  ·  Test started: "TC1 — "Settlements" heading and count are visible"
+01:50:43.792  ○  ▶ Step 1 — Verifies the Settlements heading and "X settlements have been initiated" text render on page load
+01:50:43.794  ·    Test scope: Verifies the Settlements heading and "X settlements have been initiated" text render on page load
+01:50:43.794  ✔  Step completed in 2 ms
+01:50:43.796  ○  ▶ Step 2 — Navigate to Settlements page
+01:50:43.796  ·    Opening the Settlements page
+01:50:44.599  ✔    Navigation to Settlements page initiated successfully
+01:50:45.020  ✔  Step completed in 1225 ms
+01:50:45.020  ○  ▶ Step 3 — Verify page loads successfully
+01:50:45.062  ·    Waiting for all Settlements page elements to render
+01:51:00.091  ✘  Step failed after 15070 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settlements/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:51:03.461  ·  Test run complete: "TC1 — "Settlements" heading and count are visible"
+────────────────────────────────────────────────────────────
+

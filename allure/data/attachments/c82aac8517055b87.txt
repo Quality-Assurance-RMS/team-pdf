@@ -1,0 +1,21 @@
+01:52:39.112  ·  Test started: "TC3 — Method filter dropdown is visible"
+01:52:39.584  ○  ▶ Step 1 — Verifies the "All Methods" filter dropdown is rendered on the Transactions page
+01:52:39.586  ·    Test scope: Verifies the "All Methods" filter dropdown is rendered on the Transactions page
+01:52:39.587  ✔  Step completed in 3 ms
+01:52:39.588  ○  ▶ Step 2 — Navigate to Transactions page
+01:52:39.589  ·    Opening the Transactions page
+01:52:42.282  ✔    Navigation to Transactions page initiated successfully
+01:52:44.885  ✔  Step completed in 5297 ms
+01:52:44.885  ○  ▶ Step 3 — Verify page loads successfully
+01:52:44.887  ·    Waiting for all Transactions page elements to render
+01:52:50.068  ✘  Step failed after 5183 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    12 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:52:54.964  ·  Test run complete: "TC3 — Method filter dropdown is visible"
