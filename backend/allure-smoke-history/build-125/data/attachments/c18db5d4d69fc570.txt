@@ -1,0 +1,12 @@
+17:20:01.944  ·  Test started: "TC-DMREV-003 â€” year param: valid values return correct year in response"
+17:20:02.026  ○  ▶ Step 1 â€” year=2026 returns 2026 data
+17:20:02.030  ·    GET /api/v1/dashboard/monthly-revenue
+17:20:03.225  ✔    HTTP 200 received
+17:20:03.225  ·    Asserting: response structure and values
+17:20:03.244  ✘  Step failed after 1218 ms — data.year must echo back 2026
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m2026[39m
+Received: [31mundefined[39m
+17:20:03.312  ·  Test run complete: "TC-DMREV-003 â€” year param: valid values return correct year in response"

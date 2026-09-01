@@ -1,0 +1,124 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/revenue-trend",
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "content_type": "application/json",
+    "headers": {
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      "cache-control": "max-age=60, private",
+      "date": "Tue, 01 Sep 2026 17:21:05 GMT",
+      "server": "RMS-Gateway",
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+      "access-control-max-age": "3600",
+      "access-control-expose-headers": "*",
+      "access-control-allow-headers": "*",
+      "connection": "close"
+    },
+    "body": {
+      "data": {
+        "labels": [
+          "Dec 2025",
+          "Jan 2026",
+          "Feb 2026",
+          "Mar 2026",
+          "Apr 2026",
+          "May 2026",
+          "Jun 2026",
+          "Jul 2026",
+          "Aug 2026",
+          "Sep 2026",
+          "Oct 2026",
+          "Nov 2026"
+        ],
+        "totalTransactions": [
+          234728,
+          3,
+          0,
+          0,
+          1049,
+          128,
+          13556,
+          149,
+          224621,
+          400,
+          0,
+          0
+        ],
+        "successful": [
+          234728,
+          3,
+          0,
+          0,
+          1049,
+          126,
+          13556,
+          139,
+          224621,
+          400,
+          0,
+          0
+        ],
+        "failed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "summary": [
+          {
+            "label": "Total Transactions",
+            "transactionCountKes": 246475,
+            "kesValue": 942701448,
+            "kesChangePercentage": 0,
+            "kesChangeDirection": "flat",
+            "transactionCountUsd": 228159,
+            "usdValue": 352675330,
+            "usdChangePercentage": 0,
+            "usdChangeDirection": "flat"
+          },
+          {
+            "label": "Successful",
+            "transactionCountKes": 246463,
+            "kesValue": 942677614,
+            "kesChangePercentage": 0,
+            "kesChangeDirection": "flat",
+            "transactionCountUsd": 228159,
+            "usdValue": 352666414,
+            "usdChangePercentage": 0,
+            "usdChangeDirection": "flat"
+          },
+          {
+            "label": "Failed",
+            "transactionCountKes": 2,
+            "kesValue": 3972,
+            "kesChangePercentage": 0,
+            "kesChangeDirection": "flat",
+            "transactionCountUsd": 0,
+            "usdValue": 1486,
+            "usdChangePercentage": 0,
+            "usdChangeDirection": "flat"
+          }
+        ]
+      }
+    },
+    "bug": "BUG-REVT-10/BUG-REVT-12"
+  }
+}

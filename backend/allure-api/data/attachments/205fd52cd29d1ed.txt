@@ -1,0 +1,9 @@
+17:20:44.110  ·  Test started: "[Security] TC8 — Missing X-Webhook-Timestamp header returns 401 MISSING_TIMESTAMP_HEADER"
+17:20:44.213  ○  ▶ Step 1 — Build a valid invoice payload
+17:20:44.221  ✔  Step completed in 8 ms
+17:20:44.221  ○  ▶ Step 2 — Sign the payload (timestamp header will be withheld)
+17:20:44.222  ✔  Step completed in 1 ms
+17:20:44.222  ○  ▶ Step 3 — POST with only the signature header and confirm 401 MISSING_TIMESTAMP_HEADER
+17:20:44.339  ✔    Missing timestamp header correctly rejected with MISSING_TIMESTAMP_HEADER
+17:20:44.339  ✔  Step completed in 117 ms
+17:20:44.412  ·  Test run complete: "[Security] TC8 — Missing X-Webhook-Timestamp header returns 401 MISSING_TIMESTAMP_HEADER"

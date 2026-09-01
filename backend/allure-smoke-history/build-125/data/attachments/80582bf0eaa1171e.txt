@@ -1,0 +1,33 @@
+17:20:54.813  ·  Test started: "TC-DREVT-005 â€” BUG-REVT-04: labels must not contain duplicates without year disambiguation"
+17:20:54.815  ○  ▶ Step 1 â€” Fetch revenue-trend response
+17:20:54.826  ·    GET /api/v1/dashboard/revenue-trend
+17:20:55.811  ✔    HTTP 200 received
+17:20:55.819  ✔  Step completed in 1004 ms
+17:20:55.819  ○  ▶ Step 2 â€” Validate HTTP 200
+17:20:55.823  ·    Asserting: Validate HTTP 200
+17:20:55.841  ✔    All assertions passed
+17:20:55.842  ✔  Step completed in 23 ms
+17:20:55.842  ○  ▶ Step 3 â€” BUG-REVT-04: labels array must not have duplicate month names
+17:20:55.913  ·    Asserting: BUG-REVT-04: labels array must not have duplicate
+17:20:55.915  ✔    All assertions passed
+17:20:55.917  ✔  Step completed in 75 ms
+17:20:55.917  ○  ▶ Step 4 â€” Labels must contain only valid month abbreviations
+17:20:55.919  ·    Asserting: response structure and values
+17:20:55.921  ·    Asserting: response structure and values
+17:20:55.923  ·    Asserting: response structure and values
+17:20:55.926  ·    Asserting: response structure and values
+17:20:55.947  ·    Asserting: response structure and values
+17:20:55.950  ·    Asserting: response structure and values
+17:20:56.011  ·    Asserting: response structure and values
+17:20:56.013  ·    Asserting: response structure and values
+17:20:56.015  ·    Asserting: response structure and values
+17:20:56.017  ·    Asserting: response structure and values
+17:20:56.019  ·    Asserting: response structure and values
+17:20:56.021  ·    Asserting: response structure and values
+17:20:56.022  ✔    All assertions passed
+17:20:56.022  ✔  Step completed in 106 ms
+17:20:56.022  ○  ▶ Step 5 â€” Validate array length is within reasonable range (12â€“13 months)
+17:20:56.024  ·    Asserting: Validate array length is within reasonable range
+17:20:56.027  ✔    All assertions passed
+17:20:56.028  ✔  Step completed in 5 ms
+17:20:56.030  ·  Test run complete: "TC-DREVT-005 â€” BUG-REVT-04: labels must not contain duplicates without year disambiguation"

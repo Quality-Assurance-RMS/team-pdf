@@ -1,0 +1,20 @@
+[invoice-webhook] status=401 body={"error":{"code":"SIGNATURE_MISMATCH","message":"HMAC signature verification failed"}}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Unpaid invoice is still accepted
+────────────────────────────────────────────────────────────
+17:20:21.834  ·  Test started: "TC3 — Unpaid invoice is still accepted"
+17:20:21.924  ○  ▶ Step 1 — Build an invoice with status "Unpaid"
+17:20:21.941  ✔  Step completed in 17 ms
+17:20:21.942  ○  ▶ Step 2 — Sign the payload
+17:20:21.944  ✔  Step completed in 2 ms
+17:20:21.944  ○  ▶ Step 3 — POST invoice KRCV3VY1QJT92BY6 and validate it is accepted
+17:20:22.144  ✘  Step failed after 200 ms — invoice POST should return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 401
+17:20:22.213  ·  Test run complete: "TC3 — Unpaid invoice is still accepted"
+────────────────────────────────────────────────────────────
+

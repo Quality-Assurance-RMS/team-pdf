@@ -1,0 +1,32 @@
+17:20:44.935  ·  Test started: "TC-DMREV-014 â€” Math: month array sums must match summary totals"
+17:20:44.937  ○  ▶ Step 1 â€” Fetch monthly-revenue
+17:20:45.018  ·    GET /api/v1/dashboard/monthly-revenue
+17:20:45.826  ✔    HTTP 200 received
+17:20:45.931  ✔    All assertions passed
+17:20:45.932  ✔  Step completed in 995 ms
+17:20:45.933  ○  ▶ Step 2 â€” Array sums must equal summary totals
+17:20:45.944  ·    Asserting: response structure and values
+17:20:46.014  ·    Asserting: response structure and values
+17:20:46.017  ·    Asserting: response structure and values
+17:20:46.021  ·    Asserting: response structure and values
+17:20:46.039  ·    Asserting: response structure and values
+17:20:46.128  ·    Asserting: response structure and values
+17:20:46.131  ✔    All assertions passed
+17:20:46.132  ✔  Step completed in 199 ms
+17:20:46.132  ○  ▶ Step 3 â€” Summary cross: total_gross âˆ’ total_net = total_commission (KES)
+17:20:46.138  ·    Asserting: response structure and values
+17:20:46.210  ✔    All assertions passed
+17:20:46.210  ✔  Step completed in 78 ms
+17:20:46.210  ○  ▶ Step 4 â€” Summary cross: total_gross âˆ’ total_net = total_commission (USD)
+17:20:46.215  ·    Asserting: response structure and values
+17:20:46.217  ✔    All assertions passed
+17:20:46.217  ✔  Step completed in 7 ms
+17:20:46.217  ○  ▶ Step 5 â€” conversion_ratio_pct range: must be 0â€“100
+17:20:46.220  ·    Asserting: response structure and values
+17:20:46.235  ✘  Step failed after 18 ms — conversion_ratio_pct must be a number
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"number"[39m
+Received: [31m"undefined"[39m
+17:20:46.242  ·  Test run complete: "TC-DMREV-014 â€” Math: month array sums must match summary totals"

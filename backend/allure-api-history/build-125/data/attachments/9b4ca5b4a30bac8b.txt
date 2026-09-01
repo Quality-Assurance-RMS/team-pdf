@@ -1,0 +1,13 @@
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/summary?period=week → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-TXN-005] TC-TXN-005 — success_rate.change_pct is always null (no period-over-period tracking)
+────────────────────────────────────────────────────────────
+17:22:01.230  ·  Test started: "[BUG-TXN-005] TC-TXN-005 — success_rate.change_pct is always null (no period-over-period tracking)"
+17:22:01.320  ○  ▶ period=week — success_rate.change_pct must be a number
+17:22:01.321  ·    GET /api/v1/transaction/summary?period=week
+17:22:01.435  ✔    HTTP 400 received
+17:22:01.438  ✘  Step failed after 118 ms — Test is skipped: 
+17:22:01.440  ·  Test run complete: "[BUG-TXN-005] TC-TXN-005 — success_rate.change_pct is always null (no period-over-period tracking)"
+────────────────────────────────────────────────────────────
+
