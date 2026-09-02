@@ -1,0 +1,18 @@
+[invoice-webhook] status=401 body={"error":{"code":"SIGNATURE_MISMATCH","message":"HMAC signature verification failed"}}
+
+────────────────────────────────────────────────────────────
+Execution Log — [Security] TC4 — Invalid signature returns 401 SIGNATURE_MISMATCH
+────────────────────────────────────────────────────────────
+17:20:13.436  ·  Test started: "[Security] TC4 — Invalid signature returns 401 SIGNATURE_MISMATCH"
+17:20:13.516  ○  ▶ Step 1 — Build a valid invoice payload
+17:20:13.520  ✔  Step completed in 3 ms
+17:20:13.520  ○  ▶ Step 2 — Sign the payload correctly
+17:20:13.522  ✔  Step completed in 2 ms
+17:20:13.522  ○  ▶ Step 3 — Tamper with the signature (corrupt the last 4 hex characters)
+17:20:13.525  ✔  Step completed in 4 ms
+17:20:13.525  ○  ▶ Step 4 — POST with the tampered signature and confirm 401 SIGNATURE_MISMATCH
+17:20:13.790  ✔    Tampered signature correctly rejected with SIGNATURE_MISMATCH
+17:20:13.791  ✔  Step completed in 265 ms
+17:20:13.794  ·  Test run complete: "[Security] TC4 — Invalid signature returns 401 SIGNATURE_MISMATCH"
+────────────────────────────────────────────────────────────
+
