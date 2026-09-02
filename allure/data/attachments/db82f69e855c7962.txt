@@ -1,0 +1,27 @@
+01:52:45.709  ·  Test started: "TC2 — An incorrect OTP shows an error and stays on verification"
+01:52:46.338  ○  ▶ Step 1 — Verifies that entering a deliberately wrong OTP keeps the user on the verification page
+01:52:46.342  ·    Test scope: wrong OTP rejection
+01:52:46.405  ✔  Step completed in 67 ms
+01:52:46.405  ○  ▶ Step 2 — Navigate to login page and submit credentials
+01:52:46.407  ·    Opening the login page
+01:52:47.828  ·    Submitting login credentials to trigger OTP flow
+01:55:28.844  ✘  Step failed after 162439 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+[2m  - waiting for getByPlaceholder('Enter Your email')[22m
+[2m    - locator resolved to <input disabled type="email" name="email" autocomplete="on" placeholder="Enter Your email" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0 ↵                                file:bg-transparent file:text-sm ↵                                file:font-medium file:text-foreground focus-visible:outline-none ↵                                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ↵             …/>[22m
+[2m    - fill("ashil.shaji@fortunesoftit.com")[22m
+[2m  - attempting fill action[22m
+[2m    2 × waiting for element to be visible, enabled and editable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying fill action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and editable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying fill action[22m
+[2m      - waiting 100ms[22m
+[2m    311 × waiting for element to be visible, enabled and editable[22m
+[2m        - element is not enabled[22m
+[2m      - retrying fill action[22m
+[2m        - waiting 500ms[22m
+
+01:55:28.915  ·  Test run complete: "TC2 — An incorrect OTP shows an error and stays on verification"

@@ -1,0 +1,26 @@
+01:42:32.592  ·  Test started: "TC1 — Password visibility toggle shows/hides the password"
+01:42:33.870  ○  ▶ Step 1 — Verifies the password field is masked by default and the visibility toggle reveals it
+01:42:33.906  ·    Test scope: password visibility toggle behavior
+01:42:33.907  ✔  Step completed in 36 ms
+01:42:33.907  ○  ▶ Step 2 — Fill password field and verify initial hidden state
+01:42:33.908  ·    Typing a password into the password input field
+01:44:44.358  ✘  Step failed after 130451 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+[2m  - waiting for getByPlaceholder('Enter Password')[22m
+[2m    - locator resolved to <input disabled type="password" name="password" placeholder="Enter Password" autocomplete="current-password" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0↵                                    file:bg-transparent file:text-sm↵                                    file:font-medium file:text-foreground focus-visible:outline-none↵                                    focus-visible:ring-2 focus-visible:ring-ring focus-visible:r…/>[22m
+[2m    - fill("RMS@fortune@123")[22m
+[2m  - attempting fill action[22m
+[2m    2 × waiting for element to be visible, enabled and editable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying fill action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and editable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying fill action[22m
+[2m      - waiting 100ms[22m
+[2m    257 × waiting for element to be visible, enabled and editable[22m
+[2m        - element is not enabled[22m
+[2m      - retrying fill action[22m
+[2m        - waiting 500ms[22m
+
+01:44:44.367  ·  Test run complete: "TC1 — Password visibility toggle shows/hides the password"

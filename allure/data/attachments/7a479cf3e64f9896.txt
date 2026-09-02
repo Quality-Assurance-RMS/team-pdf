@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Profile card with name, email, and ADMIN role is visible
+────────────────────────────────────────────────────────────
+01:48:11.143  ·  Test started: "TC1 — Profile card with name, email, and ADMIN role is visible"
+01:48:11.370  ○  ▶ Step 1 — Verifies the user profile card renders with name, email address, and ADMIN role
+01:48:11.372  ·    Test scope: Verifies the user profile card renders with name, email address, and ADMIN role
+01:48:11.373  ✔  Step completed in 3 ms
+01:48:11.374  ○  ▶ Step 2 — Navigate to Settings page
+01:48:11.375  ·    Opening the Settings page
+01:48:13.520  ✔    Navigation to Settings page initiated successfully
+01:48:14.039  ✔  Step completed in 2664 ms
+01:48:14.039  ○  ▶ Step 3 — Verify page loads successfully
+01:48:14.105  ·    Waiting for all Settings page elements to render
+01:48:29.124  ✘  Step failed after 15086 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settings/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:48:30.832  ·  Test run complete: "TC1 — Profile card with name, email, and ADMIN role is visible"
+────────────────────────────────────────────────────────────
+
