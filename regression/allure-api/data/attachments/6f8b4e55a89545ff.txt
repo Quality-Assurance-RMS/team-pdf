@@ -1,0 +1,12 @@
+02:16:50.060  ·  Test started: "TC-ANA-007 — Analytics HEAD method returns 200 with no body (correct behaviour)"
+02:16:50.362  ○  ▶ Step 1 — Send HEAD request
+02:16:50.378  ·    HEAD /api/v1/analytics/dashboard/summary
+02:16:50.566  ✔    HTTP 502 received
+02:16:50.566  ·    Asserting: HEAD returns 200 with empty body
+02:16:50.676  ✘  Step failed after 314 ms — HEAD must return 200
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m502[39m
+02:16:50.762  ·  Test run complete: "TC-ANA-007 — Analytics HEAD method returns 200 with no body (correct behaviour)"

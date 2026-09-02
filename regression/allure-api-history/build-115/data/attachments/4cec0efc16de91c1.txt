@@ -1,0 +1,14 @@
+02:17:29.078  ·  Test started: "TC-OT-007 — DELETE /api/v1/token/cache: Returns 204 No Content with valid auth"
+02:17:29.174  ○  ▶ Step 1 — Send DELETE /api/v1/token/cache with auth
+02:17:29.186  ·    DELETE /api/v1/token/cache
+02:18:29.276  ✔    HTTP 502 received
+02:18:29.279  ✔  Step completed in 60105 ms
+02:18:29.279  ○  ▶ Step 2 — Assert HTTP 204
+02:18:29.280  ·    Asserting: HTTP status is 204
+02:18:29.284  ✘  Step failed after 5 ms — DELETE /token/cache must return 204, got 502
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m204[39m
+Received: [31m502[39m
+02:18:29.285  ·  Test run complete: "TC-OT-007 — DELETE /api/v1/token/cache: Returns 204 No Content with valid auth"
