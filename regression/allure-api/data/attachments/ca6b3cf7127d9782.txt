@@ -1,0 +1,26 @@
+[GET /api/v1/transaction/00bba274-1617-4568-aaf2-a2ed08b66a18] status: 404 | body: {
+  "errorCode": "Not Found",
+  "errorMessage": "Transaction not found: 00bba274-1617-4568-aaf2-a2ed08b66a18"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-007 — Detail for ID: 00bba274-1617-4568-aaf2-a2ed08b66a18
+────────────────────────────────────────────────────────────
+02:21:07.705  ·  Test started: "TC-TXN-007 — Detail for ID: 00bba274-1617-4568-aaf2-a2ed08b66a18"
+02:21:07.744  ○  ▶ Step 1 — Build request parameters
+02:21:07.756  ✔  Step completed in 11 ms
+02:21:07.756  ○  ▶ Step 2 — Send GET /transaction/00bba274-1617-4568-aaf2-a2ed08b66a18
+02:21:07.756  ·    GET /api/v1/transaction/00bba274-1617-4568-aaf2-a2ed08b66a18
+02:21:07.799  ✔    HTTP 404 received
+02:21:07.802  ✔  Step completed in 47 ms
+02:21:07.802  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:21:07.803  ·    Asserting: HTTP 200, body defined, body is object
+02:21:07.810  ✘  Step failed after 8 ms — TC-TXN-007 [00bba274-1617-4568-aaf2-a2ed08b66a18] — expected HTTP 200, got 404
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 404
+02:21:07.812  ·  Test run complete: "TC-TXN-007 — Detail for ID: 00bba274-1617-4568-aaf2-a2ed08b66a18"
+────────────────────────────────────────────────────────────
+

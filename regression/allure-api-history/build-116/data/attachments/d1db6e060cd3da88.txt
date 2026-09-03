@@ -1,0 +1,15 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-09-03&to_date=2026-09-03 → 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-006] TC-DB-006 — Single-day range (from_date=to_date) returns 400 (validator too strict)
+────────────────────────────────────────────────────────────
+02:16:44.625  ·  Test started: "[BUG-DB-006] TC-DB-006 — Single-day range (from_date=to_date) returns 400 (validator too strict)"
+02:16:44.729  ○  ▶ Step 1 — GET /summary with from_date=to_date (same day)
+02:16:44.731  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-09-03&to_date=2026-09-03
+02:16:45.156  ✔    HTTP 200 received
+02:16:45.328  ·    Asserting: Single-day range (from_date=to_date) returns 200
+02:16:45.335  ✔    All assertions passed
+02:16:45.338  ✔  Step completed in 608 ms
+02:16:45.342  ·  Test run complete: "[BUG-DB-006] TC-DB-006 — Single-day range (from_date=to_date) returns 400 (validator too strict)"
+────────────────────────────────────────────────────────────
+
