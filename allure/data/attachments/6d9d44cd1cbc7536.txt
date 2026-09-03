@@ -1,0 +1,32 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Password visibility toggle shows/hides the password
+────────────────────────────────────────────────────────────
+01:40:19.286  ·  Test started: "TC1 — Password visibility toggle shows/hides the password"
+01:40:21.651  ○  ▶ Step 1 — Verifies the password field is masked by default and the visibility toggle reveals it
+01:40:21.653  ·    Test scope: password visibility toggle behavior
+01:40:21.653  ✔  Step completed in 3 ms
+01:40:21.653  ○  ▶ Step 2 — Fill password field and verify initial hidden state
+01:40:21.654  ·    Typing a password into the password input field
+01:42:31.192  ✘  Step failed after 129539 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByPlaceholder('Enter Password')
+    - locator resolved to <input disabled type="password" name="password" placeholder="Enter Password" autocomplete="current-password" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0↵                                    file:bg-transparent file:text-sm↵                                    file:font-medium file:text-foreground focus-visible:outline-none↵                                    focus-visible:ring-2 focus-visible:ring-ring focus-visible:r…/>
+    - fill("RMS@fortune@123")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+      - waiting 100ms
+    255 × waiting for element to be visible, enabled and editable
+        - element is not enabled
+      - retrying fill action
+        - waiting 500ms
+
+01:42:31.203  ·  Test run complete: "TC1 — Password visibility toggle shows/hides the password"
+────────────────────────────────────────────────────────────
+

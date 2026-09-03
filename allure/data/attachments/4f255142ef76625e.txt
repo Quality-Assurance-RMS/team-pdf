@@ -1,0 +1,21 @@
+01:51:34.352  ·  Test started: "TC1 — All three overview cards are visible"
+01:51:35.138  ○  ▶ Step 1 — Verifies Total Volume of Transactions, Successful Rate, and Failed Rate cards render on the Transactions page
+01:51:35.145  ·    Test scope: Verifies Total Volume of Transactions, Successful Rate, and Failed Rate cards render on the Transactions page
+01:51:35.147  ✔  Step completed in 9 ms
+01:51:35.149  ○  ▶ Step 2 — Navigate to Transactions page
+01:51:35.153  ·    Opening the Transactions page
+01:51:37.738  ✔    Navigation to Transactions page initiated successfully
+01:51:38.340  ✔  Step completed in 3191 ms
+01:51:38.340  ○  ▶ Step 3 — Verify page loads successfully
+01:51:38.341  ·    Waiting for all Transactions page elements to render
+01:51:43.537  ✘  Step failed after 5197 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    11 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:51:48.053  ·  Test run complete: "TC1 — All three overview cards are visible"

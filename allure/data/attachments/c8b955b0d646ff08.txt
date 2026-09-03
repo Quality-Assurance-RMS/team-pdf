@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC5 — All 12 month labels (Jan–Dec) are present in the chart
+────────────────────────────────────────────────────────────
+01:35:52.832  ·  Test started: "TC5 — All 12 month labels (Jan–Dec) are present in the chart"
+01:35:53.267  ○  ▶ Step 1 — Verifies that the X-axis of the revenue chart shows all 12 calendar month labels
+01:35:53.270  ·    Test scope: Verifies that the X-axis of the revenue chart shows all 12 calendar month labels
+01:35:53.270  ✔  Step completed in 3 ms
+01:35:53.275  ○  ▶ Step 2 — Navigate to Dashboard page
+01:35:53.278  ·    Opening the Dashboard page
+01:35:54.336  ✔    Navigation to Dashboard initiated successfully
+01:35:55.163  ✔  Step completed in 1888 ms
+01:35:55.163  ○  ▶ Step 3 — Verify page loads successfully
+01:35:55.164  ·    Waiting for all Dashboard elements to render
+01:36:10.241  ✘  Step failed after 15078 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:36:11.845  ·  Test run complete: "TC5 — All 12 month labels (Jan–Dec) are present in the chart"
+────────────────────────────────────────────────────────────
+

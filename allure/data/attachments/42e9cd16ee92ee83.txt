@@ -1,0 +1,22 @@
+01:40:59.828  ·  Test started: "TC1 — SSO login button should be visible but disabled"
+01:41:01.062  ○  ▶ Step 1 — Verifies the SSO login button is present and disabled on the login page (SSO integration not yet enabled)
+01:41:01.063  ·    Test scope: SSO login button visibility and disabled state
+01:41:01.063  ✔  Step completed in 2 ms
+01:41:01.063  ○  ▶ Step 2 — Verify SSO button is visible and disabled
+01:41:01.064  ·    Checking that the SSO login button is present on the page
+01:41:01.076  ✔    SSO login button is visible
+01:41:01.076  ·    Asserting that the SSO login button is in a disabled state
+01:41:06.137  ✘  Step failed after 5074 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeDisabled[2m([22m[2m)[22m failed
+
+Locator:  getByRole('button', { name: /login with sso/i })
+Expected: disabled
+Received: enabled
+Timeout:  5000ms
+
+Call log:
+[2m  - Expect "toBeDisabled" with timeout 5000ms[22m
+[2m  - waiting for getByRole('button', { name: /login with sso/i })[22m
+[2m    14 × locator resolved to <button type="button" class="border border-[#059669] bg-[#E7FAEE] rounded-lg↵                        py-2 text-[#059669] hover:cursor-pointer">Login with SSO →</button>[22m
+[2m       - unexpected value "enabled"[22m
+
+01:41:07.030  ·  Test run complete: "TC1 — SSO login button should be visible but disabled"

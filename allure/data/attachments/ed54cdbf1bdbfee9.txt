@@ -1,0 +1,21 @@
+01:35:04.100  ·  Test started: "TC2 — KPI cards display non-empty numeric values"
+01:35:04.347  ○  ▶ Step 1 — Verifies that each KPI card displays a numeric value and is not blank
+01:35:04.349  ·    Test scope: Verifies that each KPI card displays a numeric value and is not blank
+01:35:04.349  ✔  Step completed in 2 ms
+01:35:04.351  ○  ▶ Step 2 — Navigate to Dashboard page
+01:35:04.352  ·    Opening the Dashboard page
+01:35:06.759  ✔    Navigation to Dashboard initiated successfully
+01:35:07.242  ✔  Step completed in 2891 ms
+01:35:07.242  ○  ▶ Step 3 — Verify page loads successfully
+01:35:07.243  ·    Waiting for all Dashboard elements to render
+01:35:22.342  ✘  Step failed after 15100 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:35:26.345  ·  Test run complete: "TC2 — KPI cards display non-empty numeric values"
