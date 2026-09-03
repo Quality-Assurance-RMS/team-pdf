@@ -1,0 +1,68 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/status-currency",
+    "params": {},
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "content_type": "application/json",
+    "body": {
+      "data": {
+        "statusDistribution": [
+          {
+            "label": "Successful",
+            "percentage": 100,
+            "amountKes": 2378492,
+            "count": 1923
+          },
+          {
+            "label": "Failed",
+            "percentage": 0,
+            "amountKes": 0,
+            "count": 0
+          },
+          {
+            "label": "Pending",
+            "percentage": 0,
+            "amountKes": 0,
+            "count": 0
+          }
+        ],
+        "currencyDistribution": [
+          {
+            "label": "KES",
+            "percentage": 97.6079,
+            "amount": 2378492,
+            "count": 1877
+          },
+          {
+            "label": "USD",
+            "percentage": 2.3921,
+            "amount": 12549.43,
+            "count": 46
+          }
+        ],
+        "peakMetrics": {
+          "peakTransactionsPerDay": 611,
+          "peakTransactionDate": "2026-09-01",
+          "peakHourWindow": "03:00 PM – 03:59 PM",
+          "avgTPM": 4.1,
+          "maxTPM": 40,
+          "peakTxnDayChange": 100,
+          "peakTxnDayDirection": "up",
+          "avgTpmChange": -56.8,
+          "avgTpmDirection": "down",
+          "maxTpmChange": 0,
+          "maxTpmDirection": "flat",
+          "peakHourWindowChange": 100,
+          "peakHourWindowDirection": "up"
+        }
+      }
+    }
+  }
+}

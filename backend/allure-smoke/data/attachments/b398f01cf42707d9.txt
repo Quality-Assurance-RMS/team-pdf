@@ -1,0 +1,61 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-SMK-003] GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/summary?period=custom&from_date=2026-01-01&to_date=2026-05-22
+  â–º Params        : {"period":"custom","from_date":"2026-01-01","to_date":"2026-05-22"}
+  â–º Status        : 200
+  â–º Content-Type  : application/json
+  â–º Response Body :
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "success",
+    "data": {
+        "totalTransactionsAmount": {
+            "amountKes": 5285438,
+            "amountUsd": 154.13,
+            "changePctKes": -99.38,
+            "changeDirectionKes": "down",
+            "changePctUsd": -100,
+            "changeDirectionUsd": "down"
+        },
+        "successRate": {
+            "countKes": 1159,
+            "changePctKes": -99.02,
+            "changeDirectionKes": "down",
+            "countUsd": 1,
+            "changePctUsd": -100,
+            "changeDirectionUsd": "down"
+        },
+        "failureRate": {
+            "countKes": 0,
+            "changePctKes": 0,
+            "changeDirectionKes": "flat",
+            "countUsd": 0,
+            "changePctUsd": 0,
+            "changeDirectionUsd": "flat"
+        }
+    }
+}
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-SMK-003 â€" Summary: period=custom returns 200 with expected shape
+────────────────────────────────────────────────────────────
+17:22:58.247  ·  Test started: "TC-SMK-003 â€" Summary: period=custom returns 200 with expected shape"
+17:22:58.249  ○  ▶ Step 1 â€" Build request
+17:22:58.538  ✔  Step completed in 289 ms
+17:22:58.538  ○  ▶ Step 2 â€" Send GET /summary?period=custom and log response
+17:22:58.539  ·    GET /api/v1/transaction/summary?period=custom&from_date=2026-01-01&to_date=2026-05-22
+17:22:58.843  ✔    HTTP 200 received
+17:22:58.860  ✔  Step completed in 321 ms
+17:22:58.860  ○  ▶ Step 3 â€" Validate HTTP 200 and top-level fields present
+17:22:58.866  ·    Asserting: HTTP 200 and top-level fields present
+17:22:58.948  ✘  Step failed after 89 ms — total_volume must be present
+
+expect(received).toBeDefined()
+
+Received: undefined
+17:22:58.952  ·  Test run complete: "TC-SMK-003 â€" Summary: period=custom returns 200 with expected shape"
+────────────────────────────────────────────────────────────
+

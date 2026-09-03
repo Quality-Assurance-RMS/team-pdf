@@ -1,0 +1,8 @@
+17:19:28.150  ·  Test started: "[BUG-DB-006] TC-DB-006 — Single-day range (from_date=to_date) returns 400 (validator too strict)"
+17:19:28.338  ○  ▶ Step 1 — GET /summary with from_date=to_date (same day)
+17:19:28.347  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-09-03&to_date=2026-09-03
+17:19:29.234  ✔    HTTP 200 received
+17:19:29.240  ·    Asserting: Single-day range (from_date=to_date) returns 200
+17:19:29.243  ✔    All assertions passed
+17:19:29.244  ✔  Step completed in 906 ms
+17:19:29.245  ·  Test run complete: "[BUG-DB-006] TC-DB-006 — Single-day range (from_date=to_date) returns 400 (validator too strict)"

@@ -1,0 +1,18 @@
+17:22:32.244  ·  Test started: "TC-DTPAY-002 â€" Auth Guard: missing token  -> 401, wrong token  -> 401"
+17:22:32.246  ○  ▶ Step 1 â€" Send request with NO Authorization header
+17:22:32.257  ·    GET /api/v1/dashboard/today-payments (no Authorization header)
+17:22:32.537  ✔    HTTP 401 received
+17:22:32.545  ✔  Step completed in 299 ms
+17:22:32.545  ○  ▶ Step 2 â€" Send request with INVALID token
+17:22:32.547  ·    GET /api/v1/dashboard/today-payments (invalid Bearer token)
+17:22:32.634  ✔    HTTP 401 received
+17:22:32.650  ✔  Step completed in 105 ms
+17:22:32.650  ○  ▶ Step 3 â€" Validate both return 401
+17:22:32.652  ·    Asserting: both no-auth and wrong-auth requests return 401
+17:22:32.741  ✔    All assertions passed
+17:22:32.742  ✔  Step completed in 91 ms
+17:22:32.742  ○  ▶ Step 4 â€" Validate 401 error body structure
+17:22:32.742  ·    Asserting: 401 error bodies have correct status and message fields
+17:22:32.761  ✔    All assertions passed
+17:22:32.761  ✔  Step completed in 20 ms
+17:22:32.837  ·  Test run complete: "TC-DTPAY-002 â€" Auth Guard: missing token  -> 401, wrong token  -> 401"

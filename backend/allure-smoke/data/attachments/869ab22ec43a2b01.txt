@@ -1,0 +1,77 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DSUM-011] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/summary?period=today
+  â–º HTTP Status    : 200
+  â–º Content-Type   : application/json
+  â–º period         : N/A
+  â–º date_from      : N/A
+  â–º date_to        : N/A
+  â–º Full Body:
+{
+    "data": {
+        "totalRevenueKes": {
+            "amount": 109485.76,
+            "currency": "KES",
+            "changePct": -76.4,
+            "changeDirection": "down"
+        },
+        "totalRevenueUsd": {
+            "amount": 0,
+            "currency": "USD",
+            "changePct": -100,
+            "changeDirection": "down"
+        },
+        "totalTransactions": {
+            "totalTransactionCount": 109,
+            "countKes": 109,
+            "countUsd": 0,
+            "changePctKes": -76.8,
+            "changeDirectionKes": "down",
+            "changePctUsd": -100,
+            "changeDirectionUsd": "down"
+        },
+        "successfulPayments": {
+            "count": 109,
+            "ratePct": 100,
+            "changePct": 0,
+            "changeDirection": "flat"
+        },
+        "failedPayments": {
+            "count": 0,
+            "ratePct": 0,
+            "changePct": 0,
+            "changeDirection": "flat"
+        }
+    }
+}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-011 â€” BUG-SUM-06: rate_pct must be null (not 0.0%) when transaction count is zero
+────────────────────────────────────────────────────────────
+17:22:28.137  ·  Test started: "TC-DSUM-011 â€” BUG-SUM-06: rate_pct must be null (not 0.0%) when transaction count is zero"
+17:22:28.138  ○  ▶ Step 1 â€” Get period=today (count=0 on a day with no transactions)
+17:22:28.146  ·    GET /api/v1/dashboard/summary
+17:22:28.543  ✔    HTTP 200 received
+17:22:28.558  ·    Asserting: response structure and values
+17:22:28.637  ✔    All assertions passed
+17:22:28.640  ✔  Step completed in 502 ms
+17:22:28.640  ○  ▶ Step 2 â€” Check if transaction count is 0
+17:22:28.648  ✔  Step completed in 8 ms
+17:22:28.648  ○  ▶ Step 3 â€” BUG-SUM-06: rate_pct should be null when count=0 (flag if 0.0)
+17:22:28.662  ✔    All assertions passed
+17:22:28.663  ✔  Step completed in 15 ms
+17:22:28.663  ○  ▶ Step 4 â€” Also test with a future date range guaranteed to have 0 transactions
+17:22:28.667  ·    GET /api/v1/dashboard/summary
+17:22:29.036  ✔    HTTP 200 received
+17:22:29.036  ·    Asserting: response structure and values
+17:22:29.060  ✘  Step failed after 397 ms — Future range must have 0 transactions
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: undefined
+17:22:29.067  ·  Test run complete: "TC-DSUM-011 â€” BUG-SUM-06: rate_pct must be null (not 0.0%) when transaction count is zero"
+────────────────────────────────────────────────────────────
+
