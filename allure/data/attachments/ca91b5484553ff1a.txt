@@ -1,0 +1,33 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC4 — "Back to Login" navigates away from verification
+────────────────────────────────────────────────────────────
+01:56:38.704  ·  Test started: "TC4 — "Back to Login" navigates away from verification"
+01:56:38.907  ○  ▶ Step 1 — Verifies that clicking Back to Login from the verification page navigates back to the login page
+01:56:38.908  ·    Test scope: Back to Login navigation from verification
+01:56:38.909  ✔  Step completed in 2 ms
+01:56:38.909  ○  ▶ Step 2 — Navigate to login page and submit credentials
+01:56:38.909  ·    Opening the login page
+01:56:39.594  ·    Submitting login credentials to trigger OTP flow
+01:59:15.968  ✘  Step failed after 157060 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByPlaceholder('Enter Your email')
+    - locator resolved to <input disabled type="email" name="email" autocomplete="on" placeholder="Enter Your email" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0 ↵                                file:bg-transparent file:text-sm ↵                                file:font-medium file:text-foreground focus-visible:outline-none ↵                                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ↵             …/>
+    - fill("ashil.shaji@fortunesoftit.com")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+      - waiting 100ms
+    303 × waiting for element to be visible, enabled and editable
+        - element is not enabled
+      - retrying fill action
+        - waiting 500ms
+
+01:59:15.974  ·  Test run complete: "TC4 — "Back to Login" navigates away from verification"
+────────────────────────────────────────────────────────────
+
