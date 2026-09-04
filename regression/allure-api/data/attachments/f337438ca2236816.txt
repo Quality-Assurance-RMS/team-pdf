@@ -1,0 +1,56 @@
+[GET /api/v1/transaction/summary?period=last-7-days] status: 200 | body: {
+  "success": true,
+  "statusCode": 200,
+  "message": "success",
+  "data": {
+    "totalTransactionsAmount": {
+      "amountKes": 2389131.57,
+      "amountUsd": 12549.43,
+      "changePctKes": 100,
+      "changeDirectionKes": "up",
+      "changePctUsd": 100,
+      "changeDirectionUsd": "up"
+    },
+    "successRate": {
+      "countKes": 1840,
+      "changePctKes": 100,
+      "changeDirectionKes": "up",
+      "countUsd": 46,
+      "changePctUsd": 100,
+      "changeDirectionUsd": "up"
+    },
+    "failureRate": {
+      "countKes": 0,
+      "changePctKes": 0,
+      "changeDirectionKes": "flat",
+      "countUsd": 0,
+      "changePctUsd": 0,
+      "changeDirectionUsd": "flat"
+    }
+  }
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-001 — Summary: Default period (last-7-days)
+────────────────────────────────────────────────────────────
+02:25:36.102  ·  Test started: "TC-TXN-001 — Summary: Default period (last-7-days)"
+02:25:36.141  ○  ▶ Step 1 — Build request parameters
+02:25:36.156  ✔  Step completed in 14 ms
+02:25:36.156  ○  ▶ Step 2 — Send GET /summary?period=last-7-days
+02:25:36.157  ·    GET /api/v1/transaction/summary?period=last-7-days
+02:25:36.479  ✔    HTTP 200 received
+02:25:36.484  ✔  Step completed in 328 ms
+02:25:36.484  ○  ▶ Step 3 — Validate HTTP 200 status code
+02:25:36.485  ·    Asserting: HTTP 200, body defined, body is object
+02:25:36.493  ✔    All assertions passed
+02:25:36.495  ✔  Step completed in 11 ms
+02:25:36.495  ○  ▶ Step 4 — Validate response body structure
+02:25:36.496  ·    Asserting: total_volume, success_rate, total_refunds fields present
+02:25:36.507  ✘  Step failed after 13 ms — total_volume field must be present
+
+expect(received).toBeDefined()
+
+Received: undefined
+02:25:36.510  ·  Test run complete: "TC-TXN-001 — Summary: Default period (last-7-days)"
+────────────────────────────────────────────────────────────
+
