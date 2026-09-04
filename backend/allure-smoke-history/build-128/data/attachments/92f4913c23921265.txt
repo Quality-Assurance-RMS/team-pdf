@@ -1,0 +1,27 @@
+[TC-DREVT-012] Status with evil-origin: 403
+[TC-DREVT-012] ACAO header: *
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-012 â€” BUG-REVT-11: CORS wildcard origin is insecure for financial trend data
+────────────────────────────────────────────────────────────
+17:22:58.444  ·  Test started: "TC-DREVT-012 â€” BUG-REVT-11: CORS wildcard origin is insecure for financial trend data"
+17:22:58.447  ○  ▶ Step 1 â€” Fetch with Origin header from a test attacker domain
+17:22:58.456  ·    GET /api/v1/dashboard/revenue-trend
+17:22:58.666  ✔    HTTP 403 received
+17:22:58.745  ✔  Step completed in 298 ms
+17:22:58.745  ○  ▶ Step 2 â€” Log server CORS response (403 or 200 both possible)
+17:22:58.754  ·    Asserting: response structure and values
+17:22:58.762  ✔    All assertions passed
+17:22:58.762  ✔  Step completed in 17 ms
+17:22:58.762  ○  ▶ Step 3 â€” BUG-REVT-11a: Access-Control-Allow-Origin must not be wildcard on a no-Origin request
+17:22:58.763  ·    GET /api/v1/dashboard/revenue-trend
+17:22:59.769  ✔    HTTP 200 received
+17:22:59.780  ✔    All assertions passed
+17:22:59.781  ✔  Step completed in 1018 ms
+17:22:59.781  ○  ▶ Step 4 â€” BUG-REVT-11b: Destructive methods must not be CORS-allowed on a GET-only endpoint
+17:22:59.845  ·    Asserting: BUG-REVT-11b: Destructive methods must not be COR
+17:22:59.875  ✔    All assertions passed
+17:22:59.875  ✔  Step completed in 95 ms
+17:22:59.944  ·  Test run complete: "TC-DREVT-012 â€” BUG-REVT-11: CORS wildcard origin is insecure for financial trend data"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,38 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-014 â€” Math: month array sums must match summary totals
+────────────────────────────────────────────────────────────
+17:22:36.749  ·  Test started: "TC-DMREV-014 â€” Math: month array sums must match summary totals"
+17:22:36.751  ○  ▶ Step 1 â€” Fetch monthly-revenue
+17:22:36.761  ·    GET /api/v1/dashboard/monthly-revenue
+17:22:37.745  ✔    HTTP 200 received
+17:22:37.754  ✔    All assertions passed
+17:22:37.755  ✔  Step completed in 1004 ms
+17:22:37.755  ○  ▶ Step 2 â€” Array sums must equal summary totals
+17:22:37.758  ·    Asserting: response structure and values
+17:22:37.762  ·    Asserting: response structure and values
+17:22:37.765  ·    Asserting: response structure and values
+17:22:37.768  ·    Asserting: response structure and values
+17:22:37.845  ·    Asserting: response structure and values
+17:22:37.867  ·    Asserting: response structure and values
+17:22:37.869  ✔    All assertions passed
+17:22:37.869  ✔  Step completed in 115 ms
+17:22:37.869  ○  ▶ Step 3 â€” Summary cross: total_gross âˆ’ total_net = total_commission (KES)
+17:22:37.874  ·    Asserting: response structure and values
+17:22:37.942  ✔    All assertions passed
+17:22:37.942  ✔  Step completed in 73 ms
+17:22:37.942  ○  ▶ Step 4 â€” Summary cross: total_gross âˆ’ total_net = total_commission (USD)
+17:22:37.948  ·    Asserting: response structure and values
+17:22:37.952  ✔    All assertions passed
+17:22:37.953  ✔  Step completed in 10 ms
+17:22:37.953  ○  ▶ Step 5 â€” conversion_ratio_pct range: must be 0â€“100
+17:22:37.956  ·    Asserting: response structure and values
+17:22:37.964  ✘  Step failed after 12 ms — conversion_ratio_pct must be a number
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "number"
+Received: "undefined"
+17:22:37.967  ·  Test run complete: "TC-DMREV-014 â€” Math: month array sums must match summary totals"
+────────────────────────────────────────────────────────────
+

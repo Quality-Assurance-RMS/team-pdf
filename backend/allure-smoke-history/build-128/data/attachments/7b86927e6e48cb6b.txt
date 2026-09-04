@@ -1,0 +1,50 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DREVT-001] GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/revenue-trend
+  â–º HTTP Status   : 200
+  â–º Content-Type  : application/json
+  â–º labels        : [Dec 2025, Jan 2026, Feb 2026, Mar 2026, Apr 2026, May 2026, Jun 2026, Jul 2026, Aug 2026, Sep 2026, Oct 2026, Nov 2026]  (12 entries)
+  â–º totalAttempts : [undefined]
+  â–º successful    : [234730, 1, 600, 0, 1049, 126, 13556, 139, 224621, 1436, 0, 0]
+  â–º failed        : [0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0]
+  â–º summary[0]    : label="Total Transactions" value="undefined" points=undefined(undefined) isPostive=undefined change="undefined"
+  â–º summary[1]    : label="Successful" value="undefined" points=undefined(undefined) isPostive=undefined change="undefined"
+  â–º summary[2]    : label="Failed" value="undefined" points=undefined(undefined) isPostive=undefined change="undefined"
+  â–º Cache-Control      : max-age=60, private
+  â–º X-Content-Type-Opt : MISSING
+  â–º X-Frame-Options    : MISSING
+  â–º ACAO               : *
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary
+────────────────────────────────────────────────────────────
+17:22:42.568  ·  Test started: "TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary"
+17:22:42.570  ○  ▶ Step 1 â€” Build request
+17:22:42.771  ✔  Step completed in 201 ms
+17:22:42.771  ○  ▶ Step 2 â€” Send GET /revenue-trend and log response
+17:22:42.772  ·    GET /api/v1/dashboard/revenue-trend
+17:22:43.643  ✔    HTTP 200 received
+17:22:43.656  ✔  Step completed in 884 ms
+17:22:43.656  ○  ▶ Step 3 â€” Validate HTTP 200 and Content-Type
+17:22:43.656  ·    Asserting: Validate HTTP 200 and Content-Type
+17:22:43.668  ✔    All assertions passed
+17:22:43.668  ✔  Step completed in 13 ms
+17:22:43.668  ○  ▶ Step 4 â€” Validate top-level data wrapper
+17:22:43.670  ·    Asserting: Validate top-level data wrapper
+17:22:43.769  ✔    All assertions passed
+17:22:43.770  ✔  Step completed in 101 ms
+17:22:43.770  ○  ▶ Step 5 â€” Validate 4 required array fields exist
+17:22:43.771  ·    Asserting: Validate 4 required array fields exist
+17:22:43.860  ✘  Step failed after 90 ms — "totalAttempts" array must be present
+
+expect(received).toHaveProperty(path)
+
+Expected path: "totalAttempts"
+Received path: []
+
+Received value: {"failed": [0, 0, 0, 0, 0, 2, 0, 0, 0, 0, …], "labels": ["Dec 2025", "Jan 2026", "Feb 2026", "Mar 2026", "Apr 2026", "May 2026", "Jun 2026", "Jul 2026", "Aug 2026", "Sep 2026", …], "successful": [234730, 1, 600, 0, 1049, 126, 13556, 139, 224621, 1436, …], "summary": [{"kesChangeDirection": "flat", "kesChangePercentage": 0, "kesValue": 944040499, "label": "Total Transactions", "transactionCountKes": 247714, "transactionCountUsd": 228556, "usdChangeDirection": "flat", "usdChangePercentage": 0, "usdValue": 352792814}, {"kesChangeDirection": "flat", "kesChangePercentage": 0, "kesValue": 944016713, "label": "Successful", "transactionCountKes": 247702, "transactionCountUsd": 228556, "usdChangeDirection": "flat", "usdChangePercentage": 0, "usdValue": 352783925}, {"kesChangeDirection": "flat", "kesChangePercentage": 0, "kesValue": 3964, "label": "Failed", "transactionCountKes": 2, "transactionCountUsd": 0, "usdChangeDirection": "flat", "usdChangePercentage": 0, "usdValue": 1481}], "totalTransactions": [234730, 1, 600, 0, 1049, 128, 13556, 149, 224621, 1436, …]}
+17:22:43.865  ·  Test run complete: "TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,9 @@
+17:20:03.646  ·  Test started: "[Security] TC7 — Missing X-Webhook-Signature header returns 401 MISSING_SIGNATURE_HEADER"
+17:20:03.652  ○  ▶ Step 1 — Build a valid invoice payload
+17:20:03.661  ✔  Step completed in 9 ms
+17:20:03.662  ○  ▶ Step 2 — Sign the payload (signature will be withheld)
+17:20:03.663  ✔  Step completed in 1 ms
+17:20:03.663  ○  ▶ Step 3 — POST with only the timestamp header and confirm 401 MISSING_SIGNATURE_HEADER
+17:20:03.767  ✔    Missing signature header correctly rejected with MISSING_SIGNATURE_HEADER
+17:20:03.767  ✔  Step completed in 104 ms
+17:20:03.768  ·  Test run complete: "[Security] TC7 — Missing X-Webhook-Signature header returns 401 MISSING_SIGNATURE_HEADER"
