@@ -1,0 +1,33 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Full login with a correct OTP reaches the dashboard
+────────────────────────────────────────────────────────────
+02:04:59.765  ·  Test started: "TC1 — Full login with a correct OTP reaches the dashboard"
+02:05:01.066  ○  ▶ Step 1 — Verifies that logging in, receiving an OTP by email, and entering it correctly redirects the user to the dashboard
+02:05:01.069  ·    Test scope: full OTP login flow reaching the dashboard
+02:05:01.070  ✔  Step completed in 4 ms
+02:05:01.070  ○  ▶ Step 2 — Navigate to login page and submit credentials
+02:05:01.142  ·    Opening the login page
+02:05:03.042  ·    Submitting login credentials
+02:07:16.577  ✘  Step failed after 135507 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByPlaceholder('Enter Your email')
+    - locator resolved to <input disabled type="email" name="email" autocomplete="on" placeholder="Enter Your email" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0 ↵                                file:bg-transparent file:text-sm ↵                                file:font-medium file:text-foreground focus-visible:outline-none ↵                                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ↵             …/>
+    - fill("ashil.shaji@fortunesoftit.com")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+      - waiting 100ms
+    261 × waiting for element to be visible, enabled and editable
+        - element is not enabled
+      - retrying fill action
+        - waiting 500ms
+
+02:07:16.585  ·  Test run complete: "TC1 — Full login with a correct OTP reaches the dashboard"
+────────────────────────────────────────────────────────────
+

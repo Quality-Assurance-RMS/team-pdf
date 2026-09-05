@@ -1,0 +1,21 @@
+01:58:36.473  ·  Test started: "TC1 — All five report cards are visible with subtitles"
+01:58:36.845  ○  ▶ Step 1 — Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed report cards are all present with their count subtitles
+01:58:36.847  ·    Test scope: Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed report cards are all present with their count subtitles
+01:58:36.848  ✔  Step completed in 2 ms
+01:58:36.849  ○  ▶ Step 2 — Navigate to Reports page
+01:58:36.850  ·    Opening the Reports page
+01:58:38.860  ✔    Navigation to Reports page initiated successfully
+01:58:40.651  ✔  Step completed in 3802 ms
+01:58:40.651  ○  ▶ Step 3 — Verify page loads successfully
+01:58:40.652  ·    Waiting for all Reports page elements to render
+01:58:55.750  ✘  Step failed after 15099 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/reports/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:58:58.859  ·  Test run complete: "TC1 — All five report cards are visible with subtitles"

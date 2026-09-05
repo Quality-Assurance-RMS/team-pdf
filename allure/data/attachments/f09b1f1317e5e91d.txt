@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC4 — Revenue chart canvas element is rendered
+────────────────────────────────────────────────────────────
+01:47:57.865  ·  Test started: "TC4 — Revenue chart canvas element is rendered"
+01:47:58.190  ○  ▶ Step 1 — Verifies that at least one <canvas> element exists for the revenue chart
+01:47:58.192  ·    Test scope: Verifies that at least one <canvas> element exists for the revenue chart
+01:47:58.192  ✔  Step completed in 2 ms
+01:47:58.194  ○  ▶ Step 2 — Navigate to Dashboard page
+01:47:58.194  ·    Opening the Dashboard page
+01:48:00.247  ✔    Navigation to Dashboard initiated successfully
+01:48:00.562  ✔  Step completed in 2369 ms
+01:48:00.562  ○  ▶ Step 3 — Verify page loads successfully
+01:48:00.563  ·    Waiting for all Dashboard elements to render
+01:48:15.581  ✘  Step failed after 15019 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:48:18.366  ·  Test run complete: "TC4 — Revenue chart canvas element is rendered"
+────────────────────────────────────────────────────────────
+

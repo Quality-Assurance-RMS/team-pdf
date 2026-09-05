@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Settled" status badge is visible in the table
+────────────────────────────────────────────────────────────
+02:01:55.754  ·  Test started: "TC1 — "Settled" status badge is visible in the table"
+02:01:56.458  ○  ▶ Step 1 — Verifies at least one Settled badge appears in the Settlement by Bank table
+02:01:56.460  ·    Test scope: Verifies at least one Settled badge appears in the Settlement by Bank table
+02:01:56.461  ✔  Step completed in 3 ms
+02:01:56.464  ○  ▶ Step 2 — Navigate to Settlements page
+02:01:56.468  ·    Opening the Settlements page
+02:01:58.242  ✔    Navigation to Settlements page initiated successfully
+02:01:59.470  ✔  Step completed in 3006 ms
+02:01:59.471  ○  ▶ Step 3 — Verify page loads successfully
+02:01:59.472  ·    Waiting for all Settlements page elements to render
+02:02:14.783  ✘  Step failed after 15313 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settlements/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+02:02:17.597  ·  Test run complete: "TC1 — "Settled" status badge is visible in the table"
+────────────────────────────────────────────────────────────
+

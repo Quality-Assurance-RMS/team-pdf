@@ -1,0 +1,20 @@
+02:04:58.112  ·  Test started: "TC1 — Opening a transaction row shows matching detail sections"
+02:04:58.479  ○  ▶ Step 1 — Login with OTP, open the first transaction row, and verify Transaction ID and detail sections on the detail page
+02:04:58.482  ·    Test scope: transaction detail navigation and content verification
+02:04:58.482  ✔  Step completed in 3 ms
+02:04:58.483  ○  ▶ Step 2 — Navigate to Transactions page
+02:04:58.484  ·    Opening the Transactions page and waiting for it to load
+02:05:10.455  ✘  Step failed after 11972 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByRole('heading', { name: 'Transactions' })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for getByRole('heading', { name: 'Transactions' })[22m
+[2m    - waiting for" https://api.rms.dev.demo-fsit.com/auth/login" navigation to finish...[22m
+[2m    - navigated to "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+02:05:11.725  ·  Test run complete: "TC1 — Opening a transaction row shows matching detail sections"

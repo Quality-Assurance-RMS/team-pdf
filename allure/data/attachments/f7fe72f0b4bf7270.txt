@@ -1,0 +1,32 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Email-only submission shows a password-required error
+────────────────────────────────────────────────────────────
+01:57:10.674  ·  Test started: "TC2 — Email-only submission shows a password-required error"
+01:57:11.951  ○  ▶ Step 1 — Verifies that submitting only an email (no password) shows a password-required validation message
+01:57:11.953  ·    Test scope: email-only submission validation messaging
+01:57:11.953  ✔  Step completed in 2 ms
+01:57:11.953  ○  ▶ Step 2 — Enter email only and verify password validation message
+01:57:11.954  ·    Filling in the email field and leaving the password field empty
+01:59:28.942  ✘  Step failed after 136989 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByPlaceholder('Enter Your email')
+    - locator resolved to <input disabled type="email" name="email" autocomplete="on" placeholder="Enter Your email" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0 ↵                                file:bg-transparent file:text-sm ↵                                file:font-medium file:text-foreground focus-visible:outline-none ↵                                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ↵             …/>
+    - fill("ashil.shaji@fortunesoftit.com")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not enabled
+    - retrying fill action
+      - waiting 100ms
+    266 × waiting for element to be visible, enabled and editable
+        - element is not enabled
+      - retrying fill action
+        - waiting 500ms
+
+01:59:28.953  ·  Test run complete: "TC2 — Email-only submission shows a password-required error"
+────────────────────────────────────────────────────────────
+

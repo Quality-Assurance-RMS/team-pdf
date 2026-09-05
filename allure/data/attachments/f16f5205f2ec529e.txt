@@ -1,0 +1,27 @@
+02:05:16.603  ·  Test started: "TC3 — Resend OTP dispatches a new code and stays on verification"
+02:05:16.805  ○  ▶ Step 1 — Verifies that clicking Resend OTP dispatches a new code while remaining on the verification page
+02:05:16.807  ·    Test scope: Resend OTP behavior
+02:05:16.807  ✔  Step completed in 2 ms
+02:05:16.807  ○  ▶ Step 2 — Navigate to login page and submit credentials
+02:05:16.808  ·    Opening the login page
+02:05:17.458  ·    Submitting login credentials to trigger OTP flow
+02:07:53.373  ✘  Step failed after 156566 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+[2m  - waiting for getByPlaceholder('Enter Your email')[22m
+[2m    - locator resolved to <input disabled type="email" name="email" autocomplete="on" placeholder="Enter Your email" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0 ↵                                file:bg-transparent file:text-sm ↵                                file:font-medium file:text-foreground focus-visible:outline-none ↵                                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ↵             …/>[22m
+[2m    - fill("ashil.shaji@fortunesoftit.com")[22m
+[2m  - attempting fill action[22m
+[2m    2 × waiting for element to be visible, enabled and editable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying fill action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and editable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying fill action[22m
+[2m      - waiting 100ms[22m
+[2m    303 × waiting for element to be visible, enabled and editable[22m
+[2m        - element is not enabled[22m
+[2m      - retrying fill action[22m
+[2m        - waiting 500ms[22m
+
+02:07:53.385  ·  Test run complete: "TC3 — Resend OTP dispatches a new code and stays on verification"

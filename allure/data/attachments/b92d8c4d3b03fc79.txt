@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Eye icon opens transaction detail with matching Transaction ID
+────────────────────────────────────────────────────────────
+02:03:29.658  ·  Test started: "TC1 — Eye icon opens transaction detail with matching Transaction ID"
+02:03:29.853  ○  ▶ Step 1 — Clicks the view icon on the first transaction row and verifies the Transaction ID appears on the detail view
+02:03:29.855  ·    Test scope: Clicks the view icon on the first transaction row and verifies the Transaction ID appears on the detail view
+02:03:29.856  ✔  Step completed in 3 ms
+02:03:29.857  ○  ▶ Step 2 — Navigate to Transactions page
+02:03:29.858  ·    Opening the Transactions page
+02:03:32.245  ✔    Navigation to Transactions page initiated successfully
+02:03:32.668  ✔  Step completed in 2811 ms
+02:03:32.668  ○  ▶ Step 3 — Verify page loads successfully
+02:03:32.668  ·    Waiting for all Transactions page elements to render
+02:03:37.747  ✘  Step failed after 5079 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/transaction/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 5000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 5000ms
+    14 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+02:03:40.448  ·  Test run complete: "TC1 — Eye icon opens transaction detail with matching Transaction ID"
+────────────────────────────────────────────────────────────
+

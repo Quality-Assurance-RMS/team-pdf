@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Date filter defaults to "Last 7 Days"
+────────────────────────────────────────────────────────────
+02:03:02.745  ·  Test started: "TC1 — Date filter defaults to "Last 7 Days""
+02:03:03.145  ○  ▶ Step 1 — Verifies the date filter dropdown is visible and shows "Last 7 Days" as the default
+02:03:03.147  ·    Test scope: Verifies the date filter dropdown is visible and shows "Last 7 Days" as the default
+02:03:03.148  ✔  Step completed in 3 ms
+02:03:03.151  ○  ▶ Step 2 — Navigate to Settlements page
+02:03:03.154  ·    Opening the Settlements page
+02:03:05.558  ✔    Navigation to Settlements page initiated successfully
+02:03:06.352  ✔  Step completed in 3201 ms
+02:03:06.352  ○  ▶ Step 3 — Verify page loads successfully
+02:03:06.354  ·    Waiting for all Settlements page elements to render
+02:03:21.375  ✘  Step failed after 15023 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settlements/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+02:03:24.574  ·  Test run complete: "TC1 — Date filter defaults to "Last 7 Days""
+────────────────────────────────────────────────────────────
+
