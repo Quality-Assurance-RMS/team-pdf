@@ -1,0 +1,13 @@
+02:40:44.771  ·  Test started: "TC1 — Single line item, fully paid invoice — happy path"
+02:40:44.987  ○  ▶ Step 1 — Build a single-item, fully-paid invoice payload
+02:40:45.075  ✔  Step completed in 88 ms
+02:40:45.075  ○  ▶ Step 2 — Sign the payload (HMAC-SHA256 over "<timestamp>.<raw_body>")
+02:40:45.089  ✔  Step completed in 14 ms
+02:40:45.089  ○  ▶ Step 3 — POST invoice KRCV32J1P5GWXCEN and validate the response
+02:40:45.884  ✘  Step failed after 795 ms — invoice POST should return 200
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m401[39m
+02:40:45.890  ·  Test run complete: "TC1 — Single line item, fully paid invoice — happy path"

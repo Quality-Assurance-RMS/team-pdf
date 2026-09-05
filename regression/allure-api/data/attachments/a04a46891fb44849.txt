@@ -1,0 +1,9 @@
+02:40:42.679  ·  Test started: "[Security] TC5 — Timestamp outside the 5-minute replay window returns 401 REPLAY_WINDOW_EXCEEDED"
+02:40:42.775  ○  ▶ Step 1 — Build a valid invoice payload
+02:40:42.779  ✔  Step completed in 4 ms
+02:40:42.780  ○  ▶ Step 2 — Sign the payload using a timestamp 10 minutes in the past
+02:40:42.786  ✔  Step completed in 6 ms
+02:40:42.786  ○  ▶ Step 3 — POST with the stale timestamp and confirm 401 REPLAY_WINDOW_EXCEEDED
+02:40:42.993  ✔    Stale (>5min) timestamp correctly rejected with REPLAY_WINDOW_EXCEEDED
+02:40:42.993  ✔  Step completed in 207 ms
+02:40:42.995  ·  Test run complete: "[Security] TC5 — Timestamp outside the 5-minute replay window returns 401 REPLAY_WINDOW_EXCEEDED"

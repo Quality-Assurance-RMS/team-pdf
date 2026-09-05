@@ -1,0 +1,15 @@
+GET https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction?period=today&page=0&size=0 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-TXN-002] TC-TXN-002 — Transaction list: size=0 returns 200 with empty data (should be 400)
+────────────────────────────────────────────────────────────
+02:40:18.599  ·  Test started: "[BUG-TXN-002] TC-TXN-002 — Transaction list: size=0 returns 200 with empty data (should be 400)"
+02:40:18.794  ○  ▶ Step 1 — GET list with size=0
+02:40:18.798  ·    GET /api/v1/transaction?period=today&page=0&size=0
+02:40:18.970  ✔    HTTP 400 received
+02:40:18.986  ·    Asserting: size=0 returns 400
+02:40:18.993  ✔    All assertions passed
+02:40:18.994  ✔  Step completed in 200 ms
+02:40:19.068  ·  Test run complete: "[BUG-TXN-002] TC-TXN-002 — Transaction list: size=0 returns 200 with empty data (should be 400)"
+────────────────────────────────────────────────────────────
+

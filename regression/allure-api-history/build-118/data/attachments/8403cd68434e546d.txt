@@ -1,0 +1,13 @@
+02:40:45.482  ·  Test started: "[Validation] TC10 — Missing "number" field returns 400"
+02:40:45.488  ○  ▶ Step 1 — Build a valid invoice payload, then remove the "number" field
+02:40:45.488  ✔  Step completed in 1 ms
+02:40:45.488  ○  ▶ Step 2 — Sign the malformed payload (signature itself will still be valid)
+02:40:45.489  ✔  Step completed in 1 ms
+02:40:45.489  ○  ▶ Step 3 — POST the payload missing "number" and confirm 400
+02:40:45.673  ✘  Step failed after 184 ms — missing "number" field should return 400, not 401
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m400[39m
+Received: [31m401[39m
+02:40:45.676  ·  Test run complete: "[Validation] TC10 — Missing "number" field returns 400"

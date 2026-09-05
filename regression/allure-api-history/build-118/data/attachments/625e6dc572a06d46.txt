@@ -1,0 +1,15 @@
+GET https://api.rms.dev.demo-fsit.com/dashboard-api/api/v1/dashboard/revenue-trend → 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-009] TC-DB-009 — revenue-trend labels[] contains duplicate month names (no year)
+────────────────────────────────────────────────────────────
+02:40:21.605  ·  Test started: "[BUG-DB-009] TC-DB-009 — revenue-trend labels[] contains duplicate month names (no year)"
+02:40:21.695  ○  ▶ Step 1 — Fetch revenue-trend and check for duplicate labels
+02:40:21.696  ·    GET /api/v1/dashboard/revenue-trend
+02:40:23.170  ✔    HTTP 200 received
+02:40:23.177  ·    Asserting: revenue-trend labels array contains no duplicates
+02:40:23.178  ✔    All assertions passed
+02:40:23.179  ✔  Step completed in 1484 ms
+02:40:23.180  ·  Test run complete: "[BUG-DB-009] TC-DB-009 — revenue-trend labels[] contains duplicate month names (no year)"
+────────────────────────────────────────────────────────────
+
