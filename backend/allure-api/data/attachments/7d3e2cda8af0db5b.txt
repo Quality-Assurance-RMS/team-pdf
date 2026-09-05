@@ -1,0 +1,21 @@
+[GET https://api.rms.dev.demo-fsit.com/oauth-token/api/v1/token] 502
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-OT-009] TC-OT-006 — GET /api/v1/token: Response must include Cache-Control: no-store
+────────────────────────────────────────────────────────────
+17:32:32.937  ·  Test started: "[BUG-OT-009] TC-OT-006 — GET /api/v1/token: Response must include Cache-Control: no-store"
+17:32:32.969  ○  ▶ Step 1 — Send GET /api/v1/token
+17:32:32.972  ·    GET /api/v1/token
+17:33:32.998  ✔    HTTP 502 received
+17:33:33.007  ✔  Step completed in 60038 ms
+17:33:33.007  ○  ▶ Step 2 — Assert HTTP 200
+17:33:33.010  ·    Asserting: HTTP status is 200
+17:33:33.018  ✘  Step failed after 10 ms — TC-OT-006 — expected 200, got 502
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+17:33:33.021  ·  Test run complete: "[BUG-OT-009] TC-OT-006 — GET /api/v1/token: Response must include Cache-Control: no-store"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,24 @@
+17:22:51.431  ·  Test started: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"
+17:22:51.433  ○  ▶ Step 1 â€" Build request
+17:22:51.550  ·    Asserting: request parameters are recorded
+17:22:51.550  ✔    All assertions passed
+17:22:51.639  ✔  Step completed in 205 ms
+17:22:51.639  ○  ▶ Step 2 â€" Send GET /status-currency and log response
+17:22:51.640  ·    GET /api/v1/dashboard/status-currency
+17:22:54.433  ✔    HTTP 200 received
+17:22:54.527  ✔  Step completed in 2888 ms
+17:22:54.527  ○  ▶ Step 3 â€" Validate HTTP 200 and Content-Type
+17:22:54.528  ·    Asserting: HTTP 200, body defined, Content-Type is application/json
+17:22:54.632  ✔    All assertions passed
+17:22:54.633  ✔  Step completed in 106 ms
+17:22:54.633  ○  ▶ Step 4 â€" Validate top-level `data` wrapper and all four sections
+17:22:54.640  ·    Asserting: all four sections (statusDistribution, currencyDistribution, byMethod, peakMetrics) are present
+17:22:54.747  ✘  Step failed after 114 ms — byMethod section must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"byMethod"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"currencyDistribution": [{"amount": 2548693.8, "count": 1952, "label": "KES", "percentage": 95.266}, {"amount": 24555.43, "count": 97, "label": "USD", "percentage": 4.734}], "peakMetrics": {"avgTPM": 3.8, "avgTpmChange": -74, "avgTpmDirection": "down", "maxTPM": 40, "maxTpmChange": 0, "maxTpmDirection": "flat", "peakHourWindow": "06:00 PM – 06:59 PM", "peakHourWindowChange": 100, "peakHourWindowDirection": "up", "peakTransactionDate": "2026-09-01", "peakTransactionsPerDay": 612, "peakTxnDayChange": 100, "peakTxnDayDirection": "up"}, "statusDistribution": [{"amountKes": 2548693.8, "count": 2049, "label": "Successful", "percentage": 100}, {"amountKes": 0, "count": 0, "label": "Failed", "percentage": 0}, {"amountKes": 0, "count": 0, "label": "Pending", "percentage": 0}]}[39m
+17:22:54.820  ·  Test run complete: "TC-DSH-001 â€" Happy path: HTTP 200 with all four data sections present"

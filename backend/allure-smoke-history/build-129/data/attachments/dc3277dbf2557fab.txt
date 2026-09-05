@@ -1,0 +1,16 @@
+17:22:42.521  ·  Test started: "TC-DREVT-003 â€” BUG-REVT-01: summary items must use "isPositive", not "isPostive""
+17:22:42.524  ○  ▶ Step 1 â€” Fetch revenue-trend response
+17:22:42.621  ·    GET /api/v1/dashboard/revenue-trend
+17:22:43.547  ✔    HTTP 200 received
+17:22:43.576  ✔  Step completed in 1052 ms
+17:22:43.576  ○  ▶ Step 2 â€” Validate HTTP 200
+17:22:43.579  ·    Asserting: Validate HTTP 200
+17:22:43.625  ✔    All assertions passed
+17:22:43.625  ✔  Step completed in 49 ms
+17:22:43.625  ○  ▶ Step 3 â€” Each summary item must NOT have "isPostive" (typo)
+17:22:43.629  ·    Asserting: response structure and values
+17:22:43.647  ·    Asserting: response structure and values
+17:22:43.657  ·    Asserting: response structure and values
+17:22:43.737  ✔    All assertions passed
+17:22:43.740  ✔  Step completed in 115 ms
+17:22:43.746  ·  Test run complete: "TC-DREVT-003 â€” BUG-REVT-01: summary items must use "isPositive", not "isPostive""

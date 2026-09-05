@@ -1,0 +1,10 @@
+17:22:16.444  ·  Test started: "TC-DMREV-006 â€” BUG-MREV-03: year=1000 is accepted â€” no sensible lower-bound validation"
+17:22:16.634  ○  ▶ Step 1 â€” Send GET with year=1000
+17:22:16.639  ·    GET /api/v1/dashboard/monthly-revenue
+17:22:16.921  ✔    HTTP 400 received
+17:22:16.935  ✔  Step completed in 301 ms
+17:22:16.935  ○  ▶ Step 2 â€” BUG-MREV-03: year=1000 must return 400
+17:22:16.937  ·    Asserting: BUG-MREV-03 — year=1000 must return 400
+17:22:16.941  ✔    All assertions passed
+17:22:16.941  ✔  Step completed in 7 ms
+17:22:16.944  ·  Test run complete: "TC-DMREV-006 â€” BUG-MREV-03: year=1000 is accepted â€” no sensible lower-bound validation"

@@ -1,0 +1,17 @@
+GET https://api.rms.dev.demo-fsit.com/rms-analytics/api/v1/analytics/dashboard/summary → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)
+────────────────────────────────────────────────────────────
+17:20:08.651  ·  Test started: "[BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)"
+17:20:08.734  ○  ▶ Step 1 — Call analytics and confirm zeros
+17:20:08.736  ·    GET /api/v1/analytics/dashboard/summary
+17:20:08.829  ✔    HTTP 502 received
+17:20:08.829  ·    Asserting: Response is 200
+17:20:08.838  ✘  Step failed after 104 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+17:20:08.841  ·  Test run complete: "[BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)"
+────────────────────────────────────────────────────────────
+

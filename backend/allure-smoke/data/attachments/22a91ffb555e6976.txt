@@ -1,0 +1,19 @@
+[TC-ASUM-014] POST → 502 Allow: MISSING
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-014 – HTTP method guard: POST/PUT/DELETE/PATCH → 405 + Allow: GET header
+────────────────────────────────────────────────────────────
+17:21:58.940  ·  Test started: "TC-ASUM-014 – HTTP method guard: POST/PUT/DELETE/PATCH → 405 + Allow: GET header"
+17:21:58.942  ○  ▶ POST must return 405 with Allow header
+17:21:59.027  ·    POST /api/v1/analytics/dashboard/summary
+17:21:59.344  ✔    HTTP 502 received
+17:21:59.432  ·    Asserting: POST returns 405 with Allow header and correct body
+17:21:59.522  ✘  Step failed after 580 ms — POST must return 405 Method Not Allowed
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 405
+Received: 502
+17:21:59.528  ·  Test run complete: "TC-ASUM-014 – HTTP method guard: POST/PUT/DELETE/PATCH → 405 + Allow: GET header"
+────────────────────────────────────────────────────────────
+
