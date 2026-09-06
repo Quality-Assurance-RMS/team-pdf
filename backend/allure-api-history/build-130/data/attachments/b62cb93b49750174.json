@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-GW-002",
+  "expected": "Preflight denies https://evil.com (no wildcard in allow-origin)",
+  "actual": "access-control-allow-origin: * (wildcard — implicitly allows evil.com)",
+  "impact": "Malicious websites can make cross-origin requests to all RMS APIs from any user's browser",
+  "fix": "Replace APISIX wildcard CORS with explicit allowlist: [https://rms.dev.demo-fsit.com]"
+}

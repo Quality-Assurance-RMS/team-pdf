@@ -1,0 +1,24 @@
+17:22:28.592  ·  Test started: "TC-DREVT-004 â€” BUG-REVT-02/03: points must be a number; value must expose raw numeric amount"
+17:22:28.663  ○  ▶ Step 1 â€” Fetch revenue-trend response
+17:22:28.783  ·    GET /api/v1/dashboard/revenue-trend
+17:22:30.129  ✔    HTTP 200 received
+17:22:30.133  ✔  Step completed in 1469 ms
+17:22:30.133  ○  ▶ Step 2 â€” Validate HTTP 200
+17:22:30.133  ·    Asserting: Validate HTTP 200
+17:22:30.138  ✔    All assertions passed
+17:22:30.138  ✔  Step completed in 6 ms
+17:22:30.138  ○  ▶ Step 3 â€” BUG-REVT-02: summary[*].points must be a number, not a string
+17:22:30.142  ·    Asserting: BUG-REVT-02: summary[*].points must be a number,
+17:22:30.153  ·    Asserting: BUG-REVT-02: summary[*].points must be a number,
+17:22:30.157  ·    Asserting: BUG-REVT-02: summary[*].points must be a number,
+17:22:30.159  ✔    All assertions passed
+17:22:30.159  ✔  Step completed in 21 ms
+17:22:30.159  ○  ▶ Step 4 â€” BUG-REVT-03: summary[*].value must include a raw numeric amount
+17:22:30.163  ·    Asserting: BUG-REVT-03: summary[*].value must include a raw
+17:22:30.176  ·    Asserting: BUG-REVT-03: summary[*].value must include a raw
+17:22:30.180  ·    Asserting: BUG-REVT-03: summary[*].value must include a raw
+17:22:30.181  ✔    All assertions passed
+17:22:30.182  ✔  Step completed in 23 ms
+17:22:30.182  ○  ▶ Step 5 â€” Validate array data types (numbers, not strings)
+17:22:30.183  ✘  Step failed after 1 ms — Cannot read properties of undefined (reading 'forEach')
+17:22:30.185  ·  Test run complete: "TC-DREVT-004 â€” BUG-REVT-02/03: points must be a number; value must expose raw numeric amount"

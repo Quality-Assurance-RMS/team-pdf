@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.rms.dev.demo-fsit.com/transaction-api/api/v1/transaction/summary?period=week",
+    "params": {
+      "period": "week"
+    },
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 400,
+    "content_type": "application/json",
+    "body": {
+      "errorCode": "Bad Request",
+      "errorMessage": "Invalid period value. Must be today|last-7-days|last-30-days|last-90-days|custom"
+    }
+  }
+}

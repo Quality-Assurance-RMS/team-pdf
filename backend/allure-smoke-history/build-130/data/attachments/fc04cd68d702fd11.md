@@ -1,0 +1,228 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: API/smoke/smoke-dashboard-monthly-revenue.spec.ts >> Smoke â€” Dashboard Monthly Revenue >> TC-DMREV-003 â€” year param: valid values return correct year in response
+- Location: tests/API/smoke/smoke-dashboard-monthly-revenue.spec.ts:298:7
+
+# Error details
+
+```
+Error: data.year must echo back 2026
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 2026
+Received: undefined
+```
+
+# Test source
+
+```ts
+  207 |       expect(d, '"data.summary" must be present').toHaveProperty('summary');
+  208 |       allure.parameter('data.year', String(d.year));
+  209 |       logger.pass('All assertions passed');
+  210 |     });
+  211 | 
+  212 |     await logger.step('Step 5 â€” Validate year field is current year', async () => {
+  213 |       const d = res!.body.data as MonthlyRevenueData;
+  214 |       const currentYear = new Date().getFullYear();
+  215 |       logger.info('Asserting: Validate year field is current year');
+  216 |       expect(typeof d.year, 'year must be a number').toBe('number');
+  217 |       expect(d.year, `year must equal current year (${currentYear})`).toBe(currentYear);
+  218 |       allure.parameter('Returned year', String(d.year));
+  219 |       logger.pass('All assertions passed');
+  220 |     });
+  221 | 
+  222 |     await logger.step('Step 6 â€” Validate months array has exactly 12 entries (Janâ€“Dec)', async () => {
+  223 |       const d = res!.body.data as MonthlyRevenueData;
+  224 |       logger.info('Asserting: Validate months array has exactly 12 entries (Jan');
+  225 |       expect(Array.isArray(d.months), '"months" must be an array').toBe(true);
+  226 |       expect(d.months.length, '"months" must have exactly 12 entries').toBe(12);
+  227 | 
+  228 |       const monthNums = d.months.map(m => m.month_num);
+  229 |       for (let i = 1; i <= 12; i++) {
+  230 |         expect(monthNums, `month_num ${i} must be present`).toContain(i);
+  231 |       }
+  232 |       allure.parameter('Months count', String(d.months.length));
+  233 |       allure.parameter('Month labels', d.months.map(m => m.month_label).join(', '));
+  234 |       logger.pass('All assertions passed');
+  235 |     });
+  236 | 
+  237 |     await logger.step('Step 7 â€” Validate each month has all 6 required fields', async () => {
+  238 |       const d = res!.body.data as MonthlyRevenueData;
+  239 |       const requiredFields = ['month_num','month_label','gross_kes','gross_usd','net_kes','net_usd','commission_kes','commission_usd'];
+  240 |       for (const [i, month] of d.months.entries()) {
+  241 |         for (const field of requiredFields) {
+  242 |           logger.info('Asserting: Validate each month has all 6 required fields');
+  243 |           expect(month, `months[${i}] must have "${field}"`).toHaveProperty(field);
+  244 |         }
+  245 |       }
+  246 |       logger.pass('All assertions passed');
+  247 |     });
+  248 | 
+  249 |     await logger.step('Step 8 â€” Validate summary has all required fields', async () => {
+  250 |       const s = res!.body.data.summary as Summary;
+  251 |       const requiredFields = ['total_payments','total_gross_kes','total_gross_usd','total_net_kes','total_net_usd','total_commission_kes','total_commission_usd','conversion_ratio_pct'];
+  252 |       for (const field of requiredFields) {
+  253 |         logger.info('Asserting: Validate summary has all required fields');
+  254 |         expect(s, `summary must have "${field}"`).toHaveProperty(field);
+  255 |         allure.parameter(`summary.${field}`, String((s as unknown as Record<string,unknown>)[field]));
+  256 |       }
+  257 |       logger.pass('All assertions passed');
+  258 |     });
+  259 |   });
+  260 | 
+  261 |   // â”€â”€ TC-DMREV-002 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  262 |   test('TC-DMREV-002 â€” Auth Guard: missing token â†’ 401, wrong token â†’ 401', async ({ logger }) => {
+  263 |     smokeLabels('TC-DMREV-002', 'Auth Guard', 'blocker');
+  264 |     let resNoAuth: supertest.Response, resWrongAuth: supertest.Response;
+  265 | 
+  266 |     await logger.step('Step 1 â€” No Authorization header', async () => {
+  267 |       logger.info(`GET ${ENDPOINT}`);
+  268 |       resNoAuth = await supertest(BASE_URL).get(ENDPOINT).set('Accept', 'application/json');
+  269 |       logger.pass('HTTP ' + resNoAuth.status + ' received');
+  270 |       console.log(`[TC-DMREV-002] No-auth: ${resNoAuth.status} â€” ${resNoAuth.body?.message}`);
+  271 |       allure.parameter('No-auth status',  String(resNoAuth.status));
+  272 |       allure.parameter('No-auth message', String(resNoAuth.body?.message ?? 'N/A'));
+  273 |     });
+  274 | 
+  275 |     await logger.step('Step 2 â€” Invalid Bearer token', async () => {
+  276 |       logger.info(`GET ${ENDPOINT}`);
+  277 |       resWrongAuth = await supertest(BASE_URL).get(ENDPOINT)
+  278 |         .set('Authorization', 'Bearer invalidtoken.bad.sig').set('Accept', 'application/json');
+  279 |       logger.pass('HTTP ' + resWrongAuth.status + ' received');
+  280 |       console.log(`[TC-DMREV-002] Wrong-auth: ${resWrongAuth.status} â€” ${resWrongAuth.body?.message}`);
+  281 |       allure.parameter('Wrong-auth status',  String(resWrongAuth.status));
+  282 |       allure.parameter('Wrong-auth message', String(resWrongAuth.body?.message ?? 'N/A'));
+  283 |     });
+  284 | 
+  285 |     await logger.step('Step 3 â€” Both must return 401 with correct messages', async () => {
+  286 |       logger.info('Asserting: response structure and values');
+  287 |       expect(resNoAuth!.status,    'Missing token must return 401').toBe(401);
+  288 |       expect(resWrongAuth!.status, 'Invalid token must return 401').toBe(401);
+  289 |       expect(resNoAuth!.body.status,    'No-auth body.status must be 401').toBe(401);
+  290 |       expect(resWrongAuth!.body.status, 'Wrong-auth body.status must be 401').toBe(401);
+  291 |       expect(resNoAuth!.body.message,    'No-auth message').toBe('Missing Authorization token');
+  292 |       expect(resWrongAuth!.body.message, 'Wrong-auth message').toBe('Invalid or expired token');
+  293 |       logger.pass('All assertions passed');
+  294 |     });
+  295 |   });
+  296 | 
+  297 |   // â”€â”€ TC-DMREV-003 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  298 |   test('TC-DMREV-003 â€” year param: valid values return correct year in response', async ({ logger }) => {
+  299 |     smokeLabels('TC-DMREV-003', 'Valid year Param Filtering', 'normal');
+  300 | 
+  301 |     await logger.step('Step 1 â€” year=2026 returns 2026 data', async () => {
+  302 |       logger.info(`GET ${ENDPOINT}`);
+  303 |       const res = await get('year=2026');
+  304 |       logger.pass('HTTP ' + res.status + ' received');
+  305 |       logger.info('Asserting: response structure and values');
+  306 |       expect(res.status).toBe(200);
+> 307 |       expect(res.body.data.year, 'data.year must echo back 2026').toBe(2026);
+      |                                                                   ^ Error: data.year must echo back 2026
+  308 |       const hasData = (res.body.data as MonthlyRevenueData).months.some((m: MonthEntry) => m.gross_kes > 0);
+  309 |       expect(hasData, 'year=2026 must have months with real data').toBe(true);
+  310 |       allure.parameter('year=2026 has data', String(hasData));
+  311 |       logger.pass('All assertions passed');
+  312 |     });
+  313 | 
+  314 |     await logger.step('Step 2 â€” year=2025 returns 2025 data (all zeros â€” system not yet active)', async () => {
+  315 |       logger.info(`GET ${ENDPOINT}`);
+  316 |       const res = await get('year=2025');
+  317 |       logger.pass('HTTP ' + res.status + ' received');
+  318 |       logger.info('Asserting: response structure and values');
+  319 |       expect(res.status, 'year=2025 must return 200').toBe(200);
+  320 |       expect(res.body.data.year, 'data.year must echo back 2025').toBe(2025);
+  321 |       allure.parameter('year=2025 status', String(res.status));
+  322 |       allure.parameter('year=2025 total_payments', String(res.body.data?.summary?.total_payments));
+  323 |       logger.pass('All assertions passed');
+  324 |     });
+  325 | 
+  326 |     await logger.step('Step 3 â€” No year param defaults to current year', async () => {
+  327 |       logger.info(`GET ${ENDPOINT}`);
+  328 |       const res = await get();
+  329 |       logger.pass('HTTP ' + res.status + ' received');
+  330 |       logger.info('Asserting: response structure and values');
+  331 |       expect(res.status).toBe(200);
+  332 |       expect(res.body.data.year).toBe(new Date().getFullYear());
+  333 |       allure.parameter('No-year param â€” returned year', String(res.body.data.year));
+  334 |       logger.pass('All assertions passed');
+  335 |     });
+  336 | 
+  337 |     await logger.step('Step 4 â€” year=invalid must return 400', async () => {
+  338 |       logger.info(`GET ${ENDPOINT}`);
+  339 |       const res = await get('year=invalid');
+  340 |       logger.pass('HTTP ' + res.status + ' received');
+  341 |       logger.info('Asserting: response structure and values');
+  342 |       expect(res.status, 'year=invalid must return 400').toBe(400);
+  343 |       expect(res.body.message, 'Error must mention invalid value').toContain('invalid');
+  344 |       allure.parameter('year=invalid status', String(res.status));
+  345 |       allure.parameter('year=invalid message', String(res.body?.message));
+  346 |       logger.pass('All assertions passed');
+  347 |     });
+  348 | 
+  349 |     await logger.step('Step 5 â€” year=2027 (future) must return 400', async () => {
+  350 |       logger.info(`GET ${ENDPOINT}`);
+  351 |       const res = await get('year=2027');
+  352 |       logger.pass('HTTP ' + res.status + ' received');
+  353 |       logger.info('Asserting: response structure and values');
+  354 |       expect(res.status, 'Future year must return 400').toBe(400);
+  355 |       expect(res.body.message, 'Error must mention future year').toContain('future');
+  356 |       allure.parameter('year=2027 status', String(res.status));
+  357 |       allure.parameter('year=2027 message', String(res.body?.message));
+  358 |       logger.pass('All assertions passed');
+  359 |     });
+  360 | 
+  361 |     await logger.step('Step 6 â€” year=2026.5 (decimal) must return 400', async () => {
+  362 |       logger.info(`GET ${ENDPOINT}`);
+  363 |       const res = await get('year=2026.5');
+  364 |       logger.pass('HTTP ' + res.status + ' received');
+  365 |       logger.info('Asserting: response structure and values');
+  366 |       expect(res.status, 'Decimal year must return 400').toBe(400);
+  367 |       allure.parameter('year=2026.5 status', String(res.status));
+  368 |       logger.pass('All assertions passed');
+  369 |     });
+  370 |   });
+  371 | 
+  372 |   // â”€â”€ TC-DMREV-004 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  373 |   test('TC-DMREV-004 â€” BUG-MREV-01: year=0 must return 400, not silently default to current year', async ({ logger }) => {
+  374 |     smokeLabels('TC-DMREV-004', 'BUG-MREV-01 â€” year=0 Bypasses Validation', 'critical');
+  375 |     let res: supertest.Response;
+  376 | 
+  377 |     await logger.step('Step 1 â€” Send GET with year=0', async () => {
+  378 |       logger.info(`GET ${ENDPOINT}`);
+  379 |       res = await get('year=0');
+  380 |       logger.pass('HTTP ' + res.status + ' received');
+  381 |       console.log(`[TC-DMREV-004] year=0 â†’ ${res.status}  data.year=${res.body.data?.year}`);
+  382 |       allure.parameter('year=0 status',     String(res.status));
+  383 |       allure.parameter('year=0 data.year',  String(res.body.data?.year ?? 'N/A'));
+  384 |       allure.parameter('year=0 total_payments', String(res.body.data?.summary?.total_payments ?? 'N/A'));
+  385 |       attachResponse('TC-DMREV-004', res, { bug: 'BUG-MREV-01', query: 'year=0' });
+  386 |     });
+  387 | 
+  388 |     await logger.step('Step 2 â€” BUG-MREV-01: year=0 must return 400', async () => {
+  389 |       logger.info('Asserting: BUG-MREV-01 — year=0 must return 400');
+  390 |       if (res!.status === 200) {
+  391 |         flagIssue('TC-DMREV-004', 'BUG-MREV-01',
+  392 |           'GET /monthly-revenue?year=0 returns 200 OK and silently defaults to the current year. ' +
+  393 |           '0 is not a valid 4-digit year â€” the server\'s own validation message says “Must be a 4-digit year” ' +
+  394 |           'for year=-1, but year=0 bypasses that check. Both should return 400 Bad Request.',
+  395 |           {
+  396 |             year_param:    0,
+  397 |             actual_status: res!.status,
+  398 |             actual_year_in_response: res!.body.data?.year,
+  399 |             expected_status: 400,
+  400 |             note: 'year=-1 correctly returns 400 but year=0 does not â€” inconsistent boundary check',
+  401 |           },
+  402 |         );
+  403 |       }
+  404 |       expect.soft(res!.status,
+  405 |         '[BUG-MREV-01] year=0 must return 400 Bad Request (same as year=-1) â€” 0 is not a valid 4-digit year',
+  406 |       ).toBe(400);
+  407 |       logger.pass('All assertions passed');
+```

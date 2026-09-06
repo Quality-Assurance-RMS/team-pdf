@@ -1,0 +1,7 @@
+{
+  "bug_id": "BUG-SF-004",
+  "expected": "mockEnabled: false (service uses real KCB API)",
+  "actual": "mockEnabled: undefined",
+  "impact": "All data in this environment is synthetic — UAT validation is testing mock responses, not real bank data",
+  "fix": "Set mockEnabled=false in spr-fetcher application.yml for UAT and production environments"
+}
