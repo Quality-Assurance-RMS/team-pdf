@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Eye icon opens transaction detail with matching Transaction ID
+────────────────────────────────────────────────────────────
+11:45:03.555  ·  Test started: "TC1 — Eye icon opens transaction detail with matching Transaction ID"
+11:45:03.973  ○  ▶ Step 1 — Clicks the view icon on the first transaction row and verifies the Transaction ID appears on the detail view
+11:45:03.977  ·    Test scope: Clicks the view icon on the first transaction row and verifies the Transaction ID appears on the detail view
+11:45:03.977  ✔  Step completed in 5 ms
+11:45:03.978  ○  ▶ Step 2 — Navigate to Transactions page
+11:45:03.980  ·    Opening the Transactions page
+11:45:09.657  ✔    Navigation to Transactions page initiated successfully
+11:45:09.973  ✔  Step completed in 5995 ms
+11:45:09.973  ○  ▶ Step 3 — Verify page loads successfully
+11:45:09.975  ·    Waiting for all Transactions page elements to render
+11:45:20.303  ✘  Step failed after 10330 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: 'Transactions' })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByRole('heading', { name: 'Transactions' })
+    - waiting for navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+11:45:21.662  ·  Test run complete: "TC1 — Eye icon opens transaction detail with matching Transaction ID"
+────────────────────────────────────────────────────────────
+

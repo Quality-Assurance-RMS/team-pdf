@@ -1,0 +1,21 @@
+11:28:32.595  ·  Test started: "TC1 — Period filter dropdown is visible"
+11:28:33.092  ○  ▶ Step 1 — Verifies the "Today" period filter dropdown is rendered on the Invoice page
+11:28:33.157  ·    Test scope: Verifies the "Today" period filter dropdown is rendered on the Invoice page
+11:28:33.158  ✔  Step completed in 65 ms
+11:28:33.159  ○  ▶ Step 2 — Navigate to Invoice page
+11:28:33.160  ·    Opening the Invoice page
+11:28:42.173  ✔    Navigation to Invoice page initiated successfully
+11:28:46.785  ✔  Step completed in 13625 ms
+11:28:46.785  ○  ▶ Step 3 — Verify page loads successfully
+11:28:46.787  ·    Waiting for all Invoice page elements to render
+11:29:01.985  ✘  Step failed after 15200 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/invoice/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    32 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+11:29:09.684  ·  Test run complete: "TC1 — Period filter dropdown is visible"

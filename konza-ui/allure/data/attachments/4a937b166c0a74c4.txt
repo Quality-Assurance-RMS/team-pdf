@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Paid status badge is visible
+────────────────────────────────────────────────────────────
+11:26:57.682  ·  Test started: "TC1 — Paid status badge is visible"
+11:26:58.186  ○  ▶ Step 1 — Verifies a "Paid" status badge renders in the Invoice table after widening the period filter
+11:26:58.189  ·    Test scope: Verifies a "Paid" status badge renders in the Invoice table after widening the period filter
+11:26:58.191  ✔  Step completed in 5 ms
+11:26:58.193  ○  ▶ Step 2 — Navigate to Invoice page
+11:26:58.194  ·    Opening the Invoice page
+11:27:05.677  ✔    Navigation to Invoice page initiated successfully
+11:27:07.168  ✔  Step completed in 8975 ms
+11:27:07.168  ○  ▶ Step 3 — Verify page loads successfully
+11:27:07.174  ·    Waiting for all Invoice page elements to render
+11:27:22.368  ✘  Step failed after 15200 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    31 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:27:24.625  ·  Test run complete: "TC1 — Paid status badge is visible"
+────────────────────────────────────────────────────────────
+

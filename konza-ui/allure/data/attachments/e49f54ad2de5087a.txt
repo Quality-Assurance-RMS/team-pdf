@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — All KES chart legend items are visible
+────────────────────────────────────────────────────────────
+11:25:24.056  ·  Test started: "TC2 — All KES chart legend items are visible"
+11:25:24.473  ○  ▶ Step 1 — Verifies the chart legend shows the three KES series by default: Gross KES, Net KES, Commission KES
+11:25:24.476  ·    Test scope: Verifies the chart legend shows the three KES series by default: Gross KES, Net KES, Commission KES
+11:25:24.476  ✔  Step completed in 3 ms
+11:25:24.478  ○  ▶ Step 2 — Navigate to Dashboard page
+11:25:24.479  ·    Opening the Dashboard page
+11:25:49.667  ✔    Navigation to Dashboard initiated successfully
+11:25:52.581  ✔  Step completed in 28104 ms
+11:25:52.581  ○  ▶ Step 3 — Verify page loads successfully
+11:25:52.655  ·    Waiting for all Dashboard elements to render
+11:26:07.782  ✘  Step failed after 15201 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:26:11.212  ·  Test run complete: "TC2 — All KES chart legend items are visible"
+────────────────────────────────────────────────────────────
+

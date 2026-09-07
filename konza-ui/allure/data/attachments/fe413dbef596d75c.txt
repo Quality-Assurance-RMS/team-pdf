@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Method filter dropdown is visible
+────────────────────────────────────────────────────────────
+11:45:22.925  ·  Test started: "TC3 — Method filter dropdown is visible"
+11:45:23.112  ○  ▶ Step 1 — Verifies the "All Methods" filter dropdown is rendered on the Transactions page
+11:45:23.114  ·    Test scope: Verifies the "All Methods" filter dropdown is rendered on the Transactions page
+11:45:23.114  ✔  Step completed in 3 ms
+11:45:23.115  ○  ▶ Step 2 — Navigate to Transactions page
+11:45:23.116  ·    Opening the Transactions page
+11:45:45.780  ✔    Navigation to Transactions page initiated successfully
+11:45:46.866  ✔  Step completed in 23751 ms
+11:45:46.866  ○  ▶ Step 3 — Verify page loads successfully
+11:45:46.868  ·    Waiting for all Transactions page elements to render
+11:45:52.058  ✘  Step failed after 5192 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/transaction/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 5000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 5000ms
+    9 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:46:00.265  ·  Test run complete: "TC3 — Method filter dropdown is visible"
+────────────────────────────────────────────────────────────
+

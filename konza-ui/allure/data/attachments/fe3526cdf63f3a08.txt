@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Search Invoice id input is visible
+────────────────────────────────────────────────────────────
+11:28:57.800  ·  Test started: "TC1 — Search Invoice id input is visible"
+11:28:58.006  ○  ▶ Step 1 — Verifies the "Search Invoice id..." input field is rendered on the Invoice page
+11:28:58.008  ·    Test scope: Verifies the "Search Invoice id..." input field is rendered on the Invoice page
+11:28:58.008  ✔  Step completed in 2 ms
+11:28:58.009  ○  ▶ Step 2 — Navigate to Invoice page
+11:28:58.010  ·    Opening the Invoice page
+11:29:04.181  ✔    Navigation to Invoice page initiated successfully
+11:29:04.883  ✔  Step completed in 6874 ms
+11:29:04.883  ○  ▶ Step 3 — Verify page loads successfully
+11:29:04.884  ·    Waiting for all Invoice page elements to render
+11:29:20.180  ✘  Step failed after 15297 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+    28 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:29:25.482  ·  Test run complete: "TC1 — Search Invoice id input is visible"
+────────────────────────────────────────────────────────────
+

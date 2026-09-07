@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC4 — Revenue chart canvas element is rendered
+────────────────────────────────────────────────────────────
+11:26:23.364  ·  Test started: "TC4 — Revenue chart canvas element is rendered"
+11:26:23.591  ○  ▶ Step 1 — Verifies that at least one <canvas> element exists for the revenue chart
+11:26:23.594  ·    Test scope: Verifies that at least one <canvas> element exists for the revenue chart
+11:26:23.594  ✔  Step completed in 3 ms
+11:26:23.596  ○  ▶ Step 2 — Navigate to Dashboard page
+11:26:23.597  ·    Opening the Dashboard page
+11:26:31.779  ✔    Navigation to Dashboard initiated successfully
+11:26:34.965  ✔  Step completed in 11369 ms
+11:26:34.965  ○  ▶ Step 3 — Verify page loads successfully
+11:26:34.966  ·    Waiting for all Dashboard elements to render
+11:26:50.064  ✘  Step failed after 15098 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:26:55.099  ·  Test run complete: "TC4 — Revenue chart canvas element is rendered"
+────────────────────────────────────────────────────────────
+

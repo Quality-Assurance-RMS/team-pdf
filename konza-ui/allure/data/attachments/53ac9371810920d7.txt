@@ -1,0 +1,29 @@
+11:23:31.470  ·  Test started: "TC7 — Clicking "Logout" redirects to the login page"
+11:23:31.573  ○  ▶ Step 1 — Verifies that clicking the Logout button ends the session and redirects to /auth/login
+11:23:31.575  ·    Test scope: Verifies that clicking the Logout button ends the session and redirects to /auth/login
+11:23:31.575  ✔  Step completed in 2 ms
+11:23:31.576  ○  ▶ Step 2 — Navigate to Dashboard page
+11:23:31.576  ·    Opening the Dashboard page
+11:23:52.979  ✔    Navigation initiated successfully
+11:23:59.565  ✔  Step completed in 27990 ms
+11:23:59.565  ○  ▶ Step 3 — Verify page loads successfully
+11:23:59.569  ·    Waiting for all page elements to render
+11:24:00.974  ✔    Page is fully loaded with all required elements visible
+11:24:02.860  ✔  Step completed in 3294 ms
+11:24:02.860  ○  ▶ Step 4 — Click Logout
+11:24:02.861  ·    Clicking the Logout button in the sidebar navigation
+11:24:03.961  ✔    Logout button clicked — session termination initiated
+11:24:05.577  ✔  Step completed in 2718 ms
+11:24:05.577  ○  ▶ Step 5 — Redirected to /auth/login
+11:24:05.578  ·    Waiting for redirect to /auth/login after logout
+11:24:15.871  ✘  Step failed after 10294 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/auth\/login/[39m
+Received string:  [31m"https://rms.uat.konza/dashboard"[39m
+Timeout: 10000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 10000ms[22m
+[2m    14 × unexpected value "https://rms.uat.konza/dashboard"[22m
+
+11:24:37.177  ·  Test run complete: "TC7 — Clicking "Logout" redirects to the login page"

@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Invoice Information and Items details sections are visible
+────────────────────────────────────────────────────────────
+11:27:28.643  ·  Test started: "TC1 — Invoice Information and Items details sections are visible"
+11:27:28.818  ○  ▶ Step 1 — Opens the first invoice detail view and verifies the Invoice Information section and Items details table are rendered
+11:27:28.819  ·    Test scope: Opens the first invoice detail view and verifies the Invoice Information section and Items details table are rendered
+11:27:28.820  ✔  Step completed in 2 ms
+11:27:28.821  ○  ▶ Step 2 — Navigate to Invoice page
+11:27:28.822  ·    Opening the Invoice page
+11:27:37.174  ✔    Navigation to Invoice page initiated successfully
+11:27:38.578  ✔  Step completed in 9757 ms
+11:27:38.578  ○  ▶ Step 3 — Verify page loads successfully
+11:27:38.655  ·    Waiting for all Invoice page elements to render
+11:27:54.876  ✘  Step failed after 16298 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    31 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:27:58.867  ·  Test run complete: "TC1 — Invoice Information and Items details sections are visible"
+────────────────────────────────────────────────────────────
+

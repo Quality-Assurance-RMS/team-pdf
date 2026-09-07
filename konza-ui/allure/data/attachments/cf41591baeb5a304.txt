@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Date filter dropdown defaults to "Last 90 Days"
+────────────────────────────────────────────────────────────
+11:26:21.788  ·  Test started: "TC3 — Date filter dropdown defaults to "Last 90 Days""
+11:26:22.572  ○  ▶ Step 1 — Verifies the chart date filter shows "Today" as the default selected value
+11:26:22.578  ·    Test scope: Verifies the chart date filter shows "Today" as the default selected value
+11:26:22.579  ✔  Step completed in 6 ms
+11:26:22.656  ○  ▶ Step 2 — Navigate to Dashboard page
+11:26:22.657  ·    Opening the Dashboard page
+11:26:30.159  ✔    Navigation to Dashboard initiated successfully
+11:26:33.369  ✔  Step completed in 10712 ms
+11:26:33.369  ○  ▶ Step 3 — Verify page loads successfully
+11:26:33.372  ·    Waiting for all Dashboard elements to render
+11:26:48.764  ✘  Step failed after 15396 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:26:51.559  ·  Test run complete: "TC3 — Date filter dropdown defaults to "Last 90 Days""
+────────────────────────────────────────────────────────────
+

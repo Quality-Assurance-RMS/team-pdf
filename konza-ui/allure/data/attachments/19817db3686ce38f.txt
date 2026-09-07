@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Date filter defaults to "Today"
+────────────────────────────────────────────────────────────
+11:45:19.959  ·  Test started: "TC1 — Date filter defaults to "Today""
+11:45:20.389  ○  ▶ Step 1 — Verifies the date filter dropdown is visible and defaults to "Today"
+11:45:20.394  ·    Test scope: Verifies the date filter dropdown is visible and defaults to "Today"
+11:45:20.395  ✔  Step completed in 6 ms
+11:45:20.396  ○  ▶ Step 2 — Navigate to Transactions page
+11:45:20.397  ·    Opening the Transactions page
+11:45:43.063  ✔    Navigation to Transactions page initiated successfully
+11:45:47.273  ✔  Step completed in 26876 ms
+11:45:47.273  ○  ▶ Step 3 — Verify page loads successfully
+11:45:47.281  ·    Waiting for all Transactions page elements to render
+11:45:52.656  ✘  Step failed after 5383 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/transaction/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 5000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 5000ms
+    9 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:45:59.273  ·  Test run complete: "TC1 — Date filter defaults to "Today""
+────────────────────────────────────────────────────────────
+

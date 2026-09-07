@@ -1,0 +1,21 @@
+11:26:16.070  ·  Test started: "TC6 — Revenue summary panel shows Gross Amount, Net Amount, Commission and Transaction Success Ratio"
+11:26:17.175  ○  ▶ Step 1 — Verifies that the chart summary panel shows all four summary labels
+11:26:17.178  ·    Test scope: Verifies that the chart summary panel shows all four summary labels
+11:26:17.178  ✔  Step completed in 3 ms
+11:26:17.189  ○  ▶ Step 2 — Navigate to Dashboard page
+11:26:17.258  ·    Opening the Dashboard page
+11:26:30.773  ✔    Navigation to Dashboard initiated successfully
+11:26:35.181  ✔  Step completed in 17992 ms
+11:26:35.181  ○  ▶ Step 3 — Verify page loads successfully
+11:26:35.181  ·    Waiting for all Dashboard elements to render
+11:26:50.274  ✘  Step failed after 15094 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+11:26:55.363  ·  Test run complete: "TC6 — Revenue summary panel shows Gross Amount, Net Amount, Commission and Transaction Success Ratio"

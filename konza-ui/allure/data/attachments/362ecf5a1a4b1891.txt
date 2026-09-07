@@ -1,0 +1,21 @@
+11:45:18.076  ·  Test started: "TC1 — Transaction count sub-heading is visible"
+11:45:18.572  ○  ▶ Step 1 — Verifies the transaction count label (e.g. "190 transactions") is shown below the Transactions heading
+11:45:18.577  ·    Test scope: Verifies the transaction count label (e.g. "190 transactions") is shown below the Transactions heading
+11:45:18.577  ✔  Step completed in 6 ms
+11:45:18.579  ○  ▶ Step 2 — Navigate to Transactions page
+11:45:18.581  ·    Opening the Transactions page
+11:45:48.260  ✔    Navigation to Transactions page initiated successfully
+11:45:49.371  ✔  Step completed in 30792 ms
+11:45:49.371  ○  ▶ Step 3 — Verify page loads successfully
+11:45:49.372  ·    Waiting for all Transactions page elements to render
+11:45:54.562  ✘  Step failed after 5191 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    10 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+11:45:57.094  ·  Test run complete: "TC1 — Transaction count sub-heading is visible"

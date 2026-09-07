@@ -1,0 +1,21 @@
+11:41:22.671  ·  Test started: "TC1 — Profile Settings, Security, and Notifications tabs are visible"
+11:41:22.973  ○  ▶ Step 1 — Verifies all three settings tabs are rendered and visible on the Settings page
+11:41:22.975  ·    Test scope: Verifies all three settings tabs are rendered and visible on the Settings page
+11:41:22.975  ✔  Step completed in 3 ms
+11:41:22.977  ○  ▶ Step 2 — Navigate to Settings page
+11:41:22.978  ·    Opening the Settings page
+11:41:31.857  ✔    Navigation to Settings page initiated successfully
+11:41:33.076  ✔  Step completed in 10100 ms
+11:41:33.076  ○  ▶ Step 3 — Verify page loads successfully
+11:41:33.078  ·    Waiting for all Settings page elements to render
+11:41:48.267  ✘  Step failed after 15191 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/settings/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    29 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+11:41:52.100  ·  Test run complete: "TC1 — Profile Settings, Security, and Notifications tabs are visible"

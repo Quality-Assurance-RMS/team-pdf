@@ -1,0 +1,21 @@
+11:46:25.765  ·  Test started: "TC2 — Table loads with at least one transaction row"
+11:46:25.981  ○  ▶ Step 1 — Verifies the transactions table is populated with data rows after page load
+11:46:25.983  ·    Test scope: Verifies the transactions table is populated with data rows after page load
+11:46:25.983  ✔  Step completed in 2 ms
+11:46:25.984  ○  ▶ Step 2 — Navigate to Transactions page
+11:46:25.985  ·    Opening the Transactions page
+11:46:35.056  ✔    Navigation to Transactions page initiated successfully
+11:46:53.846  ✔  Step completed in 27862 ms
+11:46:53.846  ○  ▶ Step 3 — Verify page loads successfully
+11:46:53.847  ·    Waiting for all Transactions page elements to render
+11:46:59.060  ✘  Step failed after 5214 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    12 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+11:47:05.578  ·  Test run complete: "TC2 — Table loads with at least one transaction row"

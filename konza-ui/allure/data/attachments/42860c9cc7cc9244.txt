@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Settlement by Bank" heading is visible
+────────────────────────────────────────────────────────────
+11:41:55.459  ·  Test started: "TC1 — "Settlement by Bank" heading is visible"
+11:41:56.069  ○  ▶ Step 1 — Verifies the Settlement by Bank section heading renders on the Settlements page
+11:41:56.073  ·    Test scope: Verifies the Settlement by Bank section heading renders on the Settlements page
+11:41:56.073  ✔  Step completed in 4 ms
+11:41:56.075  ○  ▶ Step 2 — Navigate to Settlements page
+11:41:56.076  ·    Opening the Settlements page
+11:42:19.869  ✔    Navigation to Settlements page initiated successfully
+11:42:20.975  ✔  Step completed in 24900 ms
+11:42:20.975  ○  ▶ Step 3 — Verify page loads successfully
+11:42:20.977  ·    Waiting for all Settlements page elements to render
+11:42:36.166  ✘  Step failed after 15191 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settlements/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    27 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:42:38.073  ·  Test run complete: "TC1 — "Settlement by Bank" heading is visible"
+────────────────────────────────────────────────────────────
+

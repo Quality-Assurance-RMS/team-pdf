@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All table column headers are visible
+────────────────────────────────────────────────────────────
+11:46:50.880  ·  Test started: "TC1 — All table column headers are visible"
+11:46:51.469  ○  ▶ Step 1 — Verifies that Transaction ID, Invoice No, Date, MCDA, Department, Method, Currency, Amount, Status, and Action columns are present
+11:46:51.471  ·    Test scope: Verifies that Transaction ID, Invoice No, Date, MCDA, Department, Method, Currency, Amount, Status, and Action columns are present
+11:46:51.471  ✔  Step completed in 2 ms
+11:46:51.472  ○  ▶ Step 2 — Navigate to Transactions page
+11:46:51.473  ·    Opening the Transactions page
+11:47:00.569  ✔    Navigation to Transactions page initiated successfully
+11:47:01.677  ✔  Step completed in 10205 ms
+11:47:01.677  ○  ▶ Step 3 — Verify page loads successfully
+11:47:01.681  ·    Waiting for all Transactions page elements to render
+11:47:07.884  ✘  Step failed after 6208 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/transaction/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 5000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 5000ms
+    11 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:47:10.198  ·  Test run complete: "TC1 — All table column headers are visible"
+────────────────────────────────────────────────────────────
+

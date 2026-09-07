@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Profile Settings tab is active by default
+────────────────────────────────────────────────────────────
+11:41:55.977  ·  Test started: "TC2 — Profile Settings tab is active by default"
+11:41:56.491  ○  ▶ Step 1 — Verifies Profile Settings is the default active tab by checking the Profile Information form is shown on page load
+11:41:56.493  ·    Test scope: Verifies Profile Settings is the default active tab by checking the Profile Information form is shown on page load
+11:41:56.493  ✔  Step completed in 2 ms
+11:41:56.495  ○  ▶ Step 2 — Navigate to Settings page
+11:41:56.496  ·    Opening the Settings page
+11:42:20.475  ✔    Navigation to Settings page initiated successfully
+11:42:22.158  ✔  Step completed in 25663 ms
+11:42:22.158  ○  ▶ Step 3 — Verify page loads successfully
+11:42:22.164  ·    Waiting for all Settings page elements to render
+11:42:37.276  ✘  Step failed after 15118 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settings/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    26 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:42:42.382  ·  Test run complete: "TC2 — Profile Settings tab is active by default"
+────────────────────────────────────────────────────────────
+

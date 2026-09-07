@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Profile card with name, email, and ADMIN role is visible
+────────────────────────────────────────────────────────────
+11:40:09.391  ·  Test started: "TC1 — Profile card with name, email, and ADMIN role is visible"
+11:40:09.598  ○  ▶ Step 1 — Verifies the user profile card renders with name, email address, and ADMIN role
+11:40:09.600  ·    Test scope: Verifies the user profile card renders with name, email address, and ADMIN role
+11:40:09.600  ✔  Step completed in 2 ms
+11:40:09.602  ○  ▶ Step 2 — Navigate to Settings page
+11:40:09.602  ·    Opening the Settings page
+11:40:16.178  ✔    Navigation to Settings page initiated successfully
+11:40:16.590  ✔  Step completed in 6988 ms
+11:40:16.590  ○  ▶ Step 3 — Verify page loads successfully
+11:40:16.591  ·    Waiting for all Settings page elements to render
+11:40:27.062  ✘  Step failed after 10472 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: /^Settings$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByRole('heading', { name: /^Settings$/i })
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+11:40:35.673  ·  Test run complete: "TC1 — Profile card with name, email, and ADMIN role is visible"
+────────────────────────────────────────────────────────────
+

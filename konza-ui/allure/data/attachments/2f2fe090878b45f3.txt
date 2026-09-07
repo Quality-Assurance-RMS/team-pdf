@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Settings" heading is visible
+────────────────────────────────────────────────────────────
+11:40:50.965  ·  Test started: "TC1 — "Settings" heading is visible"
+11:40:51.300  ○  ▶ Step 1 — Verifies the Settings heading renders on the Settings page after navigation
+11:40:51.302  ·    Test scope: Verifies the Settings heading renders on the Settings page after navigation
+11:40:51.303  ✔  Step completed in 3 ms
+11:40:51.305  ○  ▶ Step 2 — Navigate to Settings page
+11:40:51.305  ·    Opening the Settings page
+11:40:59.265  ✔    Navigation to Settings page initiated successfully
+11:41:00.455  ✔  Step completed in 9151 ms
+11:41:00.455  ○  ▶ Step 3 — Verify page loads successfully
+11:41:00.459  ·    Waiting for all Settings page elements to render
+11:41:15.584  ✘  Step failed after 15128 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settings/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    28 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:41:18.174  ·  Test run complete: "TC1 — "Settings" heading is visible"
+────────────────────────────────────────────────────────────
+

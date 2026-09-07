@@ -1,0 +1,21 @@
+11:29:12.410  ·  Test started: "TC1 — All table column headers are visible"
+11:29:12.759  ○  ▶ Step 1 — Verifies that Invoice No, Transaction ID, Date, MCDA, Service Name, Method, Currency, Amount, Status, and Action columns are present
+11:29:12.761  ·    Test scope: Verifies that Invoice No, Transaction ID, Date, MCDA, Service Name, Method, Currency, Amount, Status, and Action columns are present
+11:29:12.762  ✔  Step completed in 3 ms
+11:29:12.763  ○  ▶ Step 2 — Navigate to Invoice page
+11:29:12.764  ·    Opening the Invoice page
+11:29:19.555  ✔    Navigation to Invoice page initiated successfully
+11:29:20.771  ✔  Step completed in 8008 ms
+11:29:20.772  ○  ▶ Step 3 — Verify page loads successfully
+11:29:20.775  ·    Waiting for all Invoice page elements to render
+11:29:35.979  ✘  Step failed after 15207 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/invoice/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    28 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+11:29:40.494  ·  Test run complete: "TC1 — All table column headers are visible"

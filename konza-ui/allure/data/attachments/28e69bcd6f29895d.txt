@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Invoice heading is visible
+────────────────────────────────────────────────────────────
+11:29:11.461  ·  Test started: "TC1 — Invoice heading is visible"
+11:29:11.985  ○  ▶ Step 1 — Verifies the "Invoice" heading is rendered on the Invoice page
+11:29:11.988  ·    Test scope: Verifies the "Invoice" heading is rendered on the Invoice page
+11:29:11.990  ✔  Step completed in 4 ms
+11:29:11.990  ○  ▶ Step 2 — Navigate to Invoice page
+11:29:12.057  ·    Opening the Invoice page
+11:29:18.874  ✔    Navigation to Invoice page initiated successfully
+11:29:20.059  ✔  Step completed in 8069 ms
+11:29:20.059  ○  ▶ Step 3 — Verify page loads successfully
+11:29:20.066  ·    Waiting for all Invoice page elements to render
+11:29:35.280  ✘  Step failed after 15221 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    29 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:29:39.868  ·  Test run complete: "TC1 — Invoice heading is visible"
+────────────────────────────────────────────────────────────
+

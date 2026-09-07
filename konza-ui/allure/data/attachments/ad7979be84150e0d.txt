@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Save Changes" button is visible and enabled
+────────────────────────────────────────────────────────────
+11:40:21.487  ·  Test started: "TC1 — "Save Changes" button is visible and enabled"
+11:40:22.079  ○  ▶ Step 1 — Verifies the Save Changes button is rendered and enabled on the Profile Settings tab
+11:40:22.083  ·    Test scope: Verifies the Save Changes button is rendered and enabled on the Profile Settings tab
+11:40:22.083  ✔  Step completed in 4 ms
+11:40:22.085  ○  ▶ Step 2 — Navigate to Settings page
+11:40:22.086  ·    Opening the Settings page
+11:40:30.163  ✔    Navigation to Settings page initiated successfully
+11:40:31.269  ✔  Step completed in 9184 ms
+11:40:31.269  ○  ▶ Step 3 — Verify page loads successfully
+11:40:31.273  ·    Waiting for all Settings page elements to render
+11:40:46.469  ✘  Step failed after 15200 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settings/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    28 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:40:48.994  ·  Test run complete: "TC1 — "Save Changes" button is visible and enabled"
+────────────────────────────────────────────────────────────
+

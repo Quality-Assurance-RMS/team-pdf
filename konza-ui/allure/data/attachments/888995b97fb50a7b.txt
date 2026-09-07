@@ -1,0 +1,21 @@
+11:40:23.976  ·  Test started: "TC1 — All profile form fields are visible"
+11:40:24.178  ○  ▶ Step 1 — Verifies Full Name, Email Address, Phone Number, and Role fields render in the Profile Settings form
+11:40:24.180  ·    Test scope: Verifies Full Name, Email Address, Phone Number, and Role fields render in the Profile Settings form
+11:40:24.180  ✔  Step completed in 2 ms
+11:40:24.181  ○  ▶ Step 2 — Navigate to Settings page
+11:40:24.182  ·    Opening the Settings page
+11:40:32.768  ✔    Navigation to Settings page initiated successfully
+11:40:34.071  ✔  Step completed in 9890 ms
+11:40:34.071  ○  ▶ Step 3 — Verify page loads successfully
+11:40:34.074  ·    Waiting for all Settings page elements to render
+11:40:49.181  ✘  Step failed after 15110 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/settings/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    30 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+11:40:54.286  ·  Test run complete: "TC1 — All profile form fields are visible"

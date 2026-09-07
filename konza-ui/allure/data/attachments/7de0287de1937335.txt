@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All five report cards are visible with subtitles
+────────────────────────────────────────────────────────────
+11:37:30.582  ·  Test started: "TC1 — All five report cards are visible with subtitles"
+11:37:31.382  ○  ▶ Step 1 — Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed report cards are all present with their count subtitles
+11:37:31.387  ·    Test scope: Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed report cards are all present with their count subtitles
+11:37:31.388  ✔  Step completed in 6 ms
+11:37:31.390  ○  ▶ Step 2 — Navigate to Reports page
+11:37:31.391  ·    Opening the Reports page
+11:37:59.755  ✔    Navigation to Reports page initiated successfully
+11:38:00.768  ✔  Step completed in 29377 ms
+11:38:00.768  ○  ▶ Step 3 — Verify page loads successfully
+11:38:00.769  ·    Waiting for all Reports page elements to render
+11:38:15.965  ✘  Step failed after 15197 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/reports/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    27 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:38:18.988  ·  Test run complete: "TC1 — All five report cards are visible with subtitles"
+────────────────────────────────────────────────────────────
+

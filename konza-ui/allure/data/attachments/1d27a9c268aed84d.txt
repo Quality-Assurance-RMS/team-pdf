@@ -1,0 +1,21 @@
+11:25:55.462  ·  Test started: "TC5 — All 12 month labels (Jan–Dec) are present in the chart"
+11:25:57.168  ○  ▶ Step 1 — Verifies that the X-axis of the revenue chart shows all 12 calendar month labels
+11:25:57.175  ·    Test scope: Verifies that the X-axis of the revenue chart shows all 12 calendar month labels
+11:25:57.178  ✔  Step completed in 9 ms
+11:25:57.183  ○  ▶ Step 2 — Navigate to Dashboard page
+11:25:57.186  ·    Opening the Dashboard page
+11:26:22.670  ✔    Navigation to Dashboard initiated successfully
+11:26:22.896  ✔  Step completed in 25713 ms
+11:26:22.896  ○  ▶ Step 3 — Verify page loads successfully
+11:26:22.897  ·    Waiting for all Dashboard elements to render
+11:26:37.966  ✘  Step failed after 15069 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/dashboard/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    31 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+11:26:39.597  ·  Test run complete: "TC5 — All 12 month labels (Jan–Dec) are present in the chart"

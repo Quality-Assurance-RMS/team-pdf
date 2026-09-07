@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Method filter dropdown is visible
+────────────────────────────────────────────────────────────
+11:29:12.176  ·  Test started: "TC3 — Method filter dropdown is visible"
+11:29:12.496  ○  ▶ Step 1 — Verifies the "All Method" filter dropdown is rendered on the Invoice page
+11:29:12.498  ·    Test scope: Verifies the "All Method" filter dropdown is rendered on the Invoice page
+11:29:12.499  ✔  Step completed in 3 ms
+11:29:12.500  ○  ▶ Step 2 — Navigate to Invoice page
+11:29:12.501  ·    Opening the Invoice page
+11:29:18.767  ✔    Navigation to Invoice page initiated successfully
+11:29:19.783  ✔  Step completed in 7282 ms
+11:29:19.783  ○  ▶ Step 3 — Verify page loads successfully
+11:29:19.863  ·    Waiting for all Invoice page elements to render
+11:29:34.971  ✘  Step failed after 15189 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    28 × unexpected value "https://rms.uat.konza/auth/login"
+
+11:29:39.068  ·  Test run complete: "TC3 — Method filter dropdown is visible"
+────────────────────────────────────────────────────────────
+

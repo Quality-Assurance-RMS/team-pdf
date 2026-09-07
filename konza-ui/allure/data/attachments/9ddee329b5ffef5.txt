@@ -1,0 +1,22 @@
+11:35:44.171  ·  Test started: "TC1 — All five report cards are visible with subtitles"
+11:35:44.557  ○  ▶ Step 1 — Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed report cards are all present with their count subtitles
+11:35:44.562  ·    Test scope: Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed report cards are all present with their count subtitles
+11:35:44.562  ✔  Step completed in 5 ms
+11:35:44.564  ○  ▶ Step 2 — Navigate to Reports page
+11:35:44.565  ·    Opening the Reports page
+11:36:41.383  ✔    Navigation to Reports page initiated successfully
+11:36:42.369  ✔  Step completed in 57805 ms
+11:36:42.369  ○  ▶ Step 3 — Verify page loads successfully
+11:36:42.370  ·    Waiting for all Reports page elements to render
+11:36:53.156  ✘  Step failed after 10787 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: locator('h1, h2, h3, [class*="title"], [class*="heading"]').filter({ hasText: /^Reports$/i }).or(getByRole('heading', { name: /^Reports$/i })).first()
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for locator('h1, h2, h3, [class*="title"], [class*="heading"]').filter({ hasText: /^Reports$/i }).or(getByRole('heading', { name: /^Reports$/i })).first()[22m
+
+11:37:23.961  ·  Test run complete: "TC1 — All five report cards are visible with subtitles"
