@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Settlement by Bank table loads with at least one row
+────────────────────────────────────────────────────────────
+08:36:49.235  ·  Test started: "TC2 — Settlement by Bank table loads with at least one row"
+08:36:49.441  ○  ▶ Step 1 — Verifies the Settlement by Bank table is populated with data rows after page load
+08:36:49.443  ·    Test scope: Verifies the Settlement by Bank table is populated with data rows after page load
+08:36:49.443  ✔  Step completed in 2 ms
+08:36:49.444  ○  ▶ Step 2 — Navigate to Settlements page
+08:36:49.445  ·    Opening the Settlements page
+08:36:51.237  ✔    Navigation to Settlements page initiated successfully
+08:36:52.228  ✔  Step completed in 2784 ms
+08:36:52.228  ○  ▶ Step 3 — Verify page loads successfully
+08:36:52.228  ·    Waiting for all Settlements page elements to render
+08:37:07.324  ✘  Step failed after 15096 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settlements/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+08:37:13.308  ·  Test run complete: "TC2 — Settlement by Bank table loads with at least one row"
+────────────────────────────────────────────────────────────
+
