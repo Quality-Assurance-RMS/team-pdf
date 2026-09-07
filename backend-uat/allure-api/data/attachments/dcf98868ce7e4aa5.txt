@@ -1,0 +1,36 @@
+07:27:01.446  ·  Test started: "TC-ASUM-002 – BUG-ASUM-01 (BLOCKER): Complete auth bypass – endpoint is publicly accessible"
+07:27:01.447  ○  ▶ Auth bypass: "No Authorization header"
+07:27:01.467  ·    GET /api/v1/analytics/dashboard/summary (No Authorization header)
+07:27:02.743  ✔    HTTP 502 received
+07:27:02.747  ·    Asserting: status must be 401
+07:27:02.756  ✔  Step completed in 1308 ms
+07:27:02.756  ○  ▶ Auth bypass: "Invalid Bearer token"
+07:27:02.757  ·    GET /api/v1/analytics/dashboard/summary (Invalid Bearer token)
+07:27:03.957  ✔    HTTP 502 received
+07:27:03.959  ·    Asserting: status must be 401
+07:27:03.962  ✔  Step completed in 1206 ms
+07:27:03.962  ○  ▶ Auth bypass: "Bearer empty string"
+07:27:03.966  ·    GET /api/v1/analytics/dashboard/summary (Bearer empty string)
+07:27:05.244  ✔    HTTP 502 received
+07:27:05.245  ·    Asserting: status must be 401
+07:27:05.248  ✔  Step completed in 1286 ms
+07:27:05.248  ○  ▶ Auth bypass: "Bearer null literal"
+07:27:05.250  ·    GET /api/v1/analytics/dashboard/summary (Bearer null literal)
+07:27:06.441  ✔    HTTP 502 received
+07:27:06.443  ·    Asserting: status must be 401
+07:27:06.445  ✔  Step completed in 1197 ms
+07:27:06.445  ○  ▶ Auth bypass: "Wrong scheme (Basic)"
+07:27:06.446  ·    GET /api/v1/analytics/dashboard/summary (Wrong scheme (Basic))
+07:27:07.628  ✔    HTTP 502 received
+07:27:07.630  ·    Asserting: status must be 401
+07:27:07.633  ✔  Step completed in 1187 ms
+07:27:07.633  ○  ▶ Auth bypass: "Clearly expired token"
+07:27:07.633  ·    GET /api/v1/analytics/dashboard/summary (Clearly expired token)
+07:27:08.827  ✔    HTTP 502 received
+07:27:08.836  ·    Asserting: status must be 401
+07:27:08.839  ✔  Step completed in 1206 ms
+07:27:08.839  ○  ▶ Confirm total bypass count
+07:27:08.843  ·    Asserting: bypass count must be 0
+07:27:08.845  ✔    All assertions passed
+07:27:08.845  ✔  Step completed in 6 ms
+07:27:08.847  ·  Test run complete: "TC-ASUM-002 – BUG-ASUM-01 (BLOCKER): Complete auth bypass – endpoint is publicly accessible"

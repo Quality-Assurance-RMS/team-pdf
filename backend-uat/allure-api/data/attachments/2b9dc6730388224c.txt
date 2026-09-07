@@ -1,0 +1,15 @@
+GET https://rms.uat.konza/transaction-api/api/v1/transaction?period=today&page=0&size=0 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-TXN-002] TC-TXN-002 — Transaction list: size=0 returns 200 with empty data (should be 400)
+────────────────────────────────────────────────────────────
+07:29:53.550  ·  Test started: "[BUG-TXN-002] TC-TXN-002 — Transaction list: size=0 returns 200 with empty data (should be 400)"
+07:29:53.561  ○  ▶ Step 1 — GET list with size=0
+07:29:53.562  ·    GET /api/v1/transaction?period=today&page=0&size=0
+07:29:54.777  ✔    HTTP 400 received
+07:29:54.781  ·    Asserting: size=0 returns 400
+07:29:54.782  ✔    All assertions passed
+07:29:54.782  ✔  Step completed in 1221 ms
+07:29:54.783  ·  Test run complete: "[BUG-TXN-002] TC-TXN-002 — Transaction list: size=0 returns 200 with empty data (should be 400)"
+────────────────────────────────────────────────────────────
+

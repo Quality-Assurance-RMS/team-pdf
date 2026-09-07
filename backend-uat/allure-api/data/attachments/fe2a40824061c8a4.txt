@@ -1,0 +1,32 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DSUM-005] GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=INVALID_XYZ
+  â–º HTTP Status    : 400
+  â–º Content-Type   : application/json
+  â–º period         : N/A
+  â–º date_from      : N/A
+  â–º date_to        : N/A
+  â–º Full Body:
+{
+    "errorCode": 400,
+    "errorMessage": "Invalid period value. Must be today|last-7-days|last-30-days|last-90-days|custom"
+}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-005 â€” Input validation: invalid period, case sensitivity, error messages
+────────────────────────────────────────────────────────────
+07:28:43.055  ·  Test started: "TC-DSUM-005 â€” Input validation: invalid period, case sensitivity, error messages"
+07:28:43.057  ○  ▶ Step 1 â€” period=INVALID_XYZ must return 400
+07:28:43.064  ·    GET /api/v1/dashboard/summary
+07:28:44.341  ✔    HTTP 400 received
+07:28:44.347  ·    Asserting: response structure and values
+07:28:44.360  ✘  Step failed after 1303 ms — Error message must be non-empty
+
+expect(received).toBeTruthy()
+
+Received: undefined
+07:28:44.362  ·  Test run complete: "TC-DSUM-005 â€” Input validation: invalid period, case sensitivity, error messages"
+────────────────────────────────────────────────────────────
+

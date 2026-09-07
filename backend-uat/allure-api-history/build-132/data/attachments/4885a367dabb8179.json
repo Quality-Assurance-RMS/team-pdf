@@ -1,0 +1,32 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://rms.uat.konza/transaction-api/api/v1/transaction",
+    "params": {
+      "page": "0",
+      "size": "20",
+      "period": "today",
+      "sort_by": "trnx_date",
+      "sort_dir": "desc"
+    },
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Origin",
+      "date": "Mon, 07 Sep 2026 07:31:11 GMT",
+      "server": "RMS-Gateway"
+    },
+    "body": {
+      "errorCode": "Bad Request",
+      "errorMessage": "Page number must be 1 or greater."
+    }
+  }
+}

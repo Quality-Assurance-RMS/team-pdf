@@ -1,0 +1,60 @@
+[GET /api/v1/transaction/summary?period=today] status: 200 | body: {
+  "success": true,
+  "statusCode": 200,
+  "message": "success",
+  "data": {
+    "totalTransactionsAmount": {
+      "amountKes": 51870.69,
+      "amountUsd": 0,
+      "changePctKes": 100,
+      "changeDirectionKes": "up",
+      "changePctUsd": 0,
+      "changeDirectionUsd": "flat"
+    },
+    "successRate": {
+      "countKes": 5174,
+      "changePctKes": 100,
+      "changeDirectionKes": "up",
+      "countUsd": 0,
+      "changePctUsd": 0,
+      "changeDirectionUsd": "flat"
+    },
+    "failureRate": {
+      "countKes": 0,
+      "changePctKes": 0,
+      "changeDirectionKes": "flat",
+      "countUsd": 0,
+      "changePctUsd": 0,
+      "changeDirectionUsd": "flat"
+    }
+  }
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-002 — Summary: Today
+────────────────────────────────────────────────────────────
+07:31:16.942  ·  Test started: "TC-TXN-002 — Summary: Today"
+07:31:16.991  ○  ▶ Step 1 — Build request parameters
+07:31:17.040  ✔  Step completed in 49 ms
+07:31:17.040  ○  ▶ Step 2 — Send GET /summary?period=today
+07:31:17.041  ·    GET /api/v1/transaction/summary?period=today
+07:31:18.812  ✔    HTTP 200 received
+07:31:18.839  ✔  Step completed in 1799 ms
+07:31:18.839  ○  ▶ Step 3 — Validate HTTP 200 status code
+07:31:18.840  ·    Asserting: HTTP 200, body defined, body is object
+07:31:18.851  ✔    All assertions passed
+07:31:18.853  ✔  Step completed in 14 ms
+07:31:18.853  ○  ▶ Step 4 — Validate response body is not empty
+07:31:18.853  ·    Asserting: body has at least one field
+07:31:18.855  ✔    All assertions passed
+07:31:18.870  ✔  Step completed in 17 ms
+07:31:18.870  ○  ▶ Step 5 — Validate total_volume fields
+07:31:18.871  ·    Asserting: total_volume present with number amount and truthy currency
+07:31:18.874  ✘  Step failed after 4 ms — total_volume must be present
+
+expect(received).toBeDefined()
+
+Received: undefined
+07:31:18.938  ·  Test run complete: "TC-TXN-002 — Summary: Today"
+────────────────────────────────────────────────────────────
+

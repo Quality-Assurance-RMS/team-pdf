@@ -1,0 +1,26 @@
+[TC-ASUM-010] text/html → 502, body excerpt: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>openresty</center>
+<p><em>Powered by <a href="https://apisix.apache.org/">APISIX</a>.</em></p></body>
+</html>
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-010 – BUG-ASUM-09: Accept: text/html must not expose Spring Boot Whitelabel page
+────────────────────────────────────────────────────────────
+07:24:40.237  ·  Test started: "TC-ASUM-010 – BUG-ASUM-09: Accept: text/html must not expose Spring Boot Whitelabel page"
+07:24:40.240  ○  ▶ Step 1 – Send GET with Accept: text/html
+07:24:40.260  ·    GET /api/v1/analytics/dashboard/summary (Accept: text/html)
+07:24:41.748  ✔    HTTP 502 received
+07:24:41.754  ·    Asserting: status 406, no Whitelabel page
+07:24:41.764  ✘  Step failed after 1523 ms — Accept: text/html must return 406
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 406
+Received: 502
+07:24:41.766  ·  Test run complete: "TC-ASUM-010 – BUG-ASUM-09: Accept: text/html must not expose Spring Boot Whitelabel page"
+────────────────────────────────────────────────────────────
+

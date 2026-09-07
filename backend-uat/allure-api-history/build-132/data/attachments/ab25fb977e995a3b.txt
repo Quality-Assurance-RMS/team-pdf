@@ -1,0 +1,30 @@
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=week → 401
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=week → 401
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-XS-002] TC-XS-002 — Dashboard 401 leaks whether token was present (token-presence enumeration)
+────────────────────────────────────────────────────────────
+07:30:00.746  ·  Test started: "[BUG-XS-002] TC-XS-002 — Dashboard 401 leaks whether token was present (token-presence enumeration)"
+07:30:00.788  ○  ▶ Step 1 — GET dashboard summary with NO auth
+07:30:00.791  ·    GET /api/v1/dashboard/summary?period=week
+07:30:02.075  ✔    HTTP 401 received
+07:30:02.075  ·    Asserting: Response is 401 without auth
+07:30:02.090  ✔    All assertions passed
+07:30:02.091  ✔  Step completed in 1302 ms
+07:30:02.091  ○  ▶ Step 2 — GET dashboard summary with INVALID token
+07:30:02.092  ·    GET /api/v1/dashboard/summary?period=week
+07:30:22.994  ✔    HTTP 401 received
+07:30:22.994  ·    Asserting: Response is 401 with invalid token
+07:30:22.997  ✔    All assertions passed
+07:30:22.997  ✔  Step completed in 20907 ms
+07:30:22.997  ○  ▶ Step 3 — Assert both return the same generic message (BUG: they differ)
+07:30:23.000  ·    Asserting: Both 401 messages are identical
+07:30:23.007  ✘  Step failed after 10 ms — [BUG-XS-002] 401 message must be identical whether token is absent or invalid
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "Invalid or expired token"
+Received: "Missing Authorization token"
+07:30:23.009  ·  Test run complete: "[BUG-XS-002] TC-XS-002 — Dashboard 401 leaks whether token was present (token-presence enumeration)"
+────────────────────────────────────────────────────────────
+

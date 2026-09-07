@@ -1,0 +1,24 @@
+07:28:29.781  ·  Test started: "TC-DSH-006 â€" peakMetrics: all nine fields present with correct types"
+07:28:29.782  ○  ▶ Step 1 â€" Build request
+07:28:29.804  ·    Asserting: request parameters are recorded
+07:28:29.804  ✔    All assertions passed
+07:28:29.841  ✔  Step completed in 59 ms
+07:28:29.841  ○  ▶ Step 2 â€" Send GET /status-currency
+07:28:29.842  ·    GET /api/v1/dashboard/status-currency
+07:28:31.918  ✔    HTTP 200 received
+07:28:31.923  ✔  Step completed in 2082 ms
+07:28:31.923  ○  ▶ Step 3 â€" Validate HTTP 200 and peakMetrics is an object
+07:28:31.924  ·    Asserting: HTTP 200 and peakMetrics is a defined non-array object
+07:28:31.933  ✔    All assertions passed
+07:28:31.933  ✔  Step completed in 10 ms
+07:28:31.933  ○  ▶ Step 4 â€" Validate all nine peakMetrics fields are present
+07:28:31.934  ·    Asserting: all expected peakMetrics fields are present
+07:28:31.951  ✘  Step failed after 18 ms — peakMetrics.peakTxnDayUp must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"peakTxnDayUp"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"avgTPM": 118.9, "avgTpmChange": 100, "avgTpmDirection": "up", "maxTPM": 717, "maxTpmChange": -45, "maxTpmDirection": "down", "peakHourWindow": "12:00 PM – 12:59 PM", "peakHourWindowChange": 100, "peakHourWindowDirection": "up", "peakTransactionDate": "2026-09-07", "peakTransactionsPerDay": 5174, "peakTxnDayChange": 100, "peakTxnDayDirection": "up"}[39m
+07:28:31.953  ·  Test run complete: "TC-DSH-006 â€" peakMetrics: all nine fields present with correct types"

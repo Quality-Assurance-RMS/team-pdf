@@ -1,0 +1,33 @@
+07:27:48.211  ·  Test started: "TC-DREVT-005 â€” BUG-REVT-04: labels must not contain duplicates without year disambiguation"
+07:27:48.212  ○  ▶ Step 1 â€” Fetch revenue-trend response
+07:27:48.219  ·    GET /api/v1/dashboard/revenue-trend
+07:27:51.497  ✔    HTTP 200 received
+07:27:51.500  ✔  Step completed in 3288 ms
+07:27:51.500  ○  ▶ Step 2 â€” Validate HTTP 200
+07:27:51.501  ·    Asserting: Validate HTTP 200
+07:27:51.506  ✔    All assertions passed
+07:27:51.506  ✔  Step completed in 6 ms
+07:27:51.506  ○  ▶ Step 3 â€” BUG-REVT-04: labels array must not have duplicate month names
+07:27:51.512  ·    Asserting: BUG-REVT-04: labels array must not have duplicate
+07:27:51.514  ✔    All assertions passed
+07:27:51.515  ✔  Step completed in 9 ms
+07:27:51.515  ○  ▶ Step 4 â€” Labels must contain only valid month abbreviations
+07:27:51.516  ·    Asserting: response structure and values
+07:27:51.517  ·    Asserting: response structure and values
+07:27:51.519  ·    Asserting: response structure and values
+07:27:51.520  ·    Asserting: response structure and values
+07:27:51.522  ·    Asserting: response structure and values
+07:27:51.524  ·    Asserting: response structure and values
+07:27:51.525  ·    Asserting: response structure and values
+07:27:51.526  ·    Asserting: response structure and values
+07:27:51.527  ·    Asserting: response structure and values
+07:27:51.533  ·    Asserting: response structure and values
+07:27:51.535  ·    Asserting: response structure and values
+07:27:51.536  ·    Asserting: response structure and values
+07:27:51.537  ✔    All assertions passed
+07:27:51.537  ✔  Step completed in 22 ms
+07:27:51.537  ○  ▶ Step 5 â€” Validate array length is within reasonable range (12â€“13 months)
+07:27:51.538  ·    Asserting: Validate array length is within reasonable range
+07:27:51.540  ✔    All assertions passed
+07:27:51.540  ✔  Step completed in 3 ms
+07:27:51.543  ·  Test run complete: "TC-DREVT-005 â€” BUG-REVT-04: labels must not contain duplicates without year disambiguation"

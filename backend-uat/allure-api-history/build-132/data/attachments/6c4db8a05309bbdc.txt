@@ -1,0 +1,20 @@
+07:28:39.465  ·  Test started: "TC-DSUM-008 â€” BUG-SUM-02/03: impossible dates and wrong date format crash with 500"
+07:28:39.548  ○  ▶ Step â€” impossible Feb 30: must return 400 not 500
+07:28:39.548  ·    GET /api/v1/dashboard/summary
+07:28:40.780  ✔    HTTP 400 received
+07:28:40.781  ·    Asserting: response structure and values
+07:28:40.784  ✔    All assertions passed
+07:28:40.784  ✔  Step completed in 1237 ms
+07:28:40.784  ○  ▶ Step â€” impossible Apr 31: must return 400 not 500
+07:28:40.785  ·    GET /api/v1/dashboard/summary
+07:28:42.003  ✔    HTTP 400 received
+07:28:42.003  ·    Asserting: response structure and values
+07:28:42.006  ✔    All assertions passed
+07:28:42.006  ✔  Step completed in 1222 ms
+07:28:42.006  ○  ▶ Step â€” DD-MM-YYYY format: must return 400 not 500
+07:28:42.007  ·    GET /api/v1/dashboard/summary
+07:28:43.221  ✔    HTTP 400 received
+07:28:43.221  ·    Asserting: response structure and values
+07:28:43.225  ✔    All assertions passed
+07:28:43.225  ✔  Step completed in 1219 ms
+07:28:43.226  ·  Test run complete: "TC-DSUM-008 â€” BUG-SUM-02/03: impossible dates and wrong date format crash with 500"
