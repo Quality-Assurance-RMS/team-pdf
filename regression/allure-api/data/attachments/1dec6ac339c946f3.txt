@@ -1,0 +1,20 @@
+02:17:16.564  ·  Test started: "[BUG-DB-004] TC-DB-004 — Wrong date format DD-MM-YYYY causes HTTP 500 not 400"
+02:17:16.658  ○  ▶ Wrong format: DD-MM-YYYY
+02:17:16.660  ·    GET /api/v1/dashboard/summary?period=custom&from_date=09-06-2026&to_date=09-06-2026
+02:17:16.758  ✔    HTTP 400 received
+02:17:16.766  ·    Asserting: Wrong date format "09-06-2026" returns 400
+02:17:16.770  ✔    All assertions passed
+02:17:16.770  ✔  Step completed in 113 ms
+02:17:16.770  ○  ▶ Wrong format: YYYY/MM/DD (slashes)
+02:17:16.773  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026/06/09&to_date=2026/06/09
+02:17:16.876  ✔    HTTP 400 received
+02:17:16.883  ·    Asserting: Wrong date format "2026/06/09" returns 400
+02:17:16.953  ✔    All assertions passed
+02:17:16.953  ✔  Step completed in 183 ms
+02:17:16.953  ○  ▶ Wrong format: Long form
+02:17:16.959  ·    GET /api/v1/dashboard/summary?period=custom&from_date=June 9 2026&to_date=June 9 2026
+02:17:17.155  ✔    HTTP 400 received
+02:17:17.159  ·    Asserting: Wrong date format "June 9 2026" returns 400
+02:17:17.161  ✔    All assertions passed
+02:17:17.164  ✔  Step completed in 211 ms
+02:17:17.165  ·  Test run complete: "[BUG-DB-004] TC-DB-004 — Wrong date format DD-MM-YYYY causes HTTP 500 not 400"

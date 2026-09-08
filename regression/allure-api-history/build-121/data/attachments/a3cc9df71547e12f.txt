@@ -1,0 +1,13 @@
+02:17:11.058  ·  Test started: "TC3 — Unpaid invoice is still accepted"
+02:17:11.172  ○  ▶ Step 1 — Build an invoice with status "Unpaid"
+02:17:11.179  ✔  Step completed in 7 ms
+02:17:11.179  ○  ▶ Step 2 — Sign the payload
+02:17:11.180  ✔  Step completed in 1 ms
+02:17:11.180  ○  ▶ Step 3 — POST invoice KRCV3TI6L89FRS6C and validate it is accepted
+02:17:11.777  ✘  Step failed after 597 ms — invoice POST should return 200
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m401[39m
+02:17:11.852  ·  Test run complete: "TC3 — Unpaid invoice is still accepted"
