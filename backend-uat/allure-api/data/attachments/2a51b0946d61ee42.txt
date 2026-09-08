@@ -1,0 +1,24 @@
+17:26:05.470  ·  Test started: "TC-DREVT-004 â€” BUG-REVT-02/03: points must be a number; value must expose raw numeric amount"
+17:26:05.471  ○  ▶ Step 1 â€” Fetch revenue-trend response
+17:26:05.547  ·    GET /api/v1/dashboard/revenue-trend
+17:26:08.987  ✔    HTTP 200 received
+17:26:08.993  ✔  Step completed in 3522 ms
+17:26:08.993  ○  ▶ Step 2 â€” Validate HTTP 200
+17:26:08.994  ·    Asserting: Validate HTTP 200
+17:26:09.000  ✔    All assertions passed
+17:26:09.000  ✔  Step completed in 6 ms
+17:26:09.000  ○  ▶ Step 3 â€” BUG-REVT-02: summary[*].points must be a number, not a string
+17:26:09.004  ·    Asserting: BUG-REVT-02: summary[*].points must be a number,
+17:26:09.013  ·    Asserting: BUG-REVT-02: summary[*].points must be a number,
+17:26:09.018  ·    Asserting: BUG-REVT-02: summary[*].points must be a number,
+17:26:09.020  ✔    All assertions passed
+17:26:09.021  ✔  Step completed in 21 ms
+17:26:09.021  ○  ▶ Step 4 â€” BUG-REVT-03: summary[*].value must include a raw numeric amount
+17:26:09.024  ·    Asserting: BUG-REVT-03: summary[*].value must include a raw
+17:26:09.047  ·    Asserting: BUG-REVT-03: summary[*].value must include a raw
+17:26:09.050  ·    Asserting: BUG-REVT-03: summary[*].value must include a raw
+17:26:09.052  ✔    All assertions passed
+17:26:09.053  ✔  Step completed in 32 ms
+17:26:09.053  ○  ▶ Step 5 â€” Validate array data types (numbers, not strings)
+17:26:09.055  ✘  Step failed after 2 ms — Cannot read properties of undefined (reading 'forEach')
+17:26:09.056  ·  Test run complete: "TC-DREVT-004 â€” BUG-REVT-02/03: points must be a number; value must expose raw numeric amount"

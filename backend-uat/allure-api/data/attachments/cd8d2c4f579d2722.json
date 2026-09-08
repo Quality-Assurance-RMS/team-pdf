@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-TXN-001",
-  "expected": "400 Bad Request — page must be >= 0",
-  "actual": "HTTP 400 for page=-1",
-  "impact": "Negative page silently returns page 0 or causes 500; client cannot detect invalid input",
-  "fix": "Add @Min(0) or equivalent validation on page parameter; return 400 for negative values"
-}

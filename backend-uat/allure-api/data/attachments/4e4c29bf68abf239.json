@@ -1,7 +1,0 @@
-{
-  "bug_id": "BUG-DB-001",
-  "expected": "400 Bad Request — period must not be empty",
-  "actual": "HTTP 400 — empty period= silently accepted",
-  "impact": "Client does not know which time period the data covers; correctness risk",
-  "fix": "Add input validation: reject empty string for period with 400 response"
-}
