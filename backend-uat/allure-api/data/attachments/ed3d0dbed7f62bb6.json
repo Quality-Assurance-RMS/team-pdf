@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://rms.uat.konza/dashboard-api/api/v1/dashboard/today-payments",
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 400,
+    "content_type": "application/json",
+    "headers": {
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Origin",
+      "date": "Tue, 08 Sep 2026 11:18:28 GMT",
+      "server": "RMS-Gateway"
+    },
+    "body": {
+      "errorCode": 400,
+      "errorMessage": "Unknown query parameter: foo"
+    },
+    "scenario": "?foo=bar",
+    "bug": "BUG-TPAY-09"
+  }
+}

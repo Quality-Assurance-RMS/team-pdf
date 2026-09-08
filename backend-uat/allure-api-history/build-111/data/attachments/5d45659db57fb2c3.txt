@@ -1,0 +1,29 @@
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-02-30&to_date=2026-03-01 → 400
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-04-31&to_date=2026-05-01 → 400
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-13-01&to_date=2026-13-15 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-003] TC-DB-003 — Impossible date (Feb-30) causes HTTP 500 instead of 400
+────────────────────────────────────────────────────────────
+11:19:38.040  ·  Test started: "[BUG-DB-003] TC-DB-003 — Impossible date (Feb-30) causes HTTP 500 instead of 400"
+11:19:38.064  ○  ▶ Impossible date: Feb 30
+11:19:38.067  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-02-30&to_date=2026-03-01
+11:19:40.342  ✔    HTTP 400 received
+11:19:40.346  ·    Asserting: Impossible date "2026-02-30" returns 400
+11:19:40.353  ✔    All assertions passed
+11:19:40.354  ✔  Step completed in 2290 ms
+11:19:40.354  ○  ▶ Impossible date: Apr 31
+11:19:40.354  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-04-31&to_date=2026-05-01
+11:19:41.306  ✔    HTTP 400 received
+11:19:41.308  ·    Asserting: Impossible date "2026-04-31" returns 400
+11:19:41.310  ✔    All assertions passed
+11:19:41.310  ✔  Step completed in 956 ms
+11:19:41.310  ○  ▶ Impossible date: Month 13
+11:19:41.310  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-13-01&to_date=2026-13-15
+11:19:42.211  ✔    HTTP 400 received
+11:19:42.213  ·    Asserting: Impossible date "2026-13-01" returns 400
+11:19:42.214  ✔    All assertions passed
+11:19:42.214  ✔  Step completed in 905 ms
+11:19:42.216  ·  Test run complete: "[BUG-DB-003] TC-DB-003 — Impossible date (Feb-30) causes HTTP 500 instead of 400"
+────────────────────────────────────────────────────────────
+

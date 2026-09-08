@@ -1,0 +1,178 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: API/backend-tests/backend-dashboard-monthly-revenue.spec.ts >> Backend (Konza) â€” Dashboard Monthly Revenue >> TC-DMREV-014 â€” Math: month array sums must match summary totals
+- Location: tests/API/backend-tests/backend-dashboard-monthly-revenue.spec.ts:905:7
+
+# Error details
+
+```
+Error: conversion_ratio_pct must be a number
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "number"
+Received: "undefined"
+```
+
+# Test source
+
+```ts
+  869  |         allure.parameter(
+  870  |           `[${m.month_label}] USD diff vs commission`,
+  871  |           `gross(${m.gross_usd}) - net(${m.net_usd}) = ${diffUsd} vs commission(${commUsd}) â†’ ${ok ? 'OK' : 'MISMATCH'}`,
+  872  |         );
+  873  | 
+  874  |         if (!ok) {
+  875  |           flagIssue('TC-DMREV-013', 'BUG-MREV-MATH-USD',
+  876  |             `${m.month_label}: gross_usd(${m.gross_usd}) âˆ’ net_usd(${m.net_usd}) = ${diffUsd} â‰  commission_usd(${commUsd})`,
+  877  |             { month: m.month_label, gross: m.gross_usd, net: m.net_usd, computed_diff: diffUsd, commission: commUsd },
+  878  |           );
+  879  |         }
+  880  | 
+  881  |         logger.info('Asserting: Validate USD: gross_usd âˆ’ net_usd = commission_');
+  882  |         expect(diffUsd, `${m.month_label}: gross_usd âˆ’ net_usd must equal commission_usd`).toBe(commUsd);
+  883  |       }
+  884  |       logger.pass('All assertions passed');
+  885  |     });
+  886  | 
+  887  |     await logger.step('Step 4 â€” All amounts in future months (Junâ€“Dec) must be exactly 0', async () => {
+  888  |       const d = res!.body.data as MonthlyRevenueData;
+  889  |       const currentMonth = new Date().getMonth() + 1; // 1-indexed
+  890  |       const futureMonths = d.months.filter(m => m.month_num > currentMonth);
+  891  | 
+  892  |       for (const m of futureMonths) {
+  893  |         logger.info('Asserting: response structure and values');
+  894  |         expect(m.gross_kes,      `${m.month_label} (future): gross_kes must be 0`).toBe(0);
+  895  |         expect(m.gross_usd,      `${m.month_label} (future): gross_usd must be 0`).toBe(0);
+  896  |         expect(m.commission_kes, `${m.month_label} (future): commission_kes must be 0`).toBe(0);
+  897  |       }
+  898  | 
+  899  |       allure.parameter('Future months (all zeros)', futureMonths.map(m => m.month_label).join(', '));
+  900  |       logger.pass('All assertions passed');
+  901  |     });
+  902  |   });
+  903  | 
+  904  |   // â”€â”€ TC-DMREV-014 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  905  |   test('TC-DMREV-014 â€” Math: month array sums must match summary totals', async ({ logger }) => {
+  906  |     backendLabels('TC-DMREV-014', 'Summary Totals vs Month Array Sums', 'critical');
+  907  |     let res: supertest.Response;
+  908  | 
+  909  |     await logger.step('Step 1 â€” Fetch monthly-revenue', async () => {
+  910  |       logger.info(`GET ${ENDPOINT}`);
+  911  |       res = await get();
+  912  |       logger.pass('HTTP ' + res.status + ' received');
+  913  |       expect(res.status).toBe(200);
+  914  |       attachResponse('TC-DMREV-014', res);
+  915  |       logger.pass('All assertions passed');
+  916  |     });
+  917  | 
+  918  |     await logger.step('Step 2 â€” Array sums must equal summary totals', async () => {
+  919  |       const d = res!.body.data as MonthlyRevenueData;
+  920  |       const s = d.summary;
+  921  | 
+  922  |       const checks: [string, number, number][] = [
+  923  |         ['total_gross_kes',     d.months.reduce((a,m)=>a+m.gross_kes,0),      s.total_gross_kes],
+  924  |         ['total_gross_usd',     d.months.reduce((a,m)=>a+m.gross_usd,0),      s.total_gross_usd],
+  925  |         ['total_net_kes',       d.months.reduce((a,m)=>a+m.net_kes,0),        s.total_net_kes],
+  926  |         ['total_net_usd',       d.months.reduce((a,m)=>a+m.net_usd,0),        s.total_net_usd],
+  927  |         ['total_commission_kes',d.months.reduce((a,m)=>a+m.commission_kes,0), s.total_commission_kes],
+  928  |         ['total_commission_usd',d.months.reduce((a,m)=>a+m.commission_usd,0), s.total_commission_usd],
+  929  |       ];
+  930  | 
+  931  |       for (const [name, computed, reported] of checks) {
+  932  |         const computedR = round4(computed);
+  933  |         const reportedR = round4(reported);
+  934  |         allure.parameter(name, `computed=${computedR}  summary=${reportedR}  match=${computedR===reportedR}`);
+  935  |         logger.info('Asserting: response structure and values');
+  936  |         expect(computedR, `${name}: month sum (${computedR}) must match summary (${reportedR})`).toBe(reportedR);
+  937  |       }
+  938  |       logger.pass('All assertions passed');
+  939  |     });
+  940  | 
+  941  |     await logger.step('Step 3 â€” Summary cross: total_gross âˆ’ total_net = total_commission (KES)', async () => {
+  942  |       const s = (res!.body.data as MonthlyRevenueData).summary;
+  943  |       const computedCommKes = round4(s.total_gross_kes - s.total_net_kes);
+  944  |       const reportedCommKes = round4(s.total_commission_kes);
+  945  | 
+  946  |       allure.parameter('total_gross_kes âˆ’ total_net_kes', String(computedCommKes));
+  947  |       allure.parameter('total_commission_kes',             String(reportedCommKes));
+  948  |       logger.info('Asserting: response structure and values');
+  949  |       expect(computedCommKes, `total_gross_kes(${s.total_gross_kes}) âˆ’ total_net_kes(${s.total_net_kes}) must equal total_commission_kes`).toBe(reportedCommKes);
+  950  |       logger.pass('All assertions passed');
+  951  |     });
+  952  | 
+  953  |     await logger.step('Step 4 â€” Summary cross: total_gross âˆ’ total_net = total_commission (USD)', async () => {
+  954  |       const s = (res!.body.data as MonthlyRevenueData).summary;
+  955  |       const computedCommUsd = round4(s.total_gross_usd - s.total_net_usd);
+  956  |       const reportedCommUsd = round4(s.total_commission_usd);
+  957  | 
+  958  |       allure.parameter('total_gross_usd âˆ’ total_net_usd', String(computedCommUsd));
+  959  |       allure.parameter('total_commission_usd',             String(reportedCommUsd));
+  960  |       logger.info('Asserting: response structure and values');
+  961  |       expect(computedCommUsd, `total_gross_usd(${s.total_gross_usd}) âˆ’ total_net_usd(${s.total_net_usd}) must equal total_commission_usd`).toBe(reportedCommUsd);
+  962  |       logger.pass('All assertions passed');
+  963  |     });
+  964  | 
+  965  |     await logger.step('Step 5 â€” conversion_ratio_pct range: must be 0â€“100', async () => {
+  966  |       const pct = (res!.body.data as MonthlyRevenueData).summary.conversion_ratio_pct;
+  967  |       allure.parameter('conversion_ratio_pct', String(pct));
+  968  |       logger.info('Asserting: response structure and values');
+> 969  |       expect(typeof pct, 'conversion_ratio_pct must be a number').toBe('number');
+       |                                                                   ^ Error: conversion_ratio_pct must be a number
+  970  |       expect(pct, 'conversion_ratio_pct must be >= 0').toBeGreaterThanOrEqual(0);
+  971  |       expect(pct, 'conversion_ratio_pct must be <= 100').toBeLessThanOrEqual(100);
+  972  |       logger.pass('All assertions passed');
+  973  |     });
+  974  |   });
+  975  | 
+  976  |   // â”€â”€ TC-DMREV-015 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  977  |   test('TC-DMREV-015 â€” Response-Time SLA: must respond within 2 000 ms', async ({ logger }) => {
+  978  |     backendLabels('TC-DMREV-015', 'Response-Time SLA', 'minor');
+  979  | 
+  980  |     const SLA_MS = 2000;
+  981  |     let durationMs = 0;
+  982  |     let res: supertest.Response;
+  983  | 
+  984  |     await logger.step('Step 1 â€” Measure round-trip time', async () => {
+  985  |       const t0 = Date.now();
+  986  |       logger.info(`GET ${ENDPOINT}`);
+  987  |       res = await get();
+  988  |       logger.pass('HTTP ' + res.status + ' received');
+  989  |       durationMs = Date.now() - t0;
+  990  | 
+  991  |       console.log(`[TC-DMREV-015] Response time: ${durationMs}ms  (SLA: ${SLA_MS}ms)`);
+  992  |       allure.parameter('Response Time (ms)', String(durationMs));
+  993  |       allure.parameter('SLA Threshold (ms)', String(SLA_MS));
+  994  |       allure.parameter('SLA Pass',           String(durationMs < SLA_MS));
+  995  |     });
+  996  | 
+  997  |     await logger.step('Step 2 â€” HTTP 200', async () => {
+  998  |       logger.info('Asserting: response structure and values');
+  999  |       expect(res!.status).toBe(200);
+  1000 |       logger.pass('All assertions passed');
+  1001 |     });
+  1002 | 
+  1003 |     await logger.step(`Step 3 â€” Response time < ${SLA_MS}ms`, async () => {
+  1004 |       if (durationMs >= SLA_MS) {
+  1005 |         flagIssue('TC-DMREV-015', 'PERF-MREV-01',
+  1006 |           `Response time ${durationMs}ms exceeds ${SLA_MS}ms SLA`,
+  1007 |           { actual_ms: durationMs, sla_ms: SLA_MS, endpoint: `GET ${ENDPOINT}` },
+  1008 |         );
+  1009 |       }
+  1010 |       logger.info('Asserting: response structure and values');
+  1011 |       expect(durationMs, `Response time ${durationMs}ms must be < ${SLA_MS}ms`).toBeLessThan(SLA_MS);
+  1012 |       logger.pass('All assertions passed');
+  1013 |     });
+  1014 |   });
+  1015 | 
+  1016 | });
+  1017 | 
+  1018 | 
+  1019 | 
+```

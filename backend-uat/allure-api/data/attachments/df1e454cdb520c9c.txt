@@ -1,0 +1,15 @@
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period= → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-001] TC-DB-001 — period="" (empty string) returns 200 with undefined default
+────────────────────────────────────────────────────────────
+11:19:25.557  ·  Test started: "[BUG-DB-001] TC-DB-001 — period="" (empty string) returns 200 with undefined default"
+11:19:25.605  ○  ▶ Step 1 — GET /summary?period= (empty)
+11:19:25.608  ·    GET /api/v1/dashboard/summary?period=
+11:19:27.788  ✔    HTTP 400 received
+11:19:27.797  ·    Asserting: Empty period returns 400
+11:19:27.802  ✔    All assertions passed
+11:19:27.803  ✔  Step completed in 2198 ms
+11:19:27.804  ·  Test run complete: "[BUG-DB-001] TC-DB-001 — period="" (empty string) returns 200 with undefined default"
+────────────────────────────────────────────────────────────
+

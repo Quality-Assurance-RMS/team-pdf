@@ -1,0 +1,12 @@
+11:19:27.834  ·  Test started: "[BUG-DB-002] TC-DB-002 — period is case-sensitive (period=WEEK → 400, no documentation)"
+11:19:27.842  ○  ▶ Step 1 — period=week (lowercase) must return 200
+11:19:27.843  ·    GET /api/v1/dashboard/summary?period=week
+11:19:31.046  ✔    HTTP 400 received
+11:19:31.046  ·    Asserting: period=week returns 200
+11:19:31.052  ✘  Step failed after 3210 ms — period=week must return 200
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+11:19:31.054  ·  Test run complete: "[BUG-DB-002] TC-DB-002 — period is case-sensitive (period=WEEK → 400, no documentation)"

@@ -1,0 +1,26 @@
+GET https://rms.uat.konza/rms-analytics/api/v1/analytics/dashboard/summary → 502
+POST https://rms.uat.konza/rms-analytics/api/v1/analytics/dashboard/summary → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-ANA-003] TC-ANA-003 — CORS Access-Control-Allow-Methods advertises POST/DELETE but all return 405
+────────────────────────────────────────────────────────────
+11:19:33.646  ·  Test started: "[BUG-ANA-003] TC-ANA-003 — CORS Access-Control-Allow-Methods advertises POST/DELETE but all return 405"
+11:19:33.691  ○  ▶ Step 1 — Read CORS methods from GET response
+11:19:33.744  ·    GET /api/v1/analytics/dashboard/summary
+11:19:35.045  ✔    HTTP 502 received
+11:19:35.054  ·    Asserting: CORS does not advertise POST or DELETE
+11:19:35.060  ✔    All assertions passed
+11:19:35.060  ✔  Step completed in 1369 ms
+11:19:35.060  ○  ▶ Step 2 — Confirm POST actually returns 405 (proves the mismatch)
+11:19:35.061  ·    POST /api/v1/analytics/dashboard/summary
+11:19:41.286  ✔    HTTP 502 received
+11:19:41.286  ·    Asserting: POST returns 405 confirming CORS mismatch
+11:19:41.290  ✘  Step failed after 6230 ms — POST must return 405 — confirms CORS mismatch
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 405
+Received: 502
+11:19:41.292  ·  Test run complete: "[BUG-ANA-003] TC-ANA-003 — CORS Access-Control-Allow-Methods advertises POST/DELETE but all return 405"
+────────────────────────────────────────────────────────────
+

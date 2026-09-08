@@ -1,0 +1,13 @@
+GET https://rms.uat.konza/transaction-api/api/v1/transaction/summary?period=week → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-TXN-006] TC-TXN-006 — total_refunds missing change_direction field
+────────────────────────────────────────────────────────────
+11:19:14.016  ·  Test started: "[BUG-TXN-006] TC-TXN-006 — total_refunds missing change_direction field"
+11:19:14.025  ○  ▶ Step 1 — Fetch summary and check total_refunds fields
+11:19:14.026  ·    GET /api/v1/transaction/summary?period=week
+11:19:14.943  ✔    HTTP 400 received
+11:19:14.945  ✘  Step failed after 920 ms — Test is skipped: 
+11:19:14.946  ·  Test run complete: "[BUG-TXN-006] TC-TXN-006 — total_refunds missing change_direction field"
+────────────────────────────────────────────────────────────
+

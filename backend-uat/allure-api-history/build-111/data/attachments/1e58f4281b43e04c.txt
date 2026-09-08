@@ -1,0 +1,34 @@
+11:17:52.792  ·  Test started: "TC-DSUM-013 â€” BUG-SUM-08: wrong HTTP methods return 500 instead of 405"
+11:17:52.794  ○  ▶ Step â€” POST must return 405 Method Not Allowed
+11:17:52.802  ·    GET /api/v1/dashboard/summary
+11:17:54.115  ✔    HTTP 405 received
+11:17:54.115  ·    Asserting: response structure and values
+11:17:54.123  ✔    All assertions passed
+11:17:54.124  ✔  Step completed in 1330 ms
+11:17:54.124  ○  ▶ Step â€” PUT must return 405 Method Not Allowed
+11:17:54.125  ·    GET /api/v1/dashboard/summary
+11:17:55.692  ✔    HTTP 405 received
+11:17:55.693  ·    Asserting: response structure and values
+11:17:55.696  ✔    All assertions passed
+11:17:55.696  ✔  Step completed in 1572 ms
+11:17:55.696  ○  ▶ Step â€” DELETE must return 405 Method Not Allowed
+11:17:55.697  ·    GET /api/v1/dashboard/summary
+11:17:56.986  ✔    HTTP 405 received
+11:17:56.986  ·    Asserting: response structure and values
+11:17:56.990  ✔    All assertions passed
+11:17:56.990  ✔  Step completed in 1294 ms
+11:17:56.990  ○  ▶ Step â€” PATCH must return 405 Method Not Allowed
+11:17:56.991  ·    GET /api/v1/dashboard/summary
+11:17:59.141  ✔    HTTP 405 received
+11:17:59.141  ·    Asserting: response structure and values
+11:17:59.144  ✔    All assertions passed
+11:17:59.144  ✔  Step completed in 2154 ms
+11:17:59.144  ○  ▶ Step â€” HEAD and OPTIONS must return 200 (valid methods)
+11:17:59.145  ·    GET /api/v1/dashboard/summary
+11:18:01.144  ✔    HTTP 200 received
+11:18:01.144  ·    GET /api/v1/dashboard/summary
+11:18:02.745  ✔    HTTP 200 received
+11:18:02.745  ·    Asserting: response structure and values
+11:18:02.750  ✔    All assertions passed
+11:18:02.750  ✔  Step completed in 3606 ms
+11:18:02.752  ·  Test run complete: "TC-DSUM-013 â€” BUG-SUM-08: wrong HTTP methods return 500 instead of 405"

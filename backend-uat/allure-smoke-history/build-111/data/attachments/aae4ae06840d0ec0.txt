@@ -1,0 +1,16 @@
+11:13:24.051  ·  Test started: "TC-BE-004 â€" List: period=today sorted by trnx_date desc returns paginated data"
+11:13:24.052  ○  ▶ Step 1 â€" Build request
+11:13:24.159  ✔  Step completed in 107 ms
+11:13:24.159  ○  ▶ Step 2 â€" Send GET /transaction?period=today and log response
+11:13:24.160  ·    GET /api/v1/transaction?period=today&sort_by=trnx_date&sort_dir=desc
+11:13:25.046  ✔    HTTP 400 received
+11:13:25.054  ✔  Step completed in 895 ms
+11:13:25.054  ○  ▶ Step 3 â€" Validate HTTP 200, pagination metadata, and data array
+11:13:25.056  ·    Asserting: HTTP 200, pagination metadata present, and data array non-empty
+11:13:25.067  ✘  Step failed after 13 ms — TC-BE-004 â€" HTTP 200 expected
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+11:13:25.069  ·  Test run complete: "TC-BE-004 â€" List: period=today sorted by trnx_date desc returns paginated data"

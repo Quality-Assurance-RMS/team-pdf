@@ -1,0 +1,16 @@
+11:13:13.625  ·  Test started: "TC-BE-001 â€" Summary: period=week returns 200 with expected shape"
+11:13:13.626  ○  ▶ Step 1 â€" Build request
+11:13:13.673  ✔  Step completed in 47 ms
+11:13:13.673  ○  ▶ Step 2 â€" Send GET /summary?period=week and log response
+11:13:13.674  ·    GET /api/v1/transaction/summary?period=week
+11:13:14.593  ✔    HTTP 400 received
+11:13:14.599  ✔  Step completed in 926 ms
+11:13:14.599  ○  ▶ Step 3 â€" Validate HTTP 200 and top-level fields present
+11:13:14.600  ·    Asserting: HTTP 200 and top-level fields present
+11:13:14.611  ✘  Step failed after 12 ms — HTTP 200 expected
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+11:13:14.614  ·  Test run complete: "TC-BE-001 â€" Summary: period=week returns 200 with expected shape"

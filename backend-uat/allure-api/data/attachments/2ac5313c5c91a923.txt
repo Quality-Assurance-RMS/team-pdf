@@ -1,0 +1,17 @@
+GET https://rms.uat.konza/rms-analytics/api/v1/analytics/dashboard/summary → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)
+────────────────────────────────────────────────────────────
+11:18:57.879  ·  Test started: "[BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)"
+11:18:57.947  ○  ▶ Step 1 — Call analytics and confirm zeros
+11:18:57.950  ·    GET /api/v1/analytics/dashboard/summary
+11:18:59.216  ✔    HTTP 502 received
+11:18:59.216  ·    Asserting: Response is 200
+11:18:59.224  ✘  Step failed after 1277 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+11:18:59.226  ·  Test run complete: "[BUG-ANA-005] TC-ANA-005 — Analytics returns all-zero counts (possible aggregation or data pipeline issue)"
+────────────────────────────────────────────────────────────
+

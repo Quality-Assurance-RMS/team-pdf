@@ -1,0 +1,48 @@
+
+[TC-DSUM-013] POST  -> 405
+
+[TC-DSUM-013] PUT  -> 405
+
+[TC-DSUM-013] DELETE  -> 405
+
+[TC-DSUM-013] PATCH  -> 405
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-013 â€” BUG-SUM-08: wrong HTTP methods return 500 instead of 405
+────────────────────────────────────────────────────────────
+11:12:40.419  ·  Test started: "TC-DSUM-013 â€” BUG-SUM-08: wrong HTTP methods return 500 instead of 405"
+11:12:40.420  ○  ▶ Step â€” POST must return 405 Method Not Allowed
+11:12:40.438  ·    GET /api/v1/dashboard/summary
+11:12:41.534  ✔    HTTP 405 received
+11:12:41.534  ·    Asserting: response structure and values
+11:12:41.542  ✔    All assertions passed
+11:12:41.542  ✔  Step completed in 1122 ms
+11:12:41.542  ○  ▶ Step â€” PUT must return 405 Method Not Allowed
+11:12:41.543  ·    GET /api/v1/dashboard/summary
+11:12:42.409  ✔    HTTP 405 received
+11:12:42.409  ·    Asserting: response structure and values
+11:12:42.413  ✔    All assertions passed
+11:12:42.413  ✔  Step completed in 871 ms
+11:12:42.413  ○  ▶ Step â€” DELETE must return 405 Method Not Allowed
+11:12:42.414  ·    GET /api/v1/dashboard/summary
+11:12:43.285  ✔    HTTP 405 received
+11:12:43.285  ·    Asserting: response structure and values
+11:12:43.289  ✔    All assertions passed
+11:12:43.290  ✔  Step completed in 877 ms
+11:12:43.290  ○  ▶ Step â€” PATCH must return 405 Method Not Allowed
+11:12:43.291  ·    GET /api/v1/dashboard/summary
+11:12:44.317  ✔    HTTP 405 received
+11:12:44.318  ·    Asserting: response structure and values
+11:12:44.321  ✔    All assertions passed
+11:12:44.321  ✔  Step completed in 1031 ms
+11:12:44.321  ○  ▶ Step â€” HEAD and OPTIONS must return 200 (valid methods)
+11:12:44.322  ·    GET /api/v1/dashboard/summary
+11:12:47.327  ✔    HTTP 200 received
+11:12:47.327  ·    GET /api/v1/dashboard/summary
+11:12:49.631  ✔    HTTP 200 received
+11:12:49.631  ·    Asserting: response structure and values
+11:12:49.636  ✔    All assertions passed
+11:12:49.636  ✔  Step completed in 5315 ms
+11:12:49.638  ·  Test run complete: "TC-DSUM-013 â€” BUG-SUM-08: wrong HTTP methods return 500 instead of 405"
+────────────────────────────────────────────────────────────
+

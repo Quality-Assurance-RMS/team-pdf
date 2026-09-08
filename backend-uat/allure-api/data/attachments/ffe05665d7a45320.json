@@ -1,0 +1,63 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://rms.uat.konza/dashboard-api/api/v1/dashboard/today-payments",
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "content_type": "application/json",
+    "headers": {
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Origin",
+      "date": "Tue, 08 Sep 2026 11:18:23 GMT",
+      "server": "RMS-Gateway"
+    },
+    "body": {
+      "data": {
+        "payments": {
+          "successfulPaymentKES": 29086,
+          "successfulPaymentDollar": 0,
+          "failedPaymentKES": 0,
+          "failedPaymentDollar": 0,
+          "successKesChange": -69.4,
+          "successKesChangeDirection": "down",
+          "successUsdChange": 0,
+          "successUsdChangeDirection": "flat",
+          "failKesChange": 0,
+          "failKesChangeDirection": "flat",
+          "failUsdChange": 0,
+          "failUsdChangeDirection": "flat"
+        },
+        "refunds": {
+          "successfulPaymentKES": 0,
+          "successfulPaymentDollar": 0,
+          "failedPaymentKES": 0,
+          "failedPaymentDollar": 0,
+          "successKesChange": 0,
+          "successKesChangeDirection": "flat",
+          "successUsdChange": 0,
+          "successUsdChangeDirection": "flat",
+          "failKesChange": 0,
+          "failKesChangeDirection": "flat",
+          "failUsdChange": 0,
+          "failUsdChangeDirection": "flat"
+        },
+        "revenue": {
+          "successfulPaymentKES": 29086,
+          "successfulPaymentDollar": 0,
+          "successKesChange": -69.4,
+          "successKesChangeDirection": "down",
+          "successUsdChange": 0,
+          "successUsdChangeDirection": "flat"
+        }
+      }
+    },
+    "bug": "BUG-TPAY-07/BUG-TPAY-10"
+  }
+}

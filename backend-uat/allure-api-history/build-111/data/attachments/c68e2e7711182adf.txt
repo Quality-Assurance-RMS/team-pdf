@@ -1,0 +1,16 @@
+11:20:01.767  ·  Test started: "TC-BE-007 â€" Detail: 00bba274-1617-4568-aaf2-a2ed08b66a18 returns 200 with core fields"
+11:20:01.845  ○  ▶ Step 1 â€" Build request
+11:20:01.858  ✔  Step completed in 12 ms
+11:20:01.858  ○  ▶ Step 2 â€" Send GET /transaction/00bba274-1617-4568-aaf2-a2ed08b66a18 and log response
+11:20:01.858  ·    GET /api/v1/transaction/00bba274-1617-4568-aaf2-a2ed08b66a18
+11:20:02.746  ✔    HTTP 404 received
+11:20:02.758  ✔  Step completed in 901 ms
+11:20:02.758  ○  ▶ Step 3 â€" Validate HTTP 200 and core identifier fields
+11:20:02.760  ·    Asserting: HTTP 200 and core identifier fields present
+11:20:02.766  ✘  Step failed after 7 ms — HTTP 200 expected
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m404[39m
+11:20:02.768  ·  Test run complete: "TC-BE-007 â€" Detail: 00bba274-1617-4568-aaf2-a2ed08b66a18 returns 200 with core fields"

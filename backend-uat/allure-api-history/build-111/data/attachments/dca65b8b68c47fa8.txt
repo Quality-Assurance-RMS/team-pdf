@@ -1,0 +1,43 @@
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/monthly-revenue?year=0 → 400
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/monthly-revenue?year= → 400
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/monthly-revenue?year=9999 → 400
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/monthly-revenue?year=abc → 400
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/monthly-revenue?year=-1 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-008] TC-DB-008 — monthly-revenue: invalid year values accepted without 400
+────────────────────────────────────────────────────────────
+11:19:02.199  ·  Test started: "[BUG-DB-008] TC-DB-008 — monthly-revenue: invalid year values accepted without 400"
+11:19:02.209  ○  ▶ year=0
+11:19:02.210  ·    GET /api/v1/dashboard/monthly-revenue?year=0
+11:19:03.157  ✔    HTTP 400 received
+11:19:03.158  ·    Asserting: year=0 returns 400
+11:19:03.159  ✔    All assertions passed
+11:19:03.160  ✔  Step completed in 951 ms
+11:19:03.160  ○  ▶ year=empty
+11:19:03.160  ·    GET /api/v1/dashboard/monthly-revenue?year=
+11:19:04.145  ✔    HTTP 400 received
+11:19:04.147  ·    Asserting: year=empty returns 400
+11:19:04.148  ✔    All assertions passed
+11:19:04.149  ✔  Step completed in 989 ms
+11:19:04.149  ○  ▶ year=9999
+11:19:04.149  ·    GET /api/v1/dashboard/monthly-revenue?year=9999
+11:19:05.281  ✔    HTTP 400 received
+11:19:05.282  ·    Asserting: year=9999 returns 400
+11:19:05.283  ✔    All assertions passed
+11:19:05.283  ✔  Step completed in 1135 ms
+11:19:05.283  ○  ▶ year=abc
+11:19:05.284  ·    GET /api/v1/dashboard/monthly-revenue?year=abc
+11:19:06.172  ✔    HTTP 400 received
+11:19:06.173  ·    Asserting: year=abc returns 400
+11:19:06.177  ✔    All assertions passed
+11:19:06.177  ✔  Step completed in 894 ms
+11:19:06.177  ○  ▶ year=-1
+11:19:06.178  ·    GET /api/v1/dashboard/monthly-revenue?year=-1
+11:19:07.139  ✔    HTTP 400 received
+11:19:07.140  ·    Asserting: year=-1 returns 400
+11:19:07.142  ✔    All assertions passed
+11:19:07.142  ✔  Step completed in 965 ms
+11:19:07.143  ·  Test run complete: "[BUG-DB-008] TC-DB-008 — monthly-revenue: invalid year values accepted without 400"
+────────────────────────────────────────────────────────────
+

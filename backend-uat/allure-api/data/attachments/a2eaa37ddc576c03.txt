@@ -1,0 +1,19 @@
+11:16:53.055  ·  Test started: "TC-DREVT-012 â€” BUG-REVT-11: CORS wildcard origin is insecure for financial trend data"
+11:16:53.057  ○  ▶ Step 1 â€” Fetch with Origin header from a test attacker domain
+11:16:53.066  ·    GET /api/v1/dashboard/revenue-trend
+11:16:54.360  ✔    HTTP 403 received
+11:16:54.365  ✔  Step completed in 1309 ms
+11:16:54.365  ○  ▶ Step 2 â€” Log server CORS response (403 or 200 both possible)
+11:16:54.371  ·    Asserting: response structure and values
+11:16:54.376  ✔    All assertions passed
+11:16:54.376  ✔  Step completed in 11 ms
+11:16:54.376  ○  ▶ Step 3 â€” BUG-REVT-11a: Access-Control-Allow-Origin must not be wildcard on a no-Origin request
+11:16:54.377  ·    GET /api/v1/dashboard/revenue-trend
+11:16:57.581  ✔    HTTP 200 received
+11:16:57.587  ✔    All assertions passed
+11:16:57.587  ✔  Step completed in 3211 ms
+11:16:57.587  ○  ▶ Step 4 â€” BUG-REVT-11b: Destructive methods must not be CORS-allowed on a GET-only endpoint
+11:16:57.591  ·    Asserting: BUG-REVT-11b: Destructive methods must not be COR
+11:16:57.594  ✔    All assertions passed
+11:16:57.594  ✔  Step completed in 7 ms
+11:16:57.597  ·  Test run complete: "TC-DREVT-012 â€” BUG-REVT-11: CORS wildcard origin is insecure for financial trend data"

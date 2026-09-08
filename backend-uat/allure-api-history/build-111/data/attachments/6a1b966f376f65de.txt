@@ -1,0 +1,16 @@
+[invoice-webhook-konza] status=401 body={"error":{"code":"SIGNATURE_MISMATCH","message":"HMAC signature verification failed"}}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Single line item, fully paid invoice — happy path
+────────────────────────────────────────────────────────────
+11:19:21.029  ·  Test started: "TC1 — Single line item, fully paid invoice — happy path"
+11:19:21.063  ○  ▶ POST invoice KRCV316HENIJBKT7
+11:19:22.429  ✘  Step failed after 1366 ms — invoice POST should return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 401
+11:19:22.431  ·  Test run complete: "TC1 — Single line item, fully paid invoice — happy path"
+────────────────────────────────────────────────────────────
+

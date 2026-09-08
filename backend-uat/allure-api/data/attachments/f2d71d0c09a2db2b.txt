@@ -1,0 +1,16 @@
+11:20:00.188  ·  Test started: "TC-TXN-005 — Transaction List: Filtered by status=SUCCESS and method=MPESA"
+11:20:00.225  ○  ▶ Step 1 — Build request parameters
+11:20:00.248  ✔  Step completed in 24 ms
+11:20:00.248  ○  ▶ Step 2 — Send GET /transaction with filters
+11:20:00.249  ·    GET /api/v1/transaction?page=0&size=20&period=month&status=SUCCESS&method=MPESA
+11:20:01.236  ✔    HTTP 400 received
+11:20:01.241  ✔  Step completed in 992 ms
+11:20:01.241  ○  ▶ Step 3 — Validate HTTP 200 status code
+11:20:01.241  ·    Asserting: HTTP 200, body defined, body is object
+11:20:01.249  ✘  Step failed after 8 ms — TC-TXN-005 — expected HTTP 200, got 400
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m400[39m
+11:20:01.251  ·  Test run complete: "TC-TXN-005 — Transaction List: Filtered by status=SUCCESS and method=MPESA"

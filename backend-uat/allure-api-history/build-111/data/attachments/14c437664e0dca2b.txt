@@ -1,0 +1,15 @@
+11:19:55.209  ·  Test started: "TC-BE-003 â€" Summary: period=custom returns 200 with expected shape"
+11:19:55.211  ○  ▶ Step 1 â€" Build request
+11:19:55.256  ✔  Step completed in 46 ms
+11:19:55.256  ○  ▶ Step 2 â€" Send GET /summary?period=custom and log response
+11:19:55.257  ·    GET /api/v1/transaction/summary?period=custom&from_date=2026-01-01&to_date=2026-05-22
+11:19:57.050  ✔    HTTP 200 received
+11:19:57.057  ✔  Step completed in 1801 ms
+11:19:57.057  ○  ▶ Step 3 â€" Validate HTTP 200 and top-level fields present
+11:19:57.058  ·    Asserting: HTTP 200 and top-level fields present
+11:19:57.071  ✘  Step failed after 14 ms — total_volume must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBeDefined[2m()[22m
+
+Received: [31mundefined[39m
+11:19:57.073  ·  Test run complete: "TC-BE-003 â€" Summary: period=custom returns 200 with expected shape"
