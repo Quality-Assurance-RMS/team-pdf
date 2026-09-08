@@ -1,0 +1,15 @@
+GET https://rms.uat.konza/transaction-api/api/v1/transaction?period=today&page=-1&size=10 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-TXN-001] TC-TXN-001 — Transaction list: negative page (-1) must return 400
+────────────────────────────────────────────────────────────
+03:47:53.926  ·  Test started: "[BUG-TXN-001] TC-TXN-001 — Transaction list: negative page (-1) must return 400"
+03:47:53.986  ○  ▶ Step 1 — GET list with page=-1
+03:47:53.987  ·    GET /api/v1/transaction?period=today&page=-1&size=10
+03:47:54.838  ✔    HTTP 400 received
+03:47:54.842  ·    Asserting: page=-1 returns 400 or 422
+03:47:54.844  ✔    All assertions passed
+03:47:54.844  ✔  Step completed in 858 ms
+03:47:54.848  ·  Test run complete: "[BUG-TXN-001] TC-TXN-001 — Transaction list: negative page (-1) must return 400"
+────────────────────────────────────────────────────────────
+

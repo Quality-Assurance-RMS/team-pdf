@@ -1,0 +1,19 @@
+GET https://rms.uat.konza/rms-analytics/api/v1/analytics/dashboard/summary → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)
+────────────────────────────────────────────────────────────
+03:46:31.007  ·  Test started: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"
+03:46:31.022  ○  ▶ GET ?(no param) — No mcda_id param
+03:46:31.023  ·    GET /api/v1/analytics/dashboard/summary
+03:46:31.909  ✔    HTTP 502 received
+03:46:31.909  ·    Asserting: Request returns 200 without error
+03:46:31.913  ✘  Step failed after 890 ms — No mcda_id param — request must not error
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+03:46:31.914  ·  Test run complete: "[BUG-ANA-004] TC-ANA-004 — mcda_id=invalid_value returns 200 instead of 400 (no input validation)"
+────────────────────────────────────────────────────────────
+

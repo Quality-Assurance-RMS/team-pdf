@@ -1,0 +1,17 @@
+POST https://rms.uat.konza/rms-analytics/api/v1/analytics/dashboard/summary → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-ANA-002] TC-ANA-002 — Analytics 405 body missing "message" field (inconsistent with all other APIs)
+────────────────────────────────────────────────────────────
+03:47:07.699  ·  Test started: "[BUG-ANA-002] TC-ANA-002 — Analytics 405 body missing "message" field (inconsistent with all other APIs)"
+03:47:07.793  ○  ▶ Step 1 — Trigger 405 on analytics endpoint
+03:47:07.796  ·    POST /api/v1/analytics/dashboard/summary
+03:47:08.651  ✔    HTTP 502 received
+03:47:08.651  ·    Asserting: Response is 405
+03:47:08.661  ✘  Step failed after 868 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 405
+Received: 502
+03:47:08.663  ·  Test run complete: "[BUG-ANA-002] TC-ANA-002 — Analytics 405 body missing "message" field (inconsistent with all other APIs)"
+────────────────────────────────────────────────────────────
+

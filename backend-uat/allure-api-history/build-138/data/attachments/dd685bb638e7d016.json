@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://rms.uat.konza/dashboard-api/api/v1/dashboard/revenue-trend",
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 400,
+    "content_type": "application/json",
+    "headers": {
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Origin",
+      "date": "Tue, 08 Sep 2026 03:44:58 GMT",
+      "server": "RMS-Gateway"
+    },
+    "body": {
+      "errorCode": 400,
+      "errorMessage": "Invalid period value 'invalid_value'. Allowed values: 1y, 180d, 30d"
+    },
+    "query": "period=invalid_value",
+    "bug": "BUG-REVT-07"
+  }
+}

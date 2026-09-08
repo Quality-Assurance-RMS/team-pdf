@@ -1,0 +1,35 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-BE-006] GET https://rms.uat.konza/transaction-api/api/v1/transaction?page=0&size=20&period=week&q=CONF-MAY26
+  â–º Params         : {"page":"0","size":"20","period":"week","q":"CONF-MAY26"}
+  â–º Status         : 400
+  â–º Content-Type   : application/json
+  â–º total_count    : N/A
+  â–º page           : N/A
+  â–º size           : N/A
+  â–º total_pages    : N/A
+  â–º records in page: 0
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-BE-006 â€" List: period=week keyword search q=CONF-MAY26 returns data array
+────────────────────────────────────────────────────────────
+03:48:29.920  ·  Test started: "TC-BE-006 â€" List: period=week keyword search q=CONF-MAY26 returns data array"
+03:48:29.921  ○  ▶ Step 1 â€" Build request
+03:48:30.012  ✔  Step completed in 91 ms
+03:48:30.012  ○  ▶ Step 2 â€" Send GET /transaction?q=CONF-MAY26 and log response
+03:48:30.013  ·    GET /api/v1/transaction?period=week&q=CONF-MAY26
+03:48:30.885  ✔    HTTP 400 received
+03:48:30.892  ✔  Step completed in 879 ms
+03:48:30.892  ○  ▶ Step 3 â€" Validate HTTP 200, pagination metadata, and data array
+03:48:30.892  ·    Asserting: HTTP 200, pagination metadata, and total_count > 0
+03:48:30.904  ✘  Step failed after 12 ms — TC-BE-006 â€" HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+03:48:30.906  ·  Test run complete: "TC-BE-006 â€" List: period=week keyword search q=CONF-MAY26 returns data array"
+────────────────────────────────────────────────────────────
+

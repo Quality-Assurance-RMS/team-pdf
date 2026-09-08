@@ -1,0 +1,16 @@
+03:47:52.122  ·  Test started: "TC-TXN-007 — Detail for ID: 00bba274-1617-4568-aaf2-a2ed08b66a18"
+03:47:52.215  ○  ▶ Step 1 — Build request parameters
+03:47:52.231  ✔  Step completed in 16 ms
+03:47:52.231  ○  ▶ Step 2 — Send GET /transaction/00bba274-1617-4568-aaf2-a2ed08b66a18
+03:47:52.232  ·    GET /api/v1/transaction/00bba274-1617-4568-aaf2-a2ed08b66a18
+03:47:53.144  ✔    HTTP 404 received
+03:47:53.150  ✔  Step completed in 919 ms
+03:47:53.150  ○  ▶ Step 3 — Validate HTTP 200 status code
+03:47:53.150  ·    Asserting: HTTP 200, body defined, body is object
+03:47:53.158  ✘  Step failed after 9 ms — TC-TXN-007 [00bba274-1617-4568-aaf2-a2ed08b66a18] — expected HTTP 200, got 404
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m404[39m
+03:47:53.160  ·  Test run complete: "TC-TXN-007 — Detail for ID: 00bba274-1617-4568-aaf2-a2ed08b66a18"

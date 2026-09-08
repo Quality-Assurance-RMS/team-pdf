@@ -1,0 +1,55 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://rms.uat.konza/transaction-api/api/v1/transaction/summary",
+    "params": {
+      "period": "last-7-days"
+    },
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Origin",
+      "date": "Tue, 08 Sep 2026 03:47:52 GMT",
+      "server": "RMS-Gateway"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "success",
+      "data": {
+        "totalTransactionsAmount": {
+          "amountKes": 95685.22,
+          "amountUsd": 0,
+          "changePctKes": -99.05,
+          "changeDirectionKes": "down",
+          "changePctUsd": 0,
+          "changeDirectionUsd": "flat"
+        },
+        "successRate": {
+          "countKes": 9501,
+          "changePctKes": 100,
+          "changeDirectionKes": "up",
+          "countUsd": 0,
+          "changePctUsd": 0,
+          "changeDirectionUsd": "flat"
+        },
+        "failureRate": {
+          "countKes": 0,
+          "changePctKes": 0,
+          "changeDirectionKes": "flat",
+          "countUsd": 0,
+          "changePctUsd": 0,
+          "changeDirectionUsd": "flat"
+        }
+      }
+    }
+  }
+}

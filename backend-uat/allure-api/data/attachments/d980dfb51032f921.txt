@@ -1,0 +1,20 @@
+03:47:01.309  ·  Test started: "[BUG-XS-004] TC-XS-004 — CORS wildcard * is present even on 401 error responses"
+03:47:01.398  ○  ▶ Check CORS on Dashboard 401
+03:47:01.401  ·    GET /api/v1/dashboard/summary?period=week
+03:47:02.305  ✔    HTTP 401 received
+03:47:02.312  ·    Asserting: CORS Access-Control-Allow-Origin is not wildcard on error response
+03:47:02.318  ✔    All assertions passed
+03:47:02.319  ✔  Step completed in 920 ms
+03:47:02.319  ○  ▶ Check CORS on Transaction 401
+03:47:02.320  ·    GET /api/v1/transaction/summary?period=week
+03:47:03.190  ✔    HTTP 401 received
+03:47:03.194  ·    Asserting: CORS Access-Control-Allow-Origin is not wildcard on error response
+03:47:03.196  ✔    All assertions passed
+03:47:03.196  ✔  Step completed in 877 ms
+03:47:03.196  ○  ▶ Check CORS on Analytics 200 (no auth needed)
+03:47:03.196  ·    GET /api/v1/analytics/dashboard/summary
+03:47:04.044  ✔    HTTP 502 received
+03:47:04.049  ·    Asserting: CORS Access-Control-Allow-Origin is not wildcard on error response
+03:47:04.051  ✔    All assertions passed
+03:47:04.051  ✔  Step completed in 855 ms
+03:47:04.053  ·  Test run complete: "[BUG-XS-004] TC-XS-004 — CORS wildcard * is present even on 401 error responses"
