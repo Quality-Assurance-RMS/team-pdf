@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All five report cards are visible with subtitles
+────────────────────────────────────────────────────────────
+01:46:28.762  ·  Test started: "TC1 — All five report cards are visible with subtitles"
+01:46:28.965  ○  ▶ Step 1 — Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed report cards are all present with their count subtitles
+01:46:28.967  ·    Test scope: Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed report cards are all present with their count subtitles
+01:46:28.967  ✔  Step completed in 2 ms
+01:46:28.969  ○  ▶ Step 2 — Navigate to Reports page
+01:46:28.970  ·    Opening the Reports page
+01:46:33.571  ✔    Navigation to Reports page initiated successfully
+01:46:33.761  ✔  Step completed in 4792 ms
+01:46:33.761  ○  ▶ Step 3 — Verify page loads successfully
+01:46:33.762  ·    Waiting for all Reports page elements to render
+01:46:43.889  ✘  Step failed after 10128 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('h1, h2, h3, [class*="title"], [class*="heading"]').filter({ hasText: /^Reports$/i }).or(getByRole('heading', { name: /^Reports$/i })).first()
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('h1, h2, h3, [class*="title"], [class*="heading"]').filter({ hasText: /^Reports$/i }).or(getByRole('heading', { name: /^Reports$/i })).first()
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:46:45.207  ·  Test run complete: "TC1 — All five report cards are visible with subtitles"
+────────────────────────────────────────────────────────────
+

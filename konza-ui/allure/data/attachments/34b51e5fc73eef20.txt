@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Eye icon opens invoice detail with matching Invoice Number
+────────────────────────────────────────────────────────────
+01:38:26.266  ·  Test started: "TC1 — Eye icon opens invoice detail with matching Invoice Number"
+01:38:26.475  ○  ▶ Step 1 — Clicks the view icon on the first invoice row and verifies the Invoice Number appears on the detail view
+01:38:26.477  ·    Test scope: Clicks the view icon on the first invoice row and verifies the Invoice Number appears on the detail view
+01:38:26.478  ✔  Step completed in 2 ms
+01:38:26.479  ○  ▶ Step 2 — Navigate to Invoice page
+01:38:26.480  ·    Opening the Invoice page
+01:38:30.180  ✔    Navigation to Invoice page initiated successfully
+01:38:30.375  ✔  Step completed in 3896 ms
+01:38:30.375  ○  ▶ Step 3 — Verify page loads successfully
+01:38:30.376  ·    Waiting for all Invoice page elements to render
+01:38:40.582  ✘  Step failed after 10206 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:38:41.733  ·  Test run complete: "TC1 — Eye icon opens invoice detail with matching Invoice Number"
+────────────────────────────────────────────────────────────
+

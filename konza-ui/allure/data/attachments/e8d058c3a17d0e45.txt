@@ -1,0 +1,26 @@
+01:38:01.110  ·  Test started: "TC6 — Revenue summary panel shows Gross Amount, Net Amount, Commission and Transaction Success Ratio"
+01:38:01.318  ○  ▶ Step 1 — Verifies that the chart summary panel shows all four summary labels
+01:38:01.320  ·    Test scope: Verifies that the chart summary panel shows all four summary labels
+01:38:01.320  ✔  Step completed in 3 ms
+01:38:01.359  ○  ▶ Step 2 — Navigate to Dashboard page
+01:38:01.360  ·    Opening the Dashboard page
+01:38:08.007  ✔    Navigation to Dashboard initiated successfully
+01:38:08.259  ✔  Step completed in 6900 ms
+01:38:08.259  ○  ▶ Step 3 — Verify page loads successfully
+01:38:08.260  ·    Waiting for all Dashboard elements to render
+01:38:08.671  ✔    Dashboard page is fully loaded with all required elements
+01:38:09.376  ✔  Step completed in 1117 ms
+01:38:09.376  ○  ▶ Step 4 — "Gross Amount" label is visible
+01:38:09.377  ·    Asserting visibility: Gross Amount summary label
+01:38:14.390  ✘  Step failed after 5014 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByText(/Gross Amount/i)
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 5000ms[22m
+[2m  - waiting for getByText(/Gross Amount/i)[22m
+
+01:38:14.902  ·  Test run complete: "TC6 — Revenue summary panel shows Gross Amount, Net Amount, Commission and Transaction Success Ratio"

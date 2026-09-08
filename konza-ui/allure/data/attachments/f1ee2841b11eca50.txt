@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Conversion Ratio is visible in the Settlement & Payout Overview
+────────────────────────────────────────────────────────────
+01:46:43.437  ·  Test started: "TC1 — Conversion Ratio is visible in the Settlement & Payout Overview"
+01:46:43.666  ○  ▶ Step 1 — Verifies the Conversion Ratio metric renders in the Settlement & Payout Overview section
+01:46:43.668  ·    Test scope: Verifies the Conversion Ratio metric renders in the Settlement & Payout Overview section
+01:46:43.669  ✔  Step completed in 2 ms
+01:46:43.670  ○  ▶ Step 2 — Navigate to Reports page
+01:46:43.670  ·    Opening the Reports page
+01:46:48.070  ✔    Navigation to Reports page initiated successfully
+01:46:48.370  ✔  Step completed in 4700 ms
+01:46:48.370  ○  ▶ Step 3 — Verify page loads successfully
+01:46:48.371  ·    Waiting for all Reports page elements to render
+01:46:58.483  ✘  Step failed after 10113 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('h1, h2, h3, [class*="title"], [class*="heading"]').filter({ hasText: /^Reports$/i }).or(getByRole('heading', { name: /^Reports$/i })).first()
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('h1, h2, h3, [class*="title"], [class*="heading"]').filter({ hasText: /^Reports$/i }).or(getByRole('heading', { name: /^Reports$/i })).first()
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:47:01.167  ·  Test run complete: "TC1 — Conversion Ratio is visible in the Settlement & Payout Overview"
+────────────────────────────────────────────────────────────
+

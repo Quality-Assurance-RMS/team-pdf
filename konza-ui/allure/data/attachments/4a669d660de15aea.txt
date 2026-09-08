@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All five transaction status cards are visible
+────────────────────────────────────────────────────────────
+01:48:23.784  ·  Test started: "TC1 — All five transaction status cards are visible"
+01:48:24.466  ○  ▶ Step 1 — Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed cards render on the Reports page
+01:48:24.469  ·    Test scope: Verifies Transactions received, Transaction recon, Transaction settled, Payout, and Failed cards render on the Reports page
+01:48:24.472  ✔  Step completed in 6 ms
+01:48:24.475  ○  ▶ Step 2 — Navigate to Reports page
+01:48:24.476  ·    Opening the Reports page
+01:48:28.367  ✔    Navigation to Reports page initiated successfully
+01:48:28.573  ✔  Step completed in 4098 ms
+01:48:28.573  ○  ▶ Step 3 — Verify page loads successfully
+01:48:28.575  ·    Waiting for all Reports page elements to render
+01:48:38.881  ✘  Step failed after 10307 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('h1, h2, h3, [class*="title"], [class*="heading"]').filter({ hasText: /^Reports$/i }).or(getByRole('heading', { name: /^Reports$/i })).first()
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('h1, h2, h3, [class*="title"], [class*="heading"]').filter({ hasText: /^Reports$/i }).or(getByRole('heading', { name: /^Reports$/i })).first()
+    - waiting for navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:48:40.069  ·  Test run complete: "TC1 — All five transaction status cards are visible"
+────────────────────────────────────────────────────────────
+

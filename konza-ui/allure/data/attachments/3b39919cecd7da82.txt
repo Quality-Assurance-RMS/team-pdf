@@ -1,0 +1,21 @@
+01:47:36.283  ·  Test started: "TC1 — Date filter defaults to "Today""
+01:47:37.076  ○  ▶ Step 1 — Verifies the date filter dropdown is visible and shows "Today" as the default on the Reports page
+01:47:37.078  ·    Test scope: Verifies the date filter dropdown is visible and shows "Today" as the default on the Reports page
+01:47:37.079  ✔  Step completed in 3 ms
+01:47:37.083  ○  ▶ Step 2 — Navigate to Reports page
+01:47:37.084  ·    Opening the Reports page
+01:47:43.285  ✔    Navigation to Reports page initiated successfully
+01:47:44.285  ✔  Step completed in 7202 ms
+01:47:44.285  ○  ▶ Step 3 — Verify page loads successfully
+01:47:44.358  ·    Waiting for all Reports page elements to render
+01:47:59.492  ✘  Step failed after 15207 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/reports/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    31 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+01:48:01.265  ·  Test run complete: "TC1 — Date filter defaults to "Today""

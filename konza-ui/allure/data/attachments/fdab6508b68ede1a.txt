@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Clicking Security tab changes the active panel
+────────────────────────────────────────────────────────────
+01:49:53.982  ·  Test started: "TC3 — Clicking Security tab changes the active panel"
+01:49:55.065  ○  ▶ Step 1 — Verifies clicking the Security tab navigates away from the Profile Settings panel
+01:49:55.068  ·    Test scope: Verifies clicking the Security tab navigates away from the Profile Settings panel
+01:49:55.069  ✔  Step completed in 4 ms
+01:49:55.072  ○  ▶ Step 2 — Navigate to Settings page
+01:49:55.073  ·    Opening the Settings page
+01:50:00.167  ✔    Navigation to Settings page initiated successfully
+01:50:00.568  ✔  Step completed in 5497 ms
+01:50:00.569  ○  ▶ Step 3 — Verify page loads successfully
+01:50:00.569  ·    Waiting for all Settings page elements to render
+01:50:15.671  ✘  Step failed after 15103 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settings/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    - waiting for navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+    30 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:50:19.365  ·  Test run complete: "TC3 — Clicking Security tab changes the active panel"
+────────────────────────────────────────────────────────────
+

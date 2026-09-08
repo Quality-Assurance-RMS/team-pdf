@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Clicking Security tab changes the active panel
+────────────────────────────────────────────────────────────
+01:49:31.897  ·  Test started: "TC3 — Clicking Security tab changes the active panel"
+01:49:32.490  ○  ▶ Step 1 — Verifies clicking the Security tab navigates away from the Profile Settings panel
+01:49:32.492  ·    Test scope: Verifies clicking the Security tab navigates away from the Profile Settings panel
+01:49:32.558  ✔  Step completed in 68 ms
+01:49:32.560  ○  ▶ Step 2 — Navigate to Settings page
+01:49:32.561  ·    Opening the Settings page
+01:49:36.959  ✔    Navigation to Settings page initiated successfully
+01:49:37.268  ✔  Step completed in 4709 ms
+01:49:37.268  ○  ▶ Step 3 — Verify page loads successfully
+01:49:37.269  ·    Waiting for all Settings page elements to render
+01:49:47.479  ✘  Step failed after 10210 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: /^Settings$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByRole('heading', { name: /^Settings$/i })
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:49:49.596  ·  Test run complete: "TC3 — Clicking Security tab changes the active panel"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,24 @@
+01:38:17.359  ·  Test started: "TC1 — Invoice count sub-heading is visible"
+01:38:17.883  ○  ▶ Step 1 — Verifies the "N Invoices" count text is rendered under the Invoice heading
+01:38:17.885  ·    Test scope: Verifies the "N Invoices" count text is rendered under the Invoice heading
+01:38:17.886  ✔  Step completed in 3 ms
+01:38:17.888  ○  ▶ Step 2 — Navigate to Invoice page
+01:38:17.888  ·    Opening the Invoice page
+01:38:21.597  ✔    Navigation to Invoice page initiated successfully
+01:38:21.765  ✔  Step completed in 3878 ms
+01:38:21.765  ○  ▶ Step 3 — Verify page loads successfully
+01:38:21.766  ·    Waiting for all Invoice page elements to render
+01:38:31.972  ✘  Step failed after 10207 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })[22m
+[2m    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...[22m
+[2m    - navigated to "https://rms.uat.konza/auth/login"[22m
+
+01:38:33.287  ·  Test run complete: "TC1 — Invoice count sub-heading is visible"

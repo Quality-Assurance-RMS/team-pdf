@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Conversion Ratio is visible in the Settlement & Payout Overview
+────────────────────────────────────────────────────────────
+01:46:16.895  ·  Test started: "TC1 — Conversion Ratio is visible in the Settlement & Payout Overview"
+01:46:17.506  ○  ▶ Step 1 — Verifies the Conversion Ratio metric renders in the Settlement & Payout Overview section
+01:46:17.559  ·    Test scope: Verifies the Conversion Ratio metric renders in the Settlement & Payout Overview section
+01:46:17.559  ✔  Step completed in 53 ms
+01:46:17.561  ○  ▶ Step 2 — Navigate to Reports page
+01:46:17.563  ·    Opening the Reports page
+01:46:22.569  ✔    Navigation to Reports page initiated successfully
+01:46:23.376  ✔  Step completed in 5815 ms
+01:46:23.376  ○  ▶ Step 3 — Verify page loads successfully
+01:46:23.377  ·    Waiting for all Reports page elements to render
+01:46:38.466  ✘  Step failed after 15090 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/reports/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    31 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:46:41.103  ·  Test run complete: "TC1 — Conversion Ratio is visible in the Settlement & Payout Overview"
+────────────────────────────────────────────────────────────
+

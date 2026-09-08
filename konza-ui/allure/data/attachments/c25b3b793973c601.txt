@@ -1,0 +1,24 @@
+01:50:55.894  ·  Test started: "TC1 — "Settlements" heading and count are visible"
+01:50:56.665  ○  ▶ Step 1 — Verifies the Settlements heading and "X settlements have been initiated" text render on page load
+01:50:56.668  ·    Test scope: Verifies the Settlements heading and "X settlements have been initiated" text render on page load
+01:50:56.668  ✔  Step completed in 3 ms
+01:50:56.669  ○  ▶ Step 2 — Navigate to Settlements page
+01:50:56.670  ·    Opening the Settlements page
+01:51:00.391  ✔    Navigation to Settlements page initiated successfully
+01:51:00.566  ✔  Step completed in 3898 ms
+01:51:00.567  ○  ▶ Step 3 — Verify page loads successfully
+01:51:00.567  ·    Waiting for all Settlements page elements to render
+01:51:10.693  ✘  Step failed after 10127 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByText('Settlements').first()
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for getByText('Settlements').first()[22m
+[2m    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...[22m
+[2m    - navigated to "https://rms.uat.konza/auth/login"[22m
+
+01:51:13.574  ·  Test run complete: "TC1 — "Settlements" heading and count are visible"

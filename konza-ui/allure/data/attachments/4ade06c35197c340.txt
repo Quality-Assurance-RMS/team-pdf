@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Invoice table rows are loaded
+────────────────────────────────────────────────────────────
+01:40:06.886  ·  Test started: "TC2 — Invoice table rows are loaded"
+01:40:07.194  ○  ▶ Step 1 — Verifies the Invoice table renders at least one row after widening the period filter
+01:40:07.197  ·    Test scope: Verifies the Invoice table renders at least one row after widening the period filter
+01:40:07.197  ✔  Step completed in 3 ms
+01:40:07.209  ○  ▶ Step 2 — Navigate to Invoice page
+01:40:07.211  ·    Opening the Invoice page
+01:40:14.367  ✔    Navigation to Invoice page initiated successfully
+01:40:15.362  ✔  Step completed in 8153 ms
+01:40:15.362  ○  ▶ Step 3 — Verify page loads successfully
+01:40:15.365  ·    Waiting for all Invoice page elements to render
+01:40:30.470  ✘  Step failed after 15108 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    31 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:40:34.578  ·  Test run complete: "TC2 — Invoice table rows are loaded"
+────────────────────────────────────────────────────────────
+

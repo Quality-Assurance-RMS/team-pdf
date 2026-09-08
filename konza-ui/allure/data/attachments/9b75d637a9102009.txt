@@ -1,0 +1,26 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Opening a transaction row shows matching detail sections
+────────────────────────────────────────────────────────────
+01:53:21.264  ·  Test started: "TC1 — Opening a transaction row shows matching detail sections"
+01:53:22.080  ○  ▶ Step 1 — Login with OTP, open the first transaction row, and verify Transaction ID and detail sections on the detail page
+01:53:22.086  ·    Test scope: transaction detail navigation and content verification
+01:53:22.086  ✔  Step completed in 6 ms
+01:53:22.089  ○  ▶ Step 2 — Navigate to Transactions page
+01:53:22.158  ·    Opening the Transactions page and waiting for it to load
+01:53:38.365  ✘  Step failed after 16276 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: 'Transactions' })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByRole('heading', { name: 'Transactions' })
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:53:42.878  ·  Test run complete: "TC1 — Opening a transaction row shows matching detail sections"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Eye icon opens invoice detail with matching Invoice Number
+────────────────────────────────────────────────────────────
+01:37:59.569  ·  Test started: "TC1 — Eye icon opens invoice detail with matching Invoice Number"
+01:37:59.959  ○  ▶ Step 1 — Clicks the view icon on the first invoice row and verifies the Invoice Number appears on the detail view
+01:37:59.962  ·    Test scope: Clicks the view icon on the first invoice row and verifies the Invoice Number appears on the detail view
+01:37:59.963  ✔  Step completed in 3 ms
+01:37:59.964  ○  ▶ Step 2 — Navigate to Invoice page
+01:37:59.965  ·    Opening the Invoice page
+01:38:06.442  ✔    Navigation to Invoice page initiated successfully
+01:38:06.720  ✔  Step completed in 6755 ms
+01:38:06.720  ○  ▶ Step 3 — Verify page loads successfully
+01:38:06.720  ·    Waiting for all Invoice page elements to render
+01:38:21.761  ✘  Step failed after 15042 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:38:24.966  ·  Test run complete: "TC1 — Eye icon opens invoice detail with matching Invoice Number"
+────────────────────────────────────────────────────────────
+

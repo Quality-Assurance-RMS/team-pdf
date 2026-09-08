@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Settlement & Payout Overview section heading is visible
+────────────────────────────────────────────────────────────
+01:47:46.495  ·  Test started: "TC1 — Settlement & Payout Overview section heading is visible"
+01:47:47.059  ○  ▶ Step 1 — Verifies the Settlement & Payout Overview section renders on the Reports page
+01:47:47.062  ·    Test scope: Verifies the Settlement & Payout Overview section renders on the Reports page
+01:47:47.063  ✔  Step completed in 3 ms
+01:47:47.065  ○  ▶ Step 2 — Navigate to Reports page
+01:47:47.066  ·    Opening the Reports page
+01:47:52.268  ✔    Navigation to Reports page initiated successfully
+01:47:53.060  ✔  Step completed in 5995 ms
+01:47:53.060  ○  ▶ Step 3 — Verify page loads successfully
+01:47:53.061  ·    Waiting for all Reports page elements to render
+01:48:08.086  ✘  Step failed after 15026 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/reports/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:48:11.263  ·  Test run complete: "TC1 — Settlement & Payout Overview section heading is visible"
+────────────────────────────────────────────────────────────
+

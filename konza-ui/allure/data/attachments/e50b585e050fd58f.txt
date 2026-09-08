@@ -1,0 +1,23 @@
+01:48:37.596  ·  Test started: "TC1 — Profile card with name, email, and ADMIN role is visible"
+01:48:38.191  ○  ▶ Step 1 — Verifies the user profile card renders with name, email address, and ADMIN role
+01:48:38.193  ·    Test scope: Verifies the user profile card renders with name, email address, and ADMIN role
+01:48:38.194  ✔  Step completed in 3 ms
+01:48:38.195  ○  ▶ Step 2 — Navigate to Settings page
+01:48:38.196  ·    Opening the Settings page
+01:48:42.677  ✔    Navigation to Settings page initiated successfully
+01:48:43.059  ✔  Step completed in 4865 ms
+01:48:43.059  ○  ▶ Step 3 — Verify page loads successfully
+01:48:43.061  ·    Waiting for all Settings page elements to render
+01:48:58.091  ✘  Step failed after 15031 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/settings/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...[22m
+[2m    - navigated to "https://rms.uat.konza/auth/login"[22m
+[2m    32 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+01:48:59.823  ·  Test run complete: "TC1 — Profile card with name, email, and ADMIN role is visible"

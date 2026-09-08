@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Search bar is visible
+────────────────────────────────────────────────────────────
+01:52:54.062  ·  Test started: "TC1 — Search bar is visible"
+01:52:54.290  ○  ▶ Step 1 — Verifies the search input field renders on the Transactions page
+01:52:54.294  ·    Test scope: Verifies the search input field renders on the Transactions page
+01:52:54.294  ✔  Step completed in 3 ms
+01:52:54.295  ○  ▶ Step 2 — Navigate to Transactions page
+01:52:54.296  ·    Opening the Transactions page
+01:53:00.390  ✔    Navigation to Transactions page initiated successfully
+01:53:01.267  ✔  Step completed in 6972 ms
+01:53:01.267  ○  ▶ Step 3 — Verify page loads successfully
+01:53:01.269  ·    Waiting for all Transactions page elements to render
+01:53:06.373  ✘  Step failed after 5106 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/transaction/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 5000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 5000ms
+    11 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:53:10.077  ·  Test run complete: "TC1 — Search bar is visible"
+────────────────────────────────────────────────────────────
+

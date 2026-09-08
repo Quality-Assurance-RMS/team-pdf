@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Profile Settings, Security, and Notifications tabs are visible
+────────────────────────────────────────────────────────────
+01:49:20.386  ·  Test started: "TC1 — Profile Settings, Security, and Notifications tabs are visible"
+01:49:20.619  ○  ▶ Step 1 — Verifies all three settings tabs are rendered and visible on the Settings page
+01:49:20.621  ·    Test scope: Verifies all three settings tabs are rendered and visible on the Settings page
+01:49:20.622  ✔  Step completed in 3 ms
+01:49:20.624  ○  ▶ Step 2 — Navigate to Settings page
+01:49:20.625  ·    Opening the Settings page
+01:49:24.886  ✔    Navigation to Settings page initiated successfully
+01:49:25.281  ✔  Step completed in 4657 ms
+01:49:25.281  ○  ▶ Step 3 — Verify page loads successfully
+01:49:25.282  ·    Waiting for all Settings page elements to render
+01:49:35.506  ✘  Step failed after 10226 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: /^Settings$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByRole('heading', { name: /^Settings$/i })
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:49:38.814  ·  Test run complete: "TC1 — Profile Settings, Security, and Notifications tabs are visible"
+────────────────────────────────────────────────────────────
+

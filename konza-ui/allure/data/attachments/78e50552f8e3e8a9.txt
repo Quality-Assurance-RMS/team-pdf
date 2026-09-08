@@ -1,0 +1,24 @@
+01:46:55.499  ·  Test started: "TC1 — Settlement & Payout Overview heading and chart area are visible"
+01:46:55.717  ○  ▶ Step 1 — Verifies the Settlement & Payout Overview heading and chart area render on the Reports page
+01:46:55.718  ·    Test scope: Verifies the Settlement & Payout Overview heading and chart area render on the Reports page
+01:46:55.719  ✔  Step completed in 2 ms
+01:46:55.720  ○  ▶ Step 2 — Navigate to Reports page
+01:46:55.721  ·    Opening the Reports page
+01:46:59.658  ✔    Navigation to Reports page initiated successfully
+01:46:59.880  ✔  Step completed in 4160 ms
+01:46:59.880  ○  ▶ Step 3 — Verify page loads successfully
+01:46:59.881  ·    Waiting for all Reports page elements to render
+01:47:10.101  ✘  Step failed after 10221 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: locator('h1, h2, h3, [class*="title"], [class*="heading"]').filter({ hasText: /^Reports$/i }).or(getByRole('heading', { name: /^Reports$/i })).first()
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for locator('h1, h2, h3, [class*="title"], [class*="heading"]').filter({ hasText: /^Reports$/i }).or(getByRole('heading', { name: /^Reports$/i })).first()[22m
+[2m    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...[22m
+[2m    - navigated to "https://rms.uat.konza/auth/login"[22m
+
+01:47:11.920  ·  Test run complete: "TC1 — Settlement & Payout Overview heading and chart area are visible"

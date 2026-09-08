@@ -1,0 +1,24 @@
+01:50:32.303  ·  Test started: "TC1 — "Settled" status badge is visible in the table"
+01:50:32.506  ○  ▶ Step 1 — Verifies at least one Settled badge appears in the Settlement by Bank table
+01:50:32.508  ·    Test scope: Verifies at least one Settled badge appears in the Settlement by Bank table
+01:50:32.508  ✔  Step completed in 2 ms
+01:50:32.509  ○  ▶ Step 2 — Navigate to Settlements page
+01:50:32.510  ·    Opening the Settlements page
+01:50:36.783  ✔    Navigation to Settlements page initiated successfully
+01:50:36.978  ✔  Step completed in 4468 ms
+01:50:36.978  ○  ▶ Step 3 — Verify page loads successfully
+01:50:36.979  ·    Waiting for all Settlements page elements to render
+01:50:47.101  ✘  Step failed after 10123 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByText('Settlements').first()
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for getByText('Settlements').first()[22m
+[2m    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...[22m
+[2m    - navigated to "https://rms.uat.konza/auth/login"[22m
+
+01:50:50.259  ·  Test run complete: "TC1 — "Settled" status badge is visible in the table"

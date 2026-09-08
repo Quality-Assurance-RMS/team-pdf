@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Table loads with at least one transaction row
+────────────────────────────────────────────────────────────
+01:53:31.899  ·  Test started: "TC2 — Table loads with at least one transaction row"
+01:53:32.303  ○  ▶ Step 1 — Verifies the transactions table is populated with data rows after page load
+01:53:32.306  ·    Test scope: Verifies the transactions table is populated with data rows after page load
+01:53:32.306  ✔  Step completed in 4 ms
+01:53:32.307  ○  ▶ Step 2 — Navigate to Transactions page
+01:53:32.308  ·    Opening the Transactions page
+01:53:36.663  ✔    Navigation to Transactions page initiated successfully
+01:53:36.859  ✔  Step completed in 4552 ms
+01:53:36.859  ○  ▶ Step 3 — Verify page loads successfully
+01:53:36.860  ·    Waiting for all Transactions page elements to render
+01:53:47.184  ✘  Step failed after 10324 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: 'Transactions' })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByRole('heading', { name: 'Transactions' })
+    - waiting for navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:53:48.690  ·  Test run complete: "TC2 — Table loads with at least one transaction row"
+────────────────────────────────────────────────────────────
+

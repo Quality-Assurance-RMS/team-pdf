@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Status filter dropdown is visible
+────────────────────────────────────────────────────────────
+01:38:52.888  ·  Test started: "TC2 — Status filter dropdown is visible"
+01:38:53.101  ○  ▶ Step 1 — Verifies the "All Status" filter dropdown is rendered on the Invoice page
+01:38:53.104  ·    Test scope: Verifies the "All Status" filter dropdown is rendered on the Invoice page
+01:38:53.104  ✔  Step completed in 2 ms
+01:38:53.105  ○  ▶ Step 2 — Navigate to Invoice page
+01:38:53.106  ·    Opening the Invoice page
+01:38:57.393  ✔    Navigation to Invoice page initiated successfully
+01:38:57.876  ✔  Step completed in 4771 ms
+01:38:57.876  ○  ▶ Step 3 — Verify page loads successfully
+01:38:57.877  ·    Waiting for all Invoice page elements to render
+01:39:12.901  ✘  Step failed after 15024 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    - waiting for navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+    31 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:39:15.648  ·  Test run complete: "TC2 — Status filter dropdown is visible"
+────────────────────────────────────────────────────────────
+

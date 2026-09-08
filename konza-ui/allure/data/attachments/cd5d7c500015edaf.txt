@@ -1,0 +1,24 @@
+01:48:32.130  ·  Test started: "TC1 — "Save Changes" button is visible and enabled"
+01:48:32.383  ○  ▶ Step 1 — Verifies the Save Changes button is rendered and enabled on the Profile Settings tab
+01:48:32.385  ·    Test scope: Verifies the Save Changes button is rendered and enabled on the Profile Settings tab
+01:48:32.385  ✔  Step completed in 2 ms
+01:48:32.386  ○  ▶ Step 2 — Navigate to Settings page
+01:48:32.387  ·    Opening the Settings page
+01:48:36.400  ✔    Navigation to Settings page initiated successfully
+01:48:36.788  ✔  Step completed in 4402 ms
+01:48:36.788  ○  ▶ Step 3 — Verify page loads successfully
+01:48:36.789  ·    Waiting for all Settings page elements to render
+01:48:46.984  ✘  Step failed after 10196 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByRole('heading', { name: /^Settings$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for getByRole('heading', { name: /^Settings$/i })[22m
+[2m    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...[22m
+[2m    - navigated to "https://rms.uat.konza/auth/login"[22m
+
+01:48:48.229  ·  Test run complete: "TC1 — "Save Changes" button is visible and enabled"

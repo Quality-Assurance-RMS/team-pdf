@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All profile form fields are visible
+────────────────────────────────────────────────────────────
+01:49:13.085  ·  Test started: "TC1 — All profile form fields are visible"
+01:49:13.679  ○  ▶ Step 1 — Verifies Full Name, Email Address, Phone Number, and Role fields render in the Profile Settings form
+01:49:13.682  ·    Test scope: Verifies Full Name, Email Address, Phone Number, and Role fields render in the Profile Settings form
+01:49:13.683  ✔  Step completed in 4 ms
+01:49:13.685  ○  ▶ Step 2 — Navigate to Settings page
+01:49:13.686  ·    Opening the Settings page
+01:49:18.172  ✔    Navigation to Settings page initiated successfully
+01:49:18.377  ✔  Step completed in 4692 ms
+01:49:18.377  ○  ▶ Step 3 — Verify page loads successfully
+01:49:18.377  ·    Waiting for all Settings page elements to render
+01:49:28.581  ✘  Step failed after 10205 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: /^Settings$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByRole('heading', { name: /^Settings$/i })
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:49:29.820  ·  Test run complete: "TC1 — All profile form fields are visible"
+────────────────────────────────────────────────────────────
+

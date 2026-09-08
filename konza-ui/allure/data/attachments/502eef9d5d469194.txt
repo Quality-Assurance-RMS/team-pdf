@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Selected Bank Details" panel is visible
+────────────────────────────────────────────────────────────
+01:51:20.369  ·  Test started: "TC1 — "Selected Bank Details" panel is visible"
+01:51:20.763  ○  ▶ Step 1 — Verifies the Selected Bank Details side panel renders on the Settlements page
+01:51:20.765  ·    Test scope: Verifies the Selected Bank Details side panel renders on the Settlements page
+01:51:20.766  ✔  Step completed in 2 ms
+01:51:20.768  ○  ▶ Step 2 — Navigate to Settlements page
+01:51:20.769  ·    Opening the Settlements page
+01:51:26.377  ✔    Navigation to Settlements page initiated successfully
+01:51:27.386  ✔  Step completed in 6618 ms
+01:51:27.386  ○  ▶ Step 3 — Verify page loads successfully
+01:51:27.388  ·    Waiting for all Settlements page elements to render
+01:51:42.501  ✘  Step failed after 15115 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settlements/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    31 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:51:47.588  ·  Test run complete: "TC1 — "Selected Bank Details" panel is visible"
+────────────────────────────────────────────────────────────
+

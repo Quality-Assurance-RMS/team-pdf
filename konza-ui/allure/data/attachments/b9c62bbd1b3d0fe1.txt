@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Date filter defaults to "Today"
+────────────────────────────────────────────────────────────
+01:47:13.178  ·  Test started: "TC1 — Date filter defaults to "Today""
+01:47:13.392  ○  ▶ Step 1 — Verifies the date filter dropdown is visible and shows "Today" as the default on the Reports page
+01:47:13.394  ·    Test scope: Verifies the date filter dropdown is visible and shows "Today" as the default on the Reports page
+01:47:13.395  ✔  Step completed in 3 ms
+01:47:13.396  ○  ▶ Step 2 — Navigate to Reports page
+01:47:13.397  ·    Opening the Reports page
+01:47:17.798  ✔    Navigation to Reports page initiated successfully
+01:47:17.972  ✔  Step completed in 4576 ms
+01:47:17.972  ○  ▶ Step 3 — Verify page loads successfully
+01:47:17.973  ·    Waiting for all Reports page elements to render
+01:47:28.084  ✘  Step failed after 10111 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('h1, h2, h3, [class*="title"], [class*="heading"]').filter({ hasText: /^Reports$/i }).or(getByRole('heading', { name: /^Reports$/i })).first()
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('h1, h2, h3, [class*="title"], [class*="heading"]').filter({ hasText: /^Reports$/i }).or(getByRole('heading', { name: /^Reports$/i })).first()
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:47:31.077  ·  Test run complete: "TC1 — Date filter defaults to "Today""
+────────────────────────────────────────────────────────────
+

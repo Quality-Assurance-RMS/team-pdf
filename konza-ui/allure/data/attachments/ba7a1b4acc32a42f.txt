@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Settlement by Bank table loads with at least one row
+────────────────────────────────────────────────────────────
+01:51:49.872  ·  Test started: "TC2 — Settlement by Bank table loads with at least one row"
+01:51:50.208  ○  ▶ Step 1 — Verifies the Settlement by Bank table is populated with data rows after page load
+01:51:50.211  ·    Test scope: Verifies the Settlement by Bank table is populated with data rows after page load
+01:51:50.211  ✔  Step completed in 3 ms
+01:51:50.258  ○  ▶ Step 2 — Navigate to Settlements page
+01:51:50.259  ·    Opening the Settlements page
+01:51:55.271  ✔    Navigation to Settlements page initiated successfully
+01:51:56.284  ✔  Step completed in 6025 ms
+01:51:56.284  ○  ▶ Step 3 — Verify page loads successfully
+01:51:56.361  ·    Waiting for all Settlements page elements to render
+01:52:11.566  ✘  Step failed after 15282 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settlements/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    28 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:52:14.000  ·  Test run complete: "TC2 — Settlement by Bank table loads with at least one row"
+────────────────────────────────────────────────────────────
+

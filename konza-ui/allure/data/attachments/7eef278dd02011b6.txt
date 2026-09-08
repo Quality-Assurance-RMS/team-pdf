@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Save Changes" button is visible and enabled
+────────────────────────────────────────────────────────────
+01:48:12.765  ·  Test started: "TC1 — "Save Changes" button is visible and enabled"
+01:48:12.962  ○  ▶ Step 1 — Verifies the Save Changes button is rendered and enabled on the Profile Settings tab
+01:48:12.965  ·    Test scope: Verifies the Save Changes button is rendered and enabled on the Profile Settings tab
+01:48:12.965  ✔  Step completed in 3 ms
+01:48:12.966  ○  ▶ Step 2 — Navigate to Settings page
+01:48:12.967  ·    Opening the Settings page
+01:48:17.465  ✔    Navigation to Settings page initiated successfully
+01:48:17.700  ✔  Step completed in 4734 ms
+01:48:17.700  ○  ▶ Step 3 — Verify page loads successfully
+01:48:17.701  ·    Waiting for all Settings page elements to render
+01:48:28.083  ✘  Step failed after 10382 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: /^Settings$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByRole('heading', { name: /^Settings$/i })
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:48:30.790  ·  Test run complete: "TC1 — "Save Changes" button is visible and enabled"
+────────────────────────────────────────────────────────────
+

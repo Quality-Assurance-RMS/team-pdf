@@ -1,0 +1,24 @@
+01:38:51.675  ·  Test started: "TC1 — Period filter dropdown is visible"
+01:38:52.060  ○  ▶ Step 1 — Verifies the "Today" period filter dropdown is rendered on the Invoice page
+01:38:52.062  ·    Test scope: Verifies the "Today" period filter dropdown is rendered on the Invoice page
+01:38:52.062  ✔  Step completed in 3 ms
+01:38:52.064  ○  ▶ Step 2 — Navigate to Invoice page
+01:38:52.065  ·    Opening the Invoice page
+01:38:55.562  ✔    Navigation to Invoice page initiated successfully
+01:38:55.879  ✔  Step completed in 3816 ms
+01:38:55.879  ○  ▶ Step 3 — Verify page loads successfully
+01:38:55.880  ·    Waiting for all Invoice page elements to render
+01:39:06.186  ✘  Step failed after 10306 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })[22m
+[2m    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...[22m
+[2m    - navigated to "https://rms.uat.konza/auth/login"[22m
+
+01:39:08.060  ·  Test run complete: "TC1 — Period filter dropdown is visible"

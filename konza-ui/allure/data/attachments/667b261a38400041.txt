@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All four summary cards are visible
+────────────────────────────────────────────────────────────
+01:50:44.801  ·  Test started: "TC1 — All four summary cards are visible"
+01:50:45.374  ○  ▶ Step 1 — Verifies Gross Collected, Total Fees, Net Settlement, and Last Settlement cards render on the Settlements page
+01:50:45.377  ·    Test scope: Verifies Gross Collected, Total Fees, Net Settlement, and Last Settlement cards render on the Settlements page
+01:50:45.379  ✔  Step completed in 5 ms
+01:50:45.381  ○  ▶ Step 2 — Navigate to Settlements page
+01:50:45.384  ·    Opening the Settlements page
+01:50:50.174  ✔    Navigation to Settlements page initiated successfully
+01:50:50.571  ✔  Step completed in 5191 ms
+01:50:50.571  ○  ▶ Step 3 — Verify page loads successfully
+01:50:50.573  ·    Waiting for all Settlements page elements to render
+01:51:05.673  ✘  Step failed after 15101 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settlements/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+    30 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:51:07.412  ·  Test run complete: "TC1 — All four summary cards are visible"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — All table column headers are visible
+────────────────────────────────────────────────────────────
+01:39:51.868  ·  Test started: "TC1 — All table column headers are visible"
+01:39:52.669  ○  ▶ Step 1 — Verifies that Invoice No, Transaction ID, Date, MCDA, Service Name, Method, Currency, Amount, Status, and Action columns are present
+01:39:52.672  ·    Test scope: Verifies that Invoice No, Transaction ID, Date, MCDA, Service Name, Method, Currency, Amount, Status, and Action columns are present
+01:39:52.673  ✔  Step completed in 3 ms
+01:39:52.677  ○  ▶ Step 2 — Navigate to Invoice page
+01:39:52.678  ·    Opening the Invoice page
+01:39:56.608  ✔    Navigation to Invoice page initiated successfully
+01:39:56.781  ✔  Step completed in 4104 ms
+01:39:56.781  ○  ▶ Step 3 — Verify page loads successfully
+01:39:56.781  ·    Waiting for all Invoice page elements to render
+01:40:06.928  ✘  Step failed after 10147 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:40:12.583  ·  Test run complete: "TC1 — All table column headers are visible"
+────────────────────────────────────────────────────────────
+

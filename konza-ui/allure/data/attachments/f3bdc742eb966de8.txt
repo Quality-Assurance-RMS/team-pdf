@@ -1,0 +1,23 @@
+01:53:04.164  ·  Test started: "TC1 — All three overview cards are visible"
+01:53:04.792  ○  ▶ Step 1 — Verifies Total Volume of Transactions, Successful Rate, and Failed Rate cards render on the Transactions page
+01:53:04.794  ·    Test scope: Verifies Total Volume of Transactions, Successful Rate, and Failed Rate cards render on the Transactions page
+01:53:04.794  ✔  Step completed in 2 ms
+01:53:04.795  ○  ▶ Step 2 — Navigate to Transactions page
+01:53:04.796  ·    Opening the Transactions page
+01:53:10.574  ✔    Navigation to Transactions page initiated successfully
+01:53:11.066  ✔  Step completed in 6271 ms
+01:53:11.066  ○  ▶ Step 3 — Verify page loads successfully
+01:53:11.072  ·    Waiting for all Transactions page elements to render
+01:53:16.183  ✘  Step failed after 5117 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...[22m
+[2m    - navigated to "https://rms.uat.konza/auth/login"[22m
+[2m    10 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+01:53:18.475  ·  Test run complete: "TC1 — All three overview cards are visible"

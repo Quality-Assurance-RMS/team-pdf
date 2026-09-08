@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Status filter dropdown is visible
+────────────────────────────────────────────────────────────
+01:39:19.291  ·  Test started: "TC2 — Status filter dropdown is visible"
+01:39:19.873  ○  ▶ Step 1 — Verifies the "All Status" filter dropdown is rendered on the Invoice page
+01:39:19.876  ·    Test scope: Verifies the "All Status" filter dropdown is rendered on the Invoice page
+01:39:19.877  ✔  Step completed in 3 ms
+01:39:19.878  ○  ▶ Step 2 — Navigate to Invoice page
+01:39:19.879  ·    Opening the Invoice page
+01:39:24.168  ✔    Navigation to Invoice page initiated successfully
+01:39:24.485  ✔  Step completed in 4606 ms
+01:39:24.485  ○  ▶ Step 3 — Verify page loads successfully
+01:39:24.486  ·    Waiting for all Invoice page elements to render
+01:39:34.767  ✘  Step failed after 10282 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+    - waiting for navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:39:37.789  ·  Test run complete: "TC2 — Status filter dropdown is visible"
+────────────────────────────────────────────────────────────
+

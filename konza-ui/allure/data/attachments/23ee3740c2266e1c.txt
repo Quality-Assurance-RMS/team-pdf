@@ -1,0 +1,24 @@
+01:48:49.590  ·  Test started: "TC1 — "Settings" heading is visible"
+01:48:50.190  ○  ▶ Step 1 — Verifies the Settings heading renders on the Settings page after navigation
+01:48:50.193  ·    Test scope: Verifies the Settings heading renders on the Settings page after navigation
+01:48:50.258  ✔  Step completed in 68 ms
+01:48:50.259  ○  ▶ Step 2 — Navigate to Settings page
+01:48:50.263  ·    Opening the Settings page
+01:48:54.294  ✔    Navigation to Settings page initiated successfully
+01:48:54.464  ✔  Step completed in 4204 ms
+01:48:54.464  ○  ▶ Step 3 — Verify page loads successfully
+01:48:54.464  ·    Waiting for all Settings page elements to render
+01:49:04.567  ✘  Step failed after 10103 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByRole('heading', { name: /^Settings$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for getByRole('heading', { name: /^Settings$/i })[22m
+[2m    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...[22m
+[2m    - navigated to "https://rms.uat.konza/auth/login"[22m
+
+01:49:07.113  ·  Test run complete: "TC1 — "Settings" heading is visible"

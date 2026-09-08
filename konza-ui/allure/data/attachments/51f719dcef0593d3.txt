@@ -1,0 +1,21 @@
+01:51:08.518  ·  Test started: "TC1 — All Settlement by Bank table columns are visible"
+01:51:08.710  ○  ▶ Step 1 — Verifies all 6 column headers are present in the Settlement by Bank table
+01:51:08.712  ·    Test scope: Verifies all 6 column headers are present in the Settlement by Bank table
+01:51:08.712  ✔  Step completed in 2 ms
+01:51:08.713  ○  ▶ Step 2 — Navigate to Settlements page
+01:51:08.714  ·    Opening the Settlements page
+01:51:13.983  ✔    Navigation to Settlements page initiated successfully
+01:51:14.880  ✔  Step completed in 6167 ms
+01:51:14.880  ○  ▶ Step 3 — Verify page loads successfully
+01:51:14.882  ·    Waiting for all Settlements page elements to render
+01:51:29.966  ✘  Step failed after 15086 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/settlements/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    30 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+01:51:31.722  ·  Test run complete: "TC1 — All Settlement by Bank table columns are visible"

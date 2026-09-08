@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Settlements" heading and count are visible
+────────────────────────────────────────────────────────────
+01:51:18.993  ·  Test started: "TC1 — "Settlements" heading and count are visible"
+01:51:19.466  ○  ▶ Step 1 — Verifies the Settlements heading and "X settlements have been initiated" text render on page load
+01:51:19.468  ·    Test scope: Verifies the Settlements heading and "X settlements have been initiated" text render on page load
+01:51:19.468  ✔  Step completed in 2 ms
+01:51:19.470  ○  ▶ Step 2 — Navigate to Settlements page
+01:51:19.472  ·    Opening the Settlements page
+01:51:24.287  ✔    Navigation to Settlements page initiated successfully
+01:51:26.162  ✔  Step completed in 6692 ms
+01:51:26.162  ○  ▶ Step 3 — Verify page loads successfully
+01:51:26.164  ·    Waiting for all Settlements page elements to render
+01:51:41.384  ✘  Step failed after 15222 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settlements/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:51:44.776  ·  Test run complete: "TC1 — "Settlements" heading and count are visible"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,21 @@
+01:51:48.607  ·  Test started: "TC1 — Eye icon opens transaction detail with matching Transaction ID"
+01:51:49.094  ○  ▶ Step 1 — Clicks the view icon on the first transaction row and verifies the Transaction ID appears on the detail view
+01:51:49.096  ·    Test scope: Clicks the view icon on the first transaction row and verifies the Transaction ID appears on the detail view
+01:51:49.097  ✔  Step completed in 4 ms
+01:51:49.098  ○  ▶ Step 2 — Navigate to Transactions page
+01:51:49.100  ·    Opening the Transactions page
+01:51:52.784  ✔    Navigation to Transactions page initiated successfully
+01:51:53.783  ✔  Step completed in 4684 ms
+01:51:53.784  ○  ▶ Step 3 — Verify page loads successfully
+01:51:53.859  ·    Waiting for all Transactions page elements to render
+01:51:59.067  ✘  Step failed after 5283 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/transaction/[39m
+Received string:  [31m"https://rms.uat.konza/auth/login"[39m
+Timeout: 5000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 5000ms[22m
+[2m    7 × unexpected value "https://rms.uat.konza/auth/login"[22m
+
+01:52:00.973  ·  Test run complete: "TC1 — Eye icon opens transaction detail with matching Transaction ID"

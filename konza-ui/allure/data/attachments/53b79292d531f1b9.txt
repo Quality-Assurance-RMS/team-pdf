@@ -1,0 +1,31 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Empty form submission shows validation errors
+────────────────────────────────────────────────────────────
+01:47:48.881  ·  Test started: "TC1 — Empty form submission shows validation errors"
+01:47:53.918  ○  ▶ Step 1 — Verifies that submitting the login form with no input shows inline validation messages
+01:47:53.921  ·    Test scope: empty-form validation messaging
+01:47:53.921  ✔  Step completed in 2 ms
+01:47:53.921  ○  ▶ Step 2 — Click login with empty form and verify validation messages
+01:47:53.922  ·    Clicking the login button without entering any credentials
+01:50:17.361  ✘  Step failed after 143440 ms — locator.click: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: /log in/i })
+    - locator resolved to <button disabled type="submit" class=" bg-[#059669] rounded-lg flex items-center py-2 text-white flex justify-center↵                        hover:cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed">Log In →</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    269 × waiting for element to be visible, enabled and stable
+        - element is not enabled
+      - retrying click action
+        - waiting 500ms
+
+01:50:17.369  ·  Test run complete: "TC1 — Empty form submission shows validation errors"
+────────────────────────────────────────────────────────────
+

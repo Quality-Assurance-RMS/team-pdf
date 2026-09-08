@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Paid status badge is visible
+────────────────────────────────────────────────────────────
+01:38:31.599  ·  Test started: "TC1 — Paid status badge is visible"
+01:38:32.089  ○  ▶ Step 1 — Verifies a "Paid" status badge renders in the Invoice table after widening the period filter
+01:38:32.160  ·    Test scope: Verifies a "Paid" status badge renders in the Invoice table after widening the period filter
+01:38:32.161  ✔  Step completed in 72 ms
+01:38:32.162  ○  ▶ Step 2 — Navigate to Invoice page
+01:38:32.164  ·    Opening the Invoice page
+01:38:36.061  ✔    Navigation to Invoice page initiated successfully
+01:38:36.185  ✔  Step completed in 4023 ms
+01:38:36.185  ○  ▶ Step 3 — Verify page loads successfully
+01:38:36.186  ·    Waiting for all Invoice page elements to render
+01:38:46.292  ✘  Step failed after 10107 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:38:48.898  ·  Test run complete: "TC1 — Paid status badge is visible"
+────────────────────────────────────────────────────────────
+

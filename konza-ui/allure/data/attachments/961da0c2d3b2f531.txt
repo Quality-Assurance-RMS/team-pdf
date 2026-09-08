@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Settlement and Payout overview values are visible
+────────────────────────────────────────────────────────────
+01:47:33.786  ·  Test started: "TC1 — Settlement and Payout overview values are visible"
+01:47:34.891  ○  ▶ Step 1 — Verifies Settlement KES/USD and Payout KES/USD sections render in the Settlement & Payout Overview
+01:47:34.963  ·    Test scope: Verifies Settlement KES/USD and Payout KES/USD sections render in the Settlement & Payout Overview
+01:47:34.963  ✔  Step completed in 72 ms
+01:47:34.965  ○  ▶ Step 2 — Navigate to Reports page
+01:47:34.969  ·    Opening the Reports page
+01:47:40.164  ✔    Navigation to Reports page initiated successfully
+01:47:41.079  ✔  Step completed in 6114 ms
+01:47:41.080  ○  ▶ Step 3 — Verify page loads successfully
+01:47:41.160  ·    Waiting for all Reports page elements to render
+01:47:56.183  ✘  Step failed after 15104 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/reports/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+    29 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:47:57.877  ·  Test run complete: "TC1 — Settlement and Payout overview values are visible"
+────────────────────────────────────────────────────────────
+

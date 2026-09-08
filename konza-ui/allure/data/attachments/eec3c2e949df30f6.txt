@@ -1,0 +1,22 @@
+01:49:08.349  ·  Test started: "TC1 — "Settings" heading is visible"
+01:49:08.530  ○  ▶ Step 1 — Verifies the Settings heading renders on the Settings page after navigation
+01:49:08.531  ·    Test scope: Verifies the Settings heading renders on the Settings page after navigation
+01:49:08.532  ✔  Step completed in 2 ms
+01:49:08.533  ○  ▶ Step 2 — Navigate to Settings page
+01:49:08.534  ·    Opening the Settings page
+01:49:12.781  ✔    Navigation to Settings page initiated successfully
+01:49:13.072  ✔  Step completed in 4538 ms
+01:49:13.072  ○  ▶ Step 3 — Verify page loads successfully
+01:49:13.073  ·    Waiting for all Settings page elements to render
+01:49:23.208  ✘  Step failed after 10136 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByRole('heading', { name: /^Settings$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for getByRole('heading', { name: /^Settings$/i })[22m
+
+01:49:25.987  ·  Test run complete: "TC1 — "Settings" heading is visible"

@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Invoice Information and Items details sections are visible
+────────────────────────────────────────────────────────────
+01:38:42.912  ·  Test started: "TC1 — Invoice Information and Items details sections are visible"
+01:38:43.325  ○  ▶ Step 1 — Opens the first invoice detail view and verifies the Invoice Information section and Items details table are rendered
+01:38:43.327  ·    Test scope: Opens the first invoice detail view and verifies the Invoice Information section and Items details table are rendered
+01:38:43.327  ✔  Step completed in 2 ms
+01:38:43.329  ○  ▶ Step 2 — Navigate to Invoice page
+01:38:43.330  ·    Opening the Invoice page
+01:38:47.387  ✔    Navigation to Invoice page initiated successfully
+01:38:47.759  ✔  Step completed in 4431 ms
+01:38:47.759  ○  ▶ Step 3 — Verify page loads successfully
+01:38:47.760  ·    Waiting for all Invoice page elements to render
+01:38:57.974  ✘  Step failed after 10214 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+    - waiting for navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:39:00.282  ·  Test run complete: "TC1 — Invoice Information and Items details sections are visible"
+────────────────────────────────────────────────────────────
+

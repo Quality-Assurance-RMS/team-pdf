@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Method filter dropdown is visible
+────────────────────────────────────────────────────────────
+01:39:21.708  ·  Test started: "TC3 — Method filter dropdown is visible"
+01:39:22.175  ○  ▶ Step 1 — Verifies the "All Method" filter dropdown is rendered on the Invoice page
+01:39:22.177  ·    Test scope: Verifies the "All Method" filter dropdown is rendered on the Invoice page
+01:39:22.178  ✔  Step completed in 2 ms
+01:39:22.179  ○  ▶ Step 2 — Navigate to Invoice page
+01:39:22.179  ·    Opening the Invoice page
+01:39:27.460  ✔    Navigation to Invoice page initiated successfully
+01:39:27.858  ✔  Step completed in 5680 ms
+01:39:27.858  ○  ▶ Step 3 — Verify page loads successfully
+01:39:27.860  ·    Waiting for all Invoice page elements to render
+01:39:38.097  ✘  Step failed after 10238 ms — expect(locator).toBeVisible() failed
+
+Locator: locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('h1, h2, h3').filter({ hasText: /^Invoice$/i })
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:39:42.187  ·  Test run complete: "TC3 — Method filter dropdown is visible"
+────────────────────────────────────────────────────────────
+

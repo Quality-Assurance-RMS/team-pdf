@@ -1,0 +1,24 @@
+01:50:36.168  ·  Test started: "TC1 — "Settlement by Bank" heading is visible"
+01:50:36.698  ○  ▶ Step 1 — Verifies the Settlement by Bank section heading renders on the Settlements page
+01:50:36.760  ·    Test scope: Verifies the Settlement by Bank section heading renders on the Settlements page
+01:50:36.761  ✔  Step completed in 63 ms
+01:50:36.762  ○  ▶ Step 2 — Navigate to Settlements page
+01:50:36.764  ·    Opening the Settlements page
+01:50:40.198  ✔    Navigation to Settlements page initiated successfully
+01:50:40.377  ✔  Step completed in 3614 ms
+01:50:40.377  ○  ▶ Step 3 — Verify page loads successfully
+01:50:40.377  ·    Waiting for all Settlements page elements to render
+01:50:50.487  ✘  Step failed after 10110 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByText('Settlements').first()
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for getByText('Settlements').first()[22m
+[2m    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...[22m
+[2m    - navigated to "https://rms.uat.konza/auth/login"[22m
+
+01:50:54.172  ·  Test run complete: "TC1 — "Settlement by Bank" heading is visible"

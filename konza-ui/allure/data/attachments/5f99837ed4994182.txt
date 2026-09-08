@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Profile Settings tab is active by default
+────────────────────────────────────────────────────────────
+01:49:27.720  ·  Test started: "TC2 — Profile Settings tab is active by default"
+01:49:28.026  ○  ▶ Step 1 — Verifies Profile Settings is the default active tab by checking the Profile Information form is shown on page load
+01:49:28.028  ·    Test scope: Verifies Profile Settings is the default active tab by checking the Profile Information form is shown on page load
+01:49:28.028  ✔  Step completed in 2 ms
+01:49:28.029  ○  ▶ Step 2 — Navigate to Settings page
+01:49:28.030  ·    Opening the Settings page
+01:49:32.259  ✔    Navigation to Settings page initiated successfully
+01:49:32.488  ✔  Step completed in 4459 ms
+01:49:32.488  ○  ▶ Step 3 — Verify page loads successfully
+01:49:32.558  ·    Waiting for all Settings page elements to render
+01:49:42.695  ✘  Step failed after 10207 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: /^Settings$/i })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByRole('heading', { name: /^Settings$/i })
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:49:45.873  ·  Test run complete: "TC2 — Profile Settings tab is active by default"
+────────────────────────────────────────────────────────────
+

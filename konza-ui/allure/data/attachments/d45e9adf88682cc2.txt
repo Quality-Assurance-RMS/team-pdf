@@ -1,0 +1,30 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Search bar is visible
+────────────────────────────────────────────────────────────
+01:53:15.977  ·  Test started: "TC1 — Search bar is visible"
+01:53:17.569  ○  ▶ Step 1 — Verifies the search input field renders on the Transactions page
+01:53:17.572  ·    Test scope: Verifies the search input field renders on the Transactions page
+01:53:17.579  ✔  Step completed in 10 ms
+01:53:17.586  ○  ▶ Step 2 — Navigate to Transactions page
+01:53:17.588  ·    Opening the Transactions page
+01:53:21.970  ✔    Navigation to Transactions page initiated successfully
+01:53:22.363  ✔  Step completed in 4777 ms
+01:53:22.363  ○  ▶ Step 3 — Verify page loads successfully
+01:53:22.364  ·    Waiting for all Transactions page elements to render
+01:53:32.480  ✘  Step failed after 10117 ms — expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: 'Transactions' })
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByRole('heading', { name: 'Transactions' })
+    - waiting for" https://rms.uat.konza/auth/login" navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+
+01:53:34.210  ·  Test run complete: "TC1 — Search bar is visible"
+────────────────────────────────────────────────────────────
+

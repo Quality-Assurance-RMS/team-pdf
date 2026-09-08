@@ -1,0 +1,29 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Date filter defaults to "Last 7 Days"
+────────────────────────────────────────────────────────────
+01:50:49.565  ·  Test started: "TC1 — Date filter defaults to "Last 7 Days""
+01:50:50.581  ○  ▶ Step 1 — Verifies the date filter dropdown is visible and shows "Last 7 Days" as the default
+01:50:50.583  ·    Test scope: Verifies the date filter dropdown is visible and shows "Last 7 Days" as the default
+01:50:50.584  ✔  Step completed in 3 ms
+01:50:50.585  ○  ▶ Step 2 — Navigate to Settlements page
+01:50:50.587  ·    Opening the Settlements page
+01:50:55.771  ✔    Navigation to Settlements page initiated successfully
+01:50:56.262  ✔  Step completed in 5676 ms
+01:50:56.262  ○  ▶ Step 3 — Verify page loads successfully
+01:50:56.264  ·    Waiting for all Settlements page elements to render
+01:51:11.288  ✘  Step failed after 15027 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settlements/
+Received string:  "https://rms.uat.konza/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    - waiting for navigation to finish...
+    - navigated to "https://rms.uat.konza/auth/login"
+    31 × unexpected value "https://rms.uat.konza/auth/login"
+
+01:51:17.971  ·  Test run complete: "TC1 — Date filter defaults to "Last 7 Days""
+────────────────────────────────────────────────────────────
+
