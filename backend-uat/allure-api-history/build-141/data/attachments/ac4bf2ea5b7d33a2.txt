@@ -1,0 +1,20 @@
+17:25:46.137  ·  Test started: "TC-ASUM-011 – BUG-ASUM-10: Cache-Control and security headers must be present"
+17:25:46.141  ○  ▶ Step 1 – Fetch response headers
+17:25:46.228  ·    GET /api/v1/analytics/dashboard/summary
+17:25:47.431  ✔    HTTP 502 received
+17:25:47.436  ✔  Step completed in 1294 ms
+17:25:47.436  ○  ▶ Step 2 – Cache-Control must prevent caching of real-time analytics
+17:25:47.450  ·    Asserting: Cache-Control header is present
+17:25:47.463  ✔    All assertions passed
+17:25:47.463  ✔  Step completed in 28 ms
+17:25:47.463  ○  ▶ Step 3 – X-Content-Type-Options: nosniff must be present
+17:25:47.530  ·    Asserting: X-Content-Type-Options: nosniff present
+17:25:47.534  ✔    All assertions passed
+17:25:47.535  ✔  Step completed in 71 ms
+17:25:47.535  ○  ▶ Step 4 – X-Frame-Options must be present
+17:25:47.539  ·    Asserting: X-Frame-Options header present
+17:25:47.542  ✔    All assertions passed
+17:25:47.542  ✔  Step completed in 7 ms
+17:25:47.542  ○  ▶ Step 5 – Full security header audit
+17:25:47.544  ✔  Step completed in 2 ms
+17:25:47.546  ·  Test run complete: "TC-ASUM-011 – BUG-ASUM-10: Cache-Control and security headers must be present"

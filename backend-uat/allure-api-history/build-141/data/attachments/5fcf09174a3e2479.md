@@ -1,0 +1,175 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: API/backend-tests/backend-invoice-webhook.spec.ts >> NUIS Invoice API — rms-invoice-webhook-listener (UAT/Konza) >> TC3 — Unpaid invoice is still accepted
+- Location: tests/API/backend-tests/backend-invoice-webhook.spec.ts:129:7
+
+# Error details
+
+```
+Error: invoice POST should return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 401
+```
+
+# Test source
+
+```ts
+  1   | import { test, expect } from '../fixtures';
+  2   | import { allure } from 'allure-playwright';
+  3   | import supertest from 'supertest';
+  4   | import '../../utils/konzaTokenHelper'; // side-effect only: sets NODE_TLS_REJECT_UNAUTHORIZED=0 for Konza's self-signed cert
+  5   | import { signInvoicePayload, signInvoicePayloadAtTimestamp } from '../../utils/invoiceWebhookHmac';
+  6   | import {
+  7   |   buildPaidInvoice, buildUnpaidInvoice, buildMultiItemInvoice,
+  8   | } from '../../utils/invoiceWebhookPayload';
+  9   | import { verifyInvoiceInKonzaDb, isKonzaDbConfigured } from '../../utils/invoiceDbVerification';
+  10  | 
+  11  | // ---------------------------------------------------------------------------
+  12  | // NUIS Invoice API — rms-invoice-webhook-listener (UAT / Konza)
+  13  | //
+  14  | // Endpoint:   POST https://rms.uat.konza/invoice-webhook/api/v1/invoices
+  15  | //             (hyphenated "invoice-webhook" — confirmed consistently in both
+  16  | //             the informal email and the Integration Guide PDF for UAT.
+  17  | //             Staging's path is different — see the sibling spec file.)
+  18  | // Auth:       HMAC — X-Webhook-Timestamp (unix secs) + X-Webhook-Signature
+  19  | //             (sha256=<hex>, HMAC_SHA256(secret, "<timestamp>.<raw_body>"))
+  20  | // Replay:     signature valid for 5 minutes from generation (either direction)
+  21  | // 200 body:   {"status": "accepted"} — processing continues async server-side.
+  22  | //
+  23  | // STATUS: mirrors tests/API/invoice-webhook.spec.ts (Staging). Still blocked on:
+  24  | //   1. KONZA_INVOICE_WEBHOOK_HMAC_SECRET in .env (currently blank — via the
+  25  | //      secure channel, coordinated through @Niranjana)
+  26  | //   2. KONZA_DB_* credentials in .env (currently blank), and confirmation of
+  27  | //      the UAT DB schema name (KONZA_DB_SCHEMA — the guide's DB query sample
+  28  | //      only showed 'staging', not confirmed for UAT)
+  29  | // ---------------------------------------------------------------------------
+  30  | 
+  31  | const BASE_URL     = process.env.KONZA_BASE_URL ?? 'https://rms.uat.konza';
+  32  | const INVOICE_PATH = '/invoice-webhook/api/v1/invoices';
+  33  | const HMAC_SECRET  = process.env.KONZA_INVOICE_WEBHOOK_HMAC_SECRET ?? '';
+  34  | 
+  35  | const DB_PROCESSING_WAIT_MS = 5000;
+  36  | 
+  37  | async function postInvoice(rawBody: string, headers: Record<string, string>) {
+  38  |   let req = supertest(BASE_URL).post(INVOICE_PATH).set('Content-Type', 'application/json');
+  39  |   for (const [key, value] of Object.entries(headers)) {
+  40  |     req = req.set(key, value);
+  41  |   }
+  42  |   const res = await req.send(rawBody);
+  43  |   console.log(`[invoice-webhook-konza] status=${res.status} body=${JSON.stringify(res.body)}`);
+  44  |   return res;
+  45  | }
+  46  | 
+  47  | function expectAccepted(res: supertest.Response) {
+> 48  |   expect(res.status, 'invoice POST should return 200').toBe(200);
+      |                                                        ^ Error: invoice POST should return 200
+  49  |   expect(res.body.status, 'response body should be {"status":"accepted"}').toBe('accepted');
+  50  | }
+  51  | 
+  52  | function expect401WithCode(res: supertest.Response, expectedCode: string) {
+  53  |   expect(res.status, `expected 401, got ${res.status} — body: ${JSON.stringify(res.body)}`).toBe(401);
+  54  |   expect(res.body?.error?.code, `expected error.code=${expectedCode}`).toBe(expectedCode);
+  55  | }
+  56  | 
+  57  | test.describe('NUIS Invoice API — rms-invoice-webhook-listener (UAT/Konza)', () => {
+  58  | 
+  59  |   test.beforeAll(() => {
+  60  |     if (!HMAC_SECRET) {
+  61  |       console.warn('[invoice-webhook-konza] KONZA_INVOICE_WEBHOOK_HMAC_SECRET is not set in .env — every request below will fail signature validation.');
+  62  |     }
+  63  |     if (!isKonzaDbConfigured()) {
+  64  |       console.warn('[invoice-webhook-konza] Konza DB credentials (KONZA_DB_*) are not set in .env — DB verification steps will be skipped.');
+  65  |     }
+  66  |   });
+  67  | 
+  68  |   test('TC1 — Single line item, fully paid invoice — happy path', async ({ logger }) => {
+  69  |     await allure.description('Posts a single-line-item, fully-paid invoice (matching the integration guide\'s worked example) and verifies HTTP 200 + {"status":"accepted"}, then DB persistence.');
+  70  |     await allure.label('feature', 'NUIS Invoice API');
+  71  |     await allure.label('story', 'Happy Path');
+  72  |     await allure.label('severity', 'blocker');
+  73  | 
+  74  |     const invoice = buildPaidInvoice();
+  75  |     const rawBody = JSON.stringify(invoice);
+  76  |     const { timestamp, signatureHeader } = signInvoicePayload(rawBody, HMAC_SECRET);
+  77  | 
+  78  |     await logger.step(`POST invoice ${invoice.number}`, async () => {
+  79  |       const res = await postInvoice(rawBody, {
+  80  |         'X-Webhook-Timestamp': timestamp,
+  81  |         'X-Webhook-Signature': signatureHeader,
+  82  |       });
+  83  |       expectAccepted(res);
+  84  |       logger.pass(`Invoice accepted: ${invoice.number}`);
+  85  |     });
+  86  | 
+  87  |     if (isKonzaDbConfigured()) {
+  88  |       await logger.step('Verify invoice persisted in Konza DB', async () => {
+  89  |         await new Promise((r) => setTimeout(r, DB_PROCESSING_WAIT_MS));
+  90  |         const { registry, items } = await verifyInvoiceInKonzaDb(invoice.number);
+  91  |         expect(registry, 'invoice_registry row must exist').toBeTruthy();
+  92  |         expect(items.length, 'at least one invoice_items row must exist').toBeGreaterThan(0);
+  93  |         logger.pass(`DB verified — registry status=${registry?.status}, ${items.length} line item row(s)`);
+  94  |       });
+  95  |     } else {
+  96  |       logger.warn('Skipping DB verification — KONZA_DB_* not configured (non-blocking)');
+  97  |     }
+  98  |   });
+  99  | 
+  100 |   test('TC2 — Multiple line items on one invoice', async ({ logger }) => {
+  101 |     await allure.description('Posts an invoice with 3 line items, verifies HTTP 200 and that all line items persist.');
+  102 |     await allure.label('feature', 'NUIS Invoice API');
+  103 |     await allure.label('story', 'Multi-Item Invoices');
+  104 |     await allure.label('severity', 'critical');
+  105 | 
+  106 |     const invoice = buildMultiItemInvoice();
+  107 |     const rawBody = JSON.stringify(invoice);
+  108 |     const { timestamp, signatureHeader } = signInvoicePayload(rawBody, HMAC_SECRET);
+  109 | 
+  110 |     await logger.step(`POST invoice ${invoice.number} (${invoice.invoice_items.length} line items)`, async () => {
+  111 |       const res = await postInvoice(rawBody, {
+  112 |         'X-Webhook-Timestamp': timestamp,
+  113 |         'X-Webhook-Signature': signatureHeader,
+  114 |       });
+  115 |       expectAccepted(res);
+  116 |     });
+  117 | 
+  118 |     if (isKonzaDbConfigured()) {
+  119 |       await logger.step('Verify all line items persisted', async () => {
+  120 |         await new Promise((r) => setTimeout(r, DB_PROCESSING_WAIT_MS));
+  121 |         const { items } = await verifyInvoiceInKonzaDb(invoice.number);
+  122 |         expect(items.length, `expected ${invoice.invoice_items.length} line item rows`).toBe(invoice.invoice_items.length);
+  123 |       });
+  124 |     } else {
+  125 |       logger.warn('Skipping DB verification — KONZA_DB_* not configured (non-blocking)');
+  126 |     }
+  127 |   });
+  128 | 
+  129 |   test('TC3 — Unpaid invoice is still accepted', async ({ logger }) => {
+  130 |     await allure.description('Confirms an invoice with status "Unpaid" is still accepted (payment status does not gate ingestion). NOTE: "Unpaid" as the exact status string is unconfirmed — the integration guide only showed "Paid" as a worked example.');
+  131 |     await allure.label('feature', 'NUIS Invoice API');
+  132 |     await allure.label('story', 'Multi-Item Invoices');
+  133 |     await allure.label('severity', 'normal');
+  134 | 
+  135 |     const invoice = buildUnpaidInvoice();
+  136 |     const rawBody = JSON.stringify(invoice);
+  137 |     const { timestamp, signatureHeader } = signInvoicePayload(rawBody, HMAC_SECRET);
+  138 | 
+  139 |     const res = await postInvoice(rawBody, {
+  140 |       'X-Webhook-Timestamp': timestamp,
+  141 |       'X-Webhook-Signature': signatureHeader,
+  142 |     });
+  143 |     expectAccepted(res);
+  144 |   });
+  145 | 
+  146 |   test('[Security] TC4 — Invalid signature returns 401 SIGNATURE_MISMATCH', async ({ logger }) => {
+  147 |     await allure.description('Tampers with the signature after generation and confirms the API rejects it with the documented SIGNATURE_MISMATCH error code.');
+  148 |     await allure.label('feature', 'NUIS Invoice API');
+```

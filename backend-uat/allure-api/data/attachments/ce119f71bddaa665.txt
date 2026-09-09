@@ -1,0 +1,33 @@
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[TC-DREVT-001] GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/revenue-trend
+  â–º HTTP Status   : 503
+  â–º Content-Type  : application/json
+  â–º Cache-Control      : MISSING
+  â–º X-Content-Type-Opt : MISSING
+  â–º X-Frame-Options    : MISSING
+  â–º ACAO               : MISSING
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary
+────────────────────────────────────────────────────────────
+17:26:21.031  ·  Test started: "TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary"
+17:26:21.032  ○  ▶ Step 1 â€” Build request
+17:26:21.446  ✔  Step completed in 413 ms
+17:26:21.446  ○  ▶ Step 2 â€” Send GET /revenue-trend and log response
+17:26:21.447  ·    GET /api/v1/dashboard/revenue-trend
+17:26:22.835  ✔    HTTP 503 received
+17:26:22.843  ✔  Step completed in 1397 ms
+17:26:22.843  ○  ▶ Step 3 â€” Validate HTTP 200 and Content-Type
+17:26:22.844  ·    Asserting: Validate HTTP 200 and Content-Type
+17:26:22.855  ✘  Step failed after 12 ms — HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+17:26:22.858  ·  Test run complete: "TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary"
+────────────────────────────────────────────────────────────
+

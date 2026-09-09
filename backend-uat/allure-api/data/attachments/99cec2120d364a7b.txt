@@ -1,0 +1,15 @@
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026-01-01%20OR%201%3D1&to_date=2026-06-09 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-005] TC-DB-005 — SQL-like input in from_date causes HTTP 500 (unhandled exception)
+────────────────────────────────────────────────────────────
+17:27:40.044  ·  Test started: "[BUG-DB-005] TC-DB-005 — SQL-like input in from_date causes HTTP 500 (unhandled exception)"
+17:27:40.055  ○  ▶ Step 1 — Send SQL-like string in from_date
+17:27:40.056  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026-01-01 OR 1=1&to_date=2026-06-09
+17:27:41.072  ✔    HTTP 400 received
+17:27:41.077  ·    Asserting: SQL-like from_date input returns 400
+17:27:41.078  ✔    All assertions passed
+17:27:41.078  ✔  Step completed in 1023 ms
+17:27:41.080  ·  Test run complete: "[BUG-DB-005] TC-DB-005 — SQL-like input in from_date causes HTTP 500 (unhandled exception)"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,42 @@
+[GET /api/v1/transaction/filter-options] status: 200 | body: {
+  "success": true,
+  "statusCode": 200,
+  "message": "success",
+  "data": {
+    "statuses": [
+      "Success"
+    ],
+    "methods": [
+      "MOBILE_MONEY",
+      "MOBILE_PAYMENT",
+      "CARD_PAYMENT",
+      "CARD"
+    ]
+  }
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-008 — Filter Options: Retrieve available filter values
+────────────────────────────────────────────────────────────
+17:28:38.453  ·  Test started: "TC-TXN-008 — Filter Options: Retrieve available filter values"
+17:28:38.658  ○  ▶ Step 1 — Build request parameters
+17:28:38.742  ✔  Step completed in 84 ms
+17:28:38.742  ○  ▶ Step 2 — Send GET /transaction/filter-options
+17:28:38.743  ·    GET /api/v1/transaction/filter-options
+17:28:40.144  ✔    HTTP 200 received
+17:28:40.149  ✔  Step completed in 1407 ms
+17:28:40.149  ○  ▶ Step 3 — Validate HTTP 200 status code
+17:28:40.149  ·    Asserting: HTTP 200, body defined, body is object
+17:28:40.161  ✔    All assertions passed
+17:28:40.228  ✔  Step completed in 79 ms
+17:28:40.228  ○  ▶ Step 4 — Validate statuses array is present and non-empty
+17:28:40.229  ·    Asserting: statuses is a non-empty array
+17:28:40.234  ✘  Step failed after 6 ms — statuses must not be empty
+
+expect(received).toBeGreaterThan(expected)
+
+Expected: > 0
+Received:   0
+17:28:40.236  ·  Test run complete: "TC-TXN-008 — Filter Options: Retrieve available filter values"
+────────────────────────────────────────────────────────────
+

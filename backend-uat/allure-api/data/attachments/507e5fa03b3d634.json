@@ -1,0 +1,62 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://rms.uat.konza/dashboard-api/api/v1/dashboard/status-currency",
+    "params": {},
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "content_type": "application/json",
+    "body": {
+      "data": {
+        "statusDistribution": [
+          {
+            "label": "Successful",
+            "percentage": 100,
+            "amountKes": 126980,
+            "count": 12683
+          },
+          {
+            "label": "Failed",
+            "percentage": 0,
+            "amountKes": 0,
+            "count": 0
+          },
+          {
+            "label": "Pending",
+            "percentage": 0,
+            "amountKes": 0,
+            "count": 0
+          }
+        ],
+        "currencyDistribution": [
+          {
+            "label": "KES",
+            "percentage": 100,
+            "amount": 126981,
+            "count": 12683
+          }
+        ],
+        "peakMetrics": {
+          "peakTransactionsPerDay": 9474,
+          "peakTransactionDate": "2026-09-07",
+          "peakHourWindow": "12:00 PM – 12:59 PM",
+          "avgTPM": 119.7,
+          "maxTPM": 717,
+          "peakTxnDayChange": 100,
+          "peakTxnDayDirection": "up",
+          "avgTpmChange": 100,
+          "avgTpmDirection": "up",
+          "maxTpmChange": -45,
+          "maxTpmDirection": "down",
+          "peakHourWindowChange": 100,
+          "peakHourWindowDirection": "up"
+        }
+      }
+    }
+  }
+}

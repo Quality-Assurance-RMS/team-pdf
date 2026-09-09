@@ -1,0 +1,48 @@
+[TC-ASUM-002] "No Authorization header" → 502
+[TC-ASUM-002] "Invalid Bearer token" → 502
+[TC-ASUM-002] "Bearer empty string" → 502
+[TC-ASUM-002] "Bearer null literal" → 502
+[TC-ASUM-002] "Wrong scheme (Basic)" → 502
+[TC-ASUM-002] "Clearly expired token" → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-002 – BUG-ASUM-01 (BLOCKER): Complete auth bypass – endpoint is publicly accessible
+────────────────────────────────────────────────────────────
+17:26:01.639  ·  Test started: "TC-ASUM-002 – BUG-ASUM-01 (BLOCKER): Complete auth bypass – endpoint is publicly accessible"
+17:26:01.640  ○  ▶ Auth bypass: "No Authorization header"
+17:26:01.648  ·    GET /api/v1/analytics/dashboard/summary (No Authorization header)
+17:26:02.612  ✔    HTTP 502 received
+17:26:02.616  ·    Asserting: status must be 401
+17:26:02.627  ✔  Step completed in 987 ms
+17:26:02.627  ○  ▶ Auth bypass: "Invalid Bearer token"
+17:26:02.628  ·    GET /api/v1/analytics/dashboard/summary (Invalid Bearer token)
+17:26:03.577  ✔    HTTP 502 received
+17:26:03.580  ·    Asserting: status must be 401
+17:26:03.585  ✔  Step completed in 958 ms
+17:26:03.585  ○  ▶ Auth bypass: "Bearer empty string"
+17:26:03.586  ·    GET /api/v1/analytics/dashboard/summary (Bearer empty string)
+17:26:04.568  ✔    HTTP 502 received
+17:26:04.570  ·    Asserting: status must be 401
+17:26:04.573  ✔  Step completed in 988 ms
+17:26:04.573  ○  ▶ Auth bypass: "Bearer null literal"
+17:26:04.574  ·    GET /api/v1/analytics/dashboard/summary (Bearer null literal)
+17:26:05.566  ✔    HTTP 502 received
+17:26:05.570  ·    Asserting: status must be 401
+17:26:05.627  ✔  Step completed in 1054 ms
+17:26:05.627  ○  ▶ Auth bypass: "Wrong scheme (Basic)"
+17:26:05.628  ·    GET /api/v1/analytics/dashboard/summary (Wrong scheme (Basic))
+17:26:07.730  ✔    HTTP 502 received
+17:26:07.734  ·    Asserting: status must be 401
+17:26:07.740  ✔  Step completed in 2113 ms
+17:26:07.740  ○  ▶ Auth bypass: "Clearly expired token"
+17:26:07.741  ·    GET /api/v1/analytics/dashboard/summary (Clearly expired token)
+17:26:08.738  ✔    HTTP 502 received
+17:26:08.740  ·    Asserting: status must be 401
+17:26:08.743  ✔  Step completed in 1003 ms
+17:26:08.743  ○  ▶ Confirm total bypass count
+17:26:08.747  ·    Asserting: bypass count must be 0
+17:26:08.749  ✔    All assertions passed
+17:26:08.750  ✔  Step completed in 7 ms
+17:26:08.752  ·  Test run complete: "TC-ASUM-002 – BUG-ASUM-01 (BLOCKER): Complete auth bypass – endpoint is publicly accessible"
+────────────────────────────────────────────────────────────
+

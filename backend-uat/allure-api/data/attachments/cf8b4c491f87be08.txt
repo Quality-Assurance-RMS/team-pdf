@@ -1,0 +1,12 @@
+17:26:41.464  ·  Test started: "TC-DREVT-011 â€” BUG-REVT-10/12: Cache-Control and security headers must be present"
+17:26:41.466  ○  ▶ Step 1 â€” Fetch response and inspect all security headers
+17:26:41.539  ·    GET /api/v1/dashboard/revenue-trend
+17:26:43.882  ✔    HTTP 503 received
+17:26:43.886  ✔  Step completed in 2420 ms
+17:26:43.886  ○  ▶ Step 2 â€” Validate HTTP 200
+17:26:43.886  ·    Asserting: Validate HTTP 200
+17:26:43.898  ✘  Step failed after 12 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m503[39m
+17:26:43.900  ·  Test run complete: "TC-DREVT-011 â€” BUG-REVT-10/12: Cache-Control and security headers must be present"

@@ -1,0 +1,10 @@
+17:27:35.348  ·  Test started: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"
+17:27:35.447  ○  ▶ Step 1 — Collect Analytics 405 error body
+17:27:35.452  ·    POST /api/v1/analytics/dashboard/summary
+17:27:41.652  ✔    HTTP 502 received
+17:27:41.659  ·    Asserting: Analytics returns 405
+17:27:41.669  ✘  Step failed after 6222 ms — [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m405[39m
+Received: [31m502[39m
+17:27:41.671  ·  Test run complete: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"

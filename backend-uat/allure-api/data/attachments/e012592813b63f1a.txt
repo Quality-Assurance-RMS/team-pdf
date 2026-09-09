@@ -1,0 +1,15 @@
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/revenue-trend → 200
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-009] TC-DB-009 — revenue-trend labels[] contains duplicate month names (no year)
+────────────────────────────────────────────────────────────
+17:27:49.542  ·  Test started: "[BUG-DB-009] TC-DB-009 — revenue-trend labels[] contains duplicate month names (no year)"
+17:27:49.630  ○  ▶ Step 1 — Fetch revenue-trend and check for duplicate labels
+17:27:49.631  ·    GET /api/v1/dashboard/revenue-trend
+17:27:52.625  ✔    HTTP 200 received
+17:27:52.629  ·    Asserting: revenue-trend labels array contains no duplicates
+17:27:52.631  ✔    All assertions passed
+17:27:52.631  ✔  Step completed in 3001 ms
+17:27:52.632  ·  Test run complete: "[BUG-DB-009] TC-DB-009 — revenue-trend labels[] contains duplicate month names (no year)"
+────────────────────────────────────────────────────────────
+

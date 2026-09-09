@@ -1,0 +1,13 @@
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=week → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-007] TC-DB-007 — successful_payments% + failed_payments% must equal 100%
+────────────────────────────────────────────────────────────
+17:27:43.052  ·  Test started: "[BUG-DB-007] TC-DB-007 — successful_payments% + failed_payments% must equal 100%"
+17:27:43.137  ○  ▶ Step 1 — Fetch summary and check rate sum
+17:27:43.138  ·    GET /api/v1/dashboard/summary?period=week
+17:27:44.229  ✔    HTTP 400 received
+17:27:44.236  ✘  Step failed after 1099 ms — Test is skipped: 
+17:27:44.237  ·  Test run complete: "[BUG-DB-007] TC-DB-007 — successful_payments% + failed_payments% must equal 100%"
+────────────────────────────────────────────────────────────
+

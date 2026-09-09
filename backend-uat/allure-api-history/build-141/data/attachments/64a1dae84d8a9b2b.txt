@@ -1,0 +1,28 @@
+[TC-DREVT-011] All response headers:
+{
+  "content-type": "application/json",
+  "transfer-encoding": "chunked",
+  "connection": "close",
+  "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Origin",
+  "date": "Wed, 09 Sep 2026 17:26:43 GMT",
+  "server": "RMS-Gateway",
+  "x-apisix-upstream-status": "503"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DREVT-011 â€” BUG-REVT-10/12: Cache-Control and security headers must be present
+────────────────────────────────────────────────────────────
+17:26:41.464  ·  Test started: "TC-DREVT-011 â€” BUG-REVT-10/12: Cache-Control and security headers must be present"
+17:26:41.466  ○  ▶ Step 1 â€” Fetch response and inspect all security headers
+17:26:41.539  ·    GET /api/v1/dashboard/revenue-trend
+17:26:43.882  ✔    HTTP 503 received
+17:26:43.886  ✔  Step completed in 2420 ms
+17:26:43.886  ○  ▶ Step 2 â€” Validate HTTP 200
+17:26:43.886  ·    Asserting: Validate HTTP 200
+17:26:43.898  ✘  Step failed after 12 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 503
+17:26:43.900  ·  Test run complete: "TC-DREVT-011 â€” BUG-REVT-10/12: Cache-Control and security headers must be present"
+────────────────────────────────────────────────────────────
+

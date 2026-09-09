@@ -1,0 +1,17 @@
+GET https://rms.uat.konza/rms-analytics/api/v1/analytics/dashboard/summary → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ANA-006 — Analytics field types: all numeric fields must be numbers not strings
+────────────────────────────────────────────────────────────
+17:28:29.450  ·  Test started: "TC-ANA-006 — Analytics field types: all numeric fields must be numbers not strings"
+17:28:29.639  ○  ▶ Step 1 — Fetch and validate all field types
+17:28:29.643  ·    GET /api/v1/analytics/dashboard/summary
+17:28:30.832  ✔    HTTP 502 received
+17:28:30.832  ·    Asserting: Response is 200
+17:28:30.844  ✘  Step failed after 1204 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+17:28:30.847  ·  Test run complete: "TC-ANA-006 — Analytics field types: all numeric fields must be numbers not strings"
+────────────────────────────────────────────────────────────
+
