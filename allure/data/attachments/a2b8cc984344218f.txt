@@ -1,0 +1,21 @@
+03:37:30.982  ·  Test started: "TC1 — Invoice Information and Items details sections are visible"
+03:37:31.579  ○  ▶ Step 1 — Opens the first invoice detail view and verifies the Invoice Information section and Items details table are rendered
+03:37:31.582  ·    Test scope: Opens the first invoice detail view and verifies the Invoice Information section and Items details table are rendered
+03:37:31.582  ✔  Step completed in 3 ms
+03:37:31.584  ○  ▶ Step 2 — Navigate to Invoice page
+03:37:31.585  ·    Opening the Invoice page
+03:37:33.259  ✔    Navigation to Invoice page initiated successfully
+03:37:34.668  ✔  Step completed in 3084 ms
+03:37:34.668  ○  ▶ Step 3 — Verify page loads successfully
+03:37:34.669  ·    Waiting for all Invoice page elements to render
+03:37:49.771  ✘  Step failed after 15103 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/invoice/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    31 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+03:37:56.171  ·  Test run complete: "TC1 — Invoice Information and Items details sections are visible"

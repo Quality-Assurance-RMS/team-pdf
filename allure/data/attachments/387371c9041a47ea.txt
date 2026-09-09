@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — "Monthly Revenue for All Services" heading is visible
+────────────────────────────────────────────────────────────
+03:35:29.871  ·  Test started: "TC1 — "Monthly Revenue for All Services" heading is visible"
+03:35:31.059  ○  ▶ Step 1 — Verifies that the Monthly Revenue chart section heading is rendered on the dashboard
+03:35:31.065  ·    Test scope: Verifies that the Monthly Revenue chart section heading is rendered on the dashboard
+03:35:31.065  ✔  Step completed in 5 ms
+03:35:31.066  ○  ▶ Step 2 — Navigate to Dashboard page
+03:35:31.069  ·    Opening the Dashboard page
+03:35:36.077  ✔    Navigation to Dashboard initiated successfully
+03:35:41.472  ✔  Step completed in 10406 ms
+03:35:41.472  ○  ▶ Step 3 — Verify page loads successfully
+03:35:41.475  ·    Waiting for all Dashboard elements to render
+03:35:56.681  ✘  Step failed after 15209 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    29 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+03:35:59.686  ·  Test run complete: "TC1 — "Monthly Revenue for All Services" heading is visible"
+────────────────────────────────────────────────────────────
+

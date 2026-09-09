@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — KPI cards display non-empty numeric values
+────────────────────────────────────────────────────────────
+03:35:59.103  ·  Test started: "TC2 — KPI cards display non-empty numeric values"
+03:35:59.555  ○  ▶ Step 1 — Verifies that each KPI card displays a numeric value and is not blank
+03:35:59.558  ·    Test scope: Verifies that each KPI card displays a numeric value and is not blank
+03:35:59.558  ✔  Step completed in 3 ms
+03:35:59.560  ○  ▶ Step 2 — Navigate to Dashboard page
+03:35:59.563  ·    Opening the Dashboard page
+03:36:00.581  ✔    Navigation to Dashboard initiated successfully
+03:36:01.566  ✔  Step completed in 2005 ms
+03:36:01.566  ○  ▶ Step 3 — Verify page loads successfully
+03:36:01.567  ·    Waiting for all Dashboard elements to render
+03:36:16.673  ✘  Step failed after 15107 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+03:36:24.778  ·  Test run complete: "TC2 — KPI cards display non-empty numeric values"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,156 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UI/Invoice/inv-srch-tc1-search-filter-visible.spec.ts >> Invoice — Search Filter >> TC1 — Search Invoice id input is visible
+- Location: tests/UI/Invoice/inv-srch-tc1-search-filter-visible.spec.ts:19:7
+
+# Error details
+
+```
+Error: expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+```
+
+```yaml
+- img "Unified Control"
+- paragraph: Government services, now at your fingertips
+- img
+- paragraph: RMS
+- paragraph: National Treasury
+- heading "Login" [level=1]
+- paragraph: Access Revenue Management System (RMS)
+- text: Email address
+- textbox "Enter Your email" [disabled]
+- paragraph
+- text: Password
+- textbox "Enter Password" [disabled]
+- button [disabled]
+- paragraph
+- checkbox "Remember for 30 days" [disabled]
+- text: Remember for 30 days
+- link "Forgot Password?":
+  - /url: /auth/forgot-password
+- button "Log In →" [disabled]
+- text: Or
+- button "Login with SSO →"
+- region "Notifications alt+T"
+```
+
+# Test source
+
+```ts
+  1   | import { Page, Locator, expect } from '@playwright/test';
+  2   | 
+  3   | export class InvoicePage {
+  4   |   readonly page: Page;
+  5   | 
+  6   |   // List page
+  7   |   readonly heading: Locator;
+  8   |   readonly invoiceSubCount: Locator;
+  9   |   readonly searchInput: Locator;
+  10  |   readonly periodFilterDropdown: Locator;
+  11  |   readonly statusFilterDropdown: Locator;
+  12  |   readonly methodFilterDropdown: Locator;
+  13  |   readonly tableRows: Locator;
+  14  |   readonly paidBadge: Locator;
+  15  |   readonly cancelledBadge: Locator;
+  16  |   readonly firstActionButton: Locator;
+  17  | 
+  18  |   // Detail page
+  19  |   readonly detailBreadcrumb: Locator;
+  20  |   readonly invoiceInformationHeading: Locator;
+  21  |   readonly invoiceNumberValue: Locator;
+  22  |   readonly invoiceAmountValue: Locator;
+  23  |   readonly paidAmountValue: Locator;
+  24  |   readonly statusValue: Locator;
+  25  |   readonly currencyValue: Locator;
+  26  |   readonly itemsDetailsHeading: Locator;
+  27  |   readonly itemsTableRows: Locator;
+  28  | 
+  29  |   constructor(page: Page) {
+  30  |     this.page = page;
+  31  | 
+  32  |     // List page
+  33  |     this.heading         = page.locator('h1, h2, h3').filter({ hasText: /^Invoice$/i });
+  34  |     this.invoiceSubCount = page.getByText(/\d+\s*Invoices/i);
+  35  |     this.searchInput     = page.getByPlaceholder(/Search Invoice id/i);
+  36  |     // Three <select> filters sit side by side on this page (period, status,
+  37  |     // method) — disambiguate by their currently-selected text, same pattern
+  38  |     // used on Transactions/Settlements for their date/status dropdowns.
+  39  |     this.periodFilterDropdown = page.locator('select').filter({ hasText: /Today/i }).first();
+  40  |     this.statusFilterDropdown = page.locator('select').filter({ hasText: /All Status/i }).first();
+  41  |     this.methodFilterDropdown = page.locator('select').filter({ hasText: /All Method/i }).first();
+  42  |     this.tableRows        = page.locator('table tbody tr');
+  43  |     this.paidBadge        = page.locator('table tbody').getByText(/^Paid$/i).first();
+  44  |     this.cancelledBadge   = page.locator('table tbody').getByText(/^Cancelled$/i).first();
+  45  |     // The action cell's clickable element is the eye icon in the last cell —
+  46  |     // clicking the bare <tr> does not navigate (same behavior as Transactions).
+  47  |     this.firstActionButton = page.locator('table tbody tr:first-child td:last-child button, table tbody tr:first-child td:last-child svg, table tbody tr:first-child td:last-child [role="button"]').first();
+  48  | 
+  49  |     // Detail page
+  50  |     this.detailBreadcrumb          = page.getByText(/^Invoice$/i).first();
+  51  |     this.invoiceInformationHeading = page.getByText(/Invoice Information/i);
+  52  |     this.invoiceNumberValue        = page.getByText(/Invoice Number/i).locator('..');
+  53  |     this.invoiceAmountValue        = page.getByText(/Invoice Amount/i).locator('..');
+  54  |     this.paidAmountValue           = page.getByText(/Paided Amount/i).locator('..');
+  55  |     this.statusValue               = page.getByText(/^Status$/i).locator('..');
+  56  |     this.currencyValue             = page.getByText(/^Currency$/i).locator('..');
+  57  |     this.itemsDetailsHeading       = page.getByText(/Items details/i);
+  58  |     this.itemsTableRows            = page.locator('table tbody tr');
+  59  |   }
+  60  | 
+  61  |   async goto() {
+  62  |     await this.page.goto('/invoice');
+  63  |     await this.page.waitForLoadState('networkidle');
+  64  |   }
+  65  | 
+  66  |   async assertPageLoaded() {
+> 67  |     await expect(this.page).toHaveURL(/\/invoice/, { timeout: 15000 });
+      |                             ^ Error: expect(page).toHaveURL(expected) failed
+  68  |     await expect(this.heading).toBeVisible({ timeout: 10000 });
+  69  |   }
+  70  | 
+  71  |   // The default "Today" period can have zero invoices on this demo/dev
+  72  |   // environment since seed data ages past that window over time. Tests that
+  73  |   // need real row data should call this first to widen the range.
+  74  |   async selectPeriod(label: string) {
+  75  |     await this.periodFilterDropdown.selectOption({ label });
+  76  |     await this.page.waitForLoadState('networkidle');
+  77  |   }
+  78  | 
+  79  |   async getFirstInvoiceNumber(): Promise<string> {
+  80  |     const firstRow = this.page.locator('table tbody tr').first();
+  81  |     const idCell = firstRow.locator('td').first();
+  82  |     const text = await idCell.innerText();
+  83  |     return text.trim();
+  84  |   }
+  85  | 
+  86  |   async searchByKeyword(keyword: string) {
+  87  |     await this.searchInput.fill(keyword);
+  88  |     await this.page.waitForLoadState('networkidle');
+  89  |   }
+  90  | 
+  91  |   async clickFirstRow() {
+  92  |     await this.firstActionButton.click();
+  93  |   }
+  94  | 
+  95  |   async assertDetailLoaded(expectedInvoiceNumber: string) {
+  96  |     await expect(this.page).toHaveURL(/\/invoice\/details\//, { timeout: 15000 });
+  97  |     await expect(this.page.getByText(expectedInvoiceNumber).first()).toBeVisible({ timeout: 10000 });
+  98  |   }
+  99  | }
+  100 | 
+```

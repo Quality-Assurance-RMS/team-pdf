@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Status filter dropdown is visible
+────────────────────────────────────────────────────────────
+03:38:06.896  ·  Test started: "TC2 — Status filter dropdown is visible"
+03:38:07.778  ○  ▶ Step 1 — Verifies the "All Status" filter dropdown is rendered on the Invoice page
+03:38:07.781  ·    Test scope: Verifies the "All Status" filter dropdown is rendered on the Invoice page
+03:38:07.781  ✔  Step completed in 3 ms
+03:38:07.783  ○  ▶ Step 2 — Navigate to Invoice page
+03:38:07.784  ·    Opening the Invoice page
+03:38:09.167  ✔    Navigation to Invoice page initiated successfully
+03:38:10.176  ✔  Step completed in 2393 ms
+03:38:10.176  ○  ▶ Step 3 — Verify page loads successfully
+03:38:10.177  ·    Waiting for all Invoice page elements to render
+03:38:25.571  ✘  Step failed after 15395 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    31 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+03:38:33.083  ·  Test run complete: "TC2 — Status filter dropdown is visible"
+────────────────────────────────────────────────────────────
+

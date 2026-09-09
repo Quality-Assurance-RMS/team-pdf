@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Invoice table rows are loaded
+────────────────────────────────────────────────────────────
+03:38:51.496  ·  Test started: "TC2 — Invoice table rows are loaded"
+03:38:52.063  ○  ▶ Step 1 — Verifies the Invoice table renders at least one row after widening the period filter
+03:38:52.066  ·    Test scope: Verifies the Invoice table renders at least one row after widening the period filter
+03:38:52.066  ✔  Step completed in 3 ms
+03:38:52.067  ○  ▶ Step 2 — Navigate to Invoice page
+03:38:52.068  ·    Opening the Invoice page
+03:38:53.280  ✔    Navigation to Invoice page initiated successfully
+03:38:54.584  ✔  Step completed in 2517 ms
+03:38:54.584  ○  ▶ Step 3 — Verify page loads successfully
+03:38:54.586  ·    Waiting for all Invoice page elements to render
+03:39:09.690  ✘  Step failed after 15106 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+03:39:11.280  ·  Test run complete: "TC2 — Invoice table rows are loaded"
+────────────────────────────────────────────────────────────
+

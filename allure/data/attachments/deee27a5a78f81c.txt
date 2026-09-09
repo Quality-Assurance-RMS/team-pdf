@@ -1,0 +1,27 @@
+03:52:29.654  ·  Test started: "TC1 — Full login with a correct OTP reaches the dashboard"
+03:52:31.460  ○  ▶ Step 1 — Verifies that logging in, receiving an OTP by email, and entering it correctly redirects the user to the dashboard
+03:52:31.473  ·    Test scope: full OTP login flow reaching the dashboard
+03:52:31.474  ✔  Step completed in 14 ms
+03:52:31.474  ○  ▶ Step 2 — Navigate to login page and submit credentials
+03:52:31.478  ·    Opening the login page
+03:52:34.463  ·    Submitting login credentials
+03:55:05.086  ✘  Step failed after 153612 ms — locator.fill: Test timeout of 120000ms exceeded.
+Call log:
+[2m  - waiting for getByPlaceholder('Enter Your email')[22m
+[2m    - locator resolved to <input disabled type="email" name="email" autocomplete="on" placeholder="Enter Your email" class="border rounded px-3 py-2 focus:outline-none text-base focus:ring-gray-400 flex w-full ring-offset-background file:border-0 ↵                                file:bg-transparent file:text-sm ↵                                file:font-medium file:text-foreground focus-visible:outline-none ↵                                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ↵             …/>[22m
+[2m    - fill("ashil.shaji@fortunesoftit.com")[22m
+[2m  - attempting fill action[22m
+[2m    2 × waiting for element to be visible, enabled and editable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying fill action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and editable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying fill action[22m
+[2m      - waiting 100ms[22m
+[2m    290 × waiting for element to be visible, enabled and editable[22m
+[2m        - element is not enabled[22m
+[2m      - retrying fill action[22m
+[2m        - waiting 500ms[22m
+
+03:55:05.178  ·  Test run complete: "TC1 — Full login with a correct OTP reaches the dashboard"

@@ -1,0 +1,26 @@
+03:32:09.980  ·  Test started: "TC2 — "Transactions Today" shows a numeric count"
+03:32:11.571  ○  ▶ Step 1 — Verifies the Transactions Today metric is visible and displays a numeric value
+03:32:11.576  ·    Test scope: Verifies the Transactions Today metric is visible and displays a numeric value
+03:32:11.580  ✔  Step completed in 9 ms
+03:32:11.657  ○  ▶ Step 2 — Navigate to Dashboard page
+03:32:11.658  ·    Opening the Dashboard page
+03:32:17.873  ✔    Navigation to Dashboard initiated successfully
+03:32:22.064  ✔  Step completed in 10407 ms
+03:32:22.064  ○  ▶ Step 3 — Verify page loads successfully
+03:32:22.066  ·    Waiting for all Dashboard elements to render
+03:32:26.075  ✔    Dashboard page is fully loaded with all required elements
+03:32:29.474  ✔  Step completed in 7410 ms
+03:32:29.474  ○  ▶ Step 4 — "Transactions (today)" label is visible
+03:32:29.478  ·    Asserting visibility: Transactions (today) metric label
+03:32:36.078  ✘  Step failed after 6604 ms — [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByText(/Transactions \(today\)/i)
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 5000ms[22m
+[2m  - waiting for getByText(/Transactions \(today\)/i)[22m
+
+03:32:57.367  ·  Test run complete: "TC2 — "Transactions Today" shows a numeric count"

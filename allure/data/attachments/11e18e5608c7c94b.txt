@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Profile Settings, Security, and Notifications tabs are visible
+────────────────────────────────────────────────────────────
+03:48:28.874  ·  Test started: "TC1 — Profile Settings, Security, and Notifications tabs are visible"
+03:48:29.275  ○  ▶ Step 1 — Verifies all three settings tabs are rendered and visible on the Settings page
+03:48:29.277  ·    Test scope: Verifies all three settings tabs are rendered and visible on the Settings page
+03:48:29.277  ✔  Step completed in 2 ms
+03:48:29.279  ○  ▶ Step 2 — Navigate to Settings page
+03:48:29.280  ·    Opening the Settings page
+03:48:30.875  ✔    Navigation to Settings page initiated successfully
+03:48:32.683  ✔  Step completed in 3404 ms
+03:48:32.683  ○  ▶ Step 3 — Verify page loads successfully
+03:48:32.684  ·    Waiting for all Settings page elements to render
+03:48:47.857  ✘  Step failed after 15174 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/settings/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+03:48:51.610  ·  Test run complete: "TC1 — Profile Settings, Security, and Notifications tabs are visible"
+────────────────────────────────────────────────────────────
+

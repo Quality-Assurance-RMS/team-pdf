@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC3 — Method filter dropdown is visible
+────────────────────────────────────────────────────────────
+03:38:11.560  ·  Test started: "TC3 — Method filter dropdown is visible"
+03:38:12.272  ○  ▶ Step 1 — Verifies the "All Method" filter dropdown is rendered on the Invoice page
+03:38:12.275  ·    Test scope: Verifies the "All Method" filter dropdown is rendered on the Invoice page
+03:38:12.275  ✔  Step completed in 3 ms
+03:38:12.276  ○  ▶ Step 2 — Navigate to Invoice page
+03:38:12.277  ·    Opening the Invoice page
+03:38:14.079  ✔    Navigation to Invoice page initiated successfully
+03:38:15.976  ✔  Step completed in 3699 ms
+03:38:15.976  ○  ▶ Step 3 — Verify page loads successfully
+03:38:15.978  ·    Waiting for all Invoice page elements to render
+03:38:31.160  ✘  Step failed after 15185 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    31 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+03:38:38.055  ·  Test run complete: "TC3 — Method filter dropdown is visible"
+────────────────────────────────────────────────────────────
+

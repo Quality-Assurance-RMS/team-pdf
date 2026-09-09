@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — All KES chart legend items are visible
+────────────────────────────────────────────────────────────
+03:36:24.562  ·  Test started: "TC2 — All KES chart legend items are visible"
+03:36:25.465  ○  ▶ Step 1 — Verifies the chart legend shows the three KES series by default: Gross KES, Net KES, Commission KES
+03:36:25.467  ·    Test scope: Verifies the chart legend shows the three KES series by default: Gross KES, Net KES, Commission KES
+03:36:25.468  ✔  Step completed in 3 ms
+03:36:25.469  ○  ▶ Step 2 — Navigate to Dashboard page
+03:36:25.470  ·    Opening the Dashboard page
+03:36:27.481  ✔    Navigation to Dashboard initiated successfully
+03:36:29.757  ✔  Step completed in 4288 ms
+03:36:29.757  ○  ▶ Step 3 — Verify page loads successfully
+03:36:29.759  ·    Waiting for all Dashboard elements to render
+03:36:44.783  ✘  Step failed after 15025 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/dashboard/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    31 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+03:36:51.680  ·  Test run complete: "TC2 — All KES chart legend items are visible"
+────────────────────────────────────────────────────────────
+

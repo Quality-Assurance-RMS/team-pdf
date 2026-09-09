@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Paid status badge is visible
+────────────────────────────────────────────────────────────
+03:37:15.598  ·  Test started: "TC1 — Paid status badge is visible"
+03:37:16.270  ○  ▶ Step 1 — Verifies a "Paid" status badge renders in the Invoice table after widening the period filter
+03:37:16.273  ·    Test scope: Verifies a "Paid" status badge renders in the Invoice table after widening the period filter
+03:37:16.274  ✔  Step completed in 4 ms
+03:37:16.276  ○  ▶ Step 2 — Navigate to Invoice page
+03:37:16.277  ·    Opening the Invoice page
+03:37:18.277  ✔    Navigation to Invoice page initiated successfully
+03:37:19.960  ✔  Step completed in 3684 ms
+03:37:19.960  ○  ▶ Step 3 — Verify page loads successfully
+03:37:19.961  ·    Waiting for all Invoice page elements to render
+03:37:35.067  ✘  Step failed after 15107 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    32 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+03:37:41.369  ·  Test run complete: "TC1 — Paid status badge is visible"
+────────────────────────────────────────────────────────────
+
