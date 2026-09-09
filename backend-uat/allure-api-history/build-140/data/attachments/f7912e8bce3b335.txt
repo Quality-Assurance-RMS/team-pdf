@@ -1,0 +1,16 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-005 – BUG-ASUM-04: recon_matched + recon_exceptions must cover some transactions
+────────────────────────────────────────────────────────────
+03:18:45.972  ·  Test started: "TC-ASUM-005 – BUG-ASUM-04: recon_matched + recon_exceptions must cover some transactions"
+03:18:45.973  ○  ▶ Step 1 – Fetch analytics summary
+03:18:45.984  ·    GET /api/v1/analytics/dashboard/summary
+03:18:46.880  ✔    HTTP 502 received
+03:18:46.880  ·    Asserting: HTTP 200
+03:18:46.892  ✘  Step failed after 919 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+03:18:46.895  ·  Test run complete: "TC-ASUM-005 – BUG-ASUM-04: recon_matched + recon_exceptions must cover some transactions"
+────────────────────────────────────────────────────────────
+

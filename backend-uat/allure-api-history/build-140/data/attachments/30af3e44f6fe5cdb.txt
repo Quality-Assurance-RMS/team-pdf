@@ -1,0 +1,34 @@
+
+──────────────────────────────────────────────────────────────────────
+[TC-ASUM-001] GET https://rms.uat.konza/rms-analytics/api/v1/analytics/dashboard/summary
+  ► HTTP Status             : 502
+  ► Content-Type            : text/html; charset=utf-8
+  ► Has "data" wrapper       : false  ← BUG-ASUM-07 if false
+  ► mcda_id                 : undefined
+  ► Cache-Control           : MISSING
+  ► ACAO                    : MISSING
+  ► ACAM                    : MISSING
+──────────────────────────────────────────────────────────────────────
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields
+────────────────────────────────────────────────────────────
+03:16:23.381  ·  Test started: "TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields"
+03:16:23.383  ○  ▶ Step 1 – Build request
+03:16:23.876  ✔  Step completed in 493 ms
+03:16:23.876  ○  ▶ Step 2 – Send GET request and log response
+03:16:23.878  ·    GET /api/v1/analytics/dashboard/summary
+03:16:24.880  ✔    HTTP 502 received
+03:16:24.971  ✔  Step completed in 1095 ms
+03:16:24.971  ○  ▶ Step 3 – Validate HTTP 200 and Content-Type
+03:16:24.975  ·    Asserting: HTTP 200, body defined, Content-Type application/json
+03:16:25.079  ✘  Step failed after 108 ms — HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+03:16:25.082  ·  Test run complete: "TC-ASUM-001 – Happy Path: 200 + mcda_id + today object with all expected fields"
+────────────────────────────────────────────────────────────
+

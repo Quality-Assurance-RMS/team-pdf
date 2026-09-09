@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://rms.uat.konza/dashboard-api/api/v1/dashboard/monthly-revenue",
+    "headers": {
+      "Authorization": "Bearer ***redacted***"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Origin",
+      "date": "Wed, 09 Sep 2026 03:19:03 GMT",
+      "server": "RMS-Gateway"
+    },
+    "body": {
+      "errorCode": 400,
+      "errorMessage": "year must be a 4-digit year (e.g. 2026). Omit the parameter to use the current year."
+    },
+    "bug": "BUG-MREV-02",
+    "query": "year="
+  }
+}

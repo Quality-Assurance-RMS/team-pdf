@@ -1,0 +1,16 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-003 – BUG-ASUM-02: total_transactions must equal successful + failed + pending
+────────────────────────────────────────────────────────────
+03:18:57.090  ·  Test started: "TC-ASUM-003 – BUG-ASUM-02: total_transactions must equal successful + failed + pending"
+03:18:57.094  ○  ▶ Step 1 – Fetch analytics summary
+03:18:57.190  ·    GET /api/v1/analytics/dashboard/summary
+03:18:58.180  ✔    HTTP 502 received
+03:18:58.180  ·    Asserting: HTTP 200
+03:18:58.198  ✘  Step failed after 1104 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+03:18:58.269  ·  Test run complete: "TC-ASUM-003 – BUG-ASUM-02: total_transactions must equal successful + failed + pending"
+────────────────────────────────────────────────────────────
+

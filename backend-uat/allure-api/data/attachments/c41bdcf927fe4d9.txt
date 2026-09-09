@@ -1,0 +1,16 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-ASUM-006 – BUG-ASUM-05: ?mcda_id= query param is completely ignored
+────────────────────────────────────────────────────────────
+03:18:59.199  ·  Test started: "TC-ASUM-006 – BUG-ASUM-05: ?mcda_id= query param is completely ignored"
+03:18:59.201  ○  ▶ Step 1 – Baseline (no mcda_id param)
+03:18:59.268  ·    GET /api/v1/analytics/dashboard/summary
+03:19:00.095  ✔    HTTP 502 received
+03:19:00.095  ·    Asserting: HTTP 200
+03:19:00.188  ✘  Step failed after 987 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
+03:19:00.274  ·  Test run complete: "TC-ASUM-006 – BUG-ASUM-05: ?mcda_id= query param is completely ignored"
+────────────────────────────────────────────────────────────
+

@@ -1,0 +1,19 @@
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=week → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-002] TC-DB-002 — period is case-sensitive (period=WEEK → 400, no documentation)
+────────────────────────────────────────────────────────────
+03:20:41.480  ·  Test started: "[BUG-DB-002] TC-DB-002 — period is case-sensitive (period=WEEK → 400, no documentation)"
+03:20:41.573  ○  ▶ Step 1 — period=week (lowercase) must return 200
+03:20:41.576  ·    GET /api/v1/dashboard/summary?period=week
+03:20:42.407  ✔    HTTP 400 received
+03:20:42.407  ·    Asserting: period=week returns 200
+03:20:42.421  ✘  Step failed after 847 ms — period=week must return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+03:20:42.470  ·  Test run complete: "[BUG-DB-002] TC-DB-002 — period is case-sensitive (period=WEEK → 400, no documentation)"
+────────────────────────────────────────────────────────────
+

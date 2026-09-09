@@ -1,0 +1,11 @@
+03:16:34.597  ·  Test started: "TC-DSUM-005 â€” Input validation: invalid period, case sensitivity, error messages"
+03:16:34.600  ○  ▶ Step 1 â€” period=INVALID_XYZ must return 400
+03:16:34.621  ·    GET /api/v1/dashboard/summary
+03:16:35.484  ✔    HTTP 400 received
+03:16:35.490  ·    Asserting: response structure and values
+03:16:35.501  ✘  Step failed after 901 ms — Error message must be non-empty
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+Received: [31mundefined[39m
+03:16:35.503  ·  Test run complete: "TC-DSUM-005 â€” Input validation: invalid period, case sensitivity, error messages"

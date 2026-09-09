@@ -1,0 +1,19 @@
+GET https://rms.uat.konza/transaction-api/api/v1/transaction/filter-options → 200
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-TXN-007 — Filter options: statuses, methods, txn_types, categories are all non-empty arrays
+────────────────────────────────────────────────────────────
+03:20:47.584  ·  Test started: "TC-TXN-007 — Filter options: statuses, methods, txn_types, categories are all non-empty arrays"
+03:20:47.696  ○  ▶ Step 1 — Fetch filter options
+03:20:47.770  ·    GET /api/v1/transaction/filter-options
+03:20:49.016  ✔    HTTP 200 received
+03:20:49.016  ·    Asserting: All filter option sections are present, arrays, and non-empty
+03:20:49.027  ✘  Step failed after 1331 ms — statuses must not be empty
+
+expect(received).toBeGreaterThan(expected)
+
+Expected: > 0
+Received:   0
+03:20:49.029  ·  Test run complete: "TC-TXN-007 — Filter options: statuses, methods, txn_types, categories are all non-empty arrays"
+────────────────────────────────────────────────────────────
+

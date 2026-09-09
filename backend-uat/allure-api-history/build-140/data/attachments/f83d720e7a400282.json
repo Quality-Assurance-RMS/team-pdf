@@ -1,0 +1,38 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://rms.uat.konza/transaction-api/api/v1/transaction/filter-options",
+    "params": {},
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Origin",
+      "date": "Wed, 09 Sep 2026 03:21:24 GMT",
+      "server": "RMS-Gateway"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "success",
+      "data": {
+        "statuses": [
+          "Success"
+        ],
+        "methods": [
+          "MOBILE_MONEY",
+          "MOBILE_PAYMENT",
+          "CARD_PAYMENT",
+          "CARD"
+        ]
+      }
+    }
+  }
+}
