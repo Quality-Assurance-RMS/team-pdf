@@ -1,0 +1,16 @@
+05:34:45.934  ·  Test started: "TC-DSUM-011 â€” BUG-SUM-06: rate_pct must be null (not 0.0%) when transaction count is zero"
+05:34:45.936  ○  ▶ Step 1 â€” Get period=today (count=0 on a day with no transactions)
+05:34:46.018  ·    GET /api/v1/dashboard/summary
+05:34:47.729  ✔    HTTP 200 received
+05:34:47.734  ·    Asserting: response structure and values
+05:34:47.739  ✔    All assertions passed
+05:34:47.739  ✔  Step completed in 1803 ms
+05:34:47.739  ○  ▶ Step 2 â€” Check if transaction count is 0
+05:34:47.742  ✔  Step completed in 3 ms
+05:34:47.742  ○  ▶ Step 3 â€” BUG-SUM-06: rate_pct should be null when count=0 (flag if 0.0)
+05:34:47.746  ✔    All assertions passed
+05:34:47.747  ✔  Step completed in 5 ms
+05:34:47.747  ○  ▶ Step 4 â€” Also test with a future date range guaranteed to have 0 transactions
+05:34:47.748  ·    GET /api/v1/dashboard/summary
+05:34:57.761  ✘  Step failed after 10014 ms — getaddrinfo EAI_AGAIN rms.uat.konza
+05:34:57.764  ·  Test run complete: "TC-DSUM-011 â€” BUG-SUM-06: rate_pct must be null (not 0.0%) when transaction count is zero"

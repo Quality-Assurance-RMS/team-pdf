@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://rms.uat.konza/dashboard-api/api/v1/dashboard/monthly-revenue",
+    "headers": {
+      "Authorization": "Bearer ***redacted***"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Origin",
+      "date": "Thu, 10 Sep 2026 05:33:15 GMT",
+      "server": "RMS-Gateway"
+    },
+    "body": {
+      "errorCode": 400,
+      "errorMessage": "Invalid year '1000'. Must be between 2000 and 2026."
+    },
+    "bug": "BUG-MREV-03",
+    "query": "year=1000"
+  }
+}

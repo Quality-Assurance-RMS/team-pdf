@@ -1,0 +1,16 @@
+[invoice-webhook-konza] status=401 body={"error":{"code":"SIGNATURE_MISMATCH","message":"HMAC signature verification failed"}}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC2 — Multiple line items on one invoice
+────────────────────────────────────────────────────────────
+05:36:05.213  ·  Test started: "TC2 — Multiple line items on one invoice"
+05:36:05.316  ○  ▶ POST invoice KRCV3JGFSP0UR9QF (3 line items)
+05:36:11.521  ✘  Step failed after 6204 ms — invoice POST should return 200
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 401
+05:36:11.523  ·  Test run complete: "TC2 — Multiple line items on one invoice"
+────────────────────────────────────────────────────────────
+

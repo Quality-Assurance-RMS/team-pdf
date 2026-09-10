@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://rms.uat.konza/dashboard-api/api/v1/dashboard/monthly-revenue",
+    "headers": {
+      "Authorization": "Bearer ***redacted***"
+    }
+  },
+  "response": {
+    "status": 503,
+    "headers": {
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Origin",
+      "date": "Thu, 10 Sep 2026 05:33:27 GMT",
+      "server": "RMS-Gateway",
+      "x-apisix-upstream-status": "503"
+    },
+    "body": {
+      "errorCode": 503,
+      "errorMessage": "Data source unavailable, please try again later"
+    },
+    "bug": "BUG-MREV-09"
+  }
+}

@@ -1,0 +1,35 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-BE-005] GET https://rms.uat.konza/transaction-api/api/v1/transaction?page=0&size=20&period=month&status=SUCCESS&method=MPESA&sort_by=trnx_date&sort_dir=desc
+  â–º Params         : {"page":"0","size":"20","period":"month","status":"SUCCESS","method":"MPESA","sort_by":"trnx_date","sort_dir":"desc"}
+  â–º Status         : 400
+  â–º Content-Type   : application/json
+  â–º total_count    : N/A
+  â–º page           : N/A
+  â–º size           : N/A
+  â–º total_pages    : N/A
+  â–º records in page: 0
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-BE-005 â€" List: period=month filtered by status=SUCCESS and method=MPESA
+────────────────────────────────────────────────────────────
+05:31:25.410  ·  Test started: "TC-BE-005 â€" List: period=month filtered by status=SUCCESS and method=MPESA"
+05:31:25.416  ○  ▶ Step 1 â€" Build request
+05:31:25.551  ✔  Step completed in 135 ms
+05:31:25.551  ○  ▶ Step 2 â€" Send GET /transaction with filters and log response
+05:31:25.607  ·    GET /api/v1/transaction?period=month&status=SUCCESS&method=MPESA
+05:31:26.617  ✔    HTTP 400 received
+05:31:26.634  ✔  Step completed in 1082 ms
+05:31:26.634  ○  ▶ Step 3 â€" Validate HTTP 200, pagination metadata, and data array
+05:31:26.635  ·    Asserting: HTTP 200 and pagination metadata
+05:31:26.718  ✘  Step failed after 85 ms — TC-BE-005 â€" HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+05:31:26.721  ·  Test run complete: "TC-BE-005 â€" List: period=month filtered by status=SUCCESS and method=MPESA"
+────────────────────────────────────────────────────────────
+

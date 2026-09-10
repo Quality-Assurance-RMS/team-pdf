@@ -1,0 +1,17 @@
+POST https://rms.uat.konza/rms-analytics/api/v1/analytics/dashboard/summary → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services
+────────────────────────────────────────────────────────────
+05:35:07.933  ·  Test started: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"
+05:35:07.959  ○  ▶ Step 1 — Collect Analytics 405 error body
+05:35:07.961  ·    POST /api/v1/analytics/dashboard/summary
+05:35:08.942  ✔    HTTP 502 received
+05:35:08.953  ·    Asserting: Analytics returns 405
+05:35:08.965  ✘  Step failed after 1007 ms — expect(received).toBe(expected) // Object.is equality
+
+Expected: 405
+Received: 502
+05:35:08.968  ·  Test run complete: "[BUG-XS-001] TC-XS-001 — Error response body schema differs across all three services"
+────────────────────────────────────────────────────────────
+

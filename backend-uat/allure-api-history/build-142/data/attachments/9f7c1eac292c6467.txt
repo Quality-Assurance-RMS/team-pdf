@@ -1,0 +1,24 @@
+05:33:53.013  ·  Test started: "TC-DSH-003 â€" statusDistribution: structure, fields, and label validation"
+05:33:53.014  ○  ▶ Step 1 â€" Build request
+05:33:53.044  ·    Asserting: request parameters are recorded
+05:33:53.044  ✔    All assertions passed
+05:33:53.052  ✔  Step completed in 37 ms
+05:33:53.052  ○  ▶ Step 2 â€" Send GET /status-currency and log response
+05:33:53.052  ·    GET /api/v1/dashboard/status-currency
+05:33:56.006  ✔    HTTP 200 received
+05:33:56.011  ✔  Step completed in 2959 ms
+05:33:56.011  ○  ▶ Step 3 â€" Validate HTTP 200 and statusDistribution is a non-empty array
+05:33:56.012  ·    Asserting: HTTP 200 and statusDistribution is a non-empty array
+05:33:56.022  ✔    All assertions passed
+05:33:56.023  ✔  Step completed in 12 ms
+05:33:56.023  ○  ▶ Step 4 â€" Validate each statusDistribution item has required fields
+05:33:56.024  ·    Asserting: each statusDistribution item has label, percentage, amount, count, and color fields with correct types
+05:33:56.032  ✘  Step failed after 9 ms — item[0] must have "amount" field
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"amount"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"amountKes": 127804, "count": 12770, "label": "Successful", "percentage": 100}[39m
+05:33:56.034  ·  Test run complete: "TC-DSH-003 â€" statusDistribution: structure, fields, and label validation"

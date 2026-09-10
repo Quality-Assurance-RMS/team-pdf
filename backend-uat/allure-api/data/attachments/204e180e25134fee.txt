@@ -1,0 +1,29 @@
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=week → 401
+GET https://rms.uat.konza/transaction-api/api/v1/transaction/summary?period=week → 401
+GET https://rms.uat.konza/rms-analytics/api/v1/analytics/dashboard/summary → 502
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-XS-004] TC-XS-004 — CORS wildcard * is present even on 401 error responses
+────────────────────────────────────────────────────────────
+05:36:17.408  ·  Test started: "[BUG-XS-004] TC-XS-004 — CORS wildcard * is present even on 401 error responses"
+05:36:17.535  ○  ▶ Check CORS on Dashboard 401
+05:36:17.538  ·    GET /api/v1/dashboard/summary?period=week
+05:36:18.710  ✔    HTTP 401 received
+05:36:18.718  ·    Asserting: CORS Access-Control-Allow-Origin is not wildcard on error response
+05:36:18.723  ✔    All assertions passed
+05:36:18.724  ✔  Step completed in 1189 ms
+05:36:18.724  ○  ▶ Check CORS on Transaction 401
+05:36:18.724  ·    GET /api/v1/transaction/summary?period=week
+05:36:19.705  ✔    HTTP 401 received
+05:36:19.710  ·    Asserting: CORS Access-Control-Allow-Origin is not wildcard on error response
+05:36:19.711  ✔    All assertions passed
+05:36:19.711  ✔  Step completed in 987 ms
+05:36:19.711  ○  ▶ Check CORS on Analytics 200 (no auth needed)
+05:36:19.712  ·    GET /api/v1/analytics/dashboard/summary
+05:36:20.694  ✔    HTTP 502 received
+05:36:20.698  ·    Asserting: CORS Access-Control-Allow-Origin is not wildcard on error response
+05:36:20.699  ✔    All assertions passed
+05:36:20.699  ✔  Step completed in 988 ms
+05:36:20.700  ·  Test run complete: "[BUG-XS-004] TC-XS-004 — CORS wildcard * is present even on 401 error responses"
+────────────────────────────────────────────────────────────
+

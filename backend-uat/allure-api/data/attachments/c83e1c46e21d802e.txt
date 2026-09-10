@@ -1,0 +1,35 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-BE-005] GET https://rms.uat.konza/transaction-api/api/v1/transaction?page=0&size=20&period=month&status=SUCCESS&method=MPESA&sort_by=trnx_date&sort_dir=desc
+  â–º Params         : {"page":"0","size":"20","period":"month","status":"SUCCESS","method":"MPESA","sort_by":"trnx_date","sort_dir":"desc"}
+  â–º Status         : 400
+  â–º Content-Type   : application/json
+  â–º total_count    : N/A
+  â–º page           : N/A
+  â–º size           : N/A
+  â–º total_pages    : N/A
+  â–º records in page: 0
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-BE-005 â€" List: period=month filtered by status=SUCCESS and method=MPESA
+────────────────────────────────────────────────────────────
+05:37:04.050  ·  Test started: "TC-BE-005 â€" List: period=month filtered by status=SUCCESS and method=MPESA"
+05:37:04.052  ○  ▶ Step 1 â€" Build request
+05:37:04.116  ✔  Step completed in 64 ms
+05:37:04.116  ○  ▶ Step 2 â€" Send GET /transaction with filters and log response
+05:37:04.117  ·    GET /api/v1/transaction?period=month&status=SUCCESS&method=MPESA
+05:37:05.097  ✔    HTTP 400 received
+05:37:05.103  ✔  Step completed in 987 ms
+05:37:05.103  ○  ▶ Step 3 â€" Validate HTTP 200, pagination metadata, and data array
+05:37:05.103  ·    Asserting: HTTP 200 and pagination metadata
+05:37:05.114  ✘  Step failed after 11 ms — TC-BE-005 â€" HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+05:37:05.116  ·  Test run complete: "TC-BE-005 â€" List: period=month filtered by status=SUCCESS and method=MPESA"
+────────────────────────────────────────────────────────────
+

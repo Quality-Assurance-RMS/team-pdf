@@ -1,0 +1,13 @@
+GET https://rms.uat.konza/transaction-api/api/v1/transaction/summary?period=week → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-TXN-005] TC-TXN-005 — success_rate.change_pct is always null (no period-over-period tracking)
+────────────────────────────────────────────────────────────
+05:35:47.210  ·  Test started: "[BUG-TXN-005] TC-TXN-005 — success_rate.change_pct is always null (no period-over-period tracking)"
+05:35:47.228  ○  ▶ period=week — success_rate.change_pct must be a number
+05:35:47.228  ·    GET /api/v1/transaction/summary?period=week
+05:35:48.203  ✔    HTTP 400 received
+05:35:48.205  ✘  Step failed after 978 ms — Test is skipped: 
+05:35:48.207  ·  Test run complete: "[BUG-TXN-005] TC-TXN-005 — success_rate.change_pct is always null (no period-over-period tracking)"
+────────────────────────────────────────────────────────────
+

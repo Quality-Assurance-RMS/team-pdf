@@ -1,0 +1,29 @@
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=09-06-2026&to_date=09-06-2026 → 400
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=2026%2F06%2F09&to_date=2026%2F06%2F09 → 400
+GET https://rms.uat.konza/dashboard-api/api/v1/dashboard/summary?period=custom&from_date=June%209%202026&to_date=June%209%202026 → 400
+
+────────────────────────────────────────────────────────────
+Execution Log — [BUG-DB-004] TC-DB-004 — Wrong date format DD-MM-YYYY causes HTTP 500 not 400
+────────────────────────────────────────────────────────────
+05:36:14.610  ·  Test started: "[BUG-DB-004] TC-DB-004 — Wrong date format DD-MM-YYYY causes HTTP 500 not 400"
+05:36:14.708  ○  ▶ Wrong format: DD-MM-YYYY
+05:36:14.709  ·    GET /api/v1/dashboard/summary?period=custom&from_date=09-06-2026&to_date=09-06-2026
+05:36:15.809  ✔    HTTP 400 received
+05:36:15.817  ·    Asserting: Wrong date format "09-06-2026" returns 400
+05:36:15.821  ✔    All assertions passed
+05:36:15.821  ✔  Step completed in 1113 ms
+05:36:15.821  ○  ▶ Wrong format: YYYY/MM/DD (slashes)
+05:36:15.822  ·    GET /api/v1/dashboard/summary?period=custom&from_date=2026/06/09&to_date=2026/06/09
+05:36:16.906  ✔    HTTP 400 received
+05:36:16.909  ·    Asserting: Wrong date format "2026/06/09" returns 400
+05:36:16.915  ✔    All assertions passed
+05:36:16.915  ✔  Step completed in 1094 ms
+05:36:16.915  ○  ▶ Wrong format: Long form
+05:36:16.918  ·    GET /api/v1/dashboard/summary?period=custom&from_date=June 9 2026&to_date=June 9 2026
+05:36:18.006  ✔    HTTP 400 received
+05:36:18.008  ·    Asserting: Wrong date format "June 9 2026" returns 400
+05:36:18.010  ✔    All assertions passed
+05:36:18.010  ✔  Step completed in 1095 ms
+05:36:18.011  ·  Test run complete: "[BUG-DB-004] TC-DB-004 — Wrong date format DD-MM-YYYY causes HTTP 500 not 400"
+────────────────────────────────────────────────────────────
+

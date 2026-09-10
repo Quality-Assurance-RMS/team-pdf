@@ -1,0 +1,35 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-BE-002] GET https://rms.uat.konza/transaction-api/api/v1/transaction/summary?period=today
+  â–º Params        : {"period":"today"}
+  â–º Status        : 500
+  â–º Content-Type  : application/json
+  â–º Response Body :
+{
+    "errorCode": "Internal Server Error",
+    "errorMessage": "An unexpected error occurred"
+}
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-BE-002 â€" Summary: period=today returns 200 with expected shape
+────────────────────────────────────────────────────────────
+05:36:26.131  ·  Test started: "TC-BE-002 â€" Summary: period=today returns 200 with expected shape"
+05:36:26.134  ○  ▶ Step 1 â€" Build request
+05:36:26.420  ✔  Step completed in 286 ms
+05:36:26.420  ○  ▶ Step 2 â€" Send GET /summary?period=today and log response
+05:36:26.421  ·    GET /api/v1/transaction/summary?period=today
+05:36:27.511  ✔    HTTP 500 received
+05:36:27.522  ✔  Step completed in 1102 ms
+05:36:27.523  ○  ▶ Step 3 â€" Validate HTTP 200 and top-level fields present
+05:36:27.524  ·    Asserting: HTTP 200 and top-level fields present
+05:36:27.535  ✘  Step failed after 13 ms — HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 500
+05:36:27.606  ·  Test run complete: "TC-BE-002 â€" Summary: period=today returns 200 with expected shape"
+────────────────────────────────────────────────────────────
+

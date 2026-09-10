@@ -1,0 +1,12 @@
+05:36:20.732  ·  Test started: "[BUG-ANA-001] TC-ANA-001 — Spring Boot Whitelabel page leaks EAT server timezone on every 406"
+05:36:20.741  ○  ▶ Step 1 — Send GET with Accept: text/html
+05:36:20.741  ·    GET /api/v1/analytics/dashboard/summary
+05:36:21.710  ✔    HTTP 502 received
+05:36:21.719  ·    Asserting: 406 returned without Spring Boot Whitelabel page or EAT timezone leak
+05:36:21.727  ✘  Step failed after 987 ms — Accept: text/html must return 406
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m406[39m
+Received: [31m502[39m
+05:36:21.729  ·  Test run complete: "[BUG-ANA-001] TC-ANA-001 — Spring Boot Whitelabel page leaks EAT server timezone on every 406"

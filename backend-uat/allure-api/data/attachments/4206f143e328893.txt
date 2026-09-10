@@ -1,0 +1,26 @@
+05:33:18.518  ·  Test started: "TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary"
+05:33:18.520  ○  ▶ Step 1 â€” Build request
+05:33:18.913  ✔  Step completed in 393 ms
+05:33:18.913  ○  ▶ Step 2 â€” Send GET /revenue-trend and log response
+05:33:18.915  ·    GET /api/v1/dashboard/revenue-trend
+05:33:22.661  ✔    HTTP 200 received
+05:33:22.669  ✔  Step completed in 3756 ms
+05:33:22.669  ○  ▶ Step 3 â€” Validate HTTP 200 and Content-Type
+05:33:22.670  ·    Asserting: Validate HTTP 200 and Content-Type
+05:33:22.711  ✔    All assertions passed
+05:33:22.712  ✔  Step completed in 43 ms
+05:33:22.712  ○  ▶ Step 4 â€” Validate top-level data wrapper
+05:33:22.712  ·    Asserting: Validate top-level data wrapper
+05:33:22.719  ✔    All assertions passed
+05:33:22.719  ✔  Step completed in 8 ms
+05:33:22.719  ○  ▶ Step 5 â€” Validate 4 required array fields exist
+05:33:22.720  ·    Asserting: Validate 4 required array fields exist
+05:33:22.745  ✘  Step failed after 26 ms — "totalAttempts" array must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"totalAttempts"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"failed": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …], "labels": ["Oct 2025", "Nov 2025", "Dec 2025", "Jan 2026", "Feb 2026", "Mar 2026", "Apr 2026", "May 2026", "Jun 2026", "Jul 2026", …], "successful": [500000, 0, 404, 23000, 150000, 200000, 200002, 1000002, 3017, 7547, …], "summary": [{"kesChangeDirection": "flat", "kesChangePercentage": 0, "kesValue": 59984146, "label": "Total Transactions", "transactionCountKes": 3017875, "transactionCountUsd": 737663, "usdChangeDirection": "flat", "usdChangePercentage": 0, "usdValue": 11788077}, {"kesChangeDirection": "flat", "kesChangePercentage": 0, "kesValue": 59984146, "label": "Successful", "transactionCountKes": 3017875, "transactionCountUsd": 737663, "usdChangeDirection": "flat", "usdChangePercentage": 0, "usdValue": 11788077}, {"kesChangeDirection": "flat", "kesChangePercentage": 0, "kesValue": 0, "label": "Failed", "transactionCountKes": 0, "transactionCountUsd": 0, "usdChangeDirection": "flat", "usdChangePercentage": 0, "usdValue": 0}], "totalTransactions": [500000, 0, 404, 23000, 150000, 200000, 200002, 1000002, 3017, 7547, …]}[39m
+05:33:22.747  ·  Test run complete: "TC-DREVT-001 â€” Happy Path: 200 + data wrapper + all 4 arrays + summary"

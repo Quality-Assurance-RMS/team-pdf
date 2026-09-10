@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://rms.uat.konza/dashboard-api/api/v1/dashboard/today-payments",
+    "headers": {
+      "Authorization": "Bearer ***redacted***",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 401,
+    "content_type": "application/json;charset=ISO-8859-1",
+    "headers": {
+      "content-type": "application/json;charset=ISO-8859-1",
+      "content-length": "77",
+      "connection": "close",
+      "date": "Thu, 10 Sep 2026 05:34:41 GMT",
+      "server": "RMS-Gateway",
+      "vary": "Origin"
+    },
+    "body": {
+      "status": 401,
+      "error": "Unauthorized",
+      "message": "Missing Authorization token"
+    },
+    "scenario": "no-auth"
+  }
+}

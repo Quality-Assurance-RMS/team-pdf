@@ -1,0 +1,32 @@
+05:34:36.248  ·  Test started: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"
+05:34:36.249  ○  ▶ Step 1 â€" Build request
+05:34:36.531  ·    Asserting: request parameters are recorded
+05:34:36.604  ✔    All assertions passed
+05:34:36.621  ✔  Step completed in 372 ms
+05:34:36.621  ○  ▶ Step 2 â€" Send GET /today-payments and log response
+05:34:36.623  ·    GET /api/v1/dashboard/today-payments
+05:34:37.739  ✔    HTTP 200 received
+05:34:37.748  ✔  Step completed in 1126 ms
+05:34:37.748  ○  ▶ Step 3 â€" Validate HTTP 200
+05:34:37.749  ·    Asserting: HTTP 200 and body is defined
+05:34:37.758  ✔    All assertions passed
+05:34:37.759  ✔  Step completed in 11 ms
+05:34:37.759  ○  ▶ Step 4 â€" Validate top-level data wrapper
+05:34:37.759  ·    Asserting: response has a "data" key that is an object
+05:34:37.764  ✔    All assertions passed
+05:34:37.764  ✔  Step completed in 5 ms
+05:34:37.764  ○  ▶ Step 5 â€" Validate 3 required sections exist
+05:34:37.765  ·    Asserting: payments, refunds, and revenue sections are present
+05:34:37.807  ✔    All assertions passed
+05:34:37.807  ✔  Step completed in 43 ms
+05:34:37.807  ○  ▶ Step 6 â€" Validate all 6 fields in each section
+05:34:37.808  ·    Asserting: all 6 required fields are present in each of the 3 sections
+05:34:37.813  ✘  Step failed after 6 ms — data.payments.successfullPaymentKES must be present
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoHaveProperty[2m([22m[32mpath[39m[2m)[22m
+
+Expected path: [32m"successfullPaymentKES"[39m
+Received path: [31m[][39m
+
+Received value: [31m{"failKesChange": 0, "failKesChangeDirection": "flat", "failUsdChange": 0, "failUsdChangeDirection": "flat", "failedPaymentDollar": 0, "failedPaymentKES": 0, "successKesChange": -100, "successKesChangeDirection": "down", "successUsdChange": 0, "successUsdChangeDirection": "flat", "successfulPaymentDollar": 0, "successfulPaymentKES": 0}[39m
+05:34:37.816  ·  Test run complete: "TC-DTPAY-001 â€" Happy Path: 200 + data wrapper + 3 sections present"

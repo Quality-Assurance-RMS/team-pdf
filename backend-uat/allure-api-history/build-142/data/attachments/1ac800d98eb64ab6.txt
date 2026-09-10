@@ -1,0 +1,35 @@
+
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+[TC-BE-004] GET https://rms.uat.konza/transaction-api/api/v1/transaction?page=0&size=20&period=today&sort_by=trnx_date&sort_dir=desc
+  â–º Params         : {"page":"0","size":"20","period":"today","sort_by":"trnx_date","sort_dir":"desc"}
+  â–º Status         : 400
+  â–º Content-Type   : application/json
+  â–º total_count    : N/A
+  â–º page           : N/A
+  â–º size           : N/A
+  â–º total_pages    : N/A
+  â–º records in page: 0
+â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-BE-004 â€" List: period=today sorted by trnx_date desc returns paginated data
+────────────────────────────────────────────────────────────
+05:36:55.034  ·  Test started: "TC-BE-004 â€" List: period=today sorted by trnx_date desc returns paginated data"
+05:36:55.036  ○  ▶ Step 1 â€" Build request
+05:36:55.412  ✔  Step completed in 376 ms
+05:36:55.412  ○  ▶ Step 2 â€" Send GET /transaction?period=today and log response
+05:36:55.414  ·    GET /api/v1/transaction?period=today&sort_by=trnx_date&sort_dir=desc
+05:36:56.621  ✔    HTTP 400 received
+05:36:56.643  ✔  Step completed in 1230 ms
+05:36:56.643  ○  ▶ Step 3 â€" Validate HTTP 200, pagination metadata, and data array
+05:36:56.644  ·    Asserting: HTTP 200, pagination metadata present, and data array non-empty
+05:36:56.714  ✘  Step failed after 71 ms — TC-BE-004 â€" HTTP 200 expected
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 400
+05:36:56.720  ·  Test run complete: "TC-BE-004 â€" List: period=today sorted by trnx_date desc returns paginated data"
+────────────────────────────────────────────────────────────
+

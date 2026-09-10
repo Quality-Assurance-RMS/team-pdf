@@ -1,0 +1,16 @@
+05:30:46.660  ·  Test started: "TC-DSUM-007 â€” BUG-SUM-04: single-day range (from=to) must be accepted (validator too strict)"
+05:30:46.661  ○  ▶ Step 1 â€” Send single-day range from_date=to_date=2026-05-15
+05:30:46.670  ·    GET /api/v1/dashboard/summary
+05:30:48.496  ✔    HTTP 200 received
+05:30:48.502  ✔  Step completed in 1841 ms
+05:30:48.502  ○  ▶ Step 2 â€” Flag BUG-SUM-04 if 400 is returned
+05:30:48.503  ·    Asserting: Flag BUG-SUM-04 if 400 is returned
+05:30:48.509  ✔    All assertions passed
+05:30:48.510  ✔  Step completed in 7 ms
+05:30:48.510  ○  ▶ Step 3 â€” Also test adjacent single-day range (from < to by 1 day) works fine
+05:30:48.511  ·    GET /api/v1/dashboard/summary
+05:30:50.320  ✔    HTTP 200 received
+05:30:50.320  ·    Asserting: response structure and values
+05:30:50.323  ✔    All assertions passed
+05:30:50.323  ✔  Step completed in 1813 ms
+05:30:50.327  ·  Test run complete: "TC-DSUM-007 â€” BUG-SUM-04: single-day range (from=to) must be accepted (validator too strict)"

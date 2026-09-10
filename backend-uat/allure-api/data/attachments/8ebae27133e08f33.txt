@@ -1,0 +1,26 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DSUM-014 â€” BUG-SUM-09/10/11: empty period, case sensitivity, incomplete error message
+────────────────────────────────────────────────────────────
+05:34:40.246  ·  Test started: "TC-DSUM-014 â€” BUG-SUM-09/10/11: empty period, case sensitivity, incomplete error message"
+05:34:40.254  ○  ▶ Step 1 â€” BUG-SUM-09: empty period= must return 400
+05:34:40.255  ·    GET /api/v1/dashboard/summary
+05:34:41.226  ✔    HTTP 400 received
+05:34:41.226  ·    Asserting: BUG-SUM-09: empty period= must return 400
+05:34:41.228  ✔    All assertions passed
+05:34:41.228  ✔  Step completed in 974 ms
+05:34:41.228  ○  ▶ Step 2 â€” BUG-SUM-10: period=WEEK uppercase must return 200 (case-insensitive)
+05:34:41.229  ·    GET /api/v1/dashboard/summary
+05:34:42.199  ✔    HTTP 400 received
+05:34:42.201  ·    Asserting: BUG-SUM-10: period=WEEK uppercase must return 200
+05:34:42.206  ✔    All assertions passed
+05:34:42.206  ✔  Step completed in 978 ms
+05:34:42.206  ○  ▶ Step 3 â€” BUG-SUM-11: invalid period error must include today and last-3-month
+05:34:42.207  ·    GET /api/v1/dashboard/summary
+05:34:43.184  ✔    HTTP 400 received
+05:34:43.184  ·    Asserting: BUG-SUM-11: invalid period error must include tod
+05:34:43.192  ✔    All assertions passed
+05:34:43.192  ✔  Step completed in 986 ms
+05:34:43.193  ·  Test run complete: "TC-DSUM-014 â€” BUG-SUM-09/10/11: empty period, case sensitivity, incomplete error message"
+────────────────────────────────────────────────────────────
+

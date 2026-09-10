@@ -1,0 +1,8 @@
+05:35:38.014  ·  Test started: "[BUG-TXN-002] TC-TXN-002 — Transaction list: size=0 returns 200 with empty data (should be 400)"
+05:35:38.022  ○  ▶ Step 1 — GET list with size=0
+05:35:38.023  ·    GET /api/v1/transaction?period=today&page=0&size=0
+05:35:38.994  ✔    HTTP 400 received
+05:35:38.997  ·    Asserting: size=0 returns 400
+05:35:38.999  ✔    All assertions passed
+05:35:38.999  ✔  Step completed in 977 ms
+05:35:39.000  ·  Test run complete: "[BUG-TXN-002] TC-TXN-002 — Transaction list: size=0 returns 200 with empty data (should be 400)"

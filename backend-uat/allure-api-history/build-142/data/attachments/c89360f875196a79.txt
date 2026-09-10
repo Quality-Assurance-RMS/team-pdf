@@ -1,0 +1,36 @@
+[TC-DMREV-011] Response headers:
+{
+  "content-type": "application/json",
+  "transfer-encoding": "chunked",
+  "connection": "close",
+  "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Origin",
+  "date": "Thu, 10 Sep 2026 05:33:12 GMT",
+  "server": "RMS-Gateway",
+  "x-apisix-upstream-status": "503"
+}
+
+────────────────────────────────────────────────────────────
+Execution Log — TC-DMREV-011 â€” BUG-MREV-08: Cache-Control and security headers must be present
+────────────────────────────────────────────────────────────
+05:33:11.211  ·  Test started: "TC-DMREV-011 â€” BUG-MREV-08: Cache-Control and security headers must be present"
+05:33:11.223  ○  ▶ Step 1 â€” Fetch response and inspect headers
+05:33:11.225  ·    GET /api/v1/dashboard/monthly-revenue
+05:33:12.542  ✔    HTTP 503 received
+05:33:12.544  ✔  Step completed in 1321 ms
+05:33:12.544  ○  ▶ Step 2 â€” BUG-MREV-08: Cache-Control must prohibit caching of financial data
+05:33:12.554  ·    Asserting: BUG-MREV-08: Cache-Control must prohibit caching
+05:33:12.564  ✔    All assertions passed
+05:33:12.564  ✔  Step completed in 20 ms
+05:33:12.564  ○  ▶ Step 3 â€” X-Content-Type-Options must be nosniff
+05:33:12.568  ·    Asserting: response structure and values
+05:33:12.572  ✔    All assertions passed
+05:33:12.572  ✔  Step completed in 8 ms
+05:33:12.572  ○  ▶ Step 4 â€” X-Frame-Options must be present
+05:33:12.608  ·    Asserting: response structure and values
+05:33:12.610  ✔    All assertions passed
+05:33:12.611  ✔  Step completed in 38 ms
+05:33:12.611  ○  ▶ Step 5 â€” Full security header audit
+05:33:12.613  ✔  Step completed in 2 ms
+05:33:12.614  ·  Test run complete: "TC-DMREV-011 â€” BUG-MREV-08: Cache-Control and security headers must be present"
+────────────────────────────────────────────────────────────
+
