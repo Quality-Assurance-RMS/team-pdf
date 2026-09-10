@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Invoice heading is visible
+────────────────────────────────────────────────────────────
+01:49:46.833  ·  Test started: "TC1 — Invoice heading is visible"
+01:49:47.054  ○  ▶ Step 1 — Verifies the "Invoice" heading is rendered on the Invoice page
+01:49:47.056  ·    Test scope: Verifies the "Invoice" heading is rendered on the Invoice page
+01:49:47.056  ✔  Step completed in 2 ms
+01:49:47.058  ○  ▶ Step 2 — Navigate to Invoice page
+01:49:47.059  ·    Opening the Invoice page
+01:49:48.905  ✔    Navigation to Invoice page initiated successfully
+01:49:49.519  ✔  Step completed in 2461 ms
+01:49:49.519  ○  ▶ Step 3 — Verify page loads successfully
+01:49:49.520  ·    Waiting for all Invoice page elements to render
+01:50:04.541  ✘  Step failed after 15023 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:50:06.582  ·  Test run complete: "TC1 — Invoice heading is visible"
+────────────────────────────────────────────────────────────
+

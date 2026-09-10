@@ -1,0 +1,21 @@
+01:49:08.839  ·  Test started: "TC1 — Eye icon opens invoice detail with matching Invoice Number"
+01:49:09.232  ○  ▶ Step 1 — Clicks the view icon on the first invoice row and verifies the Invoice Number appears on the detail view
+01:49:09.234  ·    Test scope: Clicks the view icon on the first invoice row and verifies the Invoice Number appears on the detail view
+01:49:09.234  ✔  Step completed in 2 ms
+01:49:09.235  ○  ▶ Step 2 — Navigate to Invoice page
+01:49:09.236  ·    Opening the Invoice page
+01:49:11.127  ✔    Navigation to Invoice page initiated successfully
+01:49:11.710  ✔  Step completed in 2475 ms
+01:49:11.710  ○  ▶ Step 3 — Verify page loads successfully
+01:49:11.711  ·    Waiting for all Invoice page elements to render
+01:49:26.736  ✘  Step failed after 15026 ms — [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+Expected pattern: [32m/\/invoice/[39m
+Received string:  [31m"https://api.rms.dev.demo-fsit.com/auth/login"[39m
+Timeout: 15000ms
+
+Call log:
+[2m  - Expect "toHaveURL" with timeout 15000ms[22m
+[2m    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"[22m
+
+01:49:29.274  ·  Test run complete: "TC1 — Eye icon opens invoice detail with matching Invoice Number"

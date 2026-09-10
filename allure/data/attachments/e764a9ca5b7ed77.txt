@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Search Invoice id input is visible
+────────────────────────────────────────────────────────────
+01:50:34.041  ·  Test started: "TC1 — Search Invoice id input is visible"
+01:50:34.258  ○  ▶ Step 1 — Verifies the "Search Invoice id..." input field is rendered on the Invoice page
+01:50:34.260  ·    Test scope: Verifies the "Search Invoice id..." input field is rendered on the Invoice page
+01:50:34.260  ✔  Step completed in 2 ms
+01:50:34.261  ○  ▶ Step 2 — Navigate to Invoice page
+01:50:34.262  ·    Opening the Invoice page
+01:50:36.111  ✔    Navigation to Invoice page initiated successfully
+01:50:36.392  ✔  Step completed in 2131 ms
+01:50:36.392  ○  ▶ Step 3 — Verify page loads successfully
+01:50:36.393  ·    Waiting for all Invoice page elements to render
+01:50:51.412  ✘  Step failed after 15020 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:50:52.985  ·  Test run complete: "TC1 — Search Invoice id input is visible"
+────────────────────────────────────────────────────────────
+

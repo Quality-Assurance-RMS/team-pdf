@@ -1,0 +1,27 @@
+
+────────────────────────────────────────────────────────────
+Execution Log — TC1 — Invoice count sub-heading is visible
+────────────────────────────────────────────────────────────
+01:48:58.664  ·  Test started: "TC1 — Invoice count sub-heading is visible"
+01:48:58.858  ○  ▶ Step 1 — Verifies the "N Invoices" count text is rendered under the Invoice heading
+01:48:58.859  ·    Test scope: Verifies the "N Invoices" count text is rendered under the Invoice heading
+01:48:58.860  ✔  Step completed in 2 ms
+01:48:58.861  ○  ▶ Step 2 — Navigate to Invoice page
+01:48:58.861  ·    Opening the Invoice page
+01:49:00.844  ✔    Navigation to Invoice page initiated successfully
+01:49:01.425  ✔  Step completed in 2565 ms
+01:49:01.425  ○  ▶ Step 3 — Verify page loads successfully
+01:49:01.426  ·    Waiting for all Invoice page elements to render
+01:49:16.513  ✘  Step failed after 15088 ms — expect(page).toHaveURL(expected) failed
+
+Expected pattern: /\/invoice/
+Received string:  "https://api.rms.dev.demo-fsit.com/auth/login"
+Timeout: 15000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 15000ms
+    33 × unexpected value "https://api.rms.dev.demo-fsit.com/auth/login"
+
+01:49:18.456  ·  Test run complete: "TC1 — Invoice count sub-heading is visible"
+────────────────────────────────────────────────────────────
+
